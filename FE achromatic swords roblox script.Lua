@@ -533,7 +533,13 @@ end)
 exitbutton.MouseButton1Down:Connect(function()
 
 wait (4)
+getgenv().ReanimateVersion = "v2"
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/stangithuboffical/selexity/main/Reanimate", true))()
+
+wait (5)
+
+game.Players.LocalPlayer.Character.Humanoid:WaitForChild("Animator"):Destroy()
 
 
 HumanDied = false
