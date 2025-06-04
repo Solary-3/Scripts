@@ -1,8 +1,18 @@
+print("Krystal Dance V3 By Nitro-GT(Hemi), Modified By Paradigm/Theo!")
+print("Now With More Pages!")
+print("Press Right Alt!")
+
 task.wait(1.5)
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
 	Duration = 1;
 	Text = "This Script Was Made By Hemi, Modified By Paradigm!"
+})
+task.wait(1.5)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 1;
+	Text = "Press Right Alt For More Pages!")
 })
 task.wait(1.5)
     game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -1149,6 +1159,13 @@ if k == "m" then  --Modes
     end
 end
 end)
+
+
+
+
+
+
+
 char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
 	if char.Humanoid.Sit == false then 
     if char.Humanoid.MoveDirection == Vector3.new(0,0,0) and dancing == false and idle == false then
