@@ -527,7 +527,7 @@ getgenv().ReanimateVersion = "v2"
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/stangithuboffical/selexity/main/Reanimate", true))()
 
-wait (1.50)
+wait (5.5)
 
 game.Players.LocalPlayer.Character.Humanoid:WaitForChild("Animator"):Destroy()
 
