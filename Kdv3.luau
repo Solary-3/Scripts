@@ -1,34 +1,4 @@
--- Credits:
---[[
-	Gelatek - Everything
-	Emper - Optimization Tips
-	Syndi/Mizt - Hat Renamer (to be changed with own one later)
-]]
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/packages/FunctionPack.lua"))()
-Global.GelatekHubConfig = {
-	["Permanent Death"] = true,
-	["Torso Fling"] = false,
-	["Bullet Enabled"] = false,
-	["Enable Collisions"] = true,
-	["Keep Hats On Head"] = true,
-	["Headless On Perma"] = false,
-	["Anti Void"] = false,
-	["Anti Void Offset"] = 75
-}
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/lib/Reanimate.lua"))()
-end
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Gelatek";
-	Duration = 1;
-	Text = "Now Reanimated!, Wait for Permadeath!"
-})
-
-
-
---Above is the reanimate from Gelatek, Credit goes to them not me!
---this allows everyone to see you dance!
-
-
+loadstring(game:HttpGet("https://rawscripts.net/raw/Just-a-baseplate.-Just-A-Baseplate-Working-Reanimation-39126"))()
 task.wait(6.5)
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
