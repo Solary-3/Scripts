@@ -1,3 +1,38 @@
+if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (not isfolder("Dances")) then
+	local Bindable = Instance.new("BindableFunction")
+	local function Copy(e)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))()
+		Bindable:Destroy()
+	end
+	Bindable.OnInvoke = Copy
+	game.StarterGui:SetCore("SendNotification",{
+		Title = "Mp3 Package ";
+		Text = "Click here to download the .mp3 package for Krystal Dance V3, its not a virus i swear.";
+		Duration = 10;
+		Callback = Bindable,
+		Button1 = "Download Audios";
+	})
+
+task.wait(2)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 1;
+	Text = "Wait For the mp3 to finish downloading, then the script will run automatically."
+})
+
+task.wait(20)
+end
+
+
+
+
+
+
+
+
+
+
+
 loadstring(game:HttpGet("https://rawscripts.net/raw/Just-a-baseplate.-Just-A-Baseplate-Working-Reanimation-39126"))()
 task.wait(6.5)
     game:GetService("StarterGui"):SetCore("SendNotification", {
