@@ -1,18 +1,8 @@
-print("Krystal Dance V3 By Nitro-GT(Hemi), Modified By Paradigm/Theo!")
-print("Now With More Pages!")
-print("Press Right Alt!")
-
 task.wait(1.5)
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
 	Duration = 1;
 	Text = "This Script Was Made By Hemi, Modified By Paradigm!"
-})
-task.wait(1.5)
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Krystal Dance V3";
-	Duration = 1;
-	Text = "Press Right Alt For More Pages!")
 })
 task.wait(1.5)
     game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -739,10 +729,10 @@ elseif k == "n" then
         stopanim()
         dancing = true
         task.wait(.005)
-        sound69.SoundId = customasset("Dances/Down.mp3")
+        sound69.SoundId = customasset("Dances/Domino.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(111249002064299)
+        playanim(126683576461381,1.5)
     else
         stopanim()
         
@@ -1113,53 +1103,12 @@ elseif k == "minus" then
     sound69:Play()
     coolparticles.Parent = char.Torso
     playanim(10892540648,2.5)
+speed = 9
   else
   stopanim()
   end
         end 
 end
-
-if mode = newpage1 then -- Extra page!
-
-elseif k == "c" then
-  if dancing == false then
-    stopanim()
-    dancing = true
-    task.wait(.005)
-    sound69.SoundId = customasset("Dances/Doodle.mp3")
-        timeposcur = sound69.TimePosition 
-    sound69:Play()
-    coolparticles.Parent = char.Torso
-    playanim(137721173051346,1.5)
-   else
-  stopanim()
-
-    end
-  end
-end
-
-if mode = newpage then  --Extra Pages, Add Anything you want!
-
-
-elseif k == "q" then
- if mode == newpage1 then
-    mode = newpage
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Krystal Dance V3";
-	Duration = 2.5;
-	Text = "Default Page"
-})
- else
-    mode = newpage1
-  game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Krystal Dance V3";
-	Duration = 2.5;
-	Text = "New Pages!"
-})
-end
-end
-end
-
 if k == "equals" then 
     playbacktrack = not playbacktrack
     if dancing == false then 
@@ -1200,29 +1149,6 @@ if k == "m" then  --Modes
     end
 end
 end)
-
-if k == "rightalt" then
- if mode == newpage then
-    mode = 1
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Krystal Dance V3";
-	Duration = 2.5;
-	Text = "Default Page"
-})
- else
-    mode = newpage
-  game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Krystal Dance V3";
-	Duration = 2.5;
-	Text = "New Pages!"
-})
-end
-end
-end
-
-
-
-
 char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
 	if char.Humanoid.Sit == false then 
     if char.Humanoid.MoveDirection == Vector3.new(0,0,0) and dancing == false and idle == false then
