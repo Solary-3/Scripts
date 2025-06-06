@@ -1,8 +1,8 @@
 if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (not isfolder("Dances")) then
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Hey!";
-	Duration = 1;
-	Text = "This only shows up once if your a new user of this script or if the Dances folder is deleted."
+	Duration = 5;
+	Text = "This only shows up once if your a new user of this script!
 })
 task.wait(1)
 
