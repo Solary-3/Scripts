@@ -1,7 +1,7 @@
 if not isfolder("Dances") then
 	makefolder("Dances")
 end
-local HowMuch = 44
+local HowMuch = 48
 task.spawn(function()
 	warn("Downloading.")
 	task.wait(0.2)
@@ -243,6 +243,27 @@ if not isfile("Dances/rat.mp3") then
 	writefile("Dances/rat.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/rat.mp3?raw=true"))
 	warn("rat Downloaded! 44/"..tostring(HowMuch))
 end
+
+if not isfile("Dances/Egypt.mp3") then
+	writefile("Dances/Egypt.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Egypt.mp3?raw=true"))
+	warn("rat Downloaded! 45/"..tostring(HowMuch))
+end
+
+if not isfile("Dances/unlockit.mp3") then
+	writefile("Dances/unlockit.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/unlockit.mp3?raw=true"))
+	warn("rat Downloaded! 46/"..tostring(HowMuch))
+end
+
+if not isfile("Dances/Fein.mp3") then
+	writefile("Dances/Fein.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Fein.mp3?raw=true"))
+	warn("Fein Downloaded! 47/"..tostring(HowMuch))
+end
+
+if not isfile("Dances/Stock.mp3") then
+	writefile("Dances/Stock.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Stock.mp3?raw=true"))
+	warn("rat Downloaded! 44/"..tostring(HowMuch))
+end
+
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Service";
