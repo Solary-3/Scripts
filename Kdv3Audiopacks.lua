@@ -244,3 +244,8 @@ if not isfile("Dances/rat.mp3") then
 	warn("rat Downloaded! 44/"..tostring(HowMuch))
 end
 
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Service";
+	Duration = 1;
+	Text = "Audios Downloade!"
+})
