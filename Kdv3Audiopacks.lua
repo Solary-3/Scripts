@@ -1,7 +1,7 @@
 if not isfolder("Dances") then
 	makefolder("Dances")
 end
-local HowMuch = 25
+local HowMuch = 44
 task.spawn(function()
 	warn("Downloading.")
 	task.wait(0.2)
@@ -242,18 +242,5 @@ end
 if not isfile("Dances/rat.mp3") then
 	writefile("Dances/rat.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/rat.mp3?raw=true"))
 	warn("rat Downloaded! 44/"..tostring(HowMuch))
-
-
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Notification",
-	Text = "Songs Have been downloaded. Enjoy!",
-	Duration = 3
-})
-25/"..tostring(HowMuch))
 end
 
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Notification",
-	Text = "Songs Have been downloaded. Enjoy!",
-	Duration = 3
-})
