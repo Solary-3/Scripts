@@ -844,7 +844,7 @@ coolparticles.Parent = char.Torso
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(74512050800520,1.5)
+        playanim(84765927391240,1.5)
     else
         stopanim()
         
