@@ -12,12 +12,6 @@ local Bindable = Instance.new("BindableFunction")
 		Callback = Bindable,
 		Button1 = "Download Audios";
 	})
-task.wait(1.5)
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Hey!";
-	Duration = 5;
-	Text = "This only shows up once if your a new user of this script!
-})
 
 task.wait(2)
 game:GetService("StarterGui"):SetCore("SendNotification", {
