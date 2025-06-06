@@ -39,7 +39,7 @@ end
 
 if not isfile("Dances/bloodpop.mp3") then
 	writefile("Dances/bloodpop.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/bloodpop.mp3?raw=true"))
-	warn("Bloodpop Downloaded!6/"..tostring(HowMuch))
+	warn("Bloodpop Downloaded! 6/"..tostring(HowMuch))
 end
 
 if not isfile("Dances/Bumblebee.mp3") then
@@ -81,7 +81,7 @@ end
 
 if not isfile("Dances/Domino.mp3") then
 	writefile("Dances/Domino.mp3",
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Domin.mp3?raw=true"))
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Domino.mp3?raw=true"))
 	warn("Domino Downloaded! 14/"..tostring(HowMuch))
 end
 
