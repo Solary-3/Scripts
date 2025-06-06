@@ -10,9 +10,9 @@ task.spawn(function()
 	warn("Downloading...")
 end)
 
-if not isfile("Dances/A Hat in Time OST (Seal the Deal) Peace and Tranquility.mp3") then
-	writefile("Dances/A Hat in Time OST (Seal the Deal) Peace and Tranquility.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/A%20Hat%20in%20Time%20OST%20%(Seal%20The%20Deal)%20-%20Peace%20and%20Tranquility.mp3?raw=true"))
-	warn("A Hat in Time OST (Seal the Deal) Peace and Tranquility Downloaded! 1/"..tostring(HowMuch))
+if not isfile("Dances/A Hat in Time OST [Seal the Deal] Peace and Tranquility.mp3") then
+	writefile("Dances/A Hat in Time OST [Seal the Deal] Peace and Tranquility.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/A%20Hat%20in%20Time%20OST%20%5BSeal%20the%20Deal%5D%20-%20Peace%20and%20Tranquility.mp3?raw=true"))
+	warn("A Hat in Time OST [Seal the Deal] Peace and Tranquility Downloaded! 1/"..tostring(HowMuch))
 end
 
 if not isfile("Dances/Arcology On Permafrost.mp3") then
