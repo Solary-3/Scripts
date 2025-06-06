@@ -1,5 +1,12 @@
 if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (not isfolder("Dances")) then
-	local Bindable = Instance.new("BindableFunction")
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Hey!";
+	Duration = 1;
+	Text = "This onlh shows up once if your a new user of this script or if the Dances folder is deleted."
+})
+task.wait(1)
+
+local Bindable = Instance.new("BindableFunction")
 	local function Copy(e)
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))()
 		Bindable:Destroy()
@@ -19,9 +26,9 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Duration = 1;
 	Text = "Wait For the mp3 to finish downloading, then the script will run automatically."
 })
-
-end
 task.wait(150)
+end
+
 
 
 
