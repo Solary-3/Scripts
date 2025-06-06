@@ -21,7 +21,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 })
 
 end
-task.wait(60)
+task.wait(75)
 
 
 
