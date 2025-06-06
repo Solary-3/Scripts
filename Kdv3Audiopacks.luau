@@ -1,7 +1,7 @@
 if not isfolder("Dances") then
 	makefolder("Dances")
 end
-local HowMuch = 44
+local HowMuch = 25
 task.spawn(function()
 	warn("Downloading.")
 	task.wait(0.2)
