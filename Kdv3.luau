@@ -2,7 +2,7 @@ if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (no
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Hey!";
 	Duration = 1;
-	Text = "This onlh shows up once if your a new user of this script or if the Dances folder is deleted."
+	Text = "This only shows up once if your a new user of this script or if the Dances folder is deleted."
 })
 task.wait(1)
 
