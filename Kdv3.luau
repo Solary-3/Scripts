@@ -1,4 +1,10 @@
 if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (not isfolder("Dances")) then
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Hey!";
+	Duration = 5;
+	Text = "This Script only shows up once if your new to this."
+})
+task.wait(2)
 local Bindable = Instance.new("BindableFunction")
 	local function Copy(e)
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))()
