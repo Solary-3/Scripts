@@ -20,9 +20,8 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Text = "Wait For the mp3 to finish downloading, then the script will run automatically."
 })
 
-task.wait(20)
 end
-
+task.wait(60)
 
 
 
