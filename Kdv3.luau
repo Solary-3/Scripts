@@ -1,7 +1,7 @@
 if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (not isfolder("Dances")) then
 	local Bindable = Instance.new("BindableFunction")
 	local function Copy(e)
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.luau"))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))()
 		Bindable:Destroy()
 	end
 	Bindable.OnInvoke = Copy
