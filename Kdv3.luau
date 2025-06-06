@@ -1,4 +1,5 @@
 if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (not isfolder("Dances")) then
+
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Hey!";
 	Duration = 5;
