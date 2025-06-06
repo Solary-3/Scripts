@@ -21,11 +21,17 @@ local Bindable = Instance.new("BindableFunction")
 
 task.wait(2)
 game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Krystal Dance V3";
+	Title = "Service";
 	Duration = 1;
 	Text = "Wait For the mp3 to finish downloading, then the script will run automatically."
 })
 task.wait(200)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Service";
+	Duration = 1;
+	Text = "Audios Finished Downloading, Now Proceeding to reanimate."
+})
+task.wait(2)
 end
 
 
