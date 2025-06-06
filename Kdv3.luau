@@ -25,7 +25,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Duration = 1;
 	Text = "Wait For the mp3 to finish downloading, then the script will run automatically."
 })
-task.wait(150)
+task.wait(200)
 end
 
 
@@ -844,7 +844,7 @@ coolparticles.Parent = char.Torso
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(84765927391240,1.5)
+        playanim(84765927391240,2.5)
     else
         stopanim()
         
@@ -1072,7 +1072,7 @@ elseif k == "l" then
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(13012728861,5.5)
+        playanim(13012728861,10)
     else
         stopanim()
         
@@ -1082,7 +1082,7 @@ elseif k == "comma" then
         stopanim()
         dancing = true
         task.wait(.005)
-        sound69.SoundId = customasset("Dances/TUCA DONKA.mp3")
+        sound69.SoundId = customasset("Dances/TUNCA DONKA.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
@@ -1098,8 +1098,7 @@ elseif k == "p" then
        dancing = true
        task.wait(.005)
        sound69.SoundId = customasset("Dances/DO THE FLOP.mp3")
-        timeposcur = sound69.TimePosition 
-        --task.wait(1.59)
+        timeposcur = sound69.TimePosition
        sound69:play()
        coolparticles.Parent = char.Torso
        playanim(122878040721056)
@@ -1125,6 +1124,7 @@ elseif k == "c" then
 elseif k == "rightshift" then
   if dancing == false then
     stopanim()
+   dancing = true
     task.wait(.005)
     sound69.SoundId = customasset("Dances/CLUB PENGUIN DANCE.mp3")
         timeposcur = sound69.TimePosition 
@@ -1136,19 +1136,6 @@ elseif k == "rightshift" then
 
   end
 
-elseif k == "minus" then
-  if dancing == false then
-    stopanim()
-    task.wait(.005)
-    sound69.SoundId = customasset("Dances/test5.mp3")
-        timeposcur = sound69.TimePosition 
-    sound69:Play()
-    coolparticles.Parent = char.Torso
-    playanim(10892540648,2.5)
-speed = 9
-  else
-  stopanim()
-  end
         end 
 end
 if k == "equals" then 
