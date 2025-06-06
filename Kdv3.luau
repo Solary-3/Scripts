@@ -1042,7 +1042,7 @@ elseif k == "leftbracket" then
         stopanim()
         dancing = true
         task.wait(.005)
-        sound69.SoundId = customasset("Dances/A Hat in Time OST [Seal the Deal] - Peace and Tranquility.mp3")
+        sound69.SoundId = customasset("Dances/A Hat in Time OST (Seal the Deal) - Peace and Tranquility.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
