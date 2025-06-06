@@ -741,6 +741,7 @@ elseif k == "v" then
         sound69.SoundId = customasset("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
+coolparticles.Parent = char.Torso
         playanim(107578737342278,1.5)
     else
         stopanim()
@@ -755,6 +756,7 @@ elseif k == "c" then
         sound69.SoundId = customasset("Dances/Bumblebee.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
+coolparticles.Parent = char.Torso
         playanim(10048786578)
     else
         stopanim()
@@ -768,6 +770,7 @@ elseif k == "n" then
         sound69.SoundId = customasset("Dances/Domino.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
+coolparticles.Parent = char.Torso
         playanim(126683576461381,1.5)
     else
         stopanim()
