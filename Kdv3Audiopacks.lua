@@ -168,7 +168,7 @@ end
 if not isfile("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3") then
 	writefile("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Odetari%20-%20KEEP%20UP%20(Lyrics)%20(320kbps).mp3?raw=true"))
-	warn("Odetari - KEEP UP (Lyrics) (320kbps) Downloaded! 3p/"..tostring(HowMuch))
+	warn("Odetari - KEEP UP (Lyrics) (320kbps) Downloaded! 30/"..tostring(HowMuch))
 end
 
 if not isfile("Dances/order.mp3") then
@@ -230,8 +230,8 @@ if not isfile("Dances/XO.mp3") then
 end
 
 if not isfile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps.mp3") then
-	writefile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/xxanteria%2C%20isq%20-%20FUNKED%20UP%20(SLOWED)%20(320kbps).mp3?raw=true"))
-	warn("xxanteria, isq - FUNKED UP (SLOWED) (320kbps Downloaded! 42/"..tostring(HowMuch))
+	writefile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/xxanteria%2C%20isq%20-%20FUNKED%20UP%20(SLOWED)%20(320kbps).mp3?raw=true"))
+	warn("xxanteria, isq - FUNKED UP (SLOWED) (320kbps) Downloaded! 42/"..tostring(HowMuch))
 end
 
 if not isfile("Dances/ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES.mp3") then
