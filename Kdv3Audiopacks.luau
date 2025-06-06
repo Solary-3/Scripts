@@ -242,7 +242,7 @@ end
 
 if not isfile("Dances/rat.mp3") then
 	writefile("Dances/rat.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/rat.mp3?raw=true"))
-	warn("XO Downloaded! 44/"..tostring(HowMuch))
+	warn("rat Downloaded! 44/"..tostring(HowMuch))
 end
 
 
