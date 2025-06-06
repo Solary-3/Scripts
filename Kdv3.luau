@@ -565,7 +565,7 @@ task.wait(.005)
 	sound69.PlaybackSpeed = 1
 	timeposcur = sound69.TimePosition 
 sound69:Play()
-	playanim(112844131485001,3.5)
+	playanim(75148929064618,3.5)
 else
 	stopanim()
 	sound69.PlaybackSpeed = 1
@@ -591,14 +591,13 @@ sound69:Play()
 stopanim()
 dancing = true
 task.wait(.005)
-sound69.SoundId = customasset("Dances/sturdy.mp3")
+sound69.SoundId = customasset("Dances/Egypt.mp3")
 sound69.PlaybackSpeed = 1
 timeposcur = sound69.TimePosition 
 sound69:Play()
-playanim(100864643591096)
+playanim(959861355484589,15)
 		else
 stopanim()
-sound69.PlaybackSpeed = 1
 
 end
     elseif k == "u" then 
@@ -621,11 +620,10 @@ elseif k == "f" then
         stopanim()
 dancing = true
 task.wait(.005)
-        sound69.SoundId = customasset("Dances/billy.mp3")
-        char.Humanoid.WalkSpeed = 4*char:GetScale()
+        sound69.SoundId = customasset("Dances/Stock.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(18945296583)
+        playanim(86067433847393,1.5)
     else
         stopanim()
         
@@ -648,10 +646,10 @@ elseif k == "p" then
         stopanim()
 dancing = true
 task.wait(.005)
-        sound69.SoundId = customasset("Dances/pogo.mp3")
+        sound69.SoundId = customasset("Dances/Fein.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(8829798048,1.5)
+        playanim(115727639577589,1.5)
     else
         stopanim()
         
@@ -859,10 +857,10 @@ if mode == 2 then
         stopanim()
         dancing = true
         task.wait(.005)
-        sound69.SoundId = customasset("Dances/XO.mp3")
+        sound69.SoundId = customasset("Dances/unlockit.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(73559770055600)
+        playanim(95877864781663,1.5)
     else
         stopanim()
         
