@@ -7,7 +7,7 @@ if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (no
 	Bindable.OnInvoke = Copy
 	game.StarterGui:SetCore("SendNotification",{
 		Title = "Mp3 Package ";
-		Text = "Click here to download the .mp3 package for Krystal Dance V3, its not a virus i swear.";
+		Text = "Click the download button to download the .mp3 package for Krystal Dance V3, its not a virus i swear.";
 		Duration = 10;
 		Callback = Bindable,
 		Button1 = "Download Audios";
