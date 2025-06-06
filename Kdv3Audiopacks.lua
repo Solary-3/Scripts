@@ -230,16 +230,18 @@ if not isfile("Dances/XO.mp3") then
 end
 
 if not isfile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps.mp3") then
-	writefile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps.mp3",
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/xxanteria%2C%20isq%20-%20FUNKED%20UP%20(SLOWED)%20(320kbps).mp3?raw=true"))
-	warn("xxanteria, isq - FUNKED UP (SLOWED) (320kbps Downloaded!
-	42/"..tostring(HowMuch))
+	writefile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/xxanteria%2C%20isq%20-%20FUNKED%20UP%20(SLOWED)%20(320kbps).mp3?raw=true"))
+	warn("xxanteria, isq - FUNKED UP (SLOWED) (320kbps Downloaded! 42/"..tostring(HowMuch))
 end
 
 if not isfile("Dances/ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES.mp3") then
 	writefile("Dances/ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/%D0%A2%D0%A0%D0%98%20%D0%9F%D0%9E%D0%9B%D0%9E%D0%A1%D0%9A%D0%98%20%E2%A7%B8%20KOLM%20TRIIPU%20%E2%A7%B8%20THREE%20STRIPES.mp3?raw=true"))
 	warn("ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES Downloaded! 43/"..tostring(HowMuch))
 end
+
+if not isfile("Dances/rat.mp3") then
+	writefile("Dances/rat.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/rat.mp3?raw=true"))
+	warn("rat Downloaded! 44/"..tostring(HowMuch))
 
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
