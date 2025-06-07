@@ -25,7 +25,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Duration = 1;
 	Text = "Wait For the mp3 to finish downloading, then the script will run automatically."
 })
-task.wait(200)
+task.wait(120)
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Service";
 	Duration = 1;
