@@ -232,7 +232,8 @@ if not isfile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps.mp3") then
 end
 
 if not isfile("Dances/ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES.mp3") then
-	writefile("Dances/ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/%D0%A2%D0%A0%D0%98%20%D0%9F%D0%9E%D0%9B%D0%9E%D0%A1%D0%9A%D0%98%20%E2%A7%B8%20KOLM%20TRIIPU%20%E2%A7%B8%20THREE%20STRIPES.mp3?raw=true"))
+	writefile("Dances/ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/%D0%A2%D0%A0%D0%98%20%D0%9F%D0%9E%D0%9B%D0%9E%D0%A1%D0%9A%D0%98%20%E2%A7%B8%20KOLM%20TRIIPU%20%E2%A7%B8%20THREE%20STRIPES.mp3?raw=true"))
 	warn("ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES Downloaded!")
 end
 
@@ -243,23 +244,27 @@ if not isfile("Dances/rat.mp3") then
 end
 
 if not isfile("Dances/Egypt.mp3") then
-	writefile("Dances/Egypt.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Egypt.mp3?raw=true"))
+	writefile("Dances/Egypt.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Egypt.mp3?raw=true"))
 	warn("rat Downloaded!")
 end
 
 if not isfile("Dances/unlockit.mp3") then
-	writefile("Dances/unlockit.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/unlockit.mp3?raw=true"))
+	writefile("Dances/unlockit.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/unlockit.mp3?raw=true"))
 	warn("unlockit Downloaded!")
 end
 
 if not isfile("Dances/Fein.mp3") then
-	writefile("Dances/Fein.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Fein.mp3?raw=true"))
+	writefile("Dances/Fein.mp3",
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Fein.mp3?raw=true"))
 	warn("Fein Downloaded!")
 end
 
 if not isfile("Dances/Stock.mp3") then
-	writefile("Dances/Stock.mp3", game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Stock.mp3?raw=true"))
-	warn("rat Downloaded!
+	writefile("Dances/Stock.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Stock.mp3?raw=true"))
+	warn("rat Downloaded!")
 end
 
 
