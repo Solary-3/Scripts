@@ -672,21 +672,7 @@ sound69:Play()
         stopanim()
         
     end
-elseif k == "k" then 
-    if dancing == false then 
-        stopanim()
-        dancing = true
-        task.wait(.005)
-        sound69.SoundId = customasset("Dances/dr.wav")
-        char.Humanoid.WalkSpeed = 4*char:GetScale()
-        timeposcur = sound69.TimePosition 
-sound69:Play()
-        playanim(12637912409,2)
-    else
-        char.Humanoid.WalkSpeed = 14*char:GetScale()
-        stopanim()
-        
-    end
+
 elseif k == "l" then 
     if dancing == false then 
         stopanim()
@@ -813,7 +799,7 @@ sound69:Play()
         stopanim()
         
     end
-elseif k == "rightalt" then 
+elseif k == "k" then 
     if dancing == false then 
         stopanim()
         dancing = true
