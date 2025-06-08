@@ -734,7 +734,7 @@ elseif k == "h" then
         stopanim()
         dancing = true
         task.wait(.005)
-        sound69.SoundId = customasset("Dances/Step.mp3")
+        sound69.SoundId = customasset("Dances/doodle - Zachz Winner.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
         playanim(124074233795203,1.5)
