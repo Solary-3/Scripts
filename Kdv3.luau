@@ -850,7 +850,7 @@ coolparticles.Parent = char.Torso
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(84765927391240,2.5)
+        playanim(74512050800520,1.5)
     else
         stopanim()
         
@@ -1046,7 +1046,7 @@ elseif k == "leftbracket" then
         stopanim()
         dancing = true
         task.wait(.005)
-        sound69.SoundId = customasset("Dances/A Hat in Time OST (Seal the Deal) - Peace and Tranquility.mp3")
+        sound69.SoundId = customasset("Dances/A Hat in Time OST [Seal the Dea] - Pace and Tranquility.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
