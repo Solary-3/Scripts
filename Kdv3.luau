@@ -735,9 +735,11 @@ elseif k == "h" then
         task.wait(.005)
         sound69.SoundId = customasset("Dances/doodle - Zachz Winner.mp3")
         timeposcur = sound69.TimePosition 
+         char.Humanoid.WalkSpeed = 7*char:GetScale()
 sound69:Play()
         playanim(124074233795203,1.5)
     else
+    char.Humanoid.WalkSpeed = 14*char:GetScale()
         stopanim()
         
     end
