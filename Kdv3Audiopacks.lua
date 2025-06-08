@@ -93,22 +93,10 @@ if not isfile("Dances/doodle - Zachz Winner.mp3") then
 	warn("doodle - Zachz Winner Downloaded!")
 end
 
-if not isfile("Dances/Down.mp3") then
-	writefile("Dances/Down.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Down.mp3?raw=true"))
-	warn("Down Downloaded!")
-end
-
 if not isfile("Dances/dr.wav") then
 	writefile("Dances/dr.wav",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/dr.wav?raw=true"))
 	warn("dr Downloaded!")
-end
-
-if not isfile("Dances/drip.mp3") then
-	writefile("Dances/drip.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/drip.mp3?raw=true"))
-	warn("drip Downloaded!")
 end
 
 if not isfile("Dances/faster.ogg") then
@@ -165,28 +153,10 @@ if not isfile("Dances/lux.ogg") then
 	warn("lux Downloaded!")
 end
 
-if not isfile("Dances/Mystery.mp3") then
-	writefile("Dances/Mystery.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Mystery.mp3?raw=true"))
-	warn("Mystery Downloaded!")
-end
-
 if not isfile("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3") then
 	writefile("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Odetari%20-%20KEEP%20UP%20(Lyrics)%20(320kbps).mp3?raw=true"))
 	warn("Odetari - KEEP UP (Lyrics) (320kbps) Downloaded!")
-end
-
-if not isfile("Dances/order.mp3") then
-	writefile("Dances/order.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/order.mp3?raw=true"))
-	warn("order Downloaded!")
-end
-
-if not isfile("Dances/pogo.mp3") then
-	writefile("Dances/pogo.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/pogo.mp3?raw=true"))
-	warn("pogo Downloaded!")
 end
 
 if not isfile("Dances/Pp music.mp3") then
@@ -199,12 +169,6 @@ if not isfile("Dances/Shuba Duck.mp3") then
 	writefile("Dances/Shuba Duck.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Shuba%20Duck.mp3?raw=true"))
 	warn("Shuba duck Downloaded!")
-end
-
-if not isfile("Dances/true_heart.mp3") then
-	writefile("Dances/true_heart.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/true_heart.mp3?raw=true"))
-	warn("true_heart Downloaded!")
 end
 
 if not isfile("Dances/tryna.mp3") then
@@ -265,6 +229,36 @@ if not isfile("Dances/Stock.mp3") then
 	writefile("Dances/Stock.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Stock.mp3?raw=true"))
 	warn("rat Downloaded!")
+end
+
+if not isfile("Dances/Bjean.mp3") then
+	writefile("Dances/Bjean.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Bjean.mp3?raw=true"))
+	warn("Bjean Downloaded!")
+end
+
+if not isfile("Dances/Yamero.mp3") then
+	writefile("Dances/Yamero.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Yamero.mp3?raw=true"))
+	warn("Yamero Downloaded!")
+end
+
+if not isfile("Dances/Crank.mp3") then
+	writefile("Dances/Crank.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Crank.mp3?raw=true"))
+	warn("Crank Downloaded!")
+end
+
+if not isfile("Dances/InternetAngel.mp3") then
+	writefile("Dances/InternetAngel.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/InternetAngel.mp3?raw=true"))
+	warn("InternetAngel Downloaded!")
+end
+
+if not isfile("Dances/SmoothMoves.mp3") then
+	writefile("Dances/SmoothMoves.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/SmoothMoves.mp3?raw=true"))
+	warn("SmoothMoves Downloaded!")
 end
 
 
