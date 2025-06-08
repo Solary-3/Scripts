@@ -808,12 +808,12 @@ elseif k == "leftbracket" then
         sound69.SoundId = customasset("Dances/Crank.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(139148388599834,1.5)
+        playanim(139148388599834,2)
     else
         stopanim()
         
     end
-elseif k == "quote" then 
+elseif k == "rightalt" then 
     if dancing == false then 
         stopanim()
         dancing = true
@@ -880,7 +880,7 @@ sound69:Play()
         sound69.SoundId = customasset("Dances/InternetAngel.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(93104787213396,1.5)
+        playanim(93104787213396,2.5)
     else
         stopanim()
         
