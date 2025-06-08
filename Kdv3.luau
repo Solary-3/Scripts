@@ -583,7 +583,6 @@ stopanim()
 dancing = true
 task.wait(.005)
 sound69.SoundId = customasset("Dances/Bjean.mp3")
-sound69.PlaybackSpeed = 2
 timeposcur = sound69.TimePosition 
 sound69:Play()
 playanim(108805310510119,1.5)
@@ -601,7 +600,7 @@ sound69.SoundId = customasset("Dances/Egypt.mp3")
 sound69.PlaybackSpeed = 1
 timeposcur = sound69.TimePosition 
 sound69:Play()
-playanim(95986135548450,1.5)
+playanim(95986135548450,2)
 		else
 stopanim()
 
