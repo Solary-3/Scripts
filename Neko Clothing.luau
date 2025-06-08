@@ -23,4 +23,20 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 
 task.wait(3.5)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(" -net")
- 
+
+
+task.wait(2)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Neko";
+	Duration = 1;
+	Text = "Now Executing script"
+})
+task.wait(.9)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Neko";
+	Duration = 1;
+	Text = "Make Sure your walking when the scriot6is executing"
+})
+
+task.wait(2.5)
+loadstring(game:HttpGet("https://pastefy.app/gHRJrLLX/raw"))()
