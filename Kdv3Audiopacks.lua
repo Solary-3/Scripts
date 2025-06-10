@@ -1,4 +1,4 @@
-local Kdv3Global = (getgenv and getgenv()) or shared
+
 if not isfolder("Dances") then
 	makefolder("Dances")
 end
@@ -267,8 +267,11 @@ if not isfile("Dances/MioHonda.mp3") then
 	warn("MioHonda Downloaded!")
 end
 
-game:GetService("StarterGui"):SetCore("SendNotification", { Title = "Service"; Duration = 1; Text = "Audios Downloaded!" })
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+		Title = "Service"; 
+		Duration = 1; 
+		Text = "Audios Downloaded!" 
+	})
 
-local Done = game:GetService("StarterGui"):SetCore("SendNotification", { Title = "Service"; Duration = 1; Text = "Audios Downloaded!" })
 
 
