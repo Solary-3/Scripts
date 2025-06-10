@@ -1,49 +1,8 @@
-if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (not isfolder("Dances")) then
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Hey!";
-	Duration = 5;
-	Text = "This Script only shows up once if your new to this."
-})
-task.wait(2)
-local Bindable = Instance.new("BindableFunction")
-	local function Copy(e)
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))()
-		Bindable:Destroy()
-	end
-	Bindable.OnInvoke = Copy
-	game.StarterGui:SetCore("SendNotification",{
-		Title = "Mp3 Package ";
-		Text = "Click the download button to download the .mp3 package for Krystal Dance V3, its not a virus i swear.";
-		Duration = 10;
-		Callback = Bindable,
-		Button1 = "Download Audios";
-	})
-
-task.wait(2)
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Service";
-	Duration = 1;
-	Text = "Wait For the mp3 to finish downloading, then the script will run automatically."
-})
-task.wait(180)
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Service";
-	Duration = 1;
-	Text = "Audios Finished Downloading, Now Proceeding to reanimate."
-})
-task.wait(2)
+if not isfolder("Dances") then 
+    makefolder("Dances")
 end
-
-
-
-
-
-
-
-
-
-
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))() 
+task.wait(180)
 loadstring(game:HttpGet("https://rawscripts.net/raw/Just-a-baseplate.-Just-A-Baseplate-Working-Reanimation-39126"))()
 task.wait(6.5)
     game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -59,9 +18,7 @@ task.wait(1.5)
 })
 task.wait(1.5)
 --Krystal Dance V3, Made by Hemi (es muy janky)
-if not isfolder("Dances") then 
-    makefolder("Dances")
-    end
+
 local is = game:GetService("InsertService")
 local idleanim = game:GetObjects("rbxassetid://95706831570411")[1]
 local walkanim = game:GetObjects("rbxassetid://130213485744288")[1]
@@ -237,7 +194,7 @@ end
             idle = false
            end
 		if speed == nil then 
-			speed = 1.5
+			speed = 1
 		end
         if dancing == true then 
             idle = false 
