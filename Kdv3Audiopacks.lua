@@ -162,7 +162,7 @@ end
 if not isfile("Dances/Pp music.mp3") then
 	writefile("Dances/Pp music.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pp%20music.mp3?raw=true"))
-	warn("Pp music Downloaded! 33/"..tostring(HowMuch))
+	warn("Pp music Downloaded!")
 end
 
 if not isfile("Dances/Shuba Duck.mp3") then
@@ -210,7 +210,7 @@ end
 if not isfile("Dances/Egypt.mp3") then
 	writefile("Dances/Egypt.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Egypt.mp3?raw=true"))
-	warn("rat Downloaded!")
+	warn("Egypt Downloaded!")
 end
 
 if not isfile("Dances/unlockit.mp3") then
@@ -228,7 +228,7 @@ end
 if not isfile("Dances/Stock.mp3") then
 	writefile("Dances/Stock.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Stock.mp3?raw=true"))
-	warn("rat Downloaded!")
+	warn("Stock Downloaded!")
 end
 
 if not isfile("Dances/Bjean.mp3") then
