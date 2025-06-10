@@ -242,7 +242,7 @@ end
             idle = false
            end
 		if speed == nil then 
-			speed = 1
+			speed = 1.25
 		end
         if dancing == true then 
             idle = false 
@@ -1149,10 +1149,10 @@ sound69:Play()
   end 
 end
 if mode == 3 then
-elseif k == "q" then 
+if k == "q" then 
     if dancing == false then 
         stopanim()
-dancing = true
+  dancing = true
 task.wait(.005)
         sound69.SoundId = customasset("Dances/MioHonda.mp3")
         timeposcur = sound69.TimePosition 
@@ -1163,7 +1163,7 @@ sound69:Play()
 end
 end
 if mode == 4 then
-elseif k == "e" then 
+if k == "e" then 
     if dancing == false then 
         stopanim()
 dancing = true
