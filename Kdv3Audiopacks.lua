@@ -272,4 +272,4 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Duration = 1;
 	Text = "Audios Downloade!"
 })
-local Finish = end
+local Finish = Finish
