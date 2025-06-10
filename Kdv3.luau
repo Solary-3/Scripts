@@ -25,7 +25,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Duration = 1;
 	Text = "Wait For the mp3 to finish downloading, then the script will run automatically."
 })
-task.wait(150)
+task.wait(180)
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Service";
 	Duration = 1;
@@ -49,7 +49,7 @@ task.wait(6.5)
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
 	Duration = 1;
-	Text = "This Script Was Made By Hemi, Modified By Paradigm!"
+	Text = "This Script Was Made By Hemi, Modified By Paradigm!/Theo"
 })
 task.wait(1.5)
     game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -1128,9 +1128,53 @@ elseif k == "rightshift" then
   stopanim()
 
   end
-
-        end 
+elseif k == "v" then 
+    if dancing == false then 
+        stopanim()
+dancing = true
+task.wait(.005)
+        sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+        playanim(97072681531610,1.5)
+    else
+        stopanim()
+        
+    end
+  end 
 end
+if mode == 3 then
+elseif k == "q" then 
+    if dancing == false then 
+        stopanim()
+dancing = true
+task.wait(.005)
+        sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+        playanim(97072681531610,1.5)
+    else
+        stopanim()
+end
+end
+end
+if mode == 4 then
+elseif k == "q" then 
+    if dancing == false then 
+        stopanim()
+dancing = true
+task.wait(.005)
+        sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+        playanim(97072681531610,1.5)
+    else
+        stopanim()
+end
+end
+end
+
+
 if k == "equals" then 
     playbacktrack = not playbacktrack
     if dancing == false then 
@@ -1153,21 +1197,34 @@ if k == "equals" then
     end
 end
 if k == "m" then  --Modes
-    if mode == 2 then 
+    if mode == 3 then 
+mode = 4
+  game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 5;
+	Text = "Page 4"
+})
+elseif mode == 2 then
+    mode = 3 
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 5;
+	Text = "Page 3"
+})
+elseif mode == 1 then
+        mode = 2 
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 5;
+	Text = "Page 2"
+})
+elseif mode == 4 then 
     mode = 1
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
-	Duration = 2.5;
+	Duration = 5;
 	Text = "Page 1"
 })
-    else
-       mode = 2
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Krystal Dance V3";
-	Duration = 2.5;
-	Text = "Page 2"
-})
-
     end
 end
 end)
