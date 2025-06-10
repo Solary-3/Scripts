@@ -26,18 +26,18 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Duration = 1;
 	Text = "Wait For the mp3 to finish downloading, then the script will run automatically."
 })
-
-task.wait(180)
-end
-
-
+task.wait(1.500)
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Service";
 	Duration = 1;
 	Text = "Audios Finished Downloading, Now Proceeding to reanimate."
 })
-task.wait(1.500)
+task.wait(180)
+end
 
+
+
+task.wait(1.500)
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
 	Duration = 1;
@@ -1163,7 +1163,7 @@ sound69:Play()
 end
 end
 if mode == 4 then
-elseif k == "q" then 
+elseif k == "e" then 
     if dancing == false then 
         stopanim()
 dancing = true
