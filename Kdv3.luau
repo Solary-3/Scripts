@@ -1161,6 +1161,19 @@ sound69:Play()
     else
         stopanim()
 end
+elseif k == "e" then 
+    if dancing == false then 
+        stopanim()
+  dancing = true
+task.wait(.005)
+        sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+        playanim(97072681531610,1.5)
+    else
+        stopanim()
+end
+end
 end
 if mode == 4 then
 if k == "e" then 
@@ -1175,8 +1188,20 @@ sound69:Play()
     else
         stopanim()
 end
+elseif k == "q" then 
+    if dancing == false then 
+        stopanim()
+  dancing = true
+task.wait(.005)
+        sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+        playanim(97072681531610,1.5)
+    else
+        stopanim()
 end
-
+end
+end
 
 if k == "equals" then 
     playbacktrack = not playbacktrack
