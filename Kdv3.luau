@@ -1157,7 +1157,6 @@ sound69:Play()
         stopanim()
 end
 end
-end
 if mode == 4 then
 elseif k == "q" then 
     if dancing == false then 
@@ -1170,7 +1169,6 @@ sound69:Play()
         playanim(97072681531610,1.5)
     else
         stopanim()
-end
 end
 end
 
