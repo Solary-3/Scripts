@@ -1,22 +1,43 @@
-if not isfolder("Dances") then 
-    makefolder("Dances")
-end
+if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (not isfolder("Dances")) then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))() 
+task.wait(2)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 1;
+	Text = "Please Wait for about 3 mins for the audio to finish downloading."
+})
+end
 task.wait(180)
+local wait = task.wait()
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 1;
+	Text = "Checking Updates..."
+})
+wait = 2
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))() 
+-- Automatically Downloads Updates ^
+                                   |
+local wait = task.wait()
+wait = 2
 loadstring(game:HttpGet("https://rawscripts.net/raw/Just-a-baseplate.-Just-A-Baseplate-Working-Reanimation-39126"))()
-task.wait(6.5)
+wait = 6
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
 	Duration = 1;
-	Text = "This Script Was Made By Hemi, Modified By Paradigm!/Theo"
+	Text = "This Script Was Made By Hemi, Modified By Paradigm/Theo"
 })
-task.wait(1.5)
+wait = 2
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
 	Duration = 1;
 	Text = "Krystal Dance V3 On Top! Enjoy!"
 })
-task.wait(1.5)
+
+
+
+
+wait = 1.5
 --Krystal Dance V3, Made by Hemi (es muy janky)
 
 local is = game:GetService("InsertService")
