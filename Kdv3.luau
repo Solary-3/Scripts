@@ -1,19 +1,39 @@
-if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (not isfolder("Dances")) then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))() 
-task.wait(2)
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Krystal Dance V3";
-	Duration = 1;
-	Text = "Please Wait for about 3 mins for the audio to finish downloading."
-})
-end
-task.wait(180)
 local wait = task.wait()
+if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (not isfolder("Dances")) then
 game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Krystal Dance V3";
-	Duration = 1;
-	Text = "Checking Updates..."
+	Title = "Hey!";
+	Duration = 5;
+	Text = "This Script only shows up once if your new to this."
 })
+wait = 2
+local Bindable = Instance.new("BindableFunction")
+	local function Copy(e)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))()
+		Bindable:Destroy()
+	end
+	Bindable.OnInvoke = Copy
+	game.StarterGui:SetCore("SendNotification",{
+		Title = "Mp3 Package ";
+		Text = "Click the download button to download the .mp3 package for Krystal Dance V3, its not a virus i swear.";
+		Duration = 10;
+		Callback = Bindable,
+		Button1 = "Download Audios";
+	})
+
+wait = 2
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Service";
+	Duration = 1;
+	Text = "Wait For the mp3 to finish downloading, then the script will run automatically."
+})
+wait = 180
+end
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Service";
+	Duration = 1;
+	Text = "Audios Finished Downloading, Now Proceeding to reanimate."
+})
+
 wait = 2
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))() 
 -- Automatically Downloads Updates    ^
