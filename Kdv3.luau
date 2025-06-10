@@ -5,7 +5,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Duration = 5;
 	Text = "This Script only shows up once if your new to this."
 })
-wait = 2
+wait(1.500)
 local Bindable = Instance.new("BindableFunction")
 	local function Copy(e)
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))()
@@ -20,33 +20,42 @@ local Bindable = Instance.new("BindableFunction")
 		Button1 = "Download Audios";
 	})
 
-wait = 2
+wait(1.500)
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Service";
 	Duration = 1;
 	Text = "Wait For the mp3 to finish downloading, then the script will run automatically."
 })
-wait = 180
+
+wait(180)
 end
+
+
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Service";
 	Duration = 1;
 	Text = "Audios Finished Downloading, Now Proceeding to reanimate."
 })
+wait(1.500)
 
-wait = 2
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 1;
+	Text = "Checking Updates..."
+})
+wait(1.500)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))() 
--- Automatically Downloads Updates    ^
-                                    --|
-wait = 2
+-- Automatically Downloads Updates ^
+                                ---  |
+wait(1.500)
 loadstring(game:HttpGet("https://rawscripts.net/raw/Just-a-baseplate.-Just-A-Baseplate-Working-Reanimation-39126"))()
-wait = 6
+wait(6)
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
 	Duration = 1;
 	Text = "This Script Was Made By Hemi, Modified By Paradigm/Theo"
 })
-wait = 2
+wait(1.500)
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
 	Duration = 1;
@@ -55,8 +64,7 @@ wait = 2
 
 
 
-
-wait = 1.5
+wait(1.500)
 --Krystal Dance V3, Made by Hemi (es muy janky)
 
 local is = game:GetService("InsertService")
