@@ -1,3 +1,4 @@
+local Kdv3Global = (getgenv and getgenv()) or shared
 if not isfolder("Dances") then
 	makefolder("Dances")
 end
@@ -238,7 +239,7 @@ if not isfile("Dances/Bjean.mp3") then
 end
 
 if not isfile("Dances/Yamero.mp3") then
-	writefile("Dances/Yamero.mp3", 
+	writefile("Dances/Yamero.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Yamero.mp3?raw=true"))
 	warn("Yamero Downloaded!")
 end
@@ -266,10 +267,8 @@ if not isfile("Dances/MioHonda.mp3") then
 	warn("MioHonda Downloaded!")
 end
 
+game:GetService("StarterGui"):SetCore("SendNotification", { Title = "Service"; Duration = 1; Text = "Audios Downloaded!" })
 
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Service";
-	Duration = 1;
-	Text = "Audios Downloade!"
-})
-local Finish = Finish
+local Done = game:GetService("StarterGui"):SetCore("SendNotification", { Title = "Service"; Duration = 1; Text = "Audios Downloaded!" })
+
+
