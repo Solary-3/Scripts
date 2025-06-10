@@ -18,7 +18,6 @@ wait = 2
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))() 
 -- Automatically Downloads Updates ^
                                    |
-local wait = task.wait()
 wait = 2
 loadstring(game:HttpGet("https://rawscripts.net/raw/Just-a-baseplate.-Just-A-Baseplate-Working-Reanimation-39126"))()
 wait = 6
