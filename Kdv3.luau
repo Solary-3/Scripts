@@ -61,6 +61,24 @@ task.wait(1.500)
 	Duration = 1;
 	Text = "Krystal Dance V3 On Top! Enjoy!"
 })
+task.wait(1.950)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 4;
+	Text = "If your Experiencing lag issues..."
+})
+task.wait(1.250)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 4;
+	Text = "This wasn't meant to run low performing devices"
+})
+task.wait(.900)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 4;
+	Text = "Use it at your will..."
+})
 
 
 
