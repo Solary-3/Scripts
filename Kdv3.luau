@@ -155,6 +155,18 @@ rtrnv=i
 	end
 	return(rtrnv)
 end
+
+if _K.saved then
+local Kd = deserializeTable(_K.saved)
+Kd = ['Speed']
+end
+
+
+
+
+
+
+
 local function wait2(tim)
 	if tim<0.1 then
 		game:GetService("RunService").Heartbeat:Wait()
@@ -263,7 +275,7 @@ end
             idle = false
            end
 		if speed == nil then 
-			speed = 1.2
+			speed = ['Speed']
 		end
         if dancing == true then 
             idle = false 
