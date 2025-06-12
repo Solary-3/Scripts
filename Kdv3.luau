@@ -567,7 +567,7 @@ task.wait(.005)
 		    timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-		    playanim(98260902889120)
+		    playanim(98260902889120_G.SpeedAll)
 		else
 	        stopanim()
 		end
@@ -581,7 +581,7 @@ timeposcur = sound69.TimePosition
 sound69:Play()
 sound69.Volume = .75
 coolparticles.Parent = char.Torso
-playanim(16769959846)
+playanim(16769959846_G.SpeedAll)
 		else
 stopanim()
 
@@ -595,7 +595,7 @@ task.wait(.005)
 	sound69.PlaybackSpeed = 1
 	timeposcur = sound69.TimePosition 
 sound69:Play()
-	playanim(75148929064618,3.5)
+	playanim(75148929064618,_G.SpeedAssump)
 else
 	stopanim()
 	sound69.PlaybackSpeed = 1
@@ -609,7 +609,7 @@ task.wait(.005)
 sound69.SoundId = customasset("Dances/Bjean.mp3")
 timeposcur = sound69.TimePosition 
 sound69:Play()
-playanim(108805310510119,1.5)
+playanim(108805310510119,_G.SpeedBJ)
 	else
 stopanim()
 sound69.PlaybackSpeed = 1
