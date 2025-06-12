@@ -47,6 +47,8 @@ task.wait(1.500)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))() 
 -- Automatically Downloads Updates ^
                                 ---  |
+task.wait(.1)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 task.wait(1.500)
 loadstring(game:HttpGet("https://rawscripts.net/raw/Just-a-baseplate.-Just-A-Baseplate-Working-Reanimation-39126"))()
 task.wait(6)
@@ -79,6 +81,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Duration = 4;
 	Text = "Use it at your will..."
 })
+
 
 
 
@@ -260,7 +263,7 @@ end
             idle = false
            end
 		if speed == nil then 
-			speed = 1.15
+			speed = 1.2
 		end
         if dancing == true then 
             idle = false 
