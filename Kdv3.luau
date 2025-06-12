@@ -84,7 +84,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 
 if _G.saved then
 local Kd = deserializeTable(_G.saved)
-Kd = 'Speed'
+Kd = Speed
 end
 
 
@@ -268,7 +268,7 @@ end
             idle = false
            end
 		if speed == nil then 
-			speed = 'Speed'
+			speed = Speed
 		end
         if dancing == true then 
             idle = false 
