@@ -156,8 +156,8 @@ rtrnv=i
 	return(rtrnv)
 end
 
-if _K.saved then
-local Kd = deserializeTable(_K.saved)
+if _G.saved then
+local Kd = deserializeTable(_G.saved)
 Kd = ['Speed']
 end
 
