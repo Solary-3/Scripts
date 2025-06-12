@@ -1,3 +1,7 @@
+if _G.saved then
+local Kd = deserializeTable(_G.saved)
+Kd = ['Speed']
+end
 
 if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (not isfolder("Dances")) then
 game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -156,17 +160,6 @@ rtrnv=i
 	return(rtrnv)
 end
 
-if _G.saved then
-local Kd = deserializeTable(_G.saved)
-Kd = ['Speed']
-end
-
-
-
-
-
-
-
 local function wait2(tim)
 	if tim<0.1 then
 		game:GetService("RunService").Heartbeat:Wait()
@@ -256,6 +249,7 @@ end
             local nt 
             local rjt
 	local function playanim(id,speed,isadance,custominstance)
+        local Speed = speed
         playanother = true 
         loopsplaying+=1
         if legitjustran == true then return end
