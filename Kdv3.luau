@@ -1,7 +1,3 @@
-if _G.saved then
-local Kd = deserializeTable(_G.saved)
-Kd = ['Speed']
-end
 
 if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (not isfolder("Dances")) then
 game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -86,7 +82,10 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Text = "Use it at your will..."
 })
 
-
+if _G.saved then
+local Kd = deserializeTable(_G.saved)
+Kd = ['Speed']
+end
 
 
 task.wait(1.500)
