@@ -82,12 +82,6 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Text = "Use it at your will..."
 })
 
-if _G.saved then
-local Kd = deserializeTable(_G.saved)
-Kd = Speed
-end
-
-
 task.wait(1.500)
 --Krystal Dance V3, Made by Hemi (es muy janky)
 
@@ -248,7 +242,6 @@ end
             local nt 
             local rjt
 	local function playanim(id,speed,isadance,custominstance)
-        local Speed = speed
         playanother = true 
         loopsplaying+=1
         if legitjustran == true then return end
@@ -268,7 +261,7 @@ end
             idle = false
            end
 		if speed == nil then 
-			speed = Speed
+			speed = _G.Speed
 		end
         if dancing == true then 
             idle = false 
