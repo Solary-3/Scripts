@@ -81,7 +81,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Duration = 4;
 	Text = "Use it at your will..."
 })
-
+_G.Loaded = true
 task.wait(1.500)
 --Krystal Dance V3, Made by Hemi (es muy janky)
 
