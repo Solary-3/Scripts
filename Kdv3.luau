@@ -141,6 +141,29 @@ local maxcount2;
 local walking = false
 local idle = false
 local RunService = game:GetService("RunService")
+local C3 = {N=Color3.new,RGB=Color3.fromRGB,HSV=Color3.fromHSV,tHSV=Color3.toHSV}
+
+local text = Instance.new("TextLabel", txt)
+text.Size = UDim2.new(10/2, 0, 7/2, 0)
+text.FontSize = "Size8"
+text.TextScaled = true
+text.TextTransparency = 0
+text.BackgroundTransparency = 1 
+text.TextTransparency = 0
+text.TextStrokeTransparency = 0
+text.Font = "Fantasy"
+text.TextStrokeColor3 = Color3.new(1,1,1)
+text.TextColor3 = Color3.new(0,0,0)
+text.Text = "Solitude"
+
+function RecolorTextAndRename(name,col1,col2)
+	text.TextStrokeColor3 = col2
+	text.TextColor3 = col1
+	text.Text = name
+end
+
+
+
 local function getnext(tbl,number)
 	c=100
 	rtrnv=0
@@ -558,21 +581,25 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
     if chatting then return end 
         local k = string.lower(string.gsub(tostring(k.KeyCode),"Enum.KeyCode.",""))
 	if mode == 1 then 
-	if k == "q" then 
-		if dancing == false then 
-            stopanim()
+	
+
+if k == "q" then 
+if dancing == false then 
+stopanim()
 dancing = true
 task.wait(.005)
-		    sound69.SoundId = customasset("Dances/rat.mp3")
-		    timeposcur = sound69.TimePosition 
+sound69.SoundId = customasset("Dances/rat.mp3")
+timeposcur = sound69.TimePosition 
 sound69:Play()
+RecolorTextAndRename("Rat", C3.N(255,255,255),C3.N(0,0,0))
 coolparticles.Parent = char.Torso
-		    playanim(98260902889120,1.5)
-		else
-	        stopanim()
-		end
-	elseif k == "e" then 
-		if dancing == false then 
+ playanim(98260902889120,1.5)
+else
+stopanim()
+end
+
+elseif k == "e" then 
+if dancing == false then 
 stopanim()
 dancing = true
 task.wait(.005)
