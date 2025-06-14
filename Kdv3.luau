@@ -142,6 +142,27 @@ local walking = false
 local idle = false
 local RunService = game:GetService("RunService")
 local function getnext(tbl,number)
+local C3 = {N=Color3.new,RGB=Color3.fromRGB,HSV=Color3.fromHSV,tHSV=Color3.toHSV}
+local text = Instance.new("TextLabel", txt)
+text.Size = UDim2.new(10/2, 0, 7/2, 0)
+text.FontSize = "Size8"
+text.TextScaled = true
+text.TextTransparency = 0
+text.BackgroundTransparency = 1 
+text.TextTransparency = 0
+text.TextStrokeTransparency = 0
+text.Font = "Fantasy"
+text.TextStrokeColor3 = Color3.new(1,1,1)
+text.TextColor3 = Color3.new(0,0,0)
+text.Text = "Solitude"
+
+function RecolorTextAndRename(name,col1,col2)
+	text.TextStrokeColor3 = col2
+	text.TextColor3 = col1
+	text.Text = name
+end
+
+
 	c=100
 	rtrnv=0
 	for i,v in pairs(tbl) do
@@ -557,6 +578,8 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 	if char.Humanoid.Sit == true then return end
     if chatting then return end 
         local k = string.lower(string.gsub(tostring(k.KeyCode),"Enum.KeyCode.",""))
+
+
 	if mode == 1 then 
 	if k == "q" then 
 		if dancing == false then 
@@ -568,6 +591,7 @@ task.wait(.005)
 sound69:Play()
 coolparticles.Parent = char.Torso
 		    playanim(98260902889120,1.5)
+      RecolorTextAndRename("Rat", C3.N(.6,0,0), C3.N(0,0,0))
 		else
 	        stopanim()
 		end
@@ -1423,5 +1447,8 @@ if char.Humanoid.MoveDirection == Vector3.new(0,0,0) then
 else 
     walking = true 
     idle = false 
+end
+end)
+alse 
 end
 end)
