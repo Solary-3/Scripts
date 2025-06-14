@@ -309,7 +309,144 @@ local Button7 = HomeTab:CreateButton({
 }
 end,
 })
+local Button8 = HomeTab:CreateButton({
+   Name = "Outer Space[Red Outlines]",
+   Callback = function()
+   Window.ModifyTheme {
+    TextColor = Color3.fromRGB(255, 255, 255),
 
+    Background = Color3.fromRGB(0,0, 0),
+    Topbar = Color3.fromRGB(0, 0, 0),
+    Shadow = Color3.fromRGB(0, 0, 0),
+
+    NotificationBackground = Color3.fromRGB(0, 0, 0),
+    NotificationActionsBackground = Color3.fromRGB(100, 0, 255),
+
+    TabBackground = Color3.fromRGB(0, 0, 0),
+    TabStroke = Color3.fromRGB(255, 0, 0),
+    TabBackgroundSelected = Color3.fromRGB(135.5, 0, 0),
+    TabTextColor = Color3.fromRGB(255, 255, 255),
+    SelectedTabTextColor = Color3.fromRGB(255, 255, 255),
+
+    ElementBackground = Color3.fromRGB(15, 15, 15),
+    ElementBackgroundHover = Color3.fromRGB(40, 40, 40),
+    SecondaryElementBackground = Color3.fromRGB(255, 255, 255),
+    ElementStroke = Color3.fromRGB(150, 0, 0),
+    SecondaryElementStroke = Color3.fromRGB(255, 0, 0),
+            
+    SliderBackground = Color3.fromRGB(0, 0, 0),
+    SliderProgress = Color3.fromRGB(255, 0, 0),
+    SliderStroke = Color3.fromRGB(255, 0, 0),
+
+    ToggleBackground = Color3.fromRGB(130, 0, 0),
+    ToggleEnabled = Color3.fromRGB(130, 0, 0),
+    ToggleDisabled = Color3.fromRGB(120, 0, 0),
+    ToggleEnabledStroke = Color3.fromRGB(140, 0, 0),
+    ToggleDisabledStroke = Color3.fromRGB(70, 0, 0),
+    ToggleEnabledOuterStroke = Color3.fromRGB(70, 0, 0),
+    ToggleDisabledOuterStroke = Color3.fromRGB(40, 0, 0),
+
+    DropdownSelected = Color3.fromRGB(255, 0, 0),
+    DropdownUnselected = Color3.fromRGB(0, 0, 0),
+
+    InputBackground = Color3.fromRGB(0, 0, 0),
+    InputStroke = Color3.fromRGB(255, 0, 0),
+    PlaceholderColor = Color3.fromRGB(255, 0, 0)
+}
+end,
+})
+local Button9 = HomeTab:CreateButton({
+Name = "Outer Space[Blue Outlines]",
+   Callback = function()
+   Window.ModifyTheme {
+    TextColor = Color3.fromRGB(255, 255, 255),
+
+    Background = Color3.fromRGB(0,0, 0),
+    Topbar = Color3.fromRGB(0, 0, 0),
+    Shadow = Color3.fromRGB(0, 0, 0),
+
+    NotificationBackground = Color3.fromRGB(0, 0, 0),
+    NotificationActionsBackground = Color3.fromRGB(0, 0, 125),
+
+    TabBackground = Color3.fromRGB(0, 0, 0),
+    TabStroke = Color3.fromRGB(0, 0, 255),
+    TabBackgroundSelected = Color3.fromRGB(0, 0, 132.5),
+    TabTextColor = Color3.fromRGB(255, 255, 255),
+    SelectedTabTextColor = Color3.fromRGB(255, 255, 255),
+
+    ElementBackground = Color3.fromRGB(15, 15, 15),
+    ElementBackgroundHover = Color3.fromRGB(40, 40, 40),
+    SecondaryElementBackground = Color3.fromRGB(255, 255, 255),
+    ElementStroke = Color3.fromRGB(0, 0, 150),
+    SecondaryElementStroke = Color3.fromRGB(0, 0, 255),
+            
+    SliderBackground = Color3.fromRGB(0, 0, 0),
+    SliderProgress = Color3.fromRGB(0, 0, 255),
+    SliderStroke = Color3.fromRGB(0, 0, 255),
+
+    ToggleBackground = Color3.fromRGB(0, 0, 130),
+    ToggleEnabled = Color3.fromRGB(0, 0, 255),
+    ToggleDisabled = Color3.fromRGB(0, 0, 120),
+    ToggleEnabledStroke = Color3.fromRGB(0, 0, 140),
+    ToggleDisabledStroke = Color3.fromRGB(0, 0, 120),
+    ToggleEnabledOuterStroke = Color3.fromRGB(0, 0, 120),
+    ToggleDisabledOuterStroke = Color3.fromRGB(0, 0, 90),
+
+    DropdownSelected = Color3.fromRGB(0, 0, 255),
+    DropdownUnselected = Color3.fromRGB(0, 0, 0),
+
+    InputBackground = Color3.fromRGB(0, 0, 0),
+    InputStroke = Color3.fromRGB(0, 0, 255),
+    PlaceholderColor = Color3.fromRGB(0, 0, 255)
+}
+end,
+})
+local Button10 = HomeTab:CreateButton({
+   Name = "Tidal Wave",
+   Callback = function()
+   Window.ModifyTheme {
+    TextColor = Color3.fromRGB(0, 0,0),
+
+    Background = Color3.fromRGB(255, 255, 125),
+    Topbar = Color3.fromRGB(125, 255, 255),
+    Shadow = Color3.fromRGB(200, 200, 200),
+
+    NotificationBackground = Color3.fromRGB(230, 230, 125),
+    NotificationActionsBackground = Color3.fromRGB(100, 0, 255),
+
+    TabBackground = Color3.fromRGB(210, 210, 100),
+    TabStroke = Color3.fromRGB(0, 255, 255),
+    TabBackgroundSelected = Color3.fromRGB(125, 230, 230),
+    TabTextColor = Color3.fromRGB(0, 0, 0),
+    SelectedTabTextColor = Color3.fromRGB(0, 0, 0),
+
+    ElementBackground = Color3.fromRGB(245, 245, 115),
+    ElementBackgroundHover = Color3.fromRGB(125, 255, 255),
+    SecondaryElementBackground = Color3.fromRGB(245, 245, 115),
+    ElementStroke = Color3.fromRGB(115, 245, 245),
+    SecondaryElementStroke = Color3.fromRGB(125, 245, 245),
+            
+    SliderBackground = Color3.fromRGB(0, 200, 200),
+    SliderProgress = Color3.fromRGB(0, 255, 255),
+    SliderStroke = Color3.fromRGB(230, 230,75),
+
+    ToggleBackground = Color3.fromRGB(220, 220, 65),
+    ToggleEnabled = Color3.fromRGB(125, 255, 255),
+    ToggleDisabled = Color3.fromRGB(255,255, 125),
+    ToggleEnabledStroke = Color3.fromRGB(255, 255, 125),
+    ToggleDisabledStroke = Color3.fromRGB(125, 255, 255),
+    ToggleEnabledOuterStroke = Color3.fromRGB(125, 255, 255),
+    ToggleDisabledOuterStroke = Color3.fromRGB(255, 255, 125),
+
+    DropdownSelected = Color3.fromRGB(125, 255, 255),
+    DropdownUnselected = Color3.fromRGB(255, 255, 125),
+
+    InputBackground = Color3.fromRGB(125, 255, 255),
+    InputStroke = Color3.fromRGB(100, 0, 255),
+    PlaceholderColor = Color3.fromRGB(100, 0, 255)
+}
+end,
+})
 
 
 
