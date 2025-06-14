@@ -334,7 +334,14 @@ _G.Speed = (Speed)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3.luau"))()
    end,
 })
-local OtherSection = MainTab:CreateSection("Genesis")
+local Button12 = MainTab:CreateButton({
+Name = "Krystal Dance V3, Modded By Sonixdev",
+   Callback = function(A)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/sparezirt/Script/refs/heads/main/.github/workflows/JustABaseplate.lua"))()
+end,
+})
+
+local GenesisSection = MainTab:CreateSection("Genesis")
 local Button2 = MainTab:CreateButton({
    Name = "Genesis Neptunian V",
    Callback = function(A)
