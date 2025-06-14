@@ -780,6 +780,10 @@ local Button11 = HatsTab:CreateButton({
    Name = "Neko",
    Callback = function() 
    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 122032567288629 138802414732404 95786006544919 102002238417724 13483473711 17106982150 17764306653 124852036545066 109247574710501 73106949354869 72453363936733 13521847144")
+task.wait(3.950)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+task.wait(2.250)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
    end,
 })
 
