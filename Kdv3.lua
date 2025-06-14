@@ -1,4 +1,3 @@
-
 if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (not isfolder("Dances")) then
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Hey!";
@@ -142,27 +141,6 @@ local walking = false
 local idle = false
 local RunService = game:GetService("RunService")
 local function getnext(tbl,number)
-local C3 = {N=Color3.new,RGB=Color3.fromRGB,HSV=Color3.fromHSV,tHSV=Color3.toHSV}
-local text = Instance.new("TextLabel", txt)
-text.Size = UDim2.new(10/2, 0, 7/2, 0)
-text.FontSize = "Size8"
-text.TextScaled = true
-text.TextTransparency = 0
-text.BackgroundTransparency = 1 
-text.TextTransparency = 0
-text.TextStrokeTransparency = 0
-text.Font = "Fantasy"
-text.TextStrokeColor3 = Color3.new(1,1,1)
-text.TextColor3 = Color3.new(0,0,0)
-text.Text = "Solitude"
-
-function RecolorTextAndRename(name,col1,col2)
-	text.TextStrokeColor3 = col2
-	text.TextColor3 = col1
-	text.Text = name
-end
-
-
 	c=100
 	rtrnv=0
 	for i,v in pairs(tbl) do
@@ -173,7 +151,6 @@ rtrnv=i
 	end
 	return(rtrnv)
 end
-
 local function wait2(tim)
 	if tim<0.1 then
 		game:GetService("RunService").Heartbeat:Wait()
@@ -282,7 +259,7 @@ end
             idle = false
            end
 		if speed == nil then 
-			speed = _G.Speed
+			speed = 1
 		end
         if dancing == true then 
             idle = false 
@@ -578,8 +555,6 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 	if char.Humanoid.Sit == true then return end
     if chatting then return end 
         local k = string.lower(string.gsub(tostring(k.KeyCode),"Enum.KeyCode.",""))
-
-
 	if mode == 1 then 
 	if k == "q" then 
 		if dancing == false then 
