@@ -609,7 +609,7 @@ loadstring(game:HttpGet("https://rawscripts.net/raw/Just-a-baseplate.-Just-A-Bas
 loadstring(game:HttpGet("https://pastebin.com/raw/j09BnGB3"))()
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Those who claims its your script, i dont like you.")
 end,
-)}
+})
 
 
 
