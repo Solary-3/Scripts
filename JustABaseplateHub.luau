@@ -320,6 +320,7 @@ local MainTab = Window:CreateTab("Main", nil)
 local KrystalDanceSection = MainTab:CreateSection("Krystal Dance V3")
 local Input = MainTab:CreateInput({
    Name = "Dance Speed [Theo Version]",
+   CurrentValue = "1.5",
    PlaceholderText = "1-10",
    RemoveTextAfterFocusLost = false,
    Callback = function(Speed)
