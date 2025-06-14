@@ -559,6 +559,8 @@ local Button8 = MainTab:CreateButton({
    Name = "Achromoonic",
    Callback = function(A) 
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
+task.wait(.1)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 task.wait(2.150)
   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/achromoonic edit.luau"))()
 end,
@@ -568,6 +570,8 @@ local Button9 = MainTab:CreateButton({
    Name = "Achromatix",
    Callback = function(A) 
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
+task.wait(.1)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 task.wait(2.150)
   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Achromatix_V6-1.lua"))()
 end,
@@ -577,6 +581,8 @@ local Button10= MainTab:CreateButton({
    Name = "Encription Glitcher",
    Callback = function(A) 
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
+task.wait(.1)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 task.wait(2.150)
    loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Encription%20Glitcher.lua"))()
    end,
@@ -585,6 +591,10 @@ task.wait(2.150)
 local Button11 = MainTab:CreateButton({
    Name = "Achromatic V5",
    Callback = function(A) 
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
+task.wait(.1)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+task.wait(2.150)
   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/achromatic%20v5%20edited%20yes.luau"))()
 end,
 })
