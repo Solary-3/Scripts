@@ -598,7 +598,18 @@ task.wait(2.150)
   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/achromatic%20v5%20edited%20yes.luau"))()
 end,
 })
+local Button12 = MainTab:CreateButton({
+   Name = "Nebula Glitcher",
+   Callback = function(A)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 17211669161")
+task.wait(3)
 
+
+loadstring(game:HttpGet("https://rawscripts.net/raw/Just-a-baseplate.-Just-A-Baseplate-Working-Reanimation-39126"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/j09BnGB3"))()
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Those who claims its your script, i dont like you.")
+end,
+)}
 
 
 
