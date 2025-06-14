@@ -1,19 +1,39 @@
+
+
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "Just A Baseplate ",
-   LoadingTitle = "Just a Baseplate",
-   LoadingSubtitle = "by Theo/Paradigm",
-   Theme = "Serenity",
+   Name = "Just A Baseplate",
+   LoadingTitle = "Just A Baseplate",
+   LoadingSubtitle = "By Theo/Paradigm",
+   Theme = "Serenity", 
 
-ToggleUIKeybind = "U",
+   ToggleUIKeybind = "K", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
 
    ConfigurationSaving = {
-      Enabled = True,
-      FolderName = "JAB", -- Create a custom folder for your hub/game
-      FileName = "Just A Baseplate"
+      Enabled = true,
+      FolderName = JustABaseplate, -- Create a custom folder for your hub/game
+      FileName = "Config"
+   },
+
+   
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
+
 })
+
+
 
 
 local HomeTab = Window:CreateTab("Home", nil) -- Title, Image
@@ -177,7 +197,7 @@ end,
 
 local Slider = HomeTab:CreateSlider({
    Name = "WalkSpeed Slider",
-   Range = {1, 350},
+   Range = {16, 350},
    Increment = 1,
    Suffix = "Speed",
    CurrentValue = 16,
@@ -242,6 +262,57 @@ end,
 
 
 
+local CustomThemesSection = HomeTab:CreateSection("Custon Themes Section")
+local Button7 = HomeTab:CreateButton({
+   Name = "Outer Space",
+   Callback = function()
+   Window.ModifyTheme {
+    TextColor = Color3.fromRGB(240, 240, 240),
+
+    Background = Color3.fromRGB(0, 0, 0),
+    Topbar = Color3.fromRGB(0, 0, 0),
+    Shadow = Color3.fromRGB(0, 0, 0),
+
+    NotificationBackground = Color3.fromRGB(0, 0, 0),
+    NotificationActionsBackground = Color3.fromRGB(100, 0, 255),
+
+    TabBackground = Color3.fromRGB(0, 0, 0),
+    TabStroke = Color3.fromRGB(100, 0, 255),
+    TabBackgroundSelected = Color3.fromRGB(50, 0, 132.5),
+    TabTextColor = Color3.fromRGB(255, 255, 255),
+    SelectedTabTextColor = Color3.fromRGB(255, 255, 255),
+
+    ElementBackground = Color3.fromRGB(35, 35, 35),
+    ElementBackgroundHover = Color3.fromRGB(40, 40, 40),
+    SecondaryElementBackground = Color3.fromRGB(25, 25, 25),
+    ElementStroke = Color3.fromRGB(50, 50, 50),
+    SecondaryElementStroke = Color3.fromRGB(40, 40, 40),
+            
+    SliderBackground = Color3.fromRGB(75, 0, 200),
+    SliderProgress = Color3.fromRGB(50, 0, 255),
+    SliderStroke = Color3.fromRGB(75, 0, 255),
+
+    ToggleBackground = Color3.fromRGB(50, 0, 130),
+    ToggleEnabled = Color3.fromRGB(100, 146, 255),
+    ToggleDisabled = Color3.fromRGB(50, 0, 120),
+    ToggleEnabledStroke = Color3.fromRGB(70, 0, 140),
+    ToggleDisabledStroke = Color3.fromRGB(70, 0, 120),
+    ToggleEnabledOuterStroke = Color3.fromRGB(70, 0, 120),
+    ToggleDisabledOuterStroke = Color3.fromRGB(40, 0, 90),
+
+    DropdownSelected = Color3.fromRGB(100, 0, 255),
+    DropdownUnselected = Color3.fromRGB(0, 0, 0),
+
+    InputBackground = Color3.fromRGB(0, 0, 0),
+    InputStroke = Color3.fromRGB(100, 0, 255),
+    PlaceholderColor = Color3.fromRGB(100, 0, 255)
+}
+end,
+})
+
+
+
+
 -----==============-----
 local MainTab = Window:CreateTab("Main", nil)
 
@@ -255,6 +326,7 @@ local Input = MainTab:CreateInput({
         
    end,
 })
+Rayfield:LoadConfiguration(KDV3)
 local Button1 = MainTab:CreateButton({
    Name = "Krystal Dance V3, Modded By Theo",
    Callback = function(A)
@@ -522,6 +594,9 @@ end,
 ----================----
 local ExecutorsTab = Window:CreateTab("Executors", nil) -- Title, Image
 
+
+local ExecutorsParagraph = ExecutorsTab:CreateParagraph({Title = "IMPORTANT", Content = "Some executors takes time to load, so be patient"})
+local ExecutorsDivider = ExecutorsTab:CreateDivider()
 local Button1 = ExecutorsTab:CreateButton({
    Name = "Codex",
    Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Codex.lua"))()
@@ -539,27 +614,76 @@ local Button3  = ExecutorsTab:CreateButton({
    end,
 })
 
+
+
+
+
+----================----
 local HatsTab = Window:CreateTab("Hats And Rigs", nil) -- Title, Image
 
+
+local HatsParagraph = HatsTab:CreateParagraph({Title = "IMPORTANT!", Content = "It is important that you should always load the rigs for genesis so everyone can see you"})
+local Divider = HatsTab:CreateDivider()
 local Button  = HatsTab:CreateButton({
    Name = "Genesis Rigs",
    Callback = function() 
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 138364679836274 82942681251131 140395948277978 102599402682100 90960046381276 13058406993") 
    end,
 })
+local Divider1 = HatsTab:CreateDivider()
+local Paragraph1 = HatsTab:CreateParagraph({Title = "Custom Neptunian V", Content = "Here You can customize the sword itself!. If your having trouble of the Sword IDs, check the supported hats in the Foundatios game!"})
+
+local Input = HatsTab:CreateInput({
+   Name = "Custom Neptunian V",
+   PlaceholderText = "Item Id",
+   RemoveTextAfterFocusLost = true,
+   Callback = function(ID)
+        game:GetService("TextChatService")TextChannels.RBXGeneral:SendAsync((ID))
+   end,
+})
+
+local Divider2 = HatsTab:CreateDivider()
 local Button1  = HatsTab:CreateButton({
    Name = "Neptunian V",
    Callback = function() 
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 5316479641 ")
    end,
 })
+local Divider3 = HatsTab:CreateDivider()
+
+local Paragraph2 = HatsTab:CreateParagraph({Title = "Custom Sniper Gun!", Content = "Here You can customize the sword itself!. If your having trouble of the Gun IDs, check the supported hats in the Foundatios game!"})
+
+local Input1 = HatsTab:CreateInput({
+   Name = "Custom Sniper Gun",
+   PlaceholderText = "Input Placeholder",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(ID1)
+    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync ((ID1))
+   end,
+})
+
+
+local Divider4 = HatsTab:CreateDivider()
 local Button2 = HatsTab:CreateButton({
    Name = "Sniper",
    Callback = function() 
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 5168118559 4504231783")
    end,
 })
+local Divider5 = HatsTab:CreateDivider()
+local Paragraph3 = HatsTab:CreateParagraph({Title = "Custom Sin Dragon!", Content = "Here You can customize the sword itself!. If your having trouble of the Sin Dragon Hat IDs, check the supported hats in the Foundatios game!"})
 
+
+local Input2 = HatsTab:CreateInput({
+   Name = "Custom Sin Dragon",
+   PlaceholderText = "Input Placeholder",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(ID2)
+    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync((ID2))
+   end,
+})
+
+local Divider6 = HatsTab:CreateDivider()
 local Button3 = HatsTab:CreateButton({
    Name = "Sin Dragon",
    Callback = function() 
@@ -573,7 +697,20 @@ local Button4 = HatsTab:CreateButton({
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 17770317484 17822722698 17822749561 17772174303 17835236579")
    end,
 })
+local Divider7 = HatsTab:CreateDivider()
+local Paragraph4 = HatsTab:CreateParagraph({Title = "Custom Ban Hammer", Content = "Here You can customize the sword itself!. If your having trouble of the Ban Hammer Hat IDs, check the supported hats in the Foundatios game!"})
 
+local Input = HatsTab:CreateInput({
+   Name = "Custom Bam Hammer",
+   PlaceholderText = "Input Placeholder",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(ID3)
+    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync((ID3))
+   end,
+})
+
+
+local Divider8 = HatsTab:CreateDivider()
 local Button5 = HatsTab:CreateButton({
    Name = "Ban Hammer",
    Callback = function() 
@@ -583,6 +720,16 @@ local Button5 = HatsTab:CreateButton({
 
 local OthersSection = HatsTab:CreateSection("Others")
 
+local HatsParagraph = HatsTab:CreateParagraph({Title = "Custom aneko", Content = "Here you can put your custom neko item ID's"})
+local Input4 = HatsTab:CreateInput({
+   Name = "Custom Neko",
+   PlaceholderText = "Item Id",
+   RemoveTextAfterFocusLost = true,
+   Callback = function(ID4)
+        game:GetService("TextChatService")TextChannels.RBXGeneral:SendAsync((ID4))
+   end,
+})
+local Divider8 = HatsTab:CreateDivider()
 local Button6 = HatsTab:CreateButton({
    Name = "Neko",
    Callback = function() 
