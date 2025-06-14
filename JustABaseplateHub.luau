@@ -41,7 +41,7 @@ local HomeTab = Window:CreateTab("Home", nil) -- Title, Image
 local HomeSection = HomeTab:CreateSection("Main")
 
 local Paragraph = HomeTab:CreateParagraph({Title = "Just A Baseplate Hub By Theo/Paradigm", Content = "This Was Made on 05/13/25!"})
-local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content = "Now added Changelogs! new tab and removed the custom things on the hats and rigs tab!"})
+local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content = "Changed the hats when executing Nebula Glitcher"})
 local Button = HomeTab:CreateButton({
    Name = "Sit",
    Callback = function()
@@ -740,7 +740,9 @@ end,
 local Button12 = MainTab:CreateButton({
    Name = "Nebula Glitcher",
    Callback = function(A)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 17211669161")
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 17211669161 18334257663 18335331660")
+task.wait(.1)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 task.wait(3)
 
 
