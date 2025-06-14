@@ -634,16 +634,24 @@ local Divider1 = HatsTab:CreateDivider()
 local Paragraph1 = HatsTab:CreateParagraph({Title = "Custom Neptunian V", Content = "Here You can customize the sword itself!. If your having trouble of the Sword IDs, check the supported hats in the Foundatios game!"})
 
 local Input = HatsTab:CreateInput({
-   Name = "Custom Neptunian V",
-   PlaceholderText = "Item Id",
+   Name = "Custom Neptunian V Sword",
+   CurrentValue = "-gh",
+   PlaceholderText = "Input Placeholder",
    RemoveTextAfterFocusLost = true,
    Callback = function(ID)
-        game:GetService("TextChatService")TextChannels.RBXGeneral:SendAsync((ID))
+    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync ((ID))
+   end,
+})
+local Button1 = HatsTab:CreateButton({
+   Name = "Refresh",
+   Callback = function() 
+  Input:Set("-gh")
    end,
 })
 
+
 local Divider2 = HatsTab:CreateDivider()
-local Button1  = HatsTab:CreateButton({
+local Button2  = HatsTab:CreateButton({
    Name = "Neptunian V",
    Callback = function() 
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 5316479641 ")
@@ -655,16 +663,23 @@ local Paragraph2 = HatsTab:CreateParagraph({Title = "Custom Sniper Gun!", Conten
 
 local Input1 = HatsTab:CreateInput({
    Name = "Custom Sniper Gun",
+   CurrentValue = "-gh",
    PlaceholderText = "Input Placeholder",
-   RemoveTextAfterFocusLost = false,
+   RemoveTextAfterFocusLost = true,
    Callback = function(ID1)
     game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync ((ID1))
+   end,
+})
+local Button3 = HatsTab:CreateButton({
+   Name = "Refresh",
+   Callback = function() 
+  Input1:Set("-gh")
    end,
 })
 
 
 local Divider4 = HatsTab:CreateDivider()
-local Button2 = HatsTab:CreateButton({
+local Button4 = HatsTab:CreateButton({
    Name = "Sniper",
    Callback = function() 
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 5168118559 4504231783")
@@ -676,22 +691,30 @@ local Paragraph3 = HatsTab:CreateParagraph({Title = "Custom Sin Dragon!", Conten
 
 local Input2 = HatsTab:CreateInput({
    Name = "Custom Sin Dragon",
+   CurrentValue = "-gh",
    PlaceholderText = "Input Placeholder",
-   RemoveTextAfterFocusLost = false,
+   RemoveTextAfterFocusLost = true,
    Callback = function(ID2)
     game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync((ID2))
    end,
 })
+local Button5 = HatsTab:CreateButton({
+   Name = "Refresh",
+   Callback = function() 
+  Input2:Set("-gh")
+   end,
+})
+
 
 local Divider6 = HatsTab:CreateDivider()
-local Button3 = HatsTab:CreateButton({
+local Button6 = HatsTab:CreateButton({
    Name = "Sin Dragon",
    Callback = function() 
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 117186631495734 99965319383570 132770514241770 3756389957 14864581977  150381051 4504231783")
    end,
 })
 
-local Button4 = HatsTab:CreateButton({
+local Button7 = HatsTab:CreateButton({
    Name = "Goner",
    Callback = function() 
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 17770317484 17822722698 17822749561 17772174303 17835236579")
@@ -700,18 +723,24 @@ local Button4 = HatsTab:CreateButton({
 local Divider7 = HatsTab:CreateDivider()
 local Paragraph4 = HatsTab:CreateParagraph({Title = "Custom Ban Hammer", Content = "Here You can customize the sword itself!. If your having trouble of the Ban Hammer Hat IDs, check the supported hats in the Foundatios game!"})
 
-local Input = HatsTab:CreateInput({
+local Input3 = HatsTab:CreateInput({
    Name = "Custom Bam Hammer",
+   CurrentValue = "-gh",
    PlaceholderText = "Input Placeholder",
-   RemoveTextAfterFocusLost = false,
+   RemoveTextAfterFocusLost = true,
    Callback = function(ID3)
     game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync((ID3))
    end,
 })
-
+local Button8 = HatsTab:CreateButton({
+   Name = "Refresh",
+   Callback = function() 
+  Input3:Set("-gh")
+   end,
+})
 
 local Divider8 = HatsTab:CreateDivider()
-local Button5 = HatsTab:CreateButton({
+local Button9 = HatsTab:CreateButton({
    Name = "Ban Hammer",
    Callback = function() 
    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 15548314241")
@@ -720,24 +749,33 @@ local Button5 = HatsTab:CreateButton({
 
 local OthersSection = HatsTab:CreateSection("Others")
 
-local HatsParagraph = HatsTab:CreateParagraph({Title = "Custom aneko", Content = "Here you can put your custom neko item ID's"})
+local HatsParagraph = HatsTab:CreateParagraph({Title = "Custom Neko", Content = "Here you can put your custom neko item ID's"})
+
 local Input4 = HatsTab:CreateInput({
    Name = "Custom Neko",
-   PlaceholderText = "Item Id",
+   CurrentValue = "-gh",
+   PlaceholderText = "Input Placeholder",
    RemoveTextAfterFocusLost = true,
    Callback = function(ID4)
-        game:GetService("TextChatService")TextChannels.RBXGeneral:SendAsync((ID4))
+    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync ((ID4))
    end,
 })
+local Button10 = HatsTab:CreateButton({
+   Name = "Refresh",
+   Callback = function() 
+  Input4:Set("-gh")
+   end,
+})
+
 local Divider8 = HatsTab:CreateDivider()
-local Button6 = HatsTab:CreateButton({
+local Button11 = HatsTab:CreateButton({
    Name = "Neko",
    Callback = function() 
    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 122032567288629 138802414732404 95786006544919 102002238417724 13483473711 17106982150 17764306653 124852036545066 109247574710501 73106949354869 72453363936733 13521847144")
    end,
 })
 
-local Button7 = HatsTab:CreateButton({
+local Button12 = HatsTab:CreateButton({
    Name = "Glitchers",
    Callback = function() 
    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 4820152700 4524991457 4794315940 4506945409 4458601937 4315489767 4623728953 5030789687 4773883146 4773932088 4855847190 4932541287")
