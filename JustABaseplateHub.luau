@@ -284,7 +284,7 @@ local Button7 = HomeTab:CreateButton({
 
     ElementBackground = Color3.fromRGB(15, 15, 15),
     ElementBackgroundHover = Color3.fromRGB(40, 40, 40),
-    SecondaryElementBackground = Color3.fromRGB(25, 25, 25),
+    SecondaryElementBackground = Color3.fromRGB(0, 0, 0),
     ElementStroke = Color3.fromRGB(150, 150, 150),
     SecondaryElementStroke = Color3.fromRGB(255, 255, 255),
             
@@ -330,7 +330,7 @@ local Button8 = HomeTab:CreateButton({
 
     ElementBackground = Color3.fromRGB(15, 15, 15),
     ElementBackgroundHover = Color3.fromRGB(40, 40, 40),
-    SecondaryElementBackground = Color3.fromRGB(255, 255, 255),
+    SecondaryElementBackground = Color3.fromRGB(0, 0, 0),
     ElementStroke = Color3.fromRGB(150, 0, 0),
     SecondaryElementStroke = Color3.fromRGB(255, 0, 0),
             
@@ -376,7 +376,7 @@ Name = "Outer Space[Blue Outlines]",
 
     ElementBackground = Color3.fromRGB(15, 15, 15),
     ElementBackgroundHover = Color3.fromRGB(40, 40, 40),
-    SecondaryElementBackground = Color3.fromRGB(255, 255, 255),
+    SecondaryElementBackground = Color3.fromRGB(0, 0, 0),
     ElementStroke = Color3.fromRGB(0, 0, 150),
     SecondaryElementStroke = Color3.fromRGB(0, 0, 255),
             
