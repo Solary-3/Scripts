@@ -41,7 +41,7 @@ local HomeTab = Window:CreateTab("Home", nil) -- Title, Image
 local HomeSection = HomeTab:CreateSection("Main")
 
 local Paragraph = HomeTab:CreateParagraph({Title = "Just A Baseplate Hub By Theo/Paradigm", Content = "This Was Made on 05/13/25!"})
-local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content = "Now added Changelogs! new tab and removed the custom things on the hats and rigs tab!})
+local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content = "Now added Changelogs! new tab and removed the custom things on the hats and rigs tab!"})
 local Button = HomeTab:CreateButton({
    Name = "Sit",
    Callback = function()
