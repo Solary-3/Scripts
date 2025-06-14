@@ -267,7 +267,7 @@ local Button7 = HomeTab:CreateButton({
    Name = "Outer Space",
    Callback = function()
    Window.ModifyTheme {
-    TextColor = Color3.fromRGB(240, 240, 240),
+    TextColor = Color3.fromRGB(255, 255, 255),
 
     Background = Color3.fromRGB(0, 0, 0),
     Topbar = Color3.fromRGB(0, 0, 0),
@@ -282,11 +282,11 @@ local Button7 = HomeTab:CreateButton({
     TabTextColor = Color3.fromRGB(255, 255, 255),
     SelectedTabTextColor = Color3.fromRGB(255, 255, 255),
 
-    ElementBackground = Color3.fromRGB(35, 35, 35),
+    ElementBackground = Color3.fromRGB(15, 15, 15),
     ElementBackgroundHover = Color3.fromRGB(40, 40, 40),
     SecondaryElementBackground = Color3.fromRGB(25, 25, 25),
-    ElementStroke = Color3.fromRGB(50, 50, 50),
-    SecondaryElementStroke = Color3.fromRGB(40, 40, 40),
+    ElementStroke = Color3.fromRGB(150, 150, 150),
+    SecondaryElementStroke = Color3.fromRGB(255, 255, 255),
             
     SliderBackground = Color3.fromRGB(75, 0, 200),
     SliderProgress = Color3.fromRGB(50, 0, 255),
@@ -319,7 +319,7 @@ local MainTab = Window:CreateTab("Main", nil)
 
 local KrystalDanceSection = MainTab:CreateSection("Krystal Dance V3")
 local Input = MainTab:CreateInput({
-   Name = "Dance Speed -Theo Version-",
+   Name = "Dance Speed [Theo Version]",
    PlaceholderText = "1-10",
    RemoveTextAfterFocusLost = false,
    Callback = function(Speed)
