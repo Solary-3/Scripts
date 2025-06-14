@@ -264,7 +264,7 @@ end
             idle = false
            end
 		if speed == nil then 
-			speed = _G.Speed
+			speed = 1.5
 		end
         if dancing == true then 
             idle = false 
