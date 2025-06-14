@@ -331,7 +331,7 @@ local Button1 = MainTab:CreateButton({
    Name = "Krystal Dance V3, Modded By Theo",
    Callback = function(A)
 _G.Speed = (Speed)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3.luau"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3.lua"))()
    end,
 })
 local Button12 = MainTab:CreateButton({
