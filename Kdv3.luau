@@ -572,7 +572,7 @@ sound69.SoundId = customasset("Dances/rat.mp3")
 timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
- playanim(98260902889120,_G.Speed)
+ playanim(98260902889120)
 else
 stopanim()
 end
@@ -587,7 +587,7 @@ timeposcur = sound69.TimePosition
 sound69:Play()
 sound69.Volume = .75
 coolparticles.Parent = char.Torso
-playanim(16769959846,_G.Speed)
+playanim(16769959846)
 		else
 stopanim()
 
@@ -601,7 +601,7 @@ task.wait(.005)
 	sound69.PlaybackSpeed = 1
 	timeposcur = sound69.TimePosition 
 sound69:Play()
-	playanim(75148929064618,_G.Speed)
+	playanim(75148929064618)
 else
 	stopanim()
 	sound69.PlaybackSpeed = 1
@@ -615,7 +615,7 @@ task.wait(.005)
 sound69.SoundId = customasset("Dances/Bjean.mp3")
 timeposcur = sound69.TimePosition 
 sound69:Play()
-playanim(108805310510119,_G.Speed)
+playanim(108805310510119)
 	else
 stopanim()
 sound69.PlaybackSpeed = 1
@@ -630,7 +630,7 @@ sound69.SoundId = customasset("Dances/Egypt.mp3")
 sound69.PlaybackSpeed = 1
 timeposcur = sound69.TimePosition 
 sound69:Play()
-playanim(95986135548450,_G.Speed)
+playanim(95986135548450)
 		else
 stopanim()
 
@@ -644,7 +644,7 @@ task.wait(.005)
     sound69.PlaybackSpeed = 1
     timeposcur = sound69.TimePosition 
 sound69:Play()
-    playanim(103597509139287,_G.Speed)
+    playanim(103597509139287)
 else
     stopanim()
     sound69.PlaybackSpeed = 1
@@ -671,7 +671,7 @@ task.wait(.005)
         sound69.SoundId = customasset("Dances/gangnamm.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(12438774071,_G.Speed)
+        playanim(12438774071)
     else
         stopanim()
         
@@ -684,7 +684,7 @@ task.wait(.005)
         sound69.SoundId = customasset("Dances/Fein.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(115727639577589,_G.Speed)
+        playanim(115727639577589)
     else
         stopanim()
         
@@ -697,7 +697,7 @@ task.wait(.005)
         sound69.SoundId = customasset("Dances/dancingin.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(96444866125796,_G.Speed)
+        playanim(96444866125796)
     else
         stopanim()
         
@@ -712,7 +712,7 @@ elseif k == "l" then
         char.Humanoid.WalkSpeed = 4*char:GetScale()
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(15704995372,_G.Speed)
+        playanim(15704995372)
     else
         char.Humanoid.WalkSpeed = 14*char:GetScale()
         stopanim()
@@ -726,7 +726,7 @@ elseif k == "z" then
         sound69.SoundId = customasset("Dances/lux.ogg")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(15092317950,_G.Speed)
+        playanim(15092317950)
     else
         stopanim()
         
@@ -739,7 +739,7 @@ elseif k == "x" then
         sound69.SoundId = customasset("Dances/kazot.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(114036336168567,_G.Speed)
+        playanim(114036336168567)
     else
         stopanim()
         
@@ -753,7 +753,7 @@ elseif k == "h" then
         timeposcur = sound69.TimePosition 
          char.Humanoid.WalkSpeed = 7*char:GetScale()
 sound69:Play()
-        playanim(124074233795203,_G.Speed)
+        playanim(124074233795203)
     else
     char.Humanoid.WalkSpeed = 14*char:GetScale()
         stopanim()
@@ -768,7 +768,7 @@ elseif k == "v" then
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(107578737342278,_G.Speed)
+        playanim(107578737342278)
     else
         stopanim()
         
@@ -783,7 +783,7 @@ elseif k == "c" then
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(10048786578,_G.Speed)
+        playanim(10048786578)
     else
         stopanim()
         
@@ -797,7 +797,7 @@ elseif k == "n" then
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(126683576461381,_G.Speed)
+        playanim(126683576461381)
     else
         stopanim()
         
@@ -811,7 +811,7 @@ coolparticles.Parent = char.Torso
         sound69.SoundId = customasset("Dances/Yamero.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(99905571448278,_G.Speed)
+        playanim(99905571448278)
     else
         stopanim()
         
@@ -852,7 +852,7 @@ elseif k == "rightbracket" then
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(13357063395,_G.Speed)
+        playanim(13357063395)
     else
         stopanim()
         
@@ -867,7 +867,7 @@ coolparticles.Parent = char.Torso
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(74512050800520,_G.Speed)
+        playanim(74512050800520)
     else
         stopanim()
         
@@ -883,7 +883,7 @@ if mode == 2 then
         sound69.SoundId = customasset("Dances/unlockit.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(95877864781663,_G.Speed)
+        playanim(95877864781663)
     else
         stopanim()
         
@@ -1067,7 +1067,7 @@ elseif k == "leftbracket" then
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(8360493405,_G.Speed)
+        playanim(8360493405)
     else
         stopanim()
         
@@ -1081,7 +1081,7 @@ elseif k == "rightbracket" then
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(8483186407_G.Speed)
+        playanim(8483186407)
     else
         stopanim()
         
@@ -1095,7 +1095,7 @@ elseif k == "l" then
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(13012728861,_G.Speed)
+        playanim(13012728861)
     else
         stopanim()
         
@@ -1109,7 +1109,7 @@ elseif k == "comma" then
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(92699725136780,_G.Speed)
+        playanim(92699725136780)
     else
         stopanim()
         
@@ -1124,7 +1124,7 @@ elseif k == "p" then
         timeposcur = sound69.TimePosition
        sound69:play()
        coolparticles.Parent = char.Torso
-       playanim(122878040721056_G.Speed)
+       playanim(122878040721056)
    else
   stopanim()
     end
@@ -1138,7 +1138,7 @@ elseif k == "c" then
         timeposcur = sound69.TimePosition 
     sound69:Play()
     coolparticles.Parent = char.Torso
-    playanim(137721173051346,_G.Speed)
+    playanim(137721173051346)
    else
   stopanim()
 
@@ -1153,7 +1153,7 @@ elseif k == "rightshift" then
         timeposcur = sound69.TimePosition 
     sound69:Play()
     coolparticles.Parent = char.Torso
-    playanim(89761302048916_G.Speed)
+    playanim(89761302048919)
    else
   stopanim()
 
@@ -1166,7 +1166,7 @@ task.wait(.005)
         sound69.SoundId = customasset("Dances/MioHonda.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(97072681531610,_G.Speed)
+        playanim(97072681531610)
     else
         stopanim()
         
