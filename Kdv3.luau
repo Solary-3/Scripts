@@ -1,10 +1,4 @@
-if _G.Loaded then
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Krystal Dance V3";
-	Duration = 1;
-	Text = "Is Already Loaded."
-})
-end
+if _G.Loaded then return warn"already loaded!" end
 if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (not isfolder("Dances")) then
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Hey!";
