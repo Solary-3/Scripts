@@ -804,7 +804,7 @@ local NebulaInput = MainTab:CreateInput({
    end,
 })
 local NebulaButton = MainTab:CreateButton({
-   Name = "Refresh",
+   Name = "Reload",
    Callback = function() 
   NebulaInput:Set("-gh ")
    end,
@@ -868,7 +868,7 @@ local RemoveHatsButton = HatsTab:CreateButton({
    Name = "Remove Hats",
    Callback = function() 
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-ch")
-  task.wait(.1)
+  task.wait(2.250)
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
    end,
 })
@@ -892,7 +892,7 @@ local Input = HatsTab:CreateInput({
    end,
 })
 local Button1 = HatsTab:CreateButton({
-   Name = "Refresh",
+   Name = "Reload",
    Callback = function() 
   Input:Set("-gh ")
    end,
