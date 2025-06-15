@@ -740,7 +740,7 @@ end,
 local Button12 = MainTab:CreateButton({
    Name = "Nebula Glitcher",
    Callback = function(A)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 17211669161 18334257663 18335331660")
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 18334257663 18335331660")
 task.wait(.1)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 task.wait(3)
