@@ -35,7 +35,7 @@ local Window = Rayfield:CreateWindow({
 local ReadTab = Window:CreateTab("READ", nil)
 local Paragraph = ReadTab:CreateParagraph({Title = "PLEASE READ BEFORE READING BELLOW!:", Content = "I DO NOT OWN THE SCRIPTS THAT ARE INSIDE THIS SCRIPT!! I ONLY CONFIGURED THEM!! ALL CREDITS GOES TO THE RESPECTIVE OWNERS OF THE SCRIPTS!!"})
 local Divider = ReadTab:CreateDivider()
-local Paragraph1 = ReadTab:CreateParagraph({Title = "How to use this hub🤔", Content = " If Your gonna use genesis, go to the hats and rigs tab, same as the achromatics and neko!!"})
+local Paragraph1 = ReadTab:CreateParagraph({Title = "How to use this hub🤔", Content = " If Your gonna use genesis, go to the hats and rigs tab, same as the achromatics and neko!!, once your done loading the hats and rigs, head to the Main tab and execute the scripts there!!"})
 
 
 local HomeTab = Window:CreateTab("Home", nil) -- Title, Image
