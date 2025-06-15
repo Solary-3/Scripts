@@ -34,6 +34,7 @@ local Window = Rayfield:CreateWindow({
 })
 local ReadTab = Window:CreateTab("READ", nil)
 local Paragraph = ReadTab:CreateParagraph({Title = "PLEASE READ BEFORE READING BELLOW!:", Content = "I DO NOT OWN THE SCRIPTS THAT ARE INSIDE THIS SCRIPT!! I ONLY CONFIGURED THEM!! ALL CREDITS GOES TO THE RESPECTIVE OWNERS OF THE SCRIPTS!!"})
+local Divider = ReadTab:CreateDivider()
 local Paragraph1 = ReadTab:CreateParagraph({Title = "How to use this hub🤔", Content = " If Your gonna use genesis, go to the hats and rigs tab, same as the achromatics and neko!!"})
 
 
@@ -41,7 +42,8 @@ local HomeTab = Window:CreateTab("Home", nil) -- Title, Image
 local HomeSection = HomeTab:CreateSection("Main")
 
 local Paragraph = HomeTab:CreateParagraph({Title = "Just A Baseplate Hub By Theo/Paradigm", Content = "This Was Made on 05/13/25!"})
-local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content = "Changed the hats when executing Nebula Glitcher"})
+local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content = "Now Added Dark Mode on the Home section, Added Hats Remover at the Hats and Rigs Section and added custom wings id text feild for nebula glitcher"})
+local Divider = HomeTab:CreateDivider()
 local Button = HomeTab:CreateButton({
    Name = "Sit",
    Callback = function()
@@ -162,13 +164,7 @@ function TPReturner()
                             delfile("NotSameServers.json")
                             AllIDs = {}
                             table.insert(AllIDs, actualHour)
-                        end)
-                    end
-                end
-                num = num + 1
-            end
-            if Possible == true then
-                table.insert(AllIDs, ID)
+                        end(AllIDs, ID)
                 wait()
                 pcall(function()
                     writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
@@ -192,7 +188,6 @@ function Teleport()
     end
 end
 
--- If you'd like to use a script before server hopping (Like a Automatic Chest collector you can put the Teleport() after it collected everything.
 Teleport()
 end,
 })
@@ -203,7 +198,7 @@ local Slider = HomeTab:CreateSlider({
    Increment = 1,
    Suffix = "Speed",
    CurrentValue = 16,
-   Flag = "sliderws", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Flag = "sliderws", 
    Callback = function(Value)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
    end,
@@ -215,7 +210,7 @@ local Slider = HomeTab:CreateSlider({
    Increment = 1,
    Suffix = "Speed",
    CurrentValue = 50,
-   Flag = "sliderjp", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Flag = "sliderjp", 
    Callback = function(Value)
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
    end,
@@ -226,6 +221,58 @@ local Input = HomeTab:CreateInput({
    RemoveTextAfterFocusLost = true,
    Callback = function(Text)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Text)
+   end,
+})
+local Toggle = HomeTab:CreateToggle({
+   Name = "Dark Mode",
+   CurrentValue = false,
+   Flag = "DM", 
+   Callback = function(DM)
+   if (DM) then
+Window.ModifyTheme {
+    TextColor = Color3.fromRGB(255, 255, 255),
+
+    Background = Color3.fromRGB(0, 0, 0),
+    Topbar = Color3.fromRGB(0, 0, 0),
+    Shadow = Color3.fromRGB(0, 0, 0),
+
+    NotificationBackground = Color3.fromRGB(0, 0, 0),
+    NotificationActionsBackground = Color3.fromRGB(100, 0, 255),
+
+    TabBackground = Color3.fromRGB(0, 0, 0),
+    TabStroke = Color3.fromRGB(100, 0, 255),
+    TabBackgroundSelected = Color3.fromRGB(50, 0, 132.5),
+    TabTextColor = Color3.fromRGB(255, 255, 255),
+    SelectedTabTextColor = Color3.fromRGB(255, 255, 255),
+
+    ElementBackground = Color3.fromRGB(15, 15, 15),
+    ElementBackgroundHover = Color3.fromRGB(40, 40, 40),
+    SecondaryElementBackground = Color3.fromRGB(0, 0, 0),
+    ElementStroke = Color3.fromRGB(150, 150, 150),
+    SecondaryElementStroke = Color3.fromRGB(255, 255, 255),
+            
+    SliderBackground = Color3.fromRGB(75, 0, 200),
+    SliderProgress = Color3.fromRGB(50, 0, 255),
+    SliderStroke = Color3.fromRGB(75, 0, 255),
+
+    ToggleBackground = Color3.fromRGB(100, 0, 255),
+    ToggleEnabled = Color3.fromRGB(255, 255,255),
+    ToggleDisabled = Color3.fromRGB(255, 255, 255),
+    ToggleEnabledStroke = Color3.fromRGB(0, 0, 0),
+    ToggleDisabledStroke = Color3.fromRGB(0, 0, 0),
+    ToggleEnabledOuterStroke = Color3.fromRGB(0, 0, 0),
+    ToggleDisabledOuterStroke = Color3.fromRGB(0, 0, 0),
+
+    DropdownSelected = Color3.fromRGB(100, 0, 255),
+    DropdownUnselected = Color3.fromRGB(0, 0, 0),
+
+    InputBackground = Color3.fromRGB(0, 0, 0),
+    InputStroke = Color3.fromRGB(100, 0, 255),
+    PlaceholderColor = Color3.fromRGB(100, 0, 255)
+}
+elseif true then
+Window.ModifyTheme('Serenity')
+end
    end,
 })
 
@@ -261,9 +308,6 @@ local Button6 = HomeTab:CreateButton({
 end,
 })
 
-
-
-
 local CustomThemesSection = HomeTab:CreateSection("Custon Themes Section")
 local Button7 = HomeTab:CreateButton({
    Name = "Outer Space",
@@ -294,13 +338,13 @@ local Button7 = HomeTab:CreateButton({
     SliderProgress = Color3.fromRGB(50, 0, 255),
     SliderStroke = Color3.fromRGB(75, 0, 255),
 
-    ToggleBackground = Color3.fromRGB(50, 0, 130),
-    ToggleEnabled = Color3.fromRGB(100, 146, 255),
-    ToggleDisabled = Color3.fromRGB(50, 0, 120),
-    ToggleEnabledStroke = Color3.fromRGB(70, 0, 140),
-    ToggleDisabledStroke = Color3.fromRGB(70, 0, 120),
-    ToggleEnabledOuterStroke = Color3.fromRGB(70, 0, 120),
-    ToggleDisabledOuterStroke = Color3.fromRGB(40, 0, 90),
+    ToggleBackground = Color3.fromRGB(100, 0, 255),
+    ToggleEnabled = Color3.fromRGB(255, 255,255),
+    ToggleDisabled = Color3.fromRGB(255, 255, 255),
+    ToggleEnabledStroke = Color3.fromRGB(0, 0, 0),
+    ToggleDisabledStroke = Color3.fromRGB(0, 0, 0),
+    ToggleEnabledOuterStroke = Color3.fromRGB(0, 0, 0),
+    ToggleDisabledOuterStroke = Color3.fromRGB(0, 0, 0),
 
     DropdownSelected = Color3.fromRGB(100, 0, 255),
     DropdownUnselected = Color3.fromRGB(0, 0, 0),
@@ -737,11 +781,33 @@ task.wait(2.150)
   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/achromatic%20v5%20edited%20yes.luau"))()
 end,
 })
+local NebulaDivider = MainTab:CreateDivider()
+local NebulaInput = MainTab:CreateInput({
+   Name = "Nebula Wings",
+   CurrentValue = "-gh 18334257663 18335331660",
+   PlaceholderText = "ID",
+   RemoveTextAfterFocusLost = true,
+   Callback = function(ID)
+    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync ((ID))
+   end,
+})
+local NebulaSendButton = MainTab:CreateButton({
+   Name = "Send Text",
+   Callback = function() 
+  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync ((ID))
+   end,
+})
+local NebulaButton = MainTab:CreateButton({
+   Name = "Refresh",
+   Callback = function() 
+  NebulaInput:Set("-gh ")
+   end,
+})
+
+local NebulaDivider1 = MainTab:CreateDivider()
 local Button12 = MainTab:CreateButton({
    Name = "Nebula Glitcher",
    Callback = function(A)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 18334257663 18335331660")
-task.wait(.1)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 task.wait(3)
 
@@ -793,6 +859,16 @@ local HatsTab = Window:CreateTab("Hats And Rigs", nil) -- Title, Image
 
 
 local HatsParagraph = HatsTab:CreateParagraph({Title = "IMPORTANT!", Content = "It is important that you should always load the rigs for genesis so everyone can see you"})
+local RemoveHatsDivider = HatsTab:CreateDivider()
+local RemoveHatsButton = HatsTab:CreateButton({
+   Name = "Remove Hats",
+   Callback = function() 
+  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-ch")
+  task.wait(.1)
+  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
+   end,
+})
+local RemoveHatsDivider1 = HatsTab:CreateDivider()
 local Divider = HatsTab:CreateDivider()
 local Button  = HatsTab:CreateButton({
    Name = "Genesis Rigs",
@@ -874,10 +950,6 @@ local Button8 = HatsTab:CreateButton({
    Name = "Glitchers",
    Callback = function() 
    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 4820152700 4524991457 4794315940 4506945409 4458601937 4315489767 4623728953 5030789687 4773883146 4773932088 4855847190 4932541287")
-task.wait(3.950)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
-task.wait(2.250)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
    end,
 })
 
