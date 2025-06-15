@@ -791,20 +791,16 @@ task.wait(2.150)
   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/achromatic%20v5%20edited%20yes.luau"))()
 end,
 })
-local NebulaDivider = MainTab:CreateDivider()
+
+local NebulaDivider1 = MainTab:CreateDivider()
+local Buttolocal NebulaDivider = MainTab:CreateDivider()
 local NebulaInput = MainTab:CreateInput({
    Name = "Nebula Wings",
    CurrentValue = "-gh 18334257663 18335331660",
-   PlaceholderText = "ID",
-   RemoveTextAfterFocusLost = true,
-   Callback = function(ID)
-    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync ((ID))
-   end,
-})
-local NebulaSendButton = MainTab:CreateButton({
-   Name = "Send Text",
-   Callback = function() 
-  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync ((ID))
+   PlaceholderText = "Nebula",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Nebula)
+    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync((Nebula))
    end,
 })
 local NebulaButton = MainTab:CreateButton({
@@ -813,9 +809,7 @@ local NebulaButton = MainTab:CreateButton({
   NebulaInput:Set("-gh ")
    end,
 })
-
-local NebulaDivider1 = MainTab:CreateDivider()
-local Button12 = MainTab:CreateButton({
+n12 = MainTab:CreateButton({
    Name = "Nebula Glitcher",
    Callback = function(A)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
@@ -879,7 +873,6 @@ local RemoveHatsButton = HatsTab:CreateButton({
    end,
 })
 local RemoveHatsDivider1 = HatsTab:CreateDivider()
-local Divider = HatsTab:CreateDivider()
 local Button  = HatsTab:CreateButton({
    Name = "Genesis Rigs",
    Callback = function() 
