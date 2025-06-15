@@ -793,7 +793,6 @@ end,
 })
 
 local NebulaDivider1 = MainTab:CreateDivider()
-local Buttolocal NebulaDivider = MainTab:CreateDivider()
 local NebulaInput = MainTab:CreateInput({
    Name = "Nebula Wings",
    CurrentValue = "-gh 18334257663 18335331660",
