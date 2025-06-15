@@ -125,6 +125,9 @@ local Button2 = HomeTab:CreateButton({
     --[[
 	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
 ]]
+--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
 local PlaceID = game.PlaceId
 local AllIDs = {}
 local foundAnything = ""
@@ -164,7 +167,13 @@ function TPReturner()
                             delfile("NotSameServers.json")
                             AllIDs = {}
                             table.insert(AllIDs, actualHour)
-                        end(AllIDs, ID)
+                        end)
+                    end
+                end
+                num = num + 1
+            end
+            if Possible == true then
+                table.insert(AllIDs, ID)
                 wait()
                 pcall(function()
                     writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
@@ -188,6 +197,7 @@ function Teleport()
     end
 end
 
+-- If you'd like to use a script before server hopping (Like a Automatic Chest collector you can put the Teleport() after it collected everything.
 Teleport()
 end,
 })
