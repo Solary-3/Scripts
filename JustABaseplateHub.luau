@@ -42,7 +42,7 @@ local HomeTab = Window:CreateTab("Home", nil) -- Title, Image
 local HomeSection = HomeTab:CreateSection("Main")
 
 local Paragraph = HomeTab:CreateParagraph({Title = "Just A Baseplate Hub By Theo/Paradigm", Content = "This Was Made on 05/13/25!"})
-local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content = "Now Added Dark Mode on the Home section, Added Hats Remover at the Hats and Rigs Section and added custom wings id text feild for nebula glitcher"})
+local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content = "Now Added Dark Mode on the Home section, Added Hats Remover at the Hats and Rigs Section, added custom wings id text feild for nebula glitcher and added Reload Example ID Button"})
 local Divider = HomeTab:CreateDivider()
 local Button = HomeTab:CreateButton({
    Name = "Sit",
@@ -802,13 +802,19 @@ local NebulaInput = MainTab:CreateInput({
     game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync((Nebula))
    end,
 })
+local NebulaExampleButton = MainTab:CreateButton({
+   Name = "Reload Example ID",
+   Callback = function() 
+  NebulaInput:Set("-gh 18334257663 18335331660")
+   end,
+})
 local NebulaButton = MainTab:CreateButton({
    Name = "Reload",
    Callback = function() 
   NebulaInput:Set("-gh ")
    end,
 })
-n12 = MainTab:CreateButton({
+local Button12 = MainTab:CreateButton({
    Name = "Nebula Glitcher",
    Callback = function(A)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
