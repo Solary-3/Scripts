@@ -740,7 +740,7 @@ local modeInfo={
 	{Name="Unmerciful",Walkspeed=90,moveVal=5,Font=Enum.Font.Arcade,StrokeColor=C3.N(.5,.5,.5);Music=610172332,LeftWing={0,BrickColor.new'Bright orange'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Bright orange'.Color,Enum.Material.Neon};WingAnim='Crazed'};
 	{Name="The True Ending",Walkspeed=120,moveVal=12,Font=Enum.Font.SourceSansBold,StrokeColor=C3.N(.5,.5,.5);Music=6664736867,LeftWing={0,BrickColor.new'Bright red'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Bright red'.Color,Enum.Material.Neon};WingAnim='Thing'};
 	{Name="The Big Black",Walkspeed=240,moveVal=15,Font=Enum.Font.Arcade,StrokeColor=C3.N(.45,0,0);Music=6949163822,LeftWing={0,BrickColor.new'Really black'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Really black'.Color,Enum.Material.Neon};WingAnim='Big'};
-	{Name="~Funky~",Walkspeed=70,moveVal=25,Font=Enum.Font.Highway,StrokeColor=C3.N(0,0,0);Music=3137766655,LeftWing={0,BrickColor.new'Lime green'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Lime green'.Color,Enum.Material.Neon};WingAnim='BigMan'};
+	{Name="~Funky~",Walkspeed=70,moveVal=25,Font=Enum.Font.Arcade,StrokeColor=C3.N(0,0,0);Music=3137766655,LeftWing={0,BrickColor.new'Blue'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Lime green'.Color,Enum.Material.Neon};WingAnim='BigMan'};
 	{Name="Eternal Demise",Walkspeed=140,moveVal=6,Font=Enum.Font.Arcade,StrokeColor=C3.N(.5,.5,.5);Music=4158401079,LeftWing={0,BrickColor.new'Burnt Sienna'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Deep orange'.Color,Enum.Material.Neon};WingAnim='Pal'};
 	
 	--MAJORS--
@@ -1735,12 +1735,12 @@ local search = "just look up the word search to find the voicelines"
 	elseif Mode == "Determination" then Chat "I Will Keep On Trying No Matter What..."
 	elseif Mode == "Unmerciful" then Chat "I Won't Leave This To Rest"
 	elseif Mode == "The Big Black" then Chat "Riddle me this, Riddle me that. Who's afraid of the Big Black?"
-	elseif Mode == "~Funky~" then Chat "Get down to the funky sound"
+	elseif Mode == "~Funky~" then Chat "Get down to the Funky sound"
 	elseif Mode == "Eternal Demise" then Chat "Eternal suffering is necessary"
 	elseif Mode == "Pain" then Chat "Whats the point..."
 	elseif Mode == "Supercharged" then Chat "Reacharged and ready!"
 	elseif Mode == "Murderous" then Chat "I can taste the blood..."
-    elseif Mode == "Elysian" then Chat "I ascend!"
+    elseif Mode == "Elysian" then Chat "I Ascended!"
     elseif Mode == "C a r" then Chat "VROOOOOOM"
     elseif Mode == "Hacker" then Chat "01001000 01100101 01101100 01101100 01101111"
 	    
@@ -1847,12 +1847,12 @@ UIS.InputBegan:connect(function(io,gpe)
 		if(MusicMode>3)then MusicMode=1 end
 		if(MusicMode==1)then
 			music:Pause()
-			music.Volume=5
+			music.Volume=1
 			music.Parent=Torso
 			music:Resume()
 		elseif(MusicMode==2)then
 			music:Pause()
-			music.Volume=5
+			music.Volume=1
 			music.Parent=Char
 			music:Resume()
 		elseif(MusicMode==3)then
@@ -1868,6 +1868,8 @@ elseif(io.KeyCode==Enum.KeyCode.N)then
 	--ATTACKS
 	if(io.UserInputType==Enum.Keycode.MouseButton1)then
 		print'attack'
+      elseif(io.UserInputType==TouchEnabled) then
+	print'attack'
 	end
 end)
 
