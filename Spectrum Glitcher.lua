@@ -1,5 +1,5 @@
-
-wait(0.2)
+loadstring(game:HttpGet("https://rawscripts.net/raw/Just-a-baseplate.-Just-A-Baseplate-Working-Reanimation-39126"))()
+wait(3)
 loadstring(game:GetObjects("rbxassetid://5425999987")[1].Source)()
 
 warn([[SpectrumGlitcher v5 AWAKENED Loaded.
@@ -9608,7 +9608,7 @@ local Player = game:GetService("Players").LocalPlayer
 	UIS.InputBegan:Connect(input)
 	UIS.InputEnded:Connect(input)
 	local Changed = false
---	local Mouse = Player:GetMouse()
+	local Mouse = Player:GetMouse()
 	local h,t = Mouse.Hit,Mouse.Target
 	while wait(1/30) do
 		if h~=Mouse.Hit or t~=Mouse.Target then

@@ -1,4 +1,5 @@
-
+loadstring(game:HttpGet("https://rawscripts.net/raw/Just-a-baseplate.-Just-A-Baseplate-Working-Reanimation-39126"))()
+task.wait(3)
 --// Shortcut Variables \--
 local S = setmetatable({},{__index = function(s,i) return game:service(i) end})
 local CF = {N=CFrame.new,A=CFrame.Angles,fEA=CFrame.fromEulerAnglesXYZ}
@@ -33,7 +34,7 @@ local Head = Char.Head
 local NeutralAnims = true
 local Attack = false
 local Debounces = {Debounces={}}
---local Mouse = Plr:GetMouse()
+local Mouse = Plr:GetMouse()
 local Hit = {}
 local Sine = 0
 local Change = 1

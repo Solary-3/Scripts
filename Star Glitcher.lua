@@ -1,4 +1,5 @@
-
+loadstring(game:HttpGet("https://rawscripts.net/raw/Just-a-baseplate.-Just-A-Baseplate-Working-Reanimation-39126"))()
+task.wait(3)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GelatekWasTaken/Catware/main/Utilities/LoadLibrary.lua"))()
 warn("All purpose switcher...")
 warn("Edit By Frepix.")
