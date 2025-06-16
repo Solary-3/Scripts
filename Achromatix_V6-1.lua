@@ -39,8 +39,6 @@ local winganimbutton = Instance.new("TextButton")
 local WinganimList = Instance.new("TextButton")
 local Info = Instance.new("TextLabel")
 local Cred = Instance.new("TextLabel")
-local Invite = Instance.new("TextButton")
-local NameButton = Instance.new("TextButton")
 local kk = Instance.new("TextLabel")
 
 --Properties:
@@ -69,7 +67,7 @@ NAMESHITE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 NAMESHITE.BackgroundTransparency = 1.000
 NAMESHITE.Position = UDim2.new(0.01, 0, 0.111111112, 0)
 NAMESHITE.Size = UDim2.new(0, 125, 0, 21)
-NAMESHITE.Font = Enum.Font.Michroma
+NAMESHITE.Font = Enum.Font.Arcade
 NAMESHITE.Text = "Achromatix"
 NAMESHITE.TextColor3 = Color3.fromRGB(255, 255, 255)
 NAMESHITE.TextSize = 20.000
@@ -81,7 +79,7 @@ CUSTOMOOOOOOO.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 CUSTOMOOOOOOO.BackgroundTransparency = 1.000
 CUSTOMOOOOOOO.Position = UDim2.new(0.265356123, 0, 0.111111112, 0)
 CUSTOMOOOOOOO.Size = UDim2.new(0, 144, 0, 21)
-CUSTOMOOOOOOO.Font = Enum.Font.FredokaOne
+CUSTOMOOOOOOO.Font = Enum.Font.Arcade
 CUSTOMOOOOOOO.Text = "V6"
 CUSTOMOOOOOOO.TextColor3 = Color3.fromRGB(255, 0, 0)
 CUSTOMOOOOOOO.TextSize = 20.000
@@ -94,8 +92,8 @@ closethisshit.BorderSizePixel = 0
 closethisshit.Position = UDim2.new(0.930921018, 0, 0, 0)
 closethisshit.Size = UDim2.new(0, 44, 0, 27)
 closethisshit.AutoButtonColor = false
-closethisshit.Font = Enum.Font.SourceSans
-closethisshit.Text = "     X"
+closethisshit.Font = Enum.Font.Arcade
+closethisshit.Text = "X"
 closethisshit.TextColor3 = Color3.fromRGB(255, 0, 0)
 closethisshit.TextSize = 20.000
 closethisshit.TextYAlignment = Enum.TextYAlignment.Top
@@ -106,7 +104,7 @@ Info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Info.BackgroundTransparency = 1.000
 Info.Position = UDim2.new(0.14, 0, 1.2, 0)
 Info.Size = UDim2.new(0, 320, 0, 30)
-Info.Font = Enum.Font.FredokaOne
+Info.Font = Enum.Font.Arcade
 Info.Text = "To launch the script, click on the red X"
 Info.TextColor3 = Color3.fromRGB(255, 255, 255)
 Info.TextSize = 20.000
@@ -118,7 +116,7 @@ Cred.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Cred.BackgroundTransparency = 1.000
 Cred.Position = UDim2.new(-0.08, 0, 2, 0)
 Cred.Size = UDim2.new(0, 500, 0, 30)
-Cred.Font = Enum.Font.RobotoMono
+Cred.Font = Enum.Font.Arcade
 Cred.Text = "Made by Keanu Reeves#3227 | Dreamz1019 on YT"
 Cred.TextColor3 = Color3.fromRGB(255, 255, 255)
 Cred.TextSize = 18.000
@@ -130,7 +128,7 @@ kk.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 kk.BackgroundTransparency = 1.000
 kk.Position = UDim2.new(-0.08, 0, 3.4, 0)
 kk.Size = UDim2.new(0, 500, 0, 30)
-kk.Font = Enum.Font.RobotoMono
+kk.Font = Enum.Font.Arcade
 kk.Text = "Credit to guard#0381 also for fixing attacks!"
 kk.TextColor3 = Color3.fromRGB(255, 255, 255)
 kk.TextSize = 13.000
@@ -142,7 +140,7 @@ WinganimList.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 WinganimList.BorderSizePixel = 0
 WinganimList.Position = UDim2.new(0.74, 0, .8, 0)
 WinganimList.Size = UDim2.new(0, 110, 0, 26)
-WinganimList.Font = Enum.Font.SourceSansBold
+WinganimList.Font = Enum.Font.Arcade
 WinganimList.Text = "Modes (press F9)"
 WinganimList.TextColor3 = Color3.fromRGB(255, 255, 255)
 WinganimList.TextSize = 17.000
@@ -181,26 +179,12 @@ WinganimList.MouseButton1Down:Connect(function()
  print("U + T - Murderous")
  print("L + T - Elysian")
  print("B + T - C a r")
+ print("Q + T - Hacker")
 
     end)
 game.StarterGui:SetCore("SendNotification", {Title = "Achromatix <3", Text = "This script was made by Keanu Reeves#3227.", Icon = "http://www.roblox.com/asset/?id=6977874681", Duration = 3})
+game.StarterGui:SetCore("SendNotification", {Title = "Achromatix <3", Text = "Modified By Theo/Paradigm!, not skid",Duration = 5})
 
-
-NameButton.Name = "NameButton"
-NameButton.Parent = Main
-NameButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-NameButton.BorderSizePixel = 0
-NameButton.Position = UDim2.new(.01, 0, 0.8, 0)
-NameButton.Size = UDim2.new(0, 125, 0, 26)
-NameButton.Font = Enum.Font.SourceSansBold
-NameButton.Text = "Copy Discord Invite"
-NameButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-NameButton.TextSize = 17.000
-NameButton.MouseButton1Down:Connect(function()
-    setclipboard("discord.gg/zrUBFKrqJW")
-NameTextBox.Text = ""
-
-end)
 
 local function THARZS_fake_script() -- closethisshit.CLOSESCRIPTFUCK 
 	local script = Instance.new('LocalScript', closethisshit)
@@ -1193,7 +1177,7 @@ function ClientTrail(data)
 		data.CFrame = typeof(data.CFrame)=='CFrame' and data.CFrame or Root.CFrame
 		local ep = typeof(data.EndPos)=='CFrame' and data.EndPos or data.CFrame*CFrame.new(0,5,0);
 		data.EndPos=nil
-		local trailPart = Part(Effects,BrickColor.new'White',Enum.Material.SmoothPlastic,V3.N(.05,.05,.05),data.CFrame,true,false)
+		local trailPart = Part(Effects,BrickColor.new'White',Enum.Material.Neon,V3.N(.05,.05,.05),data.CFrame,true,false)
 		trailPart.Transparency=1
 		local start = data.CFrame
 		for i = 1, data.Frames do
