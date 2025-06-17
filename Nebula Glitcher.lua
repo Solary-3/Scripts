@@ -1,5 +1,5 @@
-loadstring(game:HttpGet("https://rawscripts.net/raw/Just-a-baseplate.-Just-A-Baseplate-Working-Reanimation-39126"))()
-task.wait(3)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Tescalus/Pendulum-Hubs-Source/main/Reanimation.lua"))()
 --// Shortcut Variables \--
 local S = setmetatable({},{__index = function(s,i) return game:service(i) end})
 local CF = {N=CFrame.new,A=CFrame.Angles,fEA=CFrame.fromEulerAnglesXYZ}
@@ -3461,3 +3461,4 @@ while true do
 wait()
 lia4.CFrame = lia4.CFrame * CFrame.fromEulerAnglesXYZ(25, 0, 0) -- 100% is normal, less than 100% is faster, greater than 100% is slow, so don't bother entering 200
 end
+
