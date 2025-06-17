@@ -8,8 +8,7 @@
 --(hence the "V12".. its just some modes animations have been redone :D ).
 --anyways. Enjoy!--
 --if this was obfuscated in any way. it most likely has a logger or other malicious material--
-game.StarterGui:SetCore("SendNotification", {Title = "FROM THEO", Text =
-"Encription Glitched(Edited By Me), Creds to the owner[Trixlua]", Duration = 1})
+game.StarterGui:SetCore("SendNotification", {Title = "FROM THEO", Text = "Encription Glitched(Edited By Me), Creds to the owner[Trixlua]", Duration = 1})
 
 
 
