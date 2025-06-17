@@ -1222,8 +1222,6 @@ local modeInfo={
    	{Name="=_-MADNESS-_=",Walkspeed=94,moveVal=12,Font=Enum.Font.Garamond,StrokeColor=C3.N(255,0,0);Music=833779944,LeftWing={0,BrickColor.new'Crimson'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Crimson'.Color,Enum.Material.Neon};WingAnim='NebG6INSANE'};
     {Name="Omniversal",Walkspeed=79,moveVal=15,Font=Enum.Font.Garamond,StrokeColor=C3.N(255,255,255);Music=577543579,LeftWing={0,BrickColor.new'Really black'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Really black'.Color,Enum.Material.Neon};WingAnim='NebG5'};
    	{Name="TRIXLUA",Walkspeed=45,moveVal=15,Font=Enum.Font.Gotham,StrokddeColor=C3.RGB(98,37,209);Music=6535256612,LeftWing={0,BrickColor.new'White'.Color,Enum.Material.DiamondPlate};RightWing={0,BrickColor.new'Cyan'.Color,Enum.Material.DiamondPlate};WingAnim='SONUS5'};
-   	{Name="THEO",Walkspeed=45,moveVal=15,Font=Enum.Font.Gotham,StrokddeColor=C3.rgb(52,255,209);Music=6535256612,LeftWing={0,BrickColor.new'White'.Color,Enum.Material.DiamondPlate};RightWing={0,BrickColor.new'Cyan'.Color,Enum.Material.DiamondPlate};WingAnim='THEO'};
-   	
     
 }
 
@@ -2748,8 +2746,6 @@ local search = "just look up the word search to find the voicelines"
 	elseif Mode == "sus" then Chat "When the imposter is sus:"	    
 	elseif Mode == "Omniversal" then Chat "To The Stars!"
 	elseif Mode == "TRIXLUA" then Chat "TRIXLUA: Credits to me!"
-	elseif Mode == "THEO" then Chat "I SHALL CONQUER THE WORLD!"
-	  
 	    
 	    
 	    
@@ -2780,9 +2776,6 @@ UIS.InputBegan:connect(function(io,gpe)
 		changeMode'DICK'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
 	elseif(io.KeyCode == Enum.KeyCode.P and Mode~='Interstellar')then 
 		changeMode'Interstellar'  game.lighting.ClockTime = 0 game.Lighting.FogEnd = 9999
-		elseif(io.KeyCode == Enum.KeyCode.F and Mode~='Interstellar')then 
-		changeMode'THEO'  game.lighting.ClockTime = 0 game.Lighting.FogEnd =
-		9999
 	elseif(io.KeyCode == Enum.KeyCode.G and Mode~='gh0st3d')then
 		changeMode'gh0st3d' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
 	elseif(io.KeyCode == Enum.KeyCode.Four and Mode~='GALACTIC')then
@@ -3480,8 +3473,6 @@ WingAnims.StarT=function()
 	RWP7W.C0 = RWP7W.C0:lerp(CF.N(0*M.C(WingSine/62),-3.64-0*M.S(WingSine/42),-2)*CF.A(0,0,M.R(-0+950*M.C(WingSine/402))),.2)	
 end
 
-
-
 WingAnims.StarLTT=function()
 	LWP1W.C0 = LWP1W.C0:lerp(CF.N(-8*M.C(WingSine/32),1.5-3*M.C(WingSine/32),-1)*CF.A(100,0,M.R(-150-2000*M.C(WingSine/322))),.2)
 	LWP2W.C0 = LWP2W.C0:lerp(CF.N(-8*M.C(WingSine/32),1.5-3*M.C(WingSine/32),-1)*CF.A(100,0,M.R(-180-2000*M.C(WingSine/322))),.2)
@@ -3848,7 +3839,7 @@ WingAnims.NebG3=function(mult)
 	RWP7W.C0 = RWP7W.C0:lerp(CF.N(0*M.C(WingSine/62),-3.64-0*M.S(WingSine/42),-2)*CF.A(0,0,M.R(-0+950*M.C(WingSine/402))),.2)	
 end
 
-WingAnims.THEO=function(mult)
+WingAnims.NEBGNEPTUNAINV=function(mult)
 	mult=mult or 150
 	LWP1W.C0 = LWP1W.C0:lerp(CF.N(4*M.C(WingSine/32),-2.5+6*M.S(WingSine/32),-1)*CF.A(0,0,M.R(-210-950*M.C(WingSine/mult))),.2)
 	LWP2W.C0 = LWP2W.C0:lerp(CF.N(4*M.C(WingSine/32),-2.5+6*M.C(WingSine/32),-1)*CF.A(0,0,M.R(-240-650*M.C(WingSine/mult))),.2)
@@ -5224,59 +5215,6 @@ Lifetime = 2,
 					RH.C0 = RH.C0:lerp(RHC0,Alpha)
 				end
 			end
-			elseif(Mode=='THEO')then
-local HCF = Root.CFrame * CF.N(math.random(-20,20),-4,(math.random(-20,20))) * CF.A(M.R(math.random(-20,20)),M.R(math.random(-20,20)),M.R(math.random(-20,20)))
-Effect({
-Color = BrickColor.new'Red'.Color;
-Material = Enum.Material.Neon,
-Mesh = {Type = Enum.MeshType.Sphere},
-CFrame = HCF,
-EndPos = HCF* CF.N(0,10,0),
-Size = Vector3.new(.1,.1,0.1),
-EndSize = Vector3.new(1,.5,1),
-Transparency = NumberRange.new(0,0),
-Lifetime = 2,
-})
-			local Alpha = .1
-			if(NeutralAnims)then	
-				GotEffect{
-					Lifetime=.2;
-					Mesh={Type=Enum.MeshType.Sphere};
-					CFrame=LArm.CFrame*CF.N(0,-1,0)*CF.A(M.RRNG(0,360),M.RRNG(0,360),M.RRNG(0,360));
-					Color=BrickColor.new'White'.Color;
-					Transparency={0,1};
-					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
-				}
-				GotEffect{
-					Lifetime=.2;
-					Mesh={Type=Enum.MeshType.Sphere};
-					CFrame=RArm.CFrame*CF.N(0,-1,0)*CF.A(M.RRNG(0,360),M.RRNG(0,360),M.RRNG(0,360));
-					Color=BrickColor.new'White'.Color;
-					Transparency={0,1};
-					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
-				}
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1.05*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
-				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
-				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
-				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(-2),M.R(30+2*M.S(Sine/36))),Alpha)
-			end
-			if(legAnims)then 
-				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
-				else
-					LH.C0 = LH.C0:lerp(RHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
-				end
-			end
 					elseif(Mode=='AURORA')then
 	    GotEffect{
 					Lifetime=0.3;
@@ -6397,31 +6335,6 @@ end
 local HCF = Root.CFrame * CF.N(math.random(-20,20),-4,(math.random(-20,20))) * CF.A(M.R(math.random(-20,20)),M.R(math.random(-20,20)),M.R(math.random(-20,20)))
 Effect({
 Color = BrickColor.new'Cyan'.Color;
-Material = Enum.Material.Neon,
-Mesh = {Type = Enum.MeshType.Sphere},
-CFrame = HCF,
-EndPos = HCF* CF.N(0,10,0),
-Size = Vector3.new(.1,.1,0.1),
-EndSize = Vector3.new(1,.5,1),
-Transparency = NumberRange.new(0,0),
-Lifetime = 2,
-})
-			local Alpha = .1
-  			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),2+.2*M.C(Sine/32),0)*CF.A(M.R(-57+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
-			end
-			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
-			end
-			elseif(State == 'Walk')then
-		if(Mode=='THEO')then
-local HCF = Root.CFrame * CF.N(math.random(-20,20),-4,(math.random(-20,20))) * CF.A(M.R(math.random(-20,20)),M.R(math.random(-20,20)),M.R(math.random(-20,20)))
-Effect({
-Color = BrickColor.new'Red'.Color;
 Material = Enum.Material.Neon,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
