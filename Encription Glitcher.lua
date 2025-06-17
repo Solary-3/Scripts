@@ -8,7 +8,6 @@
 --(hence the "V12".. its just some modes animations have been redone :D ).
 --anyways. Enjoy!--
 --if this was obfuscated in any way. it most likely has a logger or other malicious material--
-game.StarterGui:SetCore("SendNotification", {Title = "FROM THEO", Text = "Encription Glitched(Edited By Me), Creds to the owner[Trixlua]", Duration = 1})
 
 
 
@@ -533,7 +532,7 @@ end)
 
 exitbutton.MouseButton1Down:Connect(function()
 
-wait (.500)
+wait (.1)
 
 
 
@@ -1101,7 +1100,7 @@ local movement = 8
 local footsound=0;
 local WalkSpeed=16;
 local Combo=0;
-local Mode='Encription'
+local Mode='Sadness'
 local vaporwaveMode=false;
 local WingAnim='NebG1'
 local music;
@@ -1141,7 +1140,7 @@ local Playlist={
 }
 
 --[[
-Encription - PURIFIED - Lost Soul
+Sadness - PURIFIED - Lost Soul
 Equality
 CALAMITANIA - INFINITE VOID
 GALACTIC - Th1rt3en
@@ -1170,18 +1169,18 @@ local modeInfo={
 	{Name="The Big Black",Walkspeed=73,moveVal=13,Font=Enum.Font.Fantasy,StrokeColor=C3.N(0,0,0);Music=183142252,LeftWing={0,BrickColor.new'Neon white'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Neon white'.Color,Enum.Material.Neon};WingAnim='StarLTI'};
 	{Name="Universal",Walkspeed=46,moveVal=13,Font=Enum.Font.Fantasy,StrokeColor=C3.N(0,0,0);Music=561661266,LeftWing={0,BrickColor.new'Crimson'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Crimson'.Color,Enum.Material.Neon};WingAnim='StarLTR'};
 	{Name="Defected",Walkspeed=46,moveVal=13,Font=Enum.Font.Fantasy,StrokeColor=C3.N(0,0,0);Music=253456836,LeftWing={0,BrickColor.new'Crimson'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Crimson'.Color,Enum.Material.Neon};WingAnim='StarGRE'};
-	{Name="Phoennix",Walkspeed=69,moveVal=13,Font=Enum.Font.Fantasy,StrokeColor=C3.N(255,255,255);Music=1298467151,LeftWing={0,BrickColor.new'Gold'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Gold'.Color,Enum.Material.Neon};WingAnim='StarB'};
+	{Name="Pheonix",Walkspeed=69,moveVal=13,Font=Enum.Font.Fantasy,StrokeColor=C3.N(255,255,255);Music=1298467151,LeftWing={0,BrickColor.new'Gold'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Gold'.Color,Enum.Material.Neon};WingAnim='StarB'};
 	{Name="BIT32",Walkspeed=46,moveVal=13,Font=Enum.Font.Fantasy,StrokeColor=C3.N(.5,.5,.500);Music=366948782,LeftWing={0,BrickColor.new'Black'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Black'.Color,Enum.Material.Neon};WingAnim='StarT'};
 	{Name="HyPnOtIC",Walkspeed=35,moveVal=15,Font=Enum.Font.Arcade,StrokeColor=C3.N(.5,.5,.500);Music=318062766,LeftWing={0,BrickColor.new'White'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Crimson'.Color,Enum.Material.Neon};WingAnim='StarEF'};
-	{Name="Encription",Walkspeed=16,moveVal=8,Font=Enum.Font.Arcade,StrokeColor=C3.N(.5,.5,.5);Music=2183613911,LeftWing={0,BrickColor.new'White'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'White'.Color,Enum.Material.Neon};WingAnim='NebG1'};
+	{Name="Sadness",Walkspeed=16,moveVal=8,Font=Enum.Font.Arcade,StrokeColor=C3.N(.5,.5,.5);Music=2183613911,LeftWing={0,BrickColor.new'White'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'White'.Color,Enum.Material.Neon};WingAnim='NebG1'};
 	{Name="PRISM",Walkspeed=71,moveVal=9,Font=Enum.Font.Arcade,StrokeColor=C3.N(.5,.5,.5);Music=2272275958,LeftWing={0,BrickColor.new'White'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'White'.Color,Enum.Material.Neon};WingAnim='MANGYR'};
 	{Name="ULTRAVIOLET",Walkspeed=22,moveVal=9,Font=Enum.Font.Arcade,StrokeColor=C3.N(255,255,255);Music=391592859,LeftWing={0,BrickColor.new'Lime green'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Lime green'.Color,Enum.Material.Neon};WingAnim='CERTUS3'};
 	{Name="Equality",Walkspeed=16,moveVal=8,Font=Enum.Font.Garamond,StrokeColor=C3.N(255,255,255);Music=1225131077,LeftWing={0,BrickColor.new'Really Black'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Really Black'.Color,Enum.Material.Neon};WingAnim='NebG6'};
 	{Name="Interstellar",Walkspeed=120,moveVal=15,Font=Enum.Font.Fantasy,StrokeColor=C3.N(255, 255, 255);Music=142720946,LeftWing={0,BrickColor.new'Really Black'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Really black'.Color,Enum.Material.Neon};WingAnim='Sonar2',0.1};
 	{Name="CALAMITANIA",Walkspeed=120,moveVal=13,Font=Enum.Font.Fantasy,StrokeColor=C3.N(255,255,255);Music=2313332891,LeftWing={0,BrickColor.new'Pink'.Color,Enum.Material.Glass};RightWing={0,BrickColor.new'Black'.Color,Enum.Material.Glass};WingAnim='StarLCR'};
 	{Name="WAR MACHINE",Walkspeed=45,moveVal=13,Font=Enum.Font.Fantasy,StrokeColor=C3.N(0,0,0);Music=816567547,LeftWing={0,BrickColor.new'Medium stone grey'.Color,Enum.Material.Metal};RightWing={0,BrickColor.new'Black'.Color,Enum.Material.Metal};WingAnim='StarLCR'};
-	{Name="Galactic",Walkspeed=69,moveVal=8,Font=Enum.Font.Gotham,StrokeColor=C3.N(.6,.0,.9);Music=5410081112,LeftWing={0,BrickColor.new'Black'.Color,Enum.Material.Glass};RightWing={0,BrickColor.new'Black'.Color,Enum.Material.Glass};WingAnim='SONUS5'};
-	{Name="SPACETIME",Walkspeed=24,moveVal=8,Font=Enum.Font.Gotham,StrokeColor=C3.N(.255,.255,.255);Music=343138870,LeftWing={0,BrickColor.new'Black'.Color,Enum.Material.Glass};RightWing={0,BrickColor.new'Black'.Color,Enum.Material.Glass};WingAnim='SONUS5Timed'};
+	{Name="Galactic",Walkspeed=69,moveVal=8,Font=Enum.Font.Fantasy,StrokeColor=C3.N(.6,.0,.9);Music=5410081112,LeftWing={0,BrickColor.new'Black'.Color,Enum.Material.Glass};RightWing={0,BrickColor.new'Black'.Color,Enum.Material.Glass};WingAnim='SONUS5'};
+	{Name="SPACETIME",Walkspeed=24,moveVal=8,Font=Enum.Font.Fantasy,StrokeColor=C3.N(.255,.255,.255);Music=343138870,LeftWing={0,BrickColor.new'Black'.Color,Enum.Material.Glass};RightWing={0,BrickColor.new'Black'.Color,Enum.Material.Glass};WingAnim='SONUS5Timed'};
 	{Name="PARADOX",Walkspeed=68,moveVal=15,Font=Enum.Font.Fantasy,StrokeColor=C3.N(.6,.0,.9);Music=395351949,LeftWing={0,BrickColor.new'Black'.Color,Enum.Material.Glass};RightWing={0,BrickColor.new'Black'.Color,Enum.Material.Glass};WingAnim='SONUS1'};
 	{Name="GALACTIC",Walkspeed=48,moveVal=8,Font=Enum.Font.Arcade,StrokeColor=C3.N(0,0,0);Music=305425343,LeftWing={0,BrickColor.new'Magenta'.Color,Enum.Material.Glass};RightWing={0,BrickColor.new'Magenta'.Color,Enum.Material.Glass};WingAnim='SONUS3'};
 	{Name="br0k3n",Walkspeed=67,moveVal=8,Font=Enum.Font.Garamond,StrokeColor=C3.N(.1,.1,.1);Music=225168894,LeftWing={0,BrickColor.new'Black'.Color,Enum.Material.Glass};RightWing={0,BrickColor.new'Black'.Color,Enum.Material.Glass};WingAnim={'INSANEGREG2',2}};
@@ -1223,7 +1222,8 @@ local modeInfo={
    	{Name="=_-MADNESS-_=",Walkspeed=94,moveVal=12,Font=Enum.Font.Garamond,StrokeColor=C3.N(255,0,0);Music=833779944,LeftWing={0,BrickColor.new'Crimson'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Crimson'.Color,Enum.Material.Neon};WingAnim='NebG6INSANE'};
     {Name="Omniversal",Walkspeed=79,moveVal=15,Font=Enum.Font.Garamond,StrokeColor=C3.N(255,255,255);Music=577543579,LeftWing={0,BrickColor.new'Really black'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Really black'.Color,Enum.Material.Neon};WingAnim='NebG5'};
    	{Name="TRIXLUA",Walkspeed=45,moveVal=15,Font=Enum.Font.Gotham,StrokddeColor=C3.RGB(98,37,209);Music=6535256612,LeftWing={0,BrickColor.new'White'.Color,Enum.Material.DiamondPlate};RightWing={0,BrickColor.new'Cyan'.Color,Enum.Material.DiamondPlate};WingAnim='SONUS5'};
-   	{Name="THEO",Walkspeed=45,moveVal=15,Font=Enum.Font.Gotham,StrokddeColor=C3.RGB(255,255,255);Music=6535256612,LeftWing={0,BrickColor.new'Cyan'.Color,Enum.Material.DiamondPlate};RightWing={0,BrickColor.new'Lime green'.Color,Enum.Material.Neon};WingAnim='Theo'};
+   	{Name="THEO",Walkspeed=45,moveVal=15,Font=Enum.Font.Gotham,StrokddeColor=C3.rgb(52,255,209);Music=6535256612,LeftWing={0,BrickColor.new'White'.Color,Enum.Material.DiamondPlate};RightWing={0,BrickColor.new'Cyan'.Color,Enum.Material.DiamondPlate};WingAnim='THEO'};
+   	
     
 }
 
@@ -1898,7 +1898,7 @@ local text=bbg:FindFirstChild'TextLabel' or NewInstance("TextLabel",bbg,{
 	TextStrokeTransparency=0;
 	Font=Enum.Font.Arcade;
 	TextColor3=C3.N(1,1,1);
-	Text='Encription'
+	Text='Sadness'
 })
 
 function getMode(modeName)
@@ -2729,13 +2729,13 @@ local search = "just look up the word search to find the voicelines"
 	elseif Mode == "ZEN-X" then Chat"You can run. but you cant hide..."
 	elseif Mode == "ZORNO" then Chat"You cant hide CRANKTON. i will find u"
 	elseif Mode == "FORCE" then Chat"I Am The Lightning..."
-	elseif Mode == "HyPnOtIC" then Chat"HYPNOTIZE!"
+	elseif Mode == "HyPnOtIC" then Chat"HYPNOTISE!"
 	elseif Mode == "AURORA" then Chat"You will be lucky if you survive..."
 	elseif Mode == "The Doctor" then Chat"Well Well Well. Look what we have here..."
 	elseif Mode == "ILLUMINATION" then Chat"Prepare for your demise."
 	elseif Mode == "ULTRAVIOLET" then Chat"You will die. No need to run..."
 	elseif Mode == "SYNCHRO" then Chat "FEEL MY WRATH..."
-	elseif Mode == "BROKEN" then Chat "DIE..."
+	elseif Mode == "br0k3n" then Chat "DYYEEE..."
 	elseif Mode == "Galactic" then Chat "TO INFINITY!"
 	elseif Mode == "INFINITE VOID" then Chat "you hear that. thats CRANKTON. hes hiding in the void"
 	elseif Mode == "SPACETIME" then Chat "I control all of time and space"
@@ -2748,7 +2748,9 @@ local search = "just look up the word search to find the voicelines"
 	elseif Mode == "sus" then Chat "When the imposter is sus:"	    
 	elseif Mode == "Omniversal" then Chat "To The Stars!"
 	elseif Mode == "TRIXLUA" then Chat "TRIXLUA: Credits to me!"
-  elseif mode == "THEO" then Chat "I Will Conquer Theo World!"
+	elseif Mode == "THEO" then Chat "I SHALL CONQUER THE WORLD!"
+	  
+	    
 	    
 	    
 	    
@@ -2764,8 +2766,8 @@ end
 UIS.InputBegan:connect(function(io,gpe)
 	if(gpe or Attack or data.User~=data.Local)then return end
 	--MODES
-	if(io.KeyCode == Enum.KeyCode.One and Mode~='Encription')then 
-		changeMode'Encription'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	if(io.KeyCode == Enum.KeyCode.One and Mode~='Sadness')then 
+		changeMode'Sadness'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
 	elseif(io.KeyCode == Enum.KeyCode.Two and Mode~='Equality')then 
 		changeMode'Equality'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
 	elseif(io.KeyCode == Enum.KeyCode.Three and Mode~='CALAMITANIA')then
@@ -2778,6 +2780,9 @@ UIS.InputBegan:connect(function(io,gpe)
 		changeMode'DICK'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
 	elseif(io.KeyCode == Enum.KeyCode.P and Mode~='Interstellar')then 
 		changeMode'Interstellar'  game.lighting.ClockTime = 0 game.Lighting.FogEnd = 9999
+		elseif(io.KeyCode == Enum.KeyCode.F and Mode~='Interstellar')then 
+		changeMode'THEO'  game.lighting.ClockTime = 0 game.Lighting.FogEnd =
+		9999
 	elseif(io.KeyCode == Enum.KeyCode.G and Mode~='gh0st3d')then
 		changeMode'gh0st3d' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
 	elseif(io.KeyCode == Enum.KeyCode.Four and Mode~='GALACTIC')then
@@ -2792,99 +2797,97 @@ powerup()     changeMode'INFINITY'  game.lighting.ClockTime = 14 game.Lighting.F
 		changeMode'ULTRA JAM' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
 elseif(io.KeyCode == Enum.KeyCode.F and Mode=='CALAMITANIA')then 
         CrueltiesSmash()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.Eight and Mode~='Careless')then 
-         		changeMode'Careless'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.Q and Mode~='Dark Energy')then
-         		changeMode'Dark Energy'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.K and Mode~='ZEN-X')then
-         		changeMode'ZEN-X' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         		elseif(io.KeyCode == Enum.KeyCode.J and Mode~='Trinity Keeper')then 
-         		changeMode'Trinity Keeper' VaporTaunt() game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.Y and Mode~='Phoenix')then 
-powerup()	changeMode'Phoenix'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.Z and Mode~='PRISM')then 
-         		changeMode'PRISM'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.Keycode == Enum.Keyxode.R and mode ~='THEO')then
-         	  changemode'THEO' game.light.ClockTime = 14 game.Lighting.FodEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.L and Mode~='HyPnOtIC')then
-         		changeMode'HyPnOtIC' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.Nine and Mode~='AURORA')then
-         		changeMode'AURORA' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='GALACTIC')then 
-         		changeMode'PURIFIED'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='PURIFIED')then 
-         		changeMode'ZORNO' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='CALAMITANIA')then 
-         		changeMode'INFINITE VOID' VaporTaunt()  game.lighting.ClockTime = 0 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.U and Mode~='LEGMAN')then
-         		changeMode'LEGMAN' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='gh0st3d')then 
-         		changeMode'FREEZING' VaporTaunt() game.lighting.ClockTime = 0 game.Lighting.FogEnd = 150
-         	elseif(io.KeyCode == Enum.KeyCode.Q and Mode=='Dark Energy')then 
-         		changeMode'Broken PR0GRam'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='PRISM')then
-         		changeMode'Omniversal' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Equality')then 
-         	powerup()	changeMode'=_-MADNESS-_='  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Phoenix')then 
-         		changeMode'Time'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='The Big Black')then 
-         		changeMode'THE FORGOTTEN'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='LOSS')then 
-         		changeMode'Universal'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Universal')then 
-         		changeMode'Defected'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Time')then 
-         		changeMode'The Big Black'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='DICK')then 
-         		changeMode'sus' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='SPACETIME')then
-         		changeMode'TIMELESS'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='TIMELESS')then
-         		changeMode'LIGHTSPEED'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='LIGHTSPEED')then
-         	game.lighting.ClockTime = 0	changeMode'Ultra Instinct'   game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.F and Mode=='INFINITY')then
-         		changeMode'TRIXLUA' VaporTaunt() game.lighting.ClockTime = 0 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.H and Mode~='Loki')then
-         		changeMode'Loki'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.F and Mode=='Loki')then
-         	superLoki()	changeMode'Ioki'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 99999999
-         	elseif(io.KeyCode == Enum.KeyCode.E and Mode=='Ioki')then
-         	LokiExplode()	game.lighting.ClockTime = 14 game.Lighting.FogEnd = 99999999
-         	elseif(io.KeyCode == Enum.KeyCode.V and Mode=='Dark Energy')then
-         		changeMode'N U C L E A R'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.R and Mode=='SYNCHRO')then
-         		changeMode'LOSS' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.E and Mode=='Dark Energy')then 
-         		changeMode'Calamified'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.E and Mode=='Calamified')then 
-         		changeMode'PESTILENCE' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.Q and Mode=='Calamified')then 
-         	EndofworldsSMASHDOWN()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.R and Mode=='Dark Energy')then 
-         		changeMode'SYNCHRO' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.R and Mode=='Broken PR0GRam')then 
-         		changeMode'SPINNER'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.R and Mode=='SANS')then 
-         		changeMode'LOVE'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='SANS')then 
-         		changeMode'The Sword Runner'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='UNBROKEN')then 
-         		changeMode'lost' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='ULTRAVIOLET')then 
-         		changeMode'BIT32' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.F and Mode=='SPACETIME')then 
-         		changeMode'FORCE' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Careless')then 
-         		changeMode'DARKENED'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='INFINITY')then 
-         		changeMode'br0k3n' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.F and Mode=='Encription')then 
-         	powerup()	changeMode'FUTURE'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.F and Mode=='PARADOX')then 
-         		changeMode'Galactic' VaporTaunt()  game.lighting.ClockTime = 0 game.Lighting.FogEnd = 999999999999
-         	elseif(io.KeyCode == Enum.KeyCode.F and Mode=='GALACTIC')then 
+	elseif(io.KeyCode == Enum.KeyCode.Eight and Mode~='Careless')then 
+		changeMode'Careless'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.Q and Mode~='Dark Energy')then
+		changeMode'Dark Energy'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.K and Mode~='ZEN-X')then
+		changeMode'ZEN-X' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+		elseif(io.KeyCode == Enum.KeyCode.J and Mode~='Trinity Keeper')then 
+		changeMode'Trinity Keeper' VaporTaunt() game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.Y and Mode~='Pheonix')then 
+powerup()	changeMode'Pheonix'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.Z and Mode~='PRISM')then 
+		changeMode'PRISM'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.L and Mode~='HyPnOtIC')then
+		changeMode'HyPnOtIC' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.Nine and Mode~='AURORA')then
+		changeMode'AURORA' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='GALACTIC')then 
+		changeMode'PURIFIED'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='PURIFIED')then 
+		changeMode'ZORNO' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='CALAMITANIA')then 
+		changeMode'INFINITE VOID' VaporTaunt()  game.lighting.ClockTime = 0 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.U and Mode~='LEGMAN')then
+		changeMode'LEGMAN' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='gh0st3d')then 
+		changeMode'FREEZING' VaporTaunt() game.lighting.ClockTime = 0 game.Lighting.FogEnd = 150
+	elseif(io.KeyCode == Enum.KeyCode.Q and Mode=='Dark Energy')then 
+		changeMode'Broken PR0GRam'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='PRISM')then
+		changeMode'Omniversal' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Equality')then 
+	powerup()	changeMode'=_-MADNESS-_='  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Pheonix')then 
+		changeMode'Time'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='The Big Black')then 
+		changeMode'THE FORGOTTEN'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='LOSS')then 
+		changeMode'Universal'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Universal')then 
+		changeMode'Defected'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Time')then 
+		changeMode'The Big Black'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='DICK')then 
+		changeMode'sus' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='SPACETIME')then
+		changeMode'TIMELESS'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='TIMELESS')then
+		changeMode'LIGHTSPEED'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='LIGHTSPEED')then
+	game.lighting.ClockTime = 0	changeMode'Ultra Instinct'   game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.F and Mode=='INFINITY')then
+		changeMode'TRIXLUA' VaporTaunt() game.lighting.ClockTime = 0 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.H and Mode~='Loki')then
+		changeMode'Loki'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.F and Mode=='Loki')then
+	superLoki()	changeMode'Ioki'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 99999999
+	elseif(io.KeyCode == Enum.KeyCode.E and Mode=='Ioki')then
+	LokiExplode()	game.lighting.ClockTime = 14 game.Lighting.FogEnd = 99999999
+	elseif(io.KeyCode == Enum.KeyCode.V and Mode=='Dark Energy')then
+		changeMode'N U C L E A R'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.R and Mode=='SYNCHRO')then
+		changeMode'LOSS' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.E and Mode=='Dark Energy')then 
+		changeMode'Calamified'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.E and Mode=='Calamified')then 
+		changeMode'PESTILENCE' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.Q and Mode=='Calamified')then 
+	EndofworldsSMASHDOWN()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.R and Mode=='Dark Energy')then 
+		changeMode'SYNCHRO' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.R and Mode=='Broken PR0GRam')then 
+		changeMode'SPINNER'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.R and Mode=='SANS')then 
+		changeMode'LOVE'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='SANS')then 
+		changeMode'The Sword Runner'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='UNBROKEN')then 
+		changeMode'lost' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='ULTRAVIOLET')then 
+		changeMode'BIT32' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.F and Mode=='SPACETIME')then 
+		changeMode'FORCE' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Careless')then 
+		changeMode'DARKENED'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='INFINITY')then 
+		changeMode'br0k3n' VaporTaunt()  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.F and Mode=='Sadness')then 
+	powerup()	changeMode'FUTURE'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.F and Mode=='PARADOX')then 
+		changeMode'Galactic' VaporTaunt()  game.lighting.ClockTime = 0 game.Lighting.FogEnd = 999999999999
+	elseif(io.KeyCode == Enum.KeyCode.F and Mode=='GALACTIC')then 
     changeMode'SPACETIME' VaporTaunt()   game.lighting.ClockTime = 0 game.Lighting.FogEnd = 999999999999
 	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='ULTRA JAM')then 
 	powerup()	changeMode'OVERKILL'  game.lighting.ClockTime = 14 game.Lighting.FogEnd = 999999999999
@@ -3477,6 +3480,8 @@ WingAnims.StarT=function()
 	RWP7W.C0 = RWP7W.C0:lerp(CF.N(0*M.C(WingSine/62),-3.64-0*M.S(WingSine/42),-2)*CF.A(0,0,M.R(-0+950*M.C(WingSine/402))),.2)	
 end
 
+
+
 WingAnims.StarLTT=function()
 	LWP1W.C0 = LWP1W.C0:lerp(CF.N(-8*M.C(WingSine/32),1.5-3*M.C(WingSine/32),-1)*CF.A(100,0,M.R(-150-2000*M.C(WingSine/322))),.2)
 	LWP2W.C0 = LWP2W.C0:lerp(CF.N(-8*M.C(WingSine/32),1.5-3*M.C(WingSine/32),-1)*CF.A(100,0,M.R(-180-2000*M.C(WingSine/322))),.2)
@@ -3828,22 +3833,6 @@ WingAnims.NebG2=function(div)
 	RWP7W.C0 = RWP7W.C0:lerp(CF.N(0*M.C(WingSine/62),-3.64-0*M.S(WingSine/42),-2)*CF.A(0,0,M.R(-0+950*M.C(WingSine/402))),.2)	
 end
 
-WingAnims.Theo=function(mult)
-	mult=mult or 150
-	LWP1W.C0 = LWP1W.C0:lerp(CF.N(4*M.C(WingSine/32),-2.5+6*M.S(WingSine/32),-1)*CF.A(0,0,M.R(-210-950*M.C(WingSine/mult))),.2)
-	LWP2W.C0 = LWP2W.C0:lerp(CF.N(4*M.C(WingSine/32),-2.5+6*M.C(WingSine/32),-1)*CF.A(0,0,M.R(-240-650*M.C(WingSine/mult))),.2)
-	LWP3W.C0 = LWP3W.C0:lerp(CF.N(4*M.C(WingSine/32),-2.5+6*M.S(WingSine/32),-1)*CF.A(0,0,M.R(-300-950*M.C(WingSine/mult))),.2)
-	
-	RWP1W.C0 = RWP1W.C0:lerp(CF.N(4*M.C(WingSine/32),-2.5+6*M.C(WingSine/32),-1)*CF.A(0,0,M.R(-160-950*M.C(WingSine/mult))),.2)
-	RWP2W.C0 = RWP2W.C0:lerp(CF.N(-0.70,2.50,-1.20+0*M.S(WingSine/35))*CF.A(M.R(-60-0*M.C(WingSine/32)),0,M.R(-70-0*M.C(WingSine/6400000))),.2)
-	RWP3W.C0 = RWP3W.C0:lerp(CF.N(4*M.C(WingSine/32),-2.5+6*M.S(WingSine/32),-1)*CF.A(0,0,M.R(-270-950*M.C(WingSine/mult))),.2)
-	RWP4W.C0 = RWP4W.C0:lerp(CF.N(6*M.C(WingSine/62),-3+1*M.S(WingSine/42),-2)*CF.A(0,0,M.R(-30-950*M.C(WingSine/202))),.2)
-	RWP5W.C0 = RWP5W.C0:lerp(CF.N(0*M.C(WingSine/62),-1.64+0*M.S(WingSine/42),-2)*CF.A(0,0,M.R(-0-950*M.C(WingSine/402))),.2)
-	RWP6W.C0 = RWP6W.C0:lerp(CF.N(0*M.C(WingSine/32),-5.64+0*M.S(WingSine/42),-2)*CF.A(0,0,M.R(-0+1950*M.C(WingSine/822))),.2)
-	RWP7W.C0 = RWP7W.C0:lerp(CF.N(0*M.C(WingSine/62),-3.64-0*M.S(WingSine/42),-2)*CF.A(0,0,M.R(-0+950*M.C(WingSine/402))),.2)	
-end
-
-
 WingAnims.NebG3=function(mult)
 	mult=mult or 1
 	LWP1W.C0 = LWP1W.C0:lerp(CF.N(0,1.5,-1)*CF.A(0,M.R(0+2.5*M.C(WingSine/360)),M.R(0+WingSine*mult)),.2)
@@ -3859,7 +3848,7 @@ WingAnims.NebG3=function(mult)
 	RWP7W.C0 = RWP7W.C0:lerp(CF.N(0*M.C(WingSine/62),-3.64-0*M.S(WingSine/42),-2)*CF.A(0,0,M.R(-0+950*M.C(WingSine/402))),.2)	
 end
 
-WingAnims.NEBGNEPTUNAINV=function(mult)
+WingAnims.THEO=function(mult)
 	mult=mult or 150
 	LWP1W.C0 = LWP1W.C0:lerp(CF.N(4*M.C(WingSine/32),-2.5+6*M.S(WingSine/32),-1)*CF.A(0,0,M.R(-210-950*M.C(WingSine/mult))),.2)
 	LWP2W.C0 = LWP2W.C0:lerp(CF.N(4*M.C(WingSine/32),-2.5+6*M.C(WingSine/32),-1)*CF.A(0,0,M.R(-240-650*M.C(WingSine/mult))),.2)
@@ -4095,59 +4084,71 @@ while true do
 	
 	if(State == 'Idle')then
 		if(Mode=='ULTRA JAM' and NeutralAnims and not vaporwaveMode)then Change = 0.1+music.PlaybackLoudness/200 else Change = 1 end
-		if(Mode=='Encription')then
+		if(Mode=='Sadness')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+0.05*M.C(Sine/32),0)*CF.A(M.R(0+2*M.S(Sine/64)),M.R(5),0),Alpha)
-				NK.C0 = NK.C0:lerp(NeckC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
-				LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,M.R(5+5*M.C(Sine/32)),M.R(-10-5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RHC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,M.R(5-5*M.C(Sine/32)),M.R(10+5*M.C(Sine/32))),Alpha)
+				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				if(M.RNG(1,45)==1)then
+					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+				else
+					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+				end
+				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-0*M.C(Sine/32),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-0*M.C(Sine/32),0)*CF.A(0,M.R(-5),0),Alpha)
+					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LeftHip.C0 = LeftHip.C0:lerp(LeftHipC0,Alpha)
-					RightHip.C0 = RightHip.C0:lerp(RightHipC0,Alpha)
+					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
+					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
-			end 
+			end
 
 		elseif(Mode=='Equality')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+0.05*M.C(Sine/32),0)*CF.A(M.R(0+2*M.S(Sine/64)),M.R(5),0),Alpha)
-				NK.C0 = NK.C0:lerp(NeckC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
-				LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,M.R(5+5*M.C(Sine/32)),M.R(-10-5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RHC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,M.R(5-5*M.C(Sine/32)),M.R(10+5*M.C(Sine/32))),Alpha)
+				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,2+0.5*M.C(Sine/43),1)*CF.A(M.R(0+0.5*M.S(Sine/43)),0,0),Alpha)
+				if(M.RNG(1,45)==1)then
+					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+				else
+					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+				end
+				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
+				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-0*M.C(Sine/32),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-0*M.C(Sine/32),0)*CF.A(0,M.R(-5),0),Alpha)
+					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-4.5)),Alpha)
+					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(5.5)),Alpha)
 				else
-					LeftHip.C0 = LeftHip.C0:lerp(LeftHipC0,Alpha)
-					RightHip.C0 = RightHip.C0:lerp(RightHipC0,Alpha)
+					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
+					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
-			end 
+			end
 			
 					elseif(Mode=='SANS')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+0.05*M.C(Sine/32),0)*CF.A(M.R(0+2*M.S(Sine/64)),M.R(5),0),Alpha)
-				NK.C0 = NK.C0:lerp(NeckC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
-				LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,M.R(5+5*M.C(Sine/32)),M.R(-10-5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RHC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,M.R(5-5*M.C(Sine/32)),M.R(10+5*M.C(Sine/32))),Alpha)
+				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				if(M.RNG(1,45)==1)then
+					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+				else
+					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+				end
+				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-0*M.C(Sine/32),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-0*M.C(Sine/32),0)*CF.A(0,M.R(-5),0),Alpha)
+					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LeftHip.C0 = LeftHip.C0:lerp(LeftHipC0,Alpha)
-					RightHip.C0 = RightHip.C0:lerp(RightHipC0,Alpha)
+					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
+					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
-			end 
+			end
 			
 								elseif(Mode=='DARKENED')then
 			local Alpha = .1
@@ -4176,7 +4177,7 @@ while true do
 local HCF = Root.CFrame * CF.N(math.random(-70,70),-4,(math.random(-70,70))) * CF.A(M.R(math.random(-70,70)),M.R(math.random(-70,70)),M.R(math.random(-70,70)))
 Effect({
 Color = BrickColor.new'White'.Color;
-Material = Enum.Material.Glass,
+Material = Enum.Material.Neon,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,10,0),
@@ -4281,7 +4282,7 @@ Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,10,0),
 Size = Vector3.new(2,2,2),
-EndSize = Vector3.new(2,2,2),
+EndSize = Vector3.new(2,16,2),
 Transparency = NumberRange.new(0,1),
 Lifetime = .1,
 })
@@ -4680,24 +4681,26 @@ Lifetime = 0.25,
 			end
 			
 					elseif(Mode=='Galactic')then
-			RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,25+10.05*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
-						if(M.RNG(1,25)==1)then
-							NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
-						else
-							NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
-						end
-						LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
-						RS.C0 = RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
-					end
-					if(legAnims)then 
-						if(NeutralAnims)then
-							LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
-							RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
-						else
-							LH.C0 = LH.C0:lerp(RHC0,Alpha)
-							RH.C0 = RH.C0:lerp(RHC0,Alpha)
-						end
-					end
+			local Alpha = .1
+			if(NeutralAnims)then	
+				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,15+5*M.C(Sine/32),0)*CF.A(M.R(-0+0*M.S(Sine/58)),M.R(-15+0*M.C(Sine/42)),0),Alpha)
+				if(M.RNG(1,25)==1)then
+					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+				else
+					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+				end
+				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
+				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
+			end
+			if(legAnims)then 
+				if(NeutralAnims)then
+					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+				else
+					LH.C0 = LH.C0:lerp(RHC0,Alpha)
+					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+				end
+			end
 			
 					elseif(Mode=='SPACETIME')then
 local HCF = Root.CFrame * CF.N(math.random(-20,20),-4,(math.random(-20,20))) * CF.A(M.R(math.random(-20,20)),M.R(math.random(-20,20)),M.R(math.random(-20,20)))
@@ -5221,29 +5224,59 @@ Lifetime = 2,
 					RH.C0 = RH.C0:lerp(RHC0,Alpha)
 				end
 			end
-			
-								elseif(mode=='THEO')then
+			elseif(Mode=='THEO')then
+local HCF = Root.CFrame * CF.N(math.random(-20,20),-4,(math.random(-20,20))) * CF.A(M.R(math.random(-20,20)),M.R(math.random(-20,20)),M.R(math.random(-20,20)))
+Effect({
+Color = BrickColor.new'Red'.Color;
+Material = Enum.Material.Neon,
+Mesh = {Type = Enum.MeshType.Sphere},
+CFrame = HCF,
+EndPos = HCF* CF.N(0,10,0),
+Size = Vector3.new(.1,.1,0.1),
+EndSize = Vector3.new(1,.5,1),
+Transparency = NumberRange.new(0,0),
+Lifetime = 2,
+})
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
-				if(M.RNG(1,45)==1)then
+				GotEffect{
+					Lifetime=.2;
+					Mesh={Type=Enum.MeshType.Sphere};
+					CFrame=LArm.CFrame*CF.N(0,-1,0)*CF.A(M.RRNG(0,360),M.RRNG(0,360),M.RRNG(0,360));
+					Color=BrickColor.new'White'.Color;
+					Transparency={0,1};
+					Material=Enum.Material.Neon;
+					Size=Vector3.new(.5,1,.5);
+					EndSize=Vector3.new(.1,3,.1);
+				}
+				GotEffect{
+					Lifetime=.2;
+					Mesh={Type=Enum.MeshType.Sphere};
+					CFrame=RArm.CFrame*CF.N(0,-1,0)*CF.A(M.RRNG(0,360),M.RRNG(0,360),M.RRNG(0,360));
+					Color=BrickColor.new'White'.Color;
+					Transparency={0,1};
+					Material=Enum.Material.Neon;
+					Size=Vector3.new(.5,1,.5);
+					EndSize=Vector3.new(.1,3,.1);
+				}
+				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1.05*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
+				if(M.RNG(1,25)==1)then
 					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5+2.5*M.C(Sine/32)),M.R(-15-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(28),M.R(5-2.5*M.C(Sine/32)),M.R(30+1.5*M.C(Sine/32))),Alpha)
+				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
+				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(-2),M.R(30+2*M.S(Sine/36))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
+					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					LH.C0 = LH.C0:lerp(RHC0,Alpha)
+					RH.C0 = RH.C0:lerp(RHC0,Alpha)
 				end
 			end
-			
 					elseif(Mode=='AURORA')then
 	    GotEffect{
 					Lifetime=0.3;
@@ -5642,7 +5675,7 @@ Lifetime = 0.25,
 				end
 end
 
-				elseif(Mode=='Phoenix')then
+				elseif(Mode=='Pheonix')then
 local HCF = Root.CFrame * CF.N(math.random(-20,20),-4,(math.random(-20,20))) * CF.A(M.R(math.random(-20,20)),M.R(math.random(-20,20)),M.R(math.random(-20,20)))
 Effect({
 Color = BrickColor.new'Gold'.Color;
@@ -6374,15 +6407,41 @@ Transparency = NumberRange.new(0,0),
 Lifetime = 2,
 })
 			local Alpha = .1
-  			if(legAnims)then 
-						if(NeutralAnims)then
-							LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-							RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
-						else
-							LH.C0 = LH.C0:lerp(LHC0,Alpha)
-							RH.C0 = RH.C0:lerp(RHC0,Alpha)
-						end
-					end
+  			if(NeutralAnims)then
+ 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),2+.2*M.C(Sine/32),0)*CF.A(M.R(-57+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
+  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+			end
+			if(legAnims)then
+				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+			end
+			elseif(State == 'Walk')then
+		if(Mode=='THEO')then
+local HCF = Root.CFrame * CF.N(math.random(-20,20),-4,(math.random(-20,20))) * CF.A(M.R(math.random(-20,20)),M.R(math.random(-20,20)),M.R(math.random(-20,20)))
+Effect({
+Color = BrickColor.new'Red'.Color;
+Material = Enum.Material.Neon,
+Mesh = {Type = Enum.MeshType.Sphere},
+CFrame = HCF,
+EndPos = HCF* CF.N(0,10,0),
+Size = Vector3.new(.1,.1,0.1),
+EndSize = Vector3.new(1,.5,1),
+Transparency = NumberRange.new(0,0),
+Lifetime = 2,
+})
+			local Alpha = .1
+  			if(NeutralAnims)then
+ 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),2+.2*M.C(Sine/32),0)*CF.A(M.R(-57+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
+  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+			end
+			if(legAnims)then
+				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+			end
 				  elseif(State == 'Walk')then
 		if(Mode=='Interstellar')then
 			local Alpha = .1
@@ -6485,7 +6544,7 @@ Lifetime = 2,
 			end
 			
   elseif(State == 'Walk')then
-		if(Mode=='Phoenix')then
+		if(Mode=='Pheonix')then
 local HCF = Root.CFrame * CF.N(math.random(-20,20),-4,(math.random(-20,20))) * CF.A(M.R(math.random(-20,20)),M.R(math.random(-20,20)),M.R(math.random(-20,20)))
 Effect({
 Color = BrickColor.new'Gold'.Color;
@@ -7410,7 +7469,7 @@ end
 					Mesh={Type=Enum.MeshType.Sphere};
 					CFrame=Torso.CFrame*CF.N(0,-0,0)*CF.A(M.RRNG(0,360),M.RRNG(0,360),M.RRNG(0,360));
 					Color=BrickColor.new'Lime green'.Color;
-					Transparency={0,1};
+					Transparency={0,.5};
 					Material=Enum.Material.Glass;
 					Size=Vector3.new(1,1,1);
 					EndSize=Vector3.new(50,50,50);
