@@ -499,10 +499,10 @@ end,
 
 
 
------==============-----
-local ReanimateTab = Window:CreateTab("Reanimate Config", nil)
+
+local ReanimTab = Window:CreateTab("Reanimate Config", nil)
 local ReanimateSection = HomeTab:CreateSection("ReanimateSection")
-local PermDeathoggle = ReanimateTab:CreateToggle({
+local PermDeathoggle = ReanimTab:CreateToggle({
    Name = "PermDeath",
    CurrentValue = false,
    Flag = "PermDeath", 
@@ -515,7 +515,7 @@ print("PermaDeath Now Set To False")
 end
    end,
 })
-local TorsoFlingToggle = ReanimateTab:CreateToggle({
+local TorsoFlingToggle = ReanimTab:CreateToggle({
      Name = "TorsoFling",
      CurrentValue = false,
      Flag = "TorsoFling",
@@ -527,7 +527,7 @@ print("TorsoFling Now Set To False")
 end
 end,
 })
-local EnableCollisionsToggle = ReanimateTab:CreateToggle({
+local EnableCollisionsToggle = ReanimTab:CreateToggle({
      Name = "Collisions",
      CurrentValue = false,
      Flag = "Collisios",
@@ -539,7 +539,7 @@ print("Collision Now Set To False")
 end
 end,
 })
-local KeepHatsToggle = ReanimateTab:CreateToggle({
+local KeepHatsToggle = ReanimTab:CreateToggle({
      Name = "Keep Hats",
      CurrentValue = false,
      Flag = "Keep Hats",
@@ -551,7 +551,7 @@ print("Keep Hats Now Set To False")
 end
 end,
 })
-local HeadlessOnPermaToggle = ReanimateTab:CreateToggle({
+local HeadlessOnPermaToggle = ReanimTab:CreateToggle({
      Name = "Headpess On Perm",
      CurrentValue = false,
      Flag = "Headless",
@@ -563,7 +563,7 @@ print("Headless On Perma Now Set To False")
 end
 end,
 })
-local AntiVoidToggle = ReanimateTab:CreateToggle({
+local AntiVoidToggle = ReanimTab:CreateToggle({
      Name = "AntiVoid",
      CurrentValue = false,
      Flag = "AntiVoid",
@@ -577,6 +577,14 @@ end,
 })
 
 
+
+local ReanimDivider = ReanimTab:CreateDivider()
+local ReanimateButton = ReanimTab:CreateButton({
+   Name = "Reanimate",
+   Callback = function(Renim)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/lib/Reanimate.lua"))()
+   end,
+})
 Global.GelatekHubConfig = {
 ["Permanent Death"] = (PD),
 ["Torso Fling"] = (TorsoFling),
@@ -585,13 +593,6 @@ Global.GelatekHubConfig = {
 ["Headless On Perma"] = (Headless),
 ["Anti Void"] = (AntiVoid),
 }
-local Divider = ReanimateTab:CreateDivider()
-local ReanimateButton = ReanimateTab:CreateButton({
-   Name = "Reanimate",
-   Callback = function(A)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/lib/Reanimate.lua"))()
-   end,
-})
 Rayfield:LoadConfiguration(Reanim)
 local MainTab = Window:CreateTab("Main", nil)
 
