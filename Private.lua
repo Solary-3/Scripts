@@ -586,7 +586,7 @@ Global.GelatekHubConfig = {
 ["Anti Void"] = (AntiVoid),
 }
 local Divider = ReanimateTab:CreateDivider()
-local ReanimatwButton = ReanimatwTab:CreateButton({
+local ReanimateButton = ReanimateTab:CreateButton({
    Name = "Reanimate",
    Callback = function(A)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/lib/Reanimate.lua"))()
