@@ -815,7 +815,7 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 task.wait(3)
 
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/lib/Reanimate.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
 loadstring(game:HttpGet("https://pastebin.com/raw/j09BnGB3"))()
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Those who claims its your script, i dont like you.")
 end,
@@ -881,17 +881,23 @@ local Paragraph1 = HatsTab:CreateParagraph({Title = "Custom", Content = "Here Yo
 
 local Input = HatsTab:CreateInput({
    Name = "Custom!",
-   CurrentValue = "-gh ",
-   PlaceholderText = "Input Placeholder",
-   RemoveTextAfterFocusLost = true,
+   CurrentValue = "...",
+   PlaceholderText = "Input Your ID Here!",
+   RemoveTextAfterFocusLost = false,
    Callback = function(ID)
-    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync ((ID))
+   local Custom = (ID)
    end,
 })
-local Button1 = HatsTab:CreateButton({
+local customButton = HatsTab:CreateButton({
    Name = "Reload",
    Callback = function() 
-  Input:Set("-gh ")
+  Input:Set("")
+   end,
+})
+local customBnutton = HatsTab:CreateButton({
+   Name = "Send",
+   Callback = function() 
+  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh "...tostring(Custom))
    end,
 })
 
