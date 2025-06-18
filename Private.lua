@@ -510,12 +510,12 @@ local PermDeathoggle = ReanimTab:CreateToggle({
      if (PD) == true then
 print("PermaDeath Now Set To True")
 Global.RayfieldConfig = {
-["Permanent Death"] = true,
+["Permanent Death"] = true
 }
 elseif (PD) == false then
 print("PermaDeath Now Set To False")
 Global.RayfieldConfig = {
-["Permanent Death"] = false,
+["Permanent Death"] = false
 }
 end
    end,
@@ -528,12 +528,12 @@ local TorsoFlingToggle = ReanimTab:CreateToggle({
 if (TorsoFling) == true then
 print("TorsoFling Now Set To True")
 Global.RayfieldConfig = {
-["Torso Fling"] = true,
+["Torso Fling"] = true
  }
 elseif (TorsoFling) == false then
 print("TorsoFling Now Set To False")
 Global.RayfieldConfig = {
-["Torso Fling"] = false,
+["Torso Fling"] = false
 }
 end
 end,
@@ -546,12 +546,12 @@ local EnableCollisionsToggle = ReanimTab:CreateToggle({
 if (Collisios) == true then 
 print("Collisions Now Set to True")
 Global.RayfieldConfig = {
-["Enable Collisions"] = true,
+["Enable Collisions"] = true
 }
 elseif (Collisions) == false then
 print("Collision Now Set To False")
 Global.RayfieldConfig = {
-["Enable Collisions"] = false,
+["Enable Collisions"] = false
 }
 end
 end,
@@ -564,12 +564,12 @@ local KeepHatsToggle = ReanimTab:CreateToggle({
 if (KeepHats) == true then 
 print("Keep Hats Now Set To True")
 Global.RayfieldConfig = {
-["Keep Hats On Head"] = true,
+["Keep Hats On Head"] = true
 }
 elseif (KeepHats) == false then
 print("Keep Hats Now Set To False")
 Global.RayfieldConfig = {
-["Keep Hats On Head"] = false,
+["Keep Hats On Head"] = false
 }
 end
 end,
@@ -582,12 +582,12 @@ local HeadlessOnPermaToggle = ReanimTab:CreateToggle({
 if (Headless) == true then
 print("Headless On Perma Now Set To True")
 Global.RayfieldConfig = {
-["Headless On Perma"] = true,
+["Headless On Perma"] = true
 }
 elseif (TorsoFling) == false then
 print("Headless On Perma Now Set To False")
 Global.RayfieldConfig = {
-["Headless On Perma"] = false,
+["Headless On Perma"] = false
 }
 end
 end,
@@ -600,12 +600,12 @@ local AntiVoidToggle = ReanimTab:CreateToggle({
 if (Antivoid) == true then
 print("AntiVoid Now Set To True")
 Global.RayfieldConfig = {
-["Anti Void"] = true,
+["Anti Void"] = true
 }
 elseif (AntiVoid) == false then
 print("AntiVoid Now Set To False")
 Global.RayfieldConfig = {
-["Anti Void"] = false,
+["Anti Void"] = false
 }
 end
 end,
