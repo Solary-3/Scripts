@@ -3,7 +3,14 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Global = (getgenv and getgenv()) or shared
-
+Global.RayfieldConfig = {
+["Permanent Death"] = (PD),
+["Torso Fling"] = (TorsoFling),
+["Enable Collisions"] = (Collisions),
+["Keep Hats On Head"] = (KeepHats),
+["Headless On Perma"] = (Headless),
+["Anti Void"] = (AntiVoid),
+}
 
 
 --[[Nice Try You Skididdy]]--
@@ -577,14 +584,7 @@ end,
 })
 
 
-Global.RayfieldConfig = {
-["Permanent Death"] = (PD),
-["Torso Fling"] = (TorsoFling),
-["Enable Collisions"] = (Collisions),
-["Keep Hats On Head"] = (KeepHats),
-["Headless On Perma"] = (Headless),
-["Anti Void"] = (AntiVoid),
-}
+
 local ReanimDivider = ReanimTab:CreateDivider()
 local ReanimateButton = ReanimTab:CreateButton({
    Name = "Reanimate",
