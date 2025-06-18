@@ -881,11 +881,12 @@ local Paragraph1 = HatsTab:CreateParagraph({Title = "Custom", Content = "Here Yo
 
 local Input = HatsTab:CreateInput({
    Name = "Custom!",
-   CurrentValue = "...",
+   CurrentValue = "",
    PlaceholderText = "Input Your ID Here!",
    RemoveTextAfterFocusLost = false,
    Callback = function(ID)
    local Custom = (ID)
+         game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh "..tostring(Custom))
    end,
 })
 local customButton = HatsTab:CreateButton({
@@ -894,12 +895,7 @@ local customButton = HatsTab:CreateButton({
   Input:Set("")
    end,
 })
-local customBnutton = HatsTab:CreateButton({
-   Name = "Send",
-   Callback = function() 
-  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh "...tostring(Custom))
-   end,
-})
+
 
 
 local Divider2 = HatsTab:CreateDivider()
@@ -920,7 +916,7 @@ local Button3 = HatsTab:CreateButton({
 local Button4 = HatsTab:CreateButton({
    Name = "Sin Dragon",
    Callback = function() 
-  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 117186631495734 99965319383570 132770514241770 3756389957 14864581977  150381051 4504231783")
+  game:GetService("TextChatService").TextChannels.RBGeneral:SendAsync("-gh 117186631495734 99965319383570 132770514241770 3756389957 14864581977  150381051 4504231783")
    end,
 })
 
