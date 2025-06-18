@@ -3,14 +3,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Global = (getgenv and getgenv()) or shared
-Global.RayfieldConfig = {
-["Permanent Death"] = (PD),
-["Torso Fling"] = (TorsoFling),
-["Enable Collisions"] = (Collisions),
-["Keep Hats On Head"] = (KeepHats),
-["Headless On Perma"] = (Headless),
-["Anti Void"] = (AntiVoid),
-}
+
 
 
 --[[Nice Try You Skididdy]]--
@@ -518,7 +511,9 @@ local PermDeathoggle = ReanimTab:CreateToggle({
 print("PermaDeath Now Set To True")
 elseif (PD) == false then
 print("PermaDeath Now Set To False")
-
+Global.RayfieldConfig = {
+["Permanent Death"] = (PD),
+}
 end
    end,
 })
@@ -531,6 +526,9 @@ if (TorsoFling) == true then
 print("TorsoFling Now Set To True")
 elseif (TorsoFling) == false then
 print("TorsoFling Now Set To False")
+Global.RayfieldConfig = {
+["Torso Fling"] = (TorsoFling),
+ }
 end
 end,
 })
@@ -543,6 +541,9 @@ if (Collisios) == true then
 print("Collisions Now Set to True")
 elseif (Collisions) == false then
 print("Collision Now Set To False")
+Global.RayfieldConfig = {
+["Enable Collisions"] = (Collisions),
+}
 end
 end,
 })
@@ -555,6 +556,9 @@ if (KeepHats) == true then
 print("Keep Hats Now Set To True")
 elseif (KeepHats) == false then
 print("Keep Hats Now Set To False")
+Global.RayfieldConfig = {
+["Keep Hats On Head"] = (KeepHats),
+}
 end
 end,
 })
@@ -567,6 +571,9 @@ if (Headless) == true then
 print("Headless On Perma Now Set To True")
 elseif (TorsoFling) == false then
 print("Headless On Perma Now Set To False")
+Global.RayfieldConfig = {
+["Headless On Perma"] = (Headless),
+ }
 end
 end,
 })
@@ -579,6 +586,9 @@ if (Antivoid) == true then
 print("AntiVoid Now Set To True")
 elseif (AntiVoid) == false then
 print("AntiVoid Now Set To False")
+Global.RayfieldConfig = {
+["Anti Void"] = (AntiVoid),
+            }
 end
 end,
 })
