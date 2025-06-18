@@ -35,7 +35,7 @@ local HomeSection = HomeTab:CreateSection("Main")
 
 local Paragraph = HomeTab:CreateParagraph({Title = "Just A Baseplate Hub By Theo/Paradigm", Content = "This Was Made on 06/13/25!"})
 local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content =
-"Now Added A Reanimate Configuration Tab(Used Gekatek Hub Reanim for that,Faster...)"})
+"Replaced some of the reanimation on some scripts with gelatek reanimation to prevent hats and your body from flying away"})
 local Divider = HomeTab:CreateDivider()
 local Button = HomeTab:CreateButton({
    Name = "Sit",
@@ -500,131 +500,8 @@ end,
 
 
 
-local ReanimTab = Window:CreateTab("Reanimate Config", nil)
-local ReanimateSection = HomeTab:CreateSection("ReanimateSection")
-local PermDeathoggle = ReanimTab:CreateToggle({
-   Name = "PermDeath",
-   CurrentValue = false,
-   Flag = "PermDeath", 
-   Callback = function(PD)
-     if (PD) == true then
-print("PermaDeath Now Set To True")
-Global.RayfieldConfig = {
-["Permanent Death"] = true
-}
-elseif (PD) == false then
-print("PermaDeath Now Set To False")
-Global.RayfieldConfig = {
-["Permanent Death"] = false
-}
-end
-   end,
-})
-local TorsoFlingToggle = ReanimTab:CreateToggle({
-     Name = "TorsoFling",
-     CurrentValue = false,
-     Flag = "TorsoFling",
-     Callback = function(TorsoFling)
-if (TorsoFling) == true then
-print("TorsoFling Now Set To True")
-Global.RayfieldConfig = {
-["Torso Fling"] = true
- }
-elseif (TorsoFling) == false then
-print("TorsoFling Now Set To False")
-Global.RayfieldConfig = {
-["Torso Fling"] = false
-}
-end
-end,
-})
-local EnableCollisionsToggle = ReanimTab:CreateToggle({
-     Name = "Collisions",
-     CurrentValue = false,
-     Flag = "Collisios",
-     Callback = function(Collisions)
-if (Collisios) == true then 
-print("Collisions Now Set to True")
-Global.RayfieldConfig = {
-["Enable Collisions"] = true
-}
-elseif (Collisions) == false then
-print("Collision Now Set To False")
-Global.RayfieldConfig = {
-["Enable Collisions"] = false
-}
-end
-end,
-})
-local KeepHatsToggle = ReanimTab:CreateToggle({
-     Name = "Keep Hats",
-     CurrentValue = false,
-     Flag = "Keep Hats",
-     Callback = function(KeepHats)
-if (KeepHats) == true then 
-print("Keep Hats Now Set To True")
-Global.RayfieldConfig = {
-["Keep Hats On Head"] = true
-}
-elseif (KeepHats) == false then
-print("Keep Hats Now Set To False")
-Global.RayfieldConfig = {
-["Keep Hats On Head"] = false
-}
-end
-end,
-})
-local HeadlessOnPermaToggle = ReanimTab:CreateToggle({
-     Name = "Headpess On Perm",
-     CurrentValue = false,
-     Flag = "Headless",
-     Callback = function(Headless)
-if (Headless) == true then
-print("Headless On Perma Now Set To True")
-Global.RayfieldConfig = {
-["Headless On Perma"] = true
-}
-elseif (TorsoFling) == false then
-print("Headless On Perma Now Set To False")
-Global.RayfieldConfig = {
-["Headless On Perma"] = false
-}
-end
-end,
-})
-local AntiVoidToggle = ReanimTab:CreateToggle({
-     Name = "AntiVoid",
-     CurrentValue = false,
-     Flag = "AntiVoid",
-     Callback = function(Antivoid)
-if (Antivoid) == true then
-print("AntiVoid Now Set To True")
-Global.RayfieldConfig = {
-["Anti Void"] = true
-}
-elseif (AntiVoid) == false then
-print("AntiVoid Now Set To False")
-Global.RayfieldConfig = {
-["Anti Void"] = false
-}
-end
-end,
-})
 
-
-
-local ReanimDivider = ReanimTab:CreateDivider()
-local ReanimateButton = ReanimTab:CreateButton({
-   Name = "Reanimate",
-   Callback = function(Renim)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
-   end,
-})
-
-Rayfield:LoadConfiguration(Reanim)
 local MainTab = Window:CreateTab("Main", nil)
-
-
 local KrystalDanceSection = MainTab:CreateSection("Krystal Dance V3")
 local Input = MainTab:CreateInput({
    Name = "Dance Speed [Theo Version]",
@@ -911,7 +788,7 @@ end,
 local NebulaDivider1 = MainTab:CreateDivider()
 local NebulaInput = MainTab:CreateInput({
    Name = "Nebula Wings",
-   CurrentValue = "-gh 18334257663 18335331660",
+   CurrentValue = "18334257663 18335331660",
    PlaceholderText = "Insert ID",
    RemoveTextAfterFocusLost = false,
    Callback = function(Nebula)
