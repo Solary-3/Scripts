@@ -577,15 +577,7 @@ end,
 })
 
 
-
-local ReanimDivider = ReanimTab:CreateDivider()
-local ReanimateButton = ReanimTab:CreateButton({
-   Name = "Reanimate",
-   Callback = function(Renim)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/lib/Reanimate.lua"))()
-   end,
-})
-Global.GelatekHubConfig = {
+Global.RayfieldConfig = {
 ["Permanent Death"] = (PD),
 ["Torso Fling"] = (TorsoFling),
 ["Enable Collisions"] = (Collisions),
@@ -593,6 +585,14 @@ Global.GelatekHubConfig = {
 ["Headless On Perma"] = (Headless),
 ["Anti Void"] = (AntiVoid),
 }
+local ReanimDivider = ReanimTab:CreateDivider()
+local ReanimateButton = ReanimTab:CreateButton({
+   Name = "Reanimate",
+   Callback = function(Renim)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
+   end,
+})
+
 Rayfield:LoadConfiguration(Reanim)
 local MainTab = Window:CreateTab("Main", nil)
 
