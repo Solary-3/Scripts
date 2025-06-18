@@ -585,9 +585,9 @@ Global.GelatekHubConfig = {
 ["Headless On Perma"] = (Headless),
 ["Anti Void"] = (AntiVoid),
 }
-
+local Divider = ReanimateTab:CreateDivider()
 local ReanimatwButton = ReanimatwTab:CreateButton({
-   Name = "Krystal Dance V3, Modded By Theo",
+   Name = "Reanimate",
    Callback = function(A)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/lib/Reanimate.lua"))()
    end,
