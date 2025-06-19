@@ -1171,10 +1171,10 @@ if k == "q" then
         stopanim()
   dancing = true
 task.wait(.005)
-        sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        --sound69.SoundId = customasset("Dances/MioHonda.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(97072681531610,1.5)
+        playanim(18855602984,1.5)
     else
         stopanim()
 end
@@ -1183,13 +1183,85 @@ elseif k == "e" then
         stopanim()
   dancing = true
 task.wait(.005)
-        sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        --sound69.SoundId = customasset("Dances/MioHonda.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(97072681531610,1.5)
+        playanim(18855619866,1.5)
+    else
+				
+        stopanim()
+	end
+elseif k == "r" then 
+    if dancing == false then 
+        stopanim()
+  dancing = true
+task.wait(.005)
+        --sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+        playanim(18855618191,1.5)
     else
         stopanim()
 end
+elseif k == "r" then 
+    if dancing == false then 
+        stopanim()
+  dancing = true
+task.wait(.005)
+        --sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+        playanim(18855612259,1.5)
+    else
+        stopanim()
+end
+elseif k == "t" then 
+    if dancing == false then 
+        stopanim()
+  dancing = true
+task.wait(.005)
+        --sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+        playanim(18855608155,1.5)
+    else
+        stopanim()
+end
+elseif k == "y" then 
+    if dancing == false then 
+        stopanim()
+  dancing = true
+task.wait(.005)
+        --sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+        playanim(18855613409,1.5)
+    else
+        stopanim()
+end
+elseif k == "u" then 
+    if dancing == false then 
+        stopanim()
+  dancing = true
+task.wait(.005)
+        --sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+        playanim(18855855016,1.5)
+    else
+        stopanim()
+end
+elseif k == "p" then 
+    if dancing == false then 
+        stopanim()
+  dancing = true
+task.wait(.005)
+        --sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+        playanim(18855616922,1.5)
+    else
+        stopanim()
 end
 end
 if mode == 4 then
