@@ -71,17 +71,11 @@ task.wait(1.250)
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
 	Duration = 4;
-	Text = "This wasn't meant to run low performing devices"
-})
-task.wait(.900)
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Krystal Dance V3";
-	Duration = 4;
-	Text = "Use it at your will..."
+	Text = "This wasn't meant to run low perfoming devices"
 })
 
-task.wait(1.500)
---Krystal Dance V3, Made by Hemi (es muy janky)
+
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SerialdesignationV-collab/KJ-spawn/refs/heads/main/KJSpawnAnimation.lua.txt"))()
 task.wait(.1)
 local is = game:GetService("InsertService")
@@ -1101,7 +1095,7 @@ elseif k == "comma" then
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(92699725136780)
+        playanim(92699725136780,1.5)
     else
         stopanim()
         
@@ -1174,7 +1168,7 @@ task.wait(.005)
         sound69.SoundId = customasset("Dances/UNLIMITEDFLEXWORKS.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(101394784034884,2000)
+        playanim(74138372568467,1.5)
     else
         stopanim()
 end
@@ -1186,7 +1180,7 @@ task.wait(.005)
         --sound69.SoundId = customasset("Dances/MioHonda.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(140715050240541,2000)
+        playanim(124588786053615,20)
     else
 				
         stopanim()
