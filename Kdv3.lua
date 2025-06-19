@@ -82,7 +82,8 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 
 task.wait(1.500)
 --Krystal Dance V3, Made by Hemi (es muy janky)
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SerialdesignationV-collab/KJ-spawn/refs/heads/main/KJSpawnAnimation.lua.txt"))()
+task.wait(.1)
 local is = game:GetService("InsertService")
 local idleanim = game:GetObjects("rbxassetid://95706831570411")[1]
 local walkanim = game:GetObjects("rbxassetid://130213485744288")[1]
@@ -258,7 +259,7 @@ end
             idle = false
            end
 		if speed == nil then 
-			speed = 1
+			speed = 2000
 		end
         if dancing == true then 
             idle = false 
@@ -565,8 +566,7 @@ task.wait(.005)
 sound69:Play()
 coolparticles.Parent = char.Torso
 		    playanim(98260902889120,1.5)
-      RecolorTextAndRename("Rat", C3.N(.6,0,0), C3.N(0,0,0))
-		else
+else
 	        stopanim()
 		end
 	elseif k == "e" then 
@@ -579,7 +579,7 @@ timeposcur = sound69.TimePosition
 sound69:Play()
 sound69.Volume = .75
 coolparticles.Parent = char.Torso
-playanim(16769959846,1.5)
+playanim(16769959846,1.2)
 		else
 stopanim()
 
@@ -593,7 +593,7 @@ task.wait(.005)
 	sound69.PlaybackSpeed = 1
 	timeposcur = sound69.TimePosition 
 sound69:Play()
-	playanim(75148929064618,1.5)
+	playanim(75148929064618,1.2)
 else
 	stopanim()
 	sound69.PlaybackSpeed = 1
@@ -607,7 +607,7 @@ task.wait(.005)
 sound69.SoundId = customasset("Dances/Bjean.mp3")
 timeposcur = sound69.TimePosition 
 sound69:Play()
-playanim(108805310510119,1.5)
+playanim(108805310510119,1.2)
 	else
 stopanim()
 sound69.PlaybackSpeed = 1
@@ -622,7 +622,7 @@ sound69.SoundId = customasset("Dances/Egypt.mp3")
 sound69.PlaybackSpeed = 1
 timeposcur = sound69.TimePosition 
 sound69:Play()
-playanim(95986135548450,2)
+playanim(95986135548450,1.5)
 		else
 stopanim()
 
@@ -1171,10 +1171,10 @@ if k == "q" then
         stopanim()
   dancing = true
 task.wait(.005)
-        --sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        sound69.SoundId = customasset("Dances/UNLIMITEDFLEXWORKS.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(18855602984,1.5)
+        playanim(101394784034884,2000)
     else
         stopanim()
 end
@@ -1186,12 +1186,12 @@ task.wait(.005)
         --sound69.SoundId = customasset("Dances/MioHonda.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(18855619866,1.5)
+        playanim(140715050240541,2000)
     else
 				
         stopanim()
 	end
-elseif k == "r" then 
+elseif k == "f" then 
     if dancing == false then 
         stopanim()
   dancing = true
@@ -1199,7 +1199,7 @@ task.wait(.005)
         --sound69.SoundId = customasset("Dances/MioHonda.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(18855618191,1.5)
+        playanim(18855618191,0.75)
     else
         stopanim()
 end
@@ -1211,7 +1211,7 @@ task.wait(.005)
         --sound69.SoundId = customasset("Dances/MioHonda.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(18855612259,1.5)
+        playanim(18855612259,0.75)
     else
         stopanim()
 end
@@ -1223,7 +1223,7 @@ task.wait(.005)
         --sound69.SoundId = customasset("Dances/MioHonda.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(18855608155,1.5)
+        playanim(18855608155,0.75)
     else
         stopanim()
 end
@@ -1235,7 +1235,7 @@ task.wait(.005)
         --sound69.SoundId = customasset("Dances/MioHonda.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(18855613409,1.5)
+        playanim(18855613409,0.75)
     else
         stopanim()
 end
@@ -1247,7 +1247,7 @@ task.wait(.005)
         --sound69.SoundId = customasset("Dances/MioHonda.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(18855855016,1.5)
+        playanim(18855855016,0.75)
     else
         stopanim()
 end
@@ -1259,7 +1259,7 @@ task.wait(.005)
         --sound69.SoundId = customasset("Dances/MioHonda.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(18855616922,1.5)
+        playanim(18855616922,0.75)
     else
         stopanim()
 end
@@ -1346,6 +1346,7 @@ elseif mode == 4 then
     end
 end
 end)
+
 char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
 	if char.Humanoid.Sit == false then 
     if char.Humanoid.MoveDirection == Vector3.new(0,0,0) and dancing == false and idle == false then
