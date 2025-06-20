@@ -1163,7 +1163,9 @@ sound69:Play()
 end
 if mode == 3 then
 if k == "q" then
-    if dancing == false then 
+    if dancing == false then
+sound69:Stop()
+task.wait(.1)
 sound69.SoundId = customasset("Dances/Stop.mp3")
 sound69:Play()
 --Anim:Cancel()
@@ -1187,9 +1189,11 @@ sound69:Stop()
 task.wait(1.550)
 break
 end
+if dancing == true then
     Anim:Play()
 Stop = Stop +1 
 task.wait(16.123) -- this is very important for every animation loop and music syncing
+end
 end
 end
     else
