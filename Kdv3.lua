@@ -74,7 +74,9 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Text = "This wasn't meant to run low perfoming devices"
 })
 
-
+if not getgenv()["Animator"] then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SerialdesignationV-collab/KJ-spawn/refs/heads/main/KJSpawnAnimation.lua.txt"))()
 task.wait(.1)
@@ -1160,15 +1162,36 @@ sound69:Play()
   end 
 end
 if mode == 3 then
-if k == "q" then 
+if k == "q" then
     if dancing == false then 
+sound69.SoundId = customasset("Dances/Stop.mp3")
+sound69:Play()
+--Anim:Cancel()
         stopanim()
   dancing = true
 task.wait(.005)
-        sound69.SoundId = customasset("Dances/UNLIMITEDFLEXWORKS.mp3")
+if dancing == true then
+local player = game:GetService("Players").LocalPlayer
+    local character = player.Character
+    if not character then return end
+        local Anim = Animator.new(character, 74138372568467)
+Anim:Play()
+sound69.SoundId = customasset("Dances/UNLIMITEDFLEXWORKS.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(74138372568467,1.5)
+local Stop = 1
+task.wait(15.715)
+for Loop = 1, 10, 1 do
+if Stop == 10 then
+sound69:Stop()
+task.wait(1.550)
+break
+end
+    Anim:Play()
+Stop = Stop +1 
+task.wait(16.123) -- this is very important for every animation loop and music syncing
+end
+end
     else
         stopanim()
 end
@@ -1181,8 +1204,7 @@ task.wait(.005)
         timeposcur = sound69.TimePosition 
 sound69:Play()
         playanim(124588786053615,20)
-    else
-				
+    else		
         stopanim()
 	end
 elseif k == "f" then 
@@ -1340,6 +1362,16 @@ elseif mode == 4 then
     end
 end
 end)
+
+
+
+
+
+
+
+
+
+
 
 char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
 	if char.Humanoid.Sit == false then 
