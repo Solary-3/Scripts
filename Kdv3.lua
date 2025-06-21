@@ -35,7 +35,7 @@ task.wait(180)
 end
 
 
-
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Whoever saw this TestFeBypass is tryna skid my modded script off")
 task.wait(1.500)
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -77,9 +77,14 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 if not getgenv()["Animator"] then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/SerialdesignationV-collab/KJ-spawn/refs/heads/main/KJSpawnAnimation.lua.txt"))()
-task.wait(.1)
+task.wait(2.750)
+local player = game:GetService("Players").LocalPlayer
+    local character = player.Character
+    if not character then return end
+    -- Play animation
+    local Intro = Animator.new(character, 15957361339)
+    Intro:Play()
+task.wait(2)
 local is = game:GetService("InsertService")
 local idleanim = game:GetObjects("rbxassetid://95706831570411")[1]
 local walkanim = game:GetObjects("rbxassetid://130213485744288")[1]
