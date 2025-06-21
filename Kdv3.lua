@@ -255,7 +255,7 @@ end
             idle = false
            end
 		if speed == nil then 
-			speed = 2000
+			speed = 1.2
 		end
         if dancing == true then 
             idle = false 
