@@ -1,8 +1,10 @@
+
+
 if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (not isfolder("Dances")) then
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Hey!";
 	Duration = 5;
-	Text = "This Script only shows up once if your new to this."
+	Text = "This only shows up once if your new to this."
 })
 task.wait(1.500)
 local Bindable = Instance.new("BindableFunction")
@@ -35,7 +37,7 @@ task.wait(180)
 end
 
 
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Whoever saw this TestFeBypass is tryna skid my modded script off")
+
 task.wait(1.500)
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -47,12 +49,10 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs
 -- Automatically Downloads Updates ^
                                 ---  |
 task.wait(.1)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
-task.wait(1.500)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
-	Duration = 1;
+	Duration = 4;
 	Text = "This Script Was Made By Hemi, Modified By Paradigm/Theo"
 })
 task.wait(1.500)
@@ -84,7 +84,7 @@ local player = game:GetService("Players").LocalPlayer
     -- Play animation
     local Intro = Animator.new(character, 15957361339)
     Intro:Play()
-task.wait(2)
+task.wait(3.550)
 local is = game:GetService("InsertService")
 local idleanim = game:GetObjects("rbxassetid://95706831570411")[1]
 local walkanim = game:GetObjects("rbxassetid://130213485744288")[1]
@@ -93,9 +93,7 @@ local coolparticles = is:LoadLocalAsset("rbxassetid://87299663038091").ParticleA
 coolparticles.Parent = randompart
 local playbacktrack = true 
 local script = Instance.new("LocalScript")
-local OxideApi = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nitro-GT/Utils/refs/heads/main/OxideApi"))()
 local timeposcur = 0 
-OxideApi.Notification("Krystal Dance V3, Made by Hemi",10)
 local playanother = false
 local playing = false
 local dancing = false
@@ -260,7 +258,7 @@ end
             idle = false
            end
 		if speed == nil then 
-			speed = 1.2
+			speed = 2000
 		end
         if dancing == true then 
             idle = false 
@@ -269,7 +267,7 @@ end
         end
         wait(.005)
         if isadance == true  then 
-            sound69.Volume = .65
+            sound69.Volume = .75
         end
         if dancing == true then 
             sound69:Play()
@@ -1173,21 +1171,18 @@ sound69:Stop()
 task.wait(.1)
 sound69.SoundId = customasset("Dances/Stop.mp3")
 sound69:Play()
---Anim:Cancel()
         stopanim()
   dancing = true
 task.wait(.005)
 if dancing == true then
-local player = game:GetService("Players").LocalPlayer
-    local character = player.Character
-    if not character then return end
         local Anim = Animator.new(character, 74138372568467)
 Anim:Play()
 sound69.SoundId = customasset("Dances/UNLIMITEDFLEXWORKS.mp3")
         timeposcur = sound69.TimePosition 
+
 sound69:Play()
 local Stop = 1
-task.wait(15.715)
+task.wait(32.246)
 for Loop = 1, 10, 1 do
 if Stop == 10 then
 sound69:Stop()
@@ -1195,27 +1190,52 @@ task.wait(1.550)
 break
 end
 if dancing == true then
-    Anim:Play()
-Stop = Stop +1 
-task.wait(16.123) -- this is very important for every animation loop and music syncing
+    Anim:Play() 
+task.wait(32.246)
+Stop = Stop +1
 end
 end
 end
     else
         stopanim()
 end
+
+
 elseif k == "e" then 
-    if dancing == false then 
+    if dancing == false then
+sound69:Stop()
+task.wait(.1)
+sound69.SoundId = customasset("Dances/Stop.mp3")
+sound69:Play()
         stopanim()
   dancing = true
 task.wait(.005)
-        --sound69.SoundId = customasset("Dances/MioHonda.mp3")
-        timeposcur = sound69.TimePosition 
+if dancing == true then
+        local Jun = Animator.new(character, 91787441180652)
+sound69.SoundId = customasset("Dances/NMG.mp3")
+        timeposcur = sound69.TimePosition
 sound69:Play()
-        playanim(124588786053615,20)
-    else		
+task.wait(0.550)
+Jun:Play()
+local StopJun = 1
+task.wait(9.22)
+for LoopJun = 1, 10, 1 do
+if StopJun == 10 then
+sound69:Stop()
+Jun:Stop()
+task.wait(1.550)
+break
+end
+if dancing == true then
+    Jun:Play() 
+task.wait(9.22)
+StopJun = StopJun +1 
+end
+end
+end
+    else
         stopanim()
-	end
+end
 elseif k == "f" then 
     if dancing == false then 
         stopanim()
@@ -1532,3 +1552,7 @@ else
     idle = false 
 end
 end)
+--Credits
+task.wait(2.5)
+--game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Thanks To SonixDev For Letting me use his Extra pages Function")
+tion")
