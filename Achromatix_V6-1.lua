@@ -204,14 +204,14 @@ local function LGKSURL_fake_script() -- Main.OOOH SMOOTH DRAG SO COOL
 	local UIS = game:GetService("UserInputService")
 	local function dragify(Frame)
 		dragToggle = nil
-		local dragSpeed = 0.50
+		local dragSpeed = 0.10
 		dragInput = nil
 		dragStart = nil
 		local dragPos = nil
 		function updateInput(input)
 			local Delta = input.Position - dragStart
 			local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-			game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.30), {Position = Position}):Play()
+			game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.10), {Position = Position}):Play()
 		end
 		Frame.InputBegan:Connect(function(input)
 			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
