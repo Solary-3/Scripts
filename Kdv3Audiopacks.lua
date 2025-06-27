@@ -272,10 +272,41 @@ if not isfile("Dances/UNLIMITEDFLEXWORKS.mp3") then
 	warn("Unlimited Flexworks Downloaded!")
 end
 if not isfile("Dances/NMG.mp3") then
-	writefile("Dances/UNLIMITEDFLEXWORKS.mp3", 
+	writefile("Dances/NMG.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/NMG.mp3?raw=true"))
 	warn("No More Games Downloaded!")
 end
+if not isfile("Dances/ABYSSAL.mp3") then
+	writefile("Dances/ABYSSAL.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/ABYSSAL.mp3?raw=true"))
+	warn("Abyssal Downloaded!")
+end
+if not isfile("Dances/Neon.mp3") then
+	writefile("Dances/Neon.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Neon.mp3?raw=true"))
+	warn("Neon Downloaded!")
+end
+if not isfile("Dances/Memory.mp3") then
+	writefile("Dances/Memory.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Memory.mp3?raw=true"))
+	warn("Memory Downloaded!")
+end
+if not isfile("Dances/Crazy.mp3") then
+	writefile("Dances/Crazy.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Crazy.mp3?raw=true"))
+	warn("Crazy Downloaded!")
+end
+if not isfile("Dances/Lightbringer.mp3") then
+	writefile("Dances/Lightbringer.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Lightbringer.mp3?raw=true"))
+	warn("Lightbringer Downloaded!")
+end
+if not isfile("Dances/APEX.mp3") then
+	writefile("Dances/APEX.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/APEX.mp3?raw=true"))
+	warn("APEX Downloaded!")
+end
+
 
 game:GetService("StarterGui"):SetCore("SendNotification", { 
 		Title = "Service"; 
