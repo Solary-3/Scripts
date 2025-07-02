@@ -1,10 +1,5 @@
 
 local AllowOverheadText = true 
-
-
-
-
-
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 task.wait(.1)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
@@ -46,6 +41,15 @@ local player = game:GetService("Players").LocalPlayer
 task.wait(2.25)
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 14
 Intro:Stop()
+if not isfolder("Dances")then 
+     game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 4;
+	Text = "Let The Audios Download"
+})
+makefolder("Dances")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopack.lua"))()
+     end
 local Idle = Animator.new(character, 124935083750779)
 local is = game:GetService("InsertService")
 local idleanim = game:GetObjects("rbxassetid://124935083750779")[1]
