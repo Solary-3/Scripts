@@ -64,12 +64,6 @@ if not isfile("Dances/dancingin.mp3") then
 	warn("dancingin Downloaded!")
 end
 
-if not isfile("Dances/dancingwit.mp3") then
-	writefile("Dances/dancingwit.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/dancingwit.mp3?raw=true"))
-	warn("dancingwit Downloaded!")
-end
-
 if not isfile("Dances/DO THE FLOP.mp3") then
 	writefile("Dances/DO THE FLOP.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/DO%20THE%20FLOP.mp3?raw=true"))
@@ -92,30 +86,6 @@ if not isfile("Dances/doodle - Zachz Winner.mp3") then
 	writefile("Dances/doodle - Zachz Winner.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/doodle%20-%20Zachz%20Winner.mp3?raw=true"))
 	warn("doodle - Zachz Winner Downloaded!")
-end
-
-if not isfile("Dances/dr.wav") then
-	writefile("Dances/dr.wav",
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/dr.wav?raw=true"))
-	warn("dr Downloaded!")
-end
-
-if not isfile("Dances/faster.ogg") then
-	writefile("Dances/faster.ogg",
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/faster.ogg?raw=true"))
-	warn("faster Downloaded!")
-end
-
-if not isfile("Dances/freeflow.mp3") then
-	writefile("Dances/freeflow.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/freeflow.mp3?raw=true"))
-	warn("freeflow Downloaded!")
-end
-
-if not isfile("Dances/frightfunk.mp3") then
-	writefile("Dances/frightfunk.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/frightfunk.mp3?raw=true"))
-	warn("frightfunk Downloaded!")
 end
 
 if not isfile("Dances/gangnamm.mp3") then
@@ -142,12 +112,6 @@ if not isfile("Dances/kazot.mp3") then
 	warn("kazot Downloaded!")
 end
 
-if not isfile("Dances/leftrigth.mp3") then
-	writefile("Dances/leftrigth.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/leftrigth.mp3?raw=true"))
-	warn("leftrigth Downloaded!")
-end
-
 if not isfile("Dances/lux.ogg") then
 	writefile("Dances/lux.ogg",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/lux.ogg?raw=true"))
@@ -170,12 +134,6 @@ if not isfile("Dances/Shuba Duck.mp3") then
 	writefile("Dances/Shuba Duck.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Shuba%20Duck.mp3?raw=true"))
 	warn("Shuba duck Downloaded!")
-end
-
-if not isfile("Dances/tryna.mp3") then
-	writefile("Dances/tryna.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/tryna.mp3?raw=true"))
-	warn("tryna Downloaded!")
 end
 
 if not isfile("Dances/TUCA DONKA.mp3") then
@@ -276,11 +234,7 @@ if not isfile("Dances/NMG.mp3") then
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/NMG.mp3?raw=true"))
 	warn("No More Games Downloaded!")
 end
-if not isfile("Dances/ABYSSAL.mp3") then
-	writefile("Dances/ABYSSAL.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/ABYSSAL.mp3?raw=true"))
-	warn("Abyssal Downloaded!")
-end
+
 if not isfile("Dances/Neon.mp3") then
 	writefile("Dances/Neon.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Neon.mp3?raw=true"))
@@ -301,15 +255,36 @@ if not isfile("Dances/Lightbringer.mp3") then
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Lightbringer.mp3?raw=true"))
 	warn("Lightbringer Downloaded!")
 end
-if not isfile("Dances/APEX.mp3") then
-	writefile("Dances/APEX.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/APEX.mp3?raw=true"))
-	warn("APEX Downloaded!")
+if not isfile("Dances/Headlock.mp3") then
+	writefile("Dances/Headlock.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Headlock.mp3?raw=true"))
+	warn("Headlock Downloaded!")
 end
+if not isfile("Dances/ItBurns.mp3") then
+	writefile("Dances/ItBurns.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/ItBurns.mp3?raw=true"))
+	warn("ItBurns Downloaded!")
+end
+if not isfile("Dances/Runaway.mp3") then
+	writefile("Dances/Runaway.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Runaway.mp3?raw=true"))
+	warn("Runaway Downloaded!")
+end
+if not isfile("Dances/Distraction.mp3") then
+	writefile("Dances/Distraction.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Distraction.mp3?raw=true"))
+	warn("Distraction Downloaded!")
+end
+
 if not isfile("Dances/Pixelation.mp3") then
 	writefile("Dances/ABYSSAL.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pixelaion.mp3?raw=true"))
 	warn("Pixelation Downloaded!")
+end
+if not isfile("Dances/APEX.mp3") then
+	writefile("Dances/APEX.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/APEX.mp3?raw=true"))
+	warn("APEX Downloaded!")
 end
 
 
