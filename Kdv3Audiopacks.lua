@@ -276,6 +276,12 @@ if not isfile("Dances/Distraction.mp3") then
 	warn("Distraction Downloaded!")
 end
 
+if not isfile("Dances/Brodyaga.mp3") then
+	writefile("Dances/Brodyaga.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Brodyaga.mp3?raw=true"))
+	warn("Brodyaga Downloaded!")
+end
+
 if not isfile("Dances/Pixelation.mp3") then
 	writefile("Dances/ABYSSAL.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pixelaion.mp3?raw=true"))
