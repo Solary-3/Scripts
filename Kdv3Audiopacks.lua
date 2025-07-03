@@ -112,12 +112,6 @@ if not isfile("Dances/kazot.mp3") then
 	warn("kazot Downloaded!")
 end
 
-if not isfile("Dances/lux.ogg") then
-	writefile("Dances/lux.ogg",
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/lux.ogg?raw=true"))
-	warn("lux Downloaded!")
-end
-
 if not isfile("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3") then
 	writefile("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Odetari%20-%20KEEP%20UP%20(Lyrics)%20(320kbps).mp3?raw=true"))
@@ -140,12 +134,6 @@ if not isfile("Dances/TUCA DONKA.mp3") then
 	writefile("Dances/TUCA DONKA.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/TUCA%20DONKA.mp3?raw=true"))
 	warn("TUCA DONKA Downloaded!")
-end
-
-if not isfile("Dances/whateverlike.mp3") then
-	writefile("Dances/whateverlike.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/whateverlike.mp3?raw=true"))
-	warn("whateverlike Downloaded!")
 end
 
 if not isfile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps.mp3") then
@@ -296,6 +284,16 @@ if not isfile("Dances/Mesmerizer.mp3") then
 	writefile("Dances/Mesmerizer.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Mesmerizer.mp3?raw=true"))
 	warn("Mesmerizer Downloaded!")
+end
+if not isfile("Dances/LeftRight.mp3") then
+	writefile("Dances/LeftRight.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/LeftRight.mp3?raw=true"))
+	warn("LeftRight Downloaded!")
+end
+if not isfile("Dances/Boombox.mp3") then
+	writefile("Dances/APEX.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Boombox.mp3?raw=true"))
+	warn("Boombox Downloaded!")
 end
 
 
