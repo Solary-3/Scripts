@@ -202,7 +202,7 @@ local ShubaDuck = "Le Shuba Wuba, quack quack!"
 local Crank = "Crank it!"
 local KeepUp = "Im Too Fast"
 local Yamero = "Ayo Wtf"
-local LeftRigh = "That Left Right!"
+local LeftRight = "That Left Right!"
 --First Page^^^^^^^^
 -- Second Pagevvvvvv
 local Unlockit = "Hit The Nostalgia"
@@ -1934,6 +1934,7 @@ end)
 --Credits
 task.wait(.1)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Credits to Crimson, Kdv3 Modded By Theo")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))()
 stopanim()
 task.wait(.1)
 stopanim()
