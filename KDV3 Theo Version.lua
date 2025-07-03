@@ -1,5 +1,4 @@
 
-local AllowOverheadText = true 
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 task.wait(.1)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
@@ -45,6 +44,8 @@ makefolder("Dances")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopack.lua"))()
      end
 local Idle = Animator.new(character, 124935083750779)
+
+local AllowOverheadText = true 
 local is = game:GetService("InsertService")
 local idleanim = game:GetObjects("rbxassetid://124935083750779")[1]
 local walkanim = game:GetObjects("rbxassetid://82396468395739")[1]
@@ -240,8 +241,8 @@ local NeonSpeed = .250
 local Introspeed = 0.10
 
 -- Pls Dont Touch Below Or Else I Will Touch You
-if AllowOverheadText == true then
 local function Chat(X, fulltext, typespeed)
+if AllowOverheadText == true then
 local CaptionStroke = Instance.new("UIStroke")
 local X = Instance.new("TextLabel")
 local SG = Instance.new("ScreenGui")
