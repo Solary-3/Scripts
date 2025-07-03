@@ -4,8 +4,14 @@ task.wait(.1)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
-	Duration = 5;
-	Text = "This Script Was Made By Hemi, Modified By Paradigm/Theo"
+	Duration = 1;
+	Text = "This Script Was Made By Hemi(original creator), Modified By Paradigm/Theo"
+})
+task.wait(1.500)
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 1;
+	Text = "Krystal Dance V3 On Top! Enjoy!"
 })
 task.wait(1.950)
 game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -34,6 +40,9 @@ local player = game:GetService("Players").LocalPlayer
 task.wait(2.25)
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 14
 Intro:Stop()
+
+
+
 if not isfolder("Dances")then 
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -43,11 +52,10 @@ if not isfolder("Dances")then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))()
      end
 local Idle = Animator.new(character, 124935083750779)
-
-local AllowOverheadText = true 
 local is = game:GetService("InsertService")
 local idleanim = game:GetObjects("rbxassetid://124935083750779")[1]
 local walkanim = game:GetObjects("rbxassetid://82396468395739")[1]
+local AllowOverheadText = true 
 local set = false
 local randompart = Instance.new("Part",game:GetService("RunService"))
 local coolparticles = is:LoadLocalAsset("rbxassetid://87299663038091").ParticleAttachment
@@ -185,8 +193,7 @@ local Gangnam = "Opa Gangnam Style!"
 local HappyWalk = "Just Walkin Here!!!"
 local Uhh = "Is This Supposed To Be A Vibe?"
 local Smoothmoves = "Fornite Reference?"
-local Griddy = "Get Griddy Lil Bro!🥀"
-local Lux = "Hmmm..."
+local Griddy = "Hit The Griddy Move"
 local Kazotsky = "I like this, TF2 Reference!!!"
 local Bumblebee = "Sweet Little Bumblebee!!"
 local Mesmerizer = "Im Mesmerized"
@@ -195,6 +202,7 @@ local ShubaDuck = "Le Shuba Wuba, quack quack!"
 local Crank = "Crank it!"
 local KeepUp = "Im Too Fast"
 local Yamero = "Ayo Wtf"
+local LeftRigh = "That Left Right!"
 --First Page^^^^^^^^
 -- Second Pagevvvvvv
 local Unlockit = "Hit The Nostalgia"
@@ -215,7 +223,7 @@ local ItBurns = "AH MY MOUTH IS BURNING!!!!!"
 local Headlock = "Hm"
 local Runaway = "I Wanna Run Away🤑"
 local AssumptionsV2 = "Hit Them With The Summer Shuffle!"
-local TikTok = "Is This From TikTok?"
+local Boombox = "Deploy The Boombox!"
 local Distraction = "Get Distracted XD"
 -- Second Page^^^^^^^^
 -- Third Pagevvvvvvv
@@ -241,7 +249,7 @@ local Introspeed = 0.10
 
 -- Pls Dont Touch Below Or Else I Will Touch You
 local function Chat(X, fulltext, typespeed)
-if AllowOverheadText == true then
+     if AllowOverheadText == true then
 local CaptionStroke = Instance.new("UIStroke")
 local X = Instance.new("TextLabel")
 local SG = Instance.new("ScreenGui")
@@ -271,8 +279,9 @@ task.wait(.1)
 end
 end
 -- Pls Dont Touch The Above, i will touch you if you did
---Play The Intro Voiceline vvv
 Chat(X, Intro, Introspeed)
+
+
 local function wait2(tim)
 	if tim<0.1 then
 		game:GetService("RunService").Heartbeat:Wait()
@@ -864,19 +873,17 @@ sound69:Play()
 task.wait(.1)
 
     end
-elseif k == "z" then 
-     
+elseif k == "z" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(X,Lux,Default)
-        
+        Chat(X,LeftRight,Default)
         task.wait(.005)
 Idle:Stop()
-        sound69.SoundId = customasset("Dances/lux.ogg")
+        sound69.SoundId = customasset("Dances/LeftRight.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(15092317950,1.5)
+        playanim(137845929482571,1.5)
         
     else
         stopanim()
@@ -1139,13 +1146,13 @@ elseif k == "t" then
 if dancing == false then 
 stopanim()
 dancing = true
-Chat(X,TikTok,Default)
+Chat(X,Boombox,Default)
 task.wait(.005)
 Idle:Stop()
-sound69.SoundId = customasset("Dances/whateverlike.mp3")
+sound69.SoundId = customasset("Dances/Boombox.mp3")
 timeposcur = sound69.TimePosition 
 sound69:Play()
-playanim(83266223088944,1.5)
+playanim(84471848998012,1.5)
  else
 stopanim()
 
@@ -1471,9 +1478,8 @@ task.wait(.1)
 sound69.SoundId = customasset("Dances/Brodyaga.mp3")
 sound69:Play()
         stopanim()
-task.wait(.005)
+task.wait(1)
 dancing = true
-Idle:Stop()
 if dancing == true then
         local Anim = Animator.new(character, 74138372568467)
 Anim:Play()
@@ -1509,9 +1515,8 @@ task.wait(.1)
 sound69.SoundId = customasset("Dances/Brodyaga.mp3")
 sound69:Play()        
 stopanim()      
-task.wait(.005)
+task.wait(1)
 dancing = true
-Idle:Stop()
 if dancing == true then
         local Jun = Animator.new(character, 91787441180652)
 sound69.SoundId = customasset("Dances/NMG.mp3")
@@ -1918,7 +1923,7 @@ RunService.RenderStepped:Connect(function(deltaTime: number)
     elseif dancing == true then 
         Neck.C0 = oldC0N
 	end	
-if char.Humanoid.MoveDirection == Vector3.new(0,0,0) then 
+if char.Humanoid.MoveDirection == Vector3.new(0,0,0) then
     walking = false
     idle = true 
 else 
@@ -1929,7 +1934,6 @@ end)
 --Credits
 task.wait(.1)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Credits to Crimson, Kdv3 Modded By Theo")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopack.lua"))()
 stopanim()
 task.wait(.1)
 stopanim()
