@@ -5,14 +5,8 @@ task.wait(.1)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
-	Duration = 1;
-	Text = "This Script Was Made By Hemi(original creator), Modified By Paradigm/Theo"
-})
-task.wait(1.500)
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Krystal Dance V3";
-	Duration = 1;
-	Text = "Krystal Dance V3 On Top! Enjoy!"
+	Duration = 5;
+	Text = "This Script Was Made By Hemi, Modified By Paradigm/Theo"
 })
 task.wait(1.950)
 game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -244,7 +238,9 @@ local InternetAngelSpeed = .550
 local ApexSpeed =.250
 local NeonSpeed = .250
 local Introspeed = 0.10
+
 -- Pls Dont Touch Below Or Else I Will Touch You
+if AllowOverheadText == true then
 local function Chat(X, fulltext, typespeed)
 local CaptionStroke = Instance.new("UIStroke")
 local X = Instance.new("TextLabel")
@@ -273,7 +269,7 @@ task.wait(1.25)
 X:Destroy()
 task.wait(.1)
 end
-
+end
 -- Pls Dont Touch The Above, i will touch you if you did
 --Play The Intro Voiceline vvv
 Chat(X, Intro, Introspeed)
