@@ -136,7 +136,7 @@ if not isfile("Dances/TUCA DONKA.mp3") then
 	warn("TUCA DONKA Downloaded!")
 end
 
-if not isfile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps.mp3") then
+if not isfile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3") then
 	writefile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/xxanteria%2C%20isq%20-%20FUNKED%20UP%20(SLOWED)%20(320kbps).mp3?raw=true"))
 	warn("xxanteria, isq - FUNKED UP (SLOWED) (320kbps) Downloaded!")
