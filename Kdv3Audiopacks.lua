@@ -272,7 +272,7 @@ end
 
 if not isfile("Dances/Pixelation.mp3") then
 	writefile("Dances/Pixelation.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pixelaion.mp3?raw=true"))
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pixelation.mp3?raw=true"))
 	warn("Pixelation Downloaded!")
 end
 if not isfile("Dances/APEX.mp3") then
