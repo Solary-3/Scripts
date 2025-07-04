@@ -296,12 +296,3 @@ if not isfile("Dances/Boombox.mp3") then
 	warn("Boombox Downloaded!")
 end
 
-
-game:GetService("StarterGui"):SetCore("SendNotification", { 
-		Title = "Service"; 
-		Duration = 1; 
-		Text = "Audios Downloaded!" 
-	})
-
-
-
