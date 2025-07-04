@@ -7,12 +7,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs
 	Duration = 1;
 	Text = "This Script Was Made By Hemi(original creator), Modified By Paradigm/Theo"
 })
-task.wait(1.500)
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Krystal Dance V3";
-	Duration = 1;
-	Text = "Krystal Dance V3 On Top! Enjoy!"
-})
 task.wait(1.950)
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -53,7 +47,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs
      end
 local Idle = Animator.new(character, 124935083750779)
 local is = game:GetService("InsertService")
-local idleanim = game:GetObjects("rbxassetid://124935083750779")[1]
+local idleanim = game:GetObjects("rbxassetid://111486572129102")[1]
 local walkanim = game:GetObjects("rbxassetid://82396468395739")[1]
 local AllowOverheadText = true 
 local set = false
