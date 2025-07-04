@@ -53,8 +53,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs
      end
 local Idle = Animator.new(character, 124935083750779)
 local is = game:GetService("InsertService")
-local idleanim = game:GetObjects("rbxassetid://111486572129102")[1]
-local walkanim = game:GetObjects("rbxassetid://113985939855016")[1]
+local idleanim = game:GetObjects("rbxassetid://124935083750779")[1]
+local walkanim = game:GetObjects("rbxassetid://82396468395739")[1]
 local AllowOverheadText = true 
 local set = false
 local randompart = Instance.new("Part",game:GetService("RunService"))
@@ -124,12 +124,28 @@ end
 if AllowOverheadText == true then
 local player = game:GetService("Players").LocalPlayer
     local playerGui = player:WaitForChild("PlayerGui")
-    local screenGui = Instance.new("ScreenGui")
-    screenGui.Parent = player:WaitForChild("PlayerGui")
--- UIStroke
+    local workspace = game:GetService("Workspace")
+    local SG = Instance.new("ScreenGui")
+    SG.Parent = player:WaitForChild("PlayerGui")
+local CaptionStroke = Instance.new("UIStroke")
+local Caption = Instance.new("TextLabel")
+local G = Color3.fromRGB(0, 200, 255)
+local A = Color3.fromRGB(255,125,0)
+local W = Color3.fromRGB(255, 125,  0)
+local H = ColorSequence.new{
+    ColorSequenceKeypoint.new(0, A),
+    ColorSequenceKeypoint.new(0.500, G),
+    ColorSequenceKeypoint.new(1, W)
+}
+
+
 local Text2 = Instance.new("UIStroke")
 local Text3 = Instance.new("UIStroke")
-local Text4 = Instance.new("UIStroke")
+local Yu = Instance.new("UIStroke")
+local C = Instance.new("UIGradient")
+local CaptionGradient = Instance.new("UIGradient")
+local G = Instance.new("UIGradient")
+local Rq = Instance.new("UIGradient")
 local billboard2 = Instance.new("BillboardGui")
         billboard2.Name = "Test"
         billboard2.Size = UDim2.new(0, 100, 0, 40)
@@ -137,45 +153,65 @@ local billboard2 = Instance.new("BillboardGui")
         billboard2.Adornee = player.Character.Head
         billboard2.AlwaysOnTop = true
         billboard2.Parent = player.Character.Head
-    local Lol = Instance.new("TextLabel")
-    Lol.Text = "─V3─"
-    Lol.Font = Enum.Font.Sarpanch
-    Lol.TextSize = 30
-    Lol.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Lol.BackgroundTransparency = 1
-    Lol.Parent = billboard2
-    Lol.Size = UDim2.new(2.5, 0, 2.5, 0)
-    Lol.Rotation = 0
-Text2.Thickness = 2.5
-Text2.Color = Color3.fromRGB(0,0,0)
-Text2.Parent = Lol
+    local Q = Instance.new("TextLabel")
+    Q.Text = "─V3─"
+    Q.Font = Enum.Font.Sarpanch
+    Q.TextSize = 30
+    Q.TextColor3 = Color3.fromRGB(0, 0, 0)
+    Q.BackgroundTransparency = 1
+    Q.Parent = billboard2
+    Q.Position = UDim2.new(0.5, 1, 1.05, -50) 
+    Q.Size = UDim2.new(2.5, 0, 2.5, 0)
+    Q.Rotation = 0
+Text2.Thickness = 1
+Text2.Color = Color3.fromRGB(255,255,255)
+Text2.Parent = Q
 Text2.LineJoinMode = Enum.LineJoinMode.Miter
+Rq.Parent = Text2
+Rq.Color = H
+Rq.Name = "Test3"
+Rq.Enabled = true 
+Rq.Rotation = 85
+Rq.Offset = Vector2.new(-2,0)
 local textLabel1 = Instance.new("TextLabel")
 textLabel1.Text = "─「 KRYSTAL DANCE 」─"
 textLabel1.Font = Enum.Font.Sarpanch
-textLabel1.TextSize = 40
-textLabel1.TextColor3 = Color3.fromRGB(255, 255, 255)
+textLabel1.TextSize = 50
+textLabel1.TextColor3 = Color3.fromRGB(0, 0, 0)
 textLabel1.BackgroundTransparency = 100
 textLabel1.Parent = billboard2
 textLabel1.Size = UDim2.new(1, 0, 1, 0)
 textLabel1.Rotation = 0
-Text3.Thickness = 2.5
-Text3.Color = Color3.fromRGB(0,0,0)
+Text3.Thickness = 1
+Text3.Color = Color3.fromRGB(255,255,255)
 Text3.Parent = textLabel1
 Text3.LineJoinMode = Enum.LineJoinMode.Miter
+C.Parent = Text3
+C.Color = H
+C.Name = "Test2"
+C.Enabled = true 
+C.Rotation = 85
+C.Offset = Vector2.new(0,0)
 local T = Instance.new("TextLabel")
 T.Text = "1 In 500,000,000"
 T.Font = Enum.Font.Sarpanch
 T.TextSize = 30
-T.TextColor3 = Color3.fromRGB(255, 255, 255)
+T.TextColor3 = Color3.fromRGB(0, 0, 0)
 T.BackgroundTransparency = 100
 T.Parent = billboard2
-T.Size = UDim2.new(.5,-10,.5, -19.999)
+T.Size = UDim2.new(1, 0, 1, 0)
+T.Position = UDim2.new(0.5, -120, 0.60, -50) 
 T.Rotation = 0
-Text4.Thickness = 2.5
-Text4.Color = Color3.fromRGB(0,0,0)
-Text4.Parent = T
-Text4.LineJoinMode = Enum.LineJoinMode.Miter
+Yu.Thickness = 1
+Yu.Color = Color3.fromRGB(255,255,255)
+Yu.Parent = T
+Yu.LineJoinMode = Enum.LineJoinMode.Miter
+G.Parent = Yu
+G.Color = H
+G.Name = "Re"
+G.Enabled = true 
+G.Rotation = 85.75
+G.Offset = Vector2.new(2,0)
 end
 -- Put Your Captions Here if you want!!!!!
 -- Pls The Captions Must Be Specific According To Yhe Dance...
@@ -202,7 +238,8 @@ local ShubaDuck = "Le Shuba Wuba, quack quack!"
 local Crank = "Crank it!"
 local KeepUp = "Im Too Fast"
 local Yamero = "Ayo Wtf"
-local LeftRight = "That Left Right!"
+local LeftRight = "Thats Left Right Left Right Go!"
+local SmoothMoves = "I Have Smooth Moves!"
 --First Page^^^^^^^^
 -- Second Pagevvvvvv
 local Unlockit = "Hit The Nostalgia"
@@ -249,34 +286,45 @@ local Introspeed = 0.10
 
 -- Pls Dont Touch Below Or Else I Will Touch You
 local function Chat(X, fulltext, typespeed)
-     if AllowOverheadText == true then
+local G1 = Color3.fromRGB(255,255, 255)
+local A1 = Color3.fromRGB(100,100,100)
+local W1 = Color3.fromRGB(10, 10,  10)
+local DR = ColorSequence.new{
+    ColorSequenceKeypoint.new(0, A1),
+    ColorSequenceKeypoint.new(0.500, G1),
+    ColorSequenceKeypoint.new(1, W1)
+}
 local CaptionStroke = Instance.new("UIStroke")
+local B = Instance.new("UIGradient")
 local X = Instance.new("TextLabel")
 local SG = Instance.new("ScreenGui")
 SG.Parent = player:WaitForChild("PlayerGui")
 X.Text = " "
 X.Font = Enum.Font.Sarpanch
 X.TextSize = 20
-X.TextColor3 = Color3.fromRGB(255, 255, 255)
+X.TextColor3 = Color3.fromRGB(0, 0, 0)
 X.BackgroundTransparency = 100
 X.Parent = SG
 X.Size = UDim2.new(0.80,150,1.55,0)
 X.Rotation = 0
-CaptionStroke.Thickness = 1.95
-CaptionStroke.Color = Color3.fromRGB(0,0,0)
+CaptionStroke.Thickness = 1
+CaptionStroke.Color = Color3.fromRGB(255,255,255)
 CaptionStroke.Parent = X
 CaptionStroke.LineJoinMode = Enum.LineJoinMode.Miter
-
+B.Parent = CaptionStroke 
+B.Color = DR
+B.Enabled = true 
+B.Name = "Gradient"
+B.Rotation = 100
+B.Offset = Vector2.new(1,0)
 
 for i = 1, #fulltext  do
 X.Visible = true
 X.Text = string.sub(fulltext, 1 ,i)
 task.wait(typespeed)
 end
-task.wait(1.25)
+task.wait(1.595)
 X:Destroy()
-task.wait(.1)
-end
 end
 -- Pls Dont Touch The Above, i will touch you if you did
 Chat(X, Intro, Introspeed)
@@ -1933,8 +1981,7 @@ end
 end)
 --Credits
 task.wait(.1)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Credits to Crimson, Kdv3 Modded By Theo")
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("For My Friend Fluff, Kdv3 Modded By Theo") 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Audiopacks.lua"))()
 stopanim()
 task.wait(.1)
-stopanim()
