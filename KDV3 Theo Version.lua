@@ -32,10 +32,10 @@ local player = game:GetService("Players").LocalPlayer
     local character = player.Character
     if not character then return end
     -- Play animation
-    local Intro = Animator.new(character, 140340499413402)
+    local Intro = Animator.new(character, 92181805385450)
     Intro:Play()
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
-task.wait(10.550)
+task.wait(2.250)
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 14
 Intro:Stop()
 
@@ -46,7 +46,7 @@ makefolder("Dances")
      end
 local Idle = Animator.new(character, 124935083750779)
 local is = game:GetService("InsertService")
-local idleanim = game:GetObjects("rbxassetid://124935083750779")[1]
+local idleanim = game:GetObjects("rbxassetid://113559868709586")[1]
 local walkanim = game:GetObjects("rbxassetid://82396468395739")[1]
 local AllowOverheadText = true 
 local set = false
