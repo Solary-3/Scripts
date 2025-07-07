@@ -234,6 +234,7 @@ local KeepUp = "Im Too Fast"
 local Yamero = "Ayo Wtf"
 local LeftRight = "Thats Left Right Left Right Go!"
 local SmoothMoves = "I Have Smooth Moves!"
+local Lemon = "Want Some?"
 --First Page^^^^^^^^
 -- Second Pagevvvvvv
 local Unlockit = "Hit The Nostalgia"
@@ -257,6 +258,7 @@ local AssumptionsV2 = "Hit Them With The Summer Shuffle!"
 local Boombox = "Deploy The Boombox!"
 local Distraction = "Get Distracted XD"
 local Liar ="Im A Liar!"
+local Million = "I Want A Million"
 -- Second Page^^^^^^^^
 -- Third Pagevvvvvvv
 local KJ = "You Have Been Taught A Lesson... And Still Yet Not Understood A Single Thing."
@@ -269,6 +271,12 @@ local Pixelation = "Ive Been Pixelated..."
 local Memory = "I Have Been Forgotten..."
 local C14 = "Hm"
 local LoveForU = "Heres Some Love!"
+local Billy = "Ill Make You Say How Proud You Are!"
+local Jevil = "I Can Do Anything!"
+local Goat = "Dance If Your a Goat!"
+local Static = "Im Static..."
+local Heel = "Im Hopping!!!"
+local SlickBack = "Slickback!!!"
 --Third Page^^^^^^^^^
 --Some Text Speedsvvvvvvvvvv
 local Default = 0.05
@@ -1227,7 +1235,7 @@ elseif k == "b" then
     if dancing == false then 
        stopanim()
         dancing = true
-        Chat(KeepUp,Default)
+        Chat(Lemon,Default)
         if not isfile("Dances/Lemon.mp3") then
 	writefile("Dances/Lemon.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Lemon.mp3?raw=true"))
@@ -1418,6 +1426,7 @@ elseif k == "b" then
 if dancing == false then 
 stopanim() 
 dancing = true
+Chat(Million,Default)
 if not isfile("Dances/Million.mp3") then
 	writefile("Dances/Million.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Million.mp3?raw=true"))
@@ -1428,7 +1437,7 @@ Idle:Stop()
 sound69.SoundId = customasset("Dances/Million.mp3")
 timeposcur = sound69.TimePosition 
 sound69:Play()
-playanim(136302258505787,2)
+playanim(109123683211464,2)
 else
      stopanim()
 end
@@ -2027,7 +2036,7 @@ elseif k == "j" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(C14,Default)
+  Chat(Goat,Default)
   if not isfile("Dances/Goat.mp3") then
 	writefile("Dances/Goat.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Goat.mp3?raw=true"))
@@ -2050,7 +2059,7 @@ elseif k == "k" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(C14,Default)
+  Chat(Jevil,Default)
   if not isfile("Dances/Jevil.mp3") then
 	writefile("Dances/Jevil.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Jevil.mp3?raw=true"))
@@ -2073,7 +2082,7 @@ elseif k == "z" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(C14,Default)
+  Chat(Billy,Default)
   if not isfile("Dances/Billy.mp3") then
 	writefile("Dances/Billy.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Billy.mp3?raw=true"))
@@ -2096,7 +2105,7 @@ elseif k == "x" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(C14,Default)
+  Chat(SlickBack,Default)
   if not isfile("Dances/SlickBack.mp3") then
 	writefile("Dances/SlickBack.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/SlickBack.mp3?raw=true"))
@@ -2119,7 +2128,7 @@ elseif k == "c" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(C14,Default)
+  Chat(Static,Default)
   if not isfile("Dances/Static.mp3") then
 	writefile("Dances/Static.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Static.mp3?raw=true"))
@@ -2141,7 +2150,7 @@ elseif k == "v" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(C14,Default)
+  Chat(Heel,Default)
   if not isfile("Dances/Heel.mp3") then
 	writefile("Dances/Heel.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Heel.mp3?raw=true"))

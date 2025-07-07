@@ -1,10 +1,10 @@
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 if not isfile("Dances/Pixelation.mp3") then
 	writefile("Dances/Pixelation.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pixelation.mp3?raw=true"))
 	warn("Pixelation Downloaded!")
 end
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
-task.wait(.1)
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -145,6 +145,7 @@ local billboard2 = Instance.new("BillboardGui")
         billboard2.StudsOffset = Vector3.new(0, 5, 0)
         billboard2.Adornee = player.Character.Head
         billboard2.AlwaysOnTop = true
+        billboard2.MaxDistance = 25
         billboard2.Parent = player.Character.Head
     local Q = Instance.new("TextLabel")
     Q.Text = "─V3─"
@@ -233,6 +234,7 @@ local KeepUp = "Im Too Fast"
 local Yamero = "Ayo Wtf"
 local LeftRight = "Thats Left Right Left Right Go!"
 local SmoothMoves = "I Have Smooth Moves!"
+local Lemon = "Want Some?"
 --First Page^^^^^^^^
 -- Second Pagevvvvvv
 local Unlockit = "Hit The Nostalgia"
@@ -256,6 +258,7 @@ local AssumptionsV2 = "Hit Them With The Summer Shuffle!"
 local Boombox = "Deploy The Boombox!"
 local Distraction = "Get Distracted XD"
 local Liar ="Im A Liar!"
+local Million = "I Want A Million"
 -- Second Page^^^^^^^^
 -- Third Pagevvvvvvv
 local KJ = "You Have Been Taught A Lesson... And Still Yet Not Understood A Single Thing."
@@ -268,6 +271,12 @@ local Pixelation = "Ive Been Pixelated..."
 local Memory = "I Have Been Forgotten..."
 local C14 = "Hm"
 local LoveForU = "Heres Some Love!"
+local Billy = "Ill Make You Say How Proud You Are!"
+local Jevil = "I Can Do Anything!"
+local Goat = "Dance If Your a Goat!"
+local Static = "Im Static..."
+local Heel = "Im Hopping!!!"
+local SlickBack = "Slickback!!!"
 --Third Page^^^^^^^^^
 --Some Text Speedsvvvvvvvvvv
 local Default = 0.05
@@ -861,7 +870,7 @@ Idle:Stop()
         sound69.SoundId = customasset("Dances/Stock.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(86067433847393,0.75)
+        playanim(8875904299,1.5)
         
     else
         stopanim()
@@ -1214,7 +1223,31 @@ Idle:Stop()
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(74512050800520,1.5)
+        playanim(84765927391240,1.5)
+        
+    else
+        stopanim()
+ task.wait(.1)
+
+   end
+elseif k == "b" then 
+    
+    if dancing == false then 
+       stopanim()
+        dancing = true
+        Chat(Lemon,Default)
+        if not isfile("Dances/Lemon.mp3") then
+	writefile("Dances/Lemon.mp3",
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Lemon.mp3?raw=true"))
+	warn("Lemon Downloaded!")
+end
+        task.wait(.005)
+Idle:Stop()
+        sound69.SoundId = customasset("Dances/Lemon.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(120262284704633,1.5)
         
     else
         stopanim()
@@ -1386,6 +1419,25 @@ sound69.SoundId = customasset("Dances/chronoshift.mp3")
 timeposcur = sound69.TimePosition 
 sound69:Play()
 playanim(136302258505787,2)
+else
+     stopanim()
+end
+elseif k == "b" then 
+if dancing == false then 
+stopanim() 
+dancing = true
+Chat(Million,Default)
+if not isfile("Dances/Million.mp3") then
+	writefile("Dances/Million.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Million.mp3?raw=true"))
+	warn("Million Downloaded!")
+end
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Million.mp3")
+timeposcur = sound69.TimePosition 
+sound69:Play()
+playanim(109123683211464,2)
 else
      stopanim()
 end
@@ -1705,7 +1757,7 @@ Idle:Stop()
         sound69.SoundId = customasset("Dances/Liar.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(83070385097572,1.5)
+        playanim(83070385097572,2)
       
     else
 task.wait(.1)
@@ -1927,7 +1979,7 @@ Idle:Stop()
         sound69.SoundId = customasset("Dances/LoveForU.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(74560719461868,0.75)
+        playanim(74560719461868,2)
     else
 task.wait(.1)
 
@@ -1973,7 +2025,144 @@ sound69.SoundId = customasset("Dances/C14.mp3")
        timeposcur = sound69.TimePosition 
 sound69:Play() 
 coolparticles.Parent = char.Torso
-        playanim(118452043589079,1.5)     
+        playanim(118452043589079,2)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "j" then 
+     
+    if dancing == false then 
+stopanim()
+  dancing = true
+  Chat(Goat,Default)
+  if not isfile("Dances/Goat.mp3") then
+	writefile("Dances/Goat.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Goat.mp3?raw=true"))
+	warn("Goat Downloaded!")
+end
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Goat.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(88802480011454,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "k" then 
+     
+    if dancing == false then 
+stopanim()
+  dancing = true
+  Chat(Jevil,Default)
+  if not isfile("Dances/Jevil.mp3") then
+	writefile("Dances/Jevil.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Jevil.mp3?raw=true"))
+	warn("Jevil Downloaded!")
+end
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Jevil.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(8550316999,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "z" then 
+     
+    if dancing == false then 
+stopanim()
+  dancing = true
+  Chat(Billy,Default)
+  if not isfile("Dances/Billy.mp3") then
+	writefile("Dances/Billy.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Billy.mp3?raw=true"))
+	warn("Billy Downloaded!")
+end
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Billy.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(90421367029471,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "x" then 
+     
+    if dancing == false then 
+stopanim()
+  dancing = true
+  Chat(SlickBack,Default)
+  if not isfile("Dances/SlickBack.mp3") then
+	writefile("Dances/SlickBack.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/SlickBack.mp3?raw=true"))
+	warn("SlickBack Downloaded!")
+end
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/SlickBack.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(18986357892,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "c" then 
+     
+    if dancing == false then 
+stopanim()
+  dancing = true
+  Chat(Static,Default)
+  if not isfile("Dances/Static.mp3") then
+	writefile("Dances/Static.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Static.mp3?raw=true"))
+	warn("Static Downloaded!")
+end
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Static.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(139065991651723,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "v" then 
+    if dancing == false then 
+stopanim()
+  dancing = true
+  Chat(Heel,Default)
+  if not isfile("Dances/Heel.mp3") then
+	writefile("Dances/Heel.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Heel.mp3?raw=true"))
+	warn("Heel Downloaded!")
+end
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Heel.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(98256622649150,1.5)     
     else
 task.wait(.1)
 
@@ -2012,6 +2201,9 @@ task.wait(.1)
         end
 end
 end
+
+
+
 if k == "equals" then 
     playbacktrack = not playbacktrack
     if dancing == false then 
@@ -2239,7 +2431,8 @@ else
     idle = false 
 end
 end)
---Credits
+
+--Credits 
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("For My Friend Fluff, Kdv3 Modded By Theo") 
 task.wait(.1)
 stopanim()
