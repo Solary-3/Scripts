@@ -283,6 +283,7 @@ local Chinese = "Just Give Me The Fries 😔"
 local Rat2 = "Hm..."
 local Box = "Hm.."
 local Spooky = "It Iz Da Spooky Month!!"
+local Monkey = "Im About To Explode!!!"
 --- Page 4
 local Break = "Commercial Break"
 local Popipo = "Hm."
