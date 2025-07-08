@@ -878,7 +878,7 @@ Idle:Stop()
         sound69.SoundId = customasset("Dances/Stock.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(15231364673,1.5)
+        playanim(15039780593,1.5)
         
     else
         stopanim()
@@ -2102,7 +2102,7 @@ sound69.SoundId = customasset("Dances/Spooky.mp3")
        timeposcur = sound69.TimePosition 
 sound69:Play() 
 coolparticles.Parent = char.Torso
-        playanim(15039780593,1.5)     
+        playanim(15231364673,1.5)     
     else
 task.wait(.1)
 

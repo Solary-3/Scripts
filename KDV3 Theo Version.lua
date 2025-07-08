@@ -277,7 +277,15 @@ local Goat = "Dance If Your a Goat!"
 local Static = "Im Static..."
 local Heel = "Im Hopping!!!"
 local SlickBack = "Slickback!!!"
---Third Page^^^^^^^^^
+local Yippie = "YIPPIE!!"
+local Pickup = "Pickup The Phone :("
+local Chinese = "Just Give Me The Fries 😔"
+local Rat2 = "Hm..."
+local Box = "Hm.."
+local Spooky = "It Iz Da Spooky Month!!"
+--- Page 4
+local Break = "Commercial Break"
+local Popipo = "Hm."
 --Some Text Speedsvvvvvvvvvv
 local Default = 0.05
 local Introspeed = 0.10
@@ -870,7 +878,7 @@ Idle:Stop()
         sound69.SoundId = customasset("Dances/Stock.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-        playanim(8875904299,1.5)
+        playanim(15039780593,1.5)
         
     else
         stopanim()
@@ -2077,6 +2085,29 @@ task.wait(.1)
 
         stopanim()
 end
+elseif k == "l" then 
+     
+    if dancing == false then 
+stopanim()
+  dancing = true
+  Chat(Spooky,Default)
+  if not isfile("Dances/Spooky.mp3") then
+	writefile("Dances/Spooky.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Spooky.mp3?raw=true"))
+	warn("Spooky Downloaded!")
+end
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Spooky.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(15231364673,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
 elseif k == "z" then 
      
     if dancing == false then 
@@ -2168,6 +2199,134 @@ task.wait(.1)
 
         stopanim()
 end
+------------------------------------------------------------------ New
+elseif k == "b" then 
+    if dancing == false then 
+stopanim()
+  dancing = true
+  Chat(Yippie,Default)
+  if not isfile("Dances/Yippie.mp3") then
+	writefile("Dances/Yippie.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Yippie.mp3?raw=true"))
+	warn("Yippie Downloaded!")
+end
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Yippie.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(91260130273371,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "n" then 
+    if dancing == false then 
+stopanim()
+  dancing = true
+  Chat(Pickup,Default)
+  if not isfile("Dances/Pickup.mp3") then
+	writefile("Dances/Pickup.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pickup.mp3?raw=true"))
+	warn("Pickup The Phone Downloaded!")
+end
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Pickup.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(92187683724153,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "rightbracket" then 
+    if dancing == false then 
+stopanim()
+  dancing = true
+  Chat(Chinese,Default)
+  if not isfile("Dances/Chinese.mp3") then
+	writefile("Dances/Chinese.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Chinese.mp3?raw=true"))
+	warn("Kemusan Downloaded!")
+end
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Chinese.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(124210157097622,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "lefttbracket" then 
+    if dancing == false then 
+stopanim()
+  dancing = true
+  Chat(Rat2,Default)
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/rat.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(104525136565640,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "comma" then 
+    if dancing == false then 
+stopanim()
+  dancing = true
+  Chat(Box,Default)
+  if not isfile("Dances/Box.mp3") then
+	writefile("Dances/Box.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Box.mp3?raw=true"))
+	warn("Box Swing Downloaded!")
+end
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Box.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(75405139558088,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "minus" then 
+    if dancing == false then 
+stopanim()
+  dancing = true
+  Chat(Monkey,Default)
+  if not isfile("Dances/Monkey.mp3") then
+	writefile("Dances/Monkey.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Monkey.mp3?raw=true"))
+	warn("Bomb Monkey Downloaded!")
+end
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Monkey.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(75616586799217,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
 end
 end
 if mode == 4 then
@@ -2175,30 +2334,44 @@ if k == "e" then
     if dancing == false then 
         stopanim()
 dancing = true
+Chat(Break,Default)
+if not isfile("Dances/Break.mp3") then
+	writefile("Dances/Break.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Break.mp3?raw=true"))
+	warn("Break Downloaded!")
+end
 task.wait(.005)
 Idle:Stop()
-        sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        sound69.SoundId = customasset("Dances/Break.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(74653637870288,1.5)    
     else
 task.wait(.1)
-
         stopanim()
 end
 elseif k == "q" then 
-    if dancing == false then 
+if dancing == false then 
         stopanim()
 dancing = true
+Chat(Break,Default)
+if not isfile("Dances/Popipo.mp3") then
+	writefile("Dances/Popipo.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Popipo.mp3?raw=true"))
+	warn("Popipo Downloaded!")
+end
 task.wait(.005)
 Idle:Stop()
-        sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        sound69.SoundId = customasset("Dances/Popipo.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(115465103089127,1.5)    
     else
 task.wait(.1)
-
         stopanim()
-        end
+end
 end
 end
 
