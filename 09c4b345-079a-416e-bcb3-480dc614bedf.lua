@@ -282,9 +282,10 @@ local Pickup = "Pickup The Phone :("
 local Chinese = "Just Give Me The Fries 😔"
 local Rat2 = "Hm..."
 local Box = "Hm.."
+local Spooky = "It Iz Da Spooky Month!!"
+--- Page 4
 local Break = "Commercial Break"
 local Popipo = "Hm."
---Third Page^^^^^^^^^
 --Some Text Speedsvvvvvvvvvv
 local Default = 0.05
 local Introspeed = 0.10
