@@ -286,6 +286,7 @@ local Spooky = "It Iz Da Spooky Month!!"
 --- Page 4
 local Break = "Commercial Break"
 local Popipo = "Hm."
+local Popipo = "Eat Your Veggies"
 --Some Text Speedsvvvvvvvvvv
 local Default = 0.05
 local Introspeed = 0.10
@@ -2260,13 +2261,13 @@ sound69.SoundId = customasset("Dances/Chinese.mp3")
        timeposcur = sound69.TimePosition 
 sound69:Play() 
 coolparticles.Parent = char.Torso
-        playanim(124210157097622,1.5)     
+        playanim(124210157097622,1.5)
     else
 task.wait(.1)
 
         stopanim()
 end
-elseif k == "lefttbracket" then 
+elseif k == "leftbracket" then 
     if dancing == false then 
 stopanim()
   dancing = true
@@ -2355,7 +2356,7 @@ elseif k == "q" then
 if dancing == false then 
         stopanim()
 dancing = true
-Chat(Break,Default)
+Chat(Popipo,Default)
 if not isfile("Dances/Popipo.mp3") then
 	writefile("Dances/Popipo.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Popipo.mp3?raw=true"))
