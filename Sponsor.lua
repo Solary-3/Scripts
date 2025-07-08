@@ -1266,6 +1266,9 @@ coolparticles.Parent = char.Torso
    end
  end
 end
+
+
+------------------------------------------------------------------
 if mode == 2 then 
    if k == "q" then 
         

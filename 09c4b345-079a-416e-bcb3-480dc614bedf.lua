@@ -1266,6 +1266,9 @@ coolparticles.Parent = char.Torso
    end
  end
 end
+
+
+------------------------------------------------------------------
 if mode == 2 then 
    if k == "q" then 
         
@@ -1336,7 +1339,7 @@ elseif k == "t" then
 if dancing == false then 
 stopanim()
 dancing = true
-Chat(BoomboxDefault)
+Chat(Boombox,Default)
 if not isfile("Dances/Boombox.mp3") then
 	writefile("Dances/Boombox.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Boombox.mp3?raw=true"))
