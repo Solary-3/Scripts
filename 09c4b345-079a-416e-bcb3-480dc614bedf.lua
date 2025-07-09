@@ -218,7 +218,7 @@ local BJ = "He-He!!"
 local Egypt = "Egypt!"
 local CaramellDansen = "Dance on my ball-"
 local Fein = "Fein Fein!"
-local Stock = "Ayo Wtf"
+local Stock = "Moves Like A Stock Imagesf"
 local Gangnam = "Opa Gangnam Style!"
 local HappyWalk = "Just Walkin Here!!!"
 local Uhh = "Is This Supposed To Be A Vibe?"
@@ -256,7 +256,7 @@ local Headlock = "Hm"
 local Runaway = "I Wanna Run Away🤑"
 local AssumptionsV2 = "Hit Them With The Summer Shuffle!"
 local Boombox = "Deploy The Boombox!"
-local Distraction = "Get Distracted XD"
+local Distraction = "Great For Distracting Enemies!"
 local Liar ="Im A Liar!"
 local Million = "I Want A Million"
 -- Second Page^^^^^^^^
@@ -277,7 +277,19 @@ local Goat = "Dance If Your a Goat!"
 local Static = "Im Static..."
 local Heel = "Im Hopping!!!"
 local SlickBack = "Slickback!!!"
---Third Page^^^^^^^^^
+local Yippie = "YIPPIE!!"
+local Pickup = "Pickup The Phone :("
+local Chinese = "Just Give Me The Food Bro 😔"
+local Rat2 = "I Feel Rat-ish Again...."
+local Box = "Form A Box!.."
+local Spooky = "It Iz Da Spooky Month!!"
+local Monkey = "Im About To Explode!!!"
+--- Page 4
+local Fight= "Come Fight Me!!"
+local Bread = "Lemme Eat A Bread"
+local Break = "Commercial Break"
+local Popipo = "Eat Your Veggies"
+local Birdbrain = "I Have a Bird Brain"
 --Some Text Speedsvvvvvvvvvv
 local Default = 0.05
 local Introspeed = 0.10
@@ -2168,37 +2180,233 @@ task.wait(.1)
 
         stopanim()
 end
+elseif k == "b" then 
+    if dancing == false then 
+stopanim()
+  dancing = true
+  if not isfile("Dances/Yippie.mp3") then
+	writefile("Dances/Yippie.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Yippie.mp3?raw=true"))
+	warn("Yippie Downloaded!")
+end
+  Chat(Yippie,Default)
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Yippie.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(91260130273371,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "n" then 
+    if dancing == false then 
+stopanim()
+  dancing = true
+  if not isfile("Dances/Pickup.mp3") then
+	writefile("Dances/Pickup.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pickup.mp3?raw=true"))
+	warn("Pickup The Phone Downloaded!")
+end
+  Chat(Pickup,Default)
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Pickup.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(92187683724153,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "rightbracket" then 
+    if dancing == false then 
+stopanim()
+  dancing = true
+  if not isfile("Dances/Chinese.mp3") then
+	writefile("Dances/Chinese.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Chinese.mp3?raw=true"))
+	warn("Kemusan Downloaded!")
+end
+  Chat(Chinese,Default)
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Chinese.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(124210157097622,1.5)
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "leftbracket" then 
+    if dancing == false then 
+stopanim()
+  dancing = true
+  if not isfile("Dances/rat.mp3") then
+	writefile("Dances/rat.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/rat.mp3?raw=true"))
+	warn("rat Downloaded!")
+end
+  Chat(Rat2,Default)
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/rat.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(104525136565640,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "comma" then 
+    if dancing == false then 
+stopanim()
+  dancing = true
+  if not isfile("Dances/Box.mp3") then
+	writefile("Dances/Box.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Box.mp3?raw=true"))
+	warn("Box Swing Downloaded!")
+end
+  Chat(Box,Default)
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Box.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(75405139558088,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "minus" then 
+    if dancing == false then 
+stopanim()
+  dancing = true
+  if not isfile("Dances/Monkey.mp3") then
+	writefile("Dances/Monkey.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Monkey.mp3?raw=true"))
+	warn("Bomb Monkey Downloaded!")
+end
+  Chat(Monkey,Default)
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Monkey.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(75616586799217,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
 end
 end
+end
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
 if mode == 4 then
 if k == "e" then 
     if dancing == false then 
         stopanim()
 dancing = true
+if not isfile("Dances/Break.mp3") then
+	writefile("Dances/Break.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Break.mp3?raw=true"))
+	warn("Commercial Break Downloaded!")
+end
+Chat(Break,Default)
 task.wait(.005)
 Idle:Stop()
-        sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        sound69.SoundId = customasset("Dances/Break.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(74653637870288,1.5)    
     else
 task.wait(.1)
-
         stopanim()
 end
 elseif k == "q" then 
-    if dancing == false then 
+if dancing == false then 
         stopanim()
 dancing = true
+if not isfile("Dances/Popipo.mp3") then
+	writefile("Dances/Popipo.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Popipo.mp3?raw=true"))
+	warn("Popipo Downloaded!")
+end
+Chat(Popipo,Default)
 task.wait(.005)
 Idle:Stop()
-        sound69.SoundId = customasset("Dances/MioHonda.mp3")
+        sound69.SoundId = customasset("Dances/Popipo.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(115465103089127,1.5)    
     else
 task.wait(.1)
-
         stopanim()
-        end
+end
+elseif k == "r" then 
+if dancing == false then 
+        stopanim()
+dancing = true
+if not isfile("Dances/Birdbrain.mp3") then
+	writefile("Dances/Birdbrain.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Birdbrain.mp3?raw=true"))
+	warn("Birdbrain Downloaded!")
+end
+Chat(Birdbrain,Default)
+task.wait(.005)
+Idle:Stop()
+        sound69.SoundId = customasset("Dances/Birdbrain.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(122216349954401,1.5)    
+    else
+task.wait(.1)
+        stopanim()
+end
+elseif k == "t" then 
+if dancing == false then 
+        stopanim()
+dancing = true
+Chat(Bread,Default)
+task.wait(.005)
+Idle:Stop()
+coolparticles.Parent = char.Torso
+        playanim(77887053847258,1.5)    
+    else
+task.wait(.1)
+        stopanim()
+end
+elseif k == "y" then 
+if dancing == false then 
+        stopanim()
+dancing = true
+Chat(Fight,Default)
+task.wait(.005)
+Idle:Stop()
+coolparticles.Parent = char.Torso
+        playanim(118865990558686,1.5)    
+    else
+task.wait(.1)
+        stopanim()
+end
 end
 end
 
