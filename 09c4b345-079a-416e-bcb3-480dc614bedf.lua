@@ -2459,16 +2459,16 @@ elseif k == "r" then
 if dancing == false then 
         stopanim()
 dancing = true
-if not isfile("Dances/Bird.mp3") then
+if not isfile("Dances/Birdbrain.mp3") then
      Chat(Audio, Default)
-	writefile("Dances/Bird.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Bird.mp3?raw=true"))
-	warn("Bird Downloaded!")
+	writefile("Dances/Birdbrain.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Birdbrain.mp3?raw=true"))
+	warn("Birdbrain Downloaded!")
 end
 Chat(Bird,Default)
 task.wait(.005)
 Idle:Stop()
-        sound69.SoundId = customasset("Dances/Bird.mp3")
+        sound69.SoundId = customasset("Dances/Birdbrain.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
@@ -2481,7 +2481,7 @@ elseif k == "t" then
 if dancing == false then 
         stopanim()
 dancing = true
-Chat(Fight,Default)
+Chat(Bread,Default)
 task.wait(.005)
 Idle:Stop()
 coolparticles.Parent = char.Torso
@@ -2494,7 +2494,7 @@ elseif k == "y" then
 if dancing == false then 
         stopanim()
 dancing = true
-Chat(Bread,Default)
+Chat(Fight,Default)
 task.wait(.005)
 Idle:Stop()
 coolparticles.Parent = char.Torso
