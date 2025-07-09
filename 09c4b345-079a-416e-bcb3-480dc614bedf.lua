@@ -1,4 +1,3 @@
-
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 
 if not isfile("Dances/Pixelation.mp3") then
@@ -526,7 +525,7 @@ end
        end
    end)
    while true do
-    print(loopsplaying)
+    --print(loopsplaying)
     if loopsplaying>1 then 
         break
     end
@@ -677,7 +676,6 @@ end
            local function stopanim()
            if loopsplaying>0 then 
                 loopsplaying-=1
-                task.wait(.1)
            end
             playanother = true 
             playanother = true 
@@ -732,7 +730,6 @@ local k = string.lower(string.gsub(tostring(k.KeyCode),"Enum.KeyCode.",""))
 if mode == 1 then 
 	if k == "q" then
 		if dancing == false then
-dancing = true
 if not isfile("Dances/rat.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -743,8 +740,9 @@ if not isfile("Dances/rat.mp3") then
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/rat.mp3?raw=true"))
 	warn("rat Downloaded!")
 end
-Chat(Rat,RatSpeed)
 stopanim()
+dancing = true
+Chat(Rat,RatSpeed)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/rat.mp3")
@@ -758,7 +756,6 @@ task.wait(.1)
 		end
 	elseif k == "e" then 
 		if dancing == false then 
-dancing = true
 if not isfile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -770,6 +767,7 @@ if not isfile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3") then
 	warn("xxanteria, isq - FUNKED UP (SLOWED) (320kbps) Downloaded!")
 end
 stopanim()
+dancing = true
 Chat(Boogie,Default)
 task.wait(.005)
 Idle:Stop()
@@ -785,7 +783,6 @@ task.wait(.1)
 end
 	elseif k == "r" then 
 if dancing == false then 
-dancing = true
 if not isfile("Dances/Assumptions.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -797,6 +794,7 @@ if not isfile("Dances/Assumptions.mp3") then
 	warn("Assumptions Downloaded!")
 end
 	stopanim()
+dancing = true
 Chat(Assumptions,Default)
 task.wait(.005)
 Idle:Stop()
@@ -813,7 +811,6 @@ task.wait(.1)
 end
 elseif k == "t" then
 if dancing == false then 
-dancing = true
 if not isfile("Dances/Bjean.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -825,6 +822,7 @@ if not isfile("Dances/Bjean.mp3") then
 	warn("Bjean Downloaded!")
 end
 stopanim()
+dancing = true
 Chat(BJ,Default)
 task.wait(.005)
 Idle:Stop()
@@ -839,7 +837,6 @@ task.wait(.1)
 end
 elseif k == "y" then 
 if dancing == false then 
-dancing = true
 if not isfile("Dances/Egypt.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -851,6 +848,7 @@ if not isfile("Dances/Egypt.mp3") then
 	warn("Egypt Downloaded!")
 end
 stopanim()
+dancing = true
 Chat(Egypt,Default)
 task.wait(.005)
 Idle:Stop()
@@ -864,7 +862,6 @@ stopanim()
 end
 elseif k == "u" then 
 if dancing == false then 
-dancing = true
 if not isfile("Dances/caramell.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -876,6 +873,7 @@ if not isfile("Dances/caramell.mp3") then
 	warn("caramell Downloaded!")
 end
     stopanim()
+dancing = true
 Chat(CaramellDansen,Default)
 task.wait(.005)
 Idle:Stop()
@@ -894,7 +892,6 @@ task.wait(.1)
 elseif k == "f" then 
      
     if dancing == false then 
-dancing = true
 if not isfile("Dances/Stock.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -906,6 +903,7 @@ if not isfile("Dances/Stock.mp3") then
 	warn("Stock Downloaded!")
 end
         stopanim()
+dancing = true
 Chat(Stock,Defualt)
 task.wait(.005)
 Idle:Stop()
@@ -922,7 +920,6 @@ task.wait(.1)
 elseif k == "g" then 
      
     if dancing == false then 
-dancing = true
 if not isfile("Dances/gangnamm.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -934,6 +931,7 @@ if not isfile("Dances/gangnamm.mp3") then
 	warn("gangnamm Downloaded!")
 end
         stopanim()
+dancing = true
 Chat(Gangnam,Default)
 task.wait(.005)
 Idle:Stop()
@@ -949,7 +947,6 @@ task.wait(.1)
 elseif k == "p" then 
      
     if dancing == false then 
-dancing = true
 if not isfile("Dances/Fein.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -961,6 +958,7 @@ if not isfile("Dances/Fein.mp3") then
 	warn("Fein Downloaded!")
 end
         stopanim()
+dancing = true
 Chat(Fein,Default)
 task.wait(.005)
 Idle:Stop()
@@ -977,7 +975,6 @@ task.wait(.1)
 elseif k == "j" then 
      
     if dancing == false then 
-dancing = true
 if not isfile("Dances/dancingin.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -989,6 +986,7 @@ if not isfile("Dances/dancingin.mp3") then
 	warn("dancingin Downloaded!")
 end
         stopanim()
+dancing = true
 Chat(Uhh,UhhSpeed)
 task.wait(.005)
 Idle:Stop()
@@ -1006,7 +1004,6 @@ task.wait(.1)
 elseif k == "l" then 
      
     if dancing == false then 
-    dancing = true
     if not isfile("Dances/griddy.mp3") then
          game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1018,6 +1015,7 @@ elseif k == "l" then
 	warn("griddy Downloaded!")
 end
         stopanim()
+    dancing = true
     Chat(Griddy,Defualt)
     task.wait(.005)
 Idle:Stop()
@@ -1035,7 +1033,6 @@ task.wait(.1)
     end
 elseif k == "z" then
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/LeftRight.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1047,6 +1044,7 @@ elseif k == "z" then
 	warn("LeftRight Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(LeftRight,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1062,7 +1060,6 @@ task.wait(.1)
 elseif k == "x" then 
      
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/kazot.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1074,6 +1071,7 @@ elseif k == "x" then
 	warn("kazot Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(Kazotsky,Defualt)
         task.wait(.005)
 Idle:Stop()
@@ -1090,7 +1088,6 @@ task.wait(.1)
 elseif k == "h" then 
      
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/doodle - Zachz Winner.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1102,6 +1099,7 @@ elseif k == "h" then
 	warn("doodle - Zachz Winner Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(HappyWalk,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1120,7 +1118,6 @@ task.wait(.1)
 elseif k == "v" then 
      
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/Mesmerizer.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1132,6 +1129,7 @@ elseif k == "v" then
 	warn("Mesmerizer Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(Mesmerizer,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1150,7 +1148,6 @@ task.wait(.1)
 elseif k == "c" then 
      
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/Bumblebee.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1162,6 +1159,7 @@ elseif k == "c" then
 	warn("Bumblebee Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(Bumblebee,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1178,7 +1176,6 @@ task.wait(.1)
 elseif k == "n" then 
      
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/Domino.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1190,6 +1187,7 @@ elseif k == "n" then
 	warn("Domino Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(Domino,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1208,7 +1206,6 @@ task.wait(.1)
 elseif k == "comma" then 
   
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/Yamero.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1220,6 +1217,7 @@ elseif k == "comma" then
 	warn("Yamero Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(Yamero,YameroSpeed)
         task.wait(.005)
 Idle:Stop()
@@ -1236,7 +1234,6 @@ task.wait(.1)
 elseif k == "leftbracket" then 
      
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/Crank.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1248,6 +1245,7 @@ elseif k == "leftbracket" then
 	warn("Crank Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(Crank,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1263,7 +1261,6 @@ task.wait(.1)
 elseif k == "k" then 
      
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/SmoothMoves.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1275,6 +1272,7 @@ elseif k == "k" then
 	warn("SmoothMoves Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(SmoothMoves,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1292,7 +1290,6 @@ task.wait(.1)
 elseif k == "rightbracket" then 
      
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/Shuba Duck.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1304,6 +1301,7 @@ elseif k == "rightbracket" then
 	warn("Shuba duck Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(ShubaDuck,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1321,7 +1319,6 @@ task.wait(.1)
 elseif k == "minus" then 
     
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1333,6 +1330,7 @@ elseif k == "minus" then
 	warn("Odetari - KEEP UP (Lyrics) (320kbps) Downloaded!")
 end
        stopanim()
+        dancing = true
         Chat(KeepUp,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1350,7 +1348,6 @@ coolparticles.Parent = char.Torso
 elseif k == "b" then 
     
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/Lemon.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1362,6 +1359,7 @@ elseif k == "b" then
 	warn("Lemon Downloaded!")
 end
        stopanim()
+        dancing = true
         Chat(Lemon,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1385,7 +1383,6 @@ if mode == 2 then
    if k == "q" then 
         
            if dancing == false then 
-        dancing = true
         if not isfile("Dances/unlockit.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1397,6 +1394,7 @@ if mode == 2 then
 	warn("unlockit Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(Unlockit,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1412,7 +1410,6 @@ playanim(95877864781663,1.5)
    elseif k == "e" then
     
         if dancing == false then 
-        dancing = true
         if not isfile("Dances/InternetAngel.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1424,6 +1421,7 @@ playanim(95877864781663,1.5)
 	warn("InternetAngel Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(InternetAngel,InternetAngelSpeed)
         task.wait(.005)
 Idle:Stop()
@@ -1435,12 +1433,11 @@ sound69:Play()
     else
         stopanim()
  task.wait(.1)
-                     end 
-           elseif k == "r" then
-                     if dancing == false then 
-        dancing = true
-        if not isfile("Dances/Assumptions.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", {
+end 
+elseif k == "r" then
+if dancing == false then 
+if not isfile("Dances/Assumptions.mp3") then
+game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
 	Duration = 2.5;
 	Text = "Let The Audio Download"
@@ -1450,6 +1447,7 @@ sound69:Play()
 	warn("Assumptions Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(AssumptionsV2,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1469,7 +1467,6 @@ coolparticles.Parent = char.Torso
 end 
 elseif k == "t" then 
 if dancing == false then 
-dancing = true
 if not isfile("Dances/Boombox.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1481,6 +1478,7 @@ if not isfile("Dances/Boombox.mp3") then
 	warn("Boombox Downloaded!")
 end
 stopanim()
+dancing = true
 Chat(Boombox,Default)
 task.wait(.005)
 Idle:Stop()
@@ -1494,7 +1492,6 @@ stopanim()
 end
 elseif k == "y" then 
      if dancing == false then 
-        dancing = true
         if not isfile("Dances/balls.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1506,6 +1503,7 @@ elseif k == "y" then
 	warn("Balls Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(Peashooterr,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1521,7 +1519,6 @@ playanim(15039779727,1.5)
     end
 elseif k == "h" then 
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/Distraction.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1533,6 +1530,7 @@ elseif k == "h" then
 	warn("Distraction Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(Distraction,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1546,7 +1544,6 @@ sound69:Play()
     end
 elseif k == "g" then 
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/ItBurns.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1558,6 +1555,7 @@ elseif k == "g" then
 	warn("ItBurns Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(ItBurns,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1594,7 +1592,6 @@ else
 end
 elseif k == "b" then 
 if dancing == false then 
-dancing = true
 if not isfile("Dances/Million.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1606,6 +1603,7 @@ if not isfile("Dances/Million.mp3") then
 	warn("Million Downloaded!")
 end
 stopanim() 
+dancing = true
 Chat(Million,Default)
 task.wait(.005)
 Idle:Stop()
@@ -1618,7 +1616,6 @@ else
 end
 elseif k == "j" then 
     if dancing == false then 
-dancing = true
 if not isfile("Dances/Runaway.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1630,6 +1627,7 @@ if not isfile("Dances/Runaway.mp3") then
 	warn("Runaway Downloaded!")
 end
 stopanim()
+dancing = true
 Chat(Runaway,Default)
 task.wait(.005)
 Idle:Stop()
@@ -1646,7 +1644,6 @@ sound69.PlaybackSpeed = 1
 end
 elseif k == "k" then 
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/Headlock.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1658,6 +1655,7 @@ elseif k == "k" then
 	warn("Headlock Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(Headlock,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1672,7 +1670,6 @@ sound69:Play()
 elseif k == "u" then 
      
     if dancing == false then
-        dancing = true
         if not isfile("Dances/bloodpop.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1684,6 +1681,7 @@ elseif k == "u" then
 	warn("Bloodpop Downloaded!")
 end
          stopanim()
+        dancing = true
         Chat(Bloodpop,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1717,7 +1715,6 @@ task.wait(.1)
 elseif k == "x" then 
      
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/heavylove.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1729,6 +1726,7 @@ elseif k == "x" then
 	warn("heavylove Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(HeavyLove,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1745,7 +1743,6 @@ task.wait(.1)
 elseif k == "leftbracket" then 
      
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/Smug.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1756,6 +1753,7 @@ elseif k == "leftbracket" then
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Smug.mp3?raw=true"))
 	end
         stopanim()
+        dancing = true
         Chat(Smuggin,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1773,7 +1771,6 @@ task.wait(.1)
 elseif k == "rightbracket" then 
      
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/Pp music.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1785,6 +1782,7 @@ elseif k == "rightbracket" then
 	warn("Pp music Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(PP,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1802,7 +1800,6 @@ task.wait(.1)
 elseif k == "l" then 
      
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1814,6 +1811,7 @@ elseif k == "l" then
 	warn("ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(Tripaloski,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1831,7 +1829,6 @@ task.wait(.1)
 elseif k == "comma" then 
      
     if dancing == false then 
-        dancing = true
         if not isfile("Dances/TUCA DONKA.mp3") then
              game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1843,6 +1840,7 @@ elseif k == "comma" then
 	warn("TUCA DONKA Downloaded!")
 end
         stopanim()
+        dancing = true
         Chat(Hakari,Default)
         task.wait(.005)
 Idle:Stop()
@@ -1860,7 +1858,6 @@ task.wait(.1)
 elseif k == "p" then
      
     if dancing == false then
-       dancing = true
        if not isfile("Dances/DO THE FLOP.mp3") then
             game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1872,6 +1869,7 @@ elseif k == "p" then
 	warn("DO THE FLOP Downloaded!")
 end
        stopanim()
+       dancing = true
        Chat(DoTheFlop,Default)
        task.wait(.005)
 Idle:Stop()
@@ -1890,7 +1888,6 @@ task.wait(.1)
 elseif k == "c" then
      
   if dancing == false then
-    dancing = true
     if not isfile("Dances/Doodle.mp3") then
          game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1902,6 +1899,7 @@ elseif k == "c" then
 	warn("Doodle Downloaded!")
 end
     stopanim()
+    dancing = true
     Chat(DoodlePoint,Default)
     task.wait(.005)
 Idle:Stop()
@@ -1921,7 +1919,6 @@ task.wait(.1)
 elseif k == "z" then
      
   if dancing == false then
-   dancing = true
    if not isfile("Dances/CLUB PENGUIN DANCE.mp3") then
         game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1933,6 +1930,7 @@ elseif k == "z" then
 	warn("CLUB PENGUIN DANCE Downloaded!")
 end
     stopanim()
+   dancing = true
    Chat(Clubbin,Default)
     task.wait(.005)
 Idle:Stop()
@@ -1951,7 +1949,6 @@ task.wait(.1)
 elseif k == "v" then 
      
     if dancing == false then 
-dancing = true
 if not isfile("Dances/MioHonda.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1963,6 +1960,7 @@ if not isfile("Dances/MioHonda.mp3") then
 	warn("MioHonda Downloaded!")
 end
 stopanim()
+dancing = true
 Chat(MioHonda,Default)
 task.wait(.005)
 Idle:Stop()
@@ -1979,7 +1977,6 @@ task.wait(.1)
     end
 elseif k == "minus" then 
     if dancing == false then 
-dancing = true
 if not isfile("Dances/Liar.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1991,6 +1988,7 @@ if not isfile("Dances/Liar.mp3") then
 	warn("Liar Dance Downloaded!")
 end
 stopanim()
+dancing = true
 Chat(Liar,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2107,7 +2105,6 @@ end
 elseif k == "f" then 
      
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/Crazy.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2119,6 +2116,7 @@ elseif k == "f" then
 	warn("Crazy Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(Crazy,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2136,8 +2134,8 @@ end
 elseif k == "r" then 
      
     if dancing == false then 
-  dancing = true
 stopanim()
+  dancing = true
   Chat(Pixelation,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2154,7 +2152,6 @@ task.wait(.1)
 end
 elseif k == "t" then 
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/Memory.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2166,6 +2163,7 @@ elseif k == "t" then
 	warn("Memory Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(Memory,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2182,7 +2180,6 @@ end
 elseif k == "y" then 
      
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/APEX.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2194,6 +2191,7 @@ elseif k == "y" then
 	warn("APEX Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(Apex,ApexSpeed)
 task.wait(.005)
 Idle:Stop()
@@ -2211,7 +2209,6 @@ end
 elseif k == "u" then 
 
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/Neon.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2223,6 +2220,7 @@ elseif k == "u" then
 	warn("Neon Downloaded!")
 end
          stopanim()
+  dancing = true
   Chat(Neon,NeonSpeed)
 task.wait(.005)
 Idle:Stop()
@@ -2239,7 +2237,6 @@ task.wait(.1)
 end
 elseif k == "p" then 
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/LoveForU.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2251,6 +2248,7 @@ elseif k == "p" then
 	warn("Love Downloaded!")
 end
         stopanim()
+  dancing = true
   Chat(LoveForU,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2266,7 +2264,6 @@ end
 elseif k == "g" then 
      
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/Lightbringer.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2278,6 +2275,7 @@ elseif k == "g" then
 	warn("Lightbringer Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(Lightbringer,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2294,7 +2292,6 @@ end
 elseif k == "h" then 
      
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/C14.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2306,6 +2303,7 @@ elseif k == "h" then
 	warn("C14 Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(C14,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2322,7 +2320,6 @@ end
 elseif k == "j" then 
      
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/Goat.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2334,6 +2331,7 @@ elseif k == "j" then
 	warn("Goat Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(Goat,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2348,9 +2346,8 @@ task.wait(.1)
         stopanim()
 end
 elseif k == "k" then 
-     
     if dancing == false then 
-  dancing = true
+     
   if not isfile("Dances/Jevil.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2362,6 +2359,7 @@ elseif k == "k" then
 	warn("Jevil Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(Jevil,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2378,7 +2376,6 @@ end
 elseif k == "z" then 
      
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/Billy.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2390,6 +2387,7 @@ elseif k == "z" then
 	warn("Billy Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(Billy,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2406,7 +2404,6 @@ end
 elseif k == "x" then 
      
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/SlickBack.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2418,6 +2415,7 @@ elseif k == "x" then
 	warn("SlickBack Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(SlickBack,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2434,7 +2432,6 @@ end
 elseif k == "c" then 
      
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/Static.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2446,6 +2443,7 @@ elseif k == "c" then
 	warn("Static Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(Static,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2461,7 +2459,6 @@ task.wait(.1)
 end
 elseif k == "v" then 
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/Heel.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2473,6 +2470,7 @@ elseif k == "v" then
 	warn("Heel Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(Heel,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2488,7 +2486,6 @@ task.wait(.1)
 end
 elseif k == "b" then 
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/Yippie.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2500,6 +2497,7 @@ elseif k == "b" then
 	warn("Yippie Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(Yippie,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2515,7 +2513,6 @@ task.wait(.1)
 end
 elseif k == "n" then 
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/Pickup.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2527,6 +2524,7 @@ elseif k == "n" then
 	warn("Pickup The Phone Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(Pickup,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2542,7 +2540,6 @@ task.wait(.1)
 end
 elseif k == "rightbracket" then 
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/Chinese.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2554,6 +2551,7 @@ elseif k == "rightbracket" then
 	warn("Kemusan Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(Chinese,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2569,7 +2567,6 @@ task.wait(.1)
 end
 elseif k == "leftbracket" then 
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/rat.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2581,6 +2578,7 @@ elseif k == "leftbracket" then
 	warn("rat Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(Rat2,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2596,7 +2594,6 @@ task.wait(.1)
 end
 elseif k == "comma" then 
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/Box.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2608,6 +2605,7 @@ elseif k == "comma" then
 	warn("Box Swing Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(Box,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2623,7 +2621,6 @@ task.wait(.1)
 end
 elseif k == "minus" then 
     if dancing == false then 
-  dancing = true
   if not isfile("Dances/Monkey.mp3") then
        game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2635,6 +2632,7 @@ elseif k == "minus" then
 	warn("Bomb Monkey Downloaded!")
 end
 stopanim()
+  dancing = true
   Chat(Monkey,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2656,7 +2654,6 @@ end
 if mode == 4 then
 if k == "e" then 
     if dancing == false then 
-dancing = true
 if not isfile("Dances/Break.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2668,6 +2665,7 @@ if not isfile("Dances/Break.mp3") then
 	warn("Commercial Break Downloaded!")
 end
         stopanim()
+dancing = true
 Chat(Break,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2682,7 +2680,6 @@ task.wait(.1)
 end
 elseif k == "q" then 
 if dancing == false then 
-dancing = true
 if not isfile("Dances/Popipo.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2694,6 +2691,7 @@ if not isfile("Dances/Popipo.mp3") then
 	warn("Popipo Downloaded!")
 end
         stopanim()
+dancing = true
 Chat(Popipo,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2708,6 +2706,7 @@ task.wait(.1)
 end
 elseif k == "r" then 
 if dancing == false then 
+        stopanim()
 dancing = true
 if not isfile("Dances/Birdbrain.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -2719,7 +2718,6 @@ if not isfile("Dances/Birdbrain.mp3") then
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Birdbrain.mp3?raw=true"))
 	warn("Birdbrain Downloaded!")
 end
-        stopanim()
 Chat(Birdbrain,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2734,8 +2732,8 @@ task.wait(.1)
 end
 elseif k == "t" then 
 if dancing == false then 
-dancing = true
         stopanim()
+dancing = true
 Chat(Bread,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2747,8 +2745,8 @@ task.wait(.1)
 end
 elseif k == "y" then 
 if dancing == false then 
-dancing = true
         stopanim()
+dancing = true
 Chat(Fight,Default)
 task.wait(.005)
 Idle:Stop()
