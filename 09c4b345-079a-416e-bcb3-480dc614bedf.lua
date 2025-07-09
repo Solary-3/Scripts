@@ -676,6 +676,7 @@ end
            local function stopanim()
            if loopsplaying>0 then 
                 loopsplaying-=1
+                task.wait(.1)
            end
             playanother = true 
             playanother = true 
@@ -742,8 +743,8 @@ if not isfile("Dances/rat.mp3") then
 	warn("rat Downloaded!")
 end
 Chat(Rat,RatSpeed)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/rat.mp3")
 timeposcur = sound69.TimePosition 
@@ -768,8 +769,8 @@ if not isfile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3") then
 	warn("xxanteria, isq - FUNKED UP (SLOWED) (320kbps) Downloaded!")
 end
 Chat(Boogie,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3")
 timeposcur = sound69.TimePosition 
@@ -795,8 +796,8 @@ if not isfile("Dances/Assumptions.mp3") then
 	warn("Assumptions Downloaded!")
 end
 Chat(Assumptions,Default)
-	stopanim()
 task.wait(.005)
+	stopanim()
 Idle:Stop()
 	sound69.SoundId = customasset("Dances/Assumptions.mp3")
 	sound69.PlaybackSpeed = 1
@@ -823,8 +824,8 @@ if not isfile("Dances/Bjean.mp3") then
 	warn("Bjean Downloaded!")
 end
 Chat(BJ,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Bjean.mp3")
 timeposcur = sound69.TimePosition 
@@ -849,8 +850,8 @@ if not isfile("Dances/Egypt.mp3") then
 	warn("Egypt Downloaded!")
 end
 Chat(Egypt,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Egypt.mp3")
 sound69.PlaybackSpeed = 1
@@ -874,8 +875,8 @@ if not isfile("Dances/caramell.mp3") then
 	warn("caramell Downloaded!")
 end
 Chat(CaramellDansen,Default)
-    stopanim()
 task.wait(.005)
+    stopanim()
 Idle:Stop()
     sound69.SoundId = customasset("Dances/caramell.mp3")
     sound69.PlaybackSpeed = 1
@@ -904,8 +905,8 @@ if not isfile("Dances/Stock.mp3") then
 	warn("Stock Downloaded!")
 end
 Chat(Stock,Defualt)
-        stopanim()
 task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Stock.mp3")
         timeposcur = sound69.TimePosition 
@@ -932,8 +933,8 @@ if not isfile("Dances/gangnamm.mp3") then
 	warn("gangnamm Downloaded!")
 end
 Chat(Gangnam,Default)
-        stopanim()
 task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/gangnamm.mp3")
         timeposcur = sound69.TimePosition 
@@ -959,8 +960,8 @@ if not isfile("Dances/Fein.mp3") then
 	warn("Fein Downloaded!")
 end
 Chat(Fein,Default)
-        stopanim()
 task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Fein.mp3")
         timeposcur = sound69.TimePosition 
@@ -987,8 +988,8 @@ if not isfile("Dances/dancingin.mp3") then
 	warn("dancingin Downloaded!")
 end
 Chat(Uhh,UhhSpeed)
-        stopanim()
 task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/dancingin.mp3")
         timeposcur = sound69.TimePosition 
@@ -1016,8 +1017,8 @@ elseif k == "l" then
 	warn("griddy Downloaded!")
 end
     Chat(Griddy,Defualt)
-        stopanim()
     task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/griddy.mp3")
         char.Humanoid.WalkSpeed = 4*char:GetScale()
@@ -1045,8 +1046,8 @@ elseif k == "z" then
 	warn("LeftRight Downloaded!")
 end
         Chat(LeftRight,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/LeftRight.mp3")
         timeposcur = sound69.TimePosition 
@@ -1072,8 +1073,8 @@ elseif k == "x" then
 	warn("kazot Downloaded!")
 end
         Chat(Kazotsky,Defualt)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/kazot.mp3")
         timeposcur = sound69.TimePosition 
@@ -1130,8 +1131,8 @@ elseif k == "v" then
 	warn("Mesmerizer Downloaded!")
 end
         Chat(Mesmerizer,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Mesmerizer.mp3")
         timeposcur = sound69.TimePosition 
@@ -1160,8 +1161,8 @@ elseif k == "c" then
 	warn("Bumblebee Downloaded!")
 end
         Chat(Bumblebee,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Bumblebee.mp3")
         timeposcur = sound69.TimePosition 
@@ -1188,8 +1189,8 @@ elseif k == "n" then
 	warn("Domino Downloaded!")
 end
         Chat(Domino,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Domino.mp3")
         timeposcur = sound69.TimePosition 
@@ -1218,8 +1219,8 @@ elseif k == "comma" then
 	warn("Yamero Downloaded!")
 end
         Chat(Yamero,YameroSpeed)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Yamero.mp3")
         timeposcur = sound69.TimePosition 
@@ -1246,8 +1247,8 @@ elseif k == "leftbracket" then
 	warn("Crank Downloaded!")
 end
         Chat(Crank,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Crank.mp3")
         timeposcur = sound69.TimePosition 
@@ -1273,8 +1274,8 @@ elseif k == "k" then
 	warn("SmoothMoves Downloaded!")
 end
         Chat(SmoothMoves,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/SmoothMoves.mp3")
         timeposcur = sound69.TimePosition 
@@ -1302,8 +1303,8 @@ elseif k == "rightbracket" then
 	warn("Shuba duck Downloaded!")
 end
         Chat(ShubaDuck,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Shuba Duck.mp3")
         timeposcur = sound69.TimePosition 
@@ -1331,8 +1332,8 @@ elseif k == "minus" then
 	warn("Odetari - KEEP UP (Lyrics) (320kbps) Downloaded!")
 end
         Chat(KeepUp,Default)
-       stopanim()
         task.wait(.005)
+       stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3")
         timeposcur = sound69.TimePosition 
@@ -1360,8 +1361,8 @@ elseif k == "b" then
 	warn("Lemon Downloaded!")
 end
         Chat(Lemon,Default)
-       stopanim()
         task.wait(.005)
+       stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Lemon.mp3")
         timeposcur = sound69.TimePosition 
@@ -1394,9 +1395,9 @@ if mode == 2 then
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/unlockit.mp3?raw=true"))
 	warn("unlockit Downloaded!")
 end
-        stopanim()
         Chat(Unlockit,Default)
         task.wait(.005)
+        stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/unlockit.mp3")
 timeposcur = sound69.TimePosition 
@@ -1422,8 +1423,8 @@ playanim(95877864781663,1.5)
 	warn("InternetAngel Downloaded!")
 end
         Chat(InternetAngel,InternetAngelSpeed)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/InternetAngel.mp3")
         timeposcur = sound69.TimePosition 
@@ -1448,8 +1449,8 @@ sound69:Play()
 	warn("Assumptions Downloaded!")
 end
         Chat(AssumptionsV2,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Assumptions.mp3")
         game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -1479,8 +1480,8 @@ if not isfile("Dances/Boombox.mp3") then
 	warn("Boombox Downloaded!")
 end
 Chat(Boombox,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Boombox.mp3")
 timeposcur = sound69.TimePosition 
@@ -1504,8 +1505,8 @@ elseif k == "y" then
 	warn("Balls Downloaded!")
 end
         Chat(Peashooterr,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/balls.mp3")
 timeposcur = sound69.TimePosition 
@@ -1531,8 +1532,8 @@ elseif k == "h" then
 	warn("Distraction Downloaded!")
 end
         Chat(Distraction,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Distraction.mp3")
         timeposcur = sound69.TimePosition 
@@ -1556,8 +1557,8 @@ elseif k == "g" then
 	warn("ItBurns Downloaded!")
 end
         Chat(ItBurns,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/ItBurns.mp3")
         timeposcur = sound69.TimePosition 
@@ -1580,8 +1581,8 @@ if not isfile("Dances/chronoshift.mp3") then
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/chronoshift.mp3?raw=true"))
 	warn("chronoshift Downloaded!")
 end
-stopanim() 
 task.wait(.005)
+stopanim() 
 Idle:Stop()
 sound69.SoundId = customasset("Dances/chronoshift.mp3")
 timeposcur = sound69.TimePosition 
@@ -1604,8 +1605,8 @@ if not isfile("Dances/Million.mp3") then
 	warn("Million Downloaded!")
 end
 Chat(Million,Default)
-stopanim() 
 task.wait(.005)
+stopanim() 
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Million.mp3")
 timeposcur = sound69.TimePosition 
@@ -1628,8 +1629,8 @@ if not isfile("Dances/Runaway.mp3") then
 	warn("Runaway Downloaded!")
 end
 Chat(Runaway,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Runaway.mp3")
 sound69.PlaybackSpeed = 1
@@ -1656,8 +1657,8 @@ elseif k == "k" then
 	warn("Headlock Downloaded!")
 end
         Chat(Headlock,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Headlock.mp3")
         timeposcur = sound69.TimePosition 
@@ -1682,8 +1683,8 @@ elseif k == "u" then
 	warn("Bloodpop Downloaded!")
 end
         Chat(Bloodpop,Default)
-         stopanim()
         task.wait(.005)
+         stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/bloodpop.mp3")
         timeposcur = sound69.TimePosition 
@@ -1727,8 +1728,8 @@ elseif k == "x" then
 	warn("heavylove Downloaded!")
 end
         Chat(HeavyLove,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/heavylove.mp3")
         timeposcur = sound69.TimePosition 
@@ -1754,8 +1755,8 @@ elseif k == "leftbracket" then
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Smug.mp3?raw=true"))
 	end
         Chat(Smuggin,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Smug.mp3")
         timeposcur = sound69.TimePosition 
@@ -1783,8 +1784,8 @@ elseif k == "rightbracket" then
 	warn("Pp music Downloaded!")
 end
         Chat(PP,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Pp music.mp3")
         timeposcur = sound69.TimePosition 
@@ -1812,8 +1813,8 @@ elseif k == "l" then
 	warn("ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES Downloaded!")
 end
         Chat(Tripaloski,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES.mp3")
         timeposcur = sound69.TimePosition 
@@ -1841,8 +1842,8 @@ elseif k == "comma" then
 	warn("TUCA DONKA Downloaded!")
 end
         Chat(Hakari,Default)
-        stopanim()
         task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/TUCA DONKA.mp3")
         timeposcur = sound69.TimePosition 
@@ -1870,8 +1871,8 @@ elseif k == "p" then
 	warn("DO THE FLOP Downloaded!")
 end
        Chat(DoTheFlop,Default)
-       stopanim()
        task.wait(.005)
+       stopanim()
 Idle:Stop()
        sound69.SoundId = customasset("Dances/DO THE FLOP.mp3")
         timeposcur = sound69.TimePosition
@@ -1900,8 +1901,8 @@ elseif k == "c" then
 	warn("Doodle Downloaded!")
 end
     Chat(DoodlePoint,Default)
-    stopanim()
     task.wait(.005)
+    stopanim()
 Idle:Stop()
     sound69.SoundId = customasset("Dances/Doodle.mp3")
         timeposcur = sound69.TimePosition 
@@ -1931,8 +1932,8 @@ elseif k == "z" then
 	warn("CLUB PENGUIN DANCE Downloaded!")
 end
    Chat(Clubbin,Default)
-    stopanim()
     task.wait(.005)
+    stopanim()
 Idle:Stop()
     sound69.SoundId = customasset("Dances/CLUB PENGUIN DANCE.mp3")
         timeposcur = sound69.TimePosition 
@@ -1960,9 +1961,9 @@ if not isfile("Dances/MioHonda.mp3") then
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/MioHonda.mp3?raw=true"))
 	warn("MioHonda Downloaded!")
 end
-stopanim()
 Chat(MioHonda,Default)
 task.wait(.005)
+stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/MioHonda.mp3")
         timeposcur = sound69.TimePosition 
@@ -1988,8 +1989,8 @@ if not isfile("Dances/Liar.mp3") then
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Liar.mp3?raw=true"))
 	warn("Liar Dance Downloaded!")
 end
-Chat(Liar,Default)
 stopanim()
+Chat(Liar,Default)
 task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Liar.mp3")
@@ -2117,8 +2118,8 @@ elseif k == "f" then
 	warn("Crazy Downloaded!")
 end
   Chat(Crazy,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Crazy.mp3")
        timeposcur = sound69.TimePosition 
@@ -2136,8 +2137,8 @@ elseif k == "r" then
     if dancing == false then 
   dancing = true
   Chat(Pixelation,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Pixelation.mp3")
         timeposcur = sound69.TimePosition 
@@ -2164,8 +2165,8 @@ elseif k == "t" then
 	warn("Memory Downloaded!")
 end
   Chat(Memory,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Memory.mp3")
         timeposcur = sound69.TimePosition 
@@ -2192,8 +2193,8 @@ elseif k == "y" then
 	warn("APEX Downloaded!")
 end
   Chat(Apex,ApexSpeed)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/APEX.mp3")
         timeposcur = sound69.TimePosition 
@@ -2221,8 +2222,8 @@ elseif k == "u" then
 	warn("Neon Downloaded!")
 end
   Chat(Neon,NeonSpeed)
-         stopanim()
 task.wait(.005)
+         stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Neon.mp3")
         timeposcur = sound69.TimePosition 
@@ -2249,8 +2250,8 @@ elseif k == "p" then
 	warn("Love Downloaded!")
 end
   Chat(LoveForU,Default)
-        stopanim()
 task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/LoveForU.mp3")
         timeposcur = sound69.TimePosition 
@@ -2276,8 +2277,8 @@ elseif k == "g" then
 	warn("Lightbringer Downloaded!")
 end
   Chat(Lightbringer,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Lightbringer.mp3")
        timeposcur = sound69.TimePosition 
@@ -2304,8 +2305,8 @@ elseif k == "h" then
 	warn("C14 Downloaded!")
 end
   Chat(C14,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/C14.mp3")
        timeposcur = sound69.TimePosition 
@@ -2332,8 +2333,8 @@ elseif k == "j" then
 	warn("Goat Downloaded!")
 end
   Chat(Goat,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Goat.mp3")
        timeposcur = sound69.TimePosition 
@@ -2360,8 +2361,8 @@ elseif k == "k" then
 	warn("Jevil Downloaded!")
 end
   Chat(Jevil,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Jevil.mp3")
        timeposcur = sound69.TimePosition 
@@ -2388,8 +2389,8 @@ elseif k == "z" then
 	warn("Billy Downloaded!")
 end
   Chat(Billy,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Billy.mp3")
        timeposcur = sound69.TimePosition 
@@ -2416,8 +2417,8 @@ elseif k == "x" then
 	warn("SlickBack Downloaded!")
 end
   Chat(SlickBack,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/SlickBack.mp3")
        timeposcur = sound69.TimePosition 
@@ -2444,8 +2445,8 @@ elseif k == "c" then
 	warn("Static Downloaded!")
 end
   Chat(Static,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Static.mp3")
        timeposcur = sound69.TimePosition 
@@ -2471,8 +2472,8 @@ elseif k == "v" then
 	warn("Heel Downloaded!")
 end
   Chat(Heel,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Heel.mp3")
        timeposcur = sound69.TimePosition 
@@ -2498,8 +2499,8 @@ elseif k == "b" then
 	warn("Yippie Downloaded!")
 end
   Chat(Yippie,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Yippie.mp3")
        timeposcur = sound69.TimePosition 
@@ -2525,8 +2526,8 @@ elseif k == "n" then
 	warn("Pickup The Phone Downloaded!")
 end
   Chat(Pickup,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Pickup.mp3")
        timeposcur = sound69.TimePosition 
@@ -2552,8 +2553,8 @@ elseif k == "rightbracket" then
 	warn("Kemusan Downloaded!")
 end
   Chat(Chinese,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Chinese.mp3")
        timeposcur = sound69.TimePosition 
@@ -2579,8 +2580,8 @@ elseif k == "leftbracket" then
 	warn("rat Downloaded!")
 end
   Chat(Rat2,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/rat.mp3")
        timeposcur = sound69.TimePosition 
@@ -2606,8 +2607,8 @@ elseif k == "comma" then
 	warn("Box Swing Downloaded!")
 end
   Chat(Box,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Box.mp3")
        timeposcur = sound69.TimePosition 
@@ -2633,8 +2634,8 @@ elseif k == "minus" then
 	warn("Bomb Monkey Downloaded!")
 end
   Chat(Monkey,Default)
-stopanim()
 task.wait(.005)
+stopanim()
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Monkey.mp3")
        timeposcur = sound69.TimePosition 
@@ -2666,8 +2667,8 @@ if not isfile("Dances/Break.mp3") then
 	warn("Commercial Break Downloaded!")
 end
 Chat(Break,Default)
-        stopanim()
 task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Break.mp3")
         timeposcur = sound69.TimePosition 
@@ -2692,8 +2693,8 @@ if not isfile("Dances/Popipo.mp3") then
 	warn("Popipo Downloaded!")
 end
 Chat(Popipo,Default)
-        stopanim()
 task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Popipo.mp3")
         timeposcur = sound69.TimePosition 
@@ -2718,8 +2719,8 @@ if not isfile("Dances/Birdbrain.mp3") then
 	warn("Birdbrain Downloaded!")
 end
 Chat(Birdbrain,Default)
-        stopanim()
 task.wait(.005)
+        stopanim()
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Birdbrain.mp3")
         timeposcur = sound69.TimePosition 
@@ -2734,8 +2735,8 @@ elseif k == "t" then
 if dancing == false then 
 dancing = true
 Chat(Bread,Default)
-        stopanim()
 task.wait(.005)
+        stopanim()
 Idle:Stop()
 coolparticles.Parent = char.Torso
         playanim(77887053847258,1.5)    
@@ -2747,8 +2748,8 @@ elseif k == "y" then
 if dancing == false then 
 dancing = true
 Chat(Fight,Default)
-        stopanim()
 task.wait(.005)
+        stopanim()
 Idle:Stop()
 coolparticles.Parent = char.Torso
         playanim(118865990558686,1.5)    
