@@ -1,5 +1,5 @@
-
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+
 if not isfile("Dances/Pixelation.mp3") then
 	writefile("Dances/Pixelation.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pixelation.mp3?raw=true"))
@@ -7,6 +7,7 @@ if not isfile("Dances/Pixelation.mp3") then
 end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
+
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
 	Duration = 5;
@@ -2152,7 +2153,8 @@ end
 elseif k == "t" then 
     if dancing == false then 
   dancing = true
-  if not isfile("Dances/Memory.mp3") thengame:GetService("StarterGui"):SetCore("SendNotification", {
+  if not isfile("Dances/Memory.mp3") then
+       game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
 	Duration = 2.5;
 	Text = "Let The Audio Download"
