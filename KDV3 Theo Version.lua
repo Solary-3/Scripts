@@ -274,6 +274,7 @@ local Rat2 = "I Feel Rat-ish Again...."
 local Box = "Form A Box!.."
 local Spooky = "It Iz Da Spooky Month!!"
 local Monkey = "Im About To Explode!!!"
+local Spooky = "It Iz Da Spooky Month!!!"
 --- Page 4
 local Fight= "Come Fight Me!!"
 local Bread = "Lemme Eat A Bread"
@@ -2368,6 +2369,34 @@ sound69.SoundId = customasset("Dances/Jevil.mp3")
 sound69:Play() 
 coolparticles.Parent = char.Torso
         playanim(8550316999,1.5)     
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "l" then 
+    if dancing == false then 
+     
+  if not isfile("Dances/Spooky.mp3") then
+       game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 2.5;
+	Text = "Let The Audio Download"
+})
+	writefile("Dances/Spooky.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Spooky.mp3?raw=true"))
+	warn("Spooky MonthDownloaded!")
+end
+stopanim()
+  dancing = true
+  Chat(Spooky,Default)
+task.wait(.005)
+Idle:Stop()
+sound69.SoundId = customasset("Dances/Spooky.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(15231364673,1.5)     
     else
 task.wait(.1)
 
