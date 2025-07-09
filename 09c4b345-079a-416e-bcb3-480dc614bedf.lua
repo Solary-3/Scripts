@@ -145,7 +145,7 @@ local billboard2 = Instance.new("BillboardGui")
         billboard2.StudsOffset = Vector3.new(0, 5, 0)
         billboard2.Adornee = player.Character.Head
         billboard2.AlwaysOnTop = true
-        billboard2.MaxDistance = 25
+        billboard2.MaxDistance = 50
         billboard2.Parent = player.Character.Head
     local Q = Instance.new("TextLabel")
     Q.Text = "─V3─"
@@ -1778,6 +1778,8 @@ task.wait(.1)
     end
   end 
 end
+-----------------------------------------------------------
+-----------------------------------------------------------
 if mode == 3 then
      if k == "q" then
     if dancing == false then
@@ -1960,7 +1962,6 @@ elseif k == "u" then
          stopanim()
   dancing = true
   if not isfile("Dances/Neon.mp3") then
-       
 	writefile("Dances/Neon.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Neon.mp3?raw=true"))
 	warn("Neon Downloaded!")
@@ -1984,7 +1985,6 @@ elseif k == "p" then
         stopanim()
   dancing = true
   if not isfile("Dances/LoveForU.mp3") then
-       
 	writefile("Dances/LoveForU.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/LoveForU.mp3?raw=true"))
 	warn("Love Downloaded!")
@@ -2002,12 +2002,11 @@ task.wait(.1)
         stopanim()
 end
 elseif k == "g" then 
-     
+
     if dancing == false then 
 stopanim()
   dancing = true
   if not isfile("Dances/Lightbringer.mp3") then
-       
 	writefile("Dances/Lightbringer.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Lightbringer.mp3?raw=true"))
 	warn("Lightbringer Downloaded!")
@@ -2026,7 +2025,6 @@ task.wait(.1)
         stopanim()
 end
 elseif k == "h" then 
-     
     if dancing == false then 
 stopanim()
   dancing = true
@@ -2050,7 +2048,6 @@ task.wait(.1)
         stopanim()
 end
 elseif k == "j" then 
-     
     if dancing == false then 
 stopanim()
   dancing = true
@@ -2074,12 +2071,10 @@ task.wait(.1)
         stopanim()
 end
 elseif k == "k" then 
-     
     if dancing == false then 
 stopanim()
   dancing = true
   if not isfile("Dances/Jevil.mp3") then
-       
 	writefile("Dances/Jevil.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Jevil.mp3?raw=true"))
 	warn("Jevil Downloaded!")
@@ -2103,7 +2098,6 @@ elseif k == "l" then
 stopanim()
   dancing = true
   if not isfile("Dances/Spooky.mp3") then
-       
 	writefile("Dances/Spooky.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Spooky.mp3?raw=true"))
 	warn("Spooky Downloaded!")
@@ -2127,7 +2121,6 @@ elseif k == "z" then
 stopanim()
   dancing = true
   if not isfile("Dances/Billy.mp3") then
-       
 	writefile("Dances/Billy.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Billy.mp3?raw=true"))
 	warn("Billy Downloaded!")
@@ -2151,7 +2144,6 @@ elseif k == "x" then
 stopanim()
   dancing = true
   if not isfile("Dances/SlickBack.mp3") then
-       
 	writefile("Dances/SlickBack.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/SlickBack.mp3?raw=true"))
 	warn("SlickBack Downloaded!")
@@ -2175,7 +2167,6 @@ elseif k == "c" then
 stopanim()
   dancing = true
   if not isfile("Dances/Static.mp3") then
-       
 	writefile("Dances/Static.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Static.mp3?raw=true"))
 	warn("Static Downloaded!")
@@ -2198,7 +2189,6 @@ elseif k == "v" then
 stopanim()
   dancing = true
   if not isfile("Dances/Heel.mp3") then
-       
 	writefile("Dances/Heel.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Heel.mp3?raw=true"))
 	warn("Heel Downloaded!")
@@ -2222,7 +2212,6 @@ elseif k == "b" then
 stopanim()
   dancing = true
   if not isfile("Dances/Yippie.mp3") then
-       
 	writefile("Dances/Yippie.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Yippie.mp3?raw=true"))
 	warn("Yippie Downloaded!")
@@ -2245,7 +2234,6 @@ elseif k == "n" then
 stopanim()
   dancing = true
   if not isfile("Dances/Pickup.mp3") then
-       
 	writefile("Dances/Pickup.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pickup.mp3?raw=true"))
 	warn("Pickup The Phone Downloaded!")
@@ -2268,7 +2256,6 @@ elseif k == "rightbracket" then
 stopanim()
   dancing = true
   if not isfile("Dances/Chinese.mp3") then
-       
 	writefile("Dances/Chinese.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Chinese.mp3?raw=true"))
 	warn("Kemusan Downloaded!")
@@ -2291,7 +2278,6 @@ elseif k == "leftbracket" then
 stopanim()
   dancing = true
   if not isfile("Dances/rat.mp3") then
-       
 	writefile("Dances/rat.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/rat.mp3?raw=true"))
 	warn("rat Downloaded!")
@@ -2314,7 +2300,6 @@ elseif k == "comma" then
 stopanim()
   dancing = true
   if not isfile("Dances/Box.mp3") then
-       
 	writefile("Dances/Box.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Box.mp3?raw=true"))
 	warn("Box Swing Downloaded!")
@@ -2337,7 +2322,6 @@ elseif k == "minus" then
 stopanim()
   dancing = true
   if not isfile("Dances/Monkey.mp3") then
-       
 	writefile("Dances/Monkey.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Monkey.mp3?raw=true"))
 	warn("Bomb Monkey Downloaded!")
@@ -2366,7 +2350,6 @@ if k == "e" then
         stopanim()
 dancing = true
 if not isfile("Dances/Break.mp3") then
-     
 	writefile("Dances/Break.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Break.mp3?raw=true"))
 	warn("Commercial Break Downloaded!")
@@ -2388,7 +2371,6 @@ if dancing == false then
         stopanim()
 dancing = true
 if not isfile("Dances/Popipo.mp3") then
-     
 	writefile("Dances/Popipo.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Popipo.mp3?raw=true"))
 	warn("Popipo Downloaded!")
@@ -2410,7 +2392,6 @@ if dancing == false then
         stopanim()
 dancing = true
 if not isfile("Dances/Birdbrain.mp3") then
-     
 	writefile("Dances/Birdbrain.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Birdbrain.mp3?raw=true"))
 	warn("Birdbrain Downloaded!")
