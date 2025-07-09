@@ -555,11 +555,7 @@ ResetEvent = Character:GetPropertyChangedSignal("Parent"):Connect(function(Paren
 	end
 end)
 
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Reanimation";
-	Duration = 2.5;
-	Text = "Reanimated in " .. string.sub(tostring(tick()-Speed),1,string.find(tostring(tick()-Speed),".")+5)
-})
+Warn("Reanimated in " .. string.sub(tostring(tick()-Speed),1,string.find(tostring(tick()-Speed),".")+5))
 if not DisableAnimations then
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekReanimate/main/Addons/Animations.lua"))()
 end
