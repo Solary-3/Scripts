@@ -741,7 +741,7 @@ stopanim()
 dancing = true
 Chat(Rat,RatSpeed)
 if not isfile("Dances/rat.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/rat.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/rat.mp3?raw=true"))
 	warn("rat Downloaded!")
@@ -762,7 +762,7 @@ task.wait(.1)
 stopanim()
 dancing = true
 if not isfile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/xxanteria%2C%20isq%20-%20FUNKED%20UP%20(SLOWED)%20(320kbps).mp3?raw=true"))
 	warn("xxanteria, isq - FUNKED UP (SLOWED) (320kbps) Downloaded!")
@@ -785,7 +785,7 @@ if dancing == false then
 	stopanim()
 dancing = true
 if not isfile("Dances/Assumptions.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/Assumptions.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Assumptions.mp3?raw=true"))
 	warn("Assumptions Downloaded!")
@@ -809,7 +809,7 @@ if dancing == false then
 stopanim()
 dancing = true
 if not isfile("Dances/Bjean.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/Bjean.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Bjean.mp3?raw=true"))
 	warn("Bjean Downloaded!")
@@ -831,7 +831,7 @@ if dancing == false then
 stopanim()
 dancing = true
 if not isfile("Dances/Egypt.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/Egypt.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Egypt.mp3?raw=true"))
 	warn("Egypt Downloaded!")
@@ -852,7 +852,7 @@ if dancing == false then
     stopanim()
 dancing = true
 if not isfile("Dances/caramell.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/caramell.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/caramell.mp3?raw=true"))
 	warn("caramell Downloaded!")
@@ -878,7 +878,7 @@ elseif k == "f" then
         stopanim()
 dancing = true
 if not isfile("Dances/Stock.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/Stock.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Stock.mp3?raw=true"))
 	warn("Stock Downloaded!")
@@ -902,7 +902,7 @@ elseif k == "g" then
         stopanim()
 dancing = true
 if not isfile("Dances/gangnamm.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/gangnamm.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/gangnamm.mp3?raw=true"))
 	warn("gangnamm Downloaded!")
@@ -925,7 +925,7 @@ elseif k == "p" then
         stopanim()
 dancing = true
 if not isfile("Dances/Fein.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/Fein.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Fein.mp3?raw=true"))
 	warn("Fein Downloaded!")
@@ -949,7 +949,7 @@ elseif k == "j" then
         stopanim()
 dancing = true
 if not isfile("Dances/dancingin.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/dancingin.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/dancingin.mp3?raw=true"))
 	warn("dancingin Downloaded!")
@@ -974,7 +974,7 @@ elseif k == "l" then
         stopanim()
     dancing = true
     if not isfile("Dances/griddy.mp3") then
-         game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+         
 	writefile("Dances/griddy.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/griddy.mp3?raw=true"))
 	warn("griddy Downloaded!")
@@ -999,7 +999,7 @@ elseif k == "z" then
         stopanim()
         dancing = true
         if not isfile("Dances/LeftRight.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/LeftRight.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/LeftRight.mp3?raw=true"))
 	warn("LeftRight Downloaded!")
@@ -1022,7 +1022,7 @@ elseif k == "x" then
         stopanim()
         dancing = true
         if not isfile("Dances/kazot.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/kazot.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/kazot.mp3?raw=true"))
 	warn("kazot Downloaded!")
@@ -1046,7 +1046,7 @@ elseif k == "h" then
         stopanim()
         dancing = true
         if not isfile("Dances/doodle - Zachz Winner.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/doodle - Zachz Winner.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/doodle%20-%20Zachz%20Winner.mp3?raw=true"))
 	warn("doodle - Zachz Winner Downloaded!")
@@ -1072,7 +1072,7 @@ elseif k == "v" then
         stopanim()
         dancing = true
         if not isfile("Dances/Mesmerizer.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/Mesmerizer.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Mesmerizer.mp3?raw=true"))
 	warn("Mesmerizer Downloaded!")
@@ -1098,7 +1098,7 @@ elseif k == "c" then
         stopanim()
         dancing = true
         if not isfile("Dances/Bumblebee.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/Bumblebee.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Bumblebee.mp3?raw=true"))
 	warn("Bumblebee Downloaded!")
@@ -1122,7 +1122,7 @@ elseif k == "n" then
         stopanim()
         dancing = true
         if not isfile("Dances/Domino.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/Domino.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Domino.mp3?raw=true"))
 	warn("Domino Downloaded!")
@@ -1148,7 +1148,7 @@ elseif k == "comma" then
         stopanim()
         dancing = true
         if not isfile("Dances/Yamero.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/Yamero.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Yamero.mp3?raw=true"))
 	warn("Yamero Downloaded!")
@@ -1172,7 +1172,7 @@ elseif k == "leftbracket" then
         stopanim()
         dancing = true
         if not isfile("Dances/Crank.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/Crank.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Crank.mp3?raw=true"))
 	warn("Crank Downloaded!")
@@ -1195,7 +1195,7 @@ elseif k == "k" then
         stopanim()
         dancing = true
         if not isfile("Dances/SmoothMoves.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/SmoothMoves.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/SmoothMoves.mp3?raw=true"))
 	warn("SmoothMoves Downloaded!")
@@ -1220,7 +1220,7 @@ elseif k == "rightbracket" then
         stopanim()
         dancing = true
         if not isfile("Dances/Shuba Duck.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/Shuba Duck.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Shuba%20Duck.mp3?raw=true"))
 	warn("Shuba duck Downloaded!")
@@ -1245,7 +1245,7 @@ elseif k == "minus" then
        stopanim()
         dancing = true
         if not isfile("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Odetari%20-%20KEEP%20UP%20(Lyrics)%20(320kbps).mp3?raw=true"))
 	warn("Odetari - KEEP UP (Lyrics) (320kbps) Downloaded!")
@@ -1270,7 +1270,7 @@ elseif k == "b" then
        stopanim()
         dancing = true
         if not isfile("Dances/Lemon.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/Lemon.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Lemon.mp3?raw=true"))
 	warn("Lemon Downloaded!")
@@ -1301,7 +1301,7 @@ if mode == 2 then
         stopanim()
         dancing = true
         if not isfile("Dances/unlockit.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/unlockit.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/unlockit.mp3?raw=true"))
 	warn("unlockit Downloaded!")
@@ -1324,7 +1324,7 @@ playanim(95877864781663,1.5)
         stopanim()
         dancing = true
         if not isfile("Dances/InternetAngel.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/InternetAngel.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/InternetAngel.mp3?raw=true"))
 	warn("InternetAngel Downloaded!")
@@ -1346,7 +1346,7 @@ sound69:Play()
         stopanim()
         dancing = true
         if not isfile("Dances/Assumptions.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/Assumptions.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Assumptions.mp3?raw=true"))
 	warn("Assumptions Downloaded!")
@@ -1368,7 +1368,7 @@ if dancing == false then
 stopanim()
 dancing = true
 if not isfile("Dances/Boombox.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/Boombox.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Boombox.mp3?raw=true"))
 	warn("Boombox Downloaded!")
@@ -1389,7 +1389,7 @@ elseif k == "y" then
         stopanim()
         dancing = true
         if not isfile("Dances/balls.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/balls.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/balls.mp3?raw=true"))
 	warn("Balls Downloaded!")
@@ -1412,7 +1412,7 @@ elseif k == "h" then
         stopanim()
         dancing = true
         if not isfile("Dances/Distraction.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/Distraction.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Distraction.mp3?raw=true"))
 	warn("Distraction Downloaded!")
@@ -1433,7 +1433,7 @@ elseif k == "g" then
         stopanim()
         dancing = true
         if not isfile("Dances/ItBurns.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/ItBurns.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/ItBurns.mp3?raw=true"))
 	warn("ItBurns Downloaded!")
@@ -1472,7 +1472,7 @@ if dancing == false then
 stopanim() 
 dancing = true
 if not isfile("Dances/Million.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/Million.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Million.mp3?raw=true"))
 	warn("Million Downloaded!")
@@ -1492,7 +1492,7 @@ elseif k == "j" then
 stopanim()
 dancing = true
 if not isfile("Dances/Runaway.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/Runaway.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Runaway.mp3?raw=true"))
 	warn("Runaway Downloaded!")
@@ -1516,7 +1516,7 @@ elseif k == "k" then
         stopanim()
         dancing = true
         if not isfile("Dances/Headlock.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/Headlock.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Headlock.mp3?raw=true"))
 	warn("Headlock Downloaded!")
@@ -1538,7 +1538,7 @@ elseif k == "u" then
          stopanim()
         dancing = true
         if not isfile("Dances/bloodpop.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/bloodpop.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/bloodpop.mp3?raw=true"))
 	warn("Bloodpop Downloaded!")
@@ -1578,7 +1578,7 @@ elseif k == "x" then
         stopanim()
         dancing = true
         if not isfile("Dances/heavylove.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/heavylove.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/heavylove.mp3?raw=true"))
 	warn("heavylove Downloaded!")
@@ -1602,7 +1602,7 @@ elseif k == "leftbracket" then
         stopanim()
         dancing = true
         if not isfile("Dances/Smug.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/Smug.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Smug.mp3?raw=true"))
 	end
@@ -1626,7 +1626,7 @@ elseif k == "rightbracket" then
         stopanim()
         dancing = true
         if not isfile("Dances/Pp music.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/Pp music.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pp%20music.mp3?raw=true"))
 	warn("Pp music Downloaded!")
@@ -1651,7 +1651,7 @@ elseif k == "l" then
         stopanim()
         dancing = true
         if not isfile("Dances/ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/%D0%A2%D0%A0%D0%98%20%D0%9F%D0%9E%D0%9B%D0%9E%D0%A1%D0%9A%D0%98%20%E2%A7%B8%20KOLM%20TRIIPU%20%E2%A7%B8%20THREE%20STRIPES.mp3?raw=true"))
 	warn("ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES Downloaded!")
@@ -1676,7 +1676,7 @@ elseif k == "comma" then
         stopanim()
         dancing = true
         if not isfile("Dances/TUCA DONKA.mp3") then
-             game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+             
 	writefile("Dances/TUCA DONKA.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/TUCA%20DONKA.mp3?raw=true"))
 	warn("TUCA DONKA Downloaded!")
@@ -1701,7 +1701,7 @@ elseif k == "p" then
        stopanim()
        dancing = true
        if not isfile("Dances/DO THE FLOP.mp3") then
-            game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+            
 	writefile("Dances/DO THE FLOP.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/DO%20THE%20FLOP.mp3?raw=true"))
 	warn("DO THE FLOP Downloaded!")
@@ -1727,7 +1727,7 @@ elseif k == "c" then
     stopanim()
     dancing = true
     if not isfile("Dances/Doodle.mp3") then
-         game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+         
 	writefile("Dances/Doodle.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Doodle.mp3?raw=true"))
 	warn("Doodle Downloaded!")
@@ -1754,7 +1754,7 @@ elseif k == "z" then
     stopanim()
    dancing = true
    if not isfile("Dances/CLUB PENGUIN DANCE.mp3") then
-        game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+        
 	writefile("Dances/CLUB PENGUIN DANCE.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/CLUB%20PENGUIN%20DANCE.mp3?raw=true"))
 	warn("CLUB PENGUIN DANCE Downloaded!")
@@ -1780,7 +1780,7 @@ elseif k == "v" then
 stopanim()
 dancing = true
 if not isfile("Dances/MioHonda.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/MioHonda.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/MioHonda.mp3?raw=true"))
 	warn("MioHonda Downloaded!")
@@ -1804,7 +1804,7 @@ elseif k == "minus" then
 stopanim()
 dancing = true
 if not isfile("Dances/Liar.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/Liar.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Liar.mp3?raw=true"))
 	warn("Liar Dance Downloaded!")
@@ -1918,7 +1918,7 @@ elseif k == "f" then
 stopanim()
   dancing = true
   if not isfile("Dances/Crazy.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/Crazy.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Crazy.mp3?raw=true"))
 	warn("Crazy Downloaded!")
@@ -1961,7 +1961,7 @@ stopanim()
     if dancing == false then 
   dancing = true
   if not isfile("Dances/Memory.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/Memory.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Memory.mp3?raw=true"))
 	warn("Memory Downloaded!")
@@ -1985,7 +1985,7 @@ elseif k == "y" then
 stopanim()
   dancing = true
   if not isfile("Dances/APEX.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/APEX.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/APEX.mp3?raw=true"))
 	warn("APEX Downloaded!")
@@ -2010,7 +2010,7 @@ elseif k == "u" then
          stopanim()
   dancing = true
   if not isfile("Dances/Neon.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/Neon.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Neon.mp3?raw=true"))
 	warn("Neon Downloaded!")
@@ -2034,7 +2034,7 @@ elseif k == "p" then
         stopanim()
   dancing = true
   if not isfile("Dances/LoveForU.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/LoveForU.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/LoveForU.mp3?raw=true"))
 	warn("Love Downloaded!")
@@ -2057,7 +2057,7 @@ elseif k == "g" then
 stopanim()
   dancing = true
   if not isfile("Dances/Lightbringer.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/Lightbringer.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Lightbringer.mp3?raw=true"))
 	warn("Lightbringer Downloaded!")
@@ -2081,7 +2081,7 @@ elseif k == "h" then
 stopanim()
   dancing = true
   if not isfile("Dances/C14.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/C14.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/C14.mp3?raw=true"))
 	warn("C14 Downloaded!")
@@ -2105,7 +2105,7 @@ elseif k == "j" then
 stopanim()
   dancing = true
   if not isfile("Dances/Goat.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/Goat.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Goat.mp3?raw=true"))
 	warn("Goat Downloaded!")
@@ -2129,7 +2129,7 @@ elseif k == "k" then
 stopanim()
   dancing = true
   if not isfile("Dances/Jevil.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/Jevil.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Jevil.mp3?raw=true"))
 	warn("Jevil Downloaded!")
@@ -2153,7 +2153,7 @@ elseif k == "l" then
 stopanim()
   dancing = true
   if not isfile("Dances/Spooky.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/Spooky.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Spooky.mp3?raw=true"))
 	warn("Spooky Downloaded!")
@@ -2177,7 +2177,7 @@ elseif k == "z" then
 stopanim()
   dancing = true
   if not isfile("Dances/Billy.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/Billy.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Billy.mp3?raw=true"))
 	warn("Billy Downloaded!")
@@ -2201,7 +2201,7 @@ elseif k == "x" then
 stopanim()
   dancing = true
   if not isfile("Dances/SlickBack.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/SlickBack.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/SlickBack.mp3?raw=true"))
 	warn("SlickBack Downloaded!")
@@ -2225,7 +2225,7 @@ elseif k == "c" then
 stopanim()
   dancing = true
   if not isfile("Dances/Static.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/Static.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Static.mp3?raw=true"))
 	warn("Static Downloaded!")
@@ -2248,7 +2248,7 @@ elseif k == "v" then
 stopanim()
   dancing = true
   if not isfile("Dances/Heel.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/Heel.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Heel.mp3?raw=true"))
 	warn("Heel Downloaded!")
@@ -2272,7 +2272,7 @@ elseif k == "b" then
 stopanim()
   dancing = true
   if not isfile("Dances/Yippie.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/Yippie.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Yippie.mp3?raw=true"))
 	warn("Yippie Downloaded!")
@@ -2295,7 +2295,7 @@ elseif k == "n" then
 stopanim()
   dancing = true
   if not isfile("Dances/Pickup.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/Pickup.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pickup.mp3?raw=true"))
 	warn("Pickup The Phone Downloaded!")
@@ -2318,7 +2318,7 @@ elseif k == "rightbracket" then
 stopanim()
   dancing = true
   if not isfile("Dances/Chinese.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/Chinese.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Chinese.mp3?raw=true"))
 	warn("Kemusan Downloaded!")
@@ -2341,7 +2341,7 @@ elseif k == "leftbracket" then
 stopanim()
   dancing = true
   if not isfile("Dances/rat.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/rat.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/rat.mp3?raw=true"))
 	warn("rat Downloaded!")
@@ -2364,7 +2364,7 @@ elseif k == "comma" then
 stopanim()
   dancing = true
   if not isfile("Dances/Box.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/Box.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Box.mp3?raw=true"))
 	warn("Box Swing Downloaded!")
@@ -2387,7 +2387,7 @@ elseif k == "minus" then
 stopanim()
   dancing = true
   if not isfile("Dances/Monkey.mp3") then
-       game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+       
 	writefile("Dances/Monkey.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Monkey.mp3?raw=true"))
 	warn("Bomb Monkey Downloaded!")
@@ -2416,7 +2416,7 @@ if k == "e" then
         stopanim()
 dancing = true
 if not isfile("Dances/Break.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/Break.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Break.mp3?raw=true"))
 	warn("Commercial Break Downloaded!")
@@ -2438,7 +2438,7 @@ if dancing == false then
         stopanim()
 dancing = true
 if not isfile("Dances/Popipo.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/Popipo.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Popipo.mp3?raw=true"))
 	warn("Popipo Downloaded!")
@@ -2460,7 +2460,7 @@ if dancing == false then
         stopanim()
 dancing = true
 if not isfile("Dances/Birdbrain.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", { 	Title = "Krystal Dance V3"; 	Duration = 5; 	Text = "Let The Audio Download" })
+     
 	writefile("Dances/Birdbrain.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Birdbrain.mp3?raw=true"))
 	warn("Birdbrain Downloaded!")
