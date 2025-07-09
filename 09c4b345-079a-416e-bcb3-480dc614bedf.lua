@@ -145,7 +145,7 @@ local billboard2 = Instance.new("BillboardGui")
         billboard2.StudsOffset = Vector3.new(0, 5, 0)
         billboard2.Adornee = player.Character.Head
         billboard2.AlwaysOnTop = true
-        billboard2.MaxDistance = 50
+        billboard2.MaxDistance = 25
         billboard2.Parent = player.Character.Head
     local Q = Instance.new("TextLabel")
     Q.Text = "─V3─"
@@ -1778,8 +1778,7 @@ task.wait(.1)
     end
   end 
 end
------------------------------------------------------------
------------------------------------------------------------
+
 if mode == 3 then
      if k == "q" then
     if dancing == false then
@@ -2668,6 +2667,7 @@ end
 end)
 
 --Credits 
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("For My Friend Fluff, Kdv3 Modded By Theo") 
 task.wait(.1)
 stopanim()
 task.wait(.1)
