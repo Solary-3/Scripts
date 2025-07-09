@@ -218,7 +218,7 @@ local BJ = "He-He!!"
 local Egypt = "Egypt!"
 local CaramellDansen = "Dance on my ball-"
 local Fein = "Fein Fein!"
-local Stock = "Ayo Wtf"
+local Stock = "Moves Like A Stock Imagesf"
 local Gangnam = "Opa Gangnam Style!"
 local HappyWalk = "Just Walkin Here!!!"
 local Uhh = "Is This Supposed To Be A Vibe?"
@@ -256,7 +256,7 @@ local Headlock = "Hm"
 local Runaway = "I Wanna Run Away🤑"
 local AssumptionsV2 = "Hit Them With The Summer Shuffle!"
 local Boombox = "Deploy The Boombox!"
-local Distraction = "Get Distracted XD"
+local Distraction = "Great For Distracting Enemies!"
 local Liar ="Im A Liar!"
 local Million = "I Want A Million"
 -- Second Page^^^^^^^^
@@ -279,14 +279,15 @@ local Heel = "Im Hopping!!!"
 local SlickBack = "Slickback!!!"
 local Yippie = "YIPPIE!!"
 local Pickup = "Pickup The Phone :("
-local Chinese = "Just Give Me The Fries 😔"
-local Rat2 = "Hm..."
-local Box = "Hm.."
+local Chinese = "Just Give Me The Food Bro 😔"
+local Rat2 = "I Feel Rat-ish Again...."
+local Box = "Form A Box!.."
 local Spooky = "It Iz Da Spooky Month!!"
 local Monkey = "Im About To Explode!!!"
 --- Page 4
+local Fight= "Come Fight Me!!"
+local Bread = "Lemme Eat A Bread"
 local Break = "Commercial Break"
-local Popipo = "Hm."
 local Popipo = "Eat Your Veggies"
 --Some Text Speedsvvvvvvvvvv
 local Default = 0.05
@@ -300,6 +301,7 @@ local NeonSpeed = .250
 local Introspeed = 0.10
 
 -- Pls Dont Touch Below Or Else I Will Touch You
+local Audio = "Let The Audio Download!"
 local function Chat(fulltext, typespeed)
 local G1 = Color3.fromRGB(255,255, 255)
 local A1 = Color3.fromRGB(100,100,100)
@@ -731,7 +733,7 @@ if chatting then return end
 local k = string.lower(string.gsub(tostring(k.KeyCode),"Enum.KeyCode.",""))
 	
 
-
+-----------------------------------------------------------
 if mode == 1 then 
 	if k == "q" then
 		if dancing == false then
@@ -739,6 +741,7 @@ stopanim()
 dancing = true
 Chat(Rat,RatSpeed)
 if not isfile("Dances/rat.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/rat.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/rat.mp3?raw=true"))
 	warn("rat Downloaded!")
@@ -758,12 +761,13 @@ task.wait(.1)
 		if dancing == false then 
 stopanim()
 dancing = true
-Chat(Boogie,Default)
 if not isfile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/xxanteria%2C%20isq%20-%20FUNKED%20UP%20(SLOWED)%20(320kbps).mp3?raw=true"))
 	warn("xxanteria, isq - FUNKED UP (SLOWED) (320kbps) Downloaded!")
 end
+Chat(Boogie,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3")
@@ -780,12 +784,13 @@ end
 if dancing == false then 
 	stopanim()
 dancing = true
-Chat(Assumptions,Default)
 if not isfile("Dances/Assumptions.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/Assumptions.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Assumptions.mp3?raw=true"))
 	warn("Assumptions Downloaded!")
 end
+Chat(Assumptions,Default)
 task.wait(.005)
 Idle:Stop()
 	sound69.SoundId = customasset("Dances/Assumptions.mp3")
@@ -803,12 +808,13 @@ elseif k == "t" then
 if dancing == false then 
 stopanim()
 dancing = true
-Chat(BJ,Default)
 if not isfile("Dances/Bjean.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/Bjean.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Bjean.mp3?raw=true"))
 	warn("Bjean Downloaded!")
 end
+Chat(BJ,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Bjean.mp3")
@@ -824,12 +830,13 @@ elseif k == "y" then
 if dancing == false then 
 stopanim()
 dancing = true
-Chat(Egypt,Default)
 if not isfile("Dances/Egypt.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/Egypt.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Egypt.mp3?raw=true"))
 	warn("Egypt Downloaded!")
 end
+Chat(Egypt,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Egypt.mp3")
@@ -844,12 +851,13 @@ elseif k == "u" then
 if dancing == false then 
     stopanim()
 dancing = true
-Chat(CaramellDansen,Default)
 if not isfile("Dances/caramell.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/caramell.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/caramell.mp3?raw=true"))
 	warn("caramell Downloaded!")
 end
+Chat(CaramellDansen,Default)
 task.wait(.005)
 Idle:Stop()
     sound69.SoundId = customasset("Dances/caramell.mp3")
@@ -869,12 +877,13 @@ elseif k == "f" then
     if dancing == false then 
         stopanim()
 dancing = true
-Chat(Stock,Defualt)
 if not isfile("Dances/Stock.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/Stock.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Stock.mp3?raw=true"))
 	warn("Stock Downloaded!")
 end
+Chat(Stock,Defualt)
 task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Stock.mp3")
@@ -892,12 +901,13 @@ elseif k == "g" then
     if dancing == false then 
         stopanim()
 dancing = true
-Chat(Gangnam,Default)
 if not isfile("Dances/gangnamm.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/gangnamm.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/gangnamm.mp3?raw=true"))
 	warn("gangnamm Downloaded!")
 end
+Chat(Gangnam,Default)
 task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/gangnamm.mp3")
@@ -914,12 +924,13 @@ elseif k == "p" then
     if dancing == false then 
         stopanim()
 dancing = true
-Chat(Fein,Default)
 if not isfile("Dances/Fein.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/Fein.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Fein.mp3?raw=true"))
 	warn("Fein Downloaded!")
 end
+Chat(Fein,Default)
 task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Fein.mp3")
@@ -937,12 +948,13 @@ elseif k == "j" then
     if dancing == false then 
         stopanim()
 dancing = true
-Chat(Uhh,UhhSpeed)
 if not isfile("Dances/dancingin.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/dancingin.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/dancingin.mp3?raw=true"))
 	warn("dancingin Downloaded!")
 end
+Chat(Uhh,UhhSpeed)
 task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/dancingin.mp3")
@@ -961,12 +973,13 @@ elseif k == "l" then
     if dancing == false then 
         stopanim()
     dancing = true
-    Chat(Griddy,Defualt)
     if not isfile("Dances/griddy.mp3") then
+         Chat(Audio, Default)
 	writefile("Dances/griddy.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/griddy.mp3?raw=true"))
 	warn("griddy Downloaded!")
 end
+    Chat(Griddy,Defualt)
     task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/griddy.mp3")
@@ -985,12 +998,13 @@ elseif k == "z" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(LeftRight,Default)
         if not isfile("Dances/LeftRight.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/LeftRight.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/LeftRight.mp3?raw=true"))
 	warn("LeftRight Downloaded!")
 end
+        Chat(LeftRight,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/LeftRight.mp3")
@@ -1007,12 +1021,13 @@ elseif k == "x" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(Kazotsky,Defualt)
         if not isfile("Dances/kazot.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/kazot.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/kazot.mp3?raw=true"))
 	warn("kazot Downloaded!")
 end
+        Chat(Kazotsky,Defualt)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/kazot.mp3")
@@ -1030,12 +1045,13 @@ elseif k == "h" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(HappyWalk,Default)
         if not isfile("Dances/doodle - Zachz Winner.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/doodle - Zachz Winner.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/doodle%20-%20Zachz%20Winner.mp3?raw=true"))
 	warn("doodle - Zachz Winner Downloaded!")
 end
+        Chat(HappyWalk,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/doodle - Zachz Winner.mp3")
@@ -1055,12 +1071,13 @@ elseif k == "v" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(Mesmerizer,Default)
         if not isfile("Dances/Mesmerizer.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/Mesmerizer.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Mesmerizer.mp3?raw=true"))
 	warn("Mesmerizer Downloaded!")
 end
+        Chat(Mesmerizer,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Mesmerizer.mp3")
@@ -1080,12 +1097,13 @@ elseif k == "c" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(Bumblebee,Default)
         if not isfile("Dances/Bumblebee.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/Bumblebee.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Bumblebee.mp3?raw=true"))
 	warn("Bumblebee Downloaded!")
 end
+        Chat(Bumblebee,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Bumblebee.mp3")
@@ -1103,12 +1121,13 @@ elseif k == "n" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(Domino,Default)
         if not isfile("Dances/Domino.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/Domino.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Domino.mp3?raw=true"))
 	warn("Domino Downloaded!")
 end
+        Chat(Domino,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Domino.mp3")
@@ -1128,12 +1147,13 @@ elseif k == "comma" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(Yamero,YameroSpeed)
         if not isfile("Dances/Yamero.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/Yamero.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Yamero.mp3?raw=true"))
 	warn("Yamero Downloaded!")
 end
+        Chat(Yamero,YameroSpeed)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Yamero.mp3")
@@ -1151,12 +1171,13 @@ elseif k == "leftbracket" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(Crank,Default)
         if not isfile("Dances/Crank.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/Crank.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Crank.mp3?raw=true"))
 	warn("Crank Downloaded!")
 end
+        Chat(Crank,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Crank.mp3")
@@ -1173,12 +1194,13 @@ elseif k == "k" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(SmoothMoves,Default)
         if not isfile("Dances/SmoothMoves.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/SmoothMoves.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/SmoothMoves.mp3?raw=true"))
 	warn("SmoothMoves Downloaded!")
 end
+        Chat(SmoothMoves,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/SmoothMoves.mp3")
@@ -1197,12 +1219,13 @@ elseif k == "rightbracket" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(ShubaDuck,Default)
         if not isfile("Dances/Shuba Duck.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/Shuba Duck.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Shuba%20Duck.mp3?raw=true"))
 	warn("Shuba duck Downloaded!")
 end
+        Chat(ShubaDuck,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Shuba Duck.mp3")
@@ -1221,12 +1244,13 @@ elseif k == "minus" then
     if dancing == false then 
        stopanim()
         dancing = true
-        Chat(KeepUp,Default)
         if not isfile("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Odetari%20-%20KEEP%20UP%20(Lyrics)%20(320kbps).mp3?raw=true"))
 	warn("Odetari - KEEP UP (Lyrics) (320kbps) Downloaded!")
 end
+        Chat(KeepUp,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3")
@@ -1245,12 +1269,13 @@ elseif k == "b" then
     if dancing == false then 
        stopanim()
         dancing = true
-        Chat(Lemon,Default)
         if not isfile("Dances/Lemon.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/Lemon.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Lemon.mp3?raw=true"))
 	warn("Lemon Downloaded!")
 end
+        Chat(Lemon,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Lemon.mp3")
@@ -1266,8 +1291,8 @@ coolparticles.Parent = char.Torso
    end
  end
 end
-
-
+------------------------------------------------------------------
+------------------------------------------------------------------
 ------------------------------------------------------------------
 if mode == 2 then 
    if k == "q" then 
@@ -1275,12 +1300,13 @@ if mode == 2 then
            if dancing == false then 
         stopanim()
         dancing = true
-        Chat(Unlockit,Default)
         if not isfile("Dances/unlockit.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/unlockit.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/unlockit.mp3?raw=true"))
 	warn("unlockit Downloaded!")
 end
+        Chat(Unlockit,Default)
         task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/unlockit.mp3")
@@ -1297,12 +1323,13 @@ playanim(95877864781663,1.5)
         if dancing == false then 
         stopanim()
         dancing = true
-        Chat(InternetAngel,InternetAngelSpeed)
         if not isfile("Dances/InternetAngel.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/InternetAngel.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/InternetAngel.mp3?raw=true"))
 	warn("InternetAngel Downloaded!")
 end
+        Chat(InternetAngel,InternetAngelSpeed)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/InternetAngel.mp3")
@@ -1318,12 +1345,13 @@ sound69:Play()
                      if dancing == false then 
         stopanim()
         dancing = true
-        Chat(AssumptionsV2,Default)
         if not isfile("Dances/Assumptions.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/Assumptions.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Assumptions.mp3?raw=true"))
 	warn("Assumptions Downloaded!")
 end
+        Chat(AssumptionsV2,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Assumptions.mp3")
@@ -1339,12 +1367,13 @@ elseif k == "t" then
 if dancing == false then 
 stopanim()
 dancing = true
-Chat(Boombox,Default)
 if not isfile("Dances/Boombox.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/Boombox.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Boombox.mp3?raw=true"))
 	warn("Boombox Downloaded!")
 end
+Chat(Boombox,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Boombox.mp3")
@@ -1359,12 +1388,13 @@ elseif k == "y" then
      if dancing == false then 
         stopanim()
         dancing = true
-        Chat(Peashooterr,Default)
         if not isfile("Dances/balls.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/balls.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/balls.mp3?raw=true"))
 	warn("Balls Downloaded!")
 end
+        Chat(Peashooterr,Default)
         task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/balls.mp3")
@@ -1381,12 +1411,13 @@ elseif k == "h" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(Distraction,Default)
         if not isfile("Dances/Distraction.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/Distraction.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Distraction.mp3?raw=true"))
 	warn("Distraction Downloaded!")
 end
+        Chat(Distraction,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Distraction.mp3")
@@ -1401,12 +1432,13 @@ elseif k == "g" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(ItBurns,Default)
         if not isfile("Dances/ItBurns.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/ItBurns.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/ItBurns.mp3?raw=true"))
 	warn("ItBurns Downloaded!")
 end
+        Chat(ItBurns,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/ItBurns.mp3")
@@ -1439,12 +1471,13 @@ elseif k == "b" then
 if dancing == false then 
 stopanim() 
 dancing = true
-Chat(Million,Default)
 if not isfile("Dances/Million.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/Million.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Million.mp3?raw=true"))
 	warn("Million Downloaded!")
 end
+Chat(Million,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Million.mp3")
@@ -1458,12 +1491,13 @@ elseif k == "j" then
     if dancing == false then 
 stopanim()
 dancing = true
-Chat(Runaway,Default)
 if not isfile("Dances/Runaway.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/Runaway.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Runaway.mp3?raw=true"))
 	warn("Runaway Downloaded!")
 end
+Chat(Runaway,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Runaway.mp3")
@@ -1481,12 +1515,13 @@ elseif k == "k" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(Headlock,Default)
         if not isfile("Dances/Headlock.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/Headlock.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Headlock.mp3?raw=true"))
 	warn("Headlock Downloaded!")
 end
+        Chat(Headlock,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Headlock.mp3")
@@ -1502,12 +1537,13 @@ elseif k == "u" then
     if dancing == false then
          stopanim()
         dancing = true
-        Chat(Bloodpop,Default)
         if not isfile("Dances/bloodpop.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/bloodpop.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/bloodpop.mp3?raw=true"))
 	warn("Bloodpop Downloaded!")
 end
+        Chat(Bloodpop,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/bloodpop.mp3")
@@ -1527,7 +1563,6 @@ elseif k == "n" then
         stopanim()
         dancing = true
         Chat(Lay,Default)
-        
         task.wait(.005)
 Idle:Stop()
         playanim(90819860436349,1.5)
@@ -1542,12 +1577,13 @@ elseif k == "x" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(HeavyLove,Default)
         if not isfile("Dances/heavylove.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/heavylove.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/heavylove.mp3?raw=true"))
 	warn("heavylove Downloaded!")
 end
+        Chat(HeavyLove,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/heavylove.mp3")
@@ -1565,11 +1601,12 @@ elseif k == "leftbracket" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(Smuggin,Default)
         if not isfile("Dances/Smug.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/Smug.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Smug.mp3?raw=true"))
 	end
+        Chat(Smuggin,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Smug.mp3")
@@ -1588,12 +1625,13 @@ elseif k == "rightbracket" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(PP,Default)
         if not isfile("Dances/Pp music.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/Pp music.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pp%20music.mp3?raw=true"))
 	warn("Pp music Downloaded!")
 end
+        Chat(PP,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Pp music.mp3")
@@ -1612,12 +1650,13 @@ elseif k == "l" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(Tripaloski,Default)
         if not isfile("Dances/ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/%D0%A2%D0%A0%D0%98%20%D0%9F%D0%9E%D0%9B%D0%9E%D0%A1%D0%9A%D0%98%20%E2%A7%B8%20KOLM%20TRIIPU%20%E2%A7%B8%20THREE%20STRIPES.mp3?raw=true"))
 	warn("ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES Downloaded!")
 end
+        Chat(Tripaloski,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/ТРИ ПОЛОСКИ ⧸ KOLM TRIIPU ⧸ THREE STRIPES.mp3")
@@ -1636,12 +1675,13 @@ elseif k == "comma" then
     if dancing == false then 
         stopanim()
         dancing = true
-        Chat(Hakari,Default)
         if not isfile("Dances/TUCA DONKA.mp3") then
+             Chat(Audio, Default)
 	writefile("Dances/TUCA DONKA.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/TUCA%20DONKA.mp3?raw=true"))
 	warn("TUCA DONKA Downloaded!")
 end
+        Chat(Hakari,Default)
         task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/TUCA DONKA.mp3")
@@ -1660,12 +1700,13 @@ elseif k == "p" then
     if dancing == false then
        stopanim()
        dancing = true
-       Chat(DoTheFlop,Default)
        if not isfile("Dances/DO THE FLOP.mp3") then
+            Chat(Audio, Default)
 	writefile("Dances/DO THE FLOP.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/DO%20THE%20FLOP.mp3?raw=true"))
 	warn("DO THE FLOP Downloaded!")
 end
+       Chat(DoTheFlop,Default)
        task.wait(.005)
 Idle:Stop()
        sound69.SoundId = customasset("Dances/DO THE FLOP.mp3")
@@ -1685,12 +1726,13 @@ elseif k == "c" then
   if dancing == false then
     stopanim()
     dancing = true
-    Chat(DoodlePoint,Default)
     if not isfile("Dances/Doodle.mp3") then
+         Chat(Audio, Default)
 	writefile("Dances/Doodle.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Doodle.mp3?raw=true"))
 	warn("Doodle Downloaded!")
 end
+    Chat(DoodlePoint,Default)
     task.wait(.005)
 Idle:Stop()
     sound69.SoundId = customasset("Dances/Doodle.mp3")
@@ -1711,12 +1753,13 @@ elseif k == "z" then
   if dancing == false then
     stopanim()
    dancing = true
-   Chat(Clubbin,Default)
    if not isfile("Dances/CLUB PENGUIN DANCE.mp3") then
+        Chat(Audio, Default)
 	writefile("Dances/CLUB PENGUIN DANCE.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/CLUB%20PENGUIN%20DANCE.mp3?raw=true"))
 	warn("CLUB PENGUIN DANCE Downloaded!")
 end
+   Chat(Clubbin,Default)
     task.wait(.005)
 Idle:Stop()
     sound69.SoundId = customasset("Dances/CLUB PENGUIN DANCE.mp3")
@@ -1736,12 +1779,13 @@ elseif k == "v" then
     if dancing == false then 
 stopanim()
 dancing = true
-Chat(MioHonda,Default)
 if not isfile("Dances/MioHonda.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/MioHonda.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/MioHonda.mp3?raw=true"))
 	warn("MioHonda Downloaded!")
 end
+Chat(MioHonda,Default)
 task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/MioHonda.mp3")
@@ -1759,12 +1803,13 @@ elseif k == "minus" then
     if dancing == false then 
 stopanim()
 dancing = true
-Chat(Liar,Default)
 if not isfile("Dances/Liar.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/Liar.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Liar.mp3?raw=true"))
 	warn("Liar Dance Downloaded!")
 end
+Chat(Liar,Default)
 task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Liar.mp3")
@@ -1780,6 +1825,9 @@ task.wait(.1)
     end
   end 
 end
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
 if mode == 3 then
      if k == "q" then
     if dancing == false then
@@ -1869,12 +1917,13 @@ elseif k == "f" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(Crazy,Default)
   if not isfile("Dances/Crazy.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/Crazy.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Crazy.mp3?raw=true"))
 	warn("Crazy Downloaded!")
 end
+  Chat(Crazy,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Crazy.mp3")
@@ -1893,8 +1942,8 @@ elseif k == "r" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(Pixelation,Default)
 task.wait(.005)
+  Chat(Pixelation,Default)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Pixelation.mp3")
         timeposcur = sound69.TimePosition 
@@ -1911,12 +1960,13 @@ elseif k == "t" then
 stopanim()
     if dancing == false then 
   dancing = true
-  Chat(Memory,Default)
   if not isfile("Dances/Memory.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/Memory.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Memory.mp3?raw=true"))
 	warn("Memory Downloaded!")
 end
+  Chat(Memory,Default)
 task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Memory.mp3")
@@ -1934,12 +1984,13 @@ elseif k == "y" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(ApeApexSpeed)
   if not isfile("Dances/APEX.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/APEX.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/APEX.mp3?raw=true"))
 	warn("APEX Downloaded!")
 end
+  Chat(Apex,ApexSpeed)
 task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/APEX.mp3")
@@ -1958,12 +2009,13 @@ elseif k == "u" then
     if dancing == false then 
          stopanim()
   dancing = true
-  Chat(Neon,NeonSpeed)
   if not isfile("Dances/Neon.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/Neon.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Neon.mp3?raw=true"))
 	warn("Neon Downloaded!")
 end
+  Chat(Neon,NeonSpeed)
 task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Neon.mp3")
@@ -1981,12 +2033,13 @@ elseif k == "p" then
     if dancing == false then 
         stopanim()
   dancing = true
-  Chat(LoveForU,Default)
   if not isfile("Dances/LoveForU.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/LoveForU.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/LoveForU.mp3?raw=true"))
 	warn("Love Downloaded!")
 end
+  Chat(LoveForU,Default)
 task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/LoveForU.mp3")
@@ -2003,12 +2056,13 @@ elseif k == "g" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(Lightbringer,Default)
   if not isfile("Dances/Lightbringer.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/Lightbringer.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Lightbringer.mp3?raw=true"))
 	warn("Lightbringer Downloaded!")
 end
+  Chat(Lightbringer,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Lightbringer.mp3")
@@ -2026,12 +2080,13 @@ elseif k == "h" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(C14,Default)
   if not isfile("Dances/C14.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/C14.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/C14.mp3?raw=true"))
 	warn("C14 Downloaded!")
 end
+  Chat(C14,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/C14.mp3")
@@ -2049,12 +2104,13 @@ elseif k == "j" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(Goat,Default)
   if not isfile("Dances/Goat.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/Goat.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Goat.mp3?raw=true"))
 	warn("Goat Downloaded!")
 end
+  Chat(Goat,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Goat.mp3")
@@ -2072,12 +2128,13 @@ elseif k == "k" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(Jevil,Default)
   if not isfile("Dances/Jevil.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/Jevil.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Jevil.mp3?raw=true"))
 	warn("Jevil Downloaded!")
 end
+  Chat(Jevil,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Jevil.mp3")
@@ -2095,12 +2152,13 @@ elseif k == "l" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(Spooky,Default)
   if not isfile("Dances/Spooky.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/Spooky.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Spooky.mp3?raw=true"))
 	warn("Spooky Downloaded!")
 end
+  Chat(Spooky,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Spooky.mp3")
@@ -2118,12 +2176,13 @@ elseif k == "z" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(Billy,Default)
   if not isfile("Dances/Billy.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/Billy.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Billy.mp3?raw=true"))
 	warn("Billy Downloaded!")
 end
+  Chat(Billy,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Billy.mp3")
@@ -2141,12 +2200,13 @@ elseif k == "x" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(SlickBack,Default)
   if not isfile("Dances/SlickBack.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/SlickBack.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/SlickBack.mp3?raw=true"))
 	warn("SlickBack Downloaded!")
 end
+  Chat(SlickBack,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/SlickBack.mp3")
@@ -2164,12 +2224,13 @@ elseif k == "c" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(Static,Default)
   if not isfile("Dances/Static.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/Static.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Static.mp3?raw=true"))
 	warn("Static Downloaded!")
 end
+  Chat(Static,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Static.mp3")
@@ -2186,12 +2247,13 @@ elseif k == "v" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(Heel,Default)
   if not isfile("Dances/Heel.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/Heel.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Heel.mp3?raw=true"))
 	warn("Heel Downloaded!")
 end
+  Chat(Heel,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Heel.mp3")
@@ -2204,17 +2266,18 @@ task.wait(.1)
 
         stopanim()
 end
------------------------------------------------------------------- New
+
 elseif k == "b" then 
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(Yippie,Default)
   if not isfile("Dances/Yippie.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/Yippie.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Yippie.mp3?raw=true"))
 	warn("Yippie Downloaded!")
 end
+  Chat(Yippie,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Yippie.mp3")
@@ -2231,12 +2294,13 @@ elseif k == "n" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(Pickup,Default)
   if not isfile("Dances/Pickup.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/Pickup.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pickup.mp3?raw=true"))
 	warn("Pickup The Phone Downloaded!")
 end
+  Chat(Pickup,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Pickup.mp3")
@@ -2253,12 +2317,13 @@ elseif k == "rightbracket" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(Chinese,Default)
   if not isfile("Dances/Chinese.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/Chinese.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Chinese.mp3?raw=true"))
 	warn("Kemusan Downloaded!")
 end
+  Chat(Chinese,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Chinese.mp3")
@@ -2275,6 +2340,12 @@ elseif k == "leftbracket" then
     if dancing == false then 
 stopanim()
   dancing = true
+  if not isfile("Dances/rat.mp3") then
+       Chat(Audio, Default)
+	writefile("Dances/rat.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/rat.mp3?raw=true"))
+	warn("rat Downloaded!")
+end
   Chat(Rat2,Default)
 task.wait(.005)
 Idle:Stop()
@@ -2292,12 +2363,13 @@ elseif k == "comma" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(Box,Default)
   if not isfile("Dances/Box.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/Box.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Box.mp3?raw=true"))
 	warn("Box Swing Downloaded!")
 end
+  Chat(Box,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Box.mp3")
@@ -2314,12 +2386,13 @@ elseif k == "minus" then
     if dancing == false then 
 stopanim()
   dancing = true
-  Chat(Monkey,Default)
   if not isfile("Dances/Monkey.mp3") then
+       Chat(Audio, Default)
 	writefile("Dances/Monkey.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Monkey.mp3?raw=true"))
 	warn("Bomb Monkey Downloaded!")
 end
+  Chat(Monkey,Default)
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/Monkey.mp3")
@@ -2334,17 +2407,21 @@ task.wait(.1)
 end
 end
 end
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
 if mode == 4 then
 if k == "e" then 
     if dancing == false then 
         stopanim()
 dancing = true
-Chat(Break,Default)
 if not isfile("Dances/Break.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/Break.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Break.mp3?raw=true"))
-	warn("Break Downloaded!")
+	warn("Commercial Break Downloaded!")
 end
+Chat(Break,Default)
 task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Break.mp3")
@@ -2360,12 +2437,13 @@ elseif k == "q" then
 if dancing == false then 
         stopanim()
 dancing = true
-Chat(Popipo,Default)
 if not isfile("Dances/Popipo.mp3") then
+     Chat(Audio, Default)
 	writefile("Dances/Popipo.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Popipo.mp3?raw=true"))
 	warn("Popipo Downloaded!")
 end
+Chat(Popipo,Default)
 task.wait(.005)
 Idle:Stop()
         sound69.SoundId = customasset("Dances/Popipo.mp3")
@@ -2373,6 +2451,54 @@ Idle:Stop()
 sound69:Play()
 coolparticles.Parent = char.Torso
         playanim(115465103089127,1.5)    
+    else
+task.wait(.1)
+        stopanim()
+end
+elseif k == "r" then 
+if dancing == false then 
+        stopanim()
+dancing = true
+if not isfile("Dances/Bird.mp3") then
+     Chat(Audio, Default)
+	writefile("Dances/Bird.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Bird.mp3?raw=true"))
+	warn("Bird Downloaded!")
+end
+Chat(Bird,Default)
+task.wait(.005)
+Idle:Stop()
+        sound69.SoundId = customasset("Dances/Bird.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(122216349954401,1.5)    
+    else
+task.wait(.1)
+        stopanim()
+end
+elseif k == "t" then 
+if dancing == false then 
+        stopanim()
+dancing = true
+Chat(Fight,Default)
+task.wait(.005)
+Idle:Stop()
+coolparticles.Parent = char.Torso
+        playanim(77887053847258,1.5)    
+    else
+task.wait(.1)
+        stopanim()
+end
+elseif k == "y" then 
+if dancing == false then 
+        stopanim()
+dancing = true
+Chat(Bread,Default)
+task.wait(.005)
+Idle:Stop()
+coolparticles.Parent = char.Torso
+        playanim(118865990558686,1.5)    
     else
 task.wait(.1)
         stopanim()
