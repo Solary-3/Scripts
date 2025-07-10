@@ -38,7 +38,7 @@ makefolder("Dances")
      end
 local Idle = Animator.new(character, 124935083750779)
 local is = game:GetService("InsertService")
-local idleanim = game:GetObjects("rbxassetid://111486572129102")[1]
+local idleanim = game:GetObjects("rbxassetid://113559868709586")[1]
 local walkanim = game:GetObjects("rbxassetid://82396468395739")[1]
 local AllowOverheadText = true 
 local set = false
@@ -1572,7 +1572,6 @@ sound69:Play()
     end
 elseif k == [[f]] then 
 if dancing == false then 
-dancing = true
 if not isfile("Dances/chronoshift.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -1584,6 +1583,7 @@ if not isfile("Dances/chronoshift.mp3") then
 	warn("chronoshift Downloaded!")
 end
 stopanim() 
+dancing = true
 task.wait(.005)
 Idle:Stop()
 sound69.SoundId = customasset("Dances/chronoshift.mp3")
@@ -2037,10 +2037,10 @@ Anim:Play()
 sound69.SoundId = customasset("Dances/UNLIMITEDFLEXWORKS.mp3")
         timeposcur = sound69.TimePosition 
 sound69:Play()
-local Stop = 1
+local Stop = 0
 task.wait(32.246)
-for Loop = 1, 5, 1 do
-if Stop == 5 then
+for Loop = 0, 1, 1 do
+if Stop == 1 then
 sound69:Stop()
 task.wait(1.550)
 Anim:Stop()
@@ -2085,10 +2085,10 @@ sound69.SoundId = customasset("Dances/NMG.mp3")
 sound69:Play()
 task.wait(0.550)
 Jun:Play()
-local StopJun = 1
+local StopJun = 0
 task.wait(9.22)
-for LoopJun = 1, 10, 1 do
-if StopJun == 10 then
+for LoopJun = 0, 1, 1 do
+if StopJun == 1 then
 sound69:Stop()
 Jun:Stop()
 task.wait(1.550)
@@ -2730,7 +2730,7 @@ Idle:Stop()
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(115465103089127,1.25)    
+        playanim(115465103089127,1.15)    
     else
 task.wait(.1)
         stopanim()
