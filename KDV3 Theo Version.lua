@@ -1,5 +1,7 @@
+local Place = game.placeId
+if Place == 17574618959 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
-
+end
 if not isfile("Dances/Pixelation.mp3") then
 	writefile("Dances/Pixelation.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pixelation.mp3?raw=true"))
@@ -2702,7 +2704,7 @@ Idle:Stop()
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(74653637870288,1.5)    
+        playanim(74653637870288,2)    
     else
 task.wait(.1)
         stopanim()
@@ -2728,7 +2730,7 @@ Idle:Stop()
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(115465103089127,1.5)    
+        playanim(115465103089127,1.25)    
     else
 task.wait(.1)
         stopanim()
@@ -2754,7 +2756,7 @@ Idle:Stop()
         timeposcur = sound69.TimePosition 
 sound69:Play()
 coolparticles.Parent = char.Torso
-        playanim(122216349954401,1.5)    
+        playanim(122216349954401,5)    
     else
 task.wait(.1)
         stopanim()
@@ -2767,7 +2769,7 @@ Chat(Bread,Default)
 task.wait(.005)
 Idle:Stop()
 coolparticles.Parent = char.Torso
-        playanim(77887053847258,1.5)    
+        playanim(77887053847258,2)    
     else
 task.wait(.1)
         stopanim()
@@ -2780,7 +2782,7 @@ Chat(Fight,Default)
 task.wait(.005)
 Idle:Stop()
 coolparticles.Parent = char.Torso
-        playanim(118865990558686,1.5)    
+        playanim(118865990558686,2)    
     else
 task.wait(.1)
         stopanim()
