@@ -8,8 +8,6 @@ if not isfile("Dances/Pixelation.mp3") then
 	warn("Pixelation Downloaded!")
 end
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
-
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
 	Duration = 5;
@@ -32,7 +30,8 @@ game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 14
 Intro:Stop()
 
 
-
+-- Made By Hemi(Es Um Janki)
+-- Modded By Theo(Theo_TheoBenzo,アウタースペース・テオ )
 if not isfolder("Dances")then 
 makefolder("Dances")
      end
