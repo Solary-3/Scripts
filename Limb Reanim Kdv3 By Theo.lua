@@ -2901,7 +2901,7 @@ else
     idle = false 
 end
 end)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Thx For Using My Kdv3 Modded!!!!")
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Enjoy")
 task.wait(.1)
 stopanim()
 task.wait(.1)
