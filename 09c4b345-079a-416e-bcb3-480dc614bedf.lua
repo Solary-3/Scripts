@@ -45,7 +45,7 @@ ANIM5:Play()--
 task.wait(1.100)
 ANIM5:Stop()--
 task.wait(.950)
-ANIM1:STOP()
+ANIM1:Stop()
 ANIM3:Stop()
 ANIM4:Stop()
 ANIM5:Stop()
