@@ -1,7 +1,4 @@
-local Place = game.placeId
-if Place == 17574618959 then
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
-end
+
 if not isfile("Dances/Pixelation.mp3") then
 	writefile("Dances/Pixelation.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pixelation.mp3?raw=true"))
@@ -13,7 +10,6 @@ end
 	Duration = 5;
 	Text = "This Script Was Made By Hemi(original creator), Modified By Paradigm/Theo"
 })
-task.wait(6.005)
 if not getgenv()["Animator"] then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
@@ -2425,7 +2421,7 @@ sound69.SoundId = customasset("Dances/Billy.mp3")
        timeposcur = sound69.TimePosition 
 sound69:Play() 
 coolparticles.Parent = char.Torso
-        playanim(17438788784,0.55)     
+        playanim(17438788784,0.05)     
     else
 task.wait(.1)
 
