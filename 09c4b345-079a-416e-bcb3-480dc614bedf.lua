@@ -2328,7 +2328,7 @@ sound69.SoundId = customasset("Dances/Billy.mp3")
        timeposcur = sound69.TimePosition 
 sound69:Play() 
 coolparticles.Parent = char.Torso
-        playanim(108058940444935)     
+        playanim(108058940444935,1.25)     
     else
 task.wait(.1)
 
