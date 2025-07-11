@@ -16,15 +16,15 @@ end
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
 task.wait(2.750)
 local player = game:GetService("Players").LocalPlayer
-    local tr = player.Character
-    if not tr then return end
+    local UUUUUU = player.Character
+    if not UUUUUU then return end
     -- Play animation
 local Anim = Animator.new
-    local TQ = Anim(tr, 116371436205212)
-local TW = Anim(tr,  121153018567811)
-local TE = Anim(tr,  77200035851748)
-local TR = Anim(tr, 112924713565732)
-local TT = Anim(tr, 124685849885175)
+    local TQ = Anim(UUUUUU, 116371436205212)
+local TW = Anim(UUUUUU,  121153018567811)
+local TE = Anim(UUUUUU,  77200035851748)
+local TR = Anim(UUUUUU, 112924713565732)
+local TT = Anim(UUUUUU, 124685849885175)
    TQ:Play()
 task.wait(.45)
 TQ:Stop()
