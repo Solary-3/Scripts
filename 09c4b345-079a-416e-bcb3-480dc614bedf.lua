@@ -45,6 +45,10 @@ ANIM5:Play()--
 task.wait(1.100)
 ANIM5:Stop()--
 task.wait(.950)
+ANIM1:STOP()
+ANIM3:Stop()
+ANIM4:Stop()
+ANIM5:Stop()
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 14
 
 
