@@ -30,13 +30,13 @@ local function createTag(player)
         label.TextScaled = true
         label.Font = Enum.Font.Sarpanch
         label.Parent = billboard
-local 10G = Color3.fromRGB(10, 10, 10)
-local 10A = Color3.fromRGB(100,100,100)
-local 10W = Color3.fromRGB(255, 255, 255)
-local 10H = ColorSequence.new{
-    ColorSequenceKeypoint.new(0, 10A),
-    ColorSequenceKeypoint.new(0.500, 10G),
-    ColorSequenceKeypoint.new(1, 10W)
+local G = Color3.fromRGB(10, 10, 10)
+local A = Color3.fromRGB(100,100,100)
+local W = Color3.fromRGB(255, 255, 255)
+local H = ColorSequence.new{
+    ColorSequenceKeypoint.new(0, A),
+    ColorSequenceKeypoint.new(0.500, G),
+    ColorSequenceKeypoint.new(1, W)
 }
 local Rq300 = Instance.new("UIGradient")
 local Text200 = Instance.new("UIStroke")
@@ -45,7 +45,7 @@ Text200.Color = Color3.fromRGB(255,255,255)
 Text200.Parent = label
 Text200.LineJoinMode = Enum.LineJoinMode.Miter
 Rq300.Parent = Text200
-Rq300.Color = 10H
+Rq300.Color = H
 Rq300.Name = "Test3"
 Rq300.Enabled = true 
 Rq300.Rotation = 85
