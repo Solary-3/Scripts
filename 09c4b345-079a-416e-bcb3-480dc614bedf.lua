@@ -57,7 +57,7 @@ game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 14
 if not isfolder("Dances")then 
 makefolder("Dances")
      end
-local Idle = Animator.new(character, 124935083750779)
+local Idle = Anim(UUUUUU, 124935083750779)
 local is = game:GetService("InsertService")
 local idleanim = game:GetObjects("rbxassetid://113559868709586")[1]
 local walkanim = game:GetObjects("rbxassetid://82396468395739")[1]
