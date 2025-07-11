@@ -15,15 +15,37 @@ if not getgenv()["Animator"] then
 end
 task.wait(2.750)
 local player = game:GetService("Players").LocalPlayer
-    local character = player.Character
-    if not character then return end
+    local tr = player.Character
+    if not tr then return end
     -- Play animation
-    local Intro = Animator.new(character, 92181805385450)
-    Intro:Play()
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
-task.wait(1.950)
+local Anim = Animator.new
+    local q = Anim(tr, 116371436205212)
+local w = Anim(tr,  121153018567811)
+local e = Anim(tr,  77200035851748)
+local r = Anim(tr, 112924713565732)
+local t = Anim(tr, 124685849885175)
+   q:Play()
+   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+task.wait(.45)
+q:Stop()
+task.wait(.05)
+w:Play()
+task.wait(2.250)
+w:Stop()
+task.wait(.05)
+e:Play()
+task.wait(.45)
+e:Stop()
+task.wait(.05)
+r:Play()
+task.wait(2.750)
+r:Stop()
+task.wait(.05)
+t:Play()
+task.wait(1.100)
+t:Stop()
+task.wait(.950)
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 14
-Intro:Stop()
 
 
 -- Made By Hemi(Es Um Janki)
