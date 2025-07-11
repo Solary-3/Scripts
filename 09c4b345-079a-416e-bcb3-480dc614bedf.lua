@@ -13,37 +13,37 @@ end
 if not getgenv()["Animator"] then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
 task.wait(2.750)
 local player = game:GetService("Players").LocalPlayer
     local tr = player.Character
     if not tr then return end
     -- Play animation
 local Anim = Animator.new
-    local q = Anim(tr, 116371436205212)
-local w = Anim(tr,  121153018567811)
-local e = Anim(tr,  77200035851748)
-local r = Anim(tr, 112924713565732)
-local t = Anim(tr, 124685849885175)
-   q:Play()
-   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+    local TQ = Anim(tr, 116371436205212)
+local TW = Anim(tr,  121153018567811)
+local TE = Anim(tr,  77200035851748)
+local TR = Anim(tr, 112924713565732)
+local TT = Anim(tr, 124685849885175)
+   TQ:Play()
 task.wait(.45)
-q:Stop()
+TQ:Stop()
 task.wait(.05)
-w:Play()
+TW:Play()
 task.wait(2.250)
-w:Stop()
+TW:Stop()
 task.wait(.05)
-e:Play()
+TE:Play()
 task.wait(.45)
-e:Stop()
+TE:Stop()
 task.wait(.05)
-r:Play()
+TR:Play()
 task.wait(2.750)
-r:Stop()
+TR:Stop()
 task.wait(.05)
-t:Play()
+TT:Play()
 task.wait(1.100)
-t:Stop()
+TT:Stop()
 task.wait(.950)
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 14
 
