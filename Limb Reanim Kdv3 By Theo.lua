@@ -1,7 +1,4 @@
-local Place = game.placeId
-if Place == 17574618959 then
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
-end
+
 if not isfile("Dances/Pixelation.mp3") then
 	writefile("Dances/Pixelation.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pixelation.mp3?raw=true"))
@@ -13,7 +10,6 @@ end
 	Duration = 5;
 	Text = "This Script Was Made By Hemi(original creator), Modified By Paradigm/Theo"
 })
-task.wait(6.005)
 if not getgenv()["Animator"] then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
@@ -2011,100 +2007,7 @@ end
 ------------------------------------------------------------------
 ------------------------------------------------------------------
 if mode == 3 then
-     if k == "q" then
-    if dancing == false then
-sound69:Stop()
-task.wait(.1)
-sound69.SoundId = customasset("Dances/Pixelation.mp3")
-sound69:Play()
-        stopanim()
-task.wait(1)
-dancing = true
-if not isfile("Dances/UNLIMITEDFLEXWORKS.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Krystal Dance V3";
-	Duration = 2.5;
-	Text = "Let The Audio Download"
-})
-	writefile("Dances/UNLIMITEDFLEXWORKS.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/UNLIMITEDFLEXWORKS.mp3?raw=true"))
-	warn("Unlimited Flexworks Downloaded!")
-end
-if dancing == true then
-        local Anim = Animator.new(character, 74138372568467)
-Anim:Play()
-sound69.SoundId = customasset("Dances/UNLIMITEDFLEXWORKS.mp3")
-        timeposcur = sound69.TimePosition 
-sound69:Play()
-local Stop = 0
-task.wait(32.246)
-for Loop = 0, 1, 1 do
-if Stop == 1 then
-sound69:Stop()
-task.wait(1.550)
-Anim:Stop()
-break
-end
-if dancing == true then
-    Anim:Play() 
-task.wait(32.246)
-Stop = Stop +1
-end
-end
-end
-    else
-        stopanim()
-Chat(KJ,Default)
-end
-
-
-elseif k == "e" then 
-    if dancing == false then
-sound69:Stop()
-task.wait(.1)
-sound69.SoundId = customasset("Dances/Pixelation.mp3")
-sound69:Play()        
-stopanim()      
-if not isfile("Dances/NMG.mp3") then
-     game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Krystal Dance V3";
-	Duration = 2.5;
-	Text = "Let The Audio Download"
-})
-	writefile("Dances/NMG.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/NMG.mp3?raw=true"))
-	warn("No More Games Downloaded!")
-end
-task.wait(1)
-dancing = true
-if dancing == true then
-        local Jun = Animator.new(character, 91787441180652)
-sound69.SoundId = customasset("Dances/NMG.mp3")
-        timeposcur = sound69.TimePosition
-sound69:Play()
-task.wait(0.550)
-Jun:Play()
-local StopJun = 0
-task.wait(9.22)
-for LoopJun = 0, 1, 1 do
-if StopJun == 1 then
-sound69:Stop()
-Jun:Stop()
-task.wait(1.550)
-break
-end
-if dancing == true then
-    Jun:Play() 
-task.wait(9.22)
-StopJun = StopJun +1 
-end
-end
-end
-    else
-        stopanim()
-Chat(JUN,Default)
-end
-elseif k == "f" then 
+if k == "f" then 
      
     if dancing == false then 
   if not isfile("Dances/Crazy.mp3") then
@@ -2425,7 +2328,7 @@ sound69.SoundId = customasset("Dances/Billy.mp3")
        timeposcur = sound69.TimePosition 
 sound69:Play() 
 coolparticles.Parent = char.Torso
-        playanim(90421367029471,1.5)     
+        playanim(108058940444935)     
     else
 task.wait(.1)
 
@@ -3018,11 +2921,8 @@ else
     idle = false 
 end
 end)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Credits to Crimson, Kdv3 Modded By Theo")
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Thx For Using My Kdv3 Modded!!!!")
 task.wait(.1)
 stopanim()
 task.wait(.1)
 stopanim()
-
-
-
