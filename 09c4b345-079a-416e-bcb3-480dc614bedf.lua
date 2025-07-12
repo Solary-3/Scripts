@@ -284,6 +284,7 @@ local Bread = "Lemme Eat A Bread"
 local Break = "Commercial Break"
 local Popipo = "Eat Your Veggies"
 local Birdbrain = "I Have a Bird Brain"
+local XO = "Dont Say No!"
 --Some Text Speedsvvvvvvvvvv
 local Default = 0.05
 local Introspeed = 0.10
@@ -1881,7 +1882,7 @@ end
         timeposcur = sound69.TimePosition
        sound69:play()
        coolparticles.Parent = char.Torso
-       playanim(122878040721056,1.2)
+       playanim(94370327601149,1.2)
       
    else
 task.wait(.1)
@@ -2691,6 +2692,32 @@ task.wait(.005)
 --Idle:Stop()()
 coolparticles.Parent = char.Torso
         playanim(118865990558686,2)    
+    else
+task.wait(.1)
+        stopanim()
+end
+elseif k == "u" then 
+if dancing == false then 
+        stopanim()
+dancing = true
+if not isfile("Dances/XO.mp3") then
+     game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 2.5;
+	Text = "Let The Audio Download"
+})
+	writefile("Dances/XO.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/XO.mp3?raw=true"))
+	warn("XO Downloaded!")
+end
+Chat(XO,Default)
+task.wait(.005)
+--Idle:Stop()()
+        sound69.SoundId = customasset("Dances/XO.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(73559770055600,1.5)    
     else
 task.wait(.1)
         stopanim()
