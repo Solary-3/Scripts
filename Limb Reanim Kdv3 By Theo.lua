@@ -177,7 +177,7 @@ end
 -- Put Your Captions Here if you want!!!!!
 -- Pls The Captions Must Be Specific According To Yhe Dance...
 -- First Page vvvvvvv
-local Intro = "Wh-Where Am I?"
+local Intro = "What is this feeling?"
 local Rat = "i Feel Rat-ish"
 local Boogie = "Boogie!"
 local Assumptions = "Summer!"
@@ -268,7 +268,7 @@ local YameroSpeed = .150
 local InternetAngelSpeed = .150
 local ApexSpeed =.250
 local NeonSpeed = .250
-local Introspeed = 0.10
+local Introspeed = 0.01
 
 -- Pls Dont Touch Below Or Else I Will Touch You
 local function Chat(fulltext, typespeed)
@@ -1856,7 +1856,7 @@ end
         timeposcur = sound69.TimePosition
        sound69:play()
        coolparticles.Parent = char.Torso
-       playanim(94370327601149,1.2)
+       playanim(122878040721056,1.2)
       
    else
 task.wait(.1)
