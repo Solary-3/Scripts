@@ -3004,6 +3004,41 @@ repeat
     task.wait(1/60)
     nim=nim+1
 until nim==3
+RunService.RenderStepped:Connect(function(deltaTime: number)
+	local function Alpha(n)
+		return math.clamp(n*deltaTime*60,0,1)
+	end
+  hum.CameraOffset =  hum.CameraOffset:Lerp((hrp.CFrame*cf(0,1.5,0)):PointToObjectSpace(h.Position),Alpha(.15))
+	if IsAllowedState  and dancing == false then
+		local HeadPosition = Head.Position
+		if Neck then
+         local MousePos = PlayerMouse.Hit.Position
+			local TranslationVector = (HeadPosition - MousePos).Unit
+			local Pitch = atan(TranslationVector.Y)
+			local Yaw = TranslationVector:Cross(Torso.CFrame.LookVector).Y
+			local Roll = atan(Yaw)
+			
+			local NeckCFrame
+			if IsR6 then
+				NeckCFrame = CFrame.Angles(Pitch, 0, Yaw)
+			else
+			   	NeckCFrame = CFrame.Angles(-Pitch * 0.5, Yaw, -Roll * 0.5)				
+			   	local waistCFrame = CFrame.Angles(-Pitch * 0.5, Yaw * 0.5, 0)
+			   	Waist.C0 = Waist.C0:Lerp(WaistOriginC0 * waistCFrame, updatesPerSecond * deltaTime)
+			end			
+			Neck.C0 = Neck.C0:Lerp(NeckOriginC0 * NeckCFrame, updatesPerSecond * deltaTime)
+		end
+    elseif dancing == true then 
+        Neck.C0 = oldC0N
+	end	
+if char.Humanoid.MoveDirection == Vector3.new(0,0,0) then 
+    walking = false 
+    idle = true 
+else 
+    walking = true 
+    idle = false 
+end
+end)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Enjoy")
 task.wait(.1)
 stopanim()
