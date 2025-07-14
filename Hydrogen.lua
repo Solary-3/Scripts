@@ -22,7 +22,7 @@ local function EvonNotification(messages)
 	})
 end
 game.StarterGui:SetCore("SendNotification", {
-		Title = "Hudrogen UI"; -- the title (ofc)
+		Title = "Hydrogen UI"; -- the title (ofc)
 		Text = "Cracked By Theo"; -- what the text says (ofc)
 		Duration = 5 -- how long the notifcation should in secounds
 	})
