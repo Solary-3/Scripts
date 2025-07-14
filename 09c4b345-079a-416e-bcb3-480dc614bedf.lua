@@ -143,30 +143,26 @@ local H = ColorSequence.new{
     ColorSequenceKeypoint.new(0.500, G),
     ColorSequenceKeypoint.new(1, W)
 }
-
-
 local Text2 = Instance.new("UIStroke")
 local Text3 = Instance.new("UIStroke")
-local Yu = Instance.new("UIStroke")
 local C = Instance.new("UIGradient")
 local CaptionGradient = Instance.new("UIGradient")
-local G = Instance.new("UIGradient")
 local Rq = Instance.new("UIGradient")
-local billboard2 = Instance.new("BillboardGui")
-        billboard2.Name = "Test"
-        billboard2.Size = UDim2.new(0, 100, 0, 40)
-        billboard2.StudsOffset = Vector3.new(0, 5, 0)
-        billboard2.Adornee = player.Character.Head
-        billboard2.AlwaysOnTop = true
-        billboard2.MaxDistance = 25
-        billboard2.Parent = player.Character.Head
+local BBG = Instance.new("BillboardGui")
+        BBG.Name = "Test"
+        BBG.Size = UDim2.new(0, 100, 0, 40)
+        BBG.StudsOffset = Vector3.new(0, 5, 0)
+        BBG.Adornee = player.Character.Head
+        BBG.AlwaysOnTop = true
+        BBG.MaxDistance = 25
+        BBG.Parent = player.Character.Head
     local Q = Instance.new("TextLabel")
     Q.Text = "─V3─"
     Q.Font = Enum.Font.Sarpanch
     Q.TextSize = 30
     Q.TextColor3 = Color3.fromRGB(0, 0, 0)
     Q.BackgroundTransparency = 1
-    Q.Parent = billboard2
+    Q.Parent = BBG
     Q.Position = UDim2.new(0.5, -50, 1, -15) 
     Q.Size = UDim2.new(1, 0, 1, 0)
     Q.Rotation = 0
@@ -176,32 +172,32 @@ Text2.Parent = Q
 Text2.LineJoinMode = Enum.LineJoinMode.Miter
 Rq.Parent = Text2
 Rq.Color = H
-Rq.Name = "Test3"
+Rq.Name = "Mode"
 Rq.Enabled = true 
 Rq.Rotation = 85
 Rq.Offset = Vector2.new(-1,0)
-local textLabel1 = Instance.new("TextLabel")
-textLabel1.Text = "─「 KRYSTAL DANCE 」─"
-textLabel1.Font = Enum.Font.Sarpanch
-textLabel1.TextSize = 50
-textLabel1.TextColor3 = Color3.fromRGB(0, 0, 0)
-textLabel1.BackgroundTransparency = 100
-textLabel1.Parent = billboard2
-textLabel1.Size = UDim2.new(1, 0, 1, 0)
-textLabel1.Rotation = 0
+local Main = Instance.new("TextLabel")
+Main.Text = "─「KRYSTAL DANCE」─"
+Main.Font = Enum.Font.Sarpanch
+Main.TextSize = 50
+Main.TextColor3 = Color3.fromRGB(0, 0, 0)
+Main.BackgroundTransparency = 100
+Main.Parent = BBG
+Main.Size = UDim2.new(1, 0, 1, 0)
+Main.Rotation = 0
 Text3.Thickness = 1
 Text3.Color = Color3.fromRGB(255,255,255)
-Text3.Parent = textLabel1
+Text3.Parent = 
 Text3.LineJoinMode = Enum.LineJoinMode.Miter
 C.Parent = Text3
 C.Color = H
-C.Name = "Test2"
+C.Name = "Main"
 C.Enabled = true 
 C.Rotation = 85
 C.Offset = Vector2.new(0,0)
 end
 -- Put Your Captions Here if you want!!!!!
--- Pls The Captions Must Be Specific According To Yhe Dance...
+-- Pls The Captions Must Be Specific According To The Dance...
 -- First Page vvvvvvv
 local Intro = "What is this feeling?"
 local Rat = "i Feel Rat-ish"
@@ -215,16 +211,15 @@ local Stock = "Moves Like A Stock Images!"
 local Gangnam = "Opa Gangnam Style!"
 local HappyWalk = "Just Walkin Here!!!"
 local Uhh = "Is This Supposed To Be A Vibe?"
-local Smoothmoves = "Fornite Reference?"
 local Griddy = "Hit The Griddy Move"
-local Kazotsky = "I like this, TF2 Reference!!!"
+local Kazotsky = "Ukrainian Traditional!"
 local Bumblebee = "Sweet Little Bumblebee!!"
 local Mesmerizer = "Im Mesmerized"
 local Domino = "Im A Domino!!"
 local ShubaDuck = "Shuba Duck!"
 local Crank = "Crank it!"
 local KeepUp = "Im Too Fast"
-local Yamero = "Ayo Wtf"
+local Yamero = "I Dont Like This..."
 local LeftRight = "Thats Left Right Left Right Go!"
 local SmoothMoves = "I Have Smooth Moves!"
 local Lemon = "Want Some?"
@@ -254,8 +249,8 @@ local Liar ="Im A Liar!"
 local Million = "I Want A Million"
 -- Second Page^^^^^^^^
 -- Third Pagevvvvvvv
-local KJ = "You Have Been Taught A Lesson... And Still Yet Not Understood A Single Thing."
-local JUN = "You Better Stop Doing Shits With Me."
+local Firework = "Im A Firework"
+local Monster = "Im A Monster!"
 local Neon = "Reach The Skies!"
 local Apex = "Ugh..."
 local Crazy = "Im Not Crazy Right?"
@@ -273,9 +268,8 @@ local SlickBack = "Slickback!!!"
 local Yippie = "YIPPIE!!"
 local Pickup = "Pickup The Phone :("
 local Chinese = "Just Give Me The Food Bro 😔"
-local Rat2 = "I Feel Rat-ish Again...."
+local Rat2 = "I Feel Rat-ish Again..."
 local Box = "Form A Box!.."
-local Spooky = "It Iz Da Spooky Month!!"
 local Monkey = "Im About To Explode!!!"
 local Spooky = "It Iz Da Spooky Month!!!"
 --- Page 4
@@ -285,12 +279,13 @@ local Break = "Commercial Break"
 local Popipo = "Eat Your Veggies"
 local Birdbrain = "I Have a Bird Brain"
 local XO = "Dont Say No!"
---Some Text Speedsvvvvvvvvvv
+local Roar = "Your Gonna Hear Me Roar!"
+local Savor = "Hm.."
+--Some Text Speeds vvvvvvvvvv
 local Default = 0.05
-local Introspeed = 0.10
 local RatSpeed = 0.150
 local UhhSpeed = .250
-local YameroSpeed = .150
+local YameroSpeed = .100
 local InternetAngelSpeed = .150
 local ApexSpeed =.250
 local NeonSpeed = .250
@@ -1707,7 +1702,6 @@ elseif k == "n" then
         stopanim()
         dancing = true
         Chat(Lay,Default)
-        
         task.wait(.005)
 --Idle:Stop()()
         playanim(90819860436349,1.5)
@@ -2014,7 +2008,65 @@ end
 ------------------------------------------------------------------
 ------------------------------------------------------------------
 if mode == 3 then
-if k == "f" then 
+     if k == "q" then 
+     
+    if dancing == false then 
+  if not isfile("Dances/Firework.mp3") then
+       game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 2.5;
+	Text = "Let The Audio Download"
+})
+	writefile("Dances/Firework.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Firework.mp3?raw=true"))
+	warn("Firework Downloaded!")
+end
+stopanim()
+  dancing = true
+  Chat(Firework,Default)
+task.wait(.005)
+--Idle:Stop()()
+sound69.SoundId = customasset("Dances/Firework.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(89935837869234,1.5)
+        
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "e" then 
+     
+    if dancing == false then 
+  if not isfile("Dances/Monster.mp3") then
+       game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 2.5;
+	Text = "Let The Audio Download"
+})
+	writefile("Dances/Monster.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Monster.mp3?raw=true"))
+	warn("Monster Downloaded!")
+end
+stopanim()
+  dancing = true
+  Chat(Monster,Default)
+task.wait(.005)
+--Idle:Stop()()
+sound69.SoundId = customasset("Dances/Monster.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(81782595704176,1.5)
+        
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "f" then 
      
     if dancing == false then 
   if not isfile("Dances/Crazy.mp3") then
@@ -2646,8 +2698,6 @@ task.wait(.1)
 end
 elseif k == "r" then 
 if dancing == false then 
-        stopanim()
-dancing = true
 if not isfile("Dances/Birdbrain.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2658,6 +2708,8 @@ if not isfile("Dances/Birdbrain.mp3") then
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Birdbrain.mp3?raw=true"))
 	warn("Birdbrain Downloaded!")
 end
+        stopanim()
+dancing = true
 Chat(Birdbrain,Default)
 task.wait(.005)
 --Idle:Stop()()
@@ -2698,8 +2750,6 @@ task.wait(.1)
 end
 elseif k == "u" then 
 if dancing == false then 
-        stopanim()
-dancing = true
 if not isfile("Dances/XO.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2710,6 +2760,8 @@ if not isfile("Dances/XO.mp3") then
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/XO.mp3?raw=true"))
 	warn("XO Downloaded!")
 end
+        stopanim()
+dancing = true
 Chat(XO,Default)
 task.wait(.005)
 --Idle:Stop()()
@@ -2722,11 +2774,63 @@ coolparticles.Parent = char.Torso
 task.wait(.1)
         stopanim()
 end
+elseif k == "p" then 
+if dancing == false then 
+if not isfile("Dances/Roar.mp3") then
+     game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 2.5;
+	Text = "Let The Audio Download"
+})
+	writefile("Dances/Roar.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Roar.mp3?raw=true"))
+	warn("Roar Downloaded!")
+end
+        stopanim()
+dancing = true
+Chat(Roar,Default)
+task.wait(.005)
+--Idle:Stop()()
+        sound69.SoundId = customasset("Dances/Roar.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(114610231812511,1.5)    
+    else
+task.wait(.1)
+        stopanim()
+end
+elseif k == "f" then 
+if dancing == false then 
+if not isfile("Dances/Savor.mp3") then
+     game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 2.5;
+	Text = "Let The Audio Download"
+})
+	writefile("Dances/Savor.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Savor.mp3?raw=true"))
+	warn("Savor Downloaded!")
+end
+        stopanim()
+dancing = true
+Chat(Savor,Default)
+task.wait(.005)
+--Idle:Stop()()
+        sound69.SoundId = customasset("Dances/Savor.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(82123030025988,1.5)    
+    else
+task.wait(.1)
+        stopanim()
 end
 end
-
-
-
+end
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
 if k == "equals" then 
     playbacktrack = not playbacktrack
     if dancing == false then 
