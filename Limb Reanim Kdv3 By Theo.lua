@@ -190,7 +190,6 @@ local Stock = "Moves Like A Stock Images!"
 local Gangnam = "Opa Gangnam Style!"
 local HappyWalk = "Just Walkin Here!!!"
 local Uhh = "Is This Supposed To Be A Vibe?"
-local Smoothmoves = "Fornite Reference?"
 local Griddy = "Hit The Griddy Move"
 local Kazotsky = "I like this, TF2 Reference!!!"
 local Bumblebee = "Sweet Little Bumblebee!!"
@@ -229,8 +228,8 @@ local Liar ="Im A Liar!"
 local Million = "I Want A Million"
 -- Second Page^^^^^^^^
 -- Third Pagevvvvvvv
-local KJ = "You Have Been Taught A Lesson... And Still Yet Not Understood A Single Thing."
-local JUN = "You Better Stop Doing Shits With Me."
+local Firework ="Firework"
+local Monster = "Im A Monster"
 local Neon = "Reach The Skies!"
 local Apex = "Ugh..."
 local Crazy = "Im Not Crazy Right?"
@@ -252,7 +251,6 @@ local Rat2 = "I Feel Rat-ish Again...."
 local Box = "Form A Box!.."
 local Spooky = "It Iz Da Spooky Month!!"
 local Monkey = "Im About To Explode!!!"
-local Spooky = "It Iz Da Spooky Month!!!"
 --- Page 4
 local Fight= "Come Fight Me!!"
 local Bread = "Lemme Eat A Bread"
@@ -260,6 +258,8 @@ local Break = "Commercial Break"
 local Popipo = "Eat Your Veggies"
 local Birdbrain = "I Have a Bird Brain"
 local XO = "Dont Say No!"
+local Savor = "W!!"
+local Roar = "Your Gonna Hear Me Roar!"
 --Some Text Speedsvvvvvvvvvv
 local Default = 0.05
 local Introspeed = 0.10
@@ -1857,7 +1857,7 @@ end
         timeposcur = sound69.TimePosition
        sound69:play()
        coolparticles.Parent = char.Torso
-       playanim(122878040721056,1.2)
+       playanim(94370327601149,1.2)
       
    else
 task.wait(.1)
@@ -1989,7 +1989,65 @@ end
 ------------------------------------------------------------------
 ------------------------------------------------------------------
 if mode == 3 then
-if k == "f" then 
+     if k == "q" then 
+     
+    if dancing == false then 
+  if not isfile("Dances/Firework.mp3") then
+       game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 2.5;
+	Text = "Let The Audio Download"
+})
+	writefile("Dances/Firework.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Firework.mp3?raw=true"))
+	warn("Firework Downloaded!")
+end
+stopanim()
+  dancing = true
+  Chat(Firework,Default)
+task.wait(.005)
+--Idle:Stop()()
+sound69.SoundId = customasset("Dances/Firework.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(89935837869234,1.5)
+        
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "e" then 
+     
+    if dancing == false then 
+  if not isfile("Dances/Monster.mp3") then
+       game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 2.5;
+	Text = "Let The Audio Download"
+})
+	writefile("Dances/Monster.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Monster.mp3?raw=true"))
+	warn("Monster Downloaded!")
+end
+stopanim()
+  dancing = true
+  Chat(Monster,Default)
+task.wait(.005)
+--Idle:Stop()()
+sound69.SoundId = customasset("Dances/Monster.mp3")
+       timeposcur = sound69.TimePosition 
+sound69:Play() 
+coolparticles.Parent = char.Torso
+        playanim(81782595704176,1.5)
+        
+    else
+task.wait(.1)
+
+        stopanim()
+end
+elseif k == "f" then 
      
     if dancing == false then 
   if not isfile("Dances/Crazy.mp3") then
@@ -2621,8 +2679,6 @@ task.wait(.1)
 end
 elseif k == "r" then 
 if dancing == false then 
-        stopanim()
-dancing = true
 if not isfile("Dances/Birdbrain.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2633,6 +2689,8 @@ if not isfile("Dances/Birdbrain.mp3") then
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Birdbrain.mp3?raw=true"))
 	warn("Birdbrain Downloaded!")
 end
+        stopanim()
+dancing = true
 Chat(Birdbrain,Default)
 task.wait(.005)
 --Idle:Stop()()
@@ -2673,8 +2731,6 @@ task.wait(.1)
 end
 elseif k == "u" then 
 if dancing == false then 
-        stopanim()
-dancing = true
 if not isfile("Dances/XO.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
@@ -2685,6 +2741,8 @@ if not isfile("Dances/XO.mp3") then
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/XO.mp3?raw=true"))
 	warn("XO Downloaded!")
 end
+        stopanim()
+dancing = true
 Chat(XO,Default)
 task.wait(.005)
 --Idle:Stop()()
@@ -2693,6 +2751,58 @@ task.wait(.005)
 sound69:Play()
 coolparticles.Parent = char.Torso
         playanim(73559770055600,1.5)    
+    else
+task.wait(.1)
+        stopanim()
+end
+elseif k == "p" then 
+if dancing == false then 
+if not isfile("Dances/Roar.mp3") then
+     game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 2.5;
+	Text = "Let The Audio Download"
+})
+	writefile("Dances/Roar.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Roar.mp3?raw=true"))
+	warn("Roar Downloaded!")
+end
+        stopanim()
+dancing = true
+Chat(Roar,Default)
+task.wait(.005)
+--Idle:Stop()()
+        sound69.SoundId = customasset("Dances/Roar.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(114610231812511,1.5)    
+    else
+task.wait(.1)
+        stopanim()
+end
+elseif k == "f" then 
+if dancing == false then 
+if not isfile("Dances/Savor.mp3") then
+     game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 2.5;
+	Text = "Let The Audio Download"
+})
+	writefile("Dances/Savor.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Savor.mp3?raw=true"))
+	warn("Savor Downloaded!")
+end
+        stopanim()
+dancing = true
+Chat(Savor,Default)
+task.wait(.005)
+--Idle:Stop()()
+        sound69.SoundId = customasset("Dances/Savor.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(82123030025988,1.5)    
     else
 task.wait(.1)
         stopanim()
