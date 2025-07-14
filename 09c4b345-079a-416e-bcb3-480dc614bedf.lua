@@ -3037,7 +3037,7 @@ RunService.RenderStepped:Connect(function(deltaTime: number)
 		local HeadPosition = Head.Position
 		if Neck then
          --local MousePos = PlayerMouse.Hit.Position
-			local TranslationVector = (HeadPosition - MousePos).Unit
+			--local TranslationVector = (HeadPosition - MousePos).Unit
 			local Pitch = atan(TranslationVector.Y)
 			local Yaw = TranslationVector:Cross(Torso.CFrame.LookVector).Y
 			local Roll = atan(Yaw)
@@ -3046,9 +3046,9 @@ RunService.RenderStepped:Connect(function(deltaTime: number)
 			if IsR6 then
 				NeckCFrame = CFrame.Angles(Pitch, 0, Yaw)
 			else
-				NeckCFrame = CFrame.Angles(-Pitch * 0.5, Yaw, -Roll * 0.5)				
-				local waistCFrame = CFrame.Angles(-Pitch * 0.5, Yaw * 0.5, 0)
-				Waist.C0 = Waist.C0:Lerp(WaistOriginC0 * waistCFrame, updatesPerSecond * deltaTime)
+			   	NeckCFrame = CFrame.Angles(-Pitch * 0.5, Yaw, -Roll * 0.5)				
+			   	local waistCFrame = CFrame.Angles(-Pitch * 0.5, Yaw * 0.5, 0)
+			   	Waist.C0 = Waist.C0:Lerp(WaistOriginC0 * waistCFrame, updatesPerSecond * deltaTime)
 			end			
 			Neck.C0 = Neck.C0:Lerp(NeckOriginC0 * NeckCFrame, updatesPerSecond * deltaTime)
 		end
