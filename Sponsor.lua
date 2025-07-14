@@ -1863,7 +1863,7 @@ end
         timeposcur = sound69.TimePosition
        sound69:play()
        coolparticles.Parent = char.Torso
-       playanim(94370327601149,1.2)
+       playanim(122878040721056,1.2)
       
    else
 task.wait(.1)
