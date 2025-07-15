@@ -684,9 +684,9 @@ end
                 char.Humanoid:Move(Vector3.new(0,0,-1),true)
                 walking = false 
                 wait(.065)
-                if walking == true and idle == false and  char.Humanoid.MoveDirection ~= Vector3.new(0,0,0) and dancing == false and playanother==true  then 
+                if walking == false and idle == true and  char.Humanoid.MoveDirection ~= Vector3.new(0,0,0) and dancing == false and playanother==true  then 
                 task.spawn(function()
-                playanim(136078657506707,1,false)
+                playanim(0,2000,false,idleanim)
                 end)
             end
             end
@@ -1453,7 +1453,7 @@ if not isfile("Dances/Boombox.mp3") then
 	Duration = 2.5;
 	Text = "Let The Audio Download"
 })
-	writefile("Dances/APEX.mp3", 
+	writefile("Dances/Boombox.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Boombox.mp3?raw=true"))
 	warn("Boombox Downloaded!")
 end
