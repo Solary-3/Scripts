@@ -40,7 +40,7 @@ makefolder("Dances")
      end
 --local Idle = Anim(UUUUUU, 124935083750779)
 local is = game:GetService("InsertService")
-local idleanim = game:GetObjects("rbxassetid://113559868709586")[1]
+local idleanim = game:GetObjects("rbxassetid://111486572129102")[1]
 local walkanim = game:GetObjects("rbxassetid://82396468395739")[1]
 local AllowOverheadText = true 
 local set = false
