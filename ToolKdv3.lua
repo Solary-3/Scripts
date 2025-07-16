@@ -4,6 +4,7 @@ local player = game.Players.LocalPlayer
 local backpack = player:WaitForChild("Backpack")
 local playerGui = player:WaitForChild("PlayerGui")
 local workspace = game:GetService("Workspace")
+local timeposcur = 0
 local SG = Instance.new("ScreenGui")
  SG.Parent = player:WaitForChild("PlayerGui")
 local CaptionStroke = Instance.new("UIStroke")
@@ -74,6 +75,46 @@ C.Enabled = true
 C.Rotation = 85
 C.Offset = Vector2.new(0,0)
 
+
+
+local Playsound = Instance.new("Sound",game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"))
+Playsound.Name = "Danc"
+Playsound.Volume = 1
+Playsound.Looped = true
+Playsound.Parent = game:GetService("RunService")
+local exploit = "shitsploit"
+        pcall(function()
+            exploit = getexecutorname()
+        end)
+	local customasset = function(id)
+        if exploit ~= "CaetSploit" then
+        idwithoutthatbit= string.gsub(id,"Dances/","")
+        if not isfile(id) then 
+         writefile(id,game:HttpGet("https://github.com/Solary-3/Scripts/tree/Audios-1"..idwithoutthatbit))
+        end
+       repeat task.wait() until isfile(id)
+    end
+        local s = Instance.new("Sound")
+        s.Parent =game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+        s.SoundId = getcustomasset(id)
+        task.spawn(function()
+            task.wait(1)
+            s:Destroy()
+        end)
+        return s.SoundId
+    end
+local function M()
+     Playsound:Stop()
+     --Playsound:Destroy()
+     end
+
+
+
+
+
+
+
+
 local tool = Instance.new("Tool", backpack)
 tool.Name = "Rat"
 tool.RequiresHandle = false
@@ -82,9 +123,8 @@ writefile("Dances/rat.mp3",
 	if not getgenv()["Animator"] then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
-
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 	local character = player.Character
 	if character then
@@ -93,12 +133,9 @@ tool.Equipped:Connect(function()
 		Anim.Stopped:Connect(function()
 			Anim:Play()
 		end)
-		sound = Instance.new("Sound",game:GetService("RunService"))
-		sound.SoundId = getcustomasset("Dances/rat.mp3")
-		sound.Volume = 1
-		sound.Looped = true
-		sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-		sound:Play()
+		Playsound.SoundId = customasset("Dances/rat.mp3")
+		timeposcur = Playsound.TimePosition
+		Playsound:Play()
 	end
 end)
 
@@ -109,10 +146,7 @@ tool.Unequipped:Connect(function()
 		
 		
 	end
-	if sound then
-		sound:Stop()
-		sound:Destroy()
-	end
+	M()
 end)
 
 
@@ -125,7 +159,7 @@ writefile("Dances/rat.mp3",
         loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 	local character = player.Character
 	if character then
@@ -136,12 +170,10 @@ tool.Equipped:Connect(function()
 		Anim.Stopped:Connect(function()
 			Anim:Play()
 		end)
-		sound = Instance.new("Sound",game:GetService("RunService"))
-		sound.SoundId = getcustomasset("Dances/rat.mp3")
-		sound.Volume = 1
-		sound.Looped = true
-		sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-		sound:Play()
+		
+		Playsound.SoundId = customasset("Dances/rat.mp3")
+		timeposcur = Playsound.TimePosition
+		Playsound:Play()
 	end
 end)
 
@@ -151,10 +183,7 @@ tool.Unequipped:Connect(function()
 		Anim:Destroy()
 		
 	end
-	if sound then
-		sound:Stop()
-		sound:Destroy()
-	end
+	M()
 end)
 
 
@@ -167,7 +196,7 @@ writefile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3",
         loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 	local character = player.Character
 	if character then
@@ -178,12 +207,10 @@ tool.Equipped:Connect(function()
 		Anim.Stopped:Connect(function()
 			Anim:Play()
 		end)
-		sound = Instance.new("Sound",game:GetService("RunService"))
-		sound.SoundId = getcustomasset("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3")
-		sound.Volume = 1
-		sound.Looped = true
-		sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-		sound:Play()
+		
+		Playsound.SoundId = customasset("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3")
+		timeposcur = Playsound.TimePosition
+		Playsound:Play()
 	end
 end)
 
@@ -193,10 +220,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -210,7 +234,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -221,12 +245,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Assumptions.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Assumptions.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -234,12 +255,8 @@ tool.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
-
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -253,7 +270,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -264,12 +281,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Assumptions.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Assumptions.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -279,10 +293,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -296,7 +307,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -307,12 +318,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Bjean.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Bjean.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -320,12 +328,8 @@ tool.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
-
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -339,7 +343,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -350,12 +354,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Egypt.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Egypt.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -365,10 +366,7 @@ Anim:Stop()
 Anim:Destroy()
  
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -383,7 +381,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -394,12 +392,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/caramell.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/caramell.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -407,12 +402,8 @@ tool.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
-dancing= false 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -427,7 +418,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -438,12 +429,10 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Stock.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+
+Playsound.SoundId = customasset("Dances/Stock.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -453,10 +442,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -470,7 +456,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -481,12 +467,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/gangnamm.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/gangnamm.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -496,10 +479,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -513,7 +493,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -524,12 +504,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Fein.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Fein.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -539,10 +516,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 
@@ -557,7 +531,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -568,12 +542,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/griddy.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/griddy.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -583,10 +554,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -600,7 +568,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -611,12 +579,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/LeftRight.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/LeftRight.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -626,10 +591,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -643,7 +605,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -654,12 +616,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/kazot.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/kazot.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -669,10 +628,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -686,7 +642,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -697,12 +653,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/doodle - Zachz Winner.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/doodle - Zachz Winner.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -712,10 +665,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -729,7 +679,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -740,12 +690,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Mesmerizer.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Mesmerizer.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -755,10 +702,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -772,7 +716,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -783,12 +727,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Bumblebee.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Bumblebee.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -798,10 +739,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -815,7 +753,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -826,12 +764,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Domino.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Domino.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -841,10 +776,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -859,7 +791,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -870,12 +802,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Yamero.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Yamero.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -885,10 +814,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -903,7 +829,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -914,12 +840,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Crank.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Crank.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -929,10 +852,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -947,7 +867,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -958,12 +878,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/SmoothMoves.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/SmoothMoves.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -973,10 +890,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -992,7 +906,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1003,12 +917,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Shuba Duck.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Shuba Duck.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1018,10 +929,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1035,7 +943,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1046,12 +954,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1061,10 +966,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1078,7 +980,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1089,12 +991,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Lemon.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Lemon.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1104,10 +1003,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1121,7 +1017,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1132,12 +1028,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/unlockit.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/unlockit.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1147,10 +1040,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1165,7 +1055,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1176,12 +1066,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/InternetAngel.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/InternetAngel.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1191,54 +1078,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
-end)
-
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Internet Angel"
-tool.RequiresHandle = false
-
-writefile("Dances/InternetAngel.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/InternetAngel.mp3?raw=true"))
-
-
-if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
-end
-local Anim = nil
-local sound = nil
-tool.Equipped:Connect(function()
-local character = player.Character
-if character then
-     
-     
-Anim = Animator.new(character, 93104787213396)
-Anim:Play()
-Anim.Stopped:Connect(function()
-Anim:Play()
-end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/InternetAngel.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
-end
-end)
-
-tool.Unequipped:Connect(function()
-if Anim then
-Anim:Stop()
-Anim:Destroy()
-
-end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1253,7 +1093,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1264,12 +1104,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Boombox.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Boombox.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1279,10 +1116,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1297,7 +1131,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1308,12 +1142,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/balls.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/balls.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1323,10 +1154,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1338,7 +1166,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1347,12 +1175,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Distraction.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Distraction.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1362,10 +1187,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1377,7 +1199,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1386,12 +1208,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/ItBurns.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/ItBurns.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1401,10 +1220,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1416,7 +1232,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1425,12 +1241,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/chronoshift.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/chronoshift.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1440,10 +1253,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1455,7 +1265,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1464,12 +1274,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Million.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Million.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1479,10 +1286,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1494,7 +1298,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1503,12 +1307,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Runaway.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Runaway.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1518,10 +1319,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1533,7 +1331,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1542,12 +1340,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Headlock.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Headlock.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1557,10 +1352,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1572,7 +1364,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1581,12 +1373,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/bloodpop.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/bloodpop.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1596,10 +1385,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1611,7 +1397,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1620,12 +1406,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/heavylove.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/heavylove.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1635,10 +1418,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1650,7 +1430,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1659,12 +1439,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Smug.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Smug.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1674,10 +1451,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1689,7 +1463,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1698,12 +1472,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/TUCA DONKA.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/TUCA DONKA.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1713,10 +1484,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1728,7 +1496,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1737,12 +1505,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/DO THE FLOP.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/DO THE FLOP.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1752,10 +1517,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1767,7 +1529,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1776,12 +1538,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Doodle.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Doodle.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1791,10 +1550,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1806,7 +1562,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1815,12 +1571,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/CLUB PENGUIN DANCE.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/CLUB PENGUIN DANCE.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1830,10 +1583,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1845,7 +1595,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1854,12 +1604,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/MioHonda.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/MioHonda.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1869,10 +1616,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1884,7 +1628,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1893,12 +1637,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Liar.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Liar.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1908,10 +1649,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1923,7 +1661,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1932,12 +1670,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Firework.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Firework.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1947,10 +1682,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -1962,7 +1694,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -1971,12 +1703,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Monster.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Monster.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -1986,10 +1715,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2001,7 +1727,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2010,12 +1736,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/LoveForU.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/LoveForU.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2025,10 +1748,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2040,7 +1760,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2049,12 +1769,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/C14.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/C14.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2064,10 +1781,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2079,7 +1793,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2088,12 +1802,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Goat.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Goat.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2103,10 +1814,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2118,7 +1826,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2127,12 +1835,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Spooky.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Spooky.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2142,10 +1847,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2157,7 +1859,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2166,12 +1868,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Billy.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Billy.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2181,10 +1880,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2196,7 +1892,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2205,12 +1901,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/SlickBack.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/SlickBack.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2220,10 +1913,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2235,7 +1925,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2244,12 +1934,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Static.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Static.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2259,10 +1946,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2274,7 +1958,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2283,12 +1967,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Heel.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Heel.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2298,10 +1979,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2313,7 +1991,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2322,12 +2000,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Yippie.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Yippie.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2337,10 +2012,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2352,7 +2024,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2361,12 +2033,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Pickup.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Pickup.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2376,10 +2045,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2391,7 +2057,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2400,12 +2066,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Chinese.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Chinese.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2415,10 +2078,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2430,7 +2090,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2439,12 +2099,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Box.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Box.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2454,10 +2111,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2469,7 +2123,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2478,12 +2132,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Monkey.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Monkey.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2493,10 +2144,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2508,7 +2156,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2517,12 +2165,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Break.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Break.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2532,10 +2177,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2547,21 +2189,18 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 115465103089127)
+timeposcur = Playsound.TimePosition
 Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Popipo.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Popipo.mp3")
+Playsound:Play()
 end
 end)
 
@@ -2571,10 +2210,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2586,7 +2222,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2595,12 +2231,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Birdbrain.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Birdbrain.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2610,10 +2243,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2625,7 +2255,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2634,12 +2264,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/XO.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/XO.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2649,10 +2276,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2664,7 +2288,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2673,12 +2297,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Road.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Roar.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2688,10 +2309,7 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
 
 local tool = Instance.new("Tool", backpack)
@@ -2703,7 +2321,7 @@ if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
 local Anim = nil
-local sound = nil
+
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
@@ -2712,12 +2330,9 @@ Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
-sound = Instance.new("Sound",game:GetService("RunService"))
-sound.SoundId = getcustomasset("Dances/Savor.mp3")
-sound.Volume = 1
-sound.Looped = true
-sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-sound:Play()
+Playsound.SoundId = customasset("Dances/Savor.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
 end
 end)
 
@@ -2727,8 +2342,5 @@ Anim:Stop()
 Anim:Destroy()
 
 end
-if sound then
-sound:Stop()
-sound:Destroy()
-end
+M()
 end)
