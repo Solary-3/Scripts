@@ -2326,12 +2326,111 @@ local Anim = nil
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
-Anim = Animator.new(character, 8212303002598)
+Anim = Animator.new(character, 82123030025988)
 Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
 Playsound.SoundId = customasset("Dances/Savor.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
+end
+end)
+
+tool.Unequipped:Connect(function()
+if Anim then
+Anim:Stop()
+Anim:Destroy()
+
+end
+M()
+end)
+
+local tool = Instance.new("Tool", backpack)
+tool.Name = "Prism Shuffle"
+tool.RequiresHandle = false
+writefile("Dances/Prism.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Prism.mp3?raw=true"))
+if not getgenv()["Animator"] then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim = nil
+
+tool.Equipped:Connect(function()
+local character = player.Character
+if character then
+Anim = Animator.new(character, 132979558739339)
+Anim:Play()
+Anim.Stopped:Connect(function()
+Anim:Play()
+end)
+Playsound.SoundId = customasset("Dances/Prism.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
+end
+end)
+
+tool.Unequipped:Connect(function()
+if Anim then
+Anim:Stop()
+Anim:Destroy()
+
+end
+M()
+end)
+
+local tool = Instance.new("Tool", backpack)
+tool.Name = "Rambunctious"
+tool.RequiresHandle = false
+writefile("Dances/Rambunctious.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Rambunctious.mp3?raw=true"))
+if not getgenv()["Animator"] then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim = nil
+
+tool.Equipped:Connect(function()
+local character = player.Character
+if character then
+Anim = Animator.new(character, 112645644540728)
+Anim:Play()
+Anim.Stopped:Connect(function()
+Anim:Play()
+end)
+Playsound.SoundId = customasset("Dances/Rambunctious.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
+end
+end)
+
+tool.Unequipped:Connect(function()
+if Anim then
+Anim:Stop()
+Anim:Destroy()
+
+end
+M()
+end)
+
+local tool = Instance.new("Tool", backpack)
+tool.Name = "Take Down"
+tool.RequiresHandle = false
+writefile("Dances/TakeDown.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/TakeDown.mp3?raw=true"))
+if not getgenv()["Animator"] then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim = nil
+
+tool.Equipped:Connect(function()
+local character = player.Character
+if character then
+Anim = Animator.new(character, 70380478678297)
+Anim:Play()
+Anim.Stopped:Connect(function()
+Anim:Play()
+end)
+Playsound.SoundId = customasset("Dances/TakeDown.mp3")
 timeposcur = Playsound.TimePosition
 Playsound:Play()
 end

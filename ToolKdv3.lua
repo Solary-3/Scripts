@@ -79,102 +79,7 @@ C.Enabled = true
 C.Rotation = 85
 C.Offset = Vector2.new(0,0)
 
-local RunService = game:GetService("RunService")
-local Player = game:GetService("Players").LocalPlayer
-local PlayerMouse = Player:GetMouse()
-local Camera = workspace.CurrentCamera
-local Character =char
-local Humanoid = Character:WaitForChild("Humanoid")
-local IsR6 = (Humanoid.RigType == Enum.HumanoidRigType.R6)
-local Head = Character:WaitForChild("Head")
-local Torso = if IsR6 then Character:WaitForChild("Torso") else Character:WaitForChild("UpperTorso")
-local Neck = if IsR6 then Torso:WaitForChild("Neck") else Head:WaitForChild("Neck")
-local Waist = if IsR6 then nil else Torso:WaitForChild("Waist")
-local NeckOriginC0 = Neck.C0
-local WaistOriginC0 = if Waist then Waist.C0 else nil
-Neck.MaxVelocity = 1/3
-local AllowedStates = {Enum.HumanoidStateType.Running, Enum.HumanoidStateType.Climbing, Enum.HumanoidStateType.Swimming, Enum.HumanoidStateType.Freefall, Enum.HumanoidStateType.Seated}
-local IsAllowedState = (table.find(AllowedStates, Humanoid:GetState()) ~= nil)
-local find = table.find
-local atan = math.atan
-local atan2 = math.atan2
-Humanoid.StateChanged:Connect(function(_, new)
-	IsAllowedState = (find(AllowedStates, new) ~= nil)
-end)
-local oldC0N = Neck.C0
-local updatesPerSecond = 10
-local Character = char 
-local Root = char.HumanoidRootPart
-local introsound = Instance.new("Sound",Root)
-introsound.SoundId = "rbxassetid://236146895"
-introsound.Volume = 1
-introsound:Play()
-local bigfedora = Instance.new("Part",Character)
-bigfedora.Size = Vector3.new(2,2,2)
-bigfedora.CFrame = bigfedora.CFrame:inverse() * Root.CFrame * CFrame.new(math.random(-60,60),-.2,math.random(-60,60)) * CFrame.Angles(0,math.rad(math.random(-180,180)),0)
-bigfedora.CanCollide = false
-bigfedora.Anchored = true
-bigfedora.Name = "mbigf"
-local mbigfedora = Instance.new("SpecialMesh", bigfedora)
-mbigfedora.MeshType = "FileMesh"
-mbigfedora.Scale = Vector3.new(2.5, 2.5, 2.5)
-mbigfedora.MeshId,mbigfedora.TextureId = 'http://www.roblox.com/asset/?id=1125478','http://www.roblox.com/asset/?id=1125479'
 
-for i = 1, 60 do
-bigfedora.CFrame = bigfedora.CFrame:lerp(CFrame.new(Root.Position) * CFrame.new(0,-.1,0) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),.09)
-task.wait(1/60)
-end
-wait(.25)
-for i = 1, 50 do
-bigfedora.CFrame = bigfedora.CFrame:lerp(CFrame.new(char.Head.Position),.5)
-task.wait(1/60)
-end
-zmc = 0
-for i = 1, 29 do
-zmc = zmc + 2
-mbigfedora.Scale = mbigfedora.Scale - Vector3.new(.15,.15,.15)
-bigfedora.CFrame = bigfedora.CFrame * CFrame.Angles(math.rad(0),math.rad(zmc),0)
-task.wait(1/60)
-end
-bigfedora:Remove()
-local nim= 0
-local hum = char.Humanoid
-local cf = CFrame.new
-local DIEDLOOP 
-local HEADLOOP
-repeat 
-    char.Humanoid:Move(Vector3.new(0,0,-1),true)
-    task.wait(1/60)
-    nim=nim+1
-until nim==3
-
-
-RunService.RenderStepped:Connect(function(deltaTime: number)
-	local function Alpha(n)
-		return math.clamp(n*deltaTime*60,0,1)
-	end
-  hum.CameraOffset =  hum.CameraOffset:Lerp((hrp.CFrame*cf(0,1.5,0)):PointToObjectSpace(h.Position),Alpha(.15))
-	if IsAllowedState  and dancing == false then
-		local HeadPosition = Head.Position
-		if Neck then
-         local MousePos = PlayerMouse.Hit.Position
-			local TranslationVector = (HeadPosition - MousePos).Unit
-			local Pitch = atan(TranslationVector.Y)
-			local Yaw = TranslationVector:Cross(Torso.CFrame.LookVector).Y
-			local Roll = atan(Yaw)
-			
-			local NeckCFrame
-			if IsR6 then
-				NeckCFrame = CFrame.Angles(Pitch, 0, Yaw)
-			else
-			   	NeckCFrame = CFrame.Angles(-Pitch * 0.5, Yaw, -Roll * 0.5)				
-			   	local waistCFrame = CFrame.Angles(-Pitch * 0.5, Yaw * 0.5, 0)
-			   	Waist.C0 = Waist.C0:Lerp(WaistOriginC0 * waistCFrame, updatesPerSecond * deltaTime)
-			end			
-			Neck.C0 = Neck.C0:Lerp(NeckOriginC0 * NeckCFrame, updatesPerSecond * deltaTime)
-		end
-Neck.C0 = oldC0N
-end)
 
 
 local Playsound = Instance.new("Sound",game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"))
@@ -207,6 +112,49 @@ local function M()
      Playsound:Stop()
      --Playsound:Destroy()
      end
+
+
+
+
+
+
+
+
+local tool = Instance.new("Tool", backpack)
+tool.Name = "JK"
+tool.RequiresHandle = false
+writefile("Dances/JK.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/JK.mp3?raw=true"))
+	if not getgenv()["Animator"] then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim = nil
+
+tool.Equipped:Connect(function()
+	local character = player.Character
+	if character then
+		Anim = Animator.new(character, 119103839008664)
+		Anim:Play()
+		Anim.Stopped:Connect(function()
+			Anim:Play()
+		end)
+		Playsound.SoundId = customasset("Dances/JK.mp3")
+		timeposcur = Playsound.TimePosition
+		Playsound:Play()
+	end
+end)
+
+tool.Unequipped:Connect(function()
+	if Anim then
+		Anim:Stop()
+		Anim:Destroy()
+		
+		
+	end
+	M()
+end)
+
+
 
 
 
@@ -2425,12 +2373,111 @@ local Anim = nil
 tool.Equipped:Connect(function()
 local character = player.Character
 if character then
-Anim = Animator.new(character, 8212303002598)
+Anim = Animator.new(character, 82123030025988)
 Anim:Play()
 Anim.Stopped:Connect(function()
 Anim:Play()
 end)
 Playsound.SoundId = customasset("Dances/Savor.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
+end
+end)
+
+tool.Unequipped:Connect(function()
+if Anim then
+Anim:Stop()
+Anim:Destroy()
+
+end
+M()
+end)
+
+local tool = Instance.new("Tool", backpack)
+tool.Name = "Prism Shuffle"
+tool.RequiresHandle = false
+writefile("Dances/Prism.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Prism.mp3?raw=true"))
+if not getgenv()["Animator"] then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim = nil
+
+tool.Equipped:Connect(function()
+local character = player.Character
+if character then
+Anim = Animator.new(character, 132979558739339)
+Anim:Play()
+Anim.Stopped:Connect(function()
+Anim:Play()
+end)
+Playsound.SoundId = customasset("Dances/Prism.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
+end
+end)
+
+tool.Unequipped:Connect(function()
+if Anim then
+Anim:Stop()
+Anim:Destroy()
+
+end
+M()
+end)
+
+local tool = Instance.new("Tool", backpack)
+tool.Name = "Rambunctious"
+tool.RequiresHandle = false
+writefile("Dances/Rambunctious.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Rambunctious.mp3?raw=true"))
+if not getgenv()["Animator"] then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim = nil
+
+tool.Equipped:Connect(function()
+local character = player.Character
+if character then
+Anim = Animator.new(character, 112645644540728)
+Anim:Play()
+Anim.Stopped:Connect(function()
+Anim:Play()
+end)
+Playsound.SoundId = customasset("Dances/Rambunctious.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
+end
+end)
+
+tool.Unequipped:Connect(function()
+if Anim then
+Anim:Stop()
+Anim:Destroy()
+
+end
+M()
+end)
+
+local tool = Instance.new("Tool", backpack)
+tool.Name = "Take Down"
+tool.RequiresHandle = false
+writefile("Dances/TakeDown.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/TakeDown.mp3?raw=true"))
+if not getgenv()["Animator"] then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim = nil
+
+tool.Equipped:Connect(function()
+local character = player.Character
+if character then
+Anim = Animator.new(character, 70380478678297)
+Anim:Play()
+Anim.Stopped:Connect(function()
+Anim:Play()
+end)
+Playsound.SoundId = customasset("Dances/TakeDown.mp3")
 timeposcur = Playsound.TimePosition
 Playsound:Play()
 end

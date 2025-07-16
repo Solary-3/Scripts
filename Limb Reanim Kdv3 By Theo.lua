@@ -1453,7 +1453,7 @@ if not isfile("Dances/Boombox.mp3") then
 	Duration = 2.5;
 	Text = "Let The Audio Download"
 })
-	writefile("Dances/Boombox.mp3", 
+	writefile("Dances/APEX.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Boombox.mp3?raw=true"))
 	warn("Boombox Downloaded!")
 end
@@ -2807,6 +2807,81 @@ coolparticles.Parent = char.Torso
 task.wait(.1)
         stopanim()
 end
+elseif k == "g" then 
+if dancing == false then 
+if not isfile("Dances/Prism.mp3") then
+     game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 2.5;
+	Text = "Let The Audio Download"
+})
+	writefile("Dances/Prism.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Prism.mp3?raw=true"))
+	warn("Prism Downloaded!")
+end
+        stopanim()
+dancing = true
+task.wait(.005)
+--Idle:Stop()()
+        sound69.SoundId = customasset("Dances/Prism.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(132979558739339,1.5)    
+    else
+task.wait(.1)
+        stopanim()
+end
+elseif k == "h" then 
+if dancing == false then 
+if not isfile("Dances/Rambunctious.mp3") then
+     game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 2.5;
+	Text = "Let The Audio Download"
+})
+	writefile("Dances/Rambunctious.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Rambunctious.mp3?raw=true"))
+	warn("Rambunctious Downloaded!")
+end
+        stopanim()
+dancing = true
+task.wait(.005)
+--Idle:Stop()()
+        sound69.SoundId = customasset("Dances/Rambunctious.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(112645644540728,1.5)    
+    else
+task.wait(.1)
+        stopanim()
+end
+elseif k == "h" then 
+if dancing == false then 
+if not isfile("Dances/TakeDown.mp3") then
+     game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 2.5;
+	Text = "Let The Audio Download"
+})
+	writefile("Dances/TakeDown.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/TakeDown.mp3?raw=true"))
+	warn("TakeDown Downloaded!")
+end
+        stopanim()
+dancing = true
+task.wait(.005)
+--Idle:Stop()()
+        sound69.SoundId = customasset("Dances/TakeDown.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(70380478678297,1.5)    
+    else
+task.wait(.1)
+        stopanim()
+end
 end
 end
 
@@ -3004,6 +3079,8 @@ repeat
     task.wait(1/60)
     nim=nim+1
 until nim==3
+
+
 RunService.RenderStepped:Connect(function(deltaTime: number)
 	local function Alpha(n)
 		return math.clamp(n*deltaTime*60,0,1)
