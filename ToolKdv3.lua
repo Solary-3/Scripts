@@ -1,5 +1,4 @@
 --loadstring(game:HttpGet("https://gist.githubusercontent.com/lolidkwhy678/8789dcee674b733f339fc9376e512287/raw/0faff48438c6091deb3b3672a430cdfb07417111/tsb%2520inventory"))()
-wait(5)
 local player = game.Players.LocalPlayer
 local backpack = player:WaitForChild("Backpack")
 local playerGui = player:WaitForChild("PlayerGui")
@@ -16,6 +15,11 @@ local C = Instance.new("UIGradient")
 local CaptionGradient = Instance.new("UIGradient")
 local G = Instance.new("UIGradient")
 local Rq = Instance.new("UIGradient")
+local char=game:GetService("Players").LocalPlayer.Character
+local hum=char:FindFirstChildOfClass("Humanoid")
+local h=char.Head
+local t=char.Torso
+local hrp=char.HumanoidRootPart 
 local G = Color3.fromRGB(100, 100, 100)
 local A = Color3.fromRGB(255,255,255)
 local W = Color3.fromRGB(255, 255, 255)
@@ -75,6 +79,116 @@ C.Enabled = true
 C.Rotation = 85
 C.Offset = Vector2.new(0,0)
 
+local RunService = game:GetService("RunService")
+local Player = game:GetService("Players").LocalPlayer
+local PlayerMouse = Player:GetMouse()
+local Camera = workspace.CurrentCamera
+local Character =char
+local Humanoid = Character:WaitForChild("Humanoid")
+local IsR6 = (Humanoid.RigType == Enum.HumanoidRigType.R6)
+local Head = Character:WaitForChild("Head")
+local Torso = if IsR6 then Character:WaitForChild("Torso") else Character:WaitForChild("UpperTorso")
+local Neck = if IsR6 then Torso:WaitForChild("Neck") else Head:WaitForChild("Neck")
+local Waist = if IsR6 then nil else Torso:WaitForChild("Waist")
+local NeckOriginC0 = Neck.C0
+local WaistOriginC0 = if Waist then Waist.C0 else nil
+Neck.MaxVelocity = 1/3
+local AllowedStates = {Enum.HumanoidStateType.Running, Enum.HumanoidStateType.Climbing, Enum.HumanoidStateType.Swimming, Enum.HumanoidStateType.Freefall, Enum.HumanoidStateType.Seated}
+local IsAllowedState = (table.find(AllowedStates, Humanoid:GetState()) ~= nil)
+local find = table.find
+local atan = math.atan
+local atan2 = math.atan2
+Humanoid.StateChanged:Connect(function(_, new)
+	IsAllowedState = (find(AllowedStates, new) ~= nil)
+end)
+local oldC0N = Neck.C0
+local updatesPerSecond = 10
+local Character = char 
+local Root = char.HumanoidRootPart
+introsound = Instance.new("Sound",Root)
+introsound.SoundId = "rbxassetid://236146895"
+introsound.Volume = 1
+introsound:Play()
+bigfedora = Instance.new("Part",Character)
+bigfedora.Size = Vector3.new(2,2,2)
+bigfedora.CFrame = bigfedora.CFrame:inverse() * Root.CFrame * CFrame.new(math.random(-60,60),-.2,math.random(-60,60)) * CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+bigfedora.CanCollide = false
+bigfedora.Anchored = true
+bigfedora.Name = "mbigf"
+mbigfedora = Instance.new("SpecialMesh", bigfedora)
+mbigfedora.MeshType = "FileMesh"
+mbigfedora.Scale = Vector3.new(2.5, 2.5, 2.5)
+mbigfedora.MeshId,mbigfedora.TextureId = 'http://www.roblox.com/asset/?id=1125478','http://www.roblox.com/asset/?id=1125479'
+
+for i = 1, 60 do
+bigfedora.CFrame = bigfedora.CFrame:lerp(CFrame.new(Root.Position) * CFrame.new(0,-.1,0) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),.09)
+task.wait(1/60)
+end
+wait(.25)
+for i = 1, 50 do
+bigfedora.CFrame = bigfedora.CFrame:lerp(CFrame.new(char.Head.Position),.5)
+task.wait(1/60)
+end
+zmc = 0
+for i = 1, 29 do
+zmc = zmc + 2
+mbigfedora.Scale = mbigfedora.Scale - Vector3.new(.15,.15,.15)
+bigfedora.CFrame = bigfedora.CFrame * CFrame.Angles(math.rad(0),math.rad(zmc),0)
+task.wait(1/60)
+end
+bigfedora:Remove()
+local nim= 0
+char.Humanoid.Died:Connect(function()
+sound69.PlaybackSpeed = 0
+sound69.Parent = nil 
+sound69.Volume = 0
+end)
+local hum = char.Humanoid
+local cf = CFrame.new
+local DIEDLOOP 
+local HEADLOOP
+repeat 
+    char.Humanoid:Move(Vector3.new(0,0,-1),true)
+    task.wait(1/60)
+    nim=nim+1
+until nim==3
+
+
+RunService.RenderStepped:Connect(function(deltaTime: number)
+	local function Alpha(n)
+		return math.clamp(n*deltaTime*60,0,1)
+	end
+  hum.CameraOffset =  hum.CameraOffset:Lerp((hrp.CFrame*cf(0,1.5,0)):PointToObjectSpace(h.Position),Alpha(.15))
+	if IsAllowedState  and dancing == false then
+		local HeadPosition = Head.Position
+		if Neck then
+         local MousePos = PlayerMouse.Hit.Position
+			local TranslationVector = (HeadPosition - MousePos).Unit
+			local Pitch = atan(TranslationVector.Y)
+			local Yaw = TranslationVector:Cross(Torso.CFrame.LookVector).Y
+			local Roll = atan(Yaw)
+			
+			local NeckCFrame
+			if IsR6 then
+				NeckCFrame = CFrame.Angles(Pitch, 0, Yaw)
+			else
+			   	NeckCFrame = CFrame.Angles(-Pitch * 0.5, Yaw, -Roll * 0.5)				
+			   	local waistCFrame = CFrame.Angles(-Pitch * 0.5, Yaw * 0.5, 0)
+			   	Waist.C0 = Waist.C0:Lerp(WaistOriginC0 * waistCFrame, updatesPerSecond * deltaTime)
+			end			
+			Neck.C0 = Neck.C0:Lerp(NeckOriginC0 * NeckCFrame, updatesPerSecond * deltaTime)
+		end
+    elseif dancing == true then 
+        Neck.C0 = oldC0N
+	end	
+if char.Humanoid.MoveDirection == Vector3.new(0,0,0) then 
+    walking = false 
+    idle = true 
+else 
+    walking = true 
+    idle = false 
+end
+end)
 
 
 local Playsound = Instance.new("Sound",game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"))
