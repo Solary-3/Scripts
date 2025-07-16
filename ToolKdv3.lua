@@ -105,17 +105,17 @@ local oldC0N = Neck.C0
 local updatesPerSecond = 10
 local Character = char 
 local Root = char.HumanoidRootPart
-introsound = Instance.new("Sound",Root)
+local introsound = Instance.new("Sound",Root)
 introsound.SoundId = "rbxassetid://236146895"
 introsound.Volume = 1
 introsound:Play()
-bigfedora = Instance.new("Part",Character)
+local bigfedora = Instance.new("Part",Character)
 bigfedora.Size = Vector3.new(2,2,2)
 bigfedora.CFrame = bigfedora.CFrame:inverse() * Root.CFrame * CFrame.new(math.random(-60,60),-.2,math.random(-60,60)) * CFrame.Angles(0,math.rad(math.random(-180,180)),0)
 bigfedora.CanCollide = false
 bigfedora.Anchored = true
 bigfedora.Name = "mbigf"
-mbigfedora = Instance.new("SpecialMesh", bigfedora)
+local mbigfedora = Instance.new("SpecialMesh", bigfedora)
 mbigfedora.MeshType = "FileMesh"
 mbigfedora.Scale = Vector3.new(2.5, 2.5, 2.5)
 mbigfedora.MeshId,mbigfedora.TextureId = 'http://www.roblox.com/asset/?id=1125478','http://www.roblox.com/asset/?id=1125479'
@@ -138,11 +138,6 @@ task.wait(1/60)
 end
 bigfedora:Remove()
 local nim= 0
-char.Humanoid.Died:Connect(function()
-sound69.PlaybackSpeed = 0
-sound69.Parent = nil 
-sound69.Volume = 0
-end)
 local hum = char.Humanoid
 local cf = CFrame.new
 local DIEDLOOP 
@@ -178,16 +173,7 @@ RunService.RenderStepped:Connect(function(deltaTime: number)
 			end			
 			Neck.C0 = Neck.C0:Lerp(NeckOriginC0 * NeckCFrame, updatesPerSecond * deltaTime)
 		end
-    elseif dancing == true then 
-        Neck.C0 = oldC0N
-	end	
-if char.Humanoid.MoveDirection == Vector3.new(0,0,0) then 
-    walking = false 
-    idle = true 
-else 
-    walking = true 
-    idle = false 
-end
+Neck.C0 = oldC0N
 end)
 
 
