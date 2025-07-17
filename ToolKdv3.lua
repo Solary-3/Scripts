@@ -168,11 +168,11 @@ local Anim = nil
 tool2.Equipped:Connect(function()
 	local character = player.Character
 	if character then
-		Anim = Animator.new(character, 74138372568467)
-		Anim:Play()
-		Playsound.SoundId = customasset("Dances/UNLIMITEDFLEXWORKS.mp3")
+	     Playsound.SoundId = customasset("Dances/UNLIMITEDFLEXWORKS.mp3")
 		timeposcur = Playsound.TimePosition
 		Playsound:Play()
+		Anim = Animator.new(character, 74138372568467)
+		Anim:Play()
 		wait(32.246)
 		Anim.Stopped:Connect(function()
 			Anim:Play()
