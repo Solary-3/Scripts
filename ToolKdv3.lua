@@ -170,14 +170,14 @@ tool2.Equipped:Connect(function()
 	if character then
 		Anim = Animator.new(character, 74138372568467)
 		Anim:Play()
+		Playsound.SoundId = customasset("Dances/UNLIMITEDFLEXWORKS.mp3")
+		timeposcur = Playsound.TimePosition
+		Playsound:Play()
 		wait(32.246)
 		Anim.Stopped:Connect(function()
 			Anim:Play()
 			wait(32.246)
 		end)
-		Playsound.SoundId = customasset("Dances/UNLIMITEDFLEXWORKS.mp3")
-		timeposcur = Playsound.TimePosition
-		Playsound:Play()
 	end
 end)
 
