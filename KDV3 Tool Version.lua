@@ -1846,9 +1846,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Silly Billy"
-tool.RequiresHandle = false
+local tool52 = Instance.new("Tool", backpack)
+tool52.Name = "Silly Billy"
+tool52.RequiresHandle = false
 writefile("Dances/Billy.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Billy.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1856,21 +1856,25 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool52.Equipped:Connect(function()
 local character = player.Character
 if character then
-Anim = Animator.new(character, 108058940444935)
-Anim:Play()
-Anim.Stopped:Connect(function()
-Anim:Play()
-end)
 Playsound.SoundId = customasset("Dances/Billy.mp3")
 timeposcur = Playsound.TimePosition
+Anim = Animator.new(character, 108058940444935)
+Anim:Play()
+wait(.250)
 Playsound:Play()
+Anim.Stopped:Connect(function()
+M()
+Anim:Play()
+wait(.100)
+Playsound:Play()
+end)
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool52.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
