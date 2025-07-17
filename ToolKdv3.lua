@@ -2,7 +2,6 @@
 local player = game.Players.LocalPlayer
 local backpack = player:WaitForChild("Backpack")
 local playerGui = player:WaitForChild("PlayerGui")
-local workspace = game:GetService("Workspace")
 local timeposcur = 0
 local SG = Instance.new("ScreenGui")
  SG.Parent = player:WaitForChild("PlayerGui")
@@ -10,16 +9,8 @@ local CaptionStroke = Instance.new("UIStroke")
 local Caption = Instance.new("TextLabel")
 local Text2 = Instance.new("UIStroke")
 local Text3 = Instance.new("UIStroke")
-local Yu = Instance.new("UIStroke")
 local C = Instance.new("UIGradient")
-local CaptionGradient = Instance.new("UIGradient")
-local G = Instance.new("UIGradient")
 local Rq = Instance.new("UIGradient")
-local char=game:GetService("Players").LocalPlayer.Character
-local hum=char:FindFirstChildOfClass("Humanoid")
-local h=char.Head
-local t=char.Torso
-local hrp=char.HumanoidRootPart 
 local G = Color3.fromRGB(100, 100, 100)
 local A = Color3.fromRGB(255,255,255)
 local W = Color3.fromRGB(255, 255, 255)
@@ -32,7 +23,7 @@ local H = ColorSequence.new{
 
 
 local billboard2 = Instance.new("BillboardGui")
-        billboard2.Name = "Test"
+        billboard2.Name = "BBG"
         billboard2.Size = UDim2.new(0, 100, 0, 40)
         billboard2.StudsOffset = Vector3.new(0, 5, 0)
         billboard2.Adornee = player.Character.Head
@@ -173,9 +164,9 @@ tool2.Equipped:Connect(function()
 		Playsound:Play()
 		Anim = Animator.new(character, 74138372568467)
 		Anim:Play()
-		wait(1)
+		wait(1.250)
 		Anim.Stopped:Connect(function()
-		     wait(1)
+		     wait(1.250)
 			Anim:Play()
 		end)
 	end
@@ -195,7 +186,39 @@ end)
 
 
 
+local tool52 = Instance.new("Tool", backpack)
+tool52.Name = "Silly Billy"
+tool52.RequiresHandle = false
+writefile("Dances/Billy.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Billy.mp3?raw=true"))
+if not getgenv()["Animator"] then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim = nil
 
+tool52.Equipped:Connect(function()
+local character = player.Character
+if character then
+Playsound.SoundId = customasset("Dances/Billy.mp3")
+timeposcur = Playsound.TimePosition
+Anim = Animator.new(character, 108058940444935)
+Anim:Play()
+Playsound:Play()
+Anim.Stopped:Connect(function()
+wait(.750)
+Anim:Play()
+end)
+end
+end)
+
+tool52.Unequipped:Connect(function()
+if Anim then
+Anim:Stop()
+Anim:Destroy()
+
+end
+M()
+end)
 
 
 local tool3 = Instance.new("Tool", backpack)
@@ -1933,38 +1956,6 @@ end
 M()
 end)
 
-local tool52 = Instance.new("Tool", backpack)
-tool52.Name = "Silly Billy"
-tool52.RequiresHandle = false
-writefile("Dances/Billy.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Billy.mp3?raw=true"))
-if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
-end
-local Anim = nil
-
-tool52.Equipped:Connect(function()
-local character = player.Character
-if character then
-Anim = Animator.new(character, 108058940444935)
-Anim:Play()
-Anim.Stopped:Connect(function()
-Anim:Play()
-end)
-Playsound.SoundId = customasset("Dances/Billy.mp3")
-timeposcur = Playsound.TimePosition
-Playsound:Play()
-end
-end)
-
-tool52.Unequipped:Connect(function()
-if Anim then
-Anim:Stop()
-Anim:Destroy()
-
-end
-M()
-end)
 
 local tool53 = Instance.new("Tool", backpack)
 tool53.Name = "Slickback"

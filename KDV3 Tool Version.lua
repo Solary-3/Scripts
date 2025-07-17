@@ -1,10 +1,8 @@
 --loadstring(game:HttpGet("https://gist.githubusercontent.com/lolidkwhy678/8789dcee674b733f339fc9376e512287/raw/0faff48438c6091deb3b3672a430cdfb07417111/tsb%2520inventory"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AstraOutlight/my-scripts/refs/heads/main/namertag"))()
-wait(5)
 local player = game.Players.LocalPlayer
 local backpack = player:WaitForChild("Backpack")
 local playerGui = player:WaitForChild("PlayerGui")
-local workspace = game:GetService("Workspace")
 local timeposcur = 0
 local SG = Instance.new("ScreenGui")
  SG.Parent = player:WaitForChild("PlayerGui")
@@ -12,10 +10,7 @@ local CaptionStroke = Instance.new("UIStroke")
 local Caption = Instance.new("TextLabel")
 local Text2 = Instance.new("UIStroke")
 local Text3 = Instance.new("UIStroke")
-local Yu = Instance.new("UIStroke")
 local C = Instance.new("UIGradient")
-local CaptionGradient = Instance.new("UIGradient")
-local G = Instance.new("UIGradient")
 local Rq = Instance.new("UIGradient")
 local G = Color3.fromRGB(100, 100, 100)
 local A = Color3.fromRGB(255,255,255)
@@ -29,7 +24,7 @@ local H = ColorSequence.new{
 
 
 local billboard2 = Instance.new("BillboardGui")
-        billboard2.Name = "Test"
+        billboard2.Name = "BBG"
         billboard2.Size = UDim2.new(0, 100, 0, 40)
         billboard2.StudsOffset = Vector3.new(0, 5, 0)
         billboard2.Adornee = player.Character.Head
