@@ -120,9 +120,9 @@ local function M()
 
 
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "JK"
-tool.RequiresHandle = false
+local tool1 = Instance.new("Tool", backpack)
+tool1.Name = "JK"
+tool1.RequiresHandle = false
 writefile("Dances/JK.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/JK.mp3?raw=true"))
 	if not getgenv()["Animator"] then
@@ -130,7 +130,7 @@ writefile("Dances/JK.mp3",
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool1.Equipped:Connect(function()
 	local character = player.Character
 	if character then
 		Anim = Animator.new(character, 119103839008664)
@@ -145,7 +145,7 @@ tool.Equipped:Connect(function()
 	end
 end)
 
-tool.Unequipped:Connect(function()
+tool1.Unequipped:Connect(function()
 	if Anim then
 		Anim:Stop()
 		Anim:Destroy()
@@ -155,9 +155,9 @@ tool.Unequipped:Connect(function()
 	M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "KJ"
-tool.RequiresHandle = false
+local tool2 = Instance.new("Tool", backpack)
+tool2.Name = "KJ"
+tool2.RequiresHandle = false
 writefile("Dances/UNLIMITEDFLEXWORKS.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/UNLIMITEDFLEXWORKS.mp3?raw=true"))
 	if not getgenv()["Animator"] then
@@ -165,14 +165,14 @@ writefile("Dances/UNLIMITEDFLEXWORKS.mp3",
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool2.Equipped:Connect(function()
 	local character = player.Character
 	if character then
 		Anim = Animator.new(character, 74138372568467)
 		Anim:Play()
 		Anim.Stopped:Connect(function()
 			Anim:Play()
-			wait(32.246)
+			wait(32.925)
 		end)
 		Playsound.SoundId = customasset("Dances/UNLIMITEDFLEXWORKS.mp3")
 		timeposcur = Playsound.TimePosition
@@ -180,7 +180,7 @@ tool.Equipped:Connect(function()
 	end
 end)
 
-tool.Unequipped:Connect(function()
+tool2.Unequipped:Connect(function()
 	if Anim then
 		Anim:Stop()
 		Anim:Destroy()
@@ -197,9 +197,9 @@ end)
 
 
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Rat"
-tool.RequiresHandle = false
+local tool3 = Instance.new("Tool", backpack)
+tool3.Name = "Rat"
+tool3.RequiresHandle = false
 writefile("Dances/rat.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/rat.mp3?raw=true"))
 	if not getgenv()["Animator"] then
@@ -207,7 +207,7 @@ writefile("Dances/rat.mp3",
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool3.Equipped:Connect(function()
 	local character = player.Character
 	if character then
 		Anim = Animator.new(character, 104525136565640)
@@ -221,7 +221,7 @@ tool.Equipped:Connect(function()
 	end
 end)
 
-tool.Unequipped:Connect(function()
+tool3.Unequipped:Connect(function()
 	if Anim then
 		Anim:Stop()
 		Anim:Destroy()
@@ -232,9 +232,9 @@ tool.Unequipped:Connect(function()
 end)
 
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Rat 2"
-tool.RequiresHandle = false
+local tool4 = Instance.new("Tool", backpack)
+tool4.Name = "Rat 2"
+tool4.RequiresHandle = false
 writefile("Dances/rat.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/rat.mp3?raw=true"))
 	if not getgenv()["Animator"] then
@@ -242,7 +242,7 @@ writefile("Dances/rat.mp3",
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool4.Equipped:Connect(function()
 	local character = player.Character
 	if character then
 	     
@@ -259,7 +259,7 @@ tool.Equipped:Connect(function()
 	end
 end)
 
-tool.Unequipped:Connect(function()
+tool4.Unequipped:Connect(function()
 	if Anim then
 		Anim:Stop()
 		Anim:Destroy()
@@ -269,9 +269,9 @@ tool.Unequipped:Connect(function()
 end)
 
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Boogie"
-tool.RequiresHandle = false
+local tool5 = Instance.new("Tool", backpack)
+tool5.Name = "Boogie"
+tool5.RequiresHandle = false
 writefile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/xxanteria%2C%20isq%20-%20FUNKED%20UP%20(SLOWED)%20(320kbps).mp3?raw=true"))
 	if not getgenv()["Animator"] then
@@ -279,7 +279,7 @@ writefile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3",
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool5.Equipped:Connect(function()
 	local character = player.Character
 	if character then
 	     
@@ -296,7 +296,7 @@ tool.Equipped:Connect(function()
 	end
 end)
 
-tool.Unequipped:Connect(function()
+tool5.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -305,9 +305,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Assumptions"
-tool.RequiresHandle = false
+local tool6 = Instance.new("Tool", backpack)
+tool6.Name = "Assumptions"
+tool6.RequiresHandle = false
 
 writefile("Dances/Assumptions.mp3",
 game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Assumptions.mp3?raw=true"))
@@ -317,7 +317,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool6.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -333,7 +333,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool6.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -341,9 +341,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Assumptions Shuffle"
-tool.RequiresHandle = false
+local tool7 = Instance.new("Tool", backpack)
+tool7.Name = "Assumptions Shuffle"
+tool7.RequiresHandle = false
 
 writefile("Dances/Assumptions.mp3",
 game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Assumptions.mp3?raw=true"))
@@ -353,7 +353,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool7.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -369,7 +369,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool7.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -378,9 +378,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Billie Jean"
-tool.RequiresHandle = false
+local tool8 = Instance.new("Tool", backpack)
+tool8.Name = "Billie Jean"
+tool8.RequiresHandle = false
 
 writefile("Dances/Bjean.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Bjean.mp3?raw=true"))
@@ -390,7 +390,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool8.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -406,7 +406,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool8.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -414,9 +414,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Egypt"
-tool.RequiresHandle = false
+local tool9 = Instance.new("Tool", backpack)
+tool9.Name = "Egypt"
+tool9.RequiresHandle = false
 
 writefile("Dances/Egypt.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Egypt.mp3?raw=true"))
@@ -426,7 +426,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool9.Equipped:Connect(function()
 local character = player.Character
 if character then
       
@@ -442,7 +442,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool9.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -451,9 +451,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "CaramellDansen"
-tool.RequiresHandle = false
+local tool10 = Instance.new("Tool", backpack)
+tool10.Name = "CaramellDansen"
+tool10.RequiresHandle = false
 
 writefile("Dances/caramell.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/caramell.mp3?raw=true"))
@@ -464,7 +464,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool10.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -480,7 +480,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool10.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -488,9 +488,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Stock Shuffle"
-tool.RequiresHandle = false
+local tool11 = Instance.new("Tool", backpack)
+tool11.Name = "Stock Shuffle"
+tool11.RequiresHandle = false
 
 writefile("Dances/Stock.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Stock.mp3?raw=true"))
@@ -501,7 +501,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool11.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -518,7 +518,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool11.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -527,9 +527,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Gangnam"
-tool.RequiresHandle = false
+local tool12 = Instance.new("Tool", backpack)
+tool12.Name = "Gangnam"
+tool12.RequiresHandle = false
 
 writefile("Dances/gangnamm.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/gangnamm.mp3?raw=true"))
@@ -539,7 +539,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool12.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -555,7 +555,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool12.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -564,9 +564,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Fein"
-tool.RequiresHandle = false
+local tool13 = Instance.new("Tool", backpack)
+tool13.Name = "Fein"
+tool13.RequiresHandle = false
 
 writefile("Dances/Fein.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Fein.mp3?raw=true"))
@@ -576,7 +576,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool13.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -592,7 +592,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool13.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -602,9 +602,9 @@ M()
 end)
 
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Griddy"
-tool.RequiresHandle = false
+local tool14 = Instance.new("Tool", backpack)
+tool14.Name = "Griddy"
+tool14.RequiresHandle = false
 
 writefile("Dances/griddy.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/griddy.mp3?raw=true"))
@@ -614,7 +614,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool14.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -630,7 +630,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool14.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -639,9 +639,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Two"
-tool.RequiresHandle = false
+local tool15 = Instance.new("Tool", backpack)
+tool15.Name = "Two"
+tool15.RequiresHandle = false
 
 writefile("Dances/LeftRight.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/LeftRight.mp3?raw=true"))
@@ -651,7 +651,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool15.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -667,7 +667,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool15.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -676,9 +676,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Katzosky"
-tool.RequiresHandle = false
+local tool16 = Instance.new("Tool", backpack)
+tool16.Name = "Katzosky"
+tool16.RequiresHandle = false
 
 writefile("Dances/kazot.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/kazot.mp3?raw=true"))
@@ -688,7 +688,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool16.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -704,7 +704,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool16.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -713,9 +713,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Walk"
-tool.RequiresHandle = false
+local tool17 = Instance.new("Tool", backpack)
+tool17.Name = "Walk"
+tool17.RequiresHandle = false
 
 writefile("Dances/doodle - Zachz Winner.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/doodle%20-%20Zachz%20Winner.mp3?raw=true"))
@@ -725,7 +725,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool17.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -741,7 +741,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool17.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -750,9 +750,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Mesmerizer"
-tool.RequiresHandle = false
+local tool18 = Instance.new("Tool", backpack)
+tool18.Name = "Mesmerizer"
+tool18.RequiresHandle = false
 
 writefile("Dances/Mesmerizer.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Mesmerizer.mp3?raw=true"))
@@ -762,7 +762,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool18.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -778,7 +778,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool18.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -787,9 +787,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Bumblebee"
-tool.RequiresHandle = false
+local tool19 = Instance.new("Tool", backpack)
+tool19.Name = "Bumblebee"
+tool19.RequiresHandle = false
 
 writefile("Dances/Bumblebee.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Bumblebee.mp3?raw=true"))
@@ -799,7 +799,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool19.Equipped:Connect(function()
 local character = player.Character
 if character then
       
@@ -815,7 +815,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool19.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -824,9 +824,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Domino"
-tool.RequiresHandle = false
+local tool20 = Instance.new("Tool", backpack)
+tool20.Name = "Domino"
+tool20.RequiresHandle = false
 
 writefile("Dances/Domino.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Domino.mp3?raw=true"))
@@ -836,7 +836,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool20.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -852,7 +852,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool20.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -861,9 +861,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Yamero"
-tool.RequiresHandle = false
+local tool21 = Instance.new("Tool", backpack)
+tool21.Name = "Yamero"
+tool21.RequiresHandle = false
 
 writefile("Dances/Yamero.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Yamero.mp3?raw=true"))
@@ -874,7 +874,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool21.Equipped:Connect(function()
 local character = player.Character
 if character then
       
@@ -890,7 +890,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool21.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -899,9 +899,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Crank That"
-tool.RequiresHandle = false
+local tool22 = Instance.new("Tool", backpack)
+tool22.Name = "Crank That"
+tool22.RequiresHandle = false
 
 writefile("Dances/Crank.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Crank.mp3?raw=true"))
@@ -912,7 +912,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool22.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -928,7 +928,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool22.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -937,9 +937,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Smooth Moves"
-tool.RequiresHandle = false
+local tool23 = Instance.new("Tool", backpack)
+tool23.Name = "Smooth Moves"
+tool23.RequiresHandle = false
 
 writefile("Dances/SmoothMoves.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/SmoothMoves.mp3?raw=true"))
@@ -950,7 +950,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool23.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -966,7 +966,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool23.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -975,9 +975,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Shuba Duck"
-tool.RequiresHandle = false
+local tool24 = Instance.new("Tool", backpack)
+tool24.Name = "Shuba Duck"
+tool24.RequiresHandle = false
 
 writefile("Dances/Shuba Duck.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Shuba%20Duck.mp3?raw=true"))
@@ -989,7 +989,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool24.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -1005,7 +1005,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool24.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1014,9 +1014,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Keep Up"
-tool.RequiresHandle = false
+local tool25 = Instance.new("Tool", backpack)
+tool25.Name = "Keep Up"
+tool25.RequiresHandle = false
 
 writefile("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Odetari%20-%20KEEP%20UP%20(Lyrics)%20(320kbps).mp3?raw=true"))
@@ -1026,7 +1026,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool25.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -1042,7 +1042,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool25.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1051,9 +1051,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Lemon Melon Cookie"
-tool.RequiresHandle = false
+local tool26 = Instance.new("Tool", backpack)
+tool26.Name = "Lemon Melon Cookie"
+tool26.RequiresHandle = false
 
 writefile("Dances/Lemon.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Lemon.mp3?raw=true"))
@@ -1063,7 +1063,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool26.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -1079,7 +1079,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool26.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1088,9 +1088,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Unlock It"
-tool.RequiresHandle = false
+local tool27 = Instance.new("Tool", backpack)
+tool27.Name = "Unlock It"
+tool27.RequiresHandle = false
 
 writefile("Dances/unlockit.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/unlockit.mp3?raw=true"))
@@ -1100,7 +1100,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool27.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -1116,7 +1116,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool27.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1125,9 +1125,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Internet Angel"
-tool.RequiresHandle = false
+local tool28 = Instance.new("Tool", backpack)
+tool28.Name = "Internet Angel"
+tool28.RequiresHandle = false
 
 writefile("Dances/InternetAngel.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/InternetAngel.mp3?raw=true"))
@@ -1138,7 +1138,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool28.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -1154,7 +1154,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool28.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1163,9 +1163,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Boombox"
-tool.RequiresHandle = false
+local tool29 = Instance.new("Tool", backpack)
+tool29.Name = "Boombox"
+tool29.RequiresHandle = false
 
 writefile("Dances/Boombox.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Boombox.mp3?raw=true"))
@@ -1176,7 +1176,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool29.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -1192,7 +1192,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool29.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1201,9 +1201,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Peashooter"
-tool.RequiresHandle = false
+local tool30 = Instance.new("Tool", backpack)
+tool30.Name = "Peashooter"
+tool30.RequiresHandle = false
 
 writefile("Dances/balls.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/balls.mp3?raw=true"))
@@ -1214,7 +1214,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool30.Equipped:Connect(function()
 local character = player.Character
 if character then
      
@@ -1230,7 +1230,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool30.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1239,9 +1239,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Distraction"
-tool.RequiresHandle = false
+local tool31 = Instance.new("Tool", backpack)
+tool31.Name = "Distraction"
+tool31.RequiresHandle = false
 writefile("Dances/Distraction.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Distraction.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1249,7 +1249,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool31.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 123261586961433)
@@ -1263,7 +1263,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool31.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1272,9 +1272,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "It Burns"
-tool.RequiresHandle = false
+local tool32 = Instance.new("Tool", backpack)
+tool32.Name = "It Burns"
+tool32.RequiresHandle = false
 writefile("Dances/ItBurns.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/ItBurns.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1282,7 +1282,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool32.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 78270528768822)
@@ -1296,7 +1296,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool32.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1305,9 +1305,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Chronos Shift"
-tool.RequiresHandle = false
+local tool33 = Instance.new("Tool", backpack)
+tool33.Name = "Chronos Shift"
+tool33.RequiresHandle = false
 writefile("Dances/chronoshift.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/chronoshift.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1315,7 +1315,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool33.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 136302258505787)
@@ -1329,7 +1329,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool33.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1338,9 +1338,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Million"
-tool.RequiresHandle = false
+local tool34 = Instance.new("Tool", backpack)
+tool34.Name = "Million"
+tool34.RequiresHandle = false
 writefile("Dances/Million.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Million.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1348,7 +1348,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool34.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 109123683211464)
@@ -1362,7 +1362,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool34.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1371,9 +1371,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "I Wanna Runaway"
-tool.RequiresHandle = false
+local tool35 = Instance.new("Tool", backpack)
+tool35.Name = "I Wanna Runaway"
+tool35.RequiresHandle = false
 writefile("Dances/Runaway.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Runaway.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1381,7 +1381,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool35.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 119147810948063)
@@ -1395,7 +1395,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool35.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1404,9 +1404,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Headlock"
-tool.RequiresHandle = false
+local tool36 = Instance.new("Tool", backpack)
+tool36.Name = "Headlock"
+tool36.RequiresHandle = false
 writefile("Dances/Headlock.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Headlock.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1414,7 +1414,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool36.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 80641587562132)
@@ -1428,7 +1428,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool36.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1437,9 +1437,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Bloodpop"
-tool.RequiresHandle = false
+local tool37 = Instance.new("Tool", backpack)
+tool37.Name = "Bloodpop"
+tool37.RequiresHandle = false
 writefile("Dances/bloodpop.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/bloodpop.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1447,7 +1447,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool37.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 132026285699359)
@@ -1461,7 +1461,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool37.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1470,9 +1470,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Heavy Love"
-tool.RequiresHandle = false
+local tool38 = Instance.new("Tool", backpack)
+tool38.Name = "Heavy Love"
+tool38.RequiresHandle = false
 writefile("Dances/heavylove.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/heavylove.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1480,7 +1480,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool38.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 85856686932206)
@@ -1494,7 +1494,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool38.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1503,9 +1503,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Smug Dance"
-tool.RequiresHandle = false
+local tool39 = Instance.new("Tool", backpack)
+tool39.Name = "Smug Dance"
+tool39.RequiresHandle = false
 writefile("Dances/Smug.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Smug.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1513,7 +1513,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool39.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 8360493405)
@@ -1527,7 +1527,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool39.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1536,9 +1536,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Hakari"
-tool.RequiresHandle = false
+local tool40 = Instance.new("Tool", backpack)
+tool40.Name = "Hakari"
+tool40.RequiresHandle = false
 writefile("Dances/TUCA DONKA.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/TUCA%20DONKA.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1546,7 +1546,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool40.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 114322394064953)
@@ -1560,7 +1560,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool40.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1569,9 +1569,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Flop"
-tool.RequiresHandle = false
+local tool41 = Instance.new("Tool", backpack)
+tool41.Name = "Flop"
+tool41.RequiresHandle = false
 writefile("Dances/DO THE FLOP.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/DO%20THE%20FLOP.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1579,7 +1579,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool41.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 122878040721056)
@@ -1593,7 +1593,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool41.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1602,9 +1602,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Doodle"
-tool.RequiresHandle = false
+local tool42 = Instance.new("Tool", backpack)
+tool42.Name = "Doodle"
+tool42.RequiresHandle = false
 writefile("Dances/Doodle.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Doodle.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1612,7 +1612,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool42.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 137721173051346)
@@ -1626,7 +1626,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool42.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1635,9 +1635,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Club Penguin"
-tool.RequiresHandle = false
+local tool43 = Instance.new("Tool", backpack)
+tool43.Name = "Club Penguin"
+tool43.RequiresHandle = false
 writefile("Dances/CLUB PENGUIN DANCE.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/CLUB%20PENGUIN%20DANCE.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1645,7 +1645,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool43.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 89761302048916)
@@ -1659,7 +1659,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool43.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1668,9 +1668,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Miohonda"
-tool.RequiresHandle = false
+local tool44 = Instance.new("Tool", backpack)
+tool44.Name = "Miohonda"
+tool44.RequiresHandle = false
 writefile("Dances/MioHonda.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/MioHonda.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1678,7 +1678,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool44.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 97072681531610)
@@ -1692,7 +1692,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool44.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1701,9 +1701,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Liar Dance"
-tool.RequiresHandle = false
+local tool45 = Instance.new("Tool", backpack)
+tool45.Name = "Liar Dance"
+tool45.RequiresHandle = false
 writefile("Dances/Liar.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Liar.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1711,7 +1711,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool45.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 83070385097572)
@@ -1725,7 +1725,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool45.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1734,9 +1734,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Firework"
-tool.RequiresHandle = false
+local tool46 = Instance.new("Tool", backpack)
+tool46.Name = "Firework"
+tool46.RequiresHandle = false
 writefile("Dances/Firework.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Firework.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1744,7 +1744,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool46.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 89935837869234)
@@ -1758,7 +1758,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool46.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1767,9 +1767,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Monster"
-tool.RequiresHandle = false
+local tool47 = Instance.new("Tool", backpack)
+tool47.Name = "Monster"
+tool47.RequiresHandle = false
 writefile("Dances/Monster.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Monster.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1777,7 +1777,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool47.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 81782595704176)
@@ -1791,7 +1791,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool47.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1800,9 +1800,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Love For You"
-tool.RequiresHandle = false
+local tool48 = Instance.new("Tool", backpack)
+tool48.Name = "Love For You"
+tool48.RequiresHandle = false
 writefile("Dances/LoveForU.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/LoveForU.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1810,7 +1810,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool48.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 74560719461868)
@@ -1824,7 +1824,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool48.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1833,9 +1833,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "C14"
-tool.RequiresHandle = false
+local tool49 = Instance.new("Tool", backpack)
+tool49.Name = "C14"
+tool49.RequiresHandle = false
 writefile("Dances/C14.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/C14.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1843,7 +1843,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool49.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 118452043589079)
@@ -1857,7 +1857,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool49.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1866,9 +1866,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Dance If Your A Goat"
-tool.RequiresHandle = false
+local tool50 = Instance.new("Tool", backpack)
+tool50.Name = "Dance If Your A Goat"
+tool50.RequiresHandle = false
 writefile("Dances/Goat.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Goat.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1876,7 +1876,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool50.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 88802480011454)
@@ -1890,7 +1890,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool50.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1899,9 +1899,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Spooky Month"
-tool.RequiresHandle = false
+local tool51 = Instance.new("Tool", backpack)
+tool51.Name = "Spooky Month"
+tool51.RequiresHandle = false
 writefile("Dances/Spooky.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Spooky.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1909,7 +1909,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool51.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 15231364673)
@@ -1923,7 +1923,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool51.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1932,9 +1932,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Silly Billy"
-tool.RequiresHandle = false
+local tool52 = Instance.new("Tool", backpack)
+tool52.Name = "Silly Billy"
+tool52.RequiresHandle = false
 writefile("Dances/Billy.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Billy.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1942,7 +1942,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool52.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 108058940444935)
@@ -1956,7 +1956,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool52.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1965,9 +1965,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Slickback"
-tool.RequiresHandle = false
+local tool53 = Instance.new("Tool", backpack)
+tool53.Name = "Slickback"
+tool53.RequiresHandle = false
 writefile("Dances/SlickBack.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/SlickBack.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -1975,7 +1975,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool53.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 18986357892)
@@ -1989,7 +1989,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool53.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -1998,9 +1998,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Static"
-tool.RequiresHandle = false
+local tool54 = Instance.new("Tool", backpack)
+tool54.Name = "Static"
+tool54.RequiresHandle = false
 writefile("Dances/Static.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Static.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2008,7 +2008,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool54.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 139065991651723)
@@ -2022,7 +2022,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool54.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -2031,9 +2031,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Heel Toe Hop"
-tool.RequiresHandle = false
+local tool55 = Instance.new("Tool", backpack)
+tool55.Name = "Heel Toe Hop"
+tool55.RequiresHandle = false
 writefile("Dances/Heel.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Heel.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2041,7 +2041,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool55.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 98256622649150)
@@ -2055,7 +2055,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool55.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -2064,9 +2064,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Yippee"
-tool.RequiresHandle = false
+local tool56 = Instance.new("Tool", backpack)
+tool56.Name = "Yippee"
+tool56.RequiresHandle = false
 writefile("Dances/Yippie.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Yippie.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2074,7 +2074,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool56.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 91260130273371)
@@ -2088,7 +2088,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool56.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -2097,9 +2097,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Pick Up The Phone"
-tool.RequiresHandle = false
+local tool57 = Instance.new("Tool", backpack)
+tool57.Name = "Pick Up The Phone"
+tool57.RequiresHandle = false
 writefile("Dances/Pickup.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pickup.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2107,7 +2107,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool57.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 92187683724153)
@@ -2121,7 +2121,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool57.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -2130,9 +2130,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Kemusan"
-tool.RequiresHandle = false
+local tool58 = Instance.new("Tool", backpack)
+tool58.Name = "Kemusan"
+tool58.RequiresHandle = false
 writefile("Dances/Chinese.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Chinese.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2140,7 +2140,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool58.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 124210157097622)
@@ -2154,7 +2154,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool58.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -2163,9 +2163,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Box Swing"
-tool.RequiresHandle = false
+local tool59 = Instance.new("Tool", backpack)
+tool59.Name = "Box Swing"
+tool59.RequiresHandle = false
 writefile("Dances/Box.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Box.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2173,7 +2173,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool59.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 75405139558088)
@@ -2187,7 +2187,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool59.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -2196,9 +2196,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Bomb Monkey"
-tool.RequiresHandle = false
+local tool60 = Instance.new("Tool", backpack)
+tool60.Name = "Bomb Monkey"
+tool60.RequiresHandle = false
 writefile("Dances/Monkey.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Monkey.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2206,7 +2206,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool60.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 75616586799217)
@@ -2220,7 +2220,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool60.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -2229,9 +2229,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Commercial Break"
-tool.RequiresHandle = false
+local tool61 = Instance.new("Tool", backpack)
+tool61.Name = "Commercial Break"
+tool61.RequiresHandle = false
 writefile("Dances/Break.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Break.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2239,7 +2239,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool61.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 74653637870288)
@@ -2253,7 +2253,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool61.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -2262,9 +2262,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Popipo"
-tool.RequiresHandle = false
+local tool62 = Instance.new("Tool", backpack)
+tool62.Name = "Popipo"
+tool62.RequiresHandle = false
 writefile("Dances/Popipo.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Popipo.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2272,7 +2272,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool62.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 115465103089127)
@@ -2286,7 +2286,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool62.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -2295,9 +2295,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "BirdBrain"
-tool.RequiresHandle = false
+local tool63 = Instance.new("Tool", backpack)
+tool63.Name = "BirdBrain"
+tool63.RequiresHandle = false
 writefile("Dances/Birdbrain.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Birdbrain.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2305,7 +2305,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool63.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 122216349954401)
@@ -2319,7 +2319,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool63.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -2328,9 +2328,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "XO"
-tool.RequiresHandle = false
+local tool64 = Instance.new("Tool", backpack)
+tool64.Name = "XO"
+tool64.RequiresHandle = false
 writefile("Dances/XO.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/XO.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2338,7 +2338,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool64.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 73559770055600)
@@ -2352,7 +2352,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool64.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -2361,9 +2361,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Roar"
-tool.RequiresHandle = false
+local tool65 = Instance.new("Tool", backpack)
+tool65.Name = "Roar"
+tool65.RequiresHandle = false
 writefile("Dances/Roar.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Roar.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2371,7 +2371,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool65.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 114610231812511)
@@ -2385,7 +2385,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool65.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -2394,9 +2394,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Savor The W"
-tool.RequiresHandle = false
+local tool66 = Instance.new("Tool", backpack)
+tool66.Name = "Savor The W"
+tool66.RequiresHandle = false
 writefile("Dances/Savor.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Savor.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2404,7 +2404,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool66.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 82123030025988)
@@ -2418,7 +2418,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool66.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -2427,9 +2427,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Prism Shuffle"
-tool.RequiresHandle = false
+local tool67 = Instance.new("Tool", backpack)
+tool67.Name = "Prism Shuffle"
+tool67.RequiresHandle = false
 writefile("Dances/Prism.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Prism.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2437,7 +2437,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool67.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 132979558739339)
@@ -2451,7 +2451,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool67.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -2460,9 +2460,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Rambunctious"
-tool.RequiresHandle = false
+local tool68 = Instance.new("Tool", backpack)
+tool68.Name = "Rambunctious"
+tool68.RequiresHandle = false
 writefile("Dances/Rambunctious.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Rambunctious.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2470,7 +2470,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool68.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 112645644540728)
@@ -2484,7 +2484,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool68.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
@@ -2493,9 +2493,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Take Down"
-tool.RequiresHandle = false
+local tool69 = Instance.new("Tool", backpack)
+tool69.Name = "Take Down"
+tool69.RequiresHandle = false
 writefile("Dances/TakeDown.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/TakeDown.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2503,7 +2503,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool69.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 70380478678297)
@@ -2517,7 +2517,7 @@ Playsound:Play()
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool69.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
