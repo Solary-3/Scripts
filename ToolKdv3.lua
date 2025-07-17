@@ -154,6 +154,38 @@ tool.Unequipped:Connect(function()
 	M()
 end)
 
+local tool = Instance.new("Tool", backpack)
+tool.Name = "KJ"
+tool.RequiresHandle = false
+writefile("Dances/UNLIMITEDFLEXWORKS.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/UNLIMITEDFLEXWORKS.mp3?raw=true"))
+	if not getgenv()["Animator"] then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim = nil
+
+tool.Equipped:Connect(function()
+	local character = player.Character
+	if character then
+		Anim = Animator.new(character, 74138372568467)
+		Anim:Play()
+		Anim.Stopped:Connect(function()
+			Anim:Play()
+		end)
+		Playsound.SoundId = customasset("Dances/UNLIMITEDFLEXWORKS.mp3")
+		timeposcur = Playsound.TimePosition
+		Playsound:Play()
+	end
+end)
+
+tool.Unequipped:Connect(function()
+	if Anim then
+		Anim:Stop()
+		Anim:Destroy()
+	end
+	M()
+end)
+
 
 
 
