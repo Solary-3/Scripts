@@ -205,7 +205,7 @@ Anim = Animator.new(character, 108058940444935)
 Anim:Play()
 Playsound:Play()
 Anim.Stopped:Connect(function()
-wait(.750)
+wait(.350)
 Anim:Play()
 end)
 end
