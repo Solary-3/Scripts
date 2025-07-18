@@ -111,37 +111,36 @@ local function M()
 
 
 
-local tool1 = Instance.new("Tool", backpack)
-tool1.Name = "JK"
-tool1.RequiresHandle = false
+local tool = Instance.new("Tool", backpack)
+tool.Name = "JK"
+tool.RequiresHandle = false
 writefile("Dances/JK.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/JK.mp3?raw=true"))
 	if not getgenv()["Animator"] then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
 end
-local Anim = nil
+local Anim1 = nil
 
-tool1.Equipped:Connect(function()
+tool.Equipped:Connect(function()
 	local character = player.Character
 	if character then
-		Anim = Animator.new(character, 119103839008664)
-		Anim:Play()
-		Anim.Stopped:Connect(function()
-		     wait(1)
-			Anim:Play()
-		end)
-		Playsound.SoundId = customasset("Dances/JK.mp3")
+         Playsound.SoundId = customasset("Dances/JK.mp3")
 		timeposcur = Playsound.TimePosition
 		Playsound:Play()
+		Anim1 = Animator.new(character, 119103839008664)
+		Anim1:Play()
+		Anim1.Stopped:Connect(function()
+		              M()
+                 Playsound:Play()
+			Anim1:Play()
+		end)
 	end
 end)
 
-tool1.Unequipped:Connect(function()
-	if Anim then
-		Anim:Stop()
-		Anim:Destroy()
-		
-		
+tool.Unequipped:Connect(function()
+	if Anim1 then
+		Anim1:Stop()
+		Anim1:Destroy()	
 	end
 	M()
 end)
@@ -208,10 +207,19 @@ Playsound:Play()
 Anim.Stopped:Connect(function()
 M()
 Anim:Play()
-wait(.100)
+wait(.205)
 Playsound:Play()
 end)
 end
+end)
+
+tool52.Unequipped:Connect(function()
+if Anim then
+Anim:Stop()
+Anim:Destroy()
+
+end
+M()
 end)
 
 tool52.Unequipped:Connect(function()
