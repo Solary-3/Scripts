@@ -2863,7 +2863,7 @@ coolparticles.Parent = char.Torso
 task.wait(.1)
         stopanim()
 end
-elseif k == "h" then 
+elseif k == "j" then 
 if dancing == false then 
 if not isfile("Dances/TakeDown.mp3") then
      game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -2884,6 +2884,56 @@ task.wait(.005)
 sound69:Play()
 coolparticles.Parent = char.Torso
         playanim(70380478678297,1.5)    
+    else
+task.wait(.1)
+        stopanim()
+end
+elseif k == "k" then 
+if dancing == false then 
+if not isfile("Dances/Soda.mp3") then
+     game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 2.5;
+	Text = "Let The Audio Download"
+})
+	writefile("Dances/Soda.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Soda.mp3?raw=true"))
+	warn("Soda Pop Downloaded!")
+end
+        stopanim()
+dancing = true
+task.wait(.005)
+--Idle:Stop()()
+        sound69.SoundId = customasset("Dances/Soda.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(77909248721162,1.5)    
+    else
+task.wait(.1)
+        stopanim()
+end
+elseif k == "l" then 
+if dancing == false then 
+if not isfile("Dances/Jennie.mp3") then
+     game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 2.5;
+	Text = "Let The Audio Download"
+})
+	writefile("Dances/Jennie.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Jennie.mp3?raw=true"))
+	warn("Dance With Jennie Downloaded!")
+end
+        stopanim()
+dancing = true
+task.wait(.005)
+--Idle:Stop()()
+        sound69.SoundId = customasset("Dances/Jennie.mp3")
+        timeposcur = sound69.TimePosition 
+sound69:Play()
+coolparticles.Parent = char.Torso
+        playanim(123466582577669,1.5)    
     else
 task.wait(.1)
         stopanim()
