@@ -71,7 +71,11 @@ C.Enabled = true
 C.Rotation = 85
 C.Offset = Vector2.new(0,0)
 
-
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Changelogs";
+	Duration = 5;
+	Text = "2 New dances. Jennie And Soda Pop"
+})
 
 local Playsound = Instance.new("Sound",game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"))
 Playsound.Name = "Danc"
@@ -2436,6 +2440,72 @@ end
 end)
 
 tool.Unequipped:Connect(function()
+if Anim then
+Anim:Stop()
+Anim:Destroy()
+
+end
+M()
+end)
+
+local tool70 = Instance.new("Tool", backpack)
+tool70.Name = "Soda Pop"
+tool70.RequiresHandle = false
+writefile("Dances/Soda.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Soda.mp3?raw=true"))
+if not getgenv()["Animator"] then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim = nil
+
+tool70.Equipped:Connect(function()
+local character = player.Character
+if character then
+Anim = Animator.new(character, 77909248721162)
+Anim:Play()
+Anim.Stopped:Connect(function()
+Anim:Play()
+end)
+Playsound.SoundId = customasset("Dances/Soda.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
+end
+end)
+
+tool70.Unequipped:Connect(function()
+if Anim then
+Anim:Stop()
+Anim:Destroy()
+
+end
+M()
+end)
+
+local tool71 = Instance.new("Tool", backpack)
+tool71.Name = "Jennie"
+tool71.RequiresHandle = false
+writefile("Dances/Jennie.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Jennie.mp3?raw=true"))
+if not getgenv()["Animator"] then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim = nil
+
+tool71.Equipped:Connect(function()
+local character = player.Character
+if character then
+Anim = Animator.new(character, 123466582577669)
+Anim:Play()
+Anim.Stopped:Connect(function()
+Anim:Play()
+end)
+Playsound.SoundId = customasset("Dances/Jennie.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
+end
+end)
+
+tool71.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
