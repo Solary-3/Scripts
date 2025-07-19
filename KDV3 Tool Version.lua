@@ -1872,7 +1872,7 @@ Playsound:Play()
 Anim.Stopped:Connect(function()
 M()
 Anim:Play()
-wait(.205)
+wait(.255)
 Playsound:Play()
 end)
 end
