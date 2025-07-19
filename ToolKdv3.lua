@@ -2281,12 +2281,14 @@ local character = player.Character
 if character then
 Anim = Animator.new(character, 115465103089127)
 timeposcur = Playsound.TimePosition
-Anim:Play()
-Anim.Stopped:Connect(function()
-Anim:Play()
-end)
 Playsound.SoundId = customasset("Dances/Popipo.mp3")
 Playsound:Play()
+Anim:Play()
+Anim.Stopped:Connect(function()
+     M()
+Anim:Play()
+Playsound:Play()
+end)
 end
 end)
 

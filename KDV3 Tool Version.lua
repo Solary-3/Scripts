@@ -2184,9 +2184,9 @@ end
 M()
 end)
 
-local tool = Instance.new("Tool", backpack)
-tool.Name = "Popipo"
-tool.RequiresHandle = false
+local tool62 = Instance.new("Tool", backpack)
+tool62.Name = "Popipo"
+tool62.RequiresHandle = false
 writefile("Dances/Popipo.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Popipo.mp3?raw=true"))
 if not getgenv()["Animator"] then
@@ -2194,21 +2194,23 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main
 end
 local Anim = nil
 
-tool.Equipped:Connect(function()
+tool62.Equipped:Connect(function()
 local character = player.Character
 if character then
 Anim = Animator.new(character, 115465103089127)
 timeposcur = Playsound.TimePosition
-Anim:Play()
-Anim.Stopped:Connect(function()
-Anim:Play()
-end)
 Playsound.SoundId = customasset("Dances/Popipo.mp3")
 Playsound:Play()
+Anim:Play()
+Anim.Stopped:Connect(function()
+     M()
+Anim:Play()
+Playsound:Play()
+end)
 end
 end)
 
-tool.Unequipped:Connect(function()
+tool62.Unequipped:Connect(function()
 if Anim then
 Anim:Stop()
 Anim:Destroy()
