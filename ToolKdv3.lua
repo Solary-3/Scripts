@@ -136,7 +136,10 @@ tool.Equipped:Connect(function()
 end)
 
 tool.Unequipped:Connect(function()
-StopScript()
+	if Anim then
+		Anim:Stop()
+		Anim:Destroy()
+	end
 	M()
 end)
 
@@ -3465,7 +3468,7 @@ local script = G2L["e"];
 		end
 	end
 	local function removeEmptySlots()
-		for index = 1, 3 do
+		for index = 1, 9 do
 			local toolObject = inventoryHandler.OBJECTS.HotBar[index]
 			local toolFrame = hotBar:FindFirstChild(index)
 			if not toolObject and toolFrame then
