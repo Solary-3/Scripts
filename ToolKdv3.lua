@@ -1,4 +1,5 @@
 --loadstring(game:HttpGet("https://gist.githubusercontent.com/lolidkwhy678/8789dcee674b733f339fc9376e512287/raw/0faff48438c6091deb3b3672a430cdfb07417111/tsb%2520inventory"))()
+local Players = Game:GetService("Players")
 local player = game.Players.LocalPlayer
 local backpack = player:WaitForChild("Backpack")
 local playerGui = player:WaitForChild("PlayerGui")
@@ -112,125 +113,7 @@ THIS SCRIPT BELOW IS OWNED BY GELATEK, I ONLY RENAMED SOME OF THE FUNCTIONS IN I
 -- Function Packs Made By Gelatek,Credits Goes To The Respective Owner
 ]]
 ----------------- SECONDARY ANIMATION PLAYER --------------------
-local Players = Game:GetService("Players")
-local Player = Players.LocalPlayer
-local Character = Player.Character
-local Workspace = Game:GetService("Workspace")
-local CurrentCam = Workspace.CurrentCamera
-local Speed = tick()
-local Warn = warn
-local Error = error
-local Wait = task.wait
-local Infinite = math.huge
-local V3new = Vector3.new
-local INew = Instance.new
-local CFNew = CFrame.new
-local CFAngles = CFrame.Angles
-local MathRandom = math.random
-local Insert = table.insert
-local Clear = table.clear
-local Type = type
-local RootPart = Character:FindFirstChild("HumanoidRootPart")
-local Global = (getgenv and getgenv()) or shared
-local function Notification(Title, Text, Duration)
-	game:GetService("StarterGui"):SetCore("SendNotification", {
-		Title = Title or "",
-		Text = Text or "",
-		Duration = Duration or 3
-	})
-end
 
-local Figure = INew("Model"); do
-	local Limbs = {}
-	local Attachments = {}
-	local function CreateJoint(Name,Part0,Part1,C0,C1)
-		local Joint = INew("Motor6D"); Joint.Name = Name
-		Joint.Part0 = Part0; Joint.Part1 = Part1
-		Joint.C0 = C0; Joint.C1 = C1
-		Joint.Parent = Part0
-	end
-	for i = 0,18 do
-		local Attachment = INew("Attachment")
-		Attachment.Axis,Attachment.SecondaryAxis = V3new(1,0,0), V3new(0,1,0)
-		Insert(Attachments, Attachment)
-	end
-	for i = 0,3 do
-		local Limb = INew("Part")
-		Limb.Size = V3new(1, 2, 1); Limb.CanCollide = false
-		Limb.Parent = Figure
-		Insert(Limbs, Limb)
-	end
-	Limbs[1].Name = "Right Arm"; Limbs[2].Name = "Left Arm"
-	Limbs[3].Name = "Right Leg"; Limbs[4].Name = "Left Leg"
-	local Head = INew("Part")
-	Head.Size = V3new(2,1,1)
-	Head.Locked = true; Head.CanCollide = false
-	Head.Name = "Head"
-	Head.Parent = Figure
-	local Torso = INew("Part")
-	Torso.Size = V3new(2, 2, 1)
-	Torso.Locked = true; Torso.CanCollide = false
-	Torso.Name = "Torso"
-	Torso.Parent = Figure
-	local Root = Torso:Clone()
-	Root.Transparency = 1
-	Root.Name = "HumanoidRootPart"
-	Root.Parent = Figure
-	CreateJoint("Neck", Torso, Head, CFNew(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0), CFNew(0, -0.5, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0))
-	CreateJoint("RootJoint", Root, Torso, CFNew(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0), CFNew(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0))
-	CreateJoint("Right Shoulder", Torso, Limbs[1], CFNew(1, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0), CFNew(-0.5, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0))
-	CreateJoint("Left Shoulder", Torso, Limbs[2], CFNew(-1, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0), CFNew(0.5, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0))
-	CreateJoint("Right Hip", Torso, Limbs[3], CFNew(1, -1, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0), CFNew(0.5, 1, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0))
-	CreateJoint("Left Hip", Torso, Limbs[4], CFNew(-1, -1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0), CFNew(-0.5, 1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0))
-	local Humanoid = INew("Humanoid")
-	Humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
-	Humanoid.Parent = Figure
-	local Animator = INew("Animator", Humanoid)
-	local HumanoidDescription = INew("HumanoidDescription", Humanoid)
-	local HeadMesh = INew("SpecialMesh")
-	HeadMesh.Scale = V3new(1.25, 1.25, 1.25)
-	HeadMesh.Parent = Head
-	local Face = INew("Decal")
-	Face.Name = "face"
-	Face.Texture = "http://www.roblox.com/asset/?id=158044781"
-	Face.Parent = Head
-	local Animate = INew("LocalScript")
-	Animate.Name = "Animate"
-	Animate.Parent = Figure
-	local Health = INew("Script")
-	Health.Name = "Health"
-	Health.Parent = Figure
-	Attachments[1].Name = "FaceCenterAttachment"; Attachments[1].Position = V3new(0, 0, 0)
-	Attachments[2].Name = "FaceFrontAttachment"; Attachments[2].Position = V3new(0, 0, -0.6)
-	Attachments[3].Name = "HairAttachment"; Attachments[3].Position = V3new(0, 0.6, 0)
-	Attachments[4].Name = "HatAttachment"; Attachments[4].Position = V3new(0, 0.6, 0)
-	Attachments[5].Name = "RootAttachment"; Attachments[5].Position = V3new(0, 0, 0)
-	Attachments[6].Name = "RightGripAttachment"; Attachments[6].Position = V3new(0, -1, 0)
-	Attachments[7].Name = "RightShoulderAttachment"; Attachments[7].Position = V3new(0, 1, 0)
-	Attachments[8].Name = "LeftGripAttachment"; Attachments[8].Position = V3new(0, -1, 0)
-	Attachments[9].Name = "LeftShoulderAttachment"; Attachments[9].Position = V3new(0, 1, 0)
-	Attachments[10].Name = "RightFootAttachment"; Attachments[10].Position = V3new(0, -1, 0)
-	Attachments[11].Name = "LeftFootAttachment"; Attachments[11].Position = V3new(0, -1, 0)
-	Attachments[12].Name = "BodyBackAttachment"; Attachments[12].Position = V3new(0, 0, 0.5)
-	Attachments[13].Name = "BodyFrontAttachment"; Attachments[13].Position = V3new(0, 0, -0.5)
-	Attachments[14].Name = "LeftCollarAttachment"; Attachments[14].Position = V3new(-1, 1, 0)
-	Attachments[15].Name = "NeckAttachment"; Attachments[15].Position = V3new(0, 1, 0)
-	Attachments[16].Name = "RightCollarAttachment"; Attachments[16].Position = V3new(1, 1, 0)
-	Attachments[17].Name = "WaistBackAttachment"; Attachments[17].Position = V3new(0, -1, 0.5)
-	Attachments[18].Name = "WaistCenterAttachment"; Attachments[18].Position = V3new(0, -1, 0)
-	Attachments[19].Name = "WaistFrontAttachment"; Attachments[19].Position = V3new(0, -1, -0.5)
-	Attachments[1].Parent = Head; Attachments[2].Parent = Head; Attachments[3].Parent = Head Attachments[4].Parent = Head
-	Attachments[5].Parent = Root
-	Attachments[6].Parent = Limbs[1]; Attachments[7].Parent = Limbs[1]
-	Attachments[8].Parent = Limbs[2]; Attachments[9].Parent = Limbs[2]
-	Attachments[10].Parent = Limbs[3]; Attachments[11].Parent = Limbs[4]
-	for i = 0,7 do Attachments[12 + i].Parent = Torso end
-	Figure.Name = "GelatekReanimate"
-	Figure.PrimaryPart = Head
-	Figure.Archivable = true
-	Figure.Parent = Workspace
-	Figure:MoveTo(RootPart.Position)
-end
 local function Antiscript()
 	local part = Instance.new("Part")
 	part.Transparency = 1
@@ -283,7 +166,7 @@ local function StopScript()
 	end
 	-- Events
 
-	local Figure = workspace:WaitForChild("GelatekReanimate")
+	local Figure = player
 	local Character = Figure:FindFirstChild(game:FindFirstChildOfClass("Players").LocalPlayer.Name)
 	local TestServ = game:GetService("TestService")
 	local Humanoid = Figure:FindFirstChildOfClass("Humanoid")
