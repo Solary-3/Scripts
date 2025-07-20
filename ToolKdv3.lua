@@ -159,13 +159,11 @@ local function AlignPart(Part0, Part1, Position, Orientation)
 	end
 end
 
-Global.GetLoadLibrary = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/lib/LoadLibrary.lua"))()
-end
+
+
+
 local function StopScript()
 	
-	local Global = (getgenv and getgenv()) or shared
-	Global.PartDisconnected = false
 	local function CreateJoint(Name,Part0,Part1,C0,C1)
 		local Joint = Instance.new("Motor6D")
 		Joint.Parent = Part0
@@ -176,10 +174,6 @@ local function StopScript()
 		Joint.C1 = C1
 	end
 	-- Events
-	Global.Stopped = true
-	for i,v in pairs(Global.TableOfEvents) do
-		v:Disconnect()
-	end
 
 	local Figure = workspace:WaitForChild("GelatekReanimate")
 	local Character = Figure:FindFirstChild(game:FindFirstChildOfClass("Players").LocalPlayer.Name)
@@ -297,7 +291,6 @@ local function StopScript()
 		if blt:FindFirstChild("Movement") then blt:FindFirstChild("Movement"):Destroy() end
 	end
 	task.wait(0.125)
-	Global.Stopped = false
 	Root.Anchored = false
 	Root.CFrame = Root.CFrame * CFrame.new(0,5,0)
 end
@@ -348,7 +341,6 @@ local function PlayAnimation(ID,AudioPath)
 		Character.Humanoid.Animator:Destroy()
 	end
 	while true do
-		if Global.Stopped == true then break end
 		for i,v in pairs(Frames) do
 			task.spawn(function()
 				if Global.Stopped == true then return end
