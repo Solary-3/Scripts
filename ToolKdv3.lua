@@ -1,4 +1,4 @@
---loadstring(game:HttpGet("https://gist.githubusercontent.com/lolidkwhy678/8789dcee674b733f339fc9376e512287/raw/0faff48438c6091deb3b3672a430cdfb07417111/tsb%2520inventory"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/GUI.lua"))()
 local Players = Game:GetService("Players")
 local player = game.Players.LocalPlayer
 local backpack = player:WaitForChild("Backpack")
