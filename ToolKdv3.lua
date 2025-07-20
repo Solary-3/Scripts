@@ -165,8 +165,8 @@ local function StopScript()
 		Joint.C1 = C1
 	end
 	-- Events
-
-	local Figure = player
+     local lp = game:GetService("Players").LocalPlayer
+	local Figure = workspace:WaitForChild(lp.Name.."_Fake")
 	local Character = Figure:FindFirstChild(game:FindFirstChildOfClass("Players").LocalPlayer.Name)
 	local TestServ = game:GetService("TestService")
 	local Humanoid = Figure:FindFirstChildOfClass("Humanoid")
