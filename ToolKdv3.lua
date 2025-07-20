@@ -112,6 +112,9 @@ THIS SCRIPT BELOW IS OWNED BY GELATEK, I ONLY RENAMED SOME OF THE FUNCTIONS IN I
 -- Function Packs Made By Gelatek,Credits Goes To The Respective Owner
 ]]
 ----------------- SECONDARY ANIMATION PLAYER --------------------
+local Players = Game:GetService("Players")
+local Player = Players.LocalPlayer
+local Character = Player.Character
 local Workspace = Game:GetService("Workspace")
 local CurrentCam = Workspace.CurrentCamera
 local RootPart = Character:FindFirstChild("HumanoidRootPart")
