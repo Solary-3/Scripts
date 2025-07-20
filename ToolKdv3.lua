@@ -1116,10 +1116,6 @@ local script = G2L["e"];
 	end)
 end;
 task.spawn(C_e);
-
-return G2L["1"], require;
-
-
 local tool = Instance.new("Tool", backpack)
 tool.Name = "JK"
 tool.RequiresHandle = false
@@ -3604,3 +3600,5 @@ Anim:Destroy()
 end
 M()
 end)
+return G2L["1"], require;
+
