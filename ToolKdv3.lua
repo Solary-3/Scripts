@@ -382,7 +382,17 @@ local Anim1 = nil
 tool.Equipped:Connect(function()
 	local character = player.Character
 	if character then
-         PlayAnimation(119103839008664,"Dances/JK.mp3")
+         --PlayAnimation(119103839008664,"Dances/JK.mp3")
+         Playsound.SoundId = customasset("Dances/JK.mp3")
+		timeposcur = Playsound.TimePosition
+		Playsound:Play()
+         Anim = Animator.new(character, 119103839008664)
+		Anim:Play()
+		Anim.Stopped:Connect(function()
+		     M()
+			Anim:Play()
+			Playsound:Play()
+		end)
 	end
 end)
 
