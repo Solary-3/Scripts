@@ -1,4 +1,4 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/GUI.lua"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/GUI.lua"))()
 local Players = Game:GetService("Players")
 local player = game.Players.LocalPlayer
 local backpack = player:WaitForChild("Backpack")
@@ -2968,12 +2968,6 @@ local EnumKeys = {
 	Enum.KeyCode.One,
 	Enum.KeyCode.Two,
 	Enum.KeyCode.Three,
-	Enum.KeyCode.Four,
-	Enum.KeyCode.Five,
-	Enum.KeyCode.Six,
-	Enum.KeyCode.Seven,
-	Enum.KeyCode.Eight,
-	Enum.KeyCode.Nine,
 }
 -- tool object methods
 local toolObjectMetatable = {}
