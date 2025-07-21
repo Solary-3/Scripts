@@ -968,13 +968,13 @@ local script = G2L["e"];
 			inventoryHandler:removeCurrentDescription()
 			if currentState then
 				showSlots()
-				CustomInventoryGUI.openButton.Position = UDim2.fromScale(0,0.5)
+				CustomInventoryGUI.openButton.Position = UDim2.fromScale(.34,1.043)
 				CustomInventoryGUI.openButton.info.Text = "Hide"
 			else
 				if not inventoryHandler.SETTINGS.SHOW_EMPTY_TOOL_FRAMES_IN_HOTBAR then
 					removeEmptySlots()
 				end
-				CustomInventoryGUI.openButton.Position = UDim2.fromScale(0,0)
+				CustomInventoryGUI.openButton.Position = UDim2.fromScale(.34,1.043)
 				CustomInventoryGUI.openButton.info.Text = "Show"
 			end
 		elseif not inputState then
