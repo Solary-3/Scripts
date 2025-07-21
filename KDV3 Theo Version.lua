@@ -2,10 +2,9 @@ local Place = game.placeId
 if Place == 17574618959 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 end
-if not isfile("Dances/Pixelation.mp3") then
-	writefile("Dances/Pixelation.mp3", 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pixelation.mp3?raw=true"))
-	warn("Pixelation Downloaded!")
+if not isfile("Dances/Sphere.mp3") then
+	writefile("Dances/Sphere.mp3",
+	     game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Sphere.mp3?raw=true"))
 end
 loadstring(game:HttpGet("https://raw.githubusercontent.com/9274837292748/aawdadadadada/refs/heads/main/kasck"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
@@ -669,7 +668,7 @@ end
             playanother = true 
             sound69.PlaybackSpeed = 1
             if playbacktrack == true then 
-            sound69.SoundId = customasset("Dances/Pixelation.mp3")
+            sound69.SoundId = customasset("Dances/Sphere.mp3")
             sound69.Volume = .75
             else 
                 sound69:Stop()
@@ -2087,6 +2086,11 @@ elseif k == "r" then
     if dancing == false then 
 stopanim()
   dancing = true
+  if not isfile("Dances/Pixelation.mp3") then
+	writefile("Dances/Pixelation.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pixelation.mp3?raw=true"))
+	warn("Pixelation Downloaded!")
+end
   Chat(Pixelation,Default)
 task.wait(.005)
 --Idle:Stop()()
