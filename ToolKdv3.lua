@@ -1143,6 +1143,42 @@ tool2.Unequipped:Connect(function()
 	M()
 end)
 
+local tool2 = Instance.new("Tool", backpack)
+tool2.Name = "JUN"
+tool2.RequiresHandle = false
+writefile("Dances/NMG.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/NMG.mp3?raw=true"))
+	if not getgenv()["Animator"] then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim = nil
+
+tool2.Equipped:Connect(function()
+	local character = player.Character
+	if character then
+	     Playsound.SoundId = customasset("Dances/NMG.mp3")
+		timeposcur = Playsound.TimePosition
+		Anim = Animator.new(character, 91787441180652)
+		Anim:Play()
+		wait(.500)
+		Playsound:Play()
+		Anim.Stopped:Connect(function()
+		     M()
+			Anim:Play()
+			wait(.500)
+			Playsound:Play()
+		end)
+	end
+end)
+
+tool2.Unequipped:Connect(function()
+	if Anim then
+		Anim:Stop()
+		Anim:Destroy()
+	end
+	M()
+end)
+
 
 
 
@@ -3250,6 +3286,7 @@ Anim:Play()
 Anim.Stopped:Connect(function()
      M()
 Anim:Play()
+wait(.100)
 Playsound:Play()
 end)
 end
