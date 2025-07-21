@@ -6,6 +6,7 @@ if not isfile("Dances/Sphere.mp3") then
 	writefile("Dances/Sphere.mp3",
 	     game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Sphere.mp3?raw=true"))
 end
+loadstring(game:HttpGet('https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/main/MobileKeyboard.txt'))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AstraOutlight/my-scripts/refs/heads/main/namertag"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
 
