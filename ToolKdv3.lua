@@ -1,117 +1,8 @@
---loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/GUI.lua"))()
-local Players = Game:GetService("Players")
-local player = game.Players.LocalPlayer
-local backpack = player:WaitForChild("Backpack")
-local playerGui = player:WaitForChild("PlayerGui")
-local timeposcur = 0
-local SG = Instance.new("ScreenGui")
- SG.Parent = player:WaitForChild("PlayerGui")
-local CaptionStroke = Instance.new("UIStroke")
-local Caption = Instance.new("TextLabel")
-local Text2 = Instance.new("UIStroke")
-local Text3 = Instance.new("UIStroke")
-local C = Instance.new("UIGradient")
-local Rq = Instance.new("UIGradient")
-local G = Color3.fromRGB(100, 100, 100)
-local A = Color3.fromRGB(255,255,255)
-local W = Color3.fromRGB(255, 255, 255)
-local H = ColorSequence.new{
-    ColorSequenceKeypoint.new(0, A),
-    ColorSequenceKeypoint.new(0.500, G),
-    ColorSequenceKeypoint.new(1, W)
-}
+--[[
+Script Made By Theo/パノラマ!
+Overhauled Tool Gui!
 
-
-
-local billboard2 = Instance.new("BillboardGui")
-        billboard2.Name = "BBG"
-        billboard2.Size = UDim2.new(0, 100, 0, 40)
-        billboard2.StudsOffset = Vector3.new(0, 5, 0)
-        billboard2.Adornee = player.Character.Head
-        billboard2.AlwaysOnTop = true
-        billboard2.MaxDistance = 25
-        billboard2.Parent = player.Character.Head
-    local Q = Instance.new("TextLabel")
-    Q.Text = "─Tool Version─"
-    Q.Font = Enum.Font.Sarpanch
-    Q.TextSize = 30
-    Q.TextColor3 = Color3.fromRGB(0, 0, 0)
-    Q.BackgroundTransparency = 1
-    Q.Parent = billboard2
-    Q.Position = UDim2.new(0.5, -50, 1, -15) 
-    Q.Size = UDim2.new(1, 0, 1, 0)
-    Q.Rotation = 0
-Text2.Thickness = 1
-Text2.Color = Color3.fromRGB(255,255,255)
-Text2.Parent = Q
-Text2.LineJoinMode = Enum.LineJoinMode.Miter
-Rq.Parent = Text2
-Rq.Color = H
-Rq.Name = "Test3"
-Rq.Enabled = true 
-Rq.Rotation = 85
-Rq.Offset = Vector2.new(-1,0)
-local textLabel1 = Instance.new("TextLabel")
-textLabel1.Text = "─「 KRYSTAL DANCE 」─"
-textLabel1.Font = Enum.Font.Sarpanch
-textLabel1.TextSize = 50
-textLabel1.TextColor3 = Color3.fromRGB(0, 0, 0)
-textLabel1.BackgroundTransparency = 100
-textLabel1.Parent = billboard2
-textLabel1.Size = UDim2.new(1, 0, 1, 0)
-textLabel1.Rotation = 0
-Text3.Thickness = 1
-Text3.Color = Color3.fromRGB(255,255,255)
-Text3.Parent = textLabel1
-Text3.LineJoinMode = Enum.LineJoinMode.Miter
-C.Parent = Text3
-C.Color = H
-C.Name = "Test2"
-C.Enabled = true 
-C.Rotation = 85
-C.Offset = Vector2.new(0,0)
-
-
-
-
-local Playsound = Instance.new("Sound",game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"))
-Playsound.Name = "Danc"
-Playsound.Volume = 1
-Playsound.Looped = true
-Playsound.Parent = game:GetService("RunService")
-local exploit = "shitsploit"
-        pcall(function()
-            exploit = getexecutorname()
-        end)
-	local customasset = function(id)
-        if exploit ~= "CaetSploit" then
-        idwithoutthatbit= string.gsub(id,"Dances/","")
-        if not isfile(id) then 
-         writefile(id,game:HttpGet("https://github.com/Solary-3/Scripts/tree/Audios-1"..idwithoutthatbit))
-        end
-       repeat task.wait() until isfile(id)
-    end
-        local s = Instance.new("Sound")
-        s.Parent =game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-        s.SoundId = getcustomasset(id)
-        task.spawn(function()
-            task.wait(1)
-            s:Destroy()
-        end)
-        return s.SoundId
-	end
-
-
-
-local function M()
-     Playsound:Stop()
-     --Playsound:Destroy()
-end
-
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
-wait(2)
-
-
+]]--
 local G2L = {};
 local Players = Game:GetService("Players")
 local player = game.Players.LocalPlayer
@@ -134,9 +25,6 @@ local H = ColorSequence.new{
     ColorSequenceKeypoint.new(0.500, G),
     ColorSequenceKeypoint.new(1, W)
 }
-
-
-
 local billboard2 = Instance.new("BillboardGui")
         billboard2.Name = "BBG"
         billboard2.Size = UDim2.new(0, 100, 0, 40)
@@ -217,13 +105,8 @@ end
 
 
 
-local TCGUI = game:GetService("CoreGui")
-if TCGUI:FindFirstChild([[ToolDanc]]) then 
-TCGUI.ToolDanc:Destroy()
-end
-
 -- StarterGui.Custom Inventory
-G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"),TCGUI);
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["Name"] = [[Custom Inventory]];
 G2L["1"]["ResetOnSpawn"] = true;
 
