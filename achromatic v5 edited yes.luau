@@ -347,7 +347,7 @@ coroutine.wrap(LGKSURL_fake_script)()
 
 closethisshit.MouseButton1Down:Connect(function()
 
-
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
  
 local data = {}
 
