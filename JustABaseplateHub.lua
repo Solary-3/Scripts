@@ -1,4 +1,5 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AstraOutlight/my-scripts/refs/heads/main/namertag"))()
+local H = " ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Place = game.placeId
 local Window = Rayfield:CreateWindow({
@@ -31,8 +32,8 @@ local HomeTab = Window:CreateTab("Home", nil) -- Title, Image
 local HomeSection = HomeTab:CreateSection("Main")
 
 local Paragraph = HomeTab:CreateParagraph({Title = "Just A Baseplate Hub By Theo/Paradigm", Content = "This Was Made on 06/13/25!"})
-local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content = "This Is the Final update for my hub... Im Gonna Leave It Open Source. Thats All"})
-if not Place == 17574618959 then
+local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content = "The Hub Returns... Now Added Lightning Cannon[Genesis]FE"})
+if Place ~= 17574618959 then
 local NotParagraph = HomeTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 local Divider = HomeTab:CreateDivider()
 end
@@ -622,7 +623,7 @@ highlightflingtargets = false --highlight fling
 discharscripts = true --disable character scripts
 flingchangestate = false--fling with whole body
 hidedeatheffect = true --hides the red damage border when you die (respawn)
-respawntp = 3 --respawn tp mode
+respawntp = 2 --respawn tp mode
 -- 0 - stay at spawn
 -- 1 - randomtp close
 -- 2 - behind fake character
@@ -660,7 +661,7 @@ highlightflingtargets = true --highlight fling
 discharscripts = true --disable character scripts
 flingchangestate = true --fling with whole body
 hidedeatheffect = true --hides the red damage border when you die (respawn)
-respawntp = 3 --respawn tp mode
+respawntp = 2 --respawn tp mode
 -- 0 - stay at spawn
 -- 1 - randomtp close
 -- 2 - behind fake character
@@ -695,7 +696,7 @@ highlightflingtargets = true --highlight fling
 discharscripts = true --disable character scripts
 flingchangestate = true --fling with whole body
 hidedeatheffect = true --hides the red damage border when you die (respawn)
-respawntp = 3 --respawn tp mode
+respawntp = 2 --respawn tp mode
 -- 0 - stay at spawn
 -- 1 - randomtp close
 -- 2 - behind fake character
@@ -729,7 +730,7 @@ highlightflingtargets = false --highlight fling
 discharscripts = true --disable character scripts
 flingchangestate = true --fling with whole body
 hidedeatheffect = true --hides the red damage border when you die (respawn)
-respawntp = 3 --respawn tp mode
+respawntp = 2 --respawn tp mode
 -- 0 - stay at spawn
 -- 1 - randomtp close
 -- 2 - behind fake character
@@ -747,9 +748,66 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 --==========================================================================================================================--
    end,
 })
+local LC = MainTab:CreateButton({
+   Name = "Genesis Lightning Cannon",
+   Callback = function() 
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
+--[[
+
+_________                       _____            ___________________
+__  ____/__________________________(_)_______    ___  ____/__  ____/
+_ /__ _  _ \_  __ \  _ \_  ___/_  /__  ___/    __  /_   __  __/   
+/ /_///  __/ /// __/(__  )_ /_(__  )     _  __/   _  /___   
+\____/  \___//_/ /_/\___//____/ /_/  /____/      /_/      /_____/   							
+
+by rqz					
+https://discord.com/invite/aEZpBEHgMT
+]]--
+
+--===================================--
+--          Script Options           --
+--===================================--
+
+lightmode=false --overwrite black mode colors with white
+effects=true--toggle effects (if you experience performance issues try setting to false)
+timemultiplier=1 --change animation speed (min=0.1,default=1,max=10)
+walkspeedmultiplier=1 --change walkspeed (default=1,min/mix=-∞-->+∞)
+
+--====================================--
+--          FDless Options           --
+--====================================--
+
+permadeath=true --adds permanent death (no respawning), see #supported-executors channel for executors that work with this
+fling=true --toggle fling
+allowshiftlock=true --adds shiftlock to patchma rig
+ctrltp=true --adds control click tp
+placeholders=false --adds transparent parts showing your hats when you don't have real ones
+clickfling=true --adds click flinging regardless of attacks
+highlightflingtargets=false --highlight fling
+discharscripts=true --disable character scripts
+flingchangestate=true --fling with whole body
+hidedeatheffect=true --hides the red damage border when you die (respawn)
+respawntp=2 --respawn tp mode
+--0 -stay at spawn
+--1 -randomtp close
+--2 -behind fake character
+--3 -hide body
+breakjointsmethod=1 --breakjoints mode
+--1 -health+breakjoints (the most support)
+--2 -health or breakjoints
+--3 -breakjoints
+simrad=true --sets simulation radius
+
+--==========================================================================================================================--
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Lightning%20Cannon"))()
+
+--==========================================================================================================================--
+   end,
+})
+
+
 local MainSection = MainTab:CreateSection("Other")
-
-
 
 local Button8 = MainTab:CreateButton({
    Name = "Achromoonic",
@@ -783,9 +841,7 @@ local Button10= MainTab:CreateButton({
         if Place == 17574618959 then
 local NotDivider = MainTab:CreateDivider()
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
-task.wait(.1)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
-task.wait(.1)
+task.wait(2.250)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 end
 task.wait(2.150)
@@ -847,13 +903,36 @@ end,
 local Spectrum = MainTab:CreateButton({
    Name = "Spectrum Glitcher",
    Callback = function(A)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+--game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 task.wait(3)
+local settings = _G
 
+settings["Use default animations"] = true
+settings["Fake character transparency level"] = 1
+settings["Disable character scripts"] = true
+settings["Fake character should collide"] = true
+settings["Parent real character to fake character"] = false
+settings["Respawn character"] = true
+settings["Instant respawn"] = false
+settings["Hide HumanoidRootPart"] = false
+settings["PermaDeath fake character"] = true
+settings["R15 Reanimate"] = false
+settings["Names to exclude from transparency"] = {
+    --[[ example:
+    ["HumanoidRootPart"] = true,
+    ["Left Arm"] = true
+    ]]
+}
+(function() if getgenv then return getgenv() else return _G end end)().fling = nil
+local finished = false
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/nicolasbarbosa323/SCPECTRUMGLITCHER/refs/heads/main/SpectrumG%20(1).txt"))()
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Those who claims its your script, i dont like you.")
+task.spawn(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/nicolasbarbosa323/SCPECTRUMGLITCHER/refs/heads/main/SpectrumG%20(1).txt"))()
+end)
+
+repeat task.wait() until finished
+
 end,
 })
 
@@ -911,14 +990,35 @@ local RemoveHatsButton = HatsTab:CreateButton({
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
    end,
 })
+local Respawn= HatsTab:CreateButton({
+   Name = "Respawn",
+   Callback = function() 
+  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
+   end,
+})
+
+local Respawn= HatsTab:CreateButton({
+   Name = "Save Hat",
+   Callback = function() 
+  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
+   end,
+})
+
 local RemoveHatsDivider1 = HatsTab:CreateDivider()
 local HatsParagraph = HatsTab:CreateParagraph({Title = "IMPORTANT!", Content = "It is important that you should always load the rigs for genesis so everyone can see you"})
 local Button  = HatsTab:CreateButton({
    Name = "Genesis Rigs",
    Callback = function() 
-  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 138364679836274 82942681251131 140395948277978 102599402682100 90960046381276 13058406993") 
+  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 138364679836274 82942681251131 140395948277978 102599402682100 90960046381276 13058406993 ") 
    end,
 })
+
+--[[local Button  = HatsTab:CreateButton({
+   Name = "Genesis Rigs[Black]",
+   Callback = function() 
+  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 14255528083 17401151565,17387616772 85392395166623 131385506535381 ") 
+   end,
+})]]--
 local Divider1 = HatsTab:CreateDivider()
 local Paragraph1 = HatsTab:CreateParagraph({Title = "Custom", Content = "Here You can load custom Genesis hats 🤔, if you want custom hats for genesis, consider looking it at the Foundations game."})
 
@@ -929,7 +1029,7 @@ local Input = HatsTab:CreateInput({
    RemoveTextAfterFocusLost = false,
    Callback = function(ID)
    local Custom = (ID)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh "..tostring(ID))
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh "..tostring(ID) ..tostring(H))
    end,
 })
 local customButton = HatsTab:CreateButton({
@@ -959,6 +1059,13 @@ local Button4 = HatsTab:CreateButton({
    Name = "Sin Dragon",
    Callback = function() 
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 117186631495734 99965319383570 132770514241770 3756389957 14864581977  150381051 4504231783")
+   end,
+})
+
+local LightningCannon = HatsTab:CreateButton({
+   Name = "Lightning Cannon",
+   Callback = function() 
+  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 111672581230926 126145101810389 136055191177936")
    end,
 })
 
@@ -997,6 +1104,16 @@ local Button = HubsTab:CreateButton({
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/Main.lua"))()
    end,
 })
+
+local Patchma = HubsTab:CreateButton({
+   Name = "Patchma Hub",
+   Callback = function() 
+   -- https://scriptblox.com/script/Universal-Script-Gelatek-hub-26438l9cal
+
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Patchma-Hub-36193"))()
+   end,
+})
+
 local Button1 = HubsTab:CreateButton({
     Name = "Fire X Hub V2",
     Callback = function()
