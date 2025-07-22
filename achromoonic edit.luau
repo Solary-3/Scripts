@@ -276,6 +276,7 @@ if CloneChar.Head:FindFirstChildOfClass("Decal") then CloneChar.Head:FindFirstCh
 			end
 			PerfectionWeld()
 		end
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 
 		--// Shortcut Variables \\--
 		local S = setmetatable({},{__index = function(s,i) return game:service(i) end})
