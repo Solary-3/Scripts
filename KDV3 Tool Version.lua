@@ -3425,7 +3425,7 @@ local tool = Instance.new("Tool", backpack)
 tool.Name = "Insanity"
 tool.RequiresHandle = false
 
-writefile("Insanity.mp3", 
+writefile("Dances/Insanity.mp3", 
      game:HttpGet("https://github.com/gObl00x/Epik-Musics/raw/refs/heads/main/Insanity.mp3"))
 if not getgenv()["Animator"] then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
