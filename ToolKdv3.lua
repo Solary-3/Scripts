@@ -1231,6 +1231,39 @@ end
 M()
 end)
 
+local tool = Instance.new("Tool", backpack)
+tool.Name = "Insanity"
+tool.RequiresHandle = false
+
+writefile("Insanity.mp3", 
+     game:HttpGet("https://github.com/gObl00x/Epik-Musics/raw/refs/heads/main/Insanity.mp3"))
+if not getgenv()["Animator"] then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim = nil
+
+tool.Equipped:Connect(function()
+local character = player.Character
+if character then
+Anim = Animator.new(character, 139483347792972)
+Anim:Play()
+Anim.Stopped:Connect(function()
+Anim:Play()
+end)
+Playsound.SoundId = customasset("Dances/Insanity.mp3")
+timeposcur = Playsound.TimePosition
+Playsound:Play()
+end
+end)
+
+tool.Unequipped:Connect(function()
+if Anim then
+Anim:Stop()
+Anim:Destroy()
+end
+M()
+end)
+
 
 local tool3 = Instance.new("Tool", backpack)
 tool3.Name = "Rat"
