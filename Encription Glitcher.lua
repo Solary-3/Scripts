@@ -1060,6 +1060,7 @@ local function PerfectionWeld()
 	WeldParts(Parts, script.WingPiece.Main, "Weld", false)
 end
 PerfectionWeld()
+			game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 end
 
 --// Shortcut Variables \\--
