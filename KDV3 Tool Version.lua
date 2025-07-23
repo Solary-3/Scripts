@@ -3,12 +3,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AstraOutlight/my-scri
 Script Made By Theo/パノラマ!
 Overhauled Tool Gui!
 ]]--
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Changelogs";
-	Duration = 5;
-	Text = "Added Insanity Dance"
-})
-
 local G2L = {};
 local Players = Game:GetService("Players")
 local player = game.Players.LocalPlayer
