@@ -1267,6 +1267,112 @@ M()
 end)
 
 local tool = Instance.new("Tool", backpack)
+tool.Name = "JK"
+tool.RequiresHandle = false
+writefile("Dances/JK.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/JK.mp3?raw=true"))
+	if not getgenv()["Animator"] then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim1 = nil
+
+tool.Equipped:Connect(function()
+	local character = player.Character
+	if character then
+         --PlayAnimation(119103839008664,"Dances/JK.mp3")
+         Playsound.SoundId = customasset("Dances/JK.mp3")
+		timeposcur = Playsound.TimePosition
+		Playsound:Play()
+         Anim = Animator.new(character, 119103839008664)
+		Anim:Play()
+		Anim.Stopped:Connect(function()
+		     M()
+			Anim:Play()
+			Playsound:Play()
+		end)
+	end
+end)
+
+tool.Unequipped:Connect(function()
+	if Anim then
+		Anim:Stop()
+		Anim:Destroy()
+	end
+	M()
+end)
+
+local tool2 = Instance.new("Tool", backpack)
+tool2.Name = "KJ"
+tool2.RequiresHandle = false
+writefile("Dances/UNLIMITEDFLEXWORKS.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/UNLIMITEDFLEXWORKS.mp3?raw=true"))
+	if not getgenv()["Animator"] then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim = nil
+
+tool2.Equipped:Connect(function()
+	local character = player.Character
+	if character then
+	     Playsound.SoundId = customasset("Dances/UNLIMITEDFLEXWORKS.mp3")
+		timeposcur = Playsound.TimePosition
+		Playsound:Play()
+		Anim = Animator.new(character, 74138372568467)
+		Anim:Play()
+		wait(1.250)
+		Anim.Stopped:Connect(function()
+		     M()
+			Anim:Play()
+			Playsound:Play()
+		end)
+	end
+end)
+
+tool2.Unequipped:Connect(function()
+	if Anim then
+		Anim:Stop()
+		Anim:Destroy()
+	end
+	M()
+end)
+
+local tool2 = Instance.new("Tool", backpack)
+tool2.Name = "Jun"
+tool2.RequiresHandle = false
+writefile("Dances/NMG.mp3", 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/NMG.mp3?raw=true"))
+	if not getgenv()["Animator"] then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
+local Anim = nil
+
+tool2.Equipped:Connect(function()
+	local character = player.Character
+	if character then
+	     Playsound.SoundId = customasset("Dances/NMG.mp3")
+		timeposcur = Playsound.TimePosition
+		Anim = Animator.new(character, 91787441180652)
+		Anim:Play()
+		wait(.500)
+		Playsound:Play()
+		Anim.Stopped:Connect(function()
+		     M()
+			Anim:Play()
+			wait(.500)
+			Playsound:Play()
+		end)
+	end
+end)
+
+tool2.Unequipped:Connect(function()
+	if Anim then
+		Anim:Stop()
+		Anim:Destroy()
+	end
+	M()
+end)
+
+local tool = Instance.new("Tool", backpack)
 tool.Name = "Billie Jean"
 tool.RequiresHandle = false
 

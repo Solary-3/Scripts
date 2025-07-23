@@ -1144,7 +1144,7 @@ tool2.Unequipped:Connect(function()
 end)
 
 local tool2 = Instance.new("Tool", backpack)
-tool2.Name = "JUN"
+tool2.Name = "Jun"
 tool2.RequiresHandle = false
 writefile("Dances/NMG.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/NMG.mp3?raw=true"))
