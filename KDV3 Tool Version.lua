@@ -21,7 +21,7 @@ local function createTag(player)
 
 		local billboard = Instance.new("BillboardGui")
 		billboard.Name = TAG_NAME
-		billboard.Size = UDim2.new(0, 100, 0, 40)
+		billboard.Size = UDim2.new(3, 0, 2, 0)
 		billboard.StudsOffset = Vector3.new(-0.6, 0, 0)
 		billboard.Adornee = player.Character.Head
 		billboard.AlwaysOnTop = true
