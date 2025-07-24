@@ -26,6 +26,13 @@ local function createTag(player)
 		billboard.Adornee = player.Character.Head
 		billboard.AlwaysOnTop = true
 		billboard.Parent = player.Character.Head
+          local billboard1 = Instance.new("BillboardGui")
+		billboard1.Name = TAG_NAME
+		billboard1.Size = UDim2.new(0, 100, 0, 40)
+		billboard1.StudsOffset = Vector3.new(0, 2.5, 0)
+		billboard1.Adornee = player.Character.Head
+		billboard1.AlwaysOnTop = true
+		billboard1.Parent = player.Character.Head
 		local label = Instance.new("TextLabel")
 		label.Size = UDim2.new(1, 0, 1, 0)
 		label.BackgroundTransparency = 1
@@ -34,7 +41,8 @@ local function createTag(player)
 		label.TextStrokeTransparency = 0
 		label.TextScaled = true
 		label.Font = Enum.Font.Sarpanch
-		label.Parent = billboard
+       -- label.Position = UDim2.new(0,0.6,0,-100)
+		label.Parent = billboard1
           local imageLabel = Instance.new("ImageLabel")
           imageLabel.Size = UDim2.new(1, 0, 1, 0)
           imageLabel.BackgroundTransparency = 1
