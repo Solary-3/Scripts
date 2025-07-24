@@ -2,18 +2,16 @@
 --[[
 Script Made By Theo/パノラマ!
 ]]--
-
+local tagAssetId = "rbxassetid://130932483511701"
 local imageId = "rbxassetid://89287417287641"
 local Players = game:GetService("Players")
 local TAG_NAME = "ScriptOwnerTag"
 local TARGET_USERNAMES = { "Mocaxery", "rWeFrRoblox", "TeenageTungTungSahur", "AstraOutLight",  "skibidaneosn",  "SHIMYMSHIMMYAYE", "rWeFrRoblox2", "ferxD", "rWeDeadahhRoblox", "Xyrevexxx","hairyPu1beMuncher", "Theo_TheoBenzo" } -- Add more here
 local CHECK_INTERVAL = 2
-
 local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
 	TargetLookup[name] = true
 end
-
 local function createTag(player)
 	if player.Character and player.Character:FindFirstChild("Head") then
 		if player.Character.Head:FindFirstChild(TAG_NAME) then return end
@@ -38,7 +36,7 @@ local function createTag(player)
           local imageLabel = Instance.new("ImageLabel")
           imageLabel.Size = UDim2.new(1, 0, 1, 0)
           imageLabel.BackgroundTransparency = 1
-          imageLabel.Image = imageId
+          imageLabel.Image = tagAssetId
           imageLabel.Parent = billboard
 	end
 end
