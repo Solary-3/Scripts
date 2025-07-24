@@ -3,6 +3,48 @@
 Script Made By Theo/パノラマ!
 Overhauled Tool Gui!
 ]]--
+local tagAssetId = "rbxassetid://130932483511701"
+local imageId = "rbxassetid://89287417287641"
+local playerNames = {"Mocaxery","Theo_TheoBenzo"}
+
+local RunService = game:GetService("RunService")
+
+RunService.RenderStepped:Connect(function()
+    for _, name in ipairs(playerNames) do
+        local player = game.Players:FindFirstChild(name)
+        if player and player.Character and player.Character:FindFirstChild("Head") then
+            local head = player.Character.Head
+
+            if not head:FindFirstChild("Tag") then
+                local tag = game:GetObjects(tagAssetId)[1]
+                tag.Name = "Tag"
+                tag.Parent = head
+            end
+
+            if not head:FindFirstChild("FabulousGui") then
+                local billboard = Instance.new("BillboardGui")
+                billboard.Name = "FabulousGui"
+                billboard.Size = UDim2.new(3, 0, 2, 0)
+                billboard.AlwaysOnTop = true
+                billboard.Adornee = head
+                billboard.Parent = head
+                billboard.MaxDistance = 50
+                billboard.StudsOffset = Vector3.new(-0.6, 0, 0)
+
+                local imageLabel = Instance.new("ImageLabel")
+                imageLabel.Size = UDim2.new(1, 0, 1, 0)
+                imageLabel.BackgroundTransparency = 1
+                imageLabel.Image = imageId
+                imageLabel.Parent = billboard
+            end
+        end
+    end
+end)
+
+
+
+
+
 local G2L = {};
 local Players = Game:GetService("Players")
 local player = game.Players.LocalPlayer
