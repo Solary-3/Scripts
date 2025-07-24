@@ -26,6 +26,15 @@ local function createTag(player)
 		billboard.Adornee = player.Character.Head
 		billboard.AlwaysOnTop = true
 		billboard.Parent = player.Character.Head
+		local label = Instance.new("TextLabel")
+		label.Size = UDim2.new(1, 0, 1, 0)
+		label.BackgroundTransparency = 1
+		label.Text = "Script Owner / Developer"
+		label.TextColor3 = Color3.new(1, 1, 0)
+		label.TextStrokeTransparency = 0
+		label.TextScaled = true
+		label.Font = Enum.Font.Sarpanch
+		label.Parent = billboard
           local imageLabel = Instance.new("ImageLabel")
           imageLabel.Size = UDim2.new(1, 0, 1, 0)
           imageLabel.BackgroundTransparency = 1
