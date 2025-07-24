@@ -161,6 +161,7 @@ uis.InputBegan:Connect(function(input)
 end)
 
 -- Hi there this is the emote thing i made
+local RunService = game:GetService("RunService")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
 -- getting the gui working first
 local Wheel = game.Players.LocalPlayer.PlayerGui.EmoteMenu
