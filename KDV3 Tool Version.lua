@@ -1,49 +1,67 @@
 
 --[[
 Script Made By Theo/パノラマ!
-Overhauled Tool Gui!
 ]]--
-local tagAssetId = "rbxassetid://130932483511701"
+
 local imageId = "rbxassetid://89287417287641"
-local playerNames = {"Mocaxery","Theo_TheoBenzo"}
+local Players = game:GetService("Players")
+local TAG_NAME = "ScriptOwnerTag"
+local TARGET_USERNAMES = { "Mocaxery", "rWeFrRoblox", "TeenageTungTungSahur", "AstraOutLight",  "skibidaneosn",  "SHIMYMSHIMMYAYE", "rWeFrRoblox2", "ferxD", "rWeDeadahhRoblox", "Xyrevexxx","hairyPu1beMuncher", "Theo_TheoBenzo" } -- Add more here
+local CHECK_INTERVAL = 2
 
-local RunService = game:GetService("RunService")
+local TargetLookup = {}
+for _, name in pairs(TARGET_USERNAMES) do
+	TargetLookup[name] = true
+end
 
-RunService.RenderStepped:Connect(function()
-    for _, name in ipairs(playerNames) do
-        local player = game.Players:FindFirstChild(name)
-        if player and player.Character and player.Character:FindFirstChild("Head") then
-            local head = player.Character.Head
+local function createTag(player)
+	if player.Character and player.Character:FindFirstChild("Head") then
+		if player.Character.Head:FindFirstChild(TAG_NAME) then return end
 
-            if not head:FindFirstChild("Tag") then
-                local tag = game:GetObjects(tagAssetId)[1]
-                tag.Name = "Tag"
-                tag.Parent = head
-            end
+		local billboard = Instance.new("BillboardGui")
+		billboard.Name = TAG_NAME
+		billboard.Size = UDim2.new(0, 100, 0, 40)
+		billboard.StudsOffset = Vector3.new(-0.6, 0, 0)
+		billboard.Adornee = player.Character.Head
+		billboard.AlwaysOnTop = true
+		billboard.Parent = player.Character.Head
+		
+		local label = Instance.new("TextLabel")
+		label.Size = UDim2.new(1, 0, 1, 0)
+		label.BackgroundTransparency = 1
+		label.Text = "Script Owner / Developer"
+		label.TextColor3 = Color3.new(1, 1, 0)
+		label.TextStrokeTransparency = 0
+		label.TextScaled = true
+		label.Font = Enum.Font.Sarpanch
+		label.Parent = billboard
+          local imageLabel = Instance.new("ImageLabel")
+          imageLabel.Size = UDim2.new(1, 0, 1, 0)
+          imageLabel.BackgroundTransparency = 1
+          imageLabel.Image = imageId
+          imageLabel.Parent = billboard
+	end
+end
 
-            if not head:FindFirstChild("FabulousGui") then
-                local billboard = Instance.new("BillboardGui")
-                billboard.Name = "FabulousGui"
-                billboard.Size = UDim2.new(3, 0, 2, 0)
-                billboard.AlwaysOnTop = true
-                billboard.Adornee = head
-                billboard.Parent = head
-                billboard.MaxDistance = 50
-                billboard.StudsOffset = Vector3.new(-0.6, 0, 0)
-
-                local imageLabel = Instance.new("ImageLabel")
-                imageLabel.Size = UDim2.new(1, 0, 1, 0)
-                imageLabel.BackgroundTransparency = 1
-                imageLabel.Image = imageId
-                imageLabel.Parent = billboard
-            end
-        end
-    end
+task.spawn(function()
+	while true do
+		for _, player in pairs(Players:GetPlayers()) do
+			if TargetLookup[player.Name] then
+				createTag(player)
+			end
+		end
+		task.wait(CHECK_INTERVAL)
+	end
 end)
 
-
-
-
+Players.PlayerAdded:Connect(function(player)
+	if TargetLookup[player.Name] then
+		player.CharacterAdded:Connect(function()
+			task.wait(1)
+			createTag(player)
+		end)
+	end
+end)
 
 local G2L = {};
 local Players = Game:GetService("Players")
