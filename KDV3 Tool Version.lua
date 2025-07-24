@@ -1,4 +1,4 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AstraOutlight/my-scripts/refs/heads/main/namertag"))()
+
 --[[
 Script Made By Theo/パノラマ!
 Overhauled Tool Gui!
