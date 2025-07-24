@@ -44,7 +44,7 @@ wait()
 
 local tagAssetId = "rbxassetid://130932483511701"
 local imageId = "rbxassetid://89287417287641"
-local playerNames = "Theo_TheoBenzo"
+local playerNames = {"Mocaxery","Theo_TheoBenzo"}
 
 local RunService = game:GetService("RunService")
 
