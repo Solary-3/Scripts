@@ -44,15 +44,21 @@ Anim:Play()
 id = i
 hum.WalkSpeed = 8
 uis.InputBegan:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.LeftShift and charge == false and tele == false then
-	sprinting1 = not sprinting1
-	if sprinting1 then
-		hum.WalkSpeed = 27.5
-		else
-		     hum.Walkspeed = 8
-		end
+	if input.KeyCode == Enum.KeyCode.LeftShift and charge == false and tele == false and sprinting1 == false then
+	--sprinting1 = not sprinting1
+	hum.Walkspeed= 27.5
+	sprinting1 = true
 	end
-	end)
+end)
+
+
+uis.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.LeftShift and charge == false and tele == false and sprinting1 == true then
+	hum.Walkspeed= 8
+	sprinting1 = false
+	end
+end)
+
 uis.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.Q and vstar == false and tele == false and charge == false then
         sprinting1 = false
