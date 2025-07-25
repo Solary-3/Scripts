@@ -33,10 +33,10 @@ local Global = (getgenv and getgenv()) or shared
 
 if not Global.RayfieldConfig then Global.RayfieldConfig = {} end
 local PermanentDeath = Global.RayfieldConfig["Permanent Death"]  or true
-local CollideFling = Global.RayfieldConfig["Torso Fling"]  or true
+local CollideFling = Global.RayfieldConfig["Torso Fling"]  or false
 local BulletEnabled = Global.RayfieldConfig["Bullet Enabled"] or false
 local KeepHairWelds = Global.RayfieldConfig["Keep Hats On Head"] or true
-local HeadlessPerma = Global.RayfieldConfig["Headless On Perma"] or true
+local HeadlessPerma = Global.RayfieldConfig["Headless On Perma"] or false
 local DisableAnimations = Global.RayfieldConfig["Disable Anims"] or false
 local Collisions = Global.RayfieldConfig["Enable Collisions"] or true
 local AntiVoid = Global.RayfieldConfig["Anti Void"] or true
