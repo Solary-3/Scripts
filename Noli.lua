@@ -33,6 +33,7 @@ local tp = 133844318835297
 local run = 115159159445224
 local walking = false
 local sprinting = false
+local sprinting1 = false
 local taunt = false
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
