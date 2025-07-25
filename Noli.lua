@@ -45,14 +45,12 @@ id = i
 hum.WalkSpeed = 8
 uis.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.LeftShift and charge == false and tele == false then
-	sprinting1 = true
+	sprinting1 = not sprinting1
+	if sprinting1 then
 		hum.WalkSpeed = 27.5
-	end
-	end)
-uis.InputEnded:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.LeftShift and charge == false and tele == false then
-	    sprinting1 = false
-	    hum.WalkSpeed = 8
+		else
+		     hum.Walkspeed = 8
+		end
 	end
 	end)
 uis.InputBegan:Connect(function(input)
@@ -79,6 +77,7 @@ uis.InputBegan:Connect(function(input)
 		end
 		c:Destroy()
         Anim:Stop()
+        hum.WalkSpeed = 8
         charge = false
         wait(.5)
         ability = false
