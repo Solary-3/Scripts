@@ -19,6 +19,7 @@ local i = 119101007154768
 local m1 = 136499705841145
 local fid = 89669118763885
 local sprinting1 = false
+local isSprinting = false
 local charge = false
 local charges = false
 local cend = 79783218569338
@@ -44,20 +45,18 @@ Anim:Play()
 id = i
 hum.WalkSpeed = 8
 uis.InputBegan:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.LeftShift and charge == false and tele == false and sprinting1 == false then
-	--sprinting1 = not sprinting1
+	if input.KeyCode == Enum.KeyCode.LeftShift and charge == false and tele == false then
+	isSprinting = not isSprinting 
+	if isSprinting then
 	hum.Walkspeed= 27.5
-	sprinting1 = true
+	sprinting = true
+	else
+	     hum.Walkspeed = 8
+	     sprinting = false
+	     end
 	end
 end)
 
-
-uis.InputBegan:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.LeftShift and charge == false and tele == false and sprinting1 == true then
-	hum.Walkspeed= 8
-	sprinting1 = false
-	end
-end)
 
 uis.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.Q and vstar == false and tele == false and charge == false then
