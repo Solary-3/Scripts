@@ -238,7 +238,9 @@ G2L["Ability1_2"]["MouseButton1Click"]:Connect(function()
          punching= true
          hum.WalkSpeed = 2.5
          wait(.550)
+         if sprinting == false then
          hum.WalkSpeed = ws
+         end
          ability= false
          punching= false
      end
@@ -249,7 +251,9 @@ if corrupt == false and ability== false then
      corrupt = true
      hum.WalkSpeed = 2.5
      wait(.450)
+     if sprinting == false then 
      hum.WalkSpeed = ws
+     end 
      ability= false
      corrupt = false
 end
@@ -265,7 +269,9 @@ if overridden == false and ability == false then
      wait(1.050)
      overchargevel.Enabled = false
      wait(.250)
+     if sprinting == false then
      hum.WalkSpeed = ws
+     end 
      overridden = false
      ability = false
      end
@@ -275,8 +281,10 @@ G2L["Ability4_5"]["MouseButton1Click"]:Connect(function()
           pizza = true
           ability= true
           hum.WalkSpeed = 0
-          wait(.750)
+          wait(.999)
+          if sprinting == false then 
           hum.WalkSpeed = ws
+          end 
           ability = false
           pizza = false
      end 
