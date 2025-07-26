@@ -241,6 +241,9 @@ G2L["Ability1_2"]["MouseButton1Click"]:Connect(function()
          if sprinting == false then
          hum.WalkSpeed = ws
          end
+         if sprinting == true then
+         hum.WalkSpeed = 27.5
+         end
          ability= false
          punching= false
      end
@@ -254,6 +257,9 @@ if corrupt == false and ability== false then
      if sprinting == false then 
      hum.WalkSpeed = ws
      end 
+     if sprinting == true then
+     hum.WalkSpeed = 27.5
+     end
      ability= false
      corrupt = false
 end
@@ -272,6 +278,9 @@ if overridden == false and ability == false then
      if sprinting == false then
      hum.WalkSpeed = ws
      end 
+     if sprinting == true then
+     hum.WalkSpeed = 27.5
+     end
      overridden = false
      ability = false
      end
@@ -285,6 +294,9 @@ G2L["Ability4_5"]["MouseButton1Click"]:Connect(function()
           if sprinting == false then 
           hum.WalkSpeed = ws
           end 
+          if sprinting == true then
+          hum.WalkSpeed = 27.5
+          end
           ability = false
           pizza = false
      end 
