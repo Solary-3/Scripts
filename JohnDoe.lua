@@ -82,15 +82,15 @@ local anim = game:GetObjects("rbxassetid://" .. i)[1]
 anim.Parent = char
 id = i
 A = B.new(char, anim)
-A.Looped = false
+A.Looped = true 
 A:Play()
 hum.WalkSpeed = ws
 uis.InputBegan:Connect(function(input)
 if input.KeyCode == Enum.KeyCode.Q and ability == false and punch == false and cor == false and dig == false then
      ability= true
-     punch = true
-     hum.WalkSpeed = 1
-     wait(1)
+     punch= true
+     hum.WalkSpeed= 0
+     wait(1.100)
      ability = false
      punch= false
      if sprinting == false then
@@ -104,11 +104,11 @@ end)
 uis.InputBegan:Connect(function(input)
 if input.KeyCode == Enum.KeyCode.E and ability== false and punch == false and cor == false and dig == false then
      ability= true
-     cor = true
-     hum.WalkSpeed = 0 
-     wait(1.100)
-     ability = false
-     cor = false
+     cor= true
+     hum.WalkSpeed= 0
+     wait(2.550)
+     ability=false
+     cor= false
      if sprinting == false then
      hum.WalkSpeed = ws
      end
@@ -121,9 +121,9 @@ uis.InputBegan:Connect(function(input)
 if input.KeyCode == Enum.KeyCode.R and ability == false and punch== false and cor == false and dig == false then
      ability= true
      dig = true
-     hum.WalkSpeed = 0
-     wait(1.100)
-     ability= false 
+     hum.WalkSpeed= 0
+     wait(5.100)
+     ability= false
      dig = false
      if sprinting == false then
      hum.WalkSpeed = ws
@@ -215,13 +215,13 @@ if walking== true and idle== false and sprint== false and ability==false and pun
           end
      end
 if sprint == true and idle== false and walking== false and ability== false and punch== false and cor== false and dig == false then
-     if id ~= sprint then
+     if id ~= run then
           A:Stop()
           anim = game:GetObjects("rbxassetid://"..run)[1]
           A = B.new(char, anim)
           A.Looped= true
           A:Play()
-          id = sprint
+          id = run
           end
      end
 
