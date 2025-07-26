@@ -33,12 +33,12 @@ local Global = (getgenv and getgenv()) or shared
 
 if not Global.GelatekHubConfig then Global.GelatekHubConfig = {} end
 local PermanentDeath = Global.GelatekHubConfig["Permanent Death"]  or true
-local CollideFling = Global.GelatekHubConfig["Torso Fling"]  or false
+local CollideFling = Global.GelatekHubConfig["Torso Fling"]  or true
 local BulletEnabled = Global.GelatekHubConfig["Bullet Enabled"] or true
 local KeepHairWelds = Global.GelatekHubConfig["Keep Hats On Head"] or true
 local HeadlessPerma = Global.GelatekHubConfig["Headless On Perma"] or false
 local DisableAnimations = Global.GelatekHubConfig["Disable Anims"] or false
-local Collisions = Global.GelatekHubConfig["Enable Collisions"] or false
+local Collisions = Global.GelatekHubConfig["Enable Collisions"] or true
 local AntiVoid = Global.GelatekHubConfig["Anti Void"] or false
 if CollideFling and BulletEnabled then CollideFling = false end
 if not Global.TableOfEvents then Global.TableOfEvents = {} end
