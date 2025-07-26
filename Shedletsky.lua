@@ -49,7 +49,7 @@ local i = 101187934796631
 local idle = true
 local walk = 129809765506966
 local walking = false
-local sprint = 97917754365808
+local sprintt = 97917754365808
 local sprinting = false
 local sprint1 = false
 local sprint = false
@@ -139,7 +139,7 @@ end
 if sprinting == true and walking == false and idle == false and ability == false and slashing == false then
      if id ~= sprint then 
           Anim:Stop()
-          anim = game:GetObjects("rbxassetid://"..sprint)[1]
+          anim = game:GetObjects("rbxassetid://"..sprintt)[1]
           Anim = AnimH.new(char, anim)
           Anim.Looped = true
           Anim:Play()
