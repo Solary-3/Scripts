@@ -69,7 +69,7 @@ Anim:Play()
 hum.WalkSpeed = ws
 
 uis.InputBegan:Connect(function(input)
-    if input.KeyCode == Enum.KeyCode.Q and ability== false and eating == false and slashing == false then
+    if input.KeyCode == Enum.KeyCode.Q and ability== false and slashing == false then
          ability= true
          slashing = true
          hum.WalkSpeed = 0.5
@@ -77,28 +77,12 @@ uis.InputBegan:Connect(function(input)
          ability= false
          slashing = false
          if sprinting == false then
-     hum.WalkSpeed = ws
-     end
-     if sprinting == true then
-     hum.WalkSpeed = 27.5
+         hum.WalkSpeed = ws
          end
+         if sprinting == true then
+         hum.WalkSpeed = 27.5
+      end
    end 
-end)
-uis.InputBegan:Connect(function(input)
-    if input.KeyCode == Enum.KeyCode.E and eating == false and slashing == false and ability == false then
-         ability= true
-         eating = true
-         hum.WalkSpeed = 0.5
-         wait(1.100)
-         ability= false
-         eating = false
-         if sprinting == false then
-     hum.WalkSpeed = ws
-     end
-     if sprinting == true then
-     hum.WalkSpeed = 27.5
-         end
-    end
 end)
 G2L["Sprint_5"]["MouseButton1Click"]:Connect(function()
 sprint1 = not sprint1

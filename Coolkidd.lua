@@ -1,13 +1,3 @@
---[=[
- d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
-88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
-88      88    88    88            odD'      88      88    88 88ooo88 
-88  ooo 88    88    88          .88'        88      88    88 88~~~88 
-88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
- Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
-
-designed using localmaze gui creator
-]=]
 
 -- Instances: 5 | Scripts: 0 | Modules: 0 | Tags: 1
 local CollectionService = game:GetService("CollectionService");
@@ -214,7 +204,7 @@ if input.KeyCode == Enum.KeyCode.T and pizza== false and ability == false then
           pizza = true
           ability= true
           hum.WalkSpeed = 0
-          wait(.999)
+          wait(1.100)
           if sprinting == false then 
           hum.WalkSpeed = ws
           end 
@@ -242,7 +232,7 @@ G2L["Ability1_2"]["MouseButton1Click"]:Connect(function()
          ability= true
          punching= true
          hum.WalkSpeed = 2.5
-         wait(.550)
+         wait(1)
          if sprinting == false then
          hum.WalkSpeed = ws
          end
@@ -258,7 +248,7 @@ if corrupt == false and ability== false then
      ability= true 
      corrupt = true
      hum.WalkSpeed = 2.5
-     wait(.450)
+     wait(1)
      if sprinting == false then 
      hum.WalkSpeed = ws
      end 
