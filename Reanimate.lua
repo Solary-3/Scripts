@@ -31,15 +31,15 @@ local Type = type
 
 local Global = (getgenv and getgenv()) or shared
 
-if not Global.RayfieldConfig then Global.RayfieldConfig = {} end
-local PermanentDeath = Global.RayfieldConfig["Permanent Death"]  or true
-local CollideFling = Global.RayfieldConfig["Torso Fling"]  or false
-local BulletEnabled = Global.RayfieldConfig["Bullet Enabled"] or false
-local KeepHairWelds = Global.RayfieldConfig["Keep Hats On Head"] or true
-local HeadlessPerma = Global.RayfieldConfig["Headless On Perma"] or false
-local DisableAnimations = Global.RayfieldConfig["Disable Anims"] or false
-local Collisions = Global.RayfieldConfig["Enable Collisions"] or true
-local AntiVoid = Global.RayfieldConfig["Anti Void"] or true
+if not Global.GelatekHubConfig then Global.GelatekHubConfig = {} end
+local PermanentDeath = Global.GelatekHubConfig["Permanent Death"]  or true
+local CollideFling = Global.GelatekHubConfig["Torso Fling"]  or false
+local BulletEnabled = Global.GelatekHubConfig["Bullet Enabled"] or true
+local KeepHairWelds = Global.GelatekHubConfig["Keep Hats On Head"] or true
+local HeadlessPerma = Global.GelatekHubConfig["Headless On Perma"] or false
+local DisableAnimations = Global.GelatekHubConfig["Disable Anims"] or false
+local Collisions = Global.GelatekHubConfig["Enable Collisions"] or false
+local AntiVoid = Global.GelatekHubConfig["Anti Void"] or false
 if CollideFling and BulletEnabled then CollideFling = false end
 if not Global.TableOfEvents then Global.TableOfEvents = {} end
 
@@ -322,7 +322,7 @@ if BulletEnabled == true then
 		local Extra 
 		Highlight.Adornee = Bullet
 		Highlight.Name = "Highlight"
-		Highlight.Color3 = Color3.fromRGB(255, 0, 0)
+		Highlight.Color3 = Color3.fromRGB(0, 223, 37)
 		Highlight.Parent = Bullet
 		Extra = PreSim:Connect(function()
 			if not Figure and Figure.Parent then Extra:Disconnect() end
@@ -365,7 +365,7 @@ if CollideFling == true then
 			if FigureHum.MoveDirection.Magnitude < 0.1 then
 				Torso.RotVelocity = V3new()
 			elseif FigureHum.MoveDirection.Magnitude > 0.1 then
-				Torso.RotVelocity = V3new(25000,25000,25000)
+				Torso.RotVelocity = V3new(2500,2500,2500)
 			end
 		end)
 	end
@@ -383,7 +383,7 @@ end
 local FallHeight = Workspace.FallenPartsDestroyHeight
 local function MiniRandom() return "0." .. MathRandom(6, 8) .. MathRandom(1, 9) .. MathRandom(1, 9) end
 PreSimEvent = PreSim:Connect(function() -- Noclip
-	local AntiVoidOffset = Global.RayfieldConfig["Anti Void Offset"] or 75
+	local AntiVoidOffset = Global.GelatekHubConfig["Anti Void Offset"] or 75
 	if Figure.HumanoidRootPart.Position.Y <= FallHeight + AntiVoidOffset then VoidEvent() end
 	for _,v in pairs(CharacterChildren) do
 		if v:IsA("BasePart") then
@@ -555,7 +555,7 @@ ResetEvent = Character:GetPropertyChangedSignal("Parent"):Connect(function(Paren
 	end
 end)
 
-print("Reanimated in " .. string.sub(tostring(tick()-Speed),1,string.find(tostring(tick()-Speed),".")+5))
+Warn("Reanimated in " .. string.sub(tostring(tick()-Speed),1,string.find(tostring(tick()-Speed),".")+5))
 if not DisableAnimations then
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekReanimate/main/Addons/Animations.lua"))()
 end
