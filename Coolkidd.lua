@@ -157,69 +157,74 @@ end
 end)
 
 uis.InputBegan:Connect(function(input)
-if input.KeyCode == Enum.KeyCode.Q and ability== false then
-    ability= true
-    punching = true
-    Anim:Stop()
-    hum.WalkSpeed = 2.5
-    anim= game:GetObjects("rbxassetid://"..punch)[1]
-    Anim = AnimH.new(char, anim)
-    Anim.Looped = false
-    Anim:Play()
-    wait(.350)
-    Anim:Stop()
-    ability= false 
-    punching = false
-    hum.WalkSpeed = ws
+if input.KeyCode == Enum.KeyCode.Q and punching == false and ability== false then
+         ability= true
+         punching= true
+         hum.WalkSpeed = 2.5
+         wait(.550)
+         if sprinting == false then
+         hum.WalkSpeed = ws
+         end
+         if sprinting == true then
+         hum.WalkSpeed = 27.5
+         end
+         ability= false
+         punching= false
 end 
 end)
 uis.InputBegan:Connect(function(input)
-if input.KeyCode == Enum.KeyCode.E and ability== false then
-    ability= true
-    charging = true
-    Anim:Stop()
-    hum.WalkSpeed = 0
-    anim = game:GetObjects("rbxassetid://"..overrideStart)[1]
-    Anim = AnimH.new(char, anim)
-    Anim.Looped = false
-    Anim:Play()
-    wait(.750)
-    Anim:Stop()
-    anim = game:GetObjects("rbxassetid://"..Ovr)[1]
-    Anim = AnimH.new(char, anim)
-    Anim.Looped = false
-    Anim:Play()
-    overchargevel.Enabled = true 
-    wait(1.050)
-    Anim:Stop()
-    anim = game:GetObjects("rbxassetid://"..overrideEnd)[1]
-    overchargevel.Enabled =false
-    Anim = AnimH.new(char, anim)
-    Anim.Looped = false
-    Anim:Play()
-    wait(.250)
-    Anim:Stop()
-    hum.WalkSpeed = ws
-    charging = false
-    ability= false
+if input.KeyCode == Enum.KeyCode.E and corrupt == false and ability== false then
+     ability= true 
+     corrupt = true
+     hum.WalkSpeed = 2.5
+     wait(.450)
+     if sprinting == false then 
+     hum.WalkSpeed = ws
+     end 
+     if sprinting == true then
+     hum.WalkSpeed = 27.5
+     end
+     ability= false
+     corrupt = false
 end
 end)
 uis.InputBegan:Connect(function(input)
-if input.KeyCode == Enum.KeyCode.R and ability == false then 
-     ability= true 
-     Anim:Stop()
+if input.KeyCode == Enum.KeyCode.R and overridden == false and ability == false then
+     overridden = true
+     ability = true
      hum.WalkSpeed = 0
-    anim = game:GetObjects("rbxassetid://"..pizzadelivery)[1]
-    Anim = AnimH.new(char, anim)
-    Anim.Looped = false
-    Anim:Play()
-    wait(.550)
-    Anim:Stop()
-    hum.WalkSpeed = ws
-    ability= false
+     wait(.750)
+     overchargevel.Enabled = true 
+     wait(1.050)
+     overchargevel.Enabled = false
+     wait(.250)
+     if sprinting == false then
+     hum.WalkSpeed = ws
+     end 
+     if sprinting == true then
+     hum.WalkSpeed = 27.5
+     end
+     overridden = false
+     ability = false
     end
 end)
 
+uis.InputBegan:Connect(function(input)
+if input.KeyCode == Enum.KeyCode.T and pizza== false and ability == false then
+          pizza = true
+          ability= true
+          hum.WalkSpeed = 0
+          wait(.999)
+          if sprinting == false then 
+          hum.WalkSpeed = ws
+          end 
+          if sprinting == true then
+          hum.WalkSpeed = 27.5
+          end
+          ability = false
+          pizza = false
+     end 
+end)
 G2L["Sprint_5"]["MouseButton1Click"]:Connect(function()
 sprinting1 = not sprinting1 
 if sprinting1 then
@@ -359,6 +364,12 @@ if id ~= punch then
      Anim = AnimH.new(char, anim)
      Anim.Looped = false
      Anim:Play()
+     if sprinting == false then
+     hum.WalkSpeed = ws
+     end
+     if sprinting == true then
+     hum.WalkSpeed = 27.5
+     end
      id = punch
    end
 end 
@@ -369,6 +380,12 @@ if corrupt == true then
           Anim = AnimH.new(char, anim)
           Anim.Looped = false
           Anim:Play()
+          if sprinting == false then
+          hum.WalkSpeed = ws
+          end
+          if sprinting == true then
+          hum.WalkSpeed = 27.5
+          end
           id = corrupt
        end
 end
@@ -391,6 +408,12 @@ if overridden == true then
           Anim = AnimH.new(char, anim)
           Anim.Looped = false
           Anim:Play()
+          if sprinting == false then
+          hum.WalkSpeed = ws
+          end
+          if sprinting == true then
+          hum.WalkSpeed = 27.5
+          end
           id=overrideStart
      end
 end
@@ -401,6 +424,12 @@ if pizza == true then
           Anim = AnimH.new(char, anim)
           Anim.Looped = false
           Anim:Play()
+          if sprinting == false then
+          hum.WalkSpeed = ws
+          end
+          if sprinting == true then
+          hum.WalkSpeed = 27.5
+          end
           id = pizza
      end 
 end
