@@ -67,6 +67,7 @@ local walking = false
 local run = 138421545751238
 local sprinting = false
 local sprint = false
+local sprint1
 local m1 = 113923828536038
 local punch = false
 local corrupt = 136719367286852
@@ -85,8 +86,9 @@ A = B.new(char, anim)
 A.Looped = true 
 A:Play()
 hum.WalkSpeed = ws
+
 uis.InputBegan:Connect(function(input)
-if input.KeyCode == Enum.KeyCode.Q and ability == false and punch == false and cor == false and dig == false then
+if input.KeyCode == Enum.KeyCode.Q and ability== false then
      ability= true
      punch= true
      hum.WalkSpeed= 0
@@ -102,7 +104,7 @@ if input.KeyCode == Enum.KeyCode.Q and ability == false and punch == false and c
      end
 end)
 uis.InputBegan:Connect(function(input)
-if input.KeyCode == Enum.KeyCode.E and ability== false and punch == false and cor == false and dig == false then
+if input.KeyCode == Enum.KeyCode.E and ability == false then 
      ability= true
      cor= true
      hum.WalkSpeed= 0
@@ -114,15 +116,15 @@ if input.KeyCode == Enum.KeyCode.E and ability== false and punch == false and co
      end
      if sprinting == true then
      hum.WalkSpeed = 27.5
-         end 
+         end  
      end
 end)
 uis.InputBegan:Connect(function(input)
-if input.KeyCode == Enum.KeyCode.R and ability == false and punch== false and cor == false and dig == false then
+if input.KeyCode == Enum.KeyCode.R and ability== false then
      ability= true
      dig = true
      hum.WalkSpeed= 0
-     wait(5.100)
+     wait(2.750)
      ability= false
      dig = false
      if sprinting == false then
@@ -133,19 +135,18 @@ if input.KeyCode == Enum.KeyCode.R and ability == false and punch== false and co
          end 
      end
 end)
-
 G2L["Sprint_5"]["MouseButton1Click"]:Connect(function()
 sprinting = not sprinting
 if sprinting then
      hum.WalkSpeed = 27.5
-     sprint = true
+     sprint1 = true
      else
      hum.WalkSpeed = ws
-     sprint = false
+     sprint1 = false
      end
 end)
 G2L["Ability1_2"]["MouseButton1Click"]:Connect(function()
-if punch == false and ability== false and cor == false and dig == false then
+if ability== false then
      ability= true
      punch= true
      hum.WalkSpeed= 0
@@ -161,7 +162,7 @@ if punch == false and ability== false and cor == false and dig == false then
      end
 end)
 G2L["Ability2_3"]["MouseButton1Click"]:Connect(function()
-if punch == false and ability == false and cor == false and dig == false then 
+if ability == false then 
      ability= true
      cor= true
      hum.WalkSpeed= 0
@@ -177,11 +178,11 @@ if punch == false and ability == false and cor == false and dig == false then
      end
 end)
 G2L["Ability3_4"]["MouseButton1Click"]:Connect(function()
-if punch == false and ability== false and cor == false and dig == false then
+if ability== false then
      ability= true
      dig = true
      hum.WalkSpeed= 0
-     wait(5.100)
+     wait(2.750)
      ability= false
      dig = false
      if sprinting == false then
@@ -194,7 +195,7 @@ if punch == false and ability== false and cor == false and dig == false then
 end)
 
 while wait() do
-if idle == true and walking == false and sprint == false and punch== false and cor == false and ability == false and dig == false then
+if idle == true and walking == false and sprint == false and ability == false and dig == false then
      if id ~= i then 
      A:Stop()
      anim = game:GetObjects("rbxassetid://"..i)[1]
@@ -204,7 +205,7 @@ if idle == true and walking == false and sprint == false and punch== false and c
      id = i
      end
 end
-if walking== true and idle== false and sprint== false and ability==false and punch== false and cor== false and dig == false then
+if walking== true and idle== false and sprint== false and ability==false and dig == false then
      if id ~= walk then 
           A:Stop()
           anim = game:GetObjects("rbxassetid://"..walk)[1]
@@ -214,7 +215,7 @@ if walking== true and idle== false and sprint== false and ability==false and pun
           id = walk
           end
      end
-if sprint == true and idle== false and walking== false and ability== false and punch== false and cor== false and dig == false then
+if sprint == true and idle== false and walking== false and ability== false and dig == false then
      if id ~= run then
           A:Stop()
           anim = game:GetObjects("rbxassetid://"..run)[1]
@@ -224,13 +225,12 @@ if sprint == true and idle== false and walking== false and ability== false and p
           id = run
           end
      end
-
-if hum.MoveDirection ~= Vector3.new(0,0,0) and sprint == true then
+if hum.MoveDirection ~= Vector3.new(0,0,0) and sprint1== true and ability == false then
      idle= false
      walking = false
      sprint= true 
 end
-if hum.MoveDirection ~= Vector3.new(0,0,0) and sprint == false then
+if hum.MoveDirection ~= Vector3.new(0,0,0) and sprint1== false then
      idle= false
      walking= true
      sprint= false
@@ -251,23 +251,23 @@ if punch == true then
           end
      end
 if cor == true then 
-     if id ~= cor then
+     if id ~= corrupt then
           A:Stop()
           anim = game:GetObjects("rbxassetid://"..corrupt)[1]
           A = B.new(char, anim)
           A.Looped= false
           A:Play()
-          id = cor
+          id = corrupt
           end 
      end
 if dig == true then
-     if id ~= stomp then 
+     if id ~= digital then 
           A:Stop()
           anim= game:GetObjects("rbxassetid://"..digital)[1]
           A = B.new(char, anim)
           A.Looped= false
           A:Play()
-          id = stomp
+          id = digital
           end
      end
 end

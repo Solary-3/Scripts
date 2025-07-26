@@ -52,6 +52,7 @@ local walking = false
 local sprint = 97917754365808
 local sprinting = false
 local sprint1 = false
+local sprint = false
 local slash = 107302018639039
 local slashing = false
 local eat = 79188775702839
@@ -87,10 +88,10 @@ end)
 G2L["Sprint_5"]["MouseButton1Click"]:Connect(function()
 sprint1 = not sprint1
 if sprint1 then
-     sprinting = true
+     sprint = true
      hum.WalkSpeed = 27.5
      else
-     sprinting = false
+     sprint = false
      hum.WalkSpeed = ws
      end
 end)
@@ -145,12 +146,12 @@ if sprinting == true and walking == false and idle == false and ability == false
           id = sprint
           end
      end
-if hum.MoveDirection ~= Vector3.new(0,0,0) and sprinting == true then
+if hum.MoveDirection ~= Vector3.new(0,0,0) and sprint == true  and ability== false then
      idle= false
      walking= false
      sprinting = true
 end
-if hum.MoveDirection ~= Vector3.new(0,0,0) and sprinting == false then
+if hum.MoveDirection ~= Vector3.new(0,0,0) and ability== false and sprint == false then
      idle = false
      walking = true
      sprinting = false

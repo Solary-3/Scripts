@@ -97,6 +97,7 @@ local pizzadelivery = 75414113070651
 local pizza = false
 local sprinting1 = false
 local sprinting = false
+local sprint = false
 local run = 77684753344012
 local ws = 10
 local ability = false
@@ -147,11 +148,11 @@ end
 end)
 
 uis.InputBegan:Connect(function(input)
-if input.KeyCode == Enum.KeyCode.Q and punching == false and ability== false then
+if input.KeyCode == Enum.KeyCode.Q and  punching == false and ability== false then
          ability= true
          punching= true
          hum.WalkSpeed = 2.5
-         wait(.550)
+         wait(1)
          if sprinting == false then
          hum.WalkSpeed = ws
          end
@@ -167,7 +168,7 @@ if input.KeyCode == Enum.KeyCode.E and corrupt == false and ability== false then
      ability= true 
      corrupt = true
      hum.WalkSpeed = 2.5
-     wait(.450)
+     wait(1)
      if sprinting == false then 
      hum.WalkSpeed = ws
      end 
@@ -204,7 +205,7 @@ if input.KeyCode == Enum.KeyCode.T and pizza== false and ability == false then
           pizza = true
           ability= true
           hum.WalkSpeed = 0
-          wait(1.100)
+          wait(.999)
           if sprinting == false then 
           hum.WalkSpeed = ws
           end 
@@ -218,10 +219,10 @@ end)
 G2L["Sprint_5"]["MouseButton1Click"]:Connect(function()
 sprinting1 = not sprinting1 
 if sprinting1 then
-sprinting = true
+sprint = true
 hum.WalkSpeed = 27.5
 else
-sprinting = false
+sprint = false
 hum.WalkSpeed = ws
 end
 end)
@@ -330,12 +331,12 @@ if sprinting == true and idle == false and punching == false and ability == fals
      id = run
      end
 end
-if hum.MoveDirection ~= Vector3.new(0,0,0) and ability == false and sprinting1 == false then 
+if hum.MoveDirection ~= Vector3.new(0,0,0) and ability == false and sprint == false then 
 idle = false
 walking = true
 sprinting = false
 end
-if hum.MoveDirection ~= Vector3.new(0,0,0) and ability== false and sprinting1 == true then 
+if hum.MoveDirection ~= Vector3.new(0,0,0) and ability== false and sprint == true then 
      walking = false
      idle = false
      sprinting = true
