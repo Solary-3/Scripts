@@ -45,6 +45,9 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local aa =
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ProudNamed/SuperLightning/refs/heads/main/AnimModule/MainModule"))()
+if not getgenv()["Animator"] then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+end
 local a
 local id
 local i = 101187934796631
@@ -102,7 +105,12 @@ end)
 
 G2L["Ability1_2"]["MouseButton1Click"]:Connect(function()
 if stabby == false and ability== false then
+     a:Stop()
      ability= true
+     goddamncrouch = false
+     crouchy =false
+     togglecrouch= false
+     G2L["Sprint_5"]["Visible"] = true;
      stabby = true
      hum.WalkSpeed = 0
      wait(.50)
@@ -123,26 +131,29 @@ end)
 G2L["Ability2_3"]["MouseButton1Click"]:Connect(function()
 if ability== false then
 togglecrouch = not togglecrouch
-if togglecrouch then 
-goddamncrouch = true
-crouchhy = true
-hum.WalkSpeed = cws
-wait(.750)
-goddamncrouch= false
-crouchy = true
+    if togglecrouch then 
+     run2 = false
+     G2L["Sprint_5"]["Visible"] = false;
+     goddamncrouch = true
+     crouchhy = true
+     hum.WalkSpeed = cws
+     wait(.750)
+     goddamncrouch= false
+     crouchy = true
      else
-    a:Stop()
-    crouchy= false
-          hum.WalkSpeed = 0
-          anim = game:GetObjects("rbxassetid://"..cstop)[1]
-          a = aa.new(char, anim)
-          a.Looped = false
-          a:Play()
-          id = cstop
-          wait(1)
-          hum.WalkSpeed = ws  
+     G2L["Sprint_5"]["Visible"] = true;
+     a:Stop()
+     crouchy= false
+     hum.WalkSpeed = 0
+     anim = game:GetObjects("rbxassetid://"..cstop)[1]
+     a = aa.new(char, anim)
+     a.Looped = false
+     a:Play()
+     id = cstop
+     wait(1)
+     hum.WalkSpeed = ws  
      end 
-end
+  end
 end)
 
 while wait() do

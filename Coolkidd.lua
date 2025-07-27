@@ -134,6 +134,16 @@ idle = true
 walking = true
 sprinting = true
 end
+G2L["Sprint_5"]["MouseButton1Click"]:Connect(function()
+sprinting1 = not sprinting1 
+if sprinting1 then
+sprint = true
+hum.WalkSpeed = 27.5
+else
+sprint = false
+hum.WalkSpeed = ws
+end
+end)
 uis.InputBegan:Connect(function(input)
 if input.KeyCode == Enum.KeyCode.LeftShift  then
 local sprinting1 = false
@@ -151,6 +161,7 @@ uis.InputBegan:Connect(function(input)
 if input.KeyCode == Enum.KeyCode.Q and  punching == false and ability== false then
          ability= true
          punching= true
+         sprinting1 = false
          hum.WalkSpeed = 2.5
          wait(1)
          if sprinting == false then
@@ -180,23 +191,20 @@ if input.KeyCode == Enum.KeyCode.E and corrupt == false and ability== false then
 end
 end)
 uis.InputBegan:Connect(function(input)
-if input.KeyCode == Enum.KeyCode.R and overridden == false and ability == false then
-     overridden = true
-     ability = true
-     hum.WalkSpeed = 0
-     wait(.750)
-     overchargevel.Enabled = true 
-     wait(1.050)
-     overchargevel.Enabled = false
-     wait(.250)
-     if sprinting == false then
+if input.KeyCode == Enum.KeyCode.R and corrupt == false and ability== false then
+     ability= true 
+     corrupt = true
+     sprinting1 = false
+     hum.WalkSpeed = 2.5
+     wait(1)
+     if sprinting == false then 
      hum.WalkSpeed = ws
      end 
      if sprinting == true then
      hum.WalkSpeed = 27.5
      end
-     overridden = false
-     ability = false
+     ability= false
+     corrupt = false
     end
 end)
 
@@ -204,6 +212,7 @@ uis.InputBegan:Connect(function(input)
 if input.KeyCode == Enum.KeyCode.T and pizza== false and ability == false then
           pizza = true
           ability= true
+          sprinting1 = false
           hum.WalkSpeed = 0
           wait(.999)
           if sprinting == false then 
@@ -216,22 +225,12 @@ if input.KeyCode == Enum.KeyCode.T and pizza== false and ability == false then
           pizza = false
      end 
 end)
-G2L["Sprint_5"]["MouseButton1Click"]:Connect(function()
-sprinting1 = not sprinting1 
-if sprinting1 then
-sprint = true
-hum.WalkSpeed = 27.5
-else
-sprint = false
-hum.WalkSpeed = ws
-end
-end)
-
 
 G2L["Ability1_2"]["MouseButton1Click"]:Connect(function()
     if punching == false and ability== false then
          ability= true
          punching= true
+         sprinting1 = false
          hum.WalkSpeed = 2.5
          wait(1)
          if sprinting == false then
@@ -248,6 +247,7 @@ G2L["Ability2_3"]["MouseButton1Click"]:Connect(function()
 if corrupt == false and ability== false then
      ability= true 
      corrupt = true
+     sprinting1 = false
      hum.WalkSpeed = 2.5
      wait(1)
      if sprinting == false then 
@@ -266,6 +266,7 @@ if overridden == false and ability == false then
      overridden = true
      ability = true
      hum.WalkSpeed = 0
+     sprinting1 = false
      wait(.750)
      overchargevel.Enabled = true 
      wait(1.050)
@@ -285,6 +286,7 @@ G2L["Ability4_5"]["MouseButton1Click"]:Connect(function()
      if pizza== false and ability == false then
           pizza = true
           ability= true
+          sprinting1 = false
           hum.WalkSpeed = 0
           wait(.999)
           if sprinting == false then 
