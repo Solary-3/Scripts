@@ -129,7 +129,6 @@ G2L["Ability2_3"]["MouseButton1Click"]:Connect(function()
      if ability==false and placerun==false then
           ability=true
           throwing=true
-          run2=false
           hum.WalkSpeed=1
           wait(2.750)
           ability=false
