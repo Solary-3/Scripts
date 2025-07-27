@@ -33,7 +33,6 @@ local tp = 133844318835297
 local run = 115159159445224
 local walking = false
 local sprinting = false
-local sprinting1 = false
 local taunt = false
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
@@ -47,17 +46,16 @@ id = i
 hum.WalkSpeed = 8
 uis.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.LeftShift and charge == false and tele == false then
-		sprinting1 = true
-		hum.WalkSpeed = 27.4
+	isSprinting = not isSprinting 
+	if isSprinting then
+	hum.WalkSpeed = 27.5
+	sprinting = true
+	else
+	     hum.WalkSpeed = 8
+	     sprinting = false
+	     end
 	end
 end)
-uis.InputEnded:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.LeftShift and charge == false and tele == false then
-		sprinting1 = false
-		hum.WalkSpeed = 8
-	end
-end)
-
 
 
 uis.InputBegan:Connect(function(input)

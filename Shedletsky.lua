@@ -34,11 +34,6 @@ G2L["Sprint_5"]["Position"] = UDim2.new(0.82108, 0, 0.25, 0);
 Forsaken Shedletsky Anims
 
 ]]--
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-if not getgenv()["Animator"] then
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
-end
 local AnimH =
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ProudNamed/SuperLightning/refs/heads/main/AnimModule/MainModule"))()
 local player = game:GetService("Players").LocalPlayer

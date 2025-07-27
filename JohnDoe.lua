@@ -56,9 +56,6 @@ G2L["Sprint_5"]["Position"] = UDim2.new(0.82108, 0, 0.25, 0);
 --[[
 John Doe Fe By Theo_TheoBenzo/パノラマ!
 ]]
-if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
-end
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local B =
@@ -88,7 +85,6 @@ local anim = game:GetObjects("rbxassetid://" .. i)[1]
 anim.Parent = char
 id = i
 A = B.new(char, anim)
-A.Looped = true 
 A:Play()
 hum.WalkSpeed = ws
 

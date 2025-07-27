@@ -68,9 +68,6 @@ G2L["Sprint_5"]["Size"] = UDim2.new(0.08636, 0, 0.19939, 0);
 G2L["Sprint_5"]["Name"] = [[Ability4]];
 G2L["Sprint_5"]["Position"] = UDim2.new(0.82108, 0, 0.25, 0);
 
-if not getgenv()["Animator"] then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
-end
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local AnimH = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProudNamed/SuperLightning/refs/heads/main/AnimModule/MainModule"))()
