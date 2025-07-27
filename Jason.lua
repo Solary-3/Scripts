@@ -119,7 +119,7 @@ G2L["Sprint_5"]["MouseButton1Click"]:Connect(function()
      end 
 end)
 G2L["Ability1_2"]["MouseButton1Click"]:Connect(function()
-      if ability==false then 
+      if ability==false and rage==false then 
       ability=true
       usem1=true
       hum.WalkSpeed=1
@@ -135,7 +135,7 @@ G2L["Ability1_2"]["MouseButton1Click"]:Connect(function()
      end
 end)
 G2L["Ability2_3"]["MouseButton1Click"]:Connect(function()
-      if ability==false then
+      if ability==false and rage==false then
            ability=true
            beh=true
            hum.WalkSpeed=1
@@ -151,7 +151,7 @@ G2L["Ability2_3"]["MouseButton1Click"]:Connect(function()
       end
 end)
 G2L["Ability3_4"]["MouseButton1Click"]:Connect(function()
-      if ability==false then
+      if ability==false and rage==false then
            ability=true
            crash=true
            hum.WalkSpeed=1
@@ -179,6 +179,7 @@ G2L["Ability4_5"]["MouseButton1Click"]:Connect(function()
            wait(10)
            rage1=false
            ability=false
+           Anim:Stop()
            G2L["Sprint_5"]["Visible"] =true;
            if run2 == false then 
            hum.WalkSpeed = ws
@@ -220,7 +221,7 @@ if sprint==true and walking==false and idle==false and ability==false then
           id=run
           end
 end
-if rageidle==true and ability==true and ragewalking==false then
+if rageidle==true and ragewalking==false then
      if id~=ragei then 
           Anim:Stop()
           anim=game:GetObjects("rbxassetid://"..ragei)[1]
@@ -230,7 +231,7 @@ if rageidle==true and ability==true and ragewalking==false then
           id=ragei
           end 
 end
-if ragewalking==true and ability==true and rageidle==false then
+if ragewalking==true and rageidle==false then
      if id~=ragewalk then
           Anim:Stop()
           anim=game:GetObjects("rbxassetid://"..ragewalk)[1]
@@ -248,11 +249,15 @@ if hum.MoveDirection~=Vector3(0,0,0) and rage1==false and run2==true then
      idle=false
      walking=false
      sprint=true
+     rageidle=false
+     ragewalking=false
 end
 if hum.MoveDirection~=Vector3(0,0,0) and rage1==false and run2==false then
      idle=false
      walking=true
      sprint=false
+     rageidle=false
+     ragewalking=false
      end
 if hum.MoveDirection==Vector3(0,0,0) and rage1==true then 
      idle=false
@@ -265,6 +270,8 @@ if hum.MoveDirection==Vector3(0,0,0) and rage1==false then
      idle=true
      walking=false
      sprint=false
+     rageidle=false
+     ragewalking=false
 end
 if usem1==true then 
      if id~=m1 then 
@@ -304,6 +311,8 @@ if rage==true then
           Anim.Looped=false
           Anim:Play()
           id=ragebegin
+          wait(1.100)
+          rage=false
           end
      end
 end
