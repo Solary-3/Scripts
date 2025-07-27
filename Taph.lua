@@ -122,6 +122,7 @@ G2L["Ability1_2"]["MouseButton1Click"]:Connect(function()
           end
           if run2 == true then
           hum.WalkSpeed = 27.5
+          end
       end
 end)
 G2L["Ability2_3"]["MouseButton1Click"]:Connect(function()
@@ -138,6 +139,7 @@ G2L["Ability2_3"]["MouseButton1Click"]:Connect(function()
           end
           if run2 == true then
           hum.WalkSpeed = 27.5
+          end
      end
 end)
 while wait() do
