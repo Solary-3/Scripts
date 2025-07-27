@@ -9,7 +9,6 @@ end
 hookAnimatorFunction()
 local AnimHandler = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProudNamed/SuperLightning/refs/heads/main/AnimModule/MainModule"))()
 local Anim
-local Anim
 local id
 local uis = game:GetService("UserInputService")
 local walk = 83344421079825

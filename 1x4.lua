@@ -134,7 +134,7 @@ if ability== false then
      ability=true
      mas=true
      hum.WalkSpeed=2.5
-     wait(2.250)
+     wait(2.550)
      ability=false
      mas=false
      if run2 == false then
@@ -150,7 +150,7 @@ if ability== false then
      ability=true
      throwing=true
      hum.WalkSpeed=2.5
-     wait(2.250)
+     wait(2.050)
      ability=false
      throwing=false
      if run2 == false then
@@ -166,7 +166,7 @@ if ability==false then
      ability=true
      stable=true
      hum.WalkSpeed=1.5
-     wait(1)
+     wait(1.550)
      ability=false
      stable=false
      if run2 == false then

@@ -36,10 +36,6 @@ Forsaken Shedletsky Anims
 ]]--
 local AnimH =
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ProudNamed/SuperLightning/refs/heads/main/AnimModule/MainModule"))()
-local player = game:GetService("Players").LocalPlayer
-local tr = player.Character
-local Anim = Animator.new
-local q = Anim(tr, 79188775702839)
 local i = 101187934796631
 local idle = true
 local walk = 129809765506966

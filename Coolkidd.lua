@@ -68,14 +68,9 @@ G2L["Sprint_5"]["Size"] = UDim2.new(0.08636, 0, 0.19939, 0);
 G2L["Sprint_5"]["Name"] = [[Ability4]];
 G2L["Sprint_5"]["Position"] = UDim2.new(0.82108, 0, 0.25, 0);
 
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
+
 local AnimH = loadstring(game:HttpGet("https://raw.githubusercontent.com/ProudNamed/SuperLightning/refs/heads/main/AnimModule/MainModule"))()
-local tr = player.Character
-if not tr then return end
 local Anim
-local Anim1 = Animator.new
-    local q = Anim1(tr, 111379246020992)
 local id
 local i = 97086986086474
 local hidle = 97086986086474

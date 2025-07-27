@@ -56,8 +56,6 @@ G2L["Sprint_5"]["Position"] = UDim2.new(0.82108, 0, 0.25, 0);
 --[[
 John Doe Fe By Theo_TheoBenzo/パノラマ!
 ]]
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
 local B =
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ProudNamed/SuperLightning/refs/heads/main/AnimModule/MainModule"))()
 local A
