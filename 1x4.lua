@@ -69,9 +69,6 @@ G2L["Sprint_5"]["Position"] = UDim2.new(0.82108, 0, 0.25, 0);
 --[[
 1x1x1x1 Forsaken Anims Made By Theo
 ]]
-if not getgenv()["Animator"] then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
-end
 local AnimH =
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ProudNamed/SuperLightning/refs/heads/main/AnimModule/MainModule"))()
 local Anim
@@ -124,7 +121,11 @@ if ability== false then
      wait(1)
      ability= false
      ism1 = false
-     hum.WalkSpeed=ws
+     if run2 == false then
+     hum.WalkSpeed = ws
+     end
+     if run2 == true then
+     hum.WalkSpeed = 27.5
      end
 end)
 G2L["Ability2_3"]["MouseButton1Click"]:Connect(function()
@@ -132,10 +133,14 @@ if ability== false then
      ability=true
      mas=true
      hum.WalkSpeed=2.5
-     wait(1)
+     wait(2.250)
      ability=false
      mas=false
-     hum.WalkSpeed=ws
+     if run2 == false then
+     hum.WalkSpeed = ws
+     end
+     if run2 == true then
+     hum.WalkSpeed = 27.5
      end
 end)
 G2L["Ability3_4"]["MouseButton1Click"]:Connect(function()
@@ -143,10 +148,14 @@ if ability== false then
      ability=true
      throwing=true
      hum.WalkSpeed=2.5
-     wait(1)
+     wait(2.250)
      ability=false
      throwing=false
-     hum.WalkSpeed=ws
+     if run2 == false then
+     hum.WalkSpeed = ws
+     end
+     if run2 == true then
+     hum.WalkSpeed = 27.5
      end
 end)
 G2L["Ability4_5"]["MouseButton1Click"]:Connect(function()
@@ -157,7 +166,11 @@ if ability==false then
      wait(1)
      ability=false
      stable=false
-     hum.WalkSpeed=ws
+     if run2 == false then
+     hum.WalkSpeed = ws
+     end
+     if run2 == true then
+     hum.WalkSpeed = 27.5
      end 
 end)
 

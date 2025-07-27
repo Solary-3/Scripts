@@ -115,20 +115,29 @@ G2L["Ability1_2"]["MouseButton1Click"]:Connect(function()
           Anim=New(char,anim)
           Anim.Looped=false
           Anim:Play()  
-          wait(1)
+          wait(.100)
           G2L["Sprint_5"]["Visible"] = true;
-          hum.WalkSpeed=ws
+          if run2 == false then
+          hum.WalkSpeed = ws
+          end
+          if run2 == true then
+          hum.WalkSpeed = 27.5
       end
 end)
 G2L["Ability2_3"]["MouseButton1Click"]:Connect(function()
      if ability==false and placerun==false then
           ability=true
           throwing=true
+          run2=false
           hum.WalkSpeed=1
           wait(2.750)
           ability=false
           throwing=false
-          hum.WalkSpeed=ws
+          if run2 == false then
+          hum.WalkSpeed = ws
+          end
+          if run2 == true then
+          hum.WalkSpeed = 27.5
      end
 end)
 while wait() do
