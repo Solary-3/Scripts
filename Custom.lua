@@ -2102,10 +2102,10 @@ btn("Epical Anims", function()
 	local RightHip=getJoint("Right Hip")
 	local LeftHip=getJoint("Left Hip")
 	local Neck=getJoint("Neck")
+	
 	local MovingAccess=getPartFromMesh(4502955769,4502956435)
      local Move=getPartJoint(MovingAccess)
-     local MovingAccess1=getPartFromMesh(4758429875,4810979246)
-     local Move1=getPartJoint(MovingAccess1)
+     
      local MovingAccess2=getPartFromMesh(4502955769,4806184437)
      local Move2=getPartJoint(MovingAccess2)
 
@@ -2118,7 +2118,6 @@ btn("Epical Anims", function()
 			LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5-0.5*sin((sine-2) * 2),0.5),angles(1.7453292519943295,-1.1344640137963142,3.0543261909900767)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.9,-1,0.25),angles(-0.3490658503988659,0.8726646259971648,0.4363323129985824+0.17453292519943295*sin(sine*2))),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.4,0.5,0),angles(1.7453292519943295+0.17453292519943295*sin(sine*2),0.17453292519943295,0)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.15,-1,0),angles(-0.6981317007977318+0.17453292519943295*sin(sine*2),0.8726646259971648,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,8.5+2*sin(sine*2),0),angles(-1.3089969389957472,0,3.141592653589793)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-2.181661564992912+0.08726646259971647*sin(sine*2),0,3.141592653589793)),deltaTime) 
 			     Move.C0=Lerp(Move.C0,cfMul(cf(3,1.55-0.55*sin(sine*2),-2.36),angles(0,0,0.3490658503988659+0.4363323129985824*sin(sine*2))),deltaTime)
                     Move2.C0=Lerp(Move2.C0,cf(0,-0.55 * sin(sine*2),-2),deltaTime)
-                    Move1.C0=Lerp(Move1.C0,cfMul(cf(2.55,1.95-0.95*sin(sine*2),-2.35),angles(0,0,0.17453292519943295+0.4363323129985824*sin(sine*2))),deltaTime)
 		end,
 		walk = function()
 			local Vfw, Vrt = velbycfrvec()
