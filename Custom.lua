@@ -2086,12 +2086,14 @@ btn("creepy crawler",function()
 	})
 end)
 
-btn("nameless animations V7", function()
+btn("Epical Anims", function()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local raycastlegs=t.raycastlegs
 	local velbycfrvec=t.velbycfrvec
 	local velchgbycfrvec=t.velchgbycfrvec
+	local getPartFromMesh=t.getPartFromMesh
+	local getPartJoint=t.getPartJoint
 	local addmode=t.addmode
 	local getJoint=t.getJoint
 	local RootJoint=getJoint("RootJoint")
@@ -2100,6 +2102,12 @@ btn("nameless animations V7", function()
 	local RightHip=getJoint("Right Hip")
 	local LeftHip=getJoint("Left Hip")
 	local Neck=getJoint("Neck")
+	local MovingAccess=getPartFromMesh(4502955769,4502956435)
+     local Move=getPartJoint(MovingAcces)
+     local MovingAcces1=getPartFromMesh(4758429875,4810979246)
+     local Move1=getPartJoint(MovingAccess1)
+     local MovingAccess2=getPartFromMesh(4502955769,4806184437)
+     local Move2=getPartJoint(MovingAccess2)
 
 	addmode("default", {
 		idle = function()
@@ -2107,7 +2115,12 @@ btn("nameless animations V7", function()
 
 			local Cfw, Crt = velchgbycfrvec()
 
-			LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5-0.5*sin((sine-2) * 2),0.5),angles(1.7453292519943295,-1.1344640137963142,3.0543261909900767)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.9,-1,0.25),angles(-0.3490658503988659,0.8726646259971648,0.4363323129985824+0.17453292519943295*sin(sine*2))),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.4,0.5,0),angles(1.7453292519943295+0.17453292519943295*sin(sine*2),0.17453292519943295,0)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.15,-1,0),angles(-0.6981317007977318+0.17453292519943295*sin(sine*2),0.8726646259971648,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,8.5+2*sin(sine*2),0),angles(-1.3089969389957472,0,3.141592653589793)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-2.181661564992912+0.08726646259971647*sin(sine*2),0,3.141592653589793)),deltaTime)  --MW_animatorProgressSave: LeftArm,-1,0,0,1,100,0,0,1,.5,-.5,-2,2,-65,0,0,1,.5,0,0,1,175,0,0,1,RightLeg,.90,0,0,1,-20,0,0,1,-1,0,0,1,50,0,0,1,.25,0,0,1,25,10,0,2,RightArm,1.4,0,0,1,100,10,0,2,0.5,0,0,1,10,0,0,1,0,0,0,1,0,0,0,1,LeftLeg,-.15,0,0,1,-40,10,0,2,-1,0,0,1,50,0,0,1,,0,0,1,0,0,0,1,Torso,0,0,0,1,-75,0,0,1,8.5,2,0,2,0,0,0,1,0,0,0,1,180,0,0,1,Head,0,0,0,1,-125,5,0,2,1,0,0,1,0,0,0,1,0,0,0,1,180,0,0,1
+			LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5-0.5*sin((sine-2) * 2),0.5),angles(1.7453292519943295,-1.1344640137963142,3.0543261909900767)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.9,-1,0.25),angles(-0.3490658503988659,0.8726646259971648,0.4363323129985824+0.17453292519943295*sin(sine*2))),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.4,0.5,0),angles(1.7453292519943295+0.17453292519943295*sin(sine*2),0.17453292519943295,0)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.15,-1,0),angles(-0.6981317007977318+0.17453292519943295*sin(sine*2),0.8726646259971648,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,8.5+2*sin(sine*2),0),angles(-1.3089969389957472,0,3.141592653589793)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-2.181661564992912+0.08726646259971647*sin(sine*2),0,3.141592653589793)),deltaTime) 
+			     Move.C0=Lerp(Move.C0,cfMul(cf(3,1.55-0.55*sin(sine*2),-2.36),angles(0,0,0.3490658503988659+0.4363323129985824*sin(sine*2))),deltaTime)
+                    Move2.C0=Lerp(Move2.C0,cf(0,-0.55 * sin(sine*2),-2),deltaTime)
+                    Move1.C0=Lerp(Move1.C0,cfMul(cf(2.55,1.95-0.95*sin(sine*2),-2.35),angles(0,0,0.17453292519943295+0.4363323129985824*sin(sine*2))),deltaTime)
+			--MW_animatorProgressSave:
+			LeftArm,-1,0,0,1,100,0,0,1,.5,-.5,-2,2,-65,0,0,1,.5,0,0,1,175,0,0,1,RightLeg,.90,0,0,1,-20,0,0,1,-1,0,0,1,50,0,0,1,.25,0,0,1,25,10,0,2,RightArm,1.4,0,0,1,100,10,0,2,0.5,0,0,1,10,0,0,1,0,0,0,1,0,0,0,1,LeftLeg,-.15,0,0,1,-40,10,0,2,-1,0,0,1,50,0,0,1,,0,0,1,0,0,0,1,Torso,0,0,0,1,-75,0,0,1,8.5,2,0,2,0,0,0,1,0,0,0,1,180,0,0,1,Head,0,0,0,1,-125,5,0,2,1,0,0,1,0,0,0,1,0,0,0,1,180,0,0,1
 			--RightArm,1,0,0,2,-30,3,1.5,2,0.3,0.1,0,2,60,5,0.5,2,-0.1,0,0,2,30,0,0,2,Head,0,0,0,2,-95,5,0.6,2,1,0,0,2,-0,0,0,1,0,0,0,2,180,15,-1.2,1,Torso,0,0,0,2,-90,5,0,2,0,0.1,0,2,-0,0,0,2,0,0,0,2,180,0,0,2,RightLeg,1,0,0,2,-40,-5,0,2,-1,-0.1,0,2,60,0,0,2,0,0.1,0,2,30,0,0,2,Meshes/TrollFaceHeadAccessory_Handle,0.01043701171875,0,0,1,0,0,0,1,0.43610429763793945,0,0,1,0,0,0,1,-0.01102447509765625,0,0,1,0,0,0,1,LeftArm,-1,0,0,2,180,3,0.5,2,0.6,0.1,0,2,-155,1,1.5,2,0,0,0,2,-70,3,1.5,2,LeftLeg,-1,0,0,2,-20,-5,0,2,-1,-0.1,0,2,-60,0,0,2,0,0.1,0,2,-30,0,0,2
 		end,
 		walk = function()
