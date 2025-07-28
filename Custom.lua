@@ -2654,7 +2654,7 @@ btn("nameless animations V6", function()
 		end
 	})
 end)
-
+insSet(btn("stop current script",stopreanimate),"TextColor3",c3(0.75,0,0))
 local swtc=function(txt,options,onchanged)
 	local current=0
 	local swtcbtn=nil
