@@ -2132,6 +2132,46 @@ s4.C0=Lerp(s4.C0,cfMul(cf(2.5,2.45,-2),angles(0,0,4.71238898038469+6.28318530717
 			RightHip.C0 = Lerp(RightHip.C0,cfMul(cf(1, -1, 0),angles(1.5707963267948966 - 0.08726646259971647 * sin((sine + 0.5) * 4), 1.6580627893946132 - 0.06981317007977318 * sin((sine + 0.25) * 4), -1.5707963267948966)),deltaTime) 
 			--Torso,0,0,0,4,-95,0,0,4,0,0,0,4,0,0,0,4,0,0,0,4,-180,0,0,4,RightArm,1,0,0,4,230,-5,0.5,4,0.5,0,0,4,100,5,0.25,4,0,0,0,4,-90,0,0,4,LeftLeg,-1,0,0,4,90,-5,0.5,4,-1,0,0,4,-95,4,0.25,4,0,0,0,4,90,0,0,4,LeftArm,-1,0,0,4,230,-5,0.5,4,0.5,0,0,4,-100,-5,0.25,4,0,0,0,4,90,0,0,4,Head,0,0,0,4,-100,0,0.5,4,1,0,0,4,0,0,0.25,4,0,0,0,4,-180,0,0,4,RightLeg,1,0,0,4,90,-5,0.5,4,-1,0,0,4,95,-4,0.25,4,0,0,0,4,-90,0,0,4
 		end
+		addmode("q", {
+		modeEntered = function()
+			setWalkSpeed(5)
+		end,
+		idle = function()
+			velYchg()
+			RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.25 * sin(sine*1.15),0),angles(-0.6108652381980153,0,3.141592653589793)),deltaTime)   
+ LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(-0.7853981633974483-0.17453292519943295*sin(sine*1.15),-1.5707963267948966,0)),deltaTime) 
+ LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.85,1.16,-0.45+0.1*sin(sine*1.15)),angles(1.5707963267948966,0.3490658503988659,-0.2617993877991494)),deltaTime) 
+ RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.25,0,-0.25+0.15*sin(sine*1.15)),angles(-1.0471975511965976-0.17453292519943295*sin(sine*1.16),0.3490658503988659,0.17453292519943295)),deltaTime) 
+ Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0.05 * sin(sine*1.15)),angles(-2.007128639793479,0,3.141592653589793)),deltaTime) 
+ RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(-1.3089969389957472-0.17453292519943295*sin(sine*1.15),1.5707963267948966,0)),deltaTime)
+ aura1.C0=Lerp(aura1.C0,cfMul(cf(0,0,7.5-0.15*sin(sine*1.15)),angles(0,0,-17.453292519943297*sin(sine*0.15))),deltaTime)
+ s1.C0=Lerp(s1.C0,cfMul(cf(2.35,2.25,7.5-0.15*sin(sine*1.15)),angles(0,0,17.453292519943297*sin(sine*0.15))),deltaTime)
+s2.C0=Lerp(s2.C0,cfMul(cf(2.35,2.25,7.5-0.15*sin(sine*1.15)),angles(0,0,1.5707963267948966+17.453292519943297*sin(sine*0.15))),deltaTime)
+
+ s3.C0=Lerp(s3.C0,cfMul(cf(2.35,2.25,7.5-0.15*sin(sine*1.15)),angles(0,0,3.141592653589793+17.453292519943297*sin(sine*0.15))),deltaTime) 
+ s4.C0=Lerp(s4.C0,cfMul(cf(2.35,2.25,7.5-0.15*sin(sine*1.15)),angles(0,0,4.71238898038469+17.453292519943297*sin(sine*0.15))),deltaTime)
+ 
+		end,
+		walk = function()
+			velYchg()
+			local Vfw, Vrt = velbycfrvec()
+			RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.55,-0.75-0.15*sin(sine*1.15),-0.25),angles(-1.3089969389957472+0.08726646259971647*sin(sine*1),0.4363323129985824,0.17453292519943295)),deltaTime)    
+RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.25 * sin(sine*1.15),0),angles(-1.9198621771937625,0,3.141592653589793)),deltaTime) 
+ Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1-0.1*sin(sine*1),0),angles(-1.3089969389957472,0,3.141592653589793)),deltaTime)  
+ RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,-0.25-0.15*sin(sine*1.15),0),angles(-1.3089969389957472,0.3490658503988659,0.4363323129985824)),deltaTime)  
+  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.45,-1-0.15*sin(sine*1.15),-0.55),angles(-1.1344640137963142+0.08726646259971647*sin(sine*1),0.3490658503988659,0)),deltaTime)
+ LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.75-0.15*sin(sine*1.15),-0.95),angles(0,0.3490658503988659,1.5707963267948966)),deltaTime)
+ aura1.C0=Lerp(aura1.C0,cf(0,0.15 * sin(sine*1),-2),deltaTime)
+ s1.C0=Lerp(s1.C0,cfMul(cf(2.5,2.45+0.15*sin(sine*1),-2),angles(0,0,3.141592653589793+6.283185307179586*sin(sine*0.25))),deltaTime) 
+s2.C0=Lerp(s2.C0,cfMul(cf(2.5,2.45+0.15*sin(sine*1),-2),angles(0,0,6.283185307179586*sin(sine*0.25))),deltaTime)
+s3.C0=Lerp(s3.C0,cfMul(cf(2.5,2.45+0.15*sin(sine*1),-2),angles(0,0,1.5707963267948966+6.283185307179586*sin(sine*0.25))),deltaTime)
+s4.C0=Lerp(s4.C0,cfMul(cf(2.5,2.45,-2),angles(0,0,4.71238898038469+6.283185307179586*sin(sine*0.25))),deltaTime)
+
+		end,
+		modeLeft = function()
+			setWalkSpeed(16)
+		end,
+	})
 	})
 end)
 lbl("Test")
