@@ -2097,7 +2097,7 @@ s3.C0=Lerp(s3.C0,cfMul(cf(2,1.9,-3-0.55*sin(sine*2)),angles(1.5707963267948966,3
 RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.25 * sin(sine*1.15),0),angles(-1.9198621771937625,0,3.141592653589793)),deltaTime) 
  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1-0.1*sin(sine*1),0),angles(-1.3089969389957472,0,3.141592653589793)),deltaTime)  
  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,-0.25-0.15*sin(sine*1.15),0),angles(-1.3089969389957472,0.3490658503988659,0.4363323129985824)),deltaTime)  
-  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.45,-1-0.15*sin(sine*1.15),-0.55),angles(-1.1344640137963142+0.08726646259971647*sin(sine*1),0.3490658503988659,0)),deltaTime)  AccessoryWeld.C0=Lerp(AccessoryWeld.C0,cf(0,0.15 * sin(sine*1),-2),deltaTime) 
+  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.45,-1-0.15*sin(sine*1.15),-0.55),angles(-1.1344640137963142+0.08726646259971647*sin(sine*1),0.3490658503988659,0)),deltaTime)
  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.75-0.15*sin(sine*1.15),-0.95),angles(0,0.3490658503988659,1.5707963267948966)),deltaTime)
  aura1.C0=Lerp(aura1.C0,cf(0,0.15 * sin(sine*1),-2),deltaTime)
  s1.C0=Lerp(s1.C0,cfMul(cf(2.5,2.45+0.15*sin(sine*1),-2),angles(0,0,3.141592653589793+6.283185307179586*sin(sine*0.25))),deltaTime) 
