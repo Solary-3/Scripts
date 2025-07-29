@@ -2172,7 +2172,6 @@ s4.C0=Lerp(s4.C0,cfMul(cf(2.5,2.45,-2),angles(0,0,4.71238898038469+6.28318530717
 			setWalkSpeed(16)
 		end,
 	})
-	})
 end)
 lbl("Test")
 lbl("Made By Theo")
