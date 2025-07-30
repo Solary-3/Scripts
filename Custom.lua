@@ -193,6 +193,16 @@ local accessorylimbs={
 	{meshid="4819720316",textureid="4819722776",C0=angles(0,0,0.2617993877991494),Name="Torso"}
 }
 ]]
+local R6parts = { 
+    head = {Name = "Head"},
+    torso = {Name = "Torso"},
+    root = {Name = "HumanoidRootPart"},
+    leftArm = {Name = "Left Arm"},
+    rightArm = {Name = "Right Arm"},
+    leftLeg = {Name = "Left Leg"},
+    rightLeg = {Name = "Right Leg"}
+}
+
 local function gp(p,n,cl)
 	for i,v in next,GetChildren(p) do
 		if IsA(v,cl) and (insGet(v,"Name")==n) then
@@ -245,7 +255,6 @@ local function getMeshOfPart(v)
 	return nil, nil
 end
 local function makeplaceholder(v)
-	if typeof(v)~="Instance" then
 		return nil
 	end
 	if not insGet(v,"Archivable") then
@@ -426,6 +435,7 @@ local function Draggable(window,obj)
 	Connect(insGet(obj,"MouseLeave"),function()
 		Disconnect(inputbegancon)
 	end)
+	--[[
 	local function ondes(d)
 		if IsA(d,"GuiObject") then
 			local thisEntered = false
@@ -469,11 +479,12 @@ local function Draggable(window,obj)
 			end)
 		end
 	end
-	Connect(insGet(window,"DescendantAdded"),ondes)
+	Connect(insGet(window,"DescendantAdded")ondes)
 	for i,v in next,GetDescendants(window) do 
 		ondes(v)
 	end
 end
+]]
 local function btn(txt, f)
 	local i1=i("TextBox") 
 	local i2=i("TextButton")
@@ -538,6 +549,7 @@ local function stopreanimate()
 	end
 	return false
 end
+--if replaceAvatar then 
 local function reanimate()
 	--[[
 		FDless reanimate by MyWorld
@@ -837,9 +849,9 @@ local function reanimate()
 			end
 		end)
 	end
-	--[[
-	local ondes=nil
-	ondes=function(v)
+	
+	--local ondes=nil
+	function(v)
 		if c and IsA(v,"Attachment") and IsDescendantOf(c,ws) then
 			local v1=attachments[insGet(v,"Name")]
 			if v1 then
@@ -911,7 +923,7 @@ local function reanimate()
 			end
 		end
 	end
-]]
+
 	local simradv=0
 	local charcons={}
 	local function onplayer(v)
@@ -1025,9 +1037,9 @@ local function reanimate()
 					else
 						insGet(newc,"BreakJoints")(newc)
 					end
-					Connect(insGet(newc,"DescendantAdded"),ondes)
+					Connect(insGet(newc,"DescendantAdded"))
 					for i,v in next,GetDescendants(newc) do
-						ondes(v)
+						--ondes(v)
 					end
 				else
 					local hrp=timegp(newc,"HumanoidRootPart","BasePart",10)
@@ -1951,7 +1963,7 @@ local function reanimate()
 		isFirstPerson=isFirstPerson
 	}
 end
-
+--end 
 
 btn("Nameless Glitcher", function()
 	local t=reanimate()
