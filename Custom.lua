@@ -129,15 +129,15 @@ local Lerp=cfGet(cf_0,"Lerp")
 
 local guiTheme={
 	guiTitle="Custom Patchma Hub",
-	windowTitleColor=c3(1,1,1),
+	windowTitleColor=c3(0,0,1),
 	windowTopColor=c3(0,0,0),
-	windowBottomColor=c3(0.350,0,0),
+	windowBottomColor=c3(0,0,0.584314),
 	windowMinimizedSize={X=220,Y=22},
 	windowRegularSize={X=220,Y=290},
-	buttonsTextColor=c3(0.645,0,0),
-	labelsTextColor=c3(1,1,1),
+	buttonsTextColor=c3(0.0941177,0.317647,0.878431),
+	labelsTextColor=c3(0.560784,0.560784,0.560784),
 	listTopColor=c3(0,0,0),
-	listBottomColor=c3(0.750,0,0)
+	listBottomColor=c3(0.0705882,0.0705882,0.0705882)
 }
 
 local accessorylimbs={
