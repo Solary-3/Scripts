@@ -1,24 +1,3 @@
---[[
-	patchma hub by MyWorld (discord: myworldmain)
-	optimize the optimized
-
-	IDs of paid accessories:
-
-	-for arms 11159410305,11263254795 or 14255556501,14255554762 or 12344545199,12344591101 or 13839976999,13831200263
-
-	-for legs 14768693948,14768701869 or 11159483910,12652786974
-
-	-for torso 14255528083 or 13421786478 or 14768678294
-
-	or anything else that covers ur torso. examples:
-	14532301415,13423624885,11502853991,14053485259,13779879140,14443132226,17163407577,16297156693,17180496303,17171230401
-	can be same stuff but different colors
-
-	there are 104 ways to make a rig with the ids above
-
-	IDs of free accessories:
-	3033910400,3409612660,3438342658,3398308134,4324158403,3822880197,4154538250,3443038622,4819740796
-]]
 
 --no need to get and index the library tables with function names every time the script uses them
 local osclock=os.clock
@@ -146,14 +125,14 @@ local Inverse=cfGet(cf_0,"Inverse")
 local Lerp=cfGet(cf_0,"Lerp")
 
 local guiTheme={
-	guiTitle="patchma hub",
-	windowTitleColor=c3(0,0,1),
+	guiTitle="Custom Patchma Hub",
+	windowTitleColor=c3(0.555,0,0),
 	windowTopColor=c3(0,0,0),
-	windowBottomColor=c3(0,0,0.584314),
+	windowBottomColor=c3(0.555,0,0),
 	windowMinimizedSize={X=220,Y=22},
 	windowRegularSize={X=220,Y=290},
-	buttonsTextColor=c3(0.0941177,0.317647,0.878431),
-	labelsTextColor=c3(0.560784,0.560784,0.560784),
+	buttonsTextColor=c3(0.555,0,0),
+	labelsTextColor=c3(1,1,1),
 	listTopColor=c3(0,0,0),
 	listBottomColor=c3(0.0705882,0.0705882,0.0705882)
 }
@@ -1950,54 +1929,6 @@ local function reanimate()
 		isFirstPerson=isFirstPerson
 	}
 end
-
-btn("creepy crawler",function()
-	local t=reanimate()
-	if type(t)~="table" then return end
-	local getJoint=t.getJoint
-	local rootJoint=getJoint("RootJoint")
-	local rightShoulder=getJoint("Right Shoulder")
-	local leftShoulder=getJoint("Left Shoulder")
-	local rightHip=getJoint("Right Hip")
-	local leftHip=getJoint("Left Hip")
-	local neck=getJoint("Neck")
-
-	t.setWalkSpeed(10)
-
-	local euler=angles
-	local function jumplerp()
-		local sine=sine*60
-		neck.C0 = Lerp(neck.C0,cfMul(cf(0,0,0.5), euler(0,0,3.141592653589793)),deltaTime) 
-		rootJoint.C0 = Lerp(rootJoint.C0,cfMul(cf(0,-1.4,0), euler(3.141592653589793,0,-3.141592653589793)),deltaTime) 
-		leftShoulder.C0 = Lerp(leftShoulder.C0,cfMul(cf(-1,1.5,0.3), euler(1.7453292519943295,0,-0.17453292519943295)),deltaTime) 
-		rightShoulder.C0 = Lerp(rightShoulder.C0,cfMul(cf(1,1.5,0.3), euler(1.7453292519943295,0,0.17453292519943295)),deltaTime) 
-		leftHip.C0 = Lerp(leftHip.C0,cfMul(cf(-1,-1.5,0.8), euler(1.3962634015954636,0,-0.17453292519943295)),deltaTime) 
-		rightHip.C0 = Lerp(rightHip.C0,cfMul(cf(1,-1.5,0.8), euler(1.3962634015954636,0,0.17453292519943295)),deltaTime)
-	end
-
-	t.addmode("default",{
-		idle=function()
-			local sine=sine*60
-			neck.C0 = Lerp(neck.C0,cfMul(cf(0,0,0.5), euler(0.08726646259971647 * sin((sine + 20) * 0.05),0,3.141592653589793 + 0.3490658503988659 * sin((sine + -30) * 0.025))),deltaTime) 
-			rootJoint.C0 = Lerp(rootJoint.C0,cfMul(cf(0,-1.5 + 0.1 * sin(sine * 0.05),0), euler(3.141592653589793,0,-3.1590459461097367 + 0.05235987755982989 * sin(sine * 0.025))),deltaTime) 
-			leftShoulder.C0 = Lerp(leftShoulder.C0,cfMul(cf(-1,1.5,-0.1 * sin(sine * 0.05)), euler(1.5707963267948966,0,0.08726646259971647 * sin(sine * 0.025))),deltaTime) 
-			rightShoulder.C0 = Lerp(rightShoulder.C0,cfMul(cf(1,1.5,-0.1 * sin(sine * 0.05)), euler(1.5707963267948966,0,0.08726646259971647 * sin(sine * 0.025))),deltaTime) 
-			leftHip.C0 = Lerp(leftHip.C0,cfMul(cf(-1,-1.5,0.5 + -0.1 * sin((sine + 10) * 0.05)), euler(1.5707963267948966,0,0.08726646259971647 * sin(sine * 0.025))),deltaTime) 
-			rightHip.C0 = Lerp(rightHip.C0,cfMul(cf(1,-1.5,0.5 + -0.1 * sin((sine + 10) * 0.05)), euler(1.5707963267948966,0,0.08726646259971647 * sin(sine * 0.025))),deltaTime) 
-		end,
-		walk=function()
-			local sine=sine*60
-			neck.C0 = Lerp(neck.C0,cfMul(cf(0,0,0.5), euler(0.17453292519943295,0.03490658503988659 * sin((sine + 2.5) * 0.2),3.141592653589793 + -0.17453292519943295 * sin((sine + -10) * 0.2))),deltaTime) 
-			rootJoint.C0 = Lerp(rootJoint.C0,cfMul(cf(0,-1.5,0), euler(3.0543261909900767,0.08726646259971647 * sin((sine + 7.5) * 0.2),-3.1590459461097367 + -0.08726646259971647 * sin(sine * 0.2))),deltaTime) 
-			leftShoulder.C0 = Lerp(leftShoulder.C0,cfMul(cf(-1,1.5 + 0.5 * sin((sine + 10) * 0.2),0.3 + 0.2 * sin((sine + -10) * 0.2)), euler(1.6580627893946132 + 0.17453292519943295 * sin((sine + 15) * 0.2),0,-0.08726646259971647 * sin(sine * 0.2))),deltaTime) 
-			rightShoulder.C0 = Lerp(rightShoulder.C0,cfMul(cf(1,1.5 + 0.5 * sin((sine + -7.5) * 0.2),0.3 + 0.2 * sin((sine + 5) * 0.2)), euler(1.6580627893946132 + 0.17453292519943295 * sin(sine * 0.2),0,-0.08726646259971647 * sin(sine * 0.2))),deltaTime) 
-			leftHip.C0 = Lerp(leftHip.C0,cfMul(cf(-1,-1.5 + 0.5 * sin((sine + -7.5) * 0.2),0.5 + 0.2 * sin((sine + 5) * 0.2)), euler(1.6580627893946132 + 0.17453292519943295 * sin(sine * 0.2),0,-0.08726646259971647 * sin(sine * 0.2))),deltaTime) 
-			rightHip.C0 = Lerp(rightHip.C0,cfMul(cf(1,-1.5 + 0.5 * sin((sine + 10) * 0.2),0.5 + 0.2 * sin((sine + -7.5) * 0.2)), euler(1.6580627893946132 + -0.17453292519943295 * sin(sine * 0.2),0,-0.08726646259971647 * sin(sine * 0.2))),deltaTime) 
-		end,
-		jump=jumplerp,
-		fall=jumplerp
-	})
-end)
 
 btn("nameless animations V8", function()
 	local t=reanimate()
