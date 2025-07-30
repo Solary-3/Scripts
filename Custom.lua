@@ -1967,6 +1967,8 @@ btn("Nameless Glitcher", function()
 	local RightHip=getJoint("Right Hip")
 	local LeftHip=getJoint("Left Hip")
 	local Neck=getJoint("Neck")
+	local getPartFromMesh=t.getPartFromMesh
+     local getPartJoint=t.getPartJoint
 	local aura=getPartFromMesh(4758429875,4764720503)
      local aura1=getPartJoint(aura)
      local sword1=getPartFromMesh(4315410540,4506940486)
