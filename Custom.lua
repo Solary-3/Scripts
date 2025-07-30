@@ -49,7 +49,7 @@ local xpcall=xpcall
 local type=type
 local typeof=typeof
 local game=game
-
+local replaceAvatar=false
 local i=Instance.new 
 local v2=Vector2.new 
 local v3=Vector3.new
@@ -157,7 +157,7 @@ local guiTheme={
 	listTopColor=c3(0,0,0),
 	listBottomColor=c3(0.0705882,0.0705882,0.0705882)
 }
-
+--[[
 local accessorylimbs={
 
 	{meshid="11263221350",textureid="11263219250",C0=angles(1.5707963267948966,0,1.5707963267948966),Name="Left Arm"},
@@ -192,7 +192,7 @@ local accessorylimbs={
 	{meshid="3030546036",textureid="3409604993",C0=cfMul(angles(-1.6144295580947547,1.5707963267948966,0),cf(0.125,0.3,0)),Name="Right Leg"},
 	{meshid="4819720316",textureid="4819722776",C0=angles(0,0,0.2617993877991494),Name="Torso"}
 }
-
+]]
 local function gp(p,n,cl)
 	for i,v in next,GetChildren(p) do
 		if IsA(v,cl) and (insGet(v,"Name")==n) then
@@ -521,7 +521,7 @@ lbl("discord.gg/QMy5f6DrbH")
 
 local allowshiftlock=nil
 local ctrltp=nil
-local placeholders=nil
+local placeholders=false
 local clickfling=nil
 local highlightflingtargets=nil
 local discharscripts=nil
@@ -837,6 +837,7 @@ local function reanimate()
 			end
 		end)
 	end
+	--[[
 	local ondes=nil
 	ondes=function(v)
 		if c and IsA(v,"Attachment") and IsDescendantOf(c,ws) then
@@ -910,7 +911,7 @@ local function reanimate()
 			end
 		end
 	end
-
+]]
 	local simradv=0
 	local charcons={}
 	local function onplayer(v)
@@ -1008,13 +1009,13 @@ local function reanimate()
 						return
 					end
 					primarypart=insGet(newc,"PrimaryPart") or hrp
-					if breakjointsmethod==1 then
+					if breakjointsmethod==nil then
 						insGet(newc,"BreakJoints")(newc)
 						local h=FindFirstChildOfClass(newc,"Humanoid")
 						if h then
 							insSet(h,"Health",0)
 						end
-					elseif breakjointsmethod==2 then
+					elseif breakjointsmethod==nil then
 						local h=FindFirstChildOfClass(newc,"Humanoid")
 						if h then
 							insSet(h,"Health",0)
