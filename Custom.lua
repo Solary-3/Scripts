@@ -128,7 +128,7 @@ local Inverse=cfGet(cf_0,"Inverse")
 local Lerp=cfGet(cf_0,"Lerp")
 
 local guiTheme={
-	guiTitle="Custom Patchma Hub",
+	guiTitle="patchma hub",
 	windowTitleColor=c3(0,0,1),
 	windowTopColor=c3(0,0,0),
 	windowBottomColor=c3(0,0,0.584314),
@@ -277,7 +277,7 @@ insSet(i6,"Name",rs())
 insSet(i6,"Parent",i3)
 insSet(i6,"Color",cs({csk(0,guiTheme.listTopColor),csk(1,guiTheme.listBottomColor)}))
 insSet(i6,"Rotation",90)
-insSet(i7,"Font",e.Font.Sarpanch)
+insSet(i7,"Font",e.Font.SourceSans)
 insSet(i7,"FontSize",e.FontSize.Size18)
 insSet(i7,"ClearTextOnFocus",false)
 insSet(i7,"Text",guiTheme.guiTitle)
@@ -294,7 +294,7 @@ insSet(i8,"Position",u2(1,0,0,0))
 insSet(i8,"Size",u2(0,40,0,guiTheme.windowMinimizedSize.Y))
 insSet(i8,"Name",rs())
 insSet(i8,"Parent",i2)
-insSet(i8,"Font",e.Font.Sarpanch)
+insSet(i8,"Font",e.Font.SourceSans)
 insSet(i8,"FontSize",e.FontSize.Size18)
 insSet(i8,"Text","-")
 insSet(i8,"TextColor3",c3(1,1,1))
@@ -440,7 +440,7 @@ end
 local btn=function(txt, f)
 	local i1=i("TextBox") 
 	local i2=i("TextButton")
-	insSet(i1,"Font",e.Font.Sarpanch)
+	insSet(i1,"Font",e.Font.SourceSans)
 	insSet(i1,"FontSize",e.FontSize.Size14)
 	insSet(i1,"Text",txt)
 	insSet(i1,"ClearTextOnFocus",false)
@@ -461,7 +461,7 @@ end
 local lbl=function(txt)
 	local i1=i("TextBox") 
 	local i2=i("Frame") 
-	insSet(i1,"Font",e.Font.Sarpanch)
+	insSet(i1,"Font",e.Font.SourceSans)
 	insSet(i1,"FontSize",e.FontSize.Size14)
 	insSet(i1,"Text",txt)
 	insSet(i1,"ClearTextOnFocus",false)
@@ -479,8 +479,8 @@ end
 
 Draggable(i1)
 
-lbl("Modified By Theo")
-lbl("Custom Patchma Made By Tho!!")
+lbl("by MyWorld")
+lbl("discord.gg/QMy5f6DrbH")
 
 local allowshiftlock=nil
 local ctrltp=nil
@@ -514,7 +514,7 @@ local reanimate=function()
 	local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
 	local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
 	local retVelTime = 0.51 --time that claimed parts have velocity to reclaim in case u lose them
-	local walkSpeed = 10 --your walkspeed (can be changed at runtime)
+	local walkSpeed = 16 --your walkspeed (can be changed at runtime)
 	local jumpPower = 50 --your jump power (can be changed at runtime)
 	local gravity = 196.2 --how fast the characters velocity decreases while falling (can be changed at runtime)
 	local ctrlclicktp = ctrltp --makes you teleport where u point ur mouse cursor at when click and hold ctrl down
@@ -2039,8 +2039,7 @@ local reanimate=function()
 		setHipHeight=setHipHeight
 	}
 end
-
-btn("nameless animations V8", function()
+btn("Nameless Glitcher", function()
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local raycastlegs=t.raycastlegs
@@ -2367,8 +2366,10 @@ s3.C0=Lerp(s3.C0,cfMul(cf(2.35,2.35,-2),angles(0,0,1.3089969389957472-17.4532925
 		end
 	})
 end)
-lbl("Test")
+lbl("Nameless Glitcher V1")
 lbl("Made By Theo")
+
+btn("empty reanimate (no animations)", reanimate)
 insSet(btn("stop current script",stopreanimate),"TextColor3",c3(0.75,0,0))
 lbl("SETTINGS (REANIMATE TO APPLY)")
 local swtc=function(txt,options,onchanged)
