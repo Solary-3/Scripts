@@ -128,16 +128,16 @@ local Inverse=cfGet(cf_0,"Inverse")
 local Lerp=cfGet(cf_0,"Lerp")
 
 local guiTheme={
-	guiTitle="patchma hub",
-	windowTitleColor=c3(0,0,1),
+	guiTitle="Custom Patchma Hub",
+	windowTitleColor=c3(1,1,1),
 	windowTopColor=c3(0,0,0),
-	windowBottomColor=c3(0,0,0.584314),
+	windowBottomColor=c3(0.350,0,0),
 	windowMinimizedSize={X=220,Y=22},
 	windowRegularSize={X=220,Y=290},
-	buttonsTextColor=c3(0.0941177,0.317647,0.878431),
-	labelsTextColor=c3(0.560784,0.560784,0.560784),
+	buttonsTextColor=c3(0.645,0,0),
+	labelsTextColor=c3(1,1,1),
 	listTopColor=c3(0,0,0),
-	listBottomColor=c3(0.0705882,0.0705882,0.0705882)
+	listBottomColor=c3(0.750,0,0)
 }
 
 local accessorylimbs={
@@ -277,7 +277,7 @@ insSet(i6,"Name",rs())
 insSet(i6,"Parent",i3)
 insSet(i6,"Color",cs({csk(0,guiTheme.listTopColor),csk(1,guiTheme.listBottomColor)}))
 insSet(i6,"Rotation",90)
-insSet(i7,"Font",e.Font.SourceSans)
+insSet(i7,"Font",e.Font.Sarpanch)
 insSet(i7,"FontSize",e.FontSize.Size18)
 insSet(i7,"ClearTextOnFocus",false)
 insSet(i7,"Text",guiTheme.guiTitle)
@@ -294,7 +294,7 @@ insSet(i8,"Position",u2(1,0,0,0))
 insSet(i8,"Size",u2(0,40,0,guiTheme.windowMinimizedSize.Y))
 insSet(i8,"Name",rs())
 insSet(i8,"Parent",i2)
-insSet(i8,"Font",e.Font.SourceSans)
+insSet(i8,"Font",e.Font.Sarpanch)
 insSet(i8,"FontSize",e.FontSize.Size18)
 insSet(i8,"Text","-")
 insSet(i8,"TextColor3",c3(1,1,1))
@@ -440,7 +440,7 @@ end
 local btn=function(txt, f)
 	local i1=i("TextBox") 
 	local i2=i("TextButton")
-	insSet(i1,"Font",e.Font.SourceSans)
+	insSet(i1,"Font",e.Font.Sarpanch)
 	insSet(i1,"FontSize",e.FontSize.Size14)
 	insSet(i1,"Text",txt)
 	insSet(i1,"ClearTextOnFocus",false)
@@ -461,7 +461,7 @@ end
 local lbl=function(txt)
 	local i1=i("TextBox") 
 	local i2=i("Frame") 
-	insSet(i1,"Font",e.Font.SourceSans)
+	insSet(i1,"Font",e.Font.Sarpanch)
 	insSet(i1,"FontSize",e.FontSize.Size14)
 	insSet(i1,"Text",txt)
 	insSet(i1,"ClearTextOnFocus",false)
@@ -479,8 +479,8 @@ end
 
 Draggable(i1)
 
-lbl("by MyWorld")
-lbl("discord.gg/QMy5f6DrbH")
+lbl("Modified By Theo")
+lbl("Custom Patchma Made By Tho!!")
 
 local allowshiftlock=nil
 local ctrltp=nil
@@ -514,7 +514,7 @@ local reanimate=function()
 	local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
 	local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
 	local retVelTime = 0.51 --time that claimed parts have velocity to reclaim in case u lose them
-	local walkSpeed = 16 --your walkspeed (can be changed at runtime)
+	local walkSpeed = 10 --your walkspeed (can be changed at runtime)
 	local jumpPower = 50 --your jump power (can be changed at runtime)
 	local gravity = 196.2 --how fast the characters velocity decreases while falling (can be changed at runtime)
 	local ctrlclicktp = ctrltp --makes you teleport where u point ur mouse cursor at when click and hold ctrl down
@@ -2149,6 +2149,9 @@ s2.C0=Lerp(s2.C0,cfMul(cf(2.35,2.25,7.5-0.15*sin(sine*1.15)),angles(0,0,1.570796
 	})
 	addmode("e", {
 		idle = function()
+		     modeEntered = function()
+			setWalkSpeed(5)
+		end,
 			velYchg()
 			Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.9198621771937625+0.08726646259971647*sin(sine*1.15),0,3.141592653589793)),deltaTime) 
  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.45,-0.15-0.15*sin(sine*1),0),angles(-0.7853981633974483,0.3490658503988659,-0.6108652381980153+0.17453292519943295*sin(sine*1.15))),deltaTime) 
@@ -2162,6 +2165,9 @@ s3.C0=Lerp(s3.C0,cfMul(cf(2.35,2.55-0.15*sin(sine*1.15),-1.55),angles(0,0,1.5707
 
 s4.C0=Lerp(s4.C0,cfMul(cf(2.35,2.55-0.15*sin(sine*1.15),-1.55),angles(0,0,4.71238898038469+3.141592653589793*sin(sine*1))),deltaTime)
 aura1.C0=Lerp(aura1.C0,cfMul(cf(0,-4,-2),angles(0.3490658503988659,0,0)),deltaTime)
+modeLeft = function()
+			setWalkSpeed(10)
+		end,
 		end
 	})
 	addmode("r", {
@@ -2209,7 +2215,6 @@ aura1.C0=Lerp(aura1.C0,cfMul(cf(0,-4,-2),angles(0.3490658503988659,0,0)),deltaTi
 			RightHip.C0 = Lerp(RightHip.C0,cfMul(cf(0.5 + 1 * sin((sine + 0.2) * 2.2), -0.75 - 0.25 * sin(sine * 2), -1 * sin((sine + 0.95) * 2.2)),angles(0, 1.5707963267948966, 0)),deltaTime) 
 			RightShoulder.C0 = Lerp(RightShoulder.C0,cfMul(cf(-0.5 - 1.85 * sin(sine * 2), 0.8 - 0.5 * sin(sine * 2), -1.85 * sin((sine + 0.75) * 2)),angles(0, 1.5707963267948966, 0)),deltaTime) 
 			LeftShoulder.C0 = Lerp(LeftShoulder.C0,cfMul(cf(0.5 + 1.85 * sin(sine * 2), 0.8 - 0.5 * sin(sine * 2), 1.85 * sin((sine + 0.75) * 2)),angles(0, -1.5707963267948966, 0)),deltaTime) 
-			--Torso,0,0,0,2,-90,0,0,2,0.75,0.25,0,2,-0,0,0,2,0,0,0,2,180,0,0,2,Fedora_Handle,8.657480066176504e-09,0,0,2,-6,0,0,2,-0.15052366256713867,0,0,2,0,0,0,2,-0.010221302509307861,0,0,2,0,0,0,2,Head,0,0,0,2,-90,-5,0.4,2,1.5,-0.1,0.2,2,-0,0,0,2,0,0,0,2,180,20,0,0.66,LeftLeg,-0.5,-1,0.2,2.2,-0,0,0,2,-0.75,-0.25,0,2,-90,0,0,2,0,1,0.95,2.2,0,0,0,2,RightLeg,0.5,1,0.2,2.2,0,0,0,2,-0.75,-0.25,0,2,90,0,0,2,0,-1,0.95,2.2,0,0,0,2,RightArm,-0.5,-1.85,0,2,0,0,0,2,0.8,-0.5,0,2,90,0,0,2,0,-1.85,0.75,2,0,0,0,2,LeftArm,0.5,1.85,0,2,-0,0,0,2,0.8,-0.5,0,2,-90,0,0,2,0,1.85,0.75,2,0,0,0,2
 		end
 	})
 	addmode("i", {
@@ -2221,7 +2226,6 @@ aura1.C0=Lerp(aura1.C0,cfMul(cf(0,-4,-2),angles(0.3490658503988659,0,0)),deltaTi
 			Neck.C0 = Lerp(Neck.C0,cfMul(cf(0, 1 + 0.2 * sin(sine * 9), 0),angles(-1.5707963267948966 + 0.08726646259971647 * sin(sine * 9), 0.08726646259971647 * sin(sine * 4.5), 3.141592653589793 - 0.06981317007977318 * sin(sine * 4.5))),deltaTime) 
 			RightShoulder.C0 = Lerp(RightShoulder.C0,cfMul(cf(0.5, 0.5 + 0.1 * sin((sine - 0.4444444444444444) * 9), 0),angles(2.9670597283903604 + 0.17453292519943295 * sin((sine - 0.17777777777777778) * 9), 0.5235987755982988, -1.5707963267948966 + 0.17453292519943295 * sin(sine * 4.5))),deltaTime) 
 			RightHip.C0 = Lerp(RightHip.C0,cfMul(cf(1, -0.5 + 0.1 * sin((sine - 0.26666666666666666) * 4.5)-Ychg, -0.5),angles(1.7453292519943295 + 1.0471975511965976 * sin(sine * 4.5), 1.5707963267948966 + 0.03490658503988659 * sin(sine * 4.5), -1.5707963267948966)),deltaTime) 
-			--LeftArm,-0.5,0,0,4.5,170,10,-0.17777777777777778,9,0.5,0.1,-0.4444444444444444,9,-30,0,0,4.5,0,0,0,4.5,90,10,0,4.5,LeftLeg,-1,0,0,4.5,100,-60,0,4.5,-0.5,0.1,0.26666666666666666,4.5,-90,2,0,4.5,-0.5,0,0,4.5,90,0,0,4.5,Torso,0,0,0,4.5,-80,-2,0.17777777777777778,9,-0.5,0.5,0.17777777777777778,9,-0,-3,0,4.5,0,0,0,4.5,180,2,0,4.5,Head,0,0,0,4.5,-90,5,0,9,1,0.2,0,9,-0,5,0,4.5,0,0,0,4.5,180,-4,0,4.5,RightArm,0.5,0,0,4.5,170,10,-0.17777777777777778,9,0.5,0.1,-0.4444444444444444,9,30,0,0,4.5,0,0,0,4.5,-90,10,0,4.5,RightLeg,1,0,0,4.5,100,60,0,4.5,-0.5,0.1,-0.26666666666666666,4.5,90,2,0,4.5,-0.5,0,0,4.5,-90,0,0,4.5
 		end,
 	})
 	addmode("o", {
@@ -2287,7 +2291,6 @@ aura1.C0=Lerp(aura1.C0,cfMul(cf(0,-4,-2),angles(0.3490658503988659,0,0)),deltaTi
 			RootJoint.C0 = Lerp(RootJoint.C0,cfMul(cf(0, 5 - 0.5 * sin((sine - 0.2) * 1), 0.2 * sin((sine - 1.2) * 1)),angles(-0.08726646259971647 + 0.17453292519943295 * sin((sine + 1.2) * 1) - Vfw * 0.2, 0.08726646259971647 * sin(sine * 0.5), 3.141592653589793 - Vrt * 0.2)),deltaTime) 
 			LeftHip.C0 = Lerp(LeftHip.C0,cfMul(cf(-1, -1, 0),angles(1.3962634015954636 + 0.12217304763960307 * sin((sine + 1.5) * 1) - Vfw * 0.2, -1.2217304763960306 + 0.08726646259971647 * sin((sine + 0.2) * 0.5), 1.5707963267948966)),deltaTime) 
 			RightHip.C0 = Lerp(RightHip.C0,cfMul(cf(1, -1, 0),angles(1.9198621771937625 + 0.12217304763960307 * sin((sine + 1.5) * 1) - Vfw * 0.2, 1.2217304763960306 + 0.08726646259971647 * sin((sine + 0.2) * 0.5), -1.5707963267948966)),deltaTime) 
-			--LeftArm,-1,0,0,1,-175,-10,1.5,1,0.5,0,0,1,-90,5,0.6,1,0,0,0,1,-90,0,0,1,RightArm,1,0,0,1,180,-5,0,1,0.5,0,0,1,20,5,0.3,1,0,0,0,1,-110,5,1,1,Head,0,0,0,1,-75,-15,1.2,1,1,0,0,1,-0,5,0.2,0.5,0,0,0,1,-170,0,0,1,Torso,0,0,0,1,-5,10,1.2,1,5,-0.5,-0.2,1,-0,5,0,0.5,0,0.2,-1.2,1,180,0,0,1,LeftLeg,-1,0,0,1,80,7,1.5,1,-1,0,0,1,-70,5,0.2,0.5,0,0,0,1,90,0,0,1,RightLeg,1,0,0,1,110,7,1.5,1,-1,0,0,1,70,5,0.2,0.5,0,0,0,1,-90,0,0,1
 		end,
 		modeLeft = function()
 			setWalkSpeed(16)
@@ -2302,7 +2305,6 @@ aura1.C0=Lerp(aura1.C0,cfMul(cf(0,-4,-2),angles(0.3490658503988659,0,0)),deltaTi
 			RightHip.C0 = Lerp(RightHip.C0,cfMul(cf(1, -1 + 0.4 * sin((sine - 0.01) * 8)-Ychg, 0),angles(1.5707963267948966, 1.7453292519943295 + 0.6981317007977318 * sin(sine * 8), -1.5707963267948966)),deltaTime) 
 			LeftHip.C0 = Lerp(LeftHip.C0,cfMul(cf(-1, -1 - 0.4 * sin((sine - 0.01) * 8)-Ychg, 0),angles(1.5707963267948966, -1.7453292519943295 + 0.6981317007977318 * sin(sine * 8), 1.5707963267948966)),deltaTime) 
 			RightShoulder.C0 = Lerp(RightShoulder.C0,cfMul(cf(0.9 + 0.4 * sin(sine * 8), 0.5, -0.5 * sin((sine - 0.35) * 4)),angles(1.5707963267948966 + 0.6981317007977318 * sin(sine * 4), 1.5707963267948966 + 1.0471975511965976 * sin(sine * 8), -1.5707963267948966 + 0.17453292519943295 * sin((sine - 0.35) * 4))),deltaTime) 
-			--LeftArm,-0.9,0.4,0,8,90,0,0.25,4,0.5,0,0,8,-90,60,0,8,0,0.5,0.25,4,90,40,0.25,4,Torso,0,0.3,0.4,8,-90,0,0,8,0,0,0,4,0,20,0,8,0,0,0,8,-180,0,0,8,Head,0,0,0,8,-90,3.5,0.125,16,1,0,0,8,0,-22,0,8,0,0,0,8,-180,0,0,1.1,RightLeg,1,0,0,8,90,0,0,8,-1,0.4,-0.01,8,100,40,0,8,0,0,0,8,-90,0,0,8,LeftLeg,-1,0,0,8,90,0,0,8,-1,-0.4,-0.01,8,-100,40,0,8,0,0,0,8,90,0,0,8,RightArm,0.9,0.4,0,8,90,40,0,4,0.5,0,0,8,90,60,0,8,0,-0.5,-0.35,4,-90,10,-0.35,4
 		end
 	})
 	addmode("h", {
@@ -2314,7 +2316,6 @@ aura1.C0=Lerp(aura1.C0,cfMul(cf(0,-4,-2),angles(0.3490658503988659,0,0)),deltaTi
 			RightShoulder.C0 = Lerp(RightShoulder.C0,cfMul(cf(0.5, 1, 0),angles(-0.5235987755982988, 1.5707963267948966 - 0.5235987755982988 * sin(sine * 8), 3.141592653589793)),deltaTime) 
 			RootJoint.C0 = Lerp(RootJoint.C0,cfMul(cf(-0.1 * sin(sine * 8), 0.2 * sin((sine + 0.1) * 16)+Ychg, 0),angles(-1.5707963267948966, 0.2617993877991494 * sin(sine * 8), -3.141592653589793)),deltaTime) 
 			LeftHip.C0 = Lerp(LeftHip.C0,cfMul(cf(-1, -1 - 0.3 * sin(sine * 8)-Ychg, 0),angles(1.5707963267948966, -1.5707963267948966 + 0.5235987755982988 * sin(sine * 8), 1.5707963267948966)),deltaTime) 
-			--Head,0,0,0,8,-90,0,0,8,1,0,0,8,0,-25,0,8,0,0,0,8,-180,0,0,8,RightLeg,1,0,0,8,90,0,0,8,-1,0.3,0,8,90,30,0,8,0,0,0,8,-90,0,0,8,LeftArm,-0.5,0,0,8,-30,0,0,8,1,0,0,8,-90,-30,0,8,0,0,0,8,180,0,0,8,RightArm,0.5,0,0,8,-30,0,0,8,1,0,0,16,90,-30,0,8,0,0,0,8,180,0,0,8,Torso,0,-0.1,0,8,-90,0,0,8,0,0.2,0.1,16,0,15,0,8,0,0,0,8,-180,0,0,8,LeftLeg,-1,0,0,8,90,0,0,8,-1,-0.3,0,8,-90,30,0,8,0,0,0,8,90,0,0,8,Fedora_Handle,8.657480066176504e-09,0,0,8,-6,0,0,8,-0.15052366256713867,0,0,8,0,0,0,8,-0.010221302509307861,0,0,8,0,0,0,8
 		end
 	})
 	addmode("j", {
@@ -2326,7 +2327,6 @@ aura1.C0=Lerp(aura1.C0,cfMul(cf(0,-4,-2),angles(0.3490658503988659,0,0)),deltaTi
 			Neck.C0 = Lerp(Neck.C0,cfMul(cf(0, 1, 0),angles(-1.5707963267948966 + 0.08726646259971647 * sin((sine + 0.1) * 4), 0, 2.792526803190927)),deltaTime) 
 			RootJoint.C0 = Lerp(RootJoint.C0,cfMul(cf(0, -1.7 + 0.5 * sin(sine * 4)+Ychg, 0.15 * sin(sine * 4)),angles(3.3161255787892263 + 0.17453292519943295 * sin(sine * 4), 0, 3.6651914291880923)),deltaTime) 
 			RightShoulder.C0 = Lerp(RightShoulder.C0,cfMul(cf(0.8 + 0.4 * sin(sine * 4), 0.6 + 0.1 * sin(sine * 4), 0.4 - 0.25 * sin(sine * 4)),angles(2.9670597283903604, 2.2689280275926285 - 0.17453292519943295 * sin(sine * 4), -1.4835298641951802 - 0.17453292519943295 * sin(sine * 4))),deltaTime) 
-			--GalaxyBeautifulHair_Handle,-0.15000000596046448,0,0,1,0,0,0,1,0.10000000149011612,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,LeftLeg,-0.8,0,0,4,10,0,0,4,-1,0,0,4,-40,0,0,4,-0.1,0,0,4,0,0,0,4,LeftArm,-1.2,0,0,4,-20,5,0.1,4,0.5,0,0,4,0,0,0,4,0,0,0,4,40,5,0.1,4,Fedora_Handle,8.657480066176504e-09,0,0,1,-6,0,0,1,-0.15052366256713867,0,0,1,0,0,0,1,-0.010221302509307861,0,0,1,0,0,0,1,ValkyrieHelm_Handle,8.658389560878277e-09,0,0,1,-15,0,0,1,-0.2433757781982422,0,0,1,0,0,0,1,-0.2657628059387207,0,0,1,0,0,0,1,RightLeg,1.1,0,0,4,90,0,0,4,-1,0,0,4,100,0,0,4,0,0,0,4,-90,0,0,4,BlackIronAntlers_Handle,8.658389560878277e-09,0,0,1,0,0,0,1,-0.6500000953674316,0,0,1,0,0,0,1,0.19972775876522064,0,0,1,0,0,0,1,DevAwardsAdurite_Handle,0,0,0,1,0,0,0,1,-0.25,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,SilverthornAntlers_Handle,8.658389560878277e-09,0,0,1,0,0,0,1,-0.6500000953674316,0,0,1,0,0,0,1,0.19972775876522064,0,0,1,0,0,0,1,Head,0,0,0,4,-90,5,0.1,4,1,0,0,4,-0,0,0,4,0,0,0,4,160,0,0,4,Torso,0,0,0,4,190,10,0,4,-1.70,0.5,0,4,-0,0,0,4,0,0.15,0,4,210,0,0,4,RightArm,0.8,0.4,0,4,170,0,0,4,0.6,0.1,0,4,130,-10,0,4,0.4,-0.25,0,4,-85,-10,0,4
 		end
 	})
 	addmode("k", {
@@ -2338,7 +2338,7 @@ aura1.C0=Lerp(aura1.C0,cfMul(cf(0,-4,-2),angles(0.3490658503988659,0,0)),deltaTi
 			RootJoint.C0 = Lerp(RootJoint.C0,cfMul(cf(0, -0.5 + 0.3 * sin((sine + 0.16666666666666666) * 12)+Ychg, 0),angles(-1.3962634015954636 + 0.08726646259971647 * sin((sine + 0.3333333333333333) * 12), 0.08726646259971647 * sin((sine + 0.06666666666666667) * 6), 3.141592653589793)),deltaTime) 
 			LeftShoulder.C0 = Lerp(LeftShoulder.C0,cfMul(cf(-0.8 - 0.1 * sin(sine * 6), 0.5 + 0.1 * sin(sine * 6), -0.2),angles(3.141592653589793 - 0.17453292519943295 * sin((sine + 0.39999999999999997) * 12), -0.17453292519943295, 1.5707963267948966)),deltaTime) 
 			RightShoulder.C0 = Lerp(RightShoulder.C0,cfMul(cf(0.8 - 0.1 * sin(sine * 6), 0.5 - 0.1 * sin(sine * 6), -0.2),angles(3.141592653589793 - 0.17453292519943295 * sin((sine + 0.39999999999999997) * 12), 0.17453292519943295, -1.5707963267948966)),deltaTime) 
-			--GalaxyBeautifulHair_Handle,-0.15000000596046448,0,0,1.5,0,0,0,1.5,0.10000000149011612,0,0,1.5,0,0,0,1.5,0,0,0,1.5,0,0,0,1.5,Head,0,0,0,6,-95,-5,0.3333333333333333,12,1,0,0,6,-0,-5,0.2,6,0,0,0,6,180,0,0,6,ValkyrieHelm_Handle,8.658389560878277e-09,0,0,1.5,-15,0,0,1.5,-0.2433757781982422,0,0,1.5,0,0,0,1.5,-0.2657628059387207,0,0,1.5,0,0,0,1.5,SilverthornAntlers_Handle,8.658389560878277e-09,0,0,1.5,0,0,0,1.5,-0.6500000953674316,0,0,1.5,0,0,0,1.5,0.19972775876522064,0,0,1.5,0,0,0,1.5,BlackIronAntlers_Handle,8.658389560878277e-09,0,0,1.5,0,0,0,1.5,-0.6500000953674316,0,0,1.5,0,0,0,1.5,0.19972775876522064,0,0,1.5,0,0,0,1.5,Fedora_Handle,8.657480066176504e-09,0,0,1.5,-6,0,0,1.5,-0.15052366256713867,0,0,1.5,0,0,0,1.5,-0.010221302509307861,0,0,1.5,0,0,0,1.5,LeftLeg,-1,0,0,6,100,-60,0,6,-0.5,-0.5,0.39999999999999997,12,-90,7.5,0,6,-0.5,0,0,6,90,0,0,6,EyelessSmileHead_Handle,-0.00043487548828125,0,0,1.5,180,0,0,1.5,0.6000361442565918,0,0,1.5,0,0,0,1.5,0.0003204345703125,0,0,1.5,180,0,0,1.5,RightLeg,1,0,0,6,100,60,0,6,-0.5,-0.5,0.39999999999999997,12,90,7.5,0,6,-0.5,0,0,6,-90,0,0,6,DevAwardsAdurite_Handle,0,0,0,1.5,0,0,0,1.5,-0.25,0,0,1.5,0,0,0,1.5,0,0,0,1.5,0,0,0,1.5,Torso,0,0,0,6,-80,5,0.3333333333333333,12,-0.5,0.3,0.16666666666666666,12,-0,5,0.06666666666666667,6,0,0,0,6,180,0,0,6,LeftArm,-0.8,-0.1,0,6,180,-10,0.39999999999999997,12,0.5,0.1,0,6,-10,0,0,6,-0.2,0,0,6,90,0,0,6,RightArm,0.8,-0.1,0,6,180,-10,0.39999999999999997,12,0.5,-0.1,0,6,10,0,0,6,-0.2,0,0,6,-90,0,0,6
+			--
 		end
 	})
 	local idleL=function()
@@ -2349,7 +2349,7 @@ aura1.C0=Lerp(aura1.C0,cfMul(cf(0,-4,-2),angles(0.3490658503988659,0,0)),deltaTi
 		Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.5707963267948966+0.08726646259971647*sin((sine-0.1)*16),0.12217304763960307*sin((sine-0.0785)*8),3.141592653589793)),deltaTime) 
 		LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.9+0.2*sin((sine - 0.2)*16)-Ychg,0.25),angles(0,-0.7853981633974483,-0.4363323129985824-1.1344640137963142*sin((sine-0.0875)*8))),deltaTime) 
 		LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.45+0.05*sin((sine - 0.0875)*16),-0.2),angles(2.0943951023931953+0.17453292519943295*sin((sine-0.0875)*16),-0.5235987755982988,1.5707963267948966+0.17453292519943295*sin((sine-0.0875)*16))),deltaTime) 
-		--MW_animatorProgressSave: RightLeg,1,0,0,16,0,0,0,8,-0.9,0.2,-0.2,16,45,0,-0.0875,8,0.25,0,0,16,25,-65,-0.0875,8,Fedora_Handle,8.657480066176504e-09,0,0,2,-6,0,0,2,-0.15052366256713867,0,0,2,0,0,0,2,-0.010221302509307861,0,0,2,0,0,0,2,Torso,0,0.15,-0.1,8,-90,0,0,16,0,0.54,0,16,-0,-5,-0.0785,8,0,0,0,16,180,-5,-0.0785,8,RightArm,0.75,0.07,-0.0785,8,80,0,0,16,1.3,0.1,-0.0875,16,135,-4,-0.0785,8,0,0,0,16,70,0,0,16,Head,0,0,0,16,-90,5,-0.1,16,1,0,0,16,-0,7,-0.0785,8,0,0,0,16,180,0,0,16,LeftLeg,-1,0,0,16,0,0,0,8,-0.9,0.2,-0.2,16,-45,0,0,8,0.25,0,0,16,-25,-65,-0.0875,8,Bandana_Handle,3.9362930692732334e-09,0,0,2,0,0,0,2,0.3000001907348633,0,0,2,0,0,0,2,-0.6002722978591919,0,0,2,0,0,0,2,LeftArm,-1,0,0,16,120,10,-0.0875,16,0.45,0.05,-0.0875,16,-30,0,0,16,-0.2,0,0,16,90,10,-0.0875,16
+
 	end
 	addmode("l", {
 		modeEntered = function()
