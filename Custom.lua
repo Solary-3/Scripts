@@ -2082,6 +2082,10 @@ RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.25,0.25-0.15*sin(sine*1.15),0)
  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1-0.15*sin(sine*1.15),0),angles(-0.9599310885968813+0.17453292519943295*sin(sine*1),1.5707963267948966,0)),deltaTime)
  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.45-0.15*sin(sine*1.15),-0.85),angles(0.08726646259971647-0.08726646259971647*sin(sine*1.15),-1.5707963267948966,0)),deltaTime) 
  aura1.C0=Lerp(aura1.C0,cfMul(cf(0,0,-2),angles(0,0,7.853981633974483*sin(sine*0.25))),deltaTime)
+ s1.C0=Lerp(s1.C0,cfMul(cf(1.75-0.15*sin(sine*1.15),3-0.15*sin(sine*1.15),1.55),angles(-1.6580627893946132,0.6283185307179586,1.5707963267948966)),deltaTime)
+s2.C0=Lerp(s2.C0,cfMul(cf(2.35,2.35,-2),angles(0,0,1.3089969389957472-17.453292519943297*sin(sine*0.25))),deltaTime)
+s3.C0=Lerp(s3.C0,cfMul(cf(2.35,2.35,-2),angles(0,0,3.4033920413889427-17.453292519943297*sin(sine*0.25))),deltaTime)
+s4.C0=Lerp(s4.C0,cfMul(cf(2.35,2.35,-2),angles(0,0,5.497787143782138-17.453292519943297*sin(sine*0.25))),deltaTime)
 		end
 	})
 	addmode("t", {
