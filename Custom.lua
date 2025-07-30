@@ -21,6 +21,8 @@
 ]]
 
 --no need to get and index the library tables with function names every time the script uses them
+if _G.PatchmaLoaded then return end
+_G.PatchmaLoaded =true
 local osclock=os.clock
 local tspawn=task.spawn
 local twait=task.wait
@@ -516,7 +518,7 @@ end
 
 Draggable(i1)
 
-lbl("by MyWorld")
+lbl("by MyWorld/Mod By Theo")
 lbl("discord.gg/QMy5f6DrbH")
 
 local allowshiftlock=nil
@@ -548,7 +550,7 @@ local function reanimate()
 	local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
 	local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
 	local retVelTime = 0.51 --time that claimed parts have velocity to reclaim in case u lose them
-	local walkSpeed = 16 --your walkspeed (can be changed at runtime)
+	local walkSpeed = 10 --your walkspeed (can be changed at runtime)
 	local jumpPower = 50 --your jump power (can be changed at runtime)
 	local gravity = 196.2 --how fast the characters velocity decreases while falling (can be changed at runtime)
 	local ctrlclicktp = ctrltp --makes you teleport where u point ur mouse cursor at when click and hold ctrl down
