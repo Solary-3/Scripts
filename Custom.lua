@@ -157,7 +157,6 @@ local guiTheme={
 	listTopColor=c3(0,0,0),
 	listBottomColor=c3(0.0705882,0.0705882,0.0705882)
 }
---[[
 local accessorylimbs={
 
 	{meshid="11263221350",textureid="11263219250",C0=angles(1.5707963267948966,0,1.5707963267948966),Name="Left Arm"},
@@ -192,7 +191,8 @@ local accessorylimbs={
 	{meshid="3030546036",textureid="3409604993",C0=cfMul(angles(-1.6144295580947547,1.5707963267948966,0),cf(0.125,0.3,0)),Name="Right Leg"},
 	{meshid="4819720316",textureid="4819722776",C0=angles(0,0,0.2617993877991494),Name="Torso"}
 }
-]]
+
+--[[
 local R6parts = { 
     head = {Name = "Head"},
     torso = {Name = "Torso"},
@@ -202,7 +202,7 @@ local R6parts = {
     leftLeg = {Name = "Left Leg"},
     rightLeg = {Name = "Right Leg"}
 }
-
+]]--
 local function gp(p,n,cl)
 	for i,v in next,GetChildren(p) do
 		if IsA(v,cl) and (insGet(v,"Name")==n) then
@@ -255,6 +255,7 @@ local function getMeshOfPart(v)
 	return nil, nil
 end
 local function makeplaceholder(v)
+     if typeof(v)~="Instance" then
 		return nil
 	end
 	if not insGet(v,"Archivable") then
@@ -435,7 +436,6 @@ local function Draggable(window,obj)
 	Connect(insGet(obj,"MouseLeave"),function()
 		Disconnect(inputbegancon)
 	end)
-	--[[
 	local function ondes(d)
 		if IsA(d,"GuiObject") then
 			local thisEntered = false
@@ -484,7 +484,7 @@ local function Draggable(window,obj)
 		ondes(v)
 	end
 end
-]]
+
 local function btn(txt, f)
 	local i1=i("TextBox") 
 	local i2=i("TextButton")
@@ -850,8 +850,8 @@ local function reanimate()
 		end)
 	end
 	
-	--local ondes=nil
-	function(v)
+	local ondes=nil
+	ondes=function(v)
 		if c and IsA(v,"Attachment") and IsDescendantOf(c,ws) then
 			local v1=attachments[insGet(v,"Name")]
 			if v1 then
@@ -1037,9 +1037,9 @@ local function reanimate()
 					else
 						insGet(newc,"BreakJoints")(newc)
 					end
-					Connect(insGet(newc,"DescendantAdded"))
+					Connect(insGet(newc,"DescendantAdded"),ondes)
 					for i,v in next,GetDescendants(newc) do
-						--ondes(v)
+						ondes(v)
 					end
 				else
 					local hrp=timegp(newc,"HumanoidRootPart","BasePart",10)
