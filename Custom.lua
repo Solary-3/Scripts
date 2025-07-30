@@ -2037,9 +2037,6 @@ s2.C0=Lerp(s2.C0,cfMul(cf(2.35,2.25,7.5-0.15*sin(sine*1.15)),angles(0,0,1.570796
 	})
 	addmode("e", {
 		idle = function()
-	 modeEntered = function()
-			setWalkSpeed(5)
-		end,
 		velYchg()
 Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.9198621771937625+0.08726646259971647*sin(sine*1.15),0,3.141592653589793)),deltaTime) 
  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.45,-0.15-0.15*sin(sine*1),0),angles(-0.7853981633974483,0.3490658503988659,-0.6108652381980153+0.17453292519943295*sin(sine*1.15))),deltaTime) 
@@ -2052,9 +2049,6 @@ s2.C0=Lerp(s2.C0,cfMul(cf(0.45,2.75+0.2*sin(sine*1.155),-1.55),angles(1.57079632
 s3.C0=Lerp(s3.C0,cfMul(cf(2.35,2.55-0.15*sin(sine*1.15),-1.55),angles(0,0,1.5707963267948966+3.141592653589793*sin(sine*1))),deltaTime) 
 s4.C0=Lerp(s4.C0,cfMul(cf(2.35,2.55-0.15*sin(sine*1.15),-1.55),angles(0,0,4.71238898038469+3.141592653589793*sin(sine*1))),deltaTime)
 aura1.C0=Lerp(aura1.C0,cfMul(cf(0,-4,-2),angles(0.3490658503988659,0,0)),deltaTime)
-modeLeft = function()
-			setWalkSpeed(10)
-		end,
 		end
 	})
 	addmode("r", {
