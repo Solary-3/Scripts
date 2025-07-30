@@ -294,85 +294,299 @@ G2L["UICorner_24"] = Instance.new("UICorner", G2L["Survivor_23"]);
 G2L["UIStroke_25"] = Instance.new("UIStroke", G2L["Survivor_23"]);
 
 G2L["Jason_e"]["MouseButton1Click"]:Connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
 G2L["Frame_2"]:Destroy()
-wait(7)
+local settings = _G
+settings["Use default animations"] = true
+settings["Fake character transparency level"] = 1 
+settings["Disable character scripts"] = true
+settings["Fake character should collide"] = true
+settings["Parent real character to fake character"] = false
+settings["Respawn character"] = true 
+settings["Instant respawn"] = false 
+settings["Hide HumanoidRootPart"] = false 
+settings["PermaDeath fake character"] = true 
+settings["R15 Reanimate"] = false 
+
+settings["Names to exclude from transparency"] = {
+    --[[ example:
+    ["HumanoidRootPart"] = true,
+    ["Left Arm"] = true
+    ]]
+}
+(function() if getgenv then return getgenv() else return _G end end)().fling = nil
+local finished = false
+
+task.spawn(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Jason.lua"))()
-wait(1)
+
+end)
+
+repeat task.wait() until finished
 end)
 
 G2L["c00lkidd_10"]["MouseButton1Click"]:Connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
+     G2L["Frame_2"]:Destroy()
+local settings = _G
+settings["Use default animations"] = true
+settings["Fake character transparency level"] = 1 
+settings["Disable character scripts"] = true
+settings["Fake character should collide"] = true
+settings["Parent real character to fake character"] = false
+settings["Respawn character"] = true 
+settings["Instant respawn"] = false 
+settings["Hide HumanoidRootPart"] = false 
+settings["PermaDeath fake character"] = true 
+settings["R15 Reanimate"] = false 
+
+settings["Names to exclude from transparency"] = {
+    --[[ example:
+    ["HumanoidRootPart"] = true,
+    ["Left Arm"] = true
+    ]]
+}
+(function() if getgenv then return getgenv() else return _G end end)().fling = nil
+local finished = false
+
+task.spawn(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
-G2L["Frame_2"]:Destroy()
-wait(7)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Coolkidd.lua"))()
-wait(1)
+
+end)
+
+repeat task.wait() until finished
 end)
 
 G2L["1x1x1x1_12"]["MouseButton1Click"]:Connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
+     G2L["Frame_2"]:Destroy()
+local settings = _G
+settings["Use default animations"] = true
+settings["Fake character transparency level"] = 1 
+settings["Disable character scripts"] = true
+settings["Fake character should collide"] = true
+settings["Parent real character to fake character"] = false
+settings["Respawn character"] = true 
+settings["Instant respawn"] = false 
+settings["Hide HumanoidRootPart"] = false 
+settings["PermaDeath fake character"] = true 
+settings["R15 Reanimate"] = false 
+
+settings["Names to exclude from transparency"] = {
+    --[[ example:
+    ["HumanoidRootPart"] = true,
+    ["Left Arm"] = true
+    ]]
+}
+(function() if getgenv then return getgenv() else return _G end end)().fling = nil
+local finished = false
+
+task.spawn(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
-G2L["Frame_2"]:Destroy()
-wait(7)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/1x4.lua"))()
-wait(1)
+
+end)
+
+repeat task.wait() until finished
 end)
 
 G2L["JohnDoe_14"]["MouseButton1Click"]:Connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
+     G2L["Frame_2"]:Destroy()
+local settings = _G
+settings["Use default animations"] = true
+settings["Fake character transparency level"] = 1 
+settings["Disable character scripts"] = true
+settings["Fake character should collide"] = true
+settings["Parent real character to fake character"] = false
+settings["Respawn character"] = true 
+settings["Instant respawn"] = false 
+settings["Hide HumanoidRootPart"] = false 
+settings["PermaDeath fake character"] = true 
+settings["R15 Reanimate"] = false 
+
+settings["Names to exclude from transparency"] = {
+    --[[ example:
+    ["HumanoidRootPart"] = true,
+    ["Left Arm"] = true
+    ]]
+}
+(function() if getgenv then return getgenv() else return _G end end)().fling = nil
+local finished = false
+
+task.spawn(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
-G2L["Frame_2"]:Destroy()
-wait(7)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/JohnDoe.lua"))()
-wait(1)
+
+end)
+
+repeat task.wait() until finished
 end)
 
 G2L["Guest1337_19"]["MouseButton1Click"]:Connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
+     G2L["Frame_2"]:Destroy()
+local settings = _G
+settings["Use default animations"] = true
+settings["Fake character transparency level"] = 1 
+settings["Disable character scripts"] = true
+settings["Fake character should collide"] = true
+settings["Parent real character to fake character"] = false
+settings["Respawn character"] = true 
+settings["Instant respawn"] = false 
+settings["Hide HumanoidRootPart"] = false 
+settings["PermaDeath fake character"] = true 
+settings["R15 Reanimate"] = false 
+
+settings["Names to exclude from transparency"] = {
+    --[[ example:
+    ["HumanoidRootPart"] = true,
+    ["Left Arm"] = true
+    ]]
+}
+(function() if getgenv then return getgenv() else return _G end end)().fling = nil
+local finished = false
+
+task.spawn(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
-G2L["Frame_2"]:Destroy()
-wait(7)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Guest.lua"))()
-wait(1)
+
+end)
+
+repeat task.wait() until finished
 end)
 
 G2L["Taph_1b"]["MouseButton1Click"]:Connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
+     G2L["Frame_2"]:Destroy()
+local settings = _G
+settings["Use default animations"] = true
+settings["Fake character transparency level"] = 1 
+settings["Disable character scripts"] = true
+settings["Fake character should collide"] = true
+settings["Parent real character to fake character"] = false
+settings["Respawn character"] = true 
+settings["Instant respawn"] = false 
+settings["Hide HumanoidRootPart"] = false 
+settings["PermaDeath fake character"] = true 
+settings["R15 Reanimate"] = false 
+
+settings["Names to exclude from transparency"] = {
+    --[[ example:
+    ["HumanoidRootPart"] = true,
+    ["Left Arm"] = true
+    ]]
+}
+(function() if getgenv then return getgenv() else return _G end end)().fling = nil
+local finished = false
+
+task.spawn(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
-G2L["Frame_2"]:Destroy()
-wait(7)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Taph.lua"))()
-wait(1)
+
+end)
+
+repeat task.wait() until finished
 end)
 
 G2L["TwoTime_1d"]["MouseButton1Click"]:Connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
+     G2L["Frame_2"]:Destroy()
+local settings = _G
+settings["Use default animations"] = true
+settings["Fake character transparency level"] = 1 
+settings["Disable character scripts"] = true
+settings["Fake character should collide"] = true
+settings["Parent real character to fake character"] = false
+settings["Respawn character"] = true 
+settings["Instant respawn"] = false 
+settings["Hide HumanoidRootPart"] = false 
+settings["PermaDeath fake character"] = true 
+settings["R15 Reanimate"] = false 
+
+settings["Names to exclude from transparency"] = {
+    --[[ example:
+    ["HumanoidRootPart"] = true,
+    ["Left Arm"] = true
+    ]]
+}
+(function() if getgenv then return getgenv() else return _G end end)().fling = nil
+local finished = false
+
+task.spawn(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
-G2L["Frame_2"]:Destroy()
-wait(7)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/TwoTime.lua"))()
-wait(1)
+
+end)
+
+repeat task.wait() until finished
 end)
 
 G2L["Dusekkar_1f"]["MouseButton1Click"]:Connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
+     G2L["Frame_2"]:Destroy()
+local settings = _G
+settings["Use default animations"] = true
+settings["Fake character transparency level"] = 1 
+settings["Disable character scripts"] = true
+settings["Fake character should collide"] = true
+settings["Parent real character to fake character"] = false
+settings["Respawn character"] = true 
+settings["Instant respawn"] = false 
+settings["Hide HumanoidRootPart"] = false 
+settings["PermaDeath fake character"] = true 
+settings["R15 Reanimate"] = false 
+
+settings["Names to exclude from transparency"] = {
+    --[[ example:
+    ["HumanoidRootPart"] = true,
+    ["Left Arm"] = true
+    ]]
+}
+(function() if getgenv then return getgenv() else return _G end end)().fling = nil
+local finished = false
+
+task.spawn(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
-G2L["Frame_2"]:Destroy()
-wait(7)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Dusekkar.lua"))()
-wait(1)
+
+end)
+
+repeat task.wait() until finished
 end)
 
 G2L["Shedletsky_21"]["MouseButton1Click"]:Connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
+     G2L["Frame_2"]:Destroy()
+local settings = _G
+settings["Use default animations"] = true
+settings["Fake character transparency level"] = 1 
+settings["Disable character scripts"] = true
+settings["Fake character should collide"] = true
+settings["Parent real character to fake character"] = false
+settings["Respawn character"] = true 
+settings["Instant respawn"] = false 
+settings["Hide HumanoidRootPart"] = false 
+settings["PermaDeath fake character"] = true 
+settings["R15 Reanimate"] = false 
+
+settings["Names to exclude from transparency"] = {
+    --[[ example:
+    ["HumanoidRootPart"] = true,
+    ["Left Arm"] = true
+    ]]
+}
+(function() if getgenv then return getgenv() else return _G end end)().fling = nil
+local finished = false
+
+task.spawn(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
-G2L["Frame_2"]:Destroy()
-wait(7)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Shedletsky.lua"))()
-wait(1)
+
 end)
 
-
+repeat task.wait() until finished
+end)
 return G2L["ForsakenCharacter_1"], require;
