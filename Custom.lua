@@ -2283,6 +2283,7 @@ end)
 
 btn("empty reanimate (no animations)", reanimate)
 insSet(btn("stop current script",stopreanimate),"TextColor3",c3(0.75,0,0))
+insSet(btn("stop current script",stopreanimate),"TextColor3",c3(0.75,0,0))
 lbl("SETTINGS (REANIMATE TO APPLY)")
 local swtc=function(txt,options,onchanged)
 	local current=0
