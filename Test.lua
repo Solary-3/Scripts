@@ -189,7 +189,25 @@ local function ondes(d)
 			end)
 		end
 end
+local allowshiftlock=nil
+local ctrltp=nil
+local placeholders=nil
+local clickfling=nil
+local highlightflingtargets=nil
+local discharscripts=nil
+local flingchangestate=nil
+local respawntp=nil
+local breakjointsmethod=nil
+local simrad=false
 
+local c=nil
+local function stopreanimate() 
+	if c then
+		c=nil
+		return true
+	end
+	return false
+end
 
 local function reanimate()
 	--[[
