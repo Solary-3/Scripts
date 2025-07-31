@@ -702,7 +702,7 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
        			end
        		end
        	end]]
---[[
+
 	local simradv=0
 	local charcons={}
 	local function onplayer(v)
@@ -843,9 +843,7 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 		end
 		characters[v]=nil
 		rootparts[v]=nil
-	end)]]
-	local simradv=0
-	local charcons={}
+	end)
 	local setsimrad=emptyfunction
 	if simrad then
 		setsimrad=function()
