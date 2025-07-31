@@ -59,6 +59,18 @@ local function getMetamethodFromErrorStack(userdata,f,test)
 	end
 	return ret
 end
+local function rs(l) 
+	l=l or mrandom(8,15) 
+	local s="" 
+	for i=1,l do 
+		if mrandom(1,2)==1 then 
+			s=s..schar(mrandom(65,90)) 
+		else 
+			s=s..schar(mrandom(97,122)) 
+		end 
+	end 
+	return s 
+end
 local insSet=getMetamethodFromErrorStack(game,function(a,b,c) a[b]=c end,function(f) local a=i("Folder") local b=rs() f(a,"Name",b) return a.Name==b end)
 local insGet=getMetamethodFromErrorStack(game,function(a,b) return a[b] end,function(f) local a=i("Folder") local b=rs() a.Name=b return f(a,"Name")==b end)
 local cfGet=getMetamethodFromErrorStack(cf_0,function(a,b) return a[b] end,function(f) return f(cf(1,2,3),"Position")==v3(1,2,3) end)
@@ -138,18 +150,7 @@ local function addmode(key,mode)
 			modes[key]=mode
 		end
 	end
-local function rs(l) 
-	l=l or mrandom(8,15) 
-	local s="" 
-	for i=1,l do 
-		if mrandom(1,2)==1 then 
-			s=s..schar(mrandom(65,90)) 
-		else 
-			s=s..schar(mrandom(97,122)) 
-		end 
-	end 
-	return s 
-end
+
 
 --it runs even faster if u call __index and __newindex of metatables of userdata directly
 local function ondes(d)
