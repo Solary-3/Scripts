@@ -300,17 +300,6 @@ local function makeplaceholder(v)
 	return v
 end
 local function emptyfunction() end
-local allowshiftlock=nil
-local ctrltp=nil
-local placeholders=nil
-local clickfling=nil
-local highlightflingtargets=nil
-local discharscripts=nil
-local flingchangestate=nil
-local respawntp=nil
-local breakjointsmethod=nil
-local simrad=false
-
 local c=nil
 local function stopreanimate() 
 	if c then
@@ -319,7 +308,7 @@ local function stopreanimate()
 	end
 	return false
 end
-
+G2L["Ability1_2"]["MouseButton1Click"]:Connect(function()
 local function reanimate()
 	--[[
 		FDless reanimate by MyWorld
@@ -327,6 +316,26 @@ local function reanimate()
 		"what else do i optimize here"
 	]]
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+     local allowshiftlock= nil
+
+     local ctrltp= false
+
+     local placeholders= true
+
+     local clickfling= false
+
+     local highlightflingtargets= false
+
+     local discharscripts= true
+
+     local flingchangestate= false
+
+     local respawntp= false
+
+     local breakjointsmethod= 1
+
+     local simrad= false
+
 	local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
 	local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
 	local retVelTime = 0.51 --time that claimed parts have velocity to reclaim in case u lose them
@@ -1758,7 +1767,6 @@ end
      local s3=getPartJoint(sword3)
      local sword4=getPartFromMesh(4315410540,4794299274)
      local s4=getPartJoint(sword4)
-G2L["Ability1"]["MouseButton1Click"]:Connect(function()
 local dcon=nil
 dcon=renderstepped:Connect(function()
 if not dcon then return dcon:Disconnec() end
@@ -2069,6 +2077,7 @@ RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,1.25-0.35*sin(sine*1.25),0),angles(-1.
 		end
 	})
 end)
+
 end)
 G2L["Sprint_5"]["MouseButton1Click"]:Connect(function()
 stopreanimate()
