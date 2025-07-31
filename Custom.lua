@@ -539,6 +539,9 @@ local function stopreanimate()
 		return true
 	end
 	return false
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
+wait(2.250)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
 local function reanimate()
 	--[[
