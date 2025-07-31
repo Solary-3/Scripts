@@ -548,121 +548,121 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 		return getPartJoint(getPartFromMesh(m,t))
 	end
 
-	local raycastparams=rp()
-	raycastparams.FilterType=e.RaycastFilterType.Blacklist
-	raycastparams.RespectCanCollide=true
-	local rayfilter={}
-	local characters={}
-	local function refreshrayfilter()
-		tclear(rayfilter)
-		for i,v in next,characters do
-			tinsert(rayfilter,v)
-		end
-		raycastparams.FilterDescendantsInstances=rayfilter
-	end
-	local flingtable={}
-	local rootparts={}
-	for i,v in next,accessorylimbs do
-		v.p=getPart(v.Name)
-	end
-	local function makePartCons(p,t)
-		if (t.p==p) and insGet(p,"Anchored") then
-			t.p=nil
-		end
-		local con0=Connect(GetPropertyChangedSignal(p,"Anchored"),function()
-			if insGet(p,"Anchored") then
-				if t.p==p then
-					t.c=nil
-					t.p=nil
-				end
-			elseif not t.p then
-				t.p=p
-			end
-		end)
-		local con1=nil
-		con1=Connect(insGet(p,"AncestryChanged"),function()
-			if not IsDescendantOf(p,ws) then
-				Disconnect(con0)
-				Disconnect(con1)
-				if t.p==p then
-					t.p=nil
-				end
-			end
-		end)
-	end
-	local ondes=nil
-	ondes=function(v)
-		if c and IsA(v,"Attachment") and IsDescendantOf(c,ws) then
-			local v1=attachments[insGet(v,"Name")]
-			if v1 then
-				local p=insGet(v,"Parent")
-				if insGet(p,"Parent")~=c then
-					local meshid,textureid=getMeshOfPart(p)
-					if meshid then
-						local found=false
-						for i,_ in next,cframes do
-							if (meshid==i.m) and (textureid==i.t) then
-								local p1=i.p
-								if p1 and IsDescendantOf(p1,c) then
-									if p1==p then
-										found=true
-										break
-									end
-								else
-									found=true
-									i.p=p
-									makePartCons(p,i)
-									break
-								end
-							else
-								local j=i.j
-								if j and sfind(meshid,i.m) and sfind(textureid,i.t) then
-									i.m=meshid
-									i.t=textureid
-									i.l=insGet(p,"Position")
-									i.p=p
-									makePartCons(p,i)
-									i.j=nil
-									i.Name=insGet(p,"Name")
-									j.C0=insGet(v,"CFrame")
-									j.C1=v1[2]
-									j.Part1=v1[1]
-									tinsert(joints,j)
-									found=true
-									break
-								end
-							end
-						end
-						if not found then
-							for i,l in next,accessorylimbs do
-								if l.p and sfind(meshid,l.meshid) and sfind(textureid,l.textureid) then
-									local t={Name=insGet(p,"Name"),l=insGet(p,"Position"),m=meshid,t=textureid,p=p}
-									makePartCons(p,t)
-									if placeholders then
-										t.v=makeplaceholder(p)
-									end
-									cframes[t]=insGet(p,"CFrame")
-									tinsert(joints,{Part0=t,Part1=l.p,C0=l.C0,C1=cf_0})
-									l.p=nil
-									found=true
-									break
-								end
-							end
-							if not found then
-								local t={Name=insGet(p,"Name"),l=insGet(p,"Position"),m=meshid,t=textureid,p=p}
-								makePartCons(p,t)
-								if placeholders then
-									t.v=makeplaceholder(p)
-								end
-								cframes[t]=insGet(p,"CFrame")
-								tinsert(joints,{Part0=t,Part1=v1[1],C0=insGet(v,"CFrame"),C1=v1[2]})
-							end
-						end
-					end
-				end
-			end
-		end
-	end
+    	local raycastparams=rp()
+    	raycastparams.FilterType=e.RaycastFilterType.Blacklist
+    	raycastparams.RespectCanCollide=true
+    	local rayfilter={}
+    	local characters={}
+    	local function refreshrayfilter()
+    		tclear(rayfilter)
+    		for i,v in next,characters do
+    			tinsert(rayfilter,v)
+    		end
+    		raycastparams.FilterDescendantsInstances=rayfilter
+    	end
+    	local flingtable={}
+    	local rootparts={}
+--[[	for i,v in next,accessorylimbs do
+    		v.p=getPart(v.Name)
+    	end]]
+    	local function makePartCons(p,t)
+    		if (t.p==p) and insGet(p,"Anchored") then
+    			t.p=nil
+    		end
+    		local con0=Connect(GetPropertyChangedSignal(p,"Anchored"),function()
+    			if insGet(p,"Anchored") then
+    				if t.p==p then
+    					t.c=nil
+    					t.p=nil
+    				end
+    			elseif not t.p then
+    				t.p=p
+    			end
+    		end)
+    		local con1=nil
+    		con1=Connect(insGet(p,"AncestryChanged"),function()
+    			if not IsDescendantOf(p,ws) then
+    				Disconnect(con0)
+    				Disconnect(con1)
+    				if t.p==p then
+    					t.p=nil
+    				end
+    			end
+    		end)
+    	end
+    	local ondes=nil
+    	ondes=function(v)
+    		if c and IsA(v,"Attachment") and IsDescendantOf(c,ws) then
+    			local v1=attachments[insGet(v,"Name")]
+    			if v1 then
+    				local p=insGet(v,"Parent")
+    				if insGet(p,"Parent")~=c then
+    					local meshid,textureid=getMeshOfPart(p)
+    					if meshid then
+    						local found=false
+    						for i,_ in next,cframes do
+    							if (meshid==i.m) and (textureid==i.t) then
+    								local p1=i.p
+    								if p1 and IsDescendantOf(p1,c) then
+    									if p1==p then
+    										found=true
+    										break
+    									end
+    								else
+    									found=true
+    									i.p=p
+    									makePartCons(p,i)
+    									break
+    								end
+    							else
+    								local j=i.j
+    								if j and sfind(meshid,i.m) and sfind(textureid,i.t) then
+    									i.m=meshid
+    									i.t=textureid
+    									i.l=insGet(p,"Position")
+    									i.p=p
+    									makePartCons(p,i)
+    									i.j=nil
+    									i.Name=insGet(p,"Name")
+    									j.C0=insGet(v,"CFrame")
+    									j.C1=v1[2]
+    									j.Part1=v1[1]
+    									tinsert(joints,j)
+    									found=true
+    									break
+    								end
+    							end
+    						end
+    						--[[if not found then
+    							for i,l in next,accessorylimbs do
+    								if l.p and sfind(meshid,l.meshid) and sfind(textureid,l.textureid) then
+    									local t={Name=insGet(p,"Name"),l=insGet(p,"Position"),m=meshid,t=textureid,p=p}
+    									makePartCons(p,t)
+    									if placeholders then
+    										t.v=makeplaceholder(p)
+    									end
+    									cframes[t]=insGet(p,"CFrame")
+    									tinsert(joints,{Part0=t,Part1=l.p,C0=l.C0,C1=cf_0})
+    									l.p=nil
+    									found=true
+    									break
+    								end
+    							end
+    							if not found then
+    								local t={Name=insGet(p,"Name"),l=insGet(p,"Position"),m=meshid,t=textureid,p=p}
+    								makePartCons(p,t)
+    								if placeholders then
+    									t.v=makeplaceholder(p)
+    								end
+    								cframes[t]=insGet(p,"CFrame")
+    								tinsert(joints,{Part0=t,Part1=v1[1],C0=insGet(v,"CFrame"),C1=v1[2]})
+    							end
+    						end]]
+    					end
+    				end
+    			end
+    		end
+    	end
 
 	local simradv=0
 	local charcons={}
