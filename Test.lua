@@ -10,7 +10,7 @@ G2L["AbilityForsaken_1"]["Name"] = [[AbilityForsaken]];
 G2L["AbilityForsaken_1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 CollectionService:AddTag(G2L["AbilityForsaken_1"], [[main]]);
 G2L["Sprint_5"] = Instance.new("ImageButton", G2L["AbilityForsaken_1"]);
-G2L["ScreenGui_1"]["ResetOnSpawn"] = false;
+G2L["AbilityForsaken_1"]["ResetOnSpawn"] = false;
 G2L["Sprint_5"]["BorderSizePixel"] = 0;
 G2L["Sprint_5"]["BackgroundTransparency"] = 1;
 -- G2L["Sprint_5"]["ImageContent"] = ;
@@ -702,12 +702,13 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
        			end
        		end
        	end]]
-     
+--[[
 	local simradv=0
 	local charcons={}
 	local function onplayer(v)
 		simradv=simradv+1000
 		local lastc=nil
+		
 		local function oncharacter()
 			local newc=insGet(v,"Character")
 			if c and newc and (newc~=lastc) then
@@ -842,7 +843,7 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 		end
 		characters[v]=nil
 		rootparts[v]=nil
-	end)
+	end)]]
 	local setsimrad=emptyfunction
 	if simrad then
 		setsimrad=function()
