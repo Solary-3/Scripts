@@ -49,6 +49,16 @@ local cf_0=cf(0,0,0)
 local v3_xz=v3_101*10
 local v3_xzL=v3_101*250.1
 local v3_net=v3_010*25.01
+local function getMetamethodFromErrorStack(userdata,f,test)
+	local ret=nil
+	xpcall(f,function()
+		ret=debug.info(2,"f")
+	end,userdata,nil,0)
+	if (type(ret)~="function") or not test(ret) then
+		return f
+	end
+	return ret
+end
 local insSet=getMetamethodFromErrorStack(game,function(a,b,c) a[b]=c end,function(f) local a=i("Folder") local b=rs() f(a,"Name",b) return a.Name==b end)
 local insGet=getMetamethodFromErrorStack(game,function(a,b) return a[b] end,function(f) local a=i("Folder") local b=rs() a.Name=b return f(a,"Name")==b end)
 local cfGet=getMetamethodFromErrorStack(cf_0,function(a,b) return a[b] end,function(f) return f(cf(1,2,3),"Position")==v3(1,2,3) end)
@@ -142,16 +152,6 @@ local function rs(l)
 end
 
 --it runs even faster if u call __index and __newindex of metatables of userdata directly
-local function getMetamethodFromErrorStack(userdata,f,test)
-	local ret=nil
-	xpcall(f,function()
-		ret=debug.info(2,"f")
-	end,userdata,nil,0)
-	if (type(ret)~="function") or not test(ret) then
-		return f
-	end
-	return ret
-end
 local function ondes(d)
 		if IsA(d,"GuiObject") then
 			local thisEntered = false
