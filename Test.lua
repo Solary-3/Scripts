@@ -49,6 +49,61 @@ local cf_0=cf(0,0,0)
 local v3_xz=v3_101*10
 local v3_xzL=v3_101*250.1
 local v3_net=v3_010*25.01
+local insSet=getMetamethodFromErrorStack(game,function(a,b,c) a[b]=c end,function(f) local a=i("Folder") local b=rs() f(a,"Name",b) return a.Name==b end)
+local insGet=getMetamethodFromErrorStack(game,function(a,b) return a[b] end,function(f) local a=i("Folder") local b=rs() a.Name=b return f(a,"Name")==b end)
+local cfGet=getMetamethodFromErrorStack(cf_0,function(a,b) return a[b] end,function(f) return f(cf(1,2,3),"Position")==v3(1,2,3) end)
+local cfMul=getMetamethodFromErrorStack(cf_0,function(a,b) return a*b end,function(f) return angles(1,2,3)*angles(1,2,3)==f(angles(1,2,3),angles(1,2,3)) end)
+local cfAdd=getMetamethodFromErrorStack(cf_0,function(a,b) return a+b end,function(f) return cf(1,2,3)+v3(1,2,3)==f(cf(1,2,3),v3(1,2,3)) end)
+local v3Get=getMetamethodFromErrorStack(v3_0,function(a,b) return a[b] end,function(f) return v3(1,2,3).Unit==f(v3(1,2,3),"Unit") end)
+--multiplying and adding vector3 is faster if you use the * and + operators
+
+--no need to index instances every time to call their functions
+local Clone=insGet(game,"Clone")
+local ClearAllChildren=insGet(game,"ClearAllChildren")
+local Destroy=insGet(game,"Destroy")
+local IsA=insGet(game,"IsA")
+local FindFirstChildOfClass=insGet(game,"FindFirstChildOfClass")
+local FindFirstChildWhichIsA=insGet(game,"FindFirstChildWhichIsA")
+local GetChildren=insGet(game,"GetChildren")
+local GetDescendants=insGet(game,"GetDescendants")
+local IsDescendantOf=insGet(game,"IsDescendantOf")
+local GetPropertyChangedSignal=insGet(game,"GetPropertyChangedSignal")
+
+--findfirstchildofclass faster than getservice
+local plrs=FindFirstChildOfClass(game,"Players")
+local rus=FindFirstChildOfClass(game,"RunService")
+local ws=FindFirstChildOfClass(game,"Workspace")
+local uis=FindFirstChildOfClass(game,"UserInputService")
+local gs=FindFirstChildOfClass(game,"GuiService")
+local lp=insGet(plrs,"LocalPlayer")
+local pg=FindFirstChildOfClass(lp,"PlayerGui")
+local mouse=insGet(lp,"GetMouse")(lp)
+local stepped=insGet(rus,"Stepped")
+local heartbeat=insGet(rus,"Heartbeat")
+local renderstepped=insGet(rus,"RenderStepped")
+
+local GetPlayers=insGet(plrs,"GetPlayers")
+local Raycast=insGet(ws,"Raycast")
+local Connect=heartbeat.Connect
+local Disconnect=Connect(GetPropertyChangedSignal(game,"CreatorId"),type).Disconnect
+local Wait=heartbeat.Wait
+local GetMouseLocation=insGet(uis,"GetMouseLocation")
+local GetFocusedTextBox=insGet(uis,"GetFocusedTextBox")
+local GetMouseDelta=insGet(uis,"GetMouseDelta")
+local IsMouseButtonPressed=insGet(uis,"IsMouseButtonPressed")
+local IsKeyDown=insGet(uis,"IsKeyDown")
+
+local Inverse=cfGet(cf_0,"Inverse")
+local Lerp=cfGet(cf_0,"Lerp")
+
+local function gp(p,n,cl)
+	for i,v in next,GetChildren(p) do
+		if IsA(v,cl) and (insGet(v,"Name")==n) then
+			return v
+		end
+	end
+	return nil
+end
 local function addmode(key,mode)
 		if (type(key)~="string") or (type(mode)~="table") then
 			return
@@ -97,54 +152,6 @@ local function getMetamethodFromErrorStack(userdata,f,test)
 	end
 	return ret
 end
-local insSet=getMetamethodFromErrorStack(game,function(a,b,c) a[b]=c end,function(f) local a=i("Folder") local b=rs() f(a,"Name",b) return a.Name==b end)
-local insGet=getMetamethodFromErrorStack(game,function(a,b) return a[b] end,function(f) local a=i("Folder") local b=rs() a.Name=b return f(a,"Name")==b end)
-local cfGet=getMetamethodFromErrorStack(cf_0,function(a,b) return a[b] end,function(f) return f(cf(1,2,3),"Position")==v3(1,2,3) end)
-local cfMul=getMetamethodFromErrorStack(cf_0,function(a,b) return a*b end,function(f) return angles(1,2,3)*angles(1,2,3)==f(angles(1,2,3),angles(1,2,3)) end)
-local cfAdd=getMetamethodFromErrorStack(cf_0,function(a,b) return a+b end,function(f) return cf(1,2,3)+v3(1,2,3)==f(cf(1,2,3),v3(1,2,3)) end)
-local v3Get=getMetamethodFromErrorStack(v3_0,function(a,b) return a[b] end,function(f) return v3(1,2,3).Unit==f(v3(1,2,3),"Unit") end)
---multiplying and adding vector3 is faster if you use the * and + operators
-
---no need to index instances every time to call their functions
-local Clone=insGet(game,"Clone")
-local ClearAllChildren=insGet(game,"ClearAllChildren")
-local Destroy=insGet(game,"Destroy")
-local IsA=insGet(game,"IsA")
-local FindFirstChildOfClass=insGet(game,"FindFirstChildOfClass")
-local FindFirstChildWhichIsA=insGet(game,"FindFirstChildWhichIsA")
-local GetChildren=insGet(game,"GetChildren")
-local GetDescendants=insGet(game,"GetDescendants")
-local IsDescendantOf=insGet(game,"IsDescendantOf")
-local GetPropertyChangedSignal=insGet(game,"GetPropertyChangedSignal")
-
---findfirstchildofclass faster than getservice
-local plrs=FindFirstChildOfClass(game,"Players")
-local rus=FindFirstChildOfClass(game,"RunService")
-local ws=FindFirstChildOfClass(game,"Workspace")
-local uis=FindFirstChildOfClass(game,"UserInputService")
-local gs=FindFirstChildOfClass(game,"GuiService")
-local lp=insGet(plrs,"LocalPlayer")
-local pg=FindFirstChildOfClass(lp,"PlayerGui")
-local mouse=insGet(lp,"GetMouse")(lp)
-local stepped=insGet(rus,"Stepped")
-local heartbeat=insGet(rus,"Heartbeat")
-local renderstepped=insGet(rus,"RenderStepped")
-
-local GetPlayers=insGet(plrs,"GetPlayers")
-local Raycast=insGet(ws,"Raycast")
-local Connect=heartbeat.Connect
-local Disconnect=Connect(GetPropertyChangedSignal(game,"CreatorId"),type).Disconnect
-local Wait=heartbeat.Wait
-local GetMouseLocation=insGet(uis,"GetMouseLocation")
-local GetFocusedTextBox=insGet(uis,"GetFocusedTextBox")
-local GetMouseDelta=insGet(uis,"GetMouseDelta")
-local IsMouseButtonPressed=insGet(uis,"IsMouseButtonPressed")
-local IsKeyDown=insGet(uis,"IsKeyDown")
-
-local Inverse=cfGet(cf_0,"Inverse")
-local Lerp=cfGet(cf_0,"Lerp")
-
-
 local function ondes(d)
 		if IsA(d,"GuiObject") then
 			local thisEntered = false
@@ -188,6 +195,81 @@ local function ondes(d)
 			end)
 		end
 end
+local function gp(p,n,cl)
+	for i,v in next,GetChildren(p) do
+		if IsA(v,cl) and (insGet(v,"Name")==n) then
+			return v
+		end
+	end
+	return nil
+end
+local function timegp(p,n,c,t)
+	t=osclock()+t
+	while t>osclock() do
+		local r=gp(p,n,c)
+		if r then
+			return r
+		end
+		Wait(stepped)
+	end
+	return nil
+end
+local function getNetlessVelocity(realVel)
+	--if true then return v3_0 end
+	--if true then return realVel end
+	--if true then return v3_net end
+	if v3Get(realVel,"Magnitude")>25.01 then
+		return v3Get(realVel,"Unit")*v3_xzL+v3_net
+	end
+	return realVel*v3_xz+v3_net
+end
+local sft=1/45
+local function getFallingTime(Ypos,destY,gravity)
+	local velY=25.01
+	local fallingTime=0
+	gravity=gravity*sft
+	while (Ypos>destY) or (velY>0) do
+		fallingTime=fallingTime+sft
+		velY=velY-gravity
+		Ypos=Ypos+(velY*sft)
+	end
+	return fallingTime
+end
+local function getMeshOfPart(v)
+	if IsA(v,"MeshPart") then
+		return insGet(v,"MeshId"), insGet(v,"TextureID")
+	elseif IsA(v,"BasePart") then
+		v=FindFirstChildOfClass(v,"SpecialMesh")
+		if v then
+			return insGet(v,"MeshId"), insGet(v,"TextureId")
+		end
+	end
+	return nil, nil
+end
+local function makeplaceholder(v)
+	if typeof(v)~="Instance" then
+		return nil
+	end
+	if not insGet(v,"Archivable") then
+		insSet(v,"Archivable",true)
+	end
+	v=Clone(v)
+	for i,v in next,GetChildren(v) do
+		if IsA(v,"SpecialMesh") then
+			insSet(v,"Name",rs())
+			ClearAllChildren(v)
+		else
+			Destroy(v)
+		end
+	end
+	insSet(v,"Name",rs())
+	insSet(v,"Anchored",true)
+	insSet(v,"CanCollide",false)
+	insSet(v,"Transparency",0.25)
+	insSet(v,"Parent",ws)
+	return v
+end
+local function emptyfunction() end
 local allowshiftlock=nil
 local ctrltp=nil
 local placeholders=nil
@@ -1620,10 +1702,7 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 		isFirstPerson=isFirstPerson
 	}
 end
-local dcon=nil
-dcon=renderstepped:Connect(function()
-if not dcon then return dcon:Disconnec() end
-	local t=reanimate()
+     local t=reanimate()
 	if type(t)~="table" then return end
 	local raycastlegs=t.raycastlegs
 	local velbycfrvec=t.velbycfrvec
@@ -1649,6 +1728,9 @@ if not dcon then return dcon:Disconnec() end
      local s3=getPartJoint(sword3)
      local sword4=getPartFromMesh(4315410540,4794299274)
      local s4=getPartJoint(sword4)
+local dcon=nil
+dcon=renderstepped:Connect(function()
+if not dcon then return dcon:Disconnec() end
 
 	addmode("default", {
 		idle = function()
