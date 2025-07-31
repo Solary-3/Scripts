@@ -17,7 +17,6 @@ local tclear=table.clear
 local tclone=table.clone
 local tfind=table.find
 local tunpack=table.unpack
-
 --the script doesnt have to read global varaibles every time to get them
 --why not have them saved in local varaibles for faster access times
 local next=next
@@ -1621,7 +1620,9 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 		isFirstPerson=isFirstPerson
 	}
 end
-
+local dcon=nil
+dcon=renderstepped:Connect(function()
+if not dcon then return dcon:Disconnec() end
 	local t=reanimate()
 	if type(t)~="table" then return end
 	local raycastlegs=t.raycastlegs
@@ -1954,3 +1955,4 @@ RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,1.25-0.35*sin(sine*1.25),0),angles(-1.
 			setWalkSpeed(16)
 		end
 	})
+end)
