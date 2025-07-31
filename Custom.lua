@@ -1,26 +1,4 @@
---[[
-	patchma hub by MyWorld (discord: myworldmain)
-	optimize the optimized
 
-	IDs of paid accessories:
-
-	-for arms 11159410305,11263254795 or 14255556501,14255554762 or 12344545199,12344591101 or 13839976999,13831200263
-
-	-for legs 14768693948,14768701869 or 11159483910,12652786974
-
-	-for torso 14255528083 or 13421786478 or 14768678294
-
-	or anything else that covers ur torso. examples:
-	14532301415,13423624885,11502853991,14053485259,13779879140,14443132226,17163407577,16297156693,17180496303,17171230401
-	can be same stuff but different colors
-
-	there are 104 ways to make a rig with the ids above
-
-	IDs of free accessories:
-	3033910400,3409612660,3438342658,3398308134,4324158403,3822880197,4154538250,3443038622,4819740796
-]]
-
---no need to get and index the library tables with function names every time the script uses them
 if _G.PatchmaLoaded then return end
 _G.PatchmaLoaded =true
 local osclock=os.clock
@@ -518,7 +496,7 @@ end
 
 Draggable(i1)
 
-lbl("by MyWorld/Mod By Theo")
+lbl("by MyWorld")
 lbl("discord.gg/QMy5f6DrbH")
 
 local allowshiftlock=nil
@@ -1953,8 +1931,6 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 	}
 end
 
-
-
 btn("Nameless Glitcher", function()
 	local t=reanimate()
 	if type(t)~="table" then return end
@@ -2290,8 +2266,6 @@ RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,1.25-0.35*sin(sine*1.25),0),angles(-1.
 	})
 end)
 
-
-btn("empty reanimate (no animations)", reanimate)
 insSet(btn("stop current script",stopreanimate),"TextColor3",c3(0.75,0,0))
 insSet(btn("stop current script",stopreanimate),"TextColor3",c3(0.75,0,0))
 lbl("SETTINGS (REANIMATE TO APPLY)")
