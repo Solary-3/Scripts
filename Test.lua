@@ -1,3 +1,32 @@
+
+
+
+
+
+local CollectionService = game:GetService("CollectionService");
+local G2L = {};
+G2L["AbilityForsaken_1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["AbilityForsaken_1"]["Name"] = [[AbilityForsaken]];
+G2L["AbilityForsaken_1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+CollectionService:AddTag(G2L["AbilityForsaken_1"], [[main]]);
+G2L["Sprint_5"] = Instance.new("ImageButton", G2L["AbilityForsaken_1"]);
+G2L["Sprint_5"]["BorderSizePixel"] = 0;
+G2L["Sprint_5"]["BackgroundTransparency"] = 1;
+-- G2L["Sprint_5"]["ImageContent"] = ;
+G2L["Sprint_5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["Sprint_5"]["Image"] = [[rbxassetid://132640025048316]];
+G2L["Sprint_5"]["Size"] = UDim2.new(0.08636, 0, 0.19939, 0);
+G2L["Sprint_5"]["Name"] = [[Sprint]];
+G2L["Sprint_5"]["Position"] = UDim2.new(0.82108, 0, 0.25, 0);
+G2L["Ability1_2"] = Instance.new("ImageButton", G2L["AbilityForsaken_1"]);
+G2L["Ability1_2"]["BorderSizePixel"] = 0;
+G2L["Ability1_2"]["BackgroundTransparency"] = 1;
+-- G2L["Ability1_2"]["ImageContent"] = ;
+G2L["Ability1_2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["Ability1_2"]["Image"] = [[rbxassetid://113542202113247]];
+G2L["Ability1_2"]["Size"] = UDim2.new(0.08636, 0, 0.19939, 0);
+G2L["Ability1_2"]["Name"] = [[Ability1]];
+G2L["Ability1_2"]["Position"] = UDim2.new(0.55004, 0, 0.59509, 0);
 local osclock=os.clock
 local tspawn=task.spawn
 local twait=task.wait
@@ -1729,6 +1758,7 @@ end
      local s3=getPartJoint(sword3)
      local sword4=getPartFromMesh(4315410540,4794299274)
      local s4=getPartJoint(sword4)
+G2L["Ability1"]["MouseButton1Click"]:Connect(function()
 local dcon=nil
 dcon=renderstepped:Connect(function()
 if not dcon then return dcon:Disconnec() end
@@ -2039,3 +2069,8 @@ RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,1.25-0.35*sin(sine*1.25),0),angles(-1.
 		end
 	})
 end)
+end)
+G2L["Sprint_5"]["MouseButton1Click"]:Connect(function()
+stopreanimate()
+end)
+return G2L["AbilityForsaken_1"], require;
