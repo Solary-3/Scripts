@@ -546,7 +546,7 @@ local function reanimate()
 		aka no client sided instances
 		"what else do i optimize here"
 	]]
-
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 	local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
 	local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
 	local retVelTime = 0.51 --time that claimed parts have velocity to reclaim in case u lose them
@@ -2112,13 +2112,19 @@ RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(0.55,-0.15 * sin(sine*1.15),-0.7
 	addmode("y", {
 		idle = function()
 			local Ychg=velYchg()/20
-			LeftShoulder.C0 = Lerp(LeftShoulder.C0,cfMul(cf(-1.5, 0.5, 0),angles(-1.7453292519943295, 0.17453292519943295 - 0.04363323129985824 * sin(sine * 2), -1.4835298641951802)),deltaTime) 
-			RightHip.C0 = Lerp(RightHip.C0,cfMul(cf(1, -0.9000000953674316 - 0.1 * sin(sine * 2)-Ychg, 0),angles(-1.3962634015954636, 1.3962634015954636, 1.5707963267948966)),deltaTime) 
-			LeftHip.C0 = Lerp(LeftHip.C0,cfMul(cf(-1, -1.0000001192092896 - 0.1 * sin(sine * 2)-Ychg, 0),angles(-1.5707963267948966, -1.3962634015954636, -1.5707963267948966)),deltaTime) 
-			Neck.C0 = Lerp(Neck.C0,cfMul(cf(0, 1, 0),angles(-2.0943951023931953 + 0.08726646259971647 * sin((sine - 1) * 2), -0.08726646259971647, 2.792526803190927)),deltaTime) 
-			RightShoulder.C0 = Lerp(RightShoulder.C0,cfMul(cf(1, 1.2000000476837158, 0),angles(2.6179938779914944 + 0.08726646259971647 * sin((sine - 1) * 2), 0.6981317007977318, -1.3962634015954636)),deltaTime) 
-			RootJoint.C0 = Lerp(RootJoint.C0,cfMul(cf(0, 0.1 * sin(sine * 2) + Ychg, 0),angles(-1.6580627893946132, 0.08726646259971647, 3.0543261909900767)),deltaTime) 
-			--LeftArm,-1.5,0,0,2,-100,0,0,2,0.5,0,0,2,10,-2.5,0,2,0,0,0,2,-85,0,0,2,RightLeg,1,0,0,2,-80,0,0,2,-0.9000000953674316,-0.1,0,2,80,0,0,2,0,0,0,2,90,0,0,2,LeftLeg,-1,0,0,2,-90,0,0,2,-1.0000001192092896,-0.1,0,2,-80,0,0,2,0,0,0,2,-90,0,0,2,Fedora_Handle,8.657480066176504e-09,0,0,2,-6,0,0,2,-0.15052366256713867,0,0,2,0,0,0,2,-0.010221302509307861,0,0,2,0,0,0,2,Head,0,0,0,2,-120,5,-1,2,1,0,0,2,-5,0,0,2,0,0,0,2,160,0,0,2,RightArm,1,0,0,2,150,5,-1,2,1.2000000476837158,0,0,2,40,0,0,2,0,0,0,2,-80,0,0,2,Torso,0,0,0,2,-95,0,0,2,0,0.1,0,2,5,0,0,2,0,0,0,2,175,0,0,2
+aura1.C0=Lerp(aura1.C0,cfMul(cf(0,-0.15 * sin(sine*1.15),-1.1),angles(0,0,-17.453292519943297*sin(sine*0.25))),deltaTime)
+s1.C0=Lerp(s1.C0,cfMul(cf(1.34,4.25,-0.6+0.15*sin(sine*1.15)),angles(1.6580627893946132,-2.443460952792061,0.4363323129985824)),deltaTime)
+s2.C0=Lerp(s2.C0,cfMul(cf(2.35,2.35-0.15*sin(sine*1.25),-1.1),angles(0,0,3.9269908169872414+0.7853981633974483*sin(sine*1))),deltaTime)
+s3.C0=Lerp(s3.C0,cfMul(cf(2.35,2.35-0.15*sin(sine*1.15),-1.1),angles(0,0,0.8726646259971648-0.7853981633974483*sin(sine*1))),deltaTime) 
+s4.C0=Lerp(s4.C0,cfMul(cf(2.55,-0.15,-1+0.15*sin(sine*1.15)),angles(1.6580627893946132,0.6457718232379019,0.4363323129985824)),deltaTime)
+RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,1.25-0.35*sin(sine*1.25),0),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime) 
+ Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1.1-0.05*sin(sine*1.15),0),angles(-1.7453292519943295,0,3.141592653589793)),deltaTime) 
+ LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.55,0.75-0.15*sin(sine*1.15),-0.35),angles(1.9198621771937625,0.3490658503988659,0)),deltaTime) 
+ RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.55,0.75-0.15*sin(sine*1.15),-0.5),angles(1.5707963267948966,-0.3490658503988659,-0.2617993877991494)),deltaTime) 
+ RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-0.55-0.25*sin(sine*1.15),-0.55),angles(-0.2617993877991494+0.17453292519943295*sin(sine*1.15),1.5707963267948966,0)),deltaTime) 
+ LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1-0.25*sin(sine*1.15),0),angles(-0.6108652381980153-0.17453292519943295*sin(sine*1.15),-1.5707963267948966,0)),deltaTime)
+ 
+ 
 		end
 	})
 	addmode("u", {
