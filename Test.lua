@@ -433,13 +433,13 @@ local function getNetlessVelocity(realPartVelocity) --change this if you have a 
     end
     return weld
 end
-local acc = {
- halo = {weld=getAccWeldFromMeshAndTexture(4758429875,4764720503)},
- sword1={weld=getAccWeldFromMeshAndTexture(4315410540,4506940486)},
- sword2={weld=getAccWeldFromMeshAndTexture(4315410540,4315250791)},
- sword3={weld=getAccWeldFromMeshAndTexture(4315410540,4458626951)},
- sword4={weld=getAccWeldFromMeshAndTexture(4315410540,4794299274)}
- }
+
+ local halo=getAccWeldFromMeshAndTexture(4758429875,4764720503)
+ local sword1=getAccWeldFromMeshAndTexture(4315410540,4506940486)
+ local sword2=getAccWeldFromMeshAndTexture(4315410540,4315250791)
+ local sword3=getAccWeldFromMeshAndTexture(4315410540,4458626951)
+ local sword4=getAccWeldFromMeshAndTexture(4315410540,4794299274)
+ 
  local function alignAccessory(accessoryWeld, part0, cframeOffset)
     if not accessoryWeld then return end
     
