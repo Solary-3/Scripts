@@ -1255,7 +1255,7 @@ joint("Right Hip", Torso, Torso, RightLeg, RightHip)
 joint("Left Hip", Torso, Torso, LeftLeg, LeftHip)
 
 
-createAttachmentPoint(Torso, "SwordAttach", v3(1, 0.5, 0.5))
+--createAttachmentPoint(Torso, "SwordAttach", v3(1, 0.5, 0.5))
 
 local animate = gp(c, "Animate", "LocalScript")
 if animate then
