@@ -182,9 +182,9 @@ local function getNetlessVelocity(realPartVelocity) --change this if you have a 
     local noclipAllParts = false --set it to true if you want noclip
     local antiragdoll = true --removes hingeConstraints and ballSocketConstraints from your character
     local newanimate = true --disables the animate script and enables after reanimation
-    local discharscripts = true --disables all localScripts parented to your character before reanimation
+    local discharscripts = false --disables all localScripts parented to your character before reanimation
     local R15toR6 = true --tries to convert your character to r6 if its r15
-    local hatcollide = true --makes hats cancollide (credit to ShownApe) (works only with reanimate method 0)
+    local hatcollide = false --makes hats cancollide (credit to ShownApe) (works only with reanimate method 0)
     local humState16 = true --enables collisions for limbs before the humanoid dies (using hum:ChangeState)
     local addtools = false --puts all tools from backpack to character and lets you hold them after reanimation
     local hedafterneck = true --disable aligns for head and enable after neck or torso is removed
@@ -197,7 +197,7 @@ local function getNetlessVelocity(realPartVelocity) --change this if you have a 
     --3 - limbs + breakJoints after [loadtime] seconds
     --4 - remove humanoid + breakJoints
     --5 - remove humanoid + limbs
-    local alignmode = 3 --AlignPosition mode
+    local alignmode = 1 --AlignPosition mode
     --modes:
     --1 - AlignPosition rigidity enabled true
     --2 - 2 AlignPositions rigidity enabled both true and false
