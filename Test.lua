@@ -161,11 +161,7 @@ local function getAccWeldFromMeshAndTexture(meshId, textureId)
     end
     return weld
 end
-local aura1 = getAccWeldFromMeshAndTexture(4758429875,4764720503)
-local s1=getAccWeldFromMeshAndTexture(4315410540,4506940486)
-local s2=getAccWeldFromMeshAndTexture(4315410540,4315250791)
-local s3=getAccWeldFromMeshAndTexture(4315410540,4458626951)
-local s4=getAccWeldFromMeshAndTexture(4315410540,4794299274)
+
 
 
 local function getNetlessVelocity(realPartVelocity) --change this if you have a better method
@@ -1165,6 +1161,7 @@ if animate then
     animate.Disabled = true
 end
 
+
 local hum = c:FindFirstChildOfClass("Humanoid") or Instance.new("Humanoid", c)
 local states = {
     [0]=false,[8]=true,
@@ -1225,6 +1222,11 @@ con = renderstepped:Connect(function(deltaTime)
     if not c then
         return con:Disconnect()
     end
+    local aura1 = getAccWeldFromMeshAndTexture(4758429875,4764720503)
+local s1=getAccWeldFromMeshAndTexture(4315410540,4506940486)
+local s2=getAccWeldFromMeshAndTexture(4315410540,4315250791)
+local s3=getAccWeldFromMeshAndTexture(4315410540,4458626951)
+local s4=getAccWeldFromMeshAndTexture(4315410540,4794299274)
     local vel = HumanoidRootPart.Velocity
     sine += deltaTime
     deltaTime *= 10
@@ -1290,11 +1292,11 @@ RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.25 * sin(sine*1.15),0),angles(-0.61
  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(-0.7853981633974483-0.17453292519943295*sin(sine*1.15),-1.5707963267948966,0)),deltaTime) 
  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.85,1.16,-0.45+0.1*sin(sine*1.15)),angles(1.5707963267948966,0.3490658503988659,-0.2617993877991494)),deltaTime) 
  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.25,0,-0.25+0.15*sin(sine*1.15)),angles(-1.0471975511965976-0.17453292519943295*sin(sine*1.16),0.3490658503988659,0.17453292519943295)),deltaTime) 
- Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0.05 * sin(sine*1.15)),angles(-2.007128639793479,0,3.141592653589793)),deltaTime) 
+Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0.05 * sin(sine*1.15)),angles(-2.007128639793479,0,3.141592653589793)),deltaTime) 
  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(-1.3089969389957472-0.17453292519943295*sin(sine*1.15),1.5707963267948966,0)),deltaTime)  
-aura1.C0=Lerp(aura1.C0,cfMul(cf(0,0,7.5-0.15*sin(sine*1.15)),angles(0,0,-17.453292519943297*sin(sine*0.15))),deltaTime)
 
 if aura1 and s1 and s2 and s3 and s4 then
+aura1.C0=Lerp(aura1.C0,cfMul(cf(0,0,7.5-0.15*sin(sine*1.15)),angles(0,0,-17.453292519943297*sin(sine*0.15))),deltaTime)
 s1.C0=Lerp(s1.C0,cfMul(cf(2.35,2.25,7.5-0.15*sin(sine*1.15)),angles(0,0,17.453292519943297*sin(sine*0.15))),deltaTime)
 s2.C0=Lerp(s2.C0,cfMul(cf(2.35,2.25,7.5-0.15*sin(sine*1.15)),angles(0,0,1.5707963267948966+17.453292519943297*sin(sine*0.15))),deltaTime) 
  s3.C0=Lerp(s3.C0,cfMul(cf(2.35,2.25,7.5-0.15*sin(sine*1.15)),angles(0,0,3.141592653589793+17.453292519943297*sin(sine*0.15))),deltaTime) 
