@@ -175,7 +175,7 @@ local function getNetlessVelocity(realPartVelocity) --change this if you have a 
         end
         return (realPartVelocity * Vector3_101) + netless_Y
     end
-    local simradius = "shp" --simulation radius (net bypass) method
+    local simradius = "ssr" --simulation radius (net bypass) method
     --"shp" - sethiddenproperty
     --"ssr" - setsimulationradius
     --false - disable
@@ -197,7 +197,7 @@ local function getNetlessVelocity(realPartVelocity) --change this if you have a 
     --3 - limbs + breakJoints after [loadtime] seconds
     --4 - remove humanoid + breakJoints
     --5 - remove humanoid + limbs
-    local alignmode = 1 --AlignPosition mode
+    local alignmode = 2 --AlignPosition mode
     --modes:
     --1 - AlignPosition rigidity enabled true
     --2 - 2 AlignPositions rigidity enabled both true and false
@@ -220,7 +220,7 @@ local function getNetlessVelocity(realPartVelocity) --change this if you have a 
     local v3 = Vector3.new
     local v3_0 = Vector3.zero
     local inf = math.huge
-    local aura1 = getAccWeldFromMeshAndTexture(4758429875,4764720503)
+local aura1 = getAccWeldFromMeshAndTexture(4758429875,4764720503)
 local s1=getAccWeldFromMeshAndTexture(4315410540,4506940486)
 local s2=getAccWeldFromMeshAndTexture(4315410540,4315250791)
 local s3=getAccWeldFromMeshAndTexture(4315410540,4458626951)
@@ -494,6 +494,12 @@ local s4=getAccWeldFromMeshAndTexture(4315410540,4794299274)
             for i,v in pairs(c:GetChildren()) do
                 if v:IsA("Accessory") then
                     shp(v, "BackendAccoutrementState", 0)
+                    local handle = v:FindFirstChild("Handle")
+                if handle then
+                    handle.CanCollide = false
+                    handle.Massless = true
+                    handle.Transparency = 0
+                    end
                 end 
             end
         end
@@ -1238,11 +1244,19 @@ RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.25 * sin(sine*1.15),0),angles(-1.91
  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,-0.25-0.15*sin(sine*1.15),0),angles(-1.3089969389957472,0.3490658503988659,0.4363323129985824)),deltaTime)  
   LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.45,-1-0.15*sin(sine*1.15),-0.55),angles(-1.1344640137963142+0.08726646259971647*sin(sine*1),0.3490658503988659,0)),deltaTime)
  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.75-0.15*sin(sine*1.15),-0.95),angles(0,0.3490658503988659,1.5707963267948966)),deltaTime)
-if aura1 and s1 and s2 and s3 and s4 then
+if aura1 then 
     aura1.C0=Lerp(aura1.C0,cf(0,0.15 * sin(sine*1),-2),deltaTime)
+end
+if s1 then 
  s1.C0=Lerp(s1.C0,cfMul(cf(2.5,2.45+0.15*sin(sine*1),-2),angles(0,0,3.141592653589793+6.283185307179586*sin(sine*0.25))),deltaTime) 
+end
+if s2 then
 s2.C0=Lerp(s2.C0,cfMul(cf(2.5,2.45+0.15*sin(sine*1),-2),angles(0,0,6.283185307179586*sin(sine*0.25))),deltaTime)
+end
+if s3 then 
 s3.C0=Lerp(s3.C0,cfMul(cf(2.5,2.45+0.15*sin(sine*1),-2),angles(0,0,1.5707963267948966+6.283185307179586*sin(sine*0.25))),deltaTime)
+end
+if s4 then 
 s4.C0=Lerp(s4.C0,cfMul(cf(2.5,2.45,-2),angles(0,0,4.71238898038469+6.283185307179586*sin(sine*0.25))),deltaTime)
 end
         elseif vel.Y > 0 then -- jump
