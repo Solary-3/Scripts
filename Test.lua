@@ -1205,6 +1205,11 @@ for i, v in pairs(modes) do
         modes[Enum.KeyCode[i:upper()]] = v
     end
 end
+local aura1=getAccWeldFromMeshAndTexture(4758429875,4764720503)
+local s1=getAccWeldFromMeshAndTexture(4315410540,4506940486)
+local s2=getAccWeldFromMeshAndTexture(4315410540,4315250791)
+local s3=getAccWeldFromMeshAndTexture(4315410540,4458626951)
+local s4=getAccWeldFromMeshAndTexture(4315410540,4794299274)
 local uis, mode = game:GetService("UserInputService"), ""
 uis.InputBegan:Connect(function(key)
     if uis:GetFocusedTextBox() then return end
@@ -1215,11 +1220,6 @@ uis.InputBegan:Connect(function(key)
         mode = modes[key] or mode
     end
 end)
-local aura1=getAccWeldFromMeshAndTexture(4758429875,4764720503)
-local s1=getAccWeldFromMeshAndTexture(4315410540,4506940486)
-local s2=getAccWeldFromMeshAndTexture(4315410540,4315250791)
-local s3=getAccWeldFromMeshAndTexture(4315410540,4458626951)
-local s4=getAccWeldFromMeshAndTexture(4315410540,4794299274)
 local cf, v3, euler, sin, sine, abs = CFrame.new, Vector3.new, CFrame.fromEulerAnglesXYZ, math.sin, 0, math.abs
 local con = nil
 con = renderstepped:Connect(function(deltaTime)
