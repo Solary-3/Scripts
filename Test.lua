@@ -1215,24 +1215,14 @@ uis.InputBegan:Connect(function(key)
         mode = modes[key] or mode
     end
 end)
-
-local cf, v3, euler, sin, sine, abs = CFrame.new, Vector3.new, CFrame.fromEulerAnglesXYZ, math.sin, 0, math.abs
-local con = nil
-con = renderstepped:Connect(function(deltaTime)
 local aura1 = getAccWeldFromMeshAndTexture("4758429875", "4764720503")
 local s1 = getAccWeldFromMeshAndTexture("4315410540", "4506940486")
 local s2 = getAccWeldFromMeshAndTexture("4315410540", "4315250791")
 local s3 = getAccWeldFromMeshAndTexture("4315410540", "4458626951")
 local s4 = getAccWeldFromMeshAndTexture("4315410540", "4794299274")
-
-if aura1 and s1 and s2 and s3 and s4 then
-    aura1.C0 = aura1.C0:Lerp(CFrame.new(0, 0.15 * math.sin(sine * 1), -2), deltaTime)
-    s1.C0 = s1.C0:Lerp(CFrame.new(2.5, 2.45 + 0.15 * math.sin(sine * 1), -2) * CFrame.Angles(0, 0, math.pi + 6.283185307179586 * math.sin(sine * 0.25)), deltaTime)
-    s2.C0 = s2.C0:Lerp(CFrame.new(2.5, 2.45 + 0.15 * math.sin(sine * 1), -2) * CFrame.Angles(0, 0, 6.283185307179586 * math.sin(sine * 0.25)), deltaTime)
-    s3.C0 = s3.C0:Lerp(CFrame.new(2.5, 2.45 + 0.15 * math.sin(sine * 1), -2) * CFrame.Angles(0, 0, 1.5707963267948966 + 6.283185307179586 * math.sin(sine * 0.25)), deltaTime)
-    s4.C0 = s4.C0:Lerp(CFrame.new(2.5, 2.45, -2) * CFrame.Angles(0, 0, 4.71238898038469 + 6.283185307179586 * math.sin(sine * 0.25)), deltaTime)
-end
-
+local cf, v3, euler, sin, sine, abs = CFrame.new, Vector3.new, CFrame.fromEulerAnglesXYZ, math.sin, 0, math.abs
+local con = nil
+con = renderstepped:Connect(function(deltaTime)
     if not c then
         return con:Disconnect()
     end
