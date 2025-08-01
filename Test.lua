@@ -1218,7 +1218,8 @@ end)
 
 local cf, v3, euler, sin, sine, abs = CFrame.new, Vector3.new, CFrame.fromEulerAnglesXYZ, math.sin, 0, math.abs
 local con = nil
-con = renderstepped:Connect(function(deltaTime)local aura1 = getAccWeldFromMeshAndTexture("4758429875", "4764720503")
+con = renderstepped:Connect(function(deltaTime)
+local aura1 = getAccWeldFromMeshAndTexture("4758429875", "4764720503")
 local s1 = getAccWeldFromMeshAndTexture("4315410540", "4506940486")
 local s2 = getAccWeldFromMeshAndTexture("4315410540", "4315250791")
 local s3 = getAccWeldFromMeshAndTexture("4315410540", "4458626951")
