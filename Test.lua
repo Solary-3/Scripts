@@ -189,7 +189,7 @@ local function getNetlessVelocity(realPartVelocity) --change this if you have a 
     local addtools = false --puts all tools from backpack to character and lets you hold them after reanimation
     local hedafterneck = true --disable aligns for head and enable after neck or torso is removed
     local loadtime = game:GetService("Players").RespawnTime + 0.5 --anti respawn delay
-    local method = 3 --reanimation method
+    local method = 0 --reanimation method
     --methods:
     --0 - breakJoints (takes [loadtime] seconds to laod)
     --1 - limbs
@@ -220,7 +220,11 @@ local function getNetlessVelocity(realPartVelocity) --change this if you have a 
     local v3 = Vector3.new
     local v3_0 = Vector3.zero
     local inf = math.huge
-    
+    local aura1 = getAccWeldFromMeshAndTexture(4758429875,4764720503)
+local s1=getAccWeldFromMeshAndTexture(4315410540,4506940486)
+local s2=getAccWeldFromMeshAndTexture(4315410540,4315250791)
+local s3=getAccWeldFromMeshAndTexture(4315410540,4458626951)
+local s4=getAccWeldFromMeshAndTexture(4315410540,4794299274)
     local c = lp.Character
     
     if not (c and c.Parent) then
@@ -1222,11 +1226,6 @@ con = renderstepped:Connect(function(deltaTime)
     if not c then
         return con:Disconnect()
     end
-    local aura1 = getAccWeldFromMeshAndTexture(4758429875,4764720503)
-local s1=getAccWeldFromMeshAndTexture(4315410540,4506940486)
-local s2=getAccWeldFromMeshAndTexture(4315410540,4315250791)
-local s3=getAccWeldFromMeshAndTexture(4315410540,4458626951)
-local s4=getAccWeldFromMeshAndTexture(4315410540,4794299274)
     local vel = HumanoidRootPart.Velocity
     sine += deltaTime
     deltaTime *= 10
