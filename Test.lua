@@ -1215,11 +1215,11 @@ uis.InputBegan:Connect(function(key)
         mode = modes[key] or mode
     end
 end)
-local aura1 = getAccWeldFromMeshAndTexture("4758429875", "4764720503")
-local s1 = getAccWeldFromMeshAndTexture("4315410540", "4506940486")
-local s2 = getAccWeldFromMeshAndTexture("4315410540", "4315250791")
-local s3 = getAccWeldFromMeshAndTexture("4315410540", "4458626951")
-local s4 = getAccWeldFromMeshAndTexture("4315410540", "4794299274")
+local aura1=getAccWeldFromMeshAndTexture("4758429875", "4764720503")
+local s1=getAccWeldFromMeshAndTexture("4315410540", "4506940486")
+local s2=getAccWeldFromMeshAndTexture("4315410540", "4315250791")
+local s3=getAccWeldFromMeshAndTexture("4315410540", "4458626951")
+local s4=getAccWeldFromMeshAndTexture("4315410540", "4794299274")
 local cf, v3, euler, sin, sine, abs = CFrame.new, Vector3.new, CFrame.fromEulerAnglesXYZ, math.sin, 0, math.abs
 local con = nil
 con = renderstepped:Connect(function(deltaTime)
@@ -1232,8 +1232,6 @@ con = renderstepped:Connect(function(deltaTime)
     if vel.Magnitude > 2 then
         if abs(vel.X) + abs(vel.Z) > abs(vel.Y) then -- walk
        
-
-
 RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.55,-0.75-0.15*sin(sine*1.15),-0.25),angles(-1.3089969389957472+0.08726646259971647*sin(sine*1),0.4363323129985824,0.17453292519943295)),deltaTime)    
 RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.25 * sin(sine*1.15),0),angles(-1.9198621771937625,0,3.141592653589793)),deltaTime)
  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1-0.1*sin(sine*1),0),angles(-1.3089969389957472,0,3.141592653589793)),deltaTime)  
