@@ -222,7 +222,7 @@ G2L["UIStroke_8"]["Thickness"] = 2;
 G2L["ActualChangelog_9"] = Instance.new("TextLabel", G2L["Changelog_4"]);
 G2L["ActualChangelog_9"]["TextWrapped"] = true;
 G2L["ActualChangelog_9"]["BorderSizePixel"] = 0;
-G2L["ActualChangelog_9"]["TextSize"] = 24;
+G2L["ActualChangelog_9"]["TextSize"] = 17;
 G2L["ActualChangelog_9"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 G2L["ActualChangelog_9"]["TextYAlignment"] = Enum.TextYAlignment.Top;
 G2L["ActualChangelog_9"]["BackgroundColor3"] = Color3.fromRGB(51, 51, 51);
@@ -230,7 +230,8 @@ G2L["ActualChangelog_9"]["FontFace"] = Font.new([[rbxasset://fonts/families/Sarp
 G2L["ActualChangelog_9"]["TextColor3"] = Color3.fromRGB(255, 355, 255);
 G2L["ActualChangelog_9"]["BackgroundTransparency"] = 1;
 G2L["ActualChangelog_9"]["Size"] = UDim2.new(1, 0, 0.62016, 0);
-G2L["ActualChangelog_9"]["Text"] = [[Added a blacklisting function.                         Added JK, KJ and Jun. ]];
+G2L["ActualChangelog_9"]["Text"] = [[ Since the update from krnl, using the
+reanimation crashes your game, wait until krnl gets updated again! ]];
 G2L["ActualChangelog_9"]["Name"] = [[ActualChangelog]];
 G2L["ActualChangelog_9"]["Position"] = UDim2.new(0, 0, 0.18605, 0);
 
