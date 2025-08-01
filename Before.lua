@@ -171,7 +171,7 @@ G2L["UIGradient_10"]["Rotation"] = 80;
 G2L["BeforeRunningScript_11"] = Instance.new("TextLabel", G2L["TOS FRAME_2"]);
 G2L["BeforeRunningScript_11"]["TextWrapped"] = true;
 G2L["BeforeRunningScript_11"]["BorderSizePixel"] = 0;
-G2L["BeforeRunningScript_11"]["TextSize"] = 10;
+G2L["BeforeRunningScript_11"]["TextSize"] = 8.5;
 G2L["BeforeRunningScript_11"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 G2L["BeforeRunningScript_11"]["TextYAlignment"] = Enum.TextYAlignment.Top;
 G2L["BeforeRunningScript_11"]["BackgroundColor3"] = Color3.fromRGB(51, 51, 51);
@@ -179,7 +179,7 @@ G2L["BeforeRunningScript_11"]["TextDirection"] = Enum.TextDirection.LeftToRight;
 G2L["BeforeRunningScript_11"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["BeforeRunningScript_11"]["BackgroundTransparency"] = 0.95;
 G2L["BeforeRunningScript_11"]["Size"] = UDim2.new(0.45946, 0, 0.57813, 0);
-G2L["BeforeRunningScript_11"]["Text"] = [[To avoid FPS Drop, the script MUST remove all of the accessory that are on you so you can experience less lag issues. If you wish to allow your hats to be reanimated, then click the "Allow Hats" button above.  Laggy...]];
+G2L["BeforeRunningScript_11"]["Text"] = [[To avoid fps drop, you will decide if you want to allow hats before running the script or dont allow hats. Simply click the "Allow Hats" to toggle between "Dont Allow Hats" and "Allow Hats"]];
 G2L["BeforeRunningScript_11"]["Name"] = [[BeforeRunningScript]];
 G2L["BeforeRunningScript_11"]["Position"] = UDim2.new(0.51351, 0, 0.39063, 0);
 
@@ -278,7 +278,7 @@ G2L["DateOfUpdate _e"]["FontFace"] = Font.new([[rbxasset://fonts/families/Sarpan
 G2L["DateOfUpdate _e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["DateOfUpdate _e"]["BackgroundTransparency"] = 1;
 G2L["DateOfUpdate _e"]["Size"] = UDim2.new(1, 0, 0.27132, 0);
-G2L["DateOfUpdate _e"]["Text"] = [[Updated on 7/23/25]];
+G2L["DateOfUpdate _e"]["Text"] = [[Updated on 8/1/25]];
 G2L["DateOfUpdate _e"]["Name"] = [[DateOfUpdate ]];
 G2L["DateOfUpdate _e"]["Position"] = UDim2.new(0, 0, 0.72093, 0);
 
