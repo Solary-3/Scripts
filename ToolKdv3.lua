@@ -1079,7 +1079,7 @@ tool.RequiresHandle = false
 writefile("Dances/JK.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/JK.mp3?raw=true"))
 	if not getgenv()["Animator"] then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim1 = nil
 
@@ -1114,7 +1114,7 @@ tool2.RequiresHandle = false
 writefile("Dances/UNLIMITEDFLEXWORKS.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/UNLIMITEDFLEXWORKS.mp3?raw=true"))
 	if not getgenv()["Animator"] then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1149,7 +1149,7 @@ tool2.RequiresHandle = false
 writefile("Dances/NMG.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/NMG.mp3?raw=true"))
 	if not getgenv()["Animator"] then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1191,7 +1191,7 @@ tool52.RequiresHandle = false
 writefile("Dances/Billy.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Billy.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1238,7 +1238,7 @@ tool.RequiresHandle = false
 writefile("Dances/Insanity.mp3", 
      game:HttpGet("https://github.com/gObl00x/Epik-Musics/raw/refs/heads/main/Insanity.mp3"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1271,7 +1271,7 @@ tool3.RequiresHandle = false
 writefile("Dances/rat.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/rat.mp3?raw=true"))
 	if not getgenv()["Animator"] then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1306,7 +1306,7 @@ tool4.RequiresHandle = false
 writefile("Dances/rat.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/rat.mp3?raw=true"))
 	if not getgenv()["Animator"] then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1343,7 +1343,7 @@ tool5.RequiresHandle = false
 writefile("Dances/xxanteria, isq - FUNKED UP (SLOWED) (320kbps).mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/xxanteria%2C%20isq%20-%20FUNKED%20UP%20(SLOWED)%20(320kbps).mp3?raw=true"))
 	if not getgenv()["Animator"] then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1381,7 +1381,7 @@ writefile("Dances/Assumptions.mp3",
 game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Assumptions.mp3?raw=true"))
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1417,7 +1417,7 @@ writefile("Dances/Assumptions.mp3",
 game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Assumptions.mp3?raw=true"))
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1454,7 +1454,7 @@ writefile("Dances/Bjean.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Bjean.mp3?raw=true"))
 	
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1490,7 +1490,7 @@ writefile("Dances/Egypt.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Egypt.mp3?raw=true"))
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1528,7 +1528,7 @@ writefile("Dances/caramell.mp3",
 
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1565,7 +1565,7 @@ writefile("Dances/Stock.mp3",
 
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1603,7 +1603,7 @@ writefile("Dances/gangnamm.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/gangnamm.mp3?raw=true"))
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1640,7 +1640,7 @@ writefile("Dances/Fein.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Fein.mp3?raw=true"))
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1678,7 +1678,7 @@ writefile("Dances/griddy.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/griddy.mp3?raw=true"))
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1715,7 +1715,7 @@ writefile("Dances/LeftRight.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/LeftRight.mp3?raw=true"))
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1752,7 +1752,7 @@ writefile("Dances/kazot.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/kazot.mp3?raw=true"))
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1789,7 +1789,7 @@ writefile("Dances/doodle - Zachz Winner.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/doodle%20-%20Zachz%20Winner.mp3?raw=true"))
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1826,7 +1826,7 @@ writefile("Dances/Mesmerizer.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Mesmerizer.mp3?raw=true"))
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1863,7 +1863,7 @@ writefile("Dances/Bumblebee.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Bumblebee.mp3?raw=true"))
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1900,7 +1900,7 @@ writefile("Dances/Domino.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Domino.mp3?raw=true"))
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1938,7 +1938,7 @@ writefile("Dances/Yamero.mp3",
 
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -1976,7 +1976,7 @@ writefile("Dances/Crank.mp3",
 
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2014,7 +2014,7 @@ writefile("Dances/SmoothMoves.mp3",
 
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2053,7 +2053,7 @@ writefile("Dances/Shuba Duck.mp3",
 
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2090,7 +2090,7 @@ writefile("Dances/Odetari - KEEP UP (Lyrics) (320kbps).mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Odetari%20-%20KEEP%20UP%20(Lyrics)%20(320kbps).mp3?raw=true"))
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2127,7 +2127,7 @@ writefile("Dances/Lemon.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Lemon.mp3?raw=true"))
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2164,7 +2164,7 @@ writefile("Dances/unlockit.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/unlockit.mp3?raw=true"))
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2202,7 +2202,7 @@ writefile("Dances/InternetAngel.mp3",
 
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2240,7 +2240,7 @@ writefile("Dances/Boombox.mp3",
 
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2278,7 +2278,7 @@ writefile("Dances/balls.mp3",
 
 
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2313,7 +2313,7 @@ tool31.RequiresHandle = false
 writefile("Dances/Distraction.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Distraction.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2346,7 +2346,7 @@ tool32.RequiresHandle = false
 writefile("Dances/ItBurns.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/ItBurns.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2379,7 +2379,7 @@ tool33.RequiresHandle = false
 writefile("Dances/chronoshift.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/chronoshift.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2412,7 +2412,7 @@ tool34.RequiresHandle = false
 writefile("Dances/Million.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Million.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2445,7 +2445,7 @@ tool35.RequiresHandle = false
 writefile("Dances/Runaway.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Runaway.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2478,7 +2478,7 @@ tool36.RequiresHandle = false
 writefile("Dances/Headlock.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Headlock.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2511,7 +2511,7 @@ tool37.RequiresHandle = false
 writefile("Dances/bloodpop.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/bloodpop.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2544,7 +2544,7 @@ tool38.RequiresHandle = false
 writefile("Dances/heavylove.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/heavylove.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2577,7 +2577,7 @@ tool39.RequiresHandle = false
 writefile("Dances/Smug.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Smug.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2610,7 +2610,7 @@ tool40.RequiresHandle = false
 writefile("Dances/TUCA DONKA.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/TUCA%20DONKA.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2643,7 +2643,7 @@ tool41.RequiresHandle = false
 writefile("Dances/DO THE FLOP.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/DO%20THE%20FLOP.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2676,7 +2676,7 @@ tool42.RequiresHandle = false
 writefile("Dances/Doodle.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Doodle.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2709,7 +2709,7 @@ tool43.RequiresHandle = false
 writefile("Dances/CLUB PENGUIN DANCE.mp3",
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/CLUB%20PENGUIN%20DANCE.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2742,7 +2742,7 @@ tool44.RequiresHandle = false
 writefile("Dances/MioHonda.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/MioHonda.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2775,7 +2775,7 @@ tool45.RequiresHandle = false
 writefile("Dances/Liar.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Liar.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2808,7 +2808,7 @@ tool46.RequiresHandle = false
 writefile("Dances/Firework.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Firework.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2841,7 +2841,7 @@ tool47.RequiresHandle = false
 writefile("Dances/Monster.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Monster.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2874,7 +2874,7 @@ tool48.RequiresHandle = false
 writefile("Dances/LoveForU.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/LoveForU.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2907,7 +2907,7 @@ tool49.RequiresHandle = false
 writefile("Dances/C14.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/C14.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2940,7 +2940,7 @@ tool50.RequiresHandle = false
 writefile("Dances/Goat.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Goat.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -2973,7 +2973,7 @@ tool51.RequiresHandle = false
 writefile("Dances/Spooky.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Spooky.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3007,7 +3007,7 @@ tool53.RequiresHandle = false
 writefile("Dances/SlickBack.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/SlickBack.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3040,7 +3040,7 @@ tool54.RequiresHandle = false
 writefile("Dances/Static.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Static.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3073,7 +3073,7 @@ tool55.RequiresHandle = false
 writefile("Dances/Heel.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Heel.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3106,7 +3106,7 @@ tool56.RequiresHandle = false
 writefile("Dances/Yippie.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Yippie.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3139,7 +3139,7 @@ tool57.RequiresHandle = false
 writefile("Dances/Pickup.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Pickup.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3172,7 +3172,7 @@ tool58.RequiresHandle = false
 writefile("Dances/Chinese.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Chinese.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3205,7 +3205,7 @@ tool59.RequiresHandle = false
 writefile("Dances/Box.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Box.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3238,7 +3238,7 @@ tool60.RequiresHandle = false
 writefile("Dances/Monkey.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Monkey.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3271,7 +3271,7 @@ tool61.RequiresHandle = false
 writefile("Dances/Break.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Break.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3304,7 +3304,7 @@ tool62.RequiresHandle = false
 writefile("Dances/Popipo.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Popipo.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3340,7 +3340,7 @@ tool63.RequiresHandle = false
 writefile("Dances/Birdbrain.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Birdbrain.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3373,7 +3373,7 @@ tool64.RequiresHandle = false
 writefile("Dances/XO.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/XO.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3406,7 +3406,7 @@ tool65.RequiresHandle = false
 writefile("Dances/Roar.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Roar.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3439,7 +3439,7 @@ tool66.RequiresHandle = false
 writefile("Dances/Savor.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Savor.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3472,7 +3472,7 @@ tool67.RequiresHandle = false
 writefile("Dances/Prism.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Prism.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3505,7 +3505,7 @@ tool68.RequiresHandle = false
 writefile("Dances/Rambunctious.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Rambunctious.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3538,7 +3538,7 @@ tool69.RequiresHandle = false
 writefile("Dances/TakeDown.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/TakeDown.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3571,7 +3571,7 @@ tool70.RequiresHandle = false
 writefile("Dances/Soda.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Soda.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
@@ -3604,7 +3604,7 @@ tool71.RequiresHandle = false
 writefile("Dances/Jennie.mp3", 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Jennie.mp3?raw=true"))
 if not getgenv()["Animator"] then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Anim.lua"))()
 end
 local Anim = nil
 
