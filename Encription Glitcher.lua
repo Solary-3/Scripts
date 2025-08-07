@@ -1,3 +1,6 @@
+--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
 
 
 --ENCRIPTION GLITCHER V12--
@@ -564,7 +567,7 @@ function SCIFIMOVIELOL(Part0,Part1,Position,Angle)
 	CountSCIFIMOVIELOL = CountSCIFIMOVIELOL + 1
 	return {AlignPos,AlignOri,AttachmentA,AttachmentB}
 end
-
+ 
 if _G.netted ~= true then
 	_G.netted = true
 	coroutine.wrap(function()
@@ -576,7 +579,7 @@ if _G.netted ~= true then
 		end)
 	end)()
 end
-
+ 
 game:FindFirstChildOfClass("Players").LocalPlayer["Character"].Archivable = true
 local hatnameclone = {}
 for _,v in next, game:FindFirstChildOfClass("Players").LocalPlayer["Character"]:GetChildren() do
@@ -601,9 +604,9 @@ for _,v in pairs(hatnameclone) do
 	end
 end
 hatnameclone = nil
-
+ 
 local DeadChar = game:FindFirstChildOfClass("Players").LocalPlayer.Character
-
+ 
 local fldr = Instance.new("Folder",game:FindFirstChildOfClass("Players").LocalPlayer["Character"])
 fldr.Name = "DMYF"
 local CloneChar = DeadChar:Clone()
@@ -624,7 +627,7 @@ CloneChar.HumanoidRootPart.CFrame = DeadChar.HumanoidRootPart.CFrame
 CloneChar.Humanoid.BreakJointsOnDeath = false
 CloneChar.Name = "non"
 CloneChar.Humanoid.DisplayDistanceType = "None"
-
+ 
 for _,v in next, DeadChar:GetChildren() do
 	if v:IsA("Accessory") then
 		local topacc = false
@@ -666,7 +669,7 @@ for _,v in next, DeadChar:GetChildren() do
 		end)()
     end
 end
-
+ 
 local a = DeadChar.Torso
 local b = DeadChar.HumanoidRootPart
 local c = DeadChar.Humanoid
@@ -689,10 +692,10 @@ c.Parent = DeadChar
 told:Destroy()
 told1:Destroy()
 a.Name = "Torso"
-
+ 
 if CloneChar.Head:FindFirstChildOfClass("Decal") then CloneChar.Head:FindFirstChildOfClass("Decal").Transparency = 1 end
 if DeadChar:FindFirstChild("Animate") then DeadChar:FindFirstChild("Animate"):Destroy() end
-
+ 
 local Collider
 function UnCollide()
     if HumanDied then Collider:Disconnect(); return end
@@ -708,7 +711,7 @@ function UnCollide()
     end 
 end
 Collider = game:GetService("RunService").Stepped:Connect(UnCollide)
-
+ 
 local resetBindable = Instance.new("BindableEvent")
 resetBindable.Event:connect(function()
     game:GetService("StarterGui"):SetCore("ResetButtonCallback", true)
@@ -723,7 +726,7 @@ resetBindable.Event:connect(function()
 	end)
 end)
 game:GetService("StarterGui"):SetCore("ResetButtonCallback", resetBindable)
-
+ 
 coroutine.wrap(function()
     while true do
         game:GetService("RunService").RenderStepped:wait()
@@ -744,15 +747,15 @@ coroutine.wrap(function()
         end		
     end
 end)()
-
-
+ 
+ 
 SCIFIMOVIELOL(DeadChar["Head"],CloneChar["Head"])
 SCIFIMOVIELOL(DeadChar["Torso"],CloneChar["Torso"])
 SCIFIMOVIELOL(DeadChar["Left Arm"],CloneChar["Left Arm"])
 SCIFIMOVIELOL(DeadChar["Right Arm"],CloneChar["Right Arm"])
 SCIFIMOVIELOL(DeadChar["Left Leg"],CloneChar["Left Leg"])
 SCIFIMOVIELOL(DeadChar["Right Leg"],CloneChar["Right Leg"])
-
+ 
 for _,v in pairs(DeadChar:GetChildren()) do
 	if v:IsA("BasePart") and v.Name ~= "Head" then
 		--[[local bv = Instance.new("BodyVelocity",v)
@@ -776,167 +779,39 @@ for _,v in pairs(DeadChar:GetChildren()) do
 		end)()
 	end
 end
-
+ 
 for _,BodyParts in next, CloneChar:GetDescendants() do
 if BodyParts:IsA("BasePart") or BodyParts:IsA("Part") then
 BodyParts.Transparency = 1 end end
 game:GetService("RunService").RenderStepped:wait()
 game:FindFirstChildOfClass("Players").LocalPlayer.Character = CloneChar
 game:FindFirstChildOfClass("Workspace"):FindFirstChildOfClass("Camera").CameraSubject = CloneChar.Humanoid
-
+ 
 for _,v in next, DeadChar:GetChildren() do
 	if v:IsA("Accessory") then
 		if v.Handle:FindFirstChildOfClass("Weld") then v.Handle:FindFirstChildOfClass("Weld"):Destroy() end
 	end
 end
-
+ 
 if ANIMATIONHERE then ANIMATIONHERE.Parent = CloneChar end
-
-
-game.Players.LocalPlayer.Character.Humanoid:WaitForChild("Animator"):Destroy()
-
-
-HumanDied = false
-local CountSCIFIMOVIELOL = 1
-function SCIFIMOVIELOL(Part0,Part1,Position,Angle)
-	local AlignPos = Instance.new('AlignPosition', Part1); AlignPos.Name = "AliP_"..CountSCIFIMOVIELOL
-	AlignPos.ApplyAtCenterOfMass = true;
-	AlignPos.MaxForce = 5772000-67752;
-	AlignPos.MaxVelocity = math.huge/9e110;
-	AlignPos.ReactionForceEnabled = false;
-	AlignPos.Responsiveness = 200;
-	AlignPos.RigidityEnabled = false;
-	local AlignOri = Instance.new('AlignOrientation', Part1); AlignOri.Name = "AliO_"..CountSCIFIMOVIELOL
-	AlignOri.MaxAngularVelocity = math.huge/9e110;
-	AlignOri.MaxTorque = 5772000
-	AlignOri.PrimaryAxisOnly = false;
-	AlignOri.ReactionTorqueEnabled = false;
-	AlignOri.Responsiveness = 200;
-	AlignOri.RigidityEnabled = false;
-	local AttachmentA=Instance.new('Attachment',Part1); AttachmentA.Name = "Ath_"..CountSCIFIMOVIELOL
-	local AttachmentB=Instance.new('Attachment',Part0); AttachmentB.Name = "Ath_"..CountSCIFIMOVIELOL
-	AttachmentA.Orientation = Angle or Vector3.new(0,0,0)
-	AttachmentA.Position = Position or Vector3.new(0,0,0)
-	AlignPos.Attachment1 = AttachmentA;
-	AlignPos.Attachment0 = AttachmentB;
-	AlignOri.Attachment1 = AttachmentA;
-	AlignOri.Attachment0 = AttachmentB;
-	CountSCIFIMOVIELOL = CountSCIFIMOVIELOL + 1
-	return {AlignPos,AlignOri,AttachmentA,AttachmentB}
-end
-
-
-
-
-game:FindFirstChildOfClass("Players").LocalPlayer["Character"].Archivable = true
-local hatnameclone = {}
-for _,v in next, game:FindFirstChildOfClass("Players").LocalPlayer["Character"]:GetChildren() do
-	if v:IsA("Accessory") then
-		if hatnameclone[v.Name] then
-			if hatnameclone[v.Name] == "s" then
-				hatnameclone[v.Name] = {}
-			end
-			table.insert(hatnameclone[v.Name],v)
-		else
-			hatnameclone[v.Name] = "s"
-		end
-	end
-end
-for _,v in pairs(hatnameclone) do
-	if type(v) == "table" then
-		local num = 1
-		for _,w in pairs(v) do
-			w.Name = w.Name..num
-			num = num + 1
-		end
-	end
-end
-hatnameclone = nil
-
-local DeadChar = game:FindFirstChildOfClass("Players").LocalPlayer.Character
-
-local CloneChar = DeadChar
-
-
-for _,v in next, DeadChar:GetChildren() do
-	if v:IsA("Accessory") then
-		local topacc = false
-		if v.Handle:FindFirstChildOfClass("Weld") then v.Handle:FindFirstChildOfClass("Weld"):Destroy() end
-		v.Handle.Massless = true
-		v.Handle.CanCollide = false
-		if v.Handle:FindFirstChildOfClass("Attachment") then
-			local ath__ = v.Handle:FindFirstChildOfClass("Attachment")
-			if ath__.Name == "HatAttachment" or ath__.Name == "HairAttachment" or ath__.Name == "FaceFrontAttachment" or ath__.Name == "FaceCenterAttachment" then
-				topacc = ath__.Name
-			end
-		end
-        local bv = Instance.new("BodyVelocity",v.Handle)
-		bv.Velocity = Vector3.new(0,0,0)
-		coroutine.wrap(function()
-			if topacc then
-				local allthings = SCIFIMOVIELOL(v.Handle,DeadChar.Torso,Vector3.new(0,1.5,0)+ (DeadChar.Head[topacc].Position + (v.Handle[topacc].Position*-1)),Vector3.new(0,0,0))
-				local normaltop = allthings[1].Attachment1
-				local alipos = allthings[1]
-				local alirot = allthings[2]
-				local p0 = v.Handle
-				local p1 = DeadChar.Head
-				alipos.Parent = CloneChar:FindFirstChild(v.Name).Handle
-				alirot.Parent = CloneChar:FindFirstChild(v.Name).Handle
-				while true do
-					game:GetService("RunService").Stepped:wait()
-					if HumanDied then break end
-					coroutine.wrap(function()
-						if alipos.Attachment1 == normaltop then
-							p0.CFrame = p0.CFrame:lerp((((DeadChar.Torso.CFrame * CFrame.new(0,1.5,0)) * p1[topacc].CFrame) * p0[topacc].CFrame:inverse()),1)
-						else
-							v.Handle.CFrame = v.Handle.CFrame:lerp(alipos.Attachment1.Parent.CFrame * CFrame.new(alipos.Attachment1.Position) * CFrame.Angles(math.rad(alipos.Attachment1.Rotation.X),math.rad(alipos.Attachment1.Rotation.Y),math.rad(alipos.Attachment1.Rotation.Z)),1)
-						end
-					end)()
-				end
-			else
-				SCIFIMOVIELOL(v.Handle,CloneChar[v.Name].Handle,Vector3.new(0,0,0),Vector3.new(0,0,0))
-			end
-		end)()
-    end
-end
-
-
-if CloneChar.Head:FindFirstChildOfClass("Decal") then CloneChar.Head:FindFirstChildOfClass("Decal").Transparency = 1 end
-
-
-
-
-
-
-
-
-
---if ANIMATIONHERE then ANIMATIONHERE.Parent = CloneChar end
-wait()
-
+--- DO NOT PUT NORMAL ANIMATION
 local data = {}
-
-Player = game:GetService("Players").LocalPlayer
-Cam = workspace.CurrentCamera
-Character = game.Players.LocalPlayer.Character
-Head = Character.Head
-Cam.CameraSubject = Head
-
+ 
 local script = game:GetObjects("rbxassetid://5446036971")[1]
-
+ 
 script.WingPiece.qPerfectionWeld:Destroy()
-
+ 
 do
 local NEVER_BREAK_JOINTS = false
-
+ 
 local function CallOnChildren(Instance, FunctionToCall)
 	FunctionToCall(Instance)
-
+ 
 	for _, Child in next, Instance:GetChildren() do
 		CallOnChildren(Child, FunctionToCall)
 	end
 end
-
+ 
 local function GetBricks(StartInstance)
 	local List = {}
 	CallOnChildren(StartInstance, function(Item)
@@ -944,13 +819,13 @@ local function GetBricks(StartInstance)
 			List[#List+1] = Item;
 		end
 	end)
-
+ 
 	return List
 end
-
+ 
 local function Modify(Instance, Values)
 	assert(type(Values) == "table", "Values is not a table");
-
+ 
 	for Index, Value in next, Values do
 		if type(Index) == "number" then
 			Value.Parent = Instance
@@ -960,14 +835,14 @@ local function Modify(Instance, Values)
 	end
 	return Instance
 end
-
+ 
 local function Make(ClassType, Properties)
 	return Modify(Instance.new(ClassType), Properties)
 end
-
+ 
 local Surfaces = {"TopSurface", "BottomSurface", "LeftSurface", "RightSurface", "FrontSurface", "BackSurface"}
 local HingSurfaces = {"Hinge", "Motor", "SteppingMotor"}
-
+ 
 local function HasWheelJoint(Part)
 	for _, SurfaceName in pairs(Surfaces) do
 		for _, HingSurfaceName in pairs(HingSurfaces) do
@@ -976,25 +851,25 @@ local function HasWheelJoint(Part)
 			end
 		end
 	end
-	
+ 
 	return false
 end
-
+ 
 local function ShouldBreakJoints(Part)
 	if NEVER_BREAK_JOINTS then
 		return false
 	end
-	
+ 
 	if HasWheelJoint(Part) then
 		return false
 	end
-	
+ 
 	local Connected = Part:GetConnectedParts()
-	
+ 
 	if #Connected == 1 then
 		return false
 	end
-	
+ 
 	for _, Item in pairs(Connected) do
 		if HasWheelJoint(Item) then
 			return false
@@ -1002,15 +877,15 @@ local function ShouldBreakJoints(Part)
 			return false
 		end
 	end
-	
+ 
 	return true
 end
-
+ 
 local function WeldTogether(Part0, Part1, JointType, WeldParent)
-
+ 
 	JointType = JointType or "Weld"
 	local RelativeValue = Part1:FindFirstChild("qRelativeCFrameWeldValue")
-	
+ 
 	local NewWeld = Part1:FindFirstChild("qCFrameWeldThingy") or Instance.new(JointType)
 	Modify(NewWeld, {
 		Name = "qCFrameWeldThingy";
@@ -1020,7 +895,7 @@ local function WeldTogether(Part0, Part1, JointType, WeldParent)
 		C1     = RelativeValue and RelativeValue.Value or Part1.CFrame:toObjectSpace(Part0.CFrame); --Part1.CFrame:inverse() * Part0.CFrame;-- Part1.CFrame:inverse();
 		Parent = Part1;
 	})
-
+ 
 	if not RelativeValue then
 		RelativeValue = Make("CFrameValue", {
 			Parent     = Part1;
@@ -1029,24 +904,24 @@ local function WeldTogether(Part0, Part1, JointType, WeldParent)
 			Value      = NewWeld.C1;
 		})
 	end
-
+ 
 	return NewWeld
 end
-
+ 
 local function WeldParts(Parts, MainPart, JointType, DoNotUnanchor)
-
+ 
 	for _, Part in pairs(Parts) do
 		if ShouldBreakJoints(Part) then
 			Part:BreakJoints()
 		end
 	end
-	
+ 
 	for _, Part in pairs(Parts) do
 		if Part ~= MainPart then
 			WeldTogether(MainPart, Part, JointType, MainPart)
 		end
 	end
-
+ 
 	if not DoNotUnanchor then
 		for _, Part in pairs(Parts) do
 			Part.Anchored = false
@@ -1054,15 +929,14 @@ local function WeldParts(Parts, MainPart, JointType, DoNotUnanchor)
 		MainPart.Anchored = false
 	end
 end
-
+ 
 local function PerfectionWeld()	
 	local Parts = GetBricks(script.WingPiece)
 	WeldParts(Parts, script.WingPiece.Main, "Weld", false)
 end
 PerfectionWeld()
-			game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 end
-
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 --// Shortcut Variables \\--
 local S = setmetatable({},{__index = function(s,i) return game:service(i) end})
 local CF = {N=CFrame.new,A=CFrame.Angles,fEA=CFrame.fromEulerAnglesXYZ}
