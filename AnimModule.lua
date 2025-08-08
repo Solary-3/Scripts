@@ -77,7 +77,7 @@ local Joints = {
 ["Head"] = Rig.Torso["Neck"],
 }
 local Class = {}
-Class.Speed = 1
+Class.Speed = 2
 Class.KeepLast = 0
 local Keyframes = Sequence:GetKeyframes()
 table.sort(Keyframes, function(a, b) return a.Time < b.Time end)
@@ -139,7 +139,7 @@ end
 task.spawn(function()
 for _, Pose in ipairs(K1:GetDescendants()) do
 if Joints[Pose.Name] then
-local Duration = K2 and (K2.Time - K1.Time) / Class.Speed or 0.5
+local Duration = K2 and (K2.Time - K1.Time) / Class.Speed or 1
 Edit(Joints[Pose.Name], AnimDefaults[Pose.Name] * Pose.CFrame, Duration, Pose.EasingStyle, Pose.EasingDirection)
 end
 end
