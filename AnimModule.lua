@@ -14,7 +14,7 @@ end
 
 local AnimDefaults = {
 ["Chainsaw"] = CFrame.new(0, 0, 0),
-["Machete"] = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(110), math.rad(180), math.rad(0)),
+["Machete"] = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(50), math.rad(180), math.rad(0)),
 ["Neck"] = CFrame.new(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0),
 ["RootJoint"] = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0),
 ["Right Shoulder"] = CFrame.new(1, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0),
