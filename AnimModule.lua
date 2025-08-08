@@ -77,7 +77,7 @@ local Joints = {
 ["Head"] = Rig.Torso["Neck"],
 }
 local Class = {}
-Class.Speed = 2
+Class.Speed = 10
 Class.KeepLast = 0
 local Keyframes = Sequence:GetKeyframes()
 table.sort(Keyframes, function(a, b) return a.Time < b.Time end)
