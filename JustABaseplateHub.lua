@@ -32,7 +32,7 @@ local HomeTab = Window:CreateTab("Home", nil) -- Title, Image
 local HomeSection = HomeTab:CreateSection("Main")
 
 local Paragraph = HomeTab:CreateParagraph({Title = "Just A Baseplate Hub By Theo/Paradigm", Content = "This Was Made on 06/13/25!"})
-local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content = "The hub returns!, i will give this an annual update this like 3-4 weeks because theres not much fe scripts thay i really find lol, Warn!, if your a krnl user, expect some crashes if your using some scripts..."})
+local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content ="The hub returns!, i will give this an annual update because theres not much fe scripts thay i really find lol, Warn!, if your a krnl user, expect some crashes if your using some scripts..."})
 if not Place == 17574618959 then
 local NotParagraph = HomeTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 local Divider = HomeTab:CreateDivider()
