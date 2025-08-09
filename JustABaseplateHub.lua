@@ -1,12 +1,13 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AstraOutlight/my-scripts/refs/heads/main/namertag"))()
-local H = " ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
+local H = "
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Place = game.placeId
 local Window = Rayfield:CreateWindow({
    Name = "Just A Baseplate",
    LoadingTitle = "Just A Baseplate",
    LoadingSubtitle = "By Theo/Paradigm",
-   Theme = "Serenity", 
+   Theme = "Amethyst", 
    ToggleUIKeybind = "N", 
    DisableRayfieldPrompts = false,
    DisableBuildWarnings = false, 
@@ -32,8 +33,8 @@ local HomeTab = Window:CreateTab("Home", nil) -- Title, Image
 local HomeSection = HomeTab:CreateSection("Main")
 
 local Paragraph = HomeTab:CreateParagraph({Title = "Just A Baseplate Hub By Theo/Paradigm", Content = "This Was Made on 06/13/25!"})
-local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content = "The Hub Returns... Now Added Lightning Cannon[Genesis]FE"})
-if Place ~= 17574618959 then
+local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content = "The hub returns!, i will give this an annual update this like 3-4 weeks because theres not much fe scripts thay i really find lol, Warn!, if your a krnl user, expect some crashes if your using some scripts..."})
+if not Place == 17574618959 then
 local NotParagraph = HomeTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 local Divider = HomeTab:CreateDivider()
 end
@@ -222,6 +223,7 @@ local Input = HomeTab:CreateInput({
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Text)
    end,
 })
+wait(1)
 local Toggle = HomeTab:CreateToggle({
    Name = "Dark Mode",
    CurrentValue = false,
@@ -509,96 +511,8 @@ if not Place == 17574618959 then
 local NotParagraph = MainTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 local NotDivider = MainTab:CreateDivider()
 end
-local Button1 = MainTab:CreateButton({
-   Name = "Krystal Dance V3, Modded By Theo",
-   Callback = function(A)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/KDV3%20Theo%20Version.lua"))()
-   end,
-})
-local Limb = MainTab:CreateButton({
-   Name = "Krystal Dance V3, Modded By Theo[Limb Reanim]",
-   Callback = function(A)
-if _G.Loaded2 then return warn("Sup Bro! The Script Is Loaded!") end
-_G.Loaded2 = true
---loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
-
--- SETTINGS --
-local settings = _G
-
-settings["Use default animations"] = true
-settings["Fake character transparency level"] = 1
-settings["Disable character scripts"] = true
-settings["Fake character should collide"] = true
-settings["Parent real character to fake character"] = false
-settings["Respawn character"] = true 
-settings["Instant respawn"] = false
-settings["Hide HumanoidRootPart"] = false
-settings["PermaDeath fake character"] = false 
-settings["R15 Reanimate"] = false 
-
-settings["Names to exclude from transparency"] = {
-    --[[ example:
-    ["HumanoidRootPart"] = true,
-    ["Left Arm"] = true
-    ]]
-}
-(function() if getgenv then return getgenv() else return _G end end)().fling = nil
-local finished = false
-
-task.spawn(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2"))()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Limb%20Reanim%20Kdv3%20By%20Theo.lua"))()
-end)
-
-repeat task.wait() until finished
-   end,
-})
-
-local Tool = MainTab:CreateButton({
-   Name = "Krystal Dance V3, Modded By Theo",
-   Callback = function(A)
-if _G.Loaded3 then return warn("Sup Bro! The Script Is Loaded!") end
-_G.Loaded3 = true
---loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
-
--- SETTINGS --
-local settings = _G
-
-settings["Use default animations"] = true
-settings["Fake character transparency level"] = 1
-settings["Disable character scripts"] = true
-settings["Fake character should collide"] = true
-settings["Parent real character to fake character"] = false
-settings["Respawn character"] = true
-settings["Instant respawn"] = false
-settings["Hide HumanoidRootPart"] = false
-settings["PermaDeath fake character"] = true
-settings["R15 Reanimate"] = false
-settings["Names to exclude from transparency"] = {
-    --[[ example:
-    ["HumanoidRootPart"] = true,
-    ["Left Arm"] = true
-    ]]
-}
-(function() if getgenv then return getgenv() else return _G end end)().fling = nil
-local finished = false
-
-task.spawn(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2"))()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/KDV3%20Tool%20Version.lua"))()
-end)
-
-repeat task.wait() until finished
-   end,
-})
-
-local Button12 = MainTab:CreateButton({
-Name = "Krystal Dance V3, Modded By Sonixdev",
-   Callback = function(A)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/sparezirt/Script/refs/heads/main/.github/workflows/JustABaseplate.lua"))()
-end,
-})
-
+local Paragraph1 = MainTab:CreateParagraph({Title = "No More Kdv3 :(", Content = "Since the latest update roblox, most of the kdv3 script that i have inserted in this hub is useless, because using the rbxassetid isnt allowed anymore for loading animations, thats why you will see the game R6 Dances is getting taken down and other games that has r6 dance animations on it."})
+local Sorry = MainTab:CreateDivider()
 local GenesisSection = MainTab:CreateSection("Genesis")
 local Button2 = MainTab:CreateButton({
    Name = "Genesis Neptunian V",
@@ -841,7 +755,9 @@ local Button10= MainTab:CreateButton({
         if Place == 17574618959 then
 local NotDivider = MainTab:CreateDivider()
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
-task.wait(2.250)
+task.wait(.1)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+task.wait(.1)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 end
 task.wait(2.150)
@@ -935,9 +851,61 @@ repeat task.wait() until finished
 
 end,
 })
+local MainSection = MainTab:CreateSection("Forsaken")
+local Button2 = MainTab:CreateButton({
+   Name = "Noli",
+   Callback = function() game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 83033503825226 98099894849025 74013526892143 131385506535381 85392395166623 129462518582032 106249329428811 138364679836274 12850150835 ")
+wait(6)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
+wait(2.250)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 
 
 
+
+_G.Config = {
+        ["HatCollide"]     = false, -- Collision hats
+        ["ReClaim"]        = true,  -- Re Claim falling hats
+        ["Fling"]          = true,  -- Activate character flinging
+        ["HideCharacter"]  = true,  -- hide your character to void
+
+    ["FlingOption"] = {
+           ["HatFling"]        = false, -- Use hats to fling
+           ["Highlight"]       = false,  -- Glow targets
+           ["PredictionFling"] = true,  -- predict fling (so basicly fling people with body)
+           ["ToolFling"]       = true  -- use Tool from inventory/backpack to fling (don't equip the tools)
+   }
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/qwertys/refs/heads/main/qwerty0.lua"))()
+   end,
+})
+local Button2 = MainTab:CreateButton({
+   Name = "c00lkidd",
+   Callback = function() game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh  98099894849025  12383790958 85392395166623 129462518582032 106249329428811 138364679836274 12850150835 ")
+wait(6)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
+wait(2.250)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
+
+_G.Config = {
+    ["HatCollide"]     = false, -- Collision hats
+    ["ReClaim"]        = true,  -- Re Claim falling hats
+    ["Fling"]          = true,  -- Activate character flinging
+    ["HideCharacter"]  = true,  -- hide your character to void
+
+        ["FlingOption"] = {
+        ["HatFling"]        = false, -- Use hats to fling
+        ["Highlight"]       = false,  -- Glow targets
+        ["PredictionFling"] = true,  -- predict fling (so basicly fling people with body)
+        ["ToolFling"]       = true -- use Tool from inventory/backpack to fling (don't equip any tools when the script run)
+    }
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/qwertys/refs/heads/main/qwerty2.lua"))()
+
+   end,
+})
 
 ----================----
 local ExecutorsTab = Window:CreateTab("Executors", nil) -- Title, Image
@@ -996,8 +964,7 @@ local Respawn= HatsTab:CreateButton({
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
    end,
 })
-
-local Respawn= HatsTab:CreateButton({
+local save= HatsTab:CreateButton({
    Name = "Save Hat",
    Callback = function() 
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
@@ -1065,7 +1032,7 @@ local Button4 = HatsTab:CreateButton({
 local LightningCannon = HatsTab:CreateButton({
    Name = "Lightning Cannon",
    Callback = function() 
-  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 111672581230926 126145101810389 136055191177936")
+  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 111672581230926 126145101810389 136055191177936 4504231783")
    end,
 })
 
