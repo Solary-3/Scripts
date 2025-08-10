@@ -860,8 +860,9 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/qwertys
 })
 local Button2 = MainTab:CreateButton({
    Name = "c00lkidd",
-   if Place == 17574618959 then
-   Callback = function() game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh  98099894849025  12383790958 85392395166623 129462518582032 106249329428811 138364679836274 12850150835 ")
+   Callback = function() 
+if Place == 17574618959 then
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh  98099894849025  12383790958 85392395166623 129462518582032 106249329428811 138364679836274 12850150835 ")
 wait(6)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
 wait(2.250)
@@ -965,7 +966,7 @@ local Button  = HatsTab:CreateButton({
    end,
 })]]--
 local Divider1 = HatsTab:CreateDivider()
-local Paragraph1 = HatsTab:CreateParagraph({Title = "Custom", Content = "Here You can load custom Genesis hats 🤔, if you want custom hats for genesis, consider looking it at the Foundations game."})
+local Paragraph1 = HatsTab:CreateParagraph({Title = "Custom", Content = "Here You can load custom Genesis hats or your custom accessories!, if you want custom hats for genesis, consider looking it at the Foundations game."})
 
 local Input = HatsTab:CreateInput({
    Name = "Custom!",
@@ -974,7 +975,7 @@ local Input = HatsTab:CreateInput({
    RemoveTextAfterFocusLost = false,
    Callback = function(ID)
    local Custom = (ID)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh "..tostring(ID).. ..tostring(H))
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh "..tostring(ID))
    end,
 })
 local customButton = HatsTab:CreateButton({
