@@ -347,7 +347,7 @@ coroutine.wrap(LGKSURL_fake_script)()
 
 closethisshit.MouseButton1Down:Connect(function()
 
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+
  
 local data = {}
 
@@ -658,7 +658,7 @@ end
 function newMotor(P0,P1,C0,C1)
 	return NewInstance('Motor',P0,{Part0=P0,Part1=P1,C0=C0,C1=C1})
 end
-
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 local welds = {}
 local WeldDefaults = {}
 
