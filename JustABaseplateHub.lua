@@ -834,8 +834,9 @@ local MainSection = MainTab:CreateSection("Forsaken")
 local Forsaken = MainTab:CreateParagraph({Title = "Note:", Content = "This section automatically loads the rigs so dont worry going to the hats and rigs tab to load the rigs!"})
 local Button2 = MainTab:CreateButton({
    Name = "Noli",
+   Callback = function()
    if Place == 17574618959 then
-   Callback = function() game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 83033503825226 98099894849025 74013526892143 131385506535381 85392395166623 129462518582032 106249329428811 138364679836274 12850150835 ")
+        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 83033503825226 98099894849025 74013526892143 131385506535381 85392395166623 129462518582032 106249329428811 138364679836274 12850150835 ")
 wait(6)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
 wait(2.250)
