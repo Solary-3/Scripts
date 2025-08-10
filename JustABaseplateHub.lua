@@ -1,4 +1,4 @@
---loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
 local H = " ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Place = game.placeId
@@ -959,12 +959,12 @@ local Button  = HatsTab:CreateButton({
    end,
 })
 
---[[local Button  = HatsTab:CreateButton({
+local Button  = HatsTab:CreateButton({
    Name = "Genesis Rigs[Black]",
    Callback = function() 
-  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 131385506535381 85392395166623 129462518582032  138364679836274 12850150835 ") 
+  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 131385506535381 85392395166623 129462518582032  138364679836274 12850150835 106249329428811") 
    end,
-})]]--
+})
 local Divider1 = HatsTab:CreateDivider()
 local Paragraph1 = HatsTab:CreateParagraph({Title = "Custom", Content = "Here You can load custom Genesis hats or your custom accessories!, if you want custom hats for genesis, consider looking it at the Foundations game."})
 
