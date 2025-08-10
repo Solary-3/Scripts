@@ -1,4 +1,4 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
 local H = " ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Place = game.placeId
@@ -23,17 +23,17 @@ local NotParagraph = ReadTab:CreateParagraph({Title = "Game Not Supported", Cont
 
 local NotDivider = ReadTab:CreateDivider()
 end
-local Paragraph = ReadTab:CreateParagraph({Title = "PLEASE READ BEFORE READING BELLOW!:", Content = "I DO NOT OWN THE SCRIPTS THAT ARE INSIDE THIS SCRIPT!! I ONLY CONFIGURED THEM!! ALL CREDITS GOES TO THE RESPECTIVE OWNERS OF THE SCRIPTS!!"})
+local Paragraph = ReadTab:CreateParagraph({Title = "PLEASE READ BEFORE PROCEEDING BELLOW!:", Content = "I DO NOT OWN THE SCRIPTS THAT ARE INSIDE THIS SCRIPT!! I ONLY CONFIGURED THEM!! ALL CREDITS GOES TO THE RESPECTIVE OWNERS OF THE SCRIPTS!!"})
 local Divider = ReadTab:CreateDivider()
-local Paragraph1 = ReadTab:CreateParagraph({Title = "How to use this hub🤔", Content = " If Your gonna use genesis, go to the hats and rigs tab, same as the achromatics and neko!!, once your done loading the hats and rigs, head to the Main tab and execute the scripts there!!"})
+local Paragraph1 = ReadTab:CreateParagraph({Title = "How to use this hub🤔", Content = " If Your gonna use genesis, go to the hats and rigs tab, same as the achromatics, once your done loading the hats and rigs, head to the Main tab and execute the scripts there!!"})
 
 
 local HomeTab = Window:CreateTab("Home", nil) -- Title, Image
 local HomeSection = HomeTab:CreateSection("Main")
 
-local Paragraph = HomeTab:CreateParagraph({Title = "Just A Baseplate Hub By Theo/Paradigm", Content = "This Was Made on 06/13/25!"})
+local Paragraph = HomeTab:CreateParagraph({Title = "Just A Baseplate Hub By Theo/Paradigm", Content = "Created on 06/13/25!"})
 local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content ="The hub returns!, i will give this an annual update because theres not much fe scripts thay i really find lol, Warn!, if your a krnl user, expect some crashes if your using some scripts..."})
-if not Place == 17574618959 then
+if Place ~= 17574618959 then
 local NotParagraph = HomeTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 local Divider = HomeTab:CreateDivider()
 end
@@ -503,20 +503,23 @@ end,
 
 
 
-
+----========----
 local MainTab = Window:CreateTab("Main", nil)
 
 if not Place == 17574618959 then
 local NotParagraph = MainTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 local NotDivider = MainTab:CreateDivider()
 end
-local Paragraph1 = MainTab:CreateParagraph({Title = "No More Kdv3 :(", Content = "Since the latest update roblox, most of the kdv3 script that i have inserted in this hub is useless, because using the rbxassetid isnt allowed anymore for loading animations, thats why you will see the game R6 Dances is getting taken down and other games that has r6 dance animations on it."})
+local Paragraph1 = MainTab:CreateParagraph({Title = "No More Kdv3 :(", Content = "Since the latest update roblox,4 of the kdv3 script that i have inserted in this hub is useless, because using the rbxassetid isnt allowed anymore for loading animations, thats why you will see the game R6 Dances is getting taken down and other games that has r6 dance animations on it."})
 local Sorry = MainTab:CreateDivider()
 local GenesisSection = MainTab:CreateSection("Genesis")
 local Button2 = MainTab:CreateButton({
    Name = "Genesis Neptunian V",
    Callback = function(A)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd") loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Neptunian%20V"))()  
+        if Place == 17574618959 then
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
+end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Neptunian%20V"))()  
    end,
 })
 
@@ -664,18 +667,9 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 local LC = MainTab:CreateButton({
    Name = "Genesis Lightning Cannon",
    Callback = function() 
+        if Place == 17574618959 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
---[[
-
-_________                       _____            ___________________
-__  ____/__________________________(_)_______    ___  ____/__  ____/
-_ /__ _  _ \_  __ \  _ \_  ___/_  /__  ___/    __  /_   __  __/   
-/ /_///  __/ /// __/(__  )_ /_(__  )     _  __/   _  /___   
-\____/  \___//_/ /_/\___//____/ /_/  /____/      /_/      /_____/   							
-
-by rqz					
-https://discord.com/invite/aEZpBEHgMT
-]]--
+end
 
 --===================================--
 --          Script Options           --
@@ -727,10 +721,7 @@ local Button8 = MainTab:CreateButton({
    Callback = function(A) 
         if Place == 17574618959 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
-task.wait(.1)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 end
-task.wait(2.150)
   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/achromoonic edit.luau"))()
 end,
 })
@@ -740,10 +731,7 @@ local Button9 = MainTab:CreateButton({
    Callback = function(A) 
 if Place == 17574618959 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
-task.wait(.1)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 end
-task.wait(2.150)
   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Achromatix_V6-1.lua"))()
 end,
 })
@@ -754,12 +742,7 @@ local Button10= MainTab:CreateButton({
         if Place == 17574618959 then
 local NotDivider = MainTab:CreateDivider()
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
-task.wait(.1)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
-task.wait(.1)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 end
-task.wait(2.150)
    loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Encription%20Glitcher.lua"))()
    end,
 })
@@ -769,10 +752,8 @@ local Button11 = MainTab:CreateButton({
    Callback = function(A) 
         if Place == 17574618959 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
-task.wait(.1)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 end
-task.wait(2.150)
+--task.wait(2.150)
   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/achromatic%20v5%20edited%20yes.luau"))()
 end,
 })
@@ -796,7 +777,7 @@ local NebulaExampleButton = MainTab:CreateButton({
    end,
 })
 local NebulaButton = MainTab:CreateButton({
-   Name = "Reload",
+   Name = "Clear",
    Callback = function() 
   NebulaInput:Set("")
    end,
@@ -811,14 +792,13 @@ task.wait(3)
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
 loadstring(game:HttpGet("https://pastebin.com/raw/j09BnGB3"))()
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Those who claims its your script, i dont like you.")
 end,
 })
 
 local Spectrum = MainTab:CreateButton({
    Name = "Spectrum Glitcher",
    Callback = function(A)
---game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
 task.wait(3)
 local settings = _G
 
@@ -851,28 +831,26 @@ repeat task.wait() until finished
 end,
 })
 local MainSection = MainTab:CreateSection("Forsaken")
+local Forsaken = MainTab:CreateParagraph({Title = "Note:", Content = "This section automatically loads the rigs so dont worry going to the hats and rigs tab to load the rigs!"})
 local Button2 = MainTab:CreateButton({
    Name = "Noli",
+   if Place == 17574618959 then
    Callback = function() game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 83033503825226 98099894849025 74013526892143 131385506535381 85392395166623 129462518582032 106249329428811 138364679836274 12850150835 ")
 wait(6)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
 wait(2.250)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
-
-
-
-
+end
 _G.Config = {
-        ["HatCollide"]     = false, -- Collision hats
-        ["ReClaim"]        = true,  -- Re Claim falling hats
-        ["Fling"]          = true,  -- Activate character flinging
-        ["HideCharacter"]  = true,  -- hide your character to void
-
-    ["FlingOption"] = {
-           ["HatFling"]        = false, -- Use hats to fling
-           ["Highlight"]       = false,  -- Glow targets
-           ["PredictionFling"] = true,  -- predict fling (so basicly fling people with body)
-           ["ToolFling"]       = true  -- use Tool from inventory/backpack to fling (don't equip the tools)
+        ["HatCollide"]     = false, 
+        ["ReClaim"]        = true,  -- 
+        ["Fling"]          = true,  -- 
+        ["HideCharacter"]  = true,  -- 
+           ["FlingOption"] = {
+           ["HatFling"]        = false, -- 
+           ["Highlight"]       = false,  -- 
+           ["PredictionFling"] = true,  -- 
+           ["ToolFling"]       = true  --
    }
 }
 
@@ -881,23 +859,24 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/qwertys
 })
 local Button2 = MainTab:CreateButton({
    Name = "c00lkidd",
+   if Place == 17574618959 then
    Callback = function() game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh  98099894849025  12383790958 85392395166623 129462518582032 106249329428811 138364679836274 12850150835 ")
 wait(6)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
 wait(2.250)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
+end
 
 _G.Config = {
-    ["HatCollide"]     = false, -- Collision hats
-    ["ReClaim"]        = true,  -- Re Claim falling hats
-    ["Fling"]          = true,  -- Activate character flinging
-    ["HideCharacter"]  = true,  -- hide your character to void
-
+    ["HatCollide"]     = false, -- 
+    ["ReClaim"]        = true,  -- 
+    ["Fling"]          = true,  -- 
+    ["HideCharacter"]  = true,  -- 
         ["FlingOption"] = {
-        ["HatFling"]        = false, -- Use hats to fling
-        ["Highlight"]       = false,  -- Glow targets
-        ["PredictionFling"] = true,  -- predict fling (so basicly fling people with body)
-        ["ToolFling"]       = true -- use Tool from inventory/backpack to fling (don't equip any tools when the script run)
+        ["HatFling"]        = false, -- 
+        ["Highlight"]       = false,  -- 
+        ["PredictionFling"] = true,  -- 
+        ["ToolFling"]       = true -- 
     }
 }
 
@@ -908,10 +887,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/qwertys
 
 ----================----
 local ExecutorsTab = Window:CreateTab("Executors", nil) -- Title, Image
-
-
-local ExecutorsParagraph = ExecutorsTab:CreateParagraph({Title = "IMPORTANT", Content = "Some executors takes time to load, so be patient"})
-local ExecutorsDivider = ExecutorsTab:CreateDivider()
 local Button1 = ExecutorsTab:CreateButton({
    Name = "Codex",
    Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Codex.lua"))()
@@ -934,6 +909,12 @@ local Hydrogen  = ExecutorsTab:CreateButton({
    Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Hydrogen.lua"))()
    end,
 })
+local Nebula  = ExecutorsTab:CreateButton({
+   Name = "Nebula",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Nebula.lua"))()
+   end,
+})
 
 
 
@@ -941,9 +922,8 @@ local Hydrogen  = ExecutorsTab:CreateButton({
 ----================----
 if Place == 17574618959 then
 local HatsTab = Window:CreateTab("Hats And Rigs", nil)
-local PDParagraph = HatsTab:CreateParagraph({Title = "PermDeath", Content = "Click The button below so you wont get invisible to everyone else's screen"})
 local PDButton  = HatsTab:CreateButton({
-   Name = "PermDeath For Genesis",
+   Name = "Permdeath For Genesis",
    Callback = function() 
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd") 
    end,
@@ -953,8 +933,6 @@ local RemoveHatsButton = HatsTab:CreateButton({
    Name = "Remove Hats",
    Callback = function() 
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-ch")
-  task.wait(2.250)
-  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
    end,
 })
 local Respawn= HatsTab:CreateButton({
@@ -982,7 +960,7 @@ local Button  = HatsTab:CreateButton({
 --[[local Button  = HatsTab:CreateButton({
    Name = "Genesis Rigs[Black]",
    Callback = function() 
-  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 14255528083 17401151565,17387616772 85392395166623 131385506535381 ") 
+  game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 131385506535381 85392395166623 129462518582032  138364679836274 12850150835 ") 
    end,
 })]]--
 local Divider1 = HatsTab:CreateDivider()
@@ -995,11 +973,11 @@ local Input = HatsTab:CreateInput({
    RemoveTextAfterFocusLost = false,
    Callback = function(ID)
    local Custom = (ID)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh "..tostring(ID) ..tostring(H))
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh "..tostring(ID).. ..tostring(H))
    end,
 })
 local customButton = HatsTab:CreateButton({
-   Name = "Reload",
+   Name = "Clear",
    Callback = function() 
   Input:Set("")
    end,
@@ -1074,8 +1052,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHu
 local Patchma = HubsTab:CreateButton({
    Name = "Patchma Hub",
    Callback = function() 
-   -- https://scriptblox.com/script/Universal-Script-Gelatek-hub-26438l9cal
-
 loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Patchma-Hub-36193"))()
    end,
 })
@@ -1087,7 +1063,6 @@ loadstring("\105\102\32\110\111\116\32\103\97\109\101\58\71\101\116\83\101\114\1
 end,
 })
 end
-
 -----==============-----
 local OthersTab = Window:CreateTab("Others", nil) -- Title, Image
 
