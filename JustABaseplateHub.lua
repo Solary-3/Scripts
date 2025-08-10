@@ -17,6 +17,7 @@ local Window = Rayfield:CreateWindow({
    },
    KeySystem = false,
 })
+
 local ReadTab = Window:CreateTab("READ", nil)
 if Place ~= 17574618959 then
 local NotParagraph = ReadTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
@@ -862,7 +863,7 @@ local Button2 = MainTab:CreateButton({
    Name = "c00lkidd",
    Callback = function() 
 if Place == 17574618959 then
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh  98099894849025  12383790958 85392395166623 129462518582032 106249329428811 138364679836274 12850150835 ")
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh  98099894849025  12383790958   131385506535381 85392395166623 129462518582032 106249329428811 138364679836274 12850150835 ")
 wait(6)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
 wait(2.250)
