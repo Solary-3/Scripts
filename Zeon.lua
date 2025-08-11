@@ -535,17 +535,7 @@ end)
 
 exitbutton.MouseButton1Down:Connect(function()
 
-getgenv().ReanimateVersion = "v2"
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/stangithuboffical/selexity/main/Reanimate", true))()
-
-wait (1.50)
-
-game.Players.LocalPlayer.Character.Humanoid:WaitForChild("Animator"):Destroy()
-
-
-
-
+wait(1)
    
 HumanDied = false
 local CountSCIFIMOVIELOL = 1
