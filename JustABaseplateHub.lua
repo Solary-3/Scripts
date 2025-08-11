@@ -33,7 +33,7 @@ local HomeTab = Window:CreateTab("Home", nil) -- Title, Image
 local HomeSection = HomeTab:CreateSection("Main")
 
 local Paragraph = HomeTab:CreateParagraph({Title = "Just A Baseplate Hub By Theo/Paradigm", Content = "Created on 06/13/25!"})
-local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content ="The hub returns!, i will give this an annual update because theres not much fe scripts thay i really find lol, Warn!, if your a krnl user, expect some crashes if your using some scripts..."})
+local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content ="Zeon Glitcher Returns..."})
 if Place ~= 17574618959 then
 local NotParagraph = HomeTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 local Divider = HomeTab:CreateDivider()
@@ -756,6 +756,17 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
 --task.wait(2.150)
   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/achromatic%20v5%20edited%20yes.luau"))()
+end,
+})
+
+local Zeon = MainTab:CreateButton({
+   Name = "Zeon Glitcher",
+   Callback = function(A) 
+        if Place == 17574618959 then
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
+end
+--task.wait(2.150)
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Zeon.lua"))()
 end,
 })
 
