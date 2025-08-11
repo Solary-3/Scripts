@@ -534,8 +534,8 @@ wait (.1)
 end)
 
 exitbutton.MouseButton1Down:Connect(function()
-
 wait(1)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
    
 HumanDied = false
 local CountSCIFIMOVIELOL = 1
