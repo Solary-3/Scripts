@@ -60,11 +60,11 @@ local bar3 = Instance.new("ImageLabel")
 local e2 = Instance.new("TextBox")
 local bar4 = Instance.new("ImageLabel")
 local e3 = Instance.new("TextBox")
-
+local Player = game:GetService("Players").LocalPlayer
 --Properties:
 
 MOONICUI.Name = "MOONICUI"
-MOONICUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+MOONICUI.Parent = Player:WaitForChild("PlayerGui")
 
 Main.Name = "Main"
 Main.Parent = MOONICUI
