@@ -29,10 +29,21 @@ end
 
 
 
-local ZEONUI = Instance.new("ScreenGui")
+for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then 
+game:GetService("RunService").Heartbeat:connect(function()
+v.Velocity = Vector3.new(30,0,0)
+end)
+end
+end
+
+
+
+
+local MOONICUI = Instance.new("ScreenGui")
 local Main = Instance.new("ImageLabel")
 local TagsAndShit = Instance.new("ImageLabel")
-local zeontag = Instance.new("TextLabel")
+local MOONICtag = Instance.new("TextLabel")
 local exit = Instance.new("ImageLabel")
 local exitbutton = Instance.new("TextButton")
 local creditmelolol = Instance.new("TextLabel")
@@ -52,11 +63,11 @@ local e3 = Instance.new("TextBox")
 
 --Properties:
 
-ZEONUI.Name = "ZEONUI"
-ZEONUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+MOONICUI.Name = "MOONICUI"
+MOONICUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 Main.Name = "Main"
-Main.Parent = ZEONUI
+Main.Parent = MOONICUI
 Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Main.BackgroundTransparency = 1.000
 Main.Position = UDim2.new(-0.892896712, 0, -0.392789423, 0)
@@ -79,15 +90,15 @@ TagsAndShit.ScaleType = Enum.ScaleType.Slice
 TagsAndShit.SliceCenter = Rect.new(100, 100, 100, 100)
 TagsAndShit.SliceScale = 0.060
 
-zeontag.Name = "zeontag"
-zeontag.Parent = TagsAndShit
-zeontag.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-zeontag.BackgroundTransparency = 1.000
-zeontag.Size = UDim2.new(0, 120, 0, 26)
-zeontag.Font = Enum.Font.Fondamento
-zeontag.Text = "Zeon Glitcher V2"
-zeontag.TextColor3 = Color3.fromRGB(255, 255, 255)
-zeontag.TextSize = 18.000
+MOONICtag.Name = "MOONICtag"
+MOONICtag.Parent = TagsAndShit
+MOONICtag.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MOONICtag.BackgroundTransparency = 1.000
+MOONICtag.Size = UDim2.new(0, 120, 0, 26)
+MOONICtag.Font = Enum.Font.Fondamento
+MOONICtag.Text = "ENCRIPTION GLITCHER V12"
+MOONICtag.TextColor3 = Color3.fromRGB(255, 255, 255)
+MOONICtag.TextSize = 10.000
 
 exit.Name = "exit"
 exit.Parent = TagsAndShit
@@ -523,7 +534,6 @@ wait (.1)
 end)
 
 exitbutton.MouseButton1Down:Connect(function()
-
 wait (.1)
 
 
