@@ -1,38 +1,4 @@
---[[
-	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
-]]
-
-
---ENCRIPTION GLITCHER V12--
---made by TrixLua#8210--
---PUBLIC RELEASE--
---From the essence of ZEON & MOONIC. THE ENCRIPTION arrises!--
---got bored so i renamed it again. no its not a revamp--
---(hence the "V12".. its just some modes animations have been redone :D ).
---anyways. Enjoy!--
---if this was obfuscated in any way. it most likely has a logger or other malicious material--
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+--Zeon Glitcher
 local i=Instance.new
 local v3=Vector3.new
 local cf=CFrame.new
