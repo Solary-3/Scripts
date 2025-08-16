@@ -1406,6 +1406,7 @@ function ShowDamage(Pos, Text, Time, Color)
 	end)
 end
 
+
 local baseSound = i("Sound")
 
 function Soond(parent,id,pitch,volume,looped,effect,autoPlay)
