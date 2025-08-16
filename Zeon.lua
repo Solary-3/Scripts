@@ -1253,16 +1253,16 @@ local function setupReanimatedJoints()
     LH.C1 = cf(0, 1, 0)
     LH.Parent = ReanimatedTorso
     return {
-        NK = NK,
-        RJ = RJ,
-        RS = RS,
-        LS = LS,
-        RH = RH,
-        LH = LH
+        NK.C0 = NK,
+        RJ.C0 = RJ,
+        RS.C0 = RS,
+        LS.C0 = LS,
+        RH.C0 = RH,
+        LH.C0 = LH
     }
 end
 local welds = setupReanimatedJoints()
-local NK,RJ,RH,RS,LH,LS=unpack(welds)
+local NK.C0,RJ.C0,RH.Cp,RS.C0,LH.C0,LS.C0=unpack(welds)
 WeldDefaults={}
 for i = 1,#welds do
 	local v=welds[i]
