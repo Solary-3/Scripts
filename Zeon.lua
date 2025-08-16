@@ -33,27 +33,29 @@
 
 
 
-
-local MOONICUI = Instance.new("ScreenGui")
-local Main = Instance.new("ImageLabel")
-local TagsAndShit = Instance.new("ImageLabel")
-local MOONICtag = Instance.new("TextLabel")
-local exit = Instance.new("ImageLabel")
-local exitbutton = Instance.new("TextButton")
-local creditmelolol = Instance.new("TextLabel")
-local custommodelolol = Instance.new("TextLabel")
-local SideBarOptions = Instance.new("ImageLabel")
-local fedorabutton = Instance.new("ImageLabel")
-local THEBUTTON = Instance.new("TextButton")
-local SideBarOptions_2 = Instance.new("ImageLabel")
-local bar = Instance.new("ImageLabel")
-local e1 = Instance.new("TextBox")
-local bar2 = Instance.new("ImageLabel")
-local TextButton = Instance.new("TextButton")
-local bar3 = Instance.new("ImageLabel")
-local e2 = Instance.new("TextBox")
-local bar4 = Instance.new("ImageLabel")
-local e3 = Instance.new("TextBox")
+local i=i
+     local v3=v3
+     local cf=cf
+local MOONICUI = i("ScreenGui")
+local Main = i("ImageLabel")
+local TagsAndShit = i("ImageLabel")
+local MOONICtag = i("TextLabel")
+local exit = i("ImageLabel")
+local exitbutton = i("TextButton")
+local creditmelolol = i("TextLabel")
+local custommodelolol = i("TextLabel")
+local SideBarOptions = i("ImageLabel")
+local fedorabutton = i("ImageLabel")
+local THEBUTTON = i("TextButton")
+local SideBarOptions_2 = i("ImageLabel")
+local bar = i("ImageLabel")
+local e1 = i("TextBox")
+local bar2 = i("ImageLabel")
+local TextButton = i("TextButton")
+local bar3 = i("ImageLabel")
+local e2 = i("TextBox")
+local bar4 = i("ImageLabel")
+local e3 = i("TextBox")
 local Player = game:GetService("Players").LocalPlayer
 --Properties:
 
@@ -421,7 +423,7 @@ e3.TextXAlignment = Enum.TextXAlignment.Left
 -- Scripts:
 
 local function SNAXIQ_fake_script() -- exitbutton.LocalScript 
-	local script = Instance.new('LocalScript', exitbutton)
+	local script = i('LocalScript', exitbutton)
 
 	script.Parent.MouseButton1Down:Connect(function()
 		script.Parent.Parent.Parent.Parent.Visible = false
@@ -430,7 +432,7 @@ local function SNAXIQ_fake_script() -- exitbutton.LocalScript
 end
 coroutine.wrap(SNAXIQ_fake_script)()
 local function ODKOFU_fake_script() -- Main.LocalScript 
-	local script = Instance.new('LocalScript', Main)
+	local script = i('LocalScript', Main)
 
 	
 	
@@ -450,7 +452,7 @@ local function ODKOFU_fake_script() -- Main.LocalScript
 end
 coroutine.wrap(ODKOFU_fake_script)()
 local function UIHXZXT_fake_script() -- Main.LocalScript 
-	local script = Instance.new('LocalScript', Main)
+	local script = i('LocalScript', Main)
 
 	local Frame = script.Parent
 	
@@ -533,9 +535,7 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
    
 local CountSCIFIMOVIELOL = 1
 function SCIFIMOVIELOL(Part0,Part1,Position,Angle)
-     local i=Instance.new
-     local v3=Vector3.new
-     local cf=CFrame.new
+     
 	local AlignPos =i('AlignPosition', Part1); AlignPos.Name = "AliP_"..CountSCIFIMOVIELOL
 	AlignPos.ApplyAtCenterOfMass = true;
 	AlignPos.MaxForce = 5772000--67752;
@@ -1059,16 +1059,15 @@ hum:ChangeState(8)
 
 --// Shortcut Variables \\--
 local S = setmetatable({},{__index = function(s,i) return game:service(i) end})
-local CF = {N=CFrame.new,A=CFrame.Angles,fEA=CFrame.fromEulerAnglesXYZ}
+local CF = {N=cf,A=CFrame.Angles,fEA=CFrame.fromEulerAnglesXYZ}
 local C3 = {tRGB= function(c3) return c3.r*255,c3.g*255,c3.b*255 end,N=Color3.new,RGB=Color3.fromRGB,HSV=Color3.fromHSV,tHSV=Color3.toHSV}
-local V3 = {N=Vector3.new,FNI=Vector3.FromNormalId,A=Vector3.FromAxis}
+local V3 = {N=v3,FNI=Vector3.FromNormalId,A=Vector3.FromAxis}
 local M = {C=math.cos,R=math.rad,S=math.sin,P=math.pi,RNG=math.random,MRS=math.randomseed,H=math.huge,RRNG = function(min,max,div) return math.rad(math.random(min,max)/(div or 1)) end}
 local R3 = {N=Region3.new}
 local De = S.Debris
 local WS = workspace
 local Lght = S.Lighting
 local RepS = S.ReplicatedStorage
-local IN = Instance.new
 local Plrs = S.Players
 local UIS = S.UserInputService
 
@@ -1228,8 +1227,8 @@ function newMotor(P0,P1,C0,C1)
 	local motor = NewInstance('Motor', P0, {
         Part0 = P0,
         Part1 = P1,
-        C0 = C0 or CFrame.new(),
-        C1 = C1 or CFrame.new()
+        C0 = C0 or cf(),
+        C1 = C1 or cf()
     })
     motor.MaxVelocity = 0.1 -- Smoother movement
     return motor
@@ -1244,47 +1243,47 @@ local function setupReanimatedJoints()
     local ReanimatedChar = CloneChar
     local ReanimatedTorso = ReanimatedChar:FindFirstChild("Torso") or ReanimatedChar:FindFirstChild("UpperTorso")
     local ReanimatedHRP = ReanimatedChar:FindFirstChild("HumanoidRootPart")
-    local Neck = Instance.new("Motor6D")
+    local Neck = i("Motor6D")
     Neck.Name = "Neck"
     Neck.Part0 = ReanimatedTorso
     Neck.Part1 = ReanimatedChar.Head
-    Neck.C0 = CFrame.new(0, 1.5, 0)
-    Neck.C1 = CFrame.new()
+    Neck.C0 = cf(0, 1.5, 0)
+    Neck.C1 = cf()
     Neck.Parent = ReanimatedTorso
-    local RootJoint = Instance.new("Motor6D")
+    local RootJoint = i("Motor6D")
     RootJoint.Name = "RootJoint"
     RootJoint.Part0 = ReanimatedHRP
     RootJoint.Part1 = ReanimatedTorso
-    RootJoint.C0 = CFrame.new()
-    RootJoint.C1 = CFrame.new()
+    RootJoint.C0 = cf()
+    RootJoint.C1 = cf()
     RootJoint.Parent = ReanimatedHRP
-    local RightShoulder = Instance.new("Motor6D")
+    local RightShoulder = i("Motor6D")
     RightShoulder.Name = "Right Shoulder"
     RightShoulder.Part0 = ReanimatedTorso
     RightShoulder.Part1 = ReanimatedChar["Right Arm"]
-    RightShoulder.C0 = CFrame.new(1.5, 0.5, 0)
-    RightShoulder.C1 = CFrame.new(0, 0.5, 0)
+    RightShoulder.C0 = cf(1.5, 0.5, 0)
+    RightShoulder.C1 = cf(0, 0.5, 0)
     RightShoulder.Parent = ReanimatedTorso
-    local LeftShoulder = Instance.new("Motor6D")
+    local LeftShoulder = i("Motor6D")
     LeftShoulder.Name = "Left Shoulder"
     LeftShoulder.Part0 = ReanimatedTorso
     LeftShoulder.Part1 = ReanimatedChar["Left Arm"]
-    LeftShoulder.C0 = CFrame.new(-1.5, 0.5, 0)
-    LeftShoulder.C1 = CFrame.new(0, 0.5, 0)
+    LeftShoulder.C0 = cf(-1.5, 0.5, 0)
+    LeftShoulder.C1 = cf(0, 0.5, 0)
     LeftShoulder.Parent = ReanimatedTorso
-    local RightHip = Instance.new("Motor6D")
+    local RightHip = i("Motor6D")
     RightHip.Name = "Right Hip"
     RightHip.Part0 = ReanimatedTorso
     RightHip.Part1 = ReanimatedChar["Right Leg"]
-    RightHip.C0 = CFrame.new(0.5, -1, 0)
-    RightHip.C1 = CFrame.new(0, 1, 0)
+    RightHip.C0 = cf(0.5, -1, 0)
+    RightHip.C1 = cf(0, 1, 0)
     RightHip.Parent = ReanimatedTorso
-    local LeftHip = Instance.new("Motor6D")
+    local LeftHip = i("Motor6D")
     LeftHip.Name = "Left Hip"
     LeftHip.Part0 = ReanimatedTorso
     LeftHip.Part1 = ReanimatedChar["Left Leg"]
-    LeftHip.C0 = CFrame.new(-0.5, -1, 0)
-    LeftHip.C1 = CFrame.new(0, 1, 0)
+    LeftHip.C0 = cf(-0.5, -1, 0)
+    LeftHip.C1 = cf(0, 1, 0)
     LeftHip.Parent = ReanimatedTorso
     return {
         Neck = Neck,
@@ -1373,7 +1372,7 @@ function ShowDamage(Pos, Text, Time, Color)
 	local Text = tostring(Text or "")
 	local Time = Time or 2
 	local Color = Color or C3.N(1, 0, 1)
-	local EffectPart = Part(Effects,Color,Enum.Material.SmoothPlastic,V3.N(.05,.05,.05),CFrame.new(Pos),true,false)
+	local EffectPart = Part(Effects,Color,Enum.Material.SmoothPlastic,V3.N(.05,.05,.05),cf(Pos),true,false)
 	EffectPart.Transparency=1
 	local BillboardGui = NewInstance("BillboardGui",EffectPart,{
 		Size = UDim2.new(3,0,3,0),
@@ -1397,7 +1396,7 @@ function ShowDamage(Pos, Text, Time, Color)
 			swait()
 			TextLabel.Rotation=TextLabel.Rotation+rot
 			raise=raise-.008
-			EffectPart.Position = EffectPart.Position + Vector3.new(0, raise, 0)
+			EffectPart.Position = EffectPart.Position + v3(0, raise, 0)
 			TextLabel.TextTransparency=i
 			TextLabel.TextStrokeTransparency=i
 		end
@@ -1434,8 +1433,8 @@ function Soond(parent,id,pitch,volume,looped,effect,autoPlay)
 	return Sound
 end
 	
-function SoondPart(id,pitch,volume,looped,effect,autoPlay,CFrame.new)
-	local soundPart = NewInstance("Part",Effects,{Transparency=1,CFrame=CFrame.new or Torso.CFrame,Anchored=true,CanCollide=false,Size=V3.N()})
+function SoondPart(id,pitch,volume,looped,effect,autoPlay,cf)
+	local soundPart = NewInstance("Part",Effects,{Transparency=1,CFrame=cf or Torso.CFrame,Anchored=true,CanCollide=false,Size=V3.N()})
 	local Sound = IN("Sound")
 	Sound.SoundId = "rbxassetid://".. tostring(id or 0)
 	Sound.Pitch = pitch or 1
@@ -1493,7 +1492,7 @@ function Mesh(parent,meshtype,meshid,textid,scale,offset)
 	local part = i("SpecialMesh")
 	part.MeshId = meshid or ""
 	part.TextureId = textid or ""
-	part.Scale = scale or Vector3.new(1,1,1)
+	part.Scale = scale or v3(1,1,1)
 	part.Offset = offset or v3_0
 	part.MeshType = meshtype or Enum.MeshType.Sphere
 	part.Parent = parent
@@ -1506,12 +1505,12 @@ function GotEffect(data)
 	local color = data.Color or Color3.new(.7,.7,.7);
 	local endcolor = data.EndColor or nil;
 	local mat = data.Material or Enum.Material.SmoothPlastic;
-	local cframe = data.CFrame or CFrame.new();
+	local cframe = data.CFrame or cf();
 	local endpos = data.EndPos or nil;
 	local meshdata = data.Mesh or {}
 	local sounddata = data.Sound or {}
-	local size = data.Size or Vector3.new(1,1,1)
-	local endsize = data.EndSize or Vector3.new(6,6,6)
+	local size = data.Size or v3(1,1,1)
+	local endsize = data.EndSize or v3(6,6,6)
 	local rotinc = data.RotInc or {0,0,0} -- ONLY FOR LEGACY SYSTEM
 	local transparency = data.Transparency or NumberRange.new(0,1)
 	local acceleration = data.Acceleration or nil; -- ONLY FOR LEGACY SYSTEM
@@ -1523,32 +1522,32 @@ function GotEffect(data)
 	
 	local S,PM;
 	
-	local P = setpart or Part(Effects,color,mat,Vector3.new(1,1,1),cframe,true,false)
+	local P = setpart or Part(Effects,color,mat,v3(1,1,1),cframe,true,false)
 	
 	if(not P:IsA'MeshPart' and not P:IsA'UnionOperation')then
 		if(meshdata == "Blast")then
-			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://20329976','',size,Vector3.new(0,0,-size.X/8))
+			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://20329976','',size,v3(0,0,-size.X/8))
 		elseif(meshdata == 'Ring')then
-			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://559831844','',size,Vector3.new(0,0,0))
+			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://559831844','',size,v3(0,0,0))
 		elseif(meshdata == 'Slash1')then
-			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://662586858','',Vector3.new(size.X/10,.001,size.Z/10),Vector3.new(0,0,0))
+			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://662586858','',v3(size.X/10,.001,size.Z/10),v3(0,0,0))
 		elseif(meshdata == 'Slash2')then
-			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://448386996','',Vector3.new(size.X/1000,size.Y/100,size.Z/100),Vector3.new(0,0,0))
+			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://448386996','',v3(size.X/1000,size.Y/100,size.Z/100),v3(0,0,0))
 		elseif(meshdata == 'Tornado1')then
-			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://443529437','',size/10,Vector3.new(0,0,0))
+			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://443529437','',size/10,v3(0,0,0))
 		elseif(meshdata == 'Tornado2')then
-			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://168892432','',size/4,Vector3.new(0,0,0))
+			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://168892432','',size/4,v3(0,0,0))
 		elseif(meshdata == 'Skull')then
-			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://4770583','',size*2,Vector3.new(0,0,0))
+			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://4770583','',size*2,v3(0,0,0))
 		elseif(meshdata == 'Crystal')then
-			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://9756362','',size,Vector3.new(0,0,0))
+			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://9756362','',size,v3(0,0,0))
 		elseif(meshdata == 'Cloud')then
-			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://1095708','',size,Vector3.new(0,0,0))
+			PM = Mesh(P,Enum.MeshType.FileMesh,'rbxassetid://1095708','',size,v3(0,0,0))
 		elseif(typeof(meshdata) == 'table')then
 			local Type = meshdata.Type or Enum.MeshType.Brick
 			local ID = meshdata.ID or '';
 			local Tex = meshdata.Texture or '';
-			local Offset = meshdata.Offset or Vector3.new(0,0,0)
+			local Offset = meshdata.Offset or v3(0,0,0)
 			PM = Mesh(P,Type,ID,Tex,size,Offset)
 		else
 			PM = Mesh(P,Enum.MeshType.Brick,'','',size)
@@ -1572,7 +1571,7 @@ function GotEffect(data)
 	local mult = 1;
 	if(PM)then
 	   	if(PM.MeshId == 'rbxassetid://20329976')then
-	   		PM.Offset = Vector3.new(0,0,-PM.Scale.Z/8)
+	   		PM.Offset = v3(0,0,-PM.Scale.Z/8)
 	   	elseif(PM.MeshId == 'rbxassetid://4770583')then
 	   		mult = 2
 	   	elseif(PM.MeshId == 'rbxassetid://168892432')then
@@ -1601,7 +1600,7 @@ function GotEffect(data)
 				end
 				
 				if(PM and PM.MeshId == 'rbxassetid://20329976')then
-					PM.Offset = Vector3.new(0,0,-PM.Scale.Z/8)
+					PM.Offset = v3(0,0,-PM.Scale.Z/8)
 				end
 				
 				if(endpos and typeof(endpos) == 'CFrame')then
@@ -1613,7 +1612,7 @@ function GotEffect(data)
 					end
 					if(typeof(force)=='Vector3')then
 						if(acceleration.LookAt)then
-							P.CFrame=(CFrame.new(P.Position,force)+force)*RotCF
+							P.CFrame=(cf(P.Position,force)+force)*RotCF
 						else
 							P.CFrame=(P.CFrame+force)*RotCF
 						end
@@ -1641,8 +1640,8 @@ function GotEffect(data)
 				Color=typeof(endcolor) == 'Color3' and endcolor or color,
 				Transparency=endTrans,
 			})
-			local off = Vector3.new(0,0,0)
-			if(PM.MeshId == 'rbxassetid://20329976')then off=Vector3.new(0,0,(endsize*mult).Z/8) end
+			local off = v3(0,0,0)
+			if(PM.MeshId == 'rbxassetid://20329976')then off=v3(0,0,(endsize*mult).Z/8) end
 			
 			local tweenMesh = game:service'TweenService':Create(PM,info,{
 				Scale=endsize*mult,
@@ -1662,7 +1661,7 @@ function Trail(data)
 	coroutine.wrap(function()
 		data.Frames = typeof(data.Frames)=='number' and data.Frames or 60
 		data.CFrame = typeof(data.CFrame)=='CFrame' and data.CFrame or Root.CFrame
-		local ep = typeof(data.EndPos)=='CFrame' and data.EndPos or data.CFrame*CFrame.new(0,5,0);
+		local ep = typeof(data.EndPos)=='CFrame' and data.EndPos or data.CFrame*cf(0,5,0);
 		data.EndPos=nil
 		local trailPart = Part(Effects,BrickColor.new'White',Enum.Material.SmoothPlastic,V3.N(.05,.05,.05),data.CFrame,true,false)
 		trailPart.Transparency=1
@@ -1680,7 +1679,7 @@ function ClientTrail(data)
 	coroutine.wrap(function()
 		data.Frames = typeof(data.Frames)=='number' and data.Frames or 60
 		data.CFrame = typeof(data.CFrame)=='CFrame' and data.CFrame or Root.CFrame
-		local ep = typeof(data.EndPos)=='CFrame' and data.EndPos or data.CFrame*CFrame.new(0,5,0);
+		local ep = typeof(data.EndPos)=='CFrame' and data.EndPos or data.CFrame*cf(0,5,0);
 		data.EndPos=nil
 		local trailPart = Part(Effects,BrickColor.new'White',Enum.Material.SmoothPlastic,V3.N(.05,.05,.05),data.CFrame,true,false)
 		trailPart.Transparency=1
@@ -1705,7 +1704,7 @@ for _,v in next, Char:children() do
 	end
 end
 
-local wingModel = Instance.new("Model",Char)
+local wingModel = i("Model",Char)
 wingModel.Name="NGRWings"..Player.Name
 local rightWing = NewInstance("Model",wingModel,{Name='Right'})
 local leftWing = NewInstance("Model",wingModel,{Name='Left'})
@@ -1726,16 +1725,16 @@ if MPASword[1] then
 			v.Transparency = 1
 		end
 	end
-	local athp = Instance.new("Attachment",LWP1.PrimaryPart)
-	local atho = Instance.new("Attachment",LWP1.PrimaryPart)
+	local athp = i("Attachment",LWP1.PrimaryPart)
+	local atho = i("Attachment",LWP1.PrimaryPart)
 
 	local HatChoice = MPASword[1]
 	print(MPASword[1].Handle.Name)
 	HatChoice.Handle:FindFirstChildOfClass("AlignPosition").Attachment1 = athp
 	HatChoice.Handle:FindFirstChildOfClass("AlignOrientation").Attachment1 = atho
 
-	athp.Position = Vector3.new(0,-2,0)
-	atho.Rotation = Vector3.new(0,0,45)
+	athp.Position = v3(0,-2,0)
+	atho.Rotation = v3(0,0,45)
 	table.remove(MPASword,1)
 end
 LWP1.Parent = leftWing
@@ -1746,15 +1745,15 @@ if MPASword[1] then
 			v.Transparency = 1
 		end
 	end
-	local athp = Instance.new("Attachment",LWP2.PrimaryPart)
-	local atho = Instance.new("Attachment",LWP2.PrimaryPart)
+	local athp = i("Attachment",LWP2.PrimaryPart)
+	local atho = i("Attachment",LWP2.PrimaryPart)
 
 	local HatChoice = MPASword[1]
 	HatChoice.Handle:FindFirstChildOfClass("AlignPosition").Attachment1 = athp
 	HatChoice.Handle:FindFirstChildOfClass("AlignOrientation").Attachment1 = atho
 
-	athp.Position = Vector3.new(0,-2,0)
-	atho.Rotation = Vector3.new(0,0,45)
+	athp.Position = v3(0,-2,0)
+	atho.Rotation = v3(0,0,45)
 	table.remove(MPASword,1)
 end
 LWP2.Parent = leftWing
@@ -1765,15 +1764,15 @@ if game.Players.LocalPlayer.Character:FindFirstChild("White Demon Trident") then
 			v.Transparency = 1
 		end
 	end
-	local athp = Instance.new("Attachment",LWP3.PrimaryPart)
-	local atho = Instance.new("Attachment",LWP3.PrimaryPart)
+	local athp = i("Attachment",LWP3.PrimaryPart)
+	local atho = i("Attachment",LWP3.PrimaryPart)
 
 	local HatChoice = game.Players.LocalPlayer.Character:FindFirstChild("White Demon Trident") --White Demon Trident
 	HatChoice.Handle:FindFirstChildOfClass("AlignPosition").Attachment1 = athp
 	HatChoice.Handle:FindFirstChildOfClass("AlignOrientation").Attachment1 = atho
 
-	athp.Position = Vector3.new(0,-1.75,0)
-	atho.Rotation = Vector3.new(0,0,-26)
+	athp.Position = v3(0,-1.75,0)
+	atho.Rotation = v3(0,0,-26)
 end
 LWP3.Parent = leftWing
 local RWP1 = WingPiece:Clone();
@@ -1783,15 +1782,15 @@ if MPASword[1] then
 			v.Transparency = 1
 		end
 	end
-	local athp = Instance.new("Attachment",RWP1.PrimaryPart)
-	local atho = Instance.new("Attachment",RWP1.PrimaryPart)
+	local athp = i("Attachment",RWP1.PrimaryPart)
+	local atho = i("Attachment",RWP1.PrimaryPart)
 
 	local HatChoice = MPASword[1]
 	HatChoice.Handle:FindFirstChildOfClass("AlignPosition").Attachment1 = athp
 	HatChoice.Handle:FindFirstChildOfClass("AlignOrientation").Attachment1 = atho
 
-	athp.Position = Vector3.new(0,-2,0)
-	atho.Rotation = Vector3.new(0,0,45)
+	athp.Position = v3(0,-2,0)
+	atho.Rotation = v3(0,0,45)
 	table.remove(MPASword,1)
 end
 RWP1.Parent = rightWing
@@ -1802,15 +1801,15 @@ if MPASword[1] then
 			v.Transparency = 1
 		end
 	end
-	local athp = Instance.new("Attachment",RWP2.PrimaryPart)
-	local atho = Instance.new("Attachment",RWP2.PrimaryPart)
+	local athp = i("Attachment",RWP2.PrimaryPart)
+	local atho = i("Attachment",RWP2.PrimaryPart)
 
 	local HatChoice = MPASword[1]
 	HatChoice.Handle:FindFirstChildOfClass("AlignPosition").Attachment1 = athp
 	HatChoice.Handle:FindFirstChildOfClass("AlignOrientation").Attachment1 = atho
 
-	athp.Position = Vector3.new(0,-2,0)
-	atho.Rotation = Vector3.new(0,0,45)
+	athp.Position = v3(0,-2,0)
+	atho.Rotation = v3(0,0,45)
 	table.remove(MPASword,1)
 end
 
@@ -1822,15 +1821,15 @@ if game.Players.LocalPlayer.Character:FindFirstChild("Black Demon Trident") then
 			v.Transparency = 1
 		end
 	end
-	local athp = Instance.new("Attachment",RWP3.PrimaryPart)
-	local atho = Instance.new("Attachment",RWP3.PrimaryPart)
+	local athp = i("Attachment",RWP3.PrimaryPart)
+	local atho = i("Attachment",RWP3.PrimaryPart)
 
 	local HatChoice = game.Players.LocalPlayer.Character:FindFirstChild("Black Demon Trident") --Black Demon Trident
 	HatChoice.Handle:FindFirstChildOfClass("AlignPosition").Attachment1 = athp
 	HatChoice.Handle:FindFirstChildOfClass("AlignOrientation").Attachment1 = atho
 
-	athp.Position = Vector3.new(0,-1.75,0)
-	atho.Rotation = Vector3.new(0,0,-26) -- 48
+	athp.Position = v3(0,-1.75,0)
+	atho.Rotation = v3(0,0,-26) -- 48
 end
 
 RWP3.Parent = rightWing
@@ -1841,15 +1840,15 @@ if game.Players.LocalPlayer.Character:FindFirstChild("swordhalo") then --swordha
 			v.Transparency = 1
 		end
 	end
-	local athp = Instance.new("Attachment",RWP4.PrimaryPart)
-	local atho = Instance.new("Attachment",RWP4.PrimaryPart)
+	local athp = i("Attachment",RWP4.PrimaryPart)
+	local atho = i("Attachment",RWP4.PrimaryPart)
 
 	local HatChoice = game.Players.LocalPlayer.Character:FindFirstChild("swordhalo") --swordhalo 
 	HatChoice.Handle:FindFirstChildOfClass("AlignPosition").Attachment1 = athp
 	HatChoice.Handle:FindFirstChildOfClass("AlignOrientation").Attachment1 = atho
 
-	athp.Position = Vector3.new(0,-1.75,0)
-	atho.Rotation = Vector3.new(0,0,0)
+	athp.Position = v3(0,-1.75,0)
+	atho.Rotation = v3(0,0,0)
 end
 
 
@@ -1862,15 +1861,15 @@ if game.Players.LocalPlayer.Character:FindFirstChild("ShadowBladeMasterAccessory
 			v.Transparency = 1
 		end
 	end
-	local athp = Instance.new("Attachment",RWP5.PrimaryPart)
-	local atho = Instance.new("Attachment",RWP5.PrimaryPart)
+	local athp = i("Attachment",RWP5.PrimaryPart)
+	local atho = i("Attachment",RWP5.PrimaryPart)
 
 	local HatChoice = game.Players.LocalPlayer.Character:FindFirstChild("ShadowBladeMasterAccessory") --Evil Aura
 	HatChoice.Handle:FindFirstChildOfClass("AlignPosition").Attachment1 = athp
 	HatChoice.Handle:FindFirstChildOfClass("AlignOrientation").Attachment1 = atho
 
-	athp.Position = Vector3.new(0,-1.75,0)
-	atho.Rotation = Vector3.new(0,0,48)
+	athp.Position = v3(0,-1.75,0)
+	atho.Rotation = v3(0,0,48)
 end
 
 RWP5.Parent = rightWing
@@ -1882,15 +1881,15 @@ if game.Players.LocalPlayer.Character:FindFirstChild("BladeMasterAccessory") the
 			v.Transparency = 1
 		end
 	end
-	local athp = Instance.new("Attachment",RWP6.PrimaryPart)
-	local atho = Instance.new("Attachment",RWP6.PrimaryPart)
+	local athp = i("Attachment",RWP6.PrimaryPart)
+	local atho = i("Attachment",RWP6.PrimaryPart)
 
 	local HatChoice = game.Players.LocalPlayer.Character:FindFirstChild("BladeMasterAccessory") --Northern Star
 	HatChoice.Handle:FindFirstChildOfClass("AlignPosition").Attachment1 = athp
 	HatChoice.Handle:FindFirstChildOfClass("AlignOrientation").Attachment1 = atho
 
-	athp.Position = Vector3.new(0,-1.75,0)
-	atho.Rotation = Vector3.new(0,0,48)
+	athp.Position = v3(0,-1.75,0)
+	atho.Rotation = v3(0,0,48)
 end
 
 RWP6.Parent = rightWing
@@ -1902,15 +1901,15 @@ if game.Players.LocalPlayer.Character:FindFirstChild("Divine Aura") then -- Divi
 			v.Transparency = 1
 		end
 	end
-	local athp = Instance.new("Attachment",RWP7.PrimaryPart)
-	local atho = Instance.new("Attachment",RWP7.PrimaryPart)
+	local athp = i("Attachment",RWP7.PrimaryPart)
+	local atho = i("Attachment",RWP7.PrimaryPart)
 
 	local HatChoice = game.Players.LocalPlayer.Character:FindFirstChild("Divine Aura") --divine Aura
 	HatChoice.Handle:FindFirstChildOfClass("AlignPosition").Attachment1 = athp
 	HatChoice.Handle:FindFirstChildOfClass("AlignOrientation").Attachment1 = atho
 
-	athp.Position = Vector3.new(0,-1.75,0)
-	atho.Rotation = Vector3.new(0,0,48)
+	athp.Position = v3(0,-1.75,0)
+	atho.Rotation = v3(0,0,48)
 end
 RWP7.Parent = rightWing
 local LWP1W=Weld(LWP1.PrimaryPart,Torso,CF.N(2,-2,-1)*CF.A(0,0,0))
@@ -3586,7 +3585,7 @@ while true do
 	Sine=Sine+Change
 	hue=hue+1
 	if(hue>360)then hue=1 end
-	local hitfloor,posfloor = workspace:FindPartOnRayWithIgnoreList(Ray.new(Root.CFrame.p,((CFrame.new(Root.Position,Root.Position - Vector3.new(0,1,0))).lookVector).unit * (4)), {Effects,Char,Player.Character})
+	local hitfloor,posfloor = workspace:FindPartOnRayWithIgnoreList(Ray.new(Root.CFrame.p,((cf(Root.Position,Root.Position - v3(0,1,0))).lookVector).unit * (4)), {Effects,Char,Player.Character})
 	local Walking = (math.abs(Root.Velocity.x) > 1 or math.abs(Root.Velocity.z) > 1)
 	local State = (Hum.PlatformStand and 'Paralyzed' or Hum.Sit and 'Sit' or (not hitfloor or hitfloor.CanCollide==false) and Root.Velocity.y < -1 and "Fall" or (not hitfloor or hitfloor.CanCollide==false) and Root.Velocity.y > 1 and "Jump" or hitfloor and Walking and "Walk" or hitfloor and "Idle")
 	Hum.WalkSpeed = WalkSpeed
@@ -3595,8 +3594,8 @@ while true do
 	local sidevelocity = sidevec/Hum.WalkSpeed
 	local forwardvelocity = forwardvec/Hum.WalkSpeed
 	
-	local lhit,lpos = workspace:FindPartOnRayWithIgnoreList(Ray.new(LLeg.CFrame.p,((CFrame.new(LLeg.Position,LLeg.Position - Vector3.new(0,1,0))).lookVector).unit * (2)), {Effects,Char,Player.Character})
-	local rhit,rpos = workspace:FindPartOnRayWithIgnoreList(Ray.new(RLeg.CFrame.p,((CFrame.new(RLeg.Position,RLeg.Position - Vector3.new(0,1,0))).lookVector).unit * (2)), {Effects,Char,Player.Character})
+	local lhit,lpos = workspace:FindPartOnRayWithIgnoreList(Ray.new(LLeg.CFrame.p,((cf(LLeg.Position,LLeg.Position - v3(0,1,0))).lookVector).unit * (2)), {Effects,Char,Player.Character})
+	local rhit,rpos = workspace:FindPartOnRayWithIgnoreList(Ray.new(RLeg.CFrame.p,((cf(RLeg.Position,RLeg.Position - v3(0,1,0))).lookVector).unit * (2)), {Effects,Char,Player.Character})
 	if(Mode=='TRIX-LUA' and IsVaporwave(getMode'TRIX-LUA'.Music))then
 		vaporwaveMode=true
 		text.Text='Ｖａｐｏｒｗａｖｅ'
@@ -4025,8 +4024,8 @@ Material = Enum.Material.Glass,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,-10,0),
-Size = Vector3.new(.1,.1,0.1),
-EndSize = Vector3.new(.3,.3,.3),
+Size = v3(.1,.1,0.1),
+EndSize = v3(.3,.3,.3),
 Transparency = NumberRange.new(0,0),
 Lifetime = 0.25,
 })
@@ -4038,8 +4037,8 @@ Lifetime = 0.25,
 					Color=BrickColor.new'Black'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(10,2,5);
-					EndSize=Vector3.new(10,2,5);
+					Size=v3(10,2,5);
+					EndSize=v3(10,2,5);
 				}
 			if(NeutralAnims)then	
 					RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),6+5*M.C(Sine/32),0)*CF.A(M.R(-2+7*M.S(Sine/58)),M.R(-4+3*M.C(Sine/42)),0),Alpha)
@@ -4454,8 +4453,8 @@ if(legAnims)then
 					Color=BrickColor.new'White'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				}
 				GotEffect{
 					Lifetime=.2;
@@ -4464,8 +4463,8 @@ if(legAnims)then
 					Color=BrickColor.new'Dark indigo'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				}
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1.05*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
 				if(M.RNG(1,25)==1)then
@@ -4496,8 +4495,8 @@ if(legAnims)then
 					Color=BrickColor.new'White'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				}
 				GotEffect{
 					Lifetime=.2;
@@ -4506,8 +4505,8 @@ if(legAnims)then
 					Color=BrickColor.new'White'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				}
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1.05*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
 				if(M.RNG(1,25)==1)then
@@ -4535,8 +4534,8 @@ if(legAnims)then
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0.9,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(0.1,0.1,0.1);
-					EndSize=Vector3.new(1,0.1,1);
+					Size=v3(0.1,0.1,0.1);
+					EndSize=v3(1,0.1,1);
 				}		
 
 			local Alpha = .1
@@ -4569,8 +4568,8 @@ if(legAnims)then
 					Color=BrickColor.new'Black'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				}
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1.05*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
 				if(M.RNG(1,25)==1)then
@@ -4600,8 +4599,8 @@ if(legAnims)then
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				}
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+0.05*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
 				if(M.RNG(1,25)==1)then
@@ -4723,8 +4722,8 @@ end
 					Color=BrickColor.new'Cyan'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 
 
@@ -4758,8 +4757,8 @@ end
 					Color=BrickColor.new'Gold'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				}
 				
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
@@ -4789,8 +4788,8 @@ Material = Enum.Material.Glass,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,20,0),
-Size = Vector3.new(.1,.1,0.1),
-EndSize = Vector3.new(2,2,2),
+Size = v3(.1,.1,0.1),
+EndSize = v3(2,2,2),
 Transparency = NumberRange.new(0,0),
 Lifetime = 0.25,
 })
@@ -4801,8 +4800,8 @@ Lifetime = 0.25,
 					Color=BrickColor.new'White'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Glass;
-					Size=Vector3.new(1000,1,1000);
-					EndSize=Vector3.new(10000,1,10000);
+					Size=v3(1000,1,1000);
+					EndSize=v3(10000,1,10000);
 				}
 			local Alpha = .1
 			if(NeutralAnims)then	
@@ -4877,8 +4876,8 @@ Material = Enum.Material.Neon,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,30,0),
-Size = Vector3.new(.1,.1,0.1),
-EndSize = Vector3.new(4,4,4),
+Size = v3(.1,.1,0.1),
+EndSize = v3(4,4,4),
 Transparency = NumberRange.new(0,0),
 Lifetime = 0.25,
 })
@@ -4891,8 +4890,8 @@ Lifetime = 0.25,
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,2,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,2,.5);
+					EndSize=v3(.1,3,.1);
 				}
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,2+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
@@ -4921,8 +4920,8 @@ Material = Enum.Material.Neon,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,10,0),
-Size = Vector3.new(.1,7,0.1),
-EndSize = Vector3.new(0.2,12,0.2),
+Size = v3(.1,7,0.1),
+EndSize = v3(0.2,12,0.2),
 Transparency = NumberRange.new(0,1),
 Lifetime = 0.2,
 })
@@ -4934,8 +4933,8 @@ Lifetime = 0.2,
 					Color=BrickColor.new'Gold'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 			    			    				GotEffect{
 					Lifetime=.1;
@@ -4944,8 +4943,8 @@ Lifetime = 0.2,
 					Color=BrickColor.new'Gold'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 				local Alpha = .1
 			if(NeutralAnims)then	
@@ -4978,8 +4977,8 @@ end
 					Color=BrickColor.new'Cyan'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 				
 
@@ -4990,8 +4989,8 @@ end
 					Color=BrickColor.new'Cyan'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 							    			    				GotEffect{
 					Lifetime=.1;
@@ -5000,8 +4999,8 @@ end
 					Color=BrickColor.new'Cyan'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(10,10,0.5);
+					Size=v3(1,1,1);
+					EndSize=v3(10,10,0.5);
 				}
 
 				local Alpha = .1
@@ -5035,8 +5034,8 @@ end
 					Color=BrickColor.new'White'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 			    			    				GotEffect{
 					Lifetime=.1;
@@ -5045,8 +5044,8 @@ end
 					Color=BrickColor.new'White'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 				local Alpha = .1
 			if(NeutralAnims)then	
@@ -5077,8 +5076,8 @@ Material = Enum.Material.Neon,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,10,0),
-Size = Vector3.new(2,7,2),
-EndSize = Vector3.new(2,12,2),
+Size = v3(2,7,2),
+EndSize = v3(2,12,2),
 Transparency = NumberRange.new(0,1),
 Lifetime = .02,
 })
@@ -5089,8 +5088,8 @@ Lifetime = .02,
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 				
 							    			    				GotEffect{
@@ -5100,8 +5099,8 @@ Lifetime = .02,
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(3,3,3);
+					Size=v3(1,1,1);
+					EndSize=v3(3,3,3);
 				}
 				
 
@@ -5112,8 +5111,8 @@ Lifetime = .02,
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 				local Alpha = .1
 			if(NeutralAnims)then	
@@ -5144,8 +5143,8 @@ end
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(0.1,0.1,0.1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(0.1,0.1,0.1);
+					EndSize=v3(1,1,1);
 				}
 				
 			    			    				GotEffect{
@@ -5155,8 +5154,8 @@ end
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(0.1,0.1,0.1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(0.1,0.1,0.1);
+					EndSize=v3(1,1,1);
 				}
 							    			    				GotEffect{
 					Lifetime=.1;
@@ -5165,8 +5164,8 @@ end
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(0.1,0.1,0.1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(0.1,0.1,0.1);
+					EndSize=v3(1,1,1);
 				}
 				
 			    			    				GotEffect{
@@ -5176,8 +5175,8 @@ end
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(0.1,0.1,0.1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(0.1,0.1,0.1);
+					EndSize=v3(1,1,1);
 				}
 				local Alpha = .1
 			if(NeutralAnims)then	
@@ -5207,8 +5206,8 @@ Material = Enum.Material.Neon,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,10,0),
-Size = Vector3.new(.1,7,0.1),
-EndSize = Vector3.new(0.2,12,0.2),
+Size = v3(.1,7,0.1),
+EndSize = v3(0.2,12,0.2),
 Transparency = NumberRange.new(0,1),
 Lifetime = .02,
 })
@@ -5219,8 +5218,8 @@ Lifetime = .02,
 					Color=BrickColor.new'Lime green'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 
 				local Alpha = .1
@@ -5252,8 +5251,8 @@ Material = Enum.Material.Neon,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,10,0),
-Size = Vector3.new(.1,7,0.1),
-EndSize = Vector3.new(1,12,1),
+Size = v3(.1,7,0.1),
+EndSize = v3(1,12,1),
 Transparency = NumberRange.new(0,0),
 Lifetime = .01,
 })
@@ -5264,8 +5263,8 @@ Lifetime = .01,
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 
 				local Alpha = .1
@@ -5299,8 +5298,8 @@ end
 					Color=BrickColor.new'Lime green'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				
 				}
 				
@@ -5312,8 +5311,8 @@ end
 					Color=BrickColor.new'Lime green'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				}
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,4+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
@@ -5342,8 +5341,8 @@ Material = Enum.Material.Neon,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,10,0),
-Size = Vector3.new(2,2,2),
-EndSize = Vector3.new(2,12,2),
+Size = v3(2,2,2),
+EndSize = v3(2,12,2),
 Transparency = NumberRange.new(0,1),
 Lifetime = .1,
 })
@@ -5356,8 +5355,8 @@ Lifetime = .1,
 					Color=BrickColor.new'Flame reddish orange'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				
 				}
 				
@@ -5369,8 +5368,8 @@ Lifetime = .1,
 					Color=BrickColor.new'Flame reddish orange'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				}
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.1*M.C(Sine/1),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
@@ -5401,8 +5400,8 @@ end
 					Color=BrickColor.new'Cyan'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				}
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,-0.0+.0*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
@@ -5480,8 +5479,8 @@ if(legAnims)then
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
 			end
 			
 				    elseif(State == 'Walk')then
@@ -5493,8 +5492,8 @@ Material = Enum.Material.Neon,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,10,0),
-Size = Vector3.new(.1,.1,0.1),
-EndSize = Vector3.new(1,.5,.5),
+Size = v3(.1,.1,0.1),
+EndSize = v3(1,.5,.5),
 Transparency = NumberRange.new(0,0),
 Lifetime = 2,
 })
@@ -5502,25 +5501,25 @@ Lifetime = 2,
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),2+.2*M.C(Sine/32),0)*CF.A(M.R(-57+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
 				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 				  elseif(State == 'Walk')then
 		if(Mode=='Interstellar')then
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			 elseif(State == 'Walk')then
@@ -5528,13 +5527,13 @@ Lifetime = 2,
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+1*M.C(Sine/.2),4+.2*M.C(Sine/.1),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48322732e-06, 1)*CF.A(-2,4,M.R(-7+14*M.S(Sine/.2))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.53871994e-07, 1)*CF.A(-2,-4,M.R(7-14*M.S(Sine/.1))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48322732e-06, 1)*CF.A(-2,4,M.R(-7+14*M.S(Sine/.2))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.53871994e-07, 1)*CF.A(-2,-4,M.R(7-14*M.S(Sine/.1))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.8845396508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.8845396508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
     elseif(State == 'Walk')then
@@ -5550,8 +5549,8 @@ Lifetime = 2,
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			    elseif(State == 'Walk')then
@@ -5562,13 +5561,13 @@ Lifetime = 2,
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 
 		    
@@ -5583,19 +5582,19 @@ Lifetime = 2,
 					Color=BrickColor.new'Gold'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				}
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),2+.2*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
   elseif(State == 'Walk')then
@@ -5607,8 +5606,8 @@ Material = Enum.Material.Neon,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,10,0),
-Size = Vector3.new(.1,7,0.1),
-EndSize = Vector3.new(0.2,12,0.2),
+Size = v3(.1,7,0.1),
+EndSize = v3(0.2,12,0.2),
 Transparency = NumberRange.new(0,1),
 Lifetime = 0.2,
 })
@@ -5619,8 +5618,8 @@ Lifetime = 0.2,
 					Color=BrickColor.new'Gold'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 				
 				    			    				GotEffect{
@@ -5630,19 +5629,19 @@ Lifetime = 0.2,
 					Color=BrickColor.new'Gold'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			  elseif(State == 'Walk')then
@@ -5650,13 +5649,13 @@ Lifetime = 0.2,
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(3+2.20*M.C(Sine/17),3+2.20*M.C(Sine/17),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			 elseif(State == 'Walk')then
@@ -5669,8 +5668,8 @@ Lifetime = 0.2,
 					Color=BrickColor.new'Cyan'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 				
 				    			    				GotEffect{
@@ -5680,19 +5679,19 @@ Lifetime = 0.2,
 					Color=BrickColor.new'Cyan'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			
@@ -5705,8 +5704,8 @@ Material = Enum.Material.Neon,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,10,0),
-Size = Vector3.new(.1,7,0.1),
-EndSize = Vector3.new(0.2,12,0.2),
+Size = v3(.1,7,0.1),
+EndSize = v3(0.2,12,0.2),
 Transparency = NumberRange.new(0,1),
 Lifetime = .02,
 })
@@ -5718,19 +5717,19 @@ Lifetime = .02,
 					Color=BrickColor.new'Lime green'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 						 elseif(State == 'Walk')then
@@ -5742,8 +5741,8 @@ Material = Enum.Material.Neon,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,10,0),
-Size = Vector3.new(.1,7,0.1),
-EndSize = Vector3.new(1,12,1),
+Size = v3(.1,7,0.1),
+EndSize = v3(1,12,1),
 Transparency = NumberRange.new(0,0),
 Lifetime = .01,
 })
@@ -5755,19 +5754,19 @@ Lifetime = .01,
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 						 elseif(State == 'Walk')then
@@ -5782,8 +5781,8 @@ Lifetime = .01,
 					Color=BrickColor.new'White'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 				
 								    			    				GotEffect{
@@ -5793,19 +5792,19 @@ Lifetime = .01,
 					Color=BrickColor.new'White'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 									 elseif(State == 'Walk')then
@@ -5816,13 +5815,13 @@ Lifetime = .01,
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 												 elseif(State == 'Walk')then
@@ -5833,13 +5832,13 @@ Lifetime = .01,
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),55+5*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 												 elseif(State == 'Walk')then
@@ -5850,13 +5849,13 @@ Lifetime = .01,
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),75+5*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 												 elseif(State == 'Walk')then
@@ -5867,13 +5866,13 @@ Lifetime = .01,
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),4+3*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 												 elseif(State == 'Walk')then
@@ -5884,13 +5883,13 @@ Lifetime = .01,
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 									 elseif(State == 'Walk')then
@@ -5902,8 +5901,8 @@ Material = Enum.Material.Neon,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,10,0),
-Size = Vector3.new(2,7,2),
-EndSize = Vector3.new(2,12,2),
+Size = v3(2,7,2),
+EndSize = v3(2,12,2),
 Transparency = NumberRange.new(0,1),
 Lifetime = .01,
 })
@@ -5914,8 +5913,8 @@ Lifetime = .01,
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(3,3,3);
+					Size=v3(1,1,1);
+					EndSize=v3(3,3,3);
 				}
 				    			    				GotEffect{
 					Lifetime=.1;
@@ -5924,8 +5923,8 @@ Lifetime = .01,
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 				
 								    			    				GotEffect{
@@ -5935,19 +5934,19 @@ Lifetime = .01,
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(1,1,1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(1,1,1);
+					EndSize=v3(1,1,1);
 				}
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 												 elseif(State == 'Walk')then
@@ -5960,8 +5959,8 @@ Lifetime = .01,
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(0.1,0.1,0.1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(0.1,0.1,0.1);
+					EndSize=v3(1,1,1);
 				}
 				
 								    			    				GotEffect{
@@ -5971,8 +5970,8 @@ Lifetime = .01,
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(0.1,0.1,0.1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(0.1,0.1,0.1);
+					EndSize=v3(1,1,1);
 				}
 				
 								    			    				GotEffect{
@@ -5982,8 +5981,8 @@ Lifetime = .01,
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(0.1,0.1,0.1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(0.1,0.1,0.1);
+					EndSize=v3(1,1,1);
 				}
 				
 								    			    				GotEffect{
@@ -5993,20 +5992,20 @@ Lifetime = .01,
 					Color=BrickColor.new'Crimson'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(0.1,0.1,0.1);
-					EndSize=Vector3.new(1,1,1);
+					Size=v3(0.1,0.1,0.1);
+					EndSize=v3(1,1,1);
 				}
 
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			  elseif(State == 'Walk')then
@@ -6018,8 +6017,8 @@ Material = Enum.Material.Glass,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,20,0),
-Size = Vector3.new(.1,.1,0.1),
-EndSize = Vector3.new(2,2,2),
+Size = v3(.1,.1,0.1),
+EndSize = v3(2,2,2),
 Transparency = NumberRange.new(0,0),
 Lifetime = 0.25,
 })
@@ -6030,16 +6029,16 @@ Lifetime = 0.25,
 					Color=BrickColor.new'White'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Glass;
-					Size=Vector3.new(1000,1,1000);
-					EndSize=Vector3.new(10000,1,10000);
+					Size=v3(1000,1,1000);
+					EndSize=v3(10000,1,10000);
 				}
 			local wsVal = 4
 			local Alpha = .2
 			if(NeutralAnims)then
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0,Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
@@ -6055,8 +6054,8 @@ Material = Enum.Material.Neon,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,10,0),
-Size = Vector3.new(2,2,2),
-EndSize = Vector3.new(2,12,2),
+Size = v3(2,2,2),
+EndSize = v3(2,12,2),
 Transparency = NumberRange.new(0,1),
 Lifetime = .1,
 })
@@ -6066,8 +6065,8 @@ Lifetime = .1,
 			if(NeutralAnims)then
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0,Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
@@ -6079,13 +6078,13 @@ end
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),4+3*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 	  elseif(State == 'Walk')then
@@ -6093,13 +6092,13 @@ end
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+3*M.C(Sine/21),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			
@@ -6115,8 +6114,8 @@ end
 					Color=BrickColor.new'Lime green'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				
 				}
 				
@@ -6128,17 +6127,17 @@ end
 					Color=BrickColor.new'Lime green'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				}
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 							  elseif(State == 'Walk')then
@@ -6152,8 +6151,8 @@ end
 					Color=BrickColor.new'Cyan'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				
 				}
 				
@@ -6165,17 +6164,17 @@ end
 					Color=BrickColor.new'Cyan'.Color;
 					Transparency={0,1};
 					Material=Enum.Material.Neon;
-					Size=Vector3.new(.5,1,.5);
-					EndSize=Vector3.new(.1,3,.1);
+					Size=v3(.5,1,.5);
+					EndSize=v3(.1,3,.1);
 				}
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			
@@ -6184,13 +6183,13 @@ end
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),3+1.5*M.C(Sine/17),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 
 	  elseif(State == 'Walk')then
@@ -6198,13 +6197,13 @@ end
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 				  elseif(State == 'Walk')then
@@ -6212,26 +6211,26 @@ end
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 	  elseif(State == 'Walk')then
 		if(Mode=='SPACETIME')then
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),5+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 				  elseif(State == 'Walk')then
@@ -6239,13 +6238,13 @@ end
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),6+5*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 				  elseif(State == 'Walk')then
@@ -6253,13 +6252,13 @@ end
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 				  elseif(State == 'Walk')then
@@ -6267,13 +6266,13 @@ end
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),5+1*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 				  elseif(State == 'Walk')then
@@ -6281,13 +6280,13 @@ end
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 
@@ -6298,13 +6297,13 @@ end
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-0+3*M.C(Sine/19),3+2*M.C(Sine/19),0)*CF.A(M.R(-56+4*M.S(Sine/19)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 										  elseif(State == 'Walk')then
@@ -6312,13 +6311,13 @@ end
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-0+3*M.C(Sine/19),3+2*M.C(Sine/19),0)*CF.A(M.R(-56+4*M.S(Sine/19)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 
@@ -6347,13 +6346,13 @@ end
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 				  elseif(State == 'Walk')then
@@ -6376,13 +6375,13 @@ end
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 
 	  elseif(State == 'Walk')then
@@ -6392,8 +6391,8 @@ end
 			if(NeutralAnims)then
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0,Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
@@ -6404,13 +6403,13 @@ end
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 
 
@@ -6440,8 +6439,8 @@ Material = Enum.Material.Neon,
 Mesh = {Type = Enum.MeshType.Sphere},
 CFrame = HCF,
 EndPos = HCF* CF.N(0,30,0),
-Size = Vector3.new(.1,.1,0.1),
-EndSize = Vector3.new(4,4,4),
+Size = v3(.1,.1,0.1),
+EndSize = v3(4,4,4),
 Transparency = NumberRange.new(0,0),
 Lifetime = 0.25,
 })
@@ -6451,13 +6450,13 @@ Lifetime = 0.25,
 			local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(CFrame.new(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+ 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
   				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(CFrame.new(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 
 
