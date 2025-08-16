@@ -1027,10 +1027,10 @@ local function PerfectionWeld()
 end
 PerfectionWeld()
 end
-local animate = gp(c, "Animate", "LocalScript")
+--[[ocal animate = gp(c, "Animate", "LocalScript")
 if animate then
     animate.Disabled = true
-end
+end]]
 
 local hum = c:FindFirstChildOfClass("Humanoid") or i("Humanoid", c)
 local states = {
