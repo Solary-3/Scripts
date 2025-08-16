@@ -1277,7 +1277,7 @@ local function setupReanimatedJoints()
     RH.Part1 = ReanimatedChar["Right Leg"]
     RH.C0 = cf(0.5, -1, 0)
     RH.C1 = cf(0, 1, 0)
-    LH.Parent = ReanimatedTorso
+    RH.Parent = ReanimatedTorso
     local LH = i("Motor6D")
     LH.Name = "LH"
     LH.Part0 = ReanimatedTorso
