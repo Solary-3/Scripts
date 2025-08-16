@@ -36,6 +36,7 @@
 local i=Instance.new
 local v3=Vector3.new
 local cf=CFrame.new
+local cf_0=cf(0,0,0)
 local MOONICUI = i("ScreenGui")
 local Main = i("ImageLabel")
 local TagsAndShit = i("ImageLabel")
