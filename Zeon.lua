@@ -2014,12 +2014,12 @@ function syncStuff(data)
 	legAnims=legwelds
 	NeutralAnims=neut
 	if(not neut)then
-		NK.C0=welds.head0
-		RJ.C0=welds.torso0
-		RH.C0=welds.rleg0
-		RS.C0=welds.rarm0
-		LH.C0=welds.lleg0
-		LS.C0=welds.larm0
+		NK.C0=head0
+		RJ.C0=torso0
+		RH.C0=rleg0
+		RS.C0=rarm0
+		LH.C0=lleg0
+		LS.C0=larm0
 		
 		NK.C1=head1
 		RJ.C1=torso1
