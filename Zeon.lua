@@ -533,24 +533,27 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
    
 local CountSCIFIMOVIELOL = 1
 function SCIFIMOVIELOL(Part0,Part1,Position,Angle)
-	local AlignPos =Instance.new('AlignPosition', Part1); AlignPos.Name = "AliP_"..CountSCIFIMOVIELOL
+     local i=Instance.new
+     local v3=Vector3.new
+     local cf=CFrame.new
+	local AlignPos =i('AlignPosition', Part1); AlignPos.Name = "AliP_"..CountSCIFIMOVIELOL
 	AlignPos.ApplyAtCenterOfMass = true;
 	AlignPos.MaxForce = 5772000--67752;
 	AlignPos.MaxVelocity = math.huge/9e110;
 	AlignPos.ReactionForceEnabled = false;
 	AlignPos.Responsiveness = 200;
 	AlignPos.RigidityEnabled = false;
-	local AlignOri =Instance.new('AlignOrientation', Part1); AlignOri.Name = "AliO_"..CountSCIFIMOVIELOL
+	local AlignOri =i('AlignOrientation', Part1); AlignOri.Name = "AliO_"..CountSCIFIMOVIELOL
 	AlignOri.MaxAngularVelocity = math.huge/9e110;
 	AlignOri.MaxTorque = 5772000
 	AlignOri.PrimaryAxisOnly = false;
 	AlignOri.ReactionTorqueEnabled = false;
 	AlignOri.Responsiveness = 200;
 	AlignOri.RigidityEnabled = false;
-	local AttachmentA=Instance.new('Attachment',Part1); AttachmentA.Name = "Ath_"..CountSCIFIMOVIELOL
-	local AttachmentB=Instance.new('Attachment',Part0); AttachmentB.Name = "Ath_"..CountSCIFIMOVIELOL
-	AttachmentA.Orientation = Angle or Vector3.new(0,0,0)
-	AttachmentA.Position = Position or Vector3.new(0,0,0)
+	local AttachmentA=i('Attachment',Part1); AttachmentA.Name = "Ath_"..CountSCIFIMOVIELOL
+	local AttachmentB=i('Attachment',Part0); AttachmentB.Name = "Ath_"..CountSCIFIMOVIELOL
+	AttachmentA.Orientation = Angle or v3(0,0,0)
+	AttachmentA.Position = Position or v3(0,0,0)
 	AlignPos.Attachment1 = AttachmentA;
 	AlignPos.Attachment0 = AttachmentB;
 	AlignOri.Attachment1 = AttachmentA;
@@ -587,7 +590,7 @@ hatnameclone = nil
 
 local DeadChar = game:FindFirstChildOfClass("Players").LocalPlayer.Character
 
-local fldr =Instance.new("Folder",game:FindFirstChildOfClass("Players").LocalPlayer["Character"])
+local fldr =i("Folder",game:FindFirstChildOfClass("Players").LocalPlayer["Character"])
 fldr.Name = "DMYF"
 local CloneChar = DeadChar:Clone()
 local ANIMATIONHERE
@@ -623,11 +626,11 @@ for _,v in next, DeadChar:GetChildren() do
 				topacc = ath__.Name
 			end
 		end
-        local bv =Instance.new("BodyVelocity",v.Handle)
-		bv.Velocity = Vector3.new(0,0,0)
+        local bv =i("BodyVelocity",v.Handle)
+		bv.Velocity = v3(0,0,0)
 		coroutine.wrap(function()
 			if topacc then
-				local allthings = SCIFIMOVIELOL(v.Handle,DeadChar.Torso,Vector3.new(0,1.5,0)+ (DeadChar.Head[topacc].Position + (v.Handle[topacc].Position*-1)),Vector3.new(0,0,0))
+				local allthings = SCIFIMOVIELOL(v.Handle,DeadChar.Torso,v3(0,1.5,0)+ (DeadChar.Head[topacc].Position + (v.Handle[topacc].Position*-1)),v3(0,0,0))
 				local normaltop = allthings[1].Attachment1
 				local alipos = allthings[1]
 				local alirot = allthings[2]
@@ -640,14 +643,14 @@ for _,v in next, DeadChar:GetChildren() do
 					if HumanDied then break end
 					coroutine.wrap(function()
 						if alipos.Attachment1 == normaltop then
-							p0.CFrame = p0.CFrame:lerp((((DeadChar.Torso.CFrame * CFrame.new(0,1.5,0)) * p1[topacc].CFrame) * p0[topacc].CFrame:inverse()),1)
+							p0.CFrame = p0.CFrame:lerp((((DeadChar.Torso.CFrame * cf(0,1.5,0)) * p1[topacc].CFrame) * p0[topacc].CFrame:inverse()),1)
 						else
-							v.Handle.CFrame = v.Handle.CFrame:lerp(alipos.Attachment1.Parent.CFrame * CFrame.new(alipos.Attachment1.Position) * CFrame.Angles(math.rad(alipos.Attachment1.Rotation.X),math.rad(alipos.Attachment1.Rotation.Y),math.rad(alipos.Attachment1.Rotation.Z)),1)
+							v.Handle.CFrame = v.Handle.CFrame:lerp(alipos.Attachment1.Parent.CFrame * cf(alipos.Attachment1.Position) * CFrame.Angles(math.rad(alipos.Attachment1.Rotation.X),math.rad(alipos.Attachment1.Rotation.Y),math.rad(alipos.Attachment1.Rotation.Z)),1)
 						end
 					end)()
 				end
 			else
-				SCIFIMOVIELOL(v.Handle,CloneChar[v.Name].Handle,Vector3.new(0,0,0),Vector3.new(0,0,0))
+				SCIFIMOVIELOL(v.Handle,CloneChar[v.Name].Handle,v3(0,0,0),v3(0,0,0))
 			end
 		end)()
     end
@@ -696,7 +699,7 @@ function UnCollide()
 end
 Collider = game:GetService("RunService").Stepped:Connect(UnCollide)
 
-local resetBindable =Instance.new("BindableEvent")
+local resetBindable =i("BindableEvent")
 resetBindable.Event:connect(function()
     game:GetService("StarterGui"):SetCore("ResetButtonCallback", true)
 	resetBindable:Destroy()
@@ -742,8 +745,8 @@ SCIFIMOVIELOL(DeadChar["Right Leg"],CloneChar["Right Leg"])
 
 for _,v in pairs(DeadChar:GetChildren()) do
     	if v:IsA("BasePart") and v.Name ~= "Head" then
-    		--[[local bv =Instance.new("BodyVelocity",v)
-    		bv.Velocity = Vector3.new(0,0,0)
+    		--[[local bv =i("BodyVelocity",v)
+    		bv.Velocity = v3(0,0,0)
     		coroutine.wrap(function()
     			while true do
     				game:GetService("RunService").RenderStepped:wait()
@@ -752,13 +755,13 @@ for _,v in pairs(DeadChar:GetChildren()) do
     			end
     		end)()--]]
 elseif v:IsA("BasePart") and v.Name == "Head" then
-		local bv =Instance.new("BodyVelocity",v)
-		bv.Velocity = Vector3.new(0,0,0)
+		local bv =i("BodyVelocity",v)
+		bv.Velocity = v3(0,0,0)
 		coroutine.wrap(function()
 			while true do
 				game:GetService("RunService").RenderStepped:wait()
 				if HumanDied then break end
-				v.CFrame = DeadChar.Torso.CFrame * CFrame.new(0,1.5,0)
+				v.CFrame = DeadChar.Torso.CFrame * cf(0,1.5,0)
 			end
 		end)()
 	end
@@ -824,7 +827,7 @@ local function Modify(Instance, Values)
 end
 
 local function Make(ClassType, Properties)
-	return Modify(Instance.new(ClassType), Properties)
+	return Modify(i(ClassType), Properties)
 end
 
 local Surfaces = {"TopSurface", "BottomSurface", "LeftSurface", "RightSurface", "FrontSurface", "BackSurface"}
@@ -873,12 +876,12 @@ local function WeldTogether(Part0, Part1, JointType, WeldParent)
 	JointType = JointType or "Weld"
 	local RelativeValue = Part1:FindFirstChild("qRelativeCFrameWeldValue")
 	
-	local NewWeld = Part1:FindFirstChild("qCFrameWeldThingy") or Instance.new(JointType)
+	local NewWeld = Part1:FindFirstChild("qCFrameWeldThingy") or i(JointType)
 	Modify(NewWeld, {
 		Name = "qCFrameWeldThingy";
 		Part0  = Part0;
 		Part1  = Part1;
-		C0     = CFrame.new();--Part0.CFrame:inverse();
+		C0     = cf();--Part0.CFrame:inverse();
 		C1     = RelativeValue and RelativeValue.Value or Part1.CFrame:toObjectSpace(Part0.CFrame); --Part1.CFrame:inverse() * Part0.CFrame;-- Part1.CFrame:inverse();
 		Parent = Part1;
 	})
@@ -940,12 +943,12 @@ end
 local function part(name)
     local part = gp(c, name, "BasePart")
     if not part then
-        part = Instance.new("Part")
+        part = i("Part")
         part.Name = name
         part.Transparency = 1
         part.CanCollide = false
         part.Massless = true
-        part.Size =Vector3.new(1, 1, 1)
+        part.Size =v3(1, 1, 1)
         part.Parent = c
     end
     local size = part.Size
@@ -971,8 +974,8 @@ end
 
 
 local function joint(name, parent, Part0, Part1, fakejoint)
-    fakejoint.C0 = CFrame.new()
-    fakejoint.C1 = CFrame.new()
+    fakejoint.C0 = cf()
+    fakejoint.C1 = cf()
     local joint = gp(parent, name, "Motor6D")
     if joint then
         fakejoint.C0 = joint.C0
@@ -986,7 +989,7 @@ local function joint(name, parent, Part0, Part1, fakejoint)
         local fix = nil
         fix = function()
             if not joint then 
-                joint = Instance.new("Motor6D")
+                joint = i("Motor6D")
                 joint.Changed:Connect(fix)
                 joint.Destroying:Connect(function() joint = nil end)
             end
@@ -1029,7 +1032,7 @@ if animate then
     animate.Disabled = true
 end
 
-local hum = c:FindFirstChildOfClass("Humanoid") or Instance.new("Humanoid", c)
+local hum = c:FindFirstChildOfClass("Humanoid") or i("Humanoid", c)
 local states = {
     [0]=false,[8]=true,
     [10]=false,[12]=false,
@@ -1052,6 +1055,7 @@ hum.RequiresNeck = false
 --hum.MaxHealth = 0
 --hum.Health = 0
 hum:ChangeState(8)
+--end
 
 --// Shortcut Variables \\--
 local S = setmetatable({},{__index = function(s,i) return game:service(i) end})
