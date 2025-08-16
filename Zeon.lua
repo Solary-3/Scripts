@@ -1263,7 +1263,7 @@ local function setupReanimatedJoints()
     RS.Part1 = ReanimatedChar["Right Arm"]
     RS.C0 = cf(1.5, 0.5, 0)
     RS.C1 = cf(0, 0.5, 0)
-    RightShoulder.Parent = ReanimatedTorso
+    RS.Parent = ReanimatedTorso
     local LS = i("Motor6D")
     LS.Name = "LS"
     LS.Part0 = ReanimatedTorso
@@ -1277,7 +1277,7 @@ local function setupReanimatedJoints()
     RH.Part1 = ReanimatedChar["Right Leg"]
     RH.C0 = cf(0.5, -1, 0)
     RH.C1 = cf(0, 1, 0)
-    RightHip.Parent = ReanimatedTorso
+    LH.Parent = ReanimatedTorso
     local LH = i("Motor6D")
     LH.Name = "LH"
     LH.Part0 = ReanimatedTorso
