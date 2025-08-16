@@ -587,7 +587,7 @@ hatnameclone = nil
 
 local DeadChar = game:FindFirstChildOfClass("Players").LocalPlayer.Character
 
-local fldr =i("Folder",game:FindFirstChildOfClass("Players").LocalPlayer["Character"])
+local fldr =Instance.new("Folder",game:FindFirstChildOfClass("Players").LocalPlayer["Character"])
 fldr.Name = "DMYF"
 local CloneChar = DeadChar:Clone()
 local ANIMATIONHERE
