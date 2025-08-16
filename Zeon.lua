@@ -533,24 +533,24 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
    
 local CountSCIFIMOVIELOL = 1
 function SCIFIMOVIELOL(Part0,Part1,Position,Angle)
-	local AlignPos =i('AlignPosition', Part1); AlignPos.Name = "AliP_"..CountSCIFIMOVIELOL
+	local AlignPos =Instance.new('AlignPosition', Part1); AlignPos.Name = "AliP_"..CountSCIFIMOVIELOL
 	AlignPos.ApplyAtCenterOfMass = true;
 	AlignPos.MaxForce = 5772000--67752;
 	AlignPos.MaxVelocity = math.huge/9e110;
 	AlignPos.ReactionForceEnabled = false;
 	AlignPos.Responsiveness = 200;
 	AlignPos.RigidityEnabled = false;
-	local AlignOri =i('AlignOrientation', Part1); AlignOri.Name = "AliO_"..CountSCIFIMOVIELOL
+	local AlignOri =Instance.new('AlignOrientation', Part1); AlignOri.Name = "AliO_"..CountSCIFIMOVIELOL
 	AlignOri.MaxAngularVelocity = math.huge/9e110;
 	AlignOri.MaxTorque = 5772000
 	AlignOri.PrimaryAxisOnly = false;
 	AlignOri.ReactionTorqueEnabled = false;
 	AlignOri.Responsiveness = 200;
 	AlignOri.RigidityEnabled = false;
-	local AttachmentA=i('Attachment',Part1); AttachmentA.Name = "Ath_"..CountSCIFIMOVIELOL
-	local AttachmentB=i('Attachment',Part0); AttachmentB.Name = "Ath_"..CountSCIFIMOVIELOL
-	AttachmentA.Orientation = Angle or v3(0,0,0)
-	AttachmentA.Position = Position or v3(0,0,0)
+	local AttachmentA=Instance.new('Attachment',Part1); AttachmentA.Name = "Ath_"..CountSCIFIMOVIELOL
+	local AttachmentB=Instance.new('Attachment',Part0); AttachmentB.Name = "Ath_"..CountSCIFIMOVIELOL
+	AttachmentA.Orientation = Angle or Vector3.new(0,0,0)
+	AttachmentA.Position = Position or Vector3.new(0,0,0)
 	AlignPos.Attachment1 = AttachmentA;
 	AlignPos.Attachment0 = AttachmentB;
 	AlignOri.Attachment1 = AttachmentA;
@@ -623,11 +623,11 @@ for _,v in next, DeadChar:GetChildren() do
 				topacc = ath__.Name
 			end
 		end
-        local bv =i("BodyVelocity",v.Handle)
-		bv.Velocity = v3(0,0,0)
+        local bv =Instance.new("BodyVelocity",v.Handle)
+		bv.Velocity = Vector3.new(0,0,0)
 		coroutine.wrap(function()
 			if topacc then
-				local allthings = SCIFIMOVIELOL(v.Handle,DeadChar.Torso,v3(0,1.5,0)+ (DeadChar.Head[topacc].Position + (v.Handle[topacc].Position*-1)),v3(0,0,0))
+				local allthings = SCIFIMOVIELOL(v.Handle,DeadChar.Torso,Vector3.new(0,1.5,0)+ (DeadChar.Head[topacc].Position + (v.Handle[topacc].Position*-1)),Vector3.new(0,0,0))
 				local normaltop = allthings[1].Attachment1
 				local alipos = allthings[1]
 				local alirot = allthings[2]
@@ -640,14 +640,14 @@ for _,v in next, DeadChar:GetChildren() do
 					if HumanDied then break end
 					coroutine.wrap(function()
 						if alipos.Attachment1 == normaltop then
-							p0.CFrame = p0.CFrame:lerp((((DeadChar.Torso.CFrame * cf(0,1.5,0)) * p1[topacc].CFrame) * p0[topacc].CFrame:inverse()),1)
+							p0.CFrame = p0.CFrame:lerp((((DeadChar.Torso.CFrame * CFrame.new(0,1.5,0)) * p1[topacc].CFrame) * p0[topacc].CFrame:inverse()),1)
 						else
-							v.Handle.CFrame = v.Handle.CFrame:lerp(alipos.Attachment1.Parent.CFrame * cf(alipos.Attachment1.Position) * CFrame.Angles(math.rad(alipos.Attachment1.Rotation.X),math.rad(alipos.Attachment1.Rotation.Y),math.rad(alipos.Attachment1.Rotation.Z)),1)
+							v.Handle.CFrame = v.Handle.CFrame:lerp(alipos.Attachment1.Parent.CFrame * CFrame.new(alipos.Attachment1.Position) * CFrame.Angles(math.rad(alipos.Attachment1.Rotation.X),math.rad(alipos.Attachment1.Rotation.Y),math.rad(alipos.Attachment1.Rotation.Z)),1)
 						end
 					end)()
 				end
 			else
-				SCIFIMOVIELOL(v.Handle,CloneChar[v.Name].Handle,v3(0,0,0),v3(0,0,0))
+				SCIFIMOVIELOL(v.Handle,CloneChar[v.Name].Handle,Vector3.new(0,0,0),Vector3.new(0,0,0))
 			end
 		end)()
     end
@@ -696,7 +696,7 @@ function UnCollide()
 end
 Collider = game:GetService("RunService").Stepped:Connect(UnCollide)
 
-local resetBindable =i("BindableEvent")
+local resetBindable =Instance.new("BindableEvent")
 resetBindable.Event:connect(function()
     game:GetService("StarterGui"):SetCore("ResetButtonCallback", true)
 	resetBindable:Destroy()
@@ -742,8 +742,8 @@ SCIFIMOVIELOL(DeadChar["Right Leg"],CloneChar["Right Leg"])
 
 for _,v in pairs(DeadChar:GetChildren()) do
     	if v:IsA("BasePart") and v.Name ~= "Head" then
-    		--[[local bv =i("BodyVelocity",v)
-    		bv.Velocity = v3(0,0,0)
+    		--[[local bv =Instance.new("BodyVelocity",v)
+    		bv.Velocity = Vector3.new(0,0,0)
     		coroutine.wrap(function()
     			while true do
     				game:GetService("RunService").RenderStepped:wait()
@@ -752,13 +752,13 @@ for _,v in pairs(DeadChar:GetChildren()) do
     			end
     		end)()--]]
 elseif v:IsA("BasePart") and v.Name == "Head" then
-		local bv =i("BodyVelocity",v)
-		bv.Velocity = v3(0,0,0)
+		local bv =Instance.new("BodyVelocity",v)
+		bv.Velocity = Vector3.new(0,0,0)
 		coroutine.wrap(function()
 			while true do
 				game:GetService("RunService").RenderStepped:wait()
 				if HumanDied then break end
-				v.CFrame = DeadChar.Torso.CFrame * cf(0,1.5,0)
+				v.CFrame = DeadChar.Torso.CFrame * CFrame.new(0,1.5,0)
 			end
 		end)()
 	end
@@ -824,7 +824,7 @@ local function Modify(Instance, Values)
 end
 
 local function Make(ClassType, Properties)
-	return Modify(i(ClassType), Properties)
+	return Modify(Instance.new(ClassType), Properties)
 end
 
 local Surfaces = {"TopSurface", "BottomSurface", "LeftSurface", "RightSurface", "FrontSurface", "BackSurface"}
@@ -873,12 +873,12 @@ local function WeldTogether(Part0, Part1, JointType, WeldParent)
 	JointType = JointType or "Weld"
 	local RelativeValue = Part1:FindFirstChild("qRelativeCFrameWeldValue")
 	
-	local NewWeld = Part1:FindFirstChild("qCFrameWeldThingy") or i(JointType)
+	local NewWeld = Part1:FindFirstChild("qCFrameWeldThingy") or Instance.new(JointType)
 	Modify(NewWeld, {
 		Name = "qCFrameWeldThingy";
 		Part0  = Part0;
 		Part1  = Part1;
-		C0     = cf();--Part0.CFrame:inverse();
+		C0     = CFrame.new();--Part0.CFrame:inverse();
 		C1     = RelativeValue and RelativeValue.Value or Part1.CFrame:toObjectSpace(Part0.CFrame); --Part1.CFrame:inverse() * Part0.CFrame;-- Part1.CFrame:inverse();
 		Parent = Part1;
 	})
@@ -945,7 +945,7 @@ local function part(name)
         part.Transparency = 1
         part.CanCollide = false
         part.Massless = true
-        part.Size =v3(1, 1, 1)
+        part.Size =Vector3.new(1, 1, 1)
         part.Parent = c
     end
     local size = part.Size
@@ -971,8 +971,8 @@ end
 
 
 local function joint(name, parent, Part0, Part1, fakejoint)
-    fakejoint.C0 = cf()
-    fakejoint.C1 = cf()
+    fakejoint.C0 = CFrame.new()
+    fakejoint.C1 = CFrame.new()
     local joint = gp(parent, name, "Motor6D")
     if joint then
         fakejoint.C0 = joint.C0
@@ -1029,7 +1029,7 @@ if animate then
     animate.Disabled = true
 end
 
-local hum = c:FindFirstChildOfClass("Humanoid") or i("Humanoid", c)
+local hum = c:FindFirstChildOfClass("Humanoid") or Instance.new("Humanoid", c)
 local states = {
     [0]=false,[8]=true,
     [10]=false,[12]=false,
@@ -1224,8 +1224,8 @@ function newMotor(P0,P1,C0,C1)
 	local motor = NewInstance('Motor', P0, {
         Part0 = P0,
         Part1 = P1,
-        C0 = C0 or cf(),
-        C1 = C1 or cf()
+        C0 = C0 or CFrame.new(),
+        C1 = C1 or CFrame.new()
     })
     motor.MaxVelocity = 0.1 -- Smoother movement
     return motor
@@ -1244,43 +1244,43 @@ local function setupReanimatedJoints()
     Neck.Name = "Neck"
     Neck.Part0 = ReanimatedTorso
     Neck.Part1 = ReanimatedChar.Head
-    Neck.C0 = cf(0, 1.5, 0)
-    Neck.C1 = cf()
+    Neck.C0 = CFrame.new(0, 1.5, 0)
+    Neck.C1 = CFrame.new()
     Neck.Parent = ReanimatedTorso
     local RootJoint = Instance.new("Motor6D")
     RootJoint.Name = "RootJoint"
     RootJoint.Part0 = ReanimatedHRP
     RootJoint.Part1 = ReanimatedTorso
-    RootJoint.C0 = cf()
-    RootJoint.C1 = cf()
+    RootJoint.C0 = CFrame.new()
+    RootJoint.C1 = CFrame.new()
     RootJoint.Parent = ReanimatedHRP
     local RightShoulder = Instance.new("Motor6D")
     RightShoulder.Name = "Right Shoulder"
     RightShoulder.Part0 = ReanimatedTorso
     RightShoulder.Part1 = ReanimatedChar["Right Arm"]
-    RightShoulder.C0 = cf(1.5, 0.5, 0)
-    RightShoulder.C1 = cf(0, 0.5, 0)
+    RightShoulder.C0 = CFrame.new(1.5, 0.5, 0)
+    RightShoulder.C1 = CFrame.new(0, 0.5, 0)
     RightShoulder.Parent = ReanimatedTorso
     local LeftShoulder = Instance.new("Motor6D")
     LeftShoulder.Name = "Left Shoulder"
     LeftShoulder.Part0 = ReanimatedTorso
     LeftShoulder.Part1 = ReanimatedChar["Left Arm"]
-    LeftShoulder.C0 = cf(-1.5, 0.5, 0)
-    LeftShoulder.C1 = cf(0, 0.5, 0)
+    LeftShoulder.C0 = CFrame.new(-1.5, 0.5, 0)
+    LeftShoulder.C1 = CFrame.new(0, 0.5, 0)
     LeftShoulder.Parent = ReanimatedTorso
     local RightHip = Instance.new("Motor6D")
     RightHip.Name = "Right Hip"
     RightHip.Part0 = ReanimatedTorso
     RightHip.Part1 = ReanimatedChar["Right Leg"]
-    RightHip.C0 = cf(0.5, -1, 0)
-    RightHip.C1 = cf(0, 1, 0)
+    RightHip.C0 = CFrame.new(0.5, -1, 0)
+    RightHip.C1 = CFrame.new(0, 1, 0)
     RightHip.Parent = ReanimatedTorso
     local LeftHip = Instance.new("Motor6D")
     LeftHip.Name = "Left Hip"
     LeftHip.Part0 = ReanimatedTorso
     LeftHip.Part1 = ReanimatedChar["Left Leg"]
-    LeftHip.C0 = cf(-0.5, -1, 0)
-    LeftHip.C1 = cf(0, 1, 0)
+    LeftHip.C0 = CFrame.new(-0.5, -1, 0)
+    LeftHip.C1 = CFrame.new(0, 1, 0)
     LeftHip.Parent = ReanimatedTorso
     return {
         Neck = Neck,
@@ -1430,8 +1430,8 @@ function Soond(parent,id,pitch,volume,looped,effect,autoPlay)
 	return Sound
 end
 	
-function SoondPart(id,pitch,volume,looped,effect,autoPlay,cf)
-	local soundPart = NewInstance("Part",Effects,{Transparency=1,CFrame=cf or Torso.CFrame,Anchored=true,CanCollide=false,Size=V3.N()})
+function SoondPart(id,pitch,volume,looped,effect,autoPlay,CFrame.new)
+	local soundPart = NewInstance("Part",Effects,{Transparency=1,CFrame=CFrame.new or Torso.CFrame,Anchored=true,CanCollide=false,Size=V3.N()})
 	local Sound = IN("Sound")
 	Sound.SoundId = "rbxassetid://".. tostring(id or 0)
 	Sound.Pitch = pitch or 1
@@ -1489,7 +1489,7 @@ function Mesh(parent,meshtype,meshid,textid,scale,offset)
 	local part = i("SpecialMesh")
 	part.MeshId = meshid or ""
 	part.TextureId = textid or ""
-	part.Scale = scale or v3(1,1,1)
+	part.Scale = scale or Vector3.new(1,1,1)
 	part.Offset = offset or v3_0
 	part.MeshType = meshtype or Enum.MeshType.Sphere
 	part.Parent = parent
