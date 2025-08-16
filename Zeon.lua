@@ -1253,22 +1253,22 @@ local function setupReanimatedJoints()
     LH.C1 = cf(0, 1, 0)
     LH.Parent = ReanimatedTorso
     return {
-        NK.C0 = NK,
-        RJ.C0 = RJ,
-        RS.C0 = RS,
-        LS.C0 = LS,
-        RH.C0 = RH,
-        LH.C0 = LH
+        welds.NK.C0 = NK,
+        welds.RJ.C0 = RJ,
+        welds.RS.C0 = RS,
+        welds.welds.LS.C0 = LS,
+        welds.RH.C0 = RH,
+        welds.LH.C0 = LH
     }
 end
 local welds = setupReanimatedJoints()
-local NK.C0,RJ.C0,RH.Cp,RS.C0,LH.C0,LS.C0=unpack(welds)
+local welds.NK.C0,welds.RJ.C0,RH.Cp,welds.RS.C0,welds.LH.C0,welds.welds.LS.C0=unpack(welds)
 WeldDefaults={}
 for i = 1,#welds do
 	local v=welds[i]
 	WeldDefaults[i]=v.C0
 end
-local NKC0,RJC0,RHC0,RSC0,LHC0,LSC0=unpack(WeldDefaults)
+local welds.NKC0,welds.RJC0,welds.RHC0,RSC0,welds.LH.C0,welds.welds.LSC0=unpack(WeldDefaults)
 function makeMusic(id,pit,timePos)
 	local sound = Torso:FindFirstChild(Player.Name.."song") or Char:FindFirstChild(Player.Name.."song")
 	local parent = (MusicMode==2 and Char or Torso)
@@ -1980,12 +1980,12 @@ function syncStuff(data)
 	legAnims=legwelds
 	NeutralAnims=neut
 	if(not neut)then
-		NK.C0=head0
-		RJ.C0=torso0
-		RH.C0=rleg0
-		RS.C0=rarm0
-		LH.C0=lleg0
-		LS.C0=larm0
+		welds.NK.C0=head0
+		welds.RJ.C0=torso0
+		welds.RH.C0=rleg0
+		welds.RS.C0=rarm0
+		welds.LH.C0=lleg0
+		welds.welds.LS.C0=larm0
 		
 		NK.C1=head1
 		RJ.C1=torso1
@@ -2133,12 +2133,12 @@ function Click1()
 	for i = 0, 1, 0.1 do
 		swait()
 		local Alpha = .3
-		RJ.C0 = RJ.C0:lerp(CF.N(0,0,0)*CF.A(M.R(0),M.R(-44.6),M.R(0)),Alpha)
-		LH.C0 = LH.C0:lerp(CF.N(-0.8,-1,-0.3)*CF.A(M.R(-17.4),M.R(44.4),M.R(7.1)),Alpha)
-		RH.C0 = RH.C0:lerp(CF.N(0.4,-1,0)*CF.A(M.R(1.6),M.R(-13.1),M.R(7)),Alpha)
-		LS.C0 = LS.C0:lerp(CF.N(-1.3,0.5,-0.3)*CF.A(M.R(90),M.R(0),M.R(-44.6)),Alpha)
-		RS.C0 = RS.C0:lerp(CF.N(1.4,0.5,-0.1)*CF.A(M.R(90),M.R(0),M.R(-44.6)),Alpha)
-		NK.C0 = NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(0),M.R(44.6),M.R(0)),Alpha)
+		welds.RJ.C0 = welds.RJ.C0:lerp(CF.N(0,0,0)*CF.A(M.R(0),M.R(-44.6),M.R(0)),Alpha)
+		welds.LH.C0 = welds.LH.C0:lerp(CF.N(-0.8,-1,-0.3)*CF.A(M.R(-17.4),M.R(44.4),M.R(7.1)),Alpha)
+		welds.RH.C0 = welds.RH.C0:lerp(CF.N(0.4,-1,0)*CF.A(M.R(1.6),M.R(-13.1),M.R(7)),Alpha)
+		welds.welds.LS.C0 = welds.welds.LS.C0:lerp(CF.N(-1.3,0.5,-0.3)*CF.A(M.R(90),M.R(0),M.R(-44.6)),Alpha)
+		welds.RS.C0 = welds.RS.C0:lerp(CF.N(1.4,0.5,-0.1)*CF.A(M.R(90),M.R(0),M.R(-44.6)),Alpha)
+		welds.NK.C0 = welds.NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(0),M.R(44.6),M.R(0)),Alpha)
 	end
 	for i = 0, 1, 0.1 do
 		swait()
@@ -2148,12 +2148,12 @@ function Click1()
 			MaximumDamage=15;
 		})
 		local Alpha = .3
-		RJ.C0 = RJ.C0:lerp(CF.N(0,0,-0.7)*CF.A(M.R(0),M.R(50.5),M.R(0)),Alpha)
-		LH.C0 = LH.C0:lerp(CF.N(-0.5,-0.7,-0.6)*CF.A(M.R(-26),M.R(0),M.R(0)),Alpha)
-		RH.C0 = RH.C0:lerp(CF.N(0.6,-1.1,-0.1)*CF.A(M.R(20.2),M.R(-47.6),M.R(15.2)),Alpha)
-		LS.C0 = LS.C0:lerp(CF.N(-1.3,0.5,0)*CF.A(M.R(0),M.R(0),M.R(-20.4)),Alpha)
-		RS.C0 = RS.C0:lerp(CF.N(1.4,0.5,-0.5)*CF.A(M.R(90),M.R(0),M.R(50.5)),Alpha)
-		NK.C0 = NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(0),M.R(-50.5),M.R(0)),Alpha)
+		welds.RJ.C0 = welds.RJ.C0:lerp(CF.N(0,0,-0.7)*CF.A(M.R(0),M.R(50.5),M.R(0)),Alpha)
+		welds.LH.C0 = welds.LH.C0:lerp(CF.N(-0.5,-0.7,-0.6)*CF.A(M.R(-26),M.R(0),M.R(0)),Alpha)
+		welds.RH.C0 = welds.RH.C0:lerp(CF.N(0.6,-1.1,-0.1)*CF.A(M.R(20.2),M.R(-47.6),M.R(15.2)),Alpha)
+		welds.welds.LS.C0 = welds.welds.LS.C0:lerp(CF.N(-1.3,0.5,0)*CF.A(M.R(0),M.R(0),M.R(-20.4)),Alpha)
+		welds.RS.C0 = welds.RS.C0:lerp(CF.N(1.4,0.5,-0.5)*CF.A(M.R(90),M.R(0),M.R(50.5)),Alpha)
+		welds.NK.C0 = welds.NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(0),M.R(-50.5),M.R(0)),Alpha)
 	end
 	WalkSpeed=orig
 	legAnims=true
@@ -2173,23 +2173,23 @@ function SwordSummon()
 		swait()
 		local Alpha = .3
 
-		RJ.C0 = RJ.C0:lerp(CF.N(0,-0.2,-0.1)*CF.A(M.R(-12.4),M.R(-15.7),M.R(0)),Alpha)
-		LH.C0 = LH.C0:lerp(CF.N(-0.5,-0.7,-0.5)*CF.A(M.R(16.2),M.R(15.2),M.R(-0.8)),Alpha)
-		RH.C0 = RH.C0:lerp(CF.N(0.5,-1,0)*CF.A(M.R(-28.5),M.R(0),M.R(0)),Alpha)
-		LS.C0 = LS.C0:lerp(CF.N(-1.4,0.5,0)*CF.A(M.R(27.2),M.R(-3.8),M.R(-5)),Alpha)
-		RS.C0 = RS.C0:lerp(CF.N(1.3,0.6,0)*CF.A(M.R(-33.8),M.R(-18.1),M.R(24.8)),Alpha)
-		NK.C0 = NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(13.4),M.R(15.3),M.R(-3.6)),Alpha)
+		welds.RJ.C0 = welds.RJ.C0:lerp(CF.N(0,-0.2,-0.1)*CF.A(M.R(-12.4),M.R(-15.7),M.R(0)),Alpha)
+		welds.LH.C0 = welds.LH.C0:lerp(CF.N(-0.5,-0.7,-0.5)*CF.A(M.R(16.2),M.R(15.2),M.R(-0.8)),Alpha)
+		welds.RH.C0 = welds.RH.C0:lerp(CF.N(0.5,-1,0)*CF.A(M.R(-28.5),M.R(0),M.R(0)),Alpha)
+		welds.welds.LS.C0 = welds.welds.LS.C0:lerp(CF.N(-1.4,0.5,0)*CF.A(M.R(27.2),M.R(-3.8),M.R(-5)),Alpha)
+		welds.RS.C0 = welds.RS.C0:lerp(CF.N(1.3,0.6,0)*CF.A(M.R(-33.8),M.R(-18.1),M.R(24.8)),Alpha)
+		welds.NK.C0 = welds.NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(13.4),M.R(15.3),M.R(-3.6)),Alpha)
 	end
 
 	for i = 0, 1, 0.1 do
 		swait()
 		local Alpha = .3
-		RJ.C0 = RJ.C0:lerp(CF.N(0,0,0)*CF.A(M.R(0),M.R(70.7),M.R(0)),Alpha)
-		LH.C0 = LH.C0:lerp(CF.N(-0.5,-1,0)*CF.A(M.R(0),M.R(0),M.R(-14.4)),Alpha)
-		RH.C0 = RH.C0:lerp(CF.N(0.6,-1,0)*CF.A(M.R(15.1),M.R(-63.2),M.R(13.5)),Alpha)
-		LS.C0 = LS.C0:lerp(CF.N(-1.3,0.6,-0.1)*CF.A(M.R(0),M.R(15.9),M.R(-25.4)),Alpha)
-		RS.C0 = RS.C0:lerp(CF.N(1.4,0.3,-0.2)*CF.A(M.R(0),M.R(19.3),M.R(157.1)),Alpha)
-		NK.C0 = NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(0),M.R(-70.7),M.R(0)),Alpha)
+		welds.RJ.C0 = welds.RJ.C0:lerp(CF.N(0,0,0)*CF.A(M.R(0),M.R(70.7),M.R(0)),Alpha)
+		welds.LH.C0 = welds.LH.C0:lerp(CF.N(-0.5,-1,0)*CF.A(M.R(0),M.R(0),M.R(-14.4)),Alpha)
+		welds.RH.C0 = welds.RH.C0:lerp(CF.N(0.6,-1,0)*CF.A(M.R(15.1),M.R(-63.2),M.R(13.5)),Alpha)
+		welds.welds.LS.C0 = welds.welds.LS.C0:lerp(CF.N(-1.3,0.6,-0.1)*CF.A(M.R(0),M.R(15.9),M.R(-25.4)),Alpha)
+		welds.RS.C0 = welds.RS.C0:lerp(CF.N(1.4,0.3,-0.2)*CF.A(M.R(0),M.R(19.3),M.R(157.1)),Alpha)
+		welds.NK.C0 = welds.NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(0),M.R(-70.7),M.R(0)),Alpha)
 	end
 	legAnims=true
 	WalkSpeed=orig
@@ -2208,11 +2208,11 @@ function CrueltiesSmash()
 	for i = 0, 1, 0.1 do
 		swait()
 		local Alpha = .3
-		RJ.C0 = RJ.C0:lerp(CF.N(0,0,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
-		LH.C0 = LH.C0:lerp(CF.N(-0.5,-1,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
-		RH.C0 = RH.C0:lerp(CF.N(0.5,-1,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
-		LS.C0 = LS.C0:lerp(CF.N(-1.3,0.5,-0.5)*CF.A(M.R(90),M.R(0),M.R(19.1)),Alpha)
-		RS.C0 = RS.C0:lerp(CF.N(1.3,0.5,-0.5)*CF.A(M.R(90),M.R(0),M.R(-21.3)),Alpha)
+		welds.RJ.C0 = welds.RJ.C0:lerp(CF.N(0,0,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
+		welds.LH.C0 = welds.LH.C0:lerp(CF.N(-0.5,-1,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
+		welds.RH.C0 = welds.RH.C0:lerp(CF.N(0.5,-1,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
+		welds.welds.LS.C0 = welds.welds.LS.C0:lerp(CF.N(-1.3,0.5,-0.5)*CF.A(M.R(90),M.R(0),M.R(19.1)),Alpha)
+		welds.RS.C0 = welds.RS.C0:lerp(CF.N(1.3,0.5,-0.5)*CF.A(M.R(90),M.R(0),M.R(-21.3)),Alpha)
         RWP2W.C0 = RWP2W.C0:lerp(CF.N(-0,-0,8)*CF.A(M.R(-90),M.R(0),M.R(0)),Alpha)
         RWP3W.C0 = RWP3W.C0:lerp(CF.N(-0,-0,8)*CF.A(M.R(-90),M.R(0),M.R(0)),Alpha)
         RWP1W.C0 = RWP1W.C0:lerp(CF.N(-0,-0,8)*CF.A(M.R(-90),M.R(0),M.R(0)),Alpha)
@@ -2221,7 +2221,7 @@ function CrueltiesSmash()
         LWP1W.C0 = LWP1W.C0:lerp(CF.N(-0,-0,8)*CF.A(M.R(-90),M.R(0),M.R(0)),Alpha)
         LWP2W.C0 = LWP2W.C0:lerp(CF.N(-0,-0,8)*CF.A(M.R(-90),M.R(0),M.R(0)),Alpha)
         LWP3W.C0 = LWP3W.C0:lerp(CF.N(-0,-0,8)*CF.A(M.R(-90),M.R(0),M.R(0)),Alpha)
-		NK.C0 = NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
+		welds.NK.C0 = welds.NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
 	end
 	coroutine.wrap(function()
 		for i = 0, 2 do
@@ -2231,12 +2231,12 @@ function CrueltiesSmash()
 	for i = 0, 1, 0.1 do
 		swait()
 		local Alpha = .3
-		RJ.C0 = RJ.C0:lerp(CF.N(0,-0.2,0.7)*CF.A(M.R(18.2),M.R(0),M.R(0)),Alpha)
-		LH.C0 = LH.C0:lerp(CF.N(-0.5,-1.1,-0.4)*CF.A(M.R(-33.4),M.R(0),M.R(0)),Alpha)
-		RH.C0 = RH.C0:lerp(CF.N(0.5,-0.9,-0.2)*CF.A(M.R(-6.7),M.R(0),M.R(0)),Alpha)
-		LS.C0 = LS.C0:lerp(CF.N(-1.4,0.4,0.1)*CF.A(M.R(90.7),M.R(-2.5),M.R(-50)),Alpha)
-		RS.C0 = RS.C0:lerp(CF.N(1.4,0.5,0.2)*CF.A(M.R(89.5),M.R(2.6),M.R(50)),Alpha)
-		NK.C0 = NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
+		welds.RJ.C0 = welds.RJ.C0:lerp(CF.N(0,-0.2,0.7)*CF.A(M.R(18.2),M.R(0),M.R(0)),Alpha)
+		welds.LH.C0 = welds.LH.C0:lerp(CF.N(-0.5,-1.1,-0.4)*CF.A(M.R(-33.4),M.R(0),M.R(0)),Alpha)
+		welds.RH.C0 = welds.RH.C0:lerp(CF.N(0.5,-0.9,-0.2)*CF.A(M.R(-6.7),M.R(0),M.R(0)),Alpha)
+		welds.welds.LS.C0 = welds.welds.LS.C0:lerp(CF.N(-1.4,0.4,0.1)*CF.A(M.R(90.7),M.R(-2.5),M.R(-50)),Alpha)
+		welds.RS.C0 = welds.RS.C0:lerp(CF.N(1.4,0.5,0.2)*CF.A(M.R(89.5),M.R(2.6),M.R(50)),Alpha)
+		welds.NK.C0 = welds.NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
 	end
 	WalkSpeed=orig
 	legAnims=true
@@ -2255,11 +2255,11 @@ function EndofworldsSMASHDOWN()
 	for i = 0, 1, 0.1 do
 		swait()
 		local Alpha = .3
-		RJ.C0 = RJ.C0:lerp(CF.N(0,0,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
-		LH.C0 = LH.C0:lerp(CF.N(-0.5,-1,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
-		RH.C0 = RH.C0:lerp(CF.N(0.5,-1,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
-		LS.C0 = LS.C0:lerp(CF.N(-1.3,0.5,-0.5)*CF.A(M.R(90),M.R(0),M.R(19.1)),Alpha)
-		RS.C0 = RS.C0:lerp(CF.N(1.3,0.5,-0.5)*CF.A(M.R(90),M.R(0),M.R(-21.3)),Alpha)
+		welds.RJ.C0 = welds.RJ.C0:lerp(CF.N(0,0,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
+		welds.LH.C0 = welds.LH.C0:lerp(CF.N(-0.5,-1,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
+		welds.RH.C0 = welds.RH.C0:lerp(CF.N(0.5,-1,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
+		welds.welds.LS.C0 = welds.welds.LS.C0:lerp(CF.N(-1.3,0.5,-0.5)*CF.A(M.R(90),M.R(0),M.R(19.1)),Alpha)
+		welds.RS.C0 = welds.RS.C0:lerp(CF.N(1.3,0.5,-0.5)*CF.A(M.R(90),M.R(0),M.R(-21.3)),Alpha)
         RWP2W.C0 = RWP2W.C0:lerp(CF.N(-0,-0,-8)*CF.A(M.R(120),M.R(0),M.R(0)),Alpha)
         RWP3W.C0 = RWP3W.C0:lerp(CF.N(-0,-0,-8)*CF.A(M.R(120),M.R(0),M.R(0)),Alpha)
         RWP1W.C0 = RWP1W.C0:lerp(CF.N(-0,-0,-8)*CF.A(M.R(120),M.R(0),M.R(0)),Alpha)
@@ -2268,7 +2268,7 @@ function EndofworldsSMASHDOWN()
         LWP1W.C0 = LWP1W.C0:lerp(CF.N(-0,-0,-8)*CF.A(M.R(120),M.R(0),M.R(0)),Alpha)
         LWP2W.C0 = LWP2W.C0:lerp(CF.N(-0,-0,-8)*CF.A(M.R(120),M.R(0),M.R(0)),Alpha)
         LWP3W.C0 = LWP3W.C0:lerp(CF.N(-0,-0,-8)*CF.A(M.R(120),M.R(0),M.R(0)),Alpha)
-		NK.C0 = NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
+		welds.NK.C0 = welds.NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
 	end
 	coroutine.wrap(function()
 		for i = 0, 2 do
@@ -2278,12 +2278,12 @@ function EndofworldsSMASHDOWN()
 	for i = 0, 1, 0.1 do
 		swait()
 		local Alpha = .3
-		RJ.C0 = RJ.C0:lerp(CF.N(0,-0.2,0.7)*CF.A(M.R(18.2),M.R(0),M.R(0)),Alpha)
-		LH.C0 = LH.C0:lerp(CF.N(-0.5,-1.1,-0.4)*CF.A(M.R(-33.4),M.R(0),M.R(0)),Alpha)
-		RH.C0 = RH.C0:lerp(CF.N(0.5,-0.9,-0.2)*CF.A(M.R(-6.7),M.R(0),M.R(0)),Alpha)
-		LS.C0 = LS.C0:lerp(CF.N(-1.4,0.4,0.1)*CF.A(M.R(90.7),M.R(-2.5),M.R(-50)),Alpha)
-		RS.C0 = RS.C0:lerp(CF.N(1.4,0.5,0.2)*CF.A(M.R(89.5),M.R(2.6),M.R(50)),Alpha)
-		NK.C0 = NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
+		welds.RJ.C0 = welds.RJ.C0:lerp(CF.N(0,-0.2,0.7)*CF.A(M.R(18.2),M.R(0),M.R(0)),Alpha)
+		welds.LH.C0 = welds.LH.C0:lerp(CF.N(-0.5,-1.1,-0.4)*CF.A(M.R(-33.4),M.R(0),M.R(0)),Alpha)
+		welds.RH.C0 = welds.RH.C0:lerp(CF.N(0.5,-0.9,-0.2)*CF.A(M.R(-6.7),M.R(0),M.R(0)),Alpha)
+		welds.welds.LS.C0 = welds.welds.LS.C0:lerp(CF.N(-1.4,0.4,0.1)*CF.A(M.R(90.7),M.R(-2.5),M.R(-50)),Alpha)
+		welds.RS.C0 = welds.RS.C0:lerp(CF.N(1.4,0.5,0.2)*CF.A(M.R(89.5),M.R(2.6),M.R(50)),Alpha)
+		welds.NK.C0 = welds.NK.C0:lerp(CF.N(0,1.5,0)*CF.A(M.R(0),M.R(0),M.R(0)),Alpha)
         RWP2W.C0 = RWP2W.C0:lerp(CF.N(-0,-0,-8)*CF.A(M.R(120),M.R(0),M.R(0)),Alpha)
         RWP3W.C0 = RWP3W.C0:lerp(CF.N(-0,-0,-8)*CF.A(M.R(120),M.R(0),M.R(0)),Alpha)
         RWP1W.C0 = RWP1W.C0:lerp(CF.N(-0,-0,-8)*CF.A(M.R(120),M.R(0),M.R(0)),Alpha)
@@ -3633,88 +3633,88 @@ while true do
 		if(Mode=='Sadness')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 
 		elseif(Mode=='=_-Humane-_=')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 			
 					elseif(Mode=='SANS')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 			
 								elseif(Mode=='DARKENED')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 			
@@ -3722,22 +3722,22 @@ while true do
 			local Alpha = .1
 			if(NeutralAnims)then	
 
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-3+3*M.C(Sine/19),3+1*M.C(Sine/19),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-3+3*M.C(Sine/19),3+1*M.C(Sine/19),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
 				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(RHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.RHC0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 			
@@ -3745,88 +3745,88 @@ while true do
 				elseif(Mode=='NEPTUNIAN V')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5+2.5*M.C(Sine/32)),M.R(-15-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(28),M.R(5-2.5*M.C(Sine/32)),M.R(30+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5+2.5*M.C(Sine/32)),M.R(-15-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(28),M.R(5-2.5*M.C(Sine/32)),M.R(30+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 			
 elseif(Mode=='NEPTUNIAN V (UNEQUIPPED)')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5+2.5*M.C(Sine/32)),M.R(-15-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5-2.5*M.C(Sine/32)),M.R(15+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5+2.5*M.C(Sine/32)),M.R(-15-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5-2.5*M.C(Sine/32)),M.R(15+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 			
 		elseif(Mode=='ULTRA SANS')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,4+1*M.C(Sine/32),0)*CF.A(M.R(4+1*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,4+1*M.C(Sine/32),0)*CF.A(M.R(4+1*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 			
 				elseif(Mode==(e2.Text))then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 			
@@ -3835,152 +3835,152 @@ elseif(Mode=='NEPTUNIAN V (UNEQUIPPED)')then
 								elseif(Mode=='DICK')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 								elseif(Mode=='sus')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(1,0+.05*M.S(Sine/32),.5)*CF.A(M.R(-0),M.R(0+1*M.C(Sine/32)),M.R(0-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-1,0+.05*M.S(Sine/32),.5)*CF.A(M.R(-0),M.R(0-1*M.C(Sine/32)),M.R(-0+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(1,0+.05*M.S(Sine/32),.5)*CF.A(M.R(-0),M.R(0+1*M.C(Sine/32)),M.R(0-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-1,0+.05*M.S(Sine/32),.5)*CF.A(M.R(-0),M.R(0-1*M.C(Sine/32)),M.R(-0+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 			
 								elseif(Mode=='LOVE')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(-.0,0+.05*M.S(Sine/32),.1)*CF.A(M.R(35),M.R(5-2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(.0,0+.05*M.S(Sine/32),.1)*CF.A(M.R(25),M.R(5+2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(-.0,0+.05*M.S(Sine/32),.1)*CF.A(M.R(35),M.R(5-2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(.0,0+.05*M.S(Sine/32),.1)*CF.A(M.R(25),M.R(5+2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 
 					elseif(Mode=='=_-MADNESS-_=')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+5*M.C(Sine/32),0)*CF.A(M.R(-2+7*M.S(Sine/58)),M.R(-15+3*M.C(Sine/42)),0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),13+5*M.C(Sine/32),0)*CF.A(M.R(-2+7*M.S(Sine/58)),M.R(-15+3*M.C(Sine/42)),0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,16),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,16),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0-.05*M.S(Sine/2),.1)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/5)),M.R(-8+3.5*M.C(Sine/2))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(.0,0+.05*M.S(Sine/2),.1)*CF.A(M.R(-0),M.R(5+2.5*M.C(Sine/5)),M.R(8+3.5*M.C(Sine/2))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0-.05*M.S(Sine/2),.1)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/5)),M.R(-8+3.5*M.C(Sine/2))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(.0,0+.05*M.S(Sine/2),.1)*CF.A(M.R(-0),M.R(5+2.5*M.C(Sine/5)),M.R(8+3.5*M.C(Sine/2))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/2),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/2),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/2),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/2),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 		elseif(Mode=='PRISM')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1.5*M.C(Sine/17),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,3+1.5*M.C(Sine/17),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 			
 							elseif(Mode=='LEGMAN')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,23+.05*M.C(Sine/32),0)*CF.A(M.R(0+0*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,23+.05*M.C(Sine/32),0)*CF.A(M.R(0+0*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-			LS.C0 = LH.C0:lerp(LHC0*CF.N(0,33-.0*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-			RS.C0 = RH.C0:lerp(RHC0*CF.N(0,33-.0*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+			welds.welds.LS.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,33-.0*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+			welds.RS.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,33-.0*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,-23-.0*M.C(Sine/32),0)*CF.A(0,0,M.R(-0)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,-23-.0*M.C(Sine/32),0)*CF.A(0,0,M.R(0)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,-23-.0*M.C(Sine/32),0)*CF.A(0,0,M.R(-0)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,-23-.0*M.C(Sine/32),0)*CF.A(0,0,M.R(0)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,-0,M.R(-0)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,-0,M.R(0)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,-0,M.R(-0)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,-0,M.R(0)),Alpha)
 				end
 			end
 			
 					elseif(Mode=='ULTRAVIOLET')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+0.20*M.C(Sine/17),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+0.20*M.C(Sine/17),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.20*M.S(Sine/17),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.20*M.S(Sine/17),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.20*M.S(Sine/17),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.3,0+.20*M.S(Sine/17),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-0.20*M.C(Sine/17),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-0.20*M.C(Sine/17),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-0.20*M.C(Sine/17),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-0.20*M.C(Sine/17),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 					elseif(Mode=='lost')then
@@ -4008,43 +4008,43 @@ Lifetime = 0.25,
 					EndSize=v3(10,2,5);
 				}
 			if(NeutralAnims)then	
-					RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),6+5*M.C(Sine/32),0)*CF.A(M.R(-2+7*M.S(Sine/58)),M.R(-4+3*M.C(Sine/42)),0),Alpha)
+					welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),6+5*M.C(Sine/32),0)*CF.A(M.R(-2+7*M.S(Sine/58)),M.R(-4+3*M.C(Sine/42)),0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(-5,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(-5,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(-5,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(-5,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 				end
 				elseif(Mode=='HyPnOtIC')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+5*M.C(Sine/32),0)*CF.A(M.R(-2+7*M.S(Sine/58)),M.R(-15+3*M.C(Sine/42)),0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),13+5*M.C(Sine/32),0)*CF.A(M.R(-2+7*M.S(Sine/58)),M.R(-15+3*M.C(Sine/42)),0),Alpha)
 				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(RHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.RHC0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 			
@@ -4052,22 +4052,22 @@ Lifetime = 0.25,
 			local Alpha = .1
 			if(NeutralAnims)then
 
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,35+5*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,35+5*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
 				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,-.0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(2),M.R(-40-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(0),M.R(40+2*M.S(Sine/36))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,-.0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(2),M.R(-40-2*M.S(Sine/36))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(0),M.R(40+2*M.S(Sine/36))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(RHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.RHC0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 			
@@ -4075,339 +4075,339 @@ Lifetime = 0.25,
 			local Alpha = .1
 			if(NeutralAnims)then	
 
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-3+3*M.C(Sine/19),3+1*M.C(Sine/19),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-3+3*M.C(Sine/19),3+1*M.C(Sine/19),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
 				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(RHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.RHC0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 			
 					elseif(Mode=='Galactic')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,55+5*M.C(Sine/32),0)*CF.A(M.R(-0+0*M.S(Sine/58)),M.R(-15+0*M.C(Sine/42)),0),Alpha)
-				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
-				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
-				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
+			                    	welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,55+5*M.C(Sine/32),0)*CF.A(M.R(-0+0*M.S(Sine/58)),M.R(-15+0*M.C(Sine/42)),0),Alpha)
+			                    	if(M.RNG(1,25)==1)then
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+			                    	else
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+			                    	end
+			                    	welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
+			                    	welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(RHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.RHC0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 			
 					elseif(Mode=='SPACETIME')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),5+4*M.C(Sine/32),0)*CF.A(M.R(-2+7*M.S(Sine/58)),M.R(-15+3*M.C(Sine/42)),0),Alpha)
-				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
-				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
-				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5+2.5*M.C(Sine/32)),M.R(-20-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(20+1.5*M.C(Sine/32))),Alpha)
+			                    	welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),5+4*M.C(Sine/32),0)*CF.A(M.R(-2+7*M.S(Sine/58)),M.R(-15+3*M.C(Sine/42)),0),Alpha)
+			                    	if(M.RNG(1,25)==1)then
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+			                    	else
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+			                    	end
+			                    	welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5+2.5*M.C(Sine/32)),M.R(-20-1.5*M.C(Sine/32))),Alpha)
+			                    	welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(20+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(RHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.RHC0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 					elseif(Mode=='PARADOX')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+5*M.C(Sine/32),0)*CF.A(M.R(-2+7*M.S(Sine/58)),M.R(-15+3*M.C(Sine/42)),0),Alpha)
-				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
-				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
-				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
+			                    	welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),13+5*M.C(Sine/32),0)*CF.A(M.R(-2+7*M.S(Sine/58)),M.R(-15+3*M.C(Sine/42)),0),Alpha)
+			                    	if(M.RNG(1,25)==1)then
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+			                    	else
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+			                    	end
+			                    	welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
+			                    	welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(RHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.RHC0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 			
 					elseif(Mode=='LOSS')then
 			local Alpha = .1
 			if(NeutralAnims)then	
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-0+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
-				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
-				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
-				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
+			                    	welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-0+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+			                    	if(M.RNG(1,25)==1)then
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+			                    	else
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+			                    	end
+			                    	welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
+			                    	welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(RHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.RHC0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 					elseif(Mode=='Interstellar')then
 			local Alpha = .1
 			if(NeutralAnims)then	
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-0+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
-				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
-				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
-				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
+			                    	welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-0+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+			                    	if(M.RNG(1,25)==1)then
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+			                    	else
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+			                    	end
+			                    	welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
+			                    	welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(RHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.RHC0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 			
 					elseif(Mode=='gh0st3d')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,5+2*M.C(Sine/.1),0)*CF.A(M.R(-25+1*M.S(Sine/6)),0,0),Alpha)
-				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/7)),M.R(-5),0),Alpha)
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(0,0+2*M.S(Sine/.2),0)*CF.A(M.R(27),M.R(5+62022*M.C(Sine/2)),M.R(-10-5*M.C(Sine/2))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(0,0+2*M.S(Sine/.1),0)*CF.A(M.R(35),M.R(5-62222*M.C(Sine/2)),M.R(10+5*M.C(Sine/2))),Alpha)
+			                    	welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,5+2*M.C(Sine/.1),0)*CF.A(M.R(-25+1*M.S(Sine/6)),0,0),Alpha)
+			                    	welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/7)),M.R(-5),0),Alpha)
+			                    	welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(0,0+2*M.S(Sine/.2),0)*CF.A(M.R(27),M.R(5+62022*M.C(Sine/2)),M.R(-10-5*M.C(Sine/2))),Alpha)
+			                    	welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(0,0+2*M.S(Sine/.1),0)*CF.A(M.R(35),M.R(5-62222*M.C(Sine/2)),M.R(10+5*M.C(Sine/2))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-2*M.C(Sine/.2),0)*CF.A(M.R(25),20220,M.R(-3)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-3*M.C(Sine/.2),0)*CF.A(M.R(25),20220,M.R(3)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-2*M.C(Sine/.2),0)*CF.A(M.R(25),20220,M.R(-3)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-3*M.C(Sine/.2),0)*CF.A(M.R(25),20220,M.R(3)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 		elseif(Mode=='GALACTIA')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-0+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
-				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
-				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
-				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,M.R(5+5*M.C(Sine/32)),M.R(-10-5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,M.R(5+5*M.C(Sine/32)),M.R(10-5*M.C(Sine/32))),Alpha)
+			                    	welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-0+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+			                    	if(M.RNG(1,25)==1)then
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+			                    	else
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+			                    	end
+			                    	welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,M.R(5+5*M.C(Sine/32)),M.R(-10-5*M.C(Sine/32))),Alpha)
+			                    	welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,M.R(5+5*M.C(Sine/32)),M.R(10-5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(-10),M.R(25),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(-10),M.R(25),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 					elseif(Mode=='Mayhem')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(-5+1*M.S(Sine/64)),M.R(-25),0),Alpha)
-				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
-				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
-				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,M.R(5+5*M.C(Sine/32)),M.R(-10-5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.1,0+.05*M.S(Sine/32),0)*CF.A(M.R(175),M.R(5-2.5*M.C(Sine/32)),M.R(-25-1.5*M.C(Sine/32))),Alpha)
+			                    	welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(-5+1*M.S(Sine/64)),M.R(-25),0),Alpha)
+			                    	if(M.RNG(1,25)==1)then
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+			                    	else
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+			                    	end
+			                    	welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,M.R(5+5*M.C(Sine/32)),M.R(-10-5*M.C(Sine/32))),Alpha)
+			                    	welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.1,0+.05*M.S(Sine/32),0)*CF.A(M.R(175),M.R(5-2.5*M.C(Sine/32)),M.R(-25-1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(-10),M.R(25),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(-10),M.R(25),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 		--[[elseif(Mode=='INFINITY')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.2+.4*M.C(Sine/39),.5+.2*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
-				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-7-2.5*M.S(Sine/32)),M.R(15),0),Alpha)
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,0,M.R(-15+5*M.S(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,0,M.R(15-5*M.S(Sine/32))),Alpha)
+			                    	welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.2+.4*M.C(Sine/39),.5+.2*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
+			                    	welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-7-2.5*M.S(Sine/32)),M.R(15),0),Alpha)
+			                    	welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,0,M.R(-15+5*M.S(Sine/32))),Alpha)
+			                    	welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,0,M.R(15-5*M.S(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,.5,-.2)*CF.A(0,0,M.R(-5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,.5,-.2)*CF.A(0,0,M.R(-5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end]]
 		elseif(Mode=='INFINITY')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+2.20*M.C(Sine/17),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
-				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
-				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
-				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.20*M.S(Sine/17),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.1,0+.20*M.S(Sine/17),0)*CF.A(M.R(175),M.R(5-2.5*M.C(Sine/32)),M.R(-25-1.5*M.C(Sine/32))),Alpha)
+			                    	welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,3+2.20*M.C(Sine/17),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+			                    	if(M.RNG(1,45)==1)then
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+			                    	else
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+			                    	end
+			                    	welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.20*M.S(Sine/17),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+			                    	welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.1,0+.20*M.S(Sine/17),0)*CF.A(M.R(175),M.R(5-2.5*M.C(Sine/32)),M.R(-25-1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-0.20*M.C(Sine/17),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-0.20*M.C(Sine/17),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-0.20*M.C(Sine/17),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-0.20*M.C(Sine/17),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 			
 					elseif(Mode=='br0k3n')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),5+1*M.C(Sine/32),0)*CF.A(M.R(-25+1*M.S(Sine/64)),0,0),Alpha)
-				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/7)),M.R(-5),0),Alpha)
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(0,0+.05*M.S(Sine/7),0)*CF.A(M.R(25),M.R(5+5*M.C(Sine/32)),M.R(-10-5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(0,0+.05*M.S(Sine/7),0)*CF.A(M.R(25),M.R(5-5*M.C(Sine/32)),M.R(10+5*M.C(Sine/32))),Alpha)
+			                    	welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),5+1*M.C(Sine/32),0)*CF.A(M.R(-25+1*M.S(Sine/64)),0,0),Alpha)
+			                    	welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/7)),M.R(-5),0),Alpha)
+			                    	welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(0,0+.05*M.S(Sine/7),0)*CF.A(M.R(25),M.R(5+5*M.C(Sine/32)),M.R(-10-5*M.C(Sine/32))),Alpha)
+			                    	welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(0,0+.05*M.S(Sine/7),0)*CF.A(M.R(25),M.R(5-5*M.C(Sine/32)),M.R(10+5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/7),0)*CF.A(M.R(25),0,M.R(-3)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/7),0)*CF.A(M.R(25),0,M.R(3)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/7),0)*CF.A(M.R(25),0,M.R(-3)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/7),0)*CF.A(M.R(25),0,M.R(3)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 								elseif(Mode=='UNBROKEN')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0+3*M.C(Sine/19),4+2*M.C(Sine/19),0)*CF.A(M.R(50+3*M.S(Sine/64)),0,0),Alpha)
-				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
-				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
-				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(0,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-100),M.R(0+2.5*M.C(Sine/32)),M.R(0-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(0,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-100),M.R(0-2.5*M.C(Sine/32)),M.R(-0+1.5*M.C(Sine/32))),Alpha)
+			                    	welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0+3*M.C(Sine/19),4+2*M.C(Sine/19),0)*CF.A(M.R(50+3*M.S(Sine/64)),0,0),Alpha)
+			                    	if(M.RNG(1,45)==1)then
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+			                    	else
+			                    		welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+			                    	end
+			                    	welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(0,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-100),M.R(0+2.5*M.C(Sine/32)),M.R(0-1.5*M.C(Sine/32))),Alpha)
+			                    	welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(0,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-100),M.R(0-2.5*M.C(Sine/32)),M.R(-0+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(-0.53,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(-0.53,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(-0.53,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(-0.53,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 			
 					elseif(Mode=='The Sword Runner')then
 			local Alpha = .1
 			if(NeutralAnims)then
-				RJ.C0 = RJ.C0:lerp(CF.N(0,4.8+.2*M.C(Sine/24),0)*CF.A(M.R(0+1*M.S(Sine/24)),M.R(.7),M.R(.4)),Alpha)
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,-.0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(2),M.R(-20-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(0),M.R(20+2*M.S(Sine/36))),Alpha)
-				NK.C0 = NK.C0:lerp(CF.N(0,1.4,-0.5)*CF.A(M.R(-40-5*M.S(Sine/24)),M.R(-18.7),M.R(-3.7)),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(CF.N(0,4.8+.2*M.C(Sine/24),0)*CF.A(M.R(0+1*M.S(Sine/24)),M.R(.7),M.R(.4)),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,-.0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(2),M.R(-20-2*M.S(Sine/36))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(0),M.R(20+2*M.S(Sine/36))),Alpha)
+				welds.NK.C0 = welds.NK.C0:lerp(CF.N(0,1.4,-0.5)*CF.A(M.R(-40-5*M.S(Sine/24)),M.R(-18.7),M.R(-3.7)),Alpha)
 				if(legAnims)then
-					LH.C0 = LH.C0:lerp(CF.N(-0.5,-1,0)*CF.A(M.R(1.9+0.5*M.S(Sine/24)),M.R(19.2),M.R(-5.7)),Alpha)
-					RH.C0 = RH.C0:lerp(CF.N(0.5,-1,0)*CF.A(M.R(1.9+0.5*M.S(Sine/24)),M.R(-19.2),M.R(5.7)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(CF.N(-0.5,-1,0)*CF.A(M.R(1.9+0.5*M.S(Sine/24)),M.R(19.2),M.R(-5.7)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(CF.N(0.5,-1,0)*CF.A(M.R(1.9+0.5*M.S(Sine/24)),M.R(-19.2),M.R(5.7)),Alpha)
 				end
 			elseif(legAnims)then
-				LH.C0 = LH.C0:lerp(LHC0,Alpha)
-				RH.C0 = RH.C0:lerp(RHC0,Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 			end
 		elseif(Mode=='TRIX-LUA')then
 			if(vaporwaveMode)then
-			  	local Alpha = .1
+				local Alpha = .1
 				if(NeutralAnims)then
-					RJ.C0 = RJ.C0:lerp(CF.N(0,-0.2-.1*M.S(Sine/36),0.6)*CF.A(M.R(74.3+2.5*M.C(Sine/36)),M.R(0),M.R(0)),Alpha)
-					LS.C0 = LS.C0:lerp(CF.N(-1,0.8,0)*CF.A(M.R(11.4-5*M.C(Sine/42)),M.R(-3.3),M.R(137.5)),Alpha)
-					RS.C0 = RS.C0:lerp(CF.N(1,0.9,-0.1)*CF.A(M.R(13.7-5*M.C(Sine/42)),M.R(7.7),M.R(-136.2)),Alpha)
-					NK.C0 = NK.C0:lerp(CF.N(0,1.4,-0.3)*CF.A(M.R(-16.6-5*M.C(Sine/42)),M.R(0),M.R(0)),Alpha)
+					welds.RJ.C0 = welds.RJ.C0:lerp(CF.N(0,-0.2-.1*M.S(Sine/36),0.6)*CF.A(M.R(74.3+2.5*M.C(Sine/36)),M.R(0),M.R(0)),Alpha)
+					welds.welds.LS.C0 = welds.welds.LS.C0:lerp(CF.N(-1,0.8,0)*CF.A(M.R(11.4-5*M.C(Sine/42)),M.R(-3.3),M.R(137.5)),Alpha)
+					welds.RS.C0 = welds.RS.C0:lerp(CF.N(1,0.9,-0.1)*CF.A(M.R(13.7-5*M.C(Sine/42)),M.R(7.7),M.R(-136.2)),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(CF.N(0,1.4,-0.3)*CF.A(M.R(-16.6-5*M.C(Sine/42)),M.R(0),M.R(0)),Alpha)
 					if(legAnims)then
-						LH.C0 = LH.C0:lerp(CF.N(-0.7,-1,0)*CF.A(M.R(37.2+10*M.C(Sine/36)),M.R(0),M.R(24)),Alpha)
-						RH.C0 = RH.C0:lerp(CF.N(0.8,-1.1,-0.1)*CF.A(M.R(5.9+5*M.C(Sine/36)),M.R(3.5),M.R(-43.9)),Alpha)
+						welds.LH.C0 = welds.LH.C0:lerp(CF.N(-0.7,-1,0)*CF.A(M.R(37.2+10*M.C(Sine/36)),M.R(0),M.R(24)),Alpha)
+						welds.RH.C0 = welds.RH.C0:lerp(CF.N(0.8,-1.1,-0.1)*CF.A(M.R(5.9+5*M.C(Sine/36)),M.R(3.5),M.R(-43.9)),Alpha)
 					end
 				elseif(legAnims)then
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			else
 				local Alpha = .3
 				if(NeutralAnims)then	
-					RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/20)+(music.PlaybackLoudness/5000),0)*CF.A(M.R(0+1*M.S(Sine/64)),M.R(35),0),Alpha)
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(0+1*M.S(Sine/24)),M.R(-35),0),Alpha)
-					LS.C0 = LS.C0:lerp(LSC0*CF.A(0,0,M.R(-15+10*M.C(Sine/20))),Alpha)
-					RS.C0 = RS.C0:lerp(RSC0*CF.A(M.R(75-(music.PlaybackLoudness/7.5)),M.R(5),M.R(35)),Alpha)
+				                    	welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+.05*M.C(Sine/20)+(music.PlaybackLoudness/5000),0)*CF.A(M.R(0+1*M.S(Sine/64)),M.R(35),0),Alpha)
+				                    	welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(0+1*M.S(Sine/24)),M.R(-35),0),Alpha)
+				                    	welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.A(0,0,M.R(-15+10*M.C(Sine/20))),Alpha)
+				                    	welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.A(M.R(75-(music.PlaybackLoudness/7.5)),M.R(5),M.R(35)),Alpha)
 				end
 				if(legAnims)then 
 					if(NeutralAnims)then
-						LH.C0 = LH.C0:lerp(LHC0*CF.N(0,-.05*M.C(Sine/20)-(music.PlaybackLoudness/5000),0)*CF.A(0,M.R(25),0),Alpha)
-						RH.C0 = RH.C0:lerp(RHC0*CF.N(0,-.05*M.C(Sine/20)-(music.PlaybackLoudness/5000),0),Alpha)
+						welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,-.05*M.C(Sine/20)-(music.PlaybackLoudness/5000),0)*CF.A(0,M.R(25),0),Alpha)
+						welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,-.05*M.C(Sine/20)-(music.PlaybackLoudness/5000),0),Alpha)
 					else
-						LH.C0 = LH.C0:lerp(LHC0,Alpha)
-						RH.C0 = RH.C0:lerp(RHC0,Alpha)
+						welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+						welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 					end
 				end
 			end
 		elseif(Mode=='Careless')then
 	local Alpha = .1
 			if(NeutralAnims)then	
-           RJ.C0 = RJ.C0:lerp(LSC0*CF.N(.3,5+.05*M.S(Sine/32),.1)*CF.A(M.R(-0),M.R(0+200*M.C(Sine/322)),M.R(0-200*M.C(Sine/322))),Alpha)
+           welds.RJ.C0 = welds.RJ.C0:lerp(welds.welds.LSC0*CF.N(.3,5+.05*M.S(Sine/32),.1)*CF.A(M.R(-0),M.R(0+200*M.C(Sine/322)),M.R(0-200*M.C(Sine/322))),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-0.5,0.2+.03*M.S(Sine/32),0)*CF.A(M.R(165),M.R(20-12.6*M.C(Sine/32)),M.R(-35-1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-0.5,0.2+.03*M.S(Sine/32),0)*CF.A(M.R(165),M.R(20-12.6*M.C(Sine/32)),M.R(-35-1.5*M.C(Sine/32))),Alpha)
 			end
 
 if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 					elseif(Mode=='TIMELESS')then
@@ -4433,22 +4433,22 @@ if(legAnims)then
 					Size=v3(.5,1,.5);
 					EndSize=v3(.1,3,.1);
 				}
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1.05*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,3+1.05*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
 				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,-.0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(2),M.R(-30-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(-2),M.R(30+2*M.S(Sine/36))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,-.0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(2),M.R(-30-2*M.S(Sine/36))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(-2),M.R(30+2*M.S(Sine/36))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(RHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.RHC0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 			
@@ -4475,22 +4475,22 @@ if(legAnims)then
 					Size=v3(.5,1,.5);
 					EndSize=v3(.1,3,.1);
 				}
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1.05*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,3+1.05*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
 				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(-2),M.R(30+2*M.S(Sine/36))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(-2),M.R(30+2*M.S(Sine/36))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(RHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.RHC0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 					elseif(Mode=='AURORA')then
@@ -4507,22 +4507,22 @@ if(legAnims)then
 
 			local Alpha = .1
 			if(NeutralAnims)then	
-						RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,4+3*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+						welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,4+3*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(-.0,0-.1*M.S(Sine/32),.0)*CF.A(M.R(180),M.R(-5+2.5*M.C(Sine/32)),M.R(-20-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-180),M.R(5-2.5*M.C(Sine/32)),M.R(20+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(-.0,0-.1*M.S(Sine/32),.0)*CF.A(M.R(180),M.R(-5+2.5*M.C(Sine/32)),M.R(-20-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-180),M.R(5-2.5*M.C(Sine/32)),M.R(20+1.5*M.C(Sine/32))),Alpha)
 			end
 if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 		elseif(Mode=='PURIFIED')then
@@ -4538,22 +4538,22 @@ if(legAnims)then
 					Size=v3(.5,1,.5);
 					EndSize=v3(.1,3,.1);
 				}
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1.05*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,3+1.05*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
 				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,-.0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(0),M.R(-15-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(0),M.R(15+2*M.S(Sine/36))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,-.0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(0),M.R(-15-2*M.S(Sine/36))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(0),M.R(15+2*M.S(Sine/36))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0.4-.05*M.C(Sine/32),-0.3)*CF.A(M.R(-5),M.R(0),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(RHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.RHC0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 					elseif(Mode=='ZORNO')then
@@ -4569,43 +4569,43 @@ if(legAnims)then
 					Size=v3(.5,1,.5);
 					EndSize=v3(.1,3,.1);
 				}
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+0.05*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+0.05*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
 				if(M.RNG(1,25)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(35),M.R(-10))*CF.A(M.RRNG(-5,5),M.RRNG(-5,5),M.RRNG(-5,5)),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,-.0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(0),M.R(-15-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(0),M.R(15+2*M.S(Sine/36))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,-.0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(0),M.R(-15-2*M.S(Sine/36))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(0),M.R(15+2*M.S(Sine/36))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),-0)*CF.A(M.R(5),M.R(0),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),-0)*CF.A(M.R(5),M.R(0),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(5),0,0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(RHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.RHC0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 			end
 		elseif(Mode=='INFINITE VOID')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,75+5*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,75+5*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.1*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.1*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.1*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.3,0+.1*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 
@@ -4613,43 +4613,43 @@ end
 			local Alpha = .1
 			if(NeutralAnims)then
 
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,-0+.2*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,-0+.2*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,1+2*M.S(Sine/1),.0)*CF.A(M.R(700),M.R(5+2.5*M.C(Sine/32)),M.R(-366-2*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,7+7*M.S(Sine/1),.0)*CF.A(M.R(90),M.R(5-7.5*M.C(Sine/32)),M.R(366+7*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,1+2*M.S(Sine/1),.0)*CF.A(M.R(700),M.R(5+2.5*M.C(Sine/32)),M.R(-366-2*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,7+7*M.S(Sine/1),.0)*CF.A(M.R(90),M.R(5-7.5*M.C(Sine/32)),M.R(366+7*M.C(Sine/32))),Alpha)
 			end
 if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(135),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(135),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 				elseif(Mode=='Dark Energy')then
 			local Alpha = .1
 			if(NeutralAnims)then
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,-0.0+.0*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,-0.0+.0*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 				elseif(Mode=='ZEN-X')then
@@ -4657,22 +4657,22 @@ end
 			if(NeutralAnims)then
 
 
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+5*M.C(Sine/32),0)*CF.A(M.R(-2+7*M.S(Sine/58)),M.R(-15+3*M.C(Sine/42)),0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),13+5*M.C(Sine/32),0)*CF.A(M.R(-2+7*M.S(Sine/58)),M.R(-15+3*M.C(Sine/42)),0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 
@@ -4694,22 +4694,22 @@ end
 				}
 
 
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,-0.0+.0*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,-0.0+.0*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(180),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(180),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 
@@ -4728,22 +4728,22 @@ end
 					EndSize=v3(.1,3,.1);
 				}
 				
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 
@@ -4772,66 +4772,66 @@ Lifetime = 0.25,
 				}
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-2.5)),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.A(0,0,M.R(2.5)),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-2.5)),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.A(0,0,M.R(2.5)),Alpha)
 				end
 			end
 
 				elseif(Mode=='SYNCHRO')then
 			local Alpha = .1
 			if(NeutralAnims)then
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+3*M.C(Sine/21),2+1*M.C(Sine/32),0)*CF.A(M.R(-30+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+3*M.C(Sine/21),2+1*M.C(Sine/32),0)*CF.A(M.R(-30+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(30),M.R(20+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(30),M.R(20-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(30),M.R(20+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(30),M.R(20-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(30+3*M.S(Sine/64)),0,0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(30+3*M.S(Sine/64)),0,0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(30+3*M.S(Sine/64)),0,0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(M.R(30+3*M.S(Sine/64)),0,0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 
 				elseif(Mode=='SPINNER')then
 			local Alpha = .1
 			if(NeutralAnims)then
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+0*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+0*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(20+10000*M.C(Sine/220)),M.R(-1-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(20-10000*M.C(Sine/220)),M.R(1+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(20+10000*M.C(Sine/220)),M.R(-1-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(20-10000*M.C(Sine/220)),M.R(1+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(20+10000*M.C(Sine/220)),M.R(-1+1.5*M.C(Sine/32))),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(-.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(20-10000*M.C(Sine/220)),M.R(1+1.5*M.C(Sine/32))),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(20+10000*M.C(Sine/220)),M.R(-1+1.5*M.C(Sine/32))),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(-.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(20-10000*M.C(Sine/220)),M.R(1+1.5*M.C(Sine/32))),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 
@@ -4860,22 +4860,22 @@ Lifetime = 0.25,
 					Size=v3(.5,2,.5);
 					EndSize=v3(.1,3,.1);
 				}
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,2+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,2+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(20+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(20-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(20+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.2*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(20-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 
@@ -4915,22 +4915,22 @@ Lifetime = 0.2,
 				}
 				local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 
@@ -4972,22 +4972,22 @@ end
 
 				local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 
@@ -5016,22 +5016,22 @@ end
 				}
 				local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 
@@ -5083,22 +5083,22 @@ Lifetime = .02,
 				}
 				local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 
@@ -5147,22 +5147,22 @@ end
 				}
 				local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 				elseif(Mode=='Time')then
@@ -5191,22 +5191,22 @@ Lifetime = .02,
 
 				local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(0),M.R(5+2.5*M.C(Sine/32)),M.R(-10-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 
@@ -5236,22 +5236,22 @@ Lifetime = .01,
 
 				local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(10+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 			
@@ -5281,22 +5281,22 @@ end
 					Size=v3(.5,1,.5);
 					EndSize=v3(.1,3,.1);
 				}
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,4+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,4+1*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5+2.5*M.C(Sine/32)),M.R(-20-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(20+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5+2.5*M.C(Sine/32)),M.R(-20-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(20+1.5*M.C(Sine/32))),Alpha)
 			end
 if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 
@@ -5338,22 +5338,22 @@ Lifetime = .1,
 					Size=v3(.5,1,.5);
 					EndSize=v3(.1,3,.1);
 				}
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.1*M.C(Sine/1),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,0+.1*M.C(Sine/1),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5+2.5*M.C(Sine/32)),M.R(-20-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(20+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5+2.5*M.C(Sine/32)),M.R(-20-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-0),M.R(5-2.5*M.C(Sine/32)),M.R(20+1.5*M.C(Sine/32))),Alpha)
 			end
 if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 
@@ -5370,66 +5370,66 @@ end
 					Size=v3(.5,1,.5);
 					EndSize=v3(.1,3,.1);
 				}
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,-0.0+.0*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,-0.0+.0*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-180),M.R(5-2.5*M.C(Sine/32)),M.R(20+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(-180),M.R(5-2.5*M.C(Sine/32)),M.R(20+1.5*M.C(Sine/32))),Alpha)
 			end
 if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 				end
 				
 			elseif(Mode=='The Doctor')then
 				local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,-0.1+.2*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,-0.1+.2*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.1*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.1*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.1*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.3,0+.1*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
 end
 			
 			elseif(Mode=='ILLUMINATION')then
 				local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,4+3*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,4+3*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
-					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
+					welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),0,0),Alpha)
 				end
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.1*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.1*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.1*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.3,0+.1*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
 			end
 if(legAnims)then 
 				if(NeutralAnims)then
-					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
-					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,M.R(15),0),Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0-.05*M.C(Sine/32),0),Alpha)
 				else
-					LH.C0 = LH.C0:lerp(LHC0,Alpha)
-					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+					welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+					welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 				end
             end
 			end
@@ -5440,14 +5440,14 @@ if(legAnims)then
 		if(Mode=='The Sword Runner')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-15+5*M.S(Sine/58)),M.R(90+5*M.C(Sine/42)),0),Alpha)
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.0,-.0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(2),M.R(-20-2*M.S(Sine/36))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(0),M.R(20+2*M.S(Sine/36))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-15+5*M.S(Sine/58)),M.R(90+5*M.C(Sine/42)),0),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.0,-.0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(2),M.R(-20-2*M.S(Sine/36))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.0*M.S(Sine/32),-.0)*CF.A(M.R(0),M.R(0),M.R(20+2*M.S(Sine/36))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
 			end
 			
 				    elseif(State == 'Walk')then
@@ -5466,41 +5466,41 @@ Lifetime = 2,
 })
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),2+.2*M.C(Sine/32),0)*CF.A(M.R(-57+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),2+.2*M.C(Sine/32),0)*CF.A(M.R(-57+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.5,-.1+.05*M.S(Sine/32),-.8)*CF.A(M.R(13),M.R(-12),M.R(104-2*M.S(Sine/36))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 				  elseif(State == 'Walk')then
 		if(Mode=='Interstellar')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			 elseif(State == 'Walk')then
 		if(Mode=='gh0st3d')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+1*M.C(Sine/.2),4+.2*M.C(Sine/.1),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48322732e-06, 1)*CF.A(-2,4,M.R(-7+14*M.S(Sine/.2))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.53871994e-07, 1)*CF.A(-2,-4,M.R(7-14*M.S(Sine/.1))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+1*M.C(Sine/.2),4+.2*M.C(Sine/.1),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48322732e-06, 1)*CF.A(-2,4,M.R(-7+14*M.S(Sine/.2))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.53871994e-07, 1)*CF.A(-2,-4,M.R(7-14*M.S(Sine/.1))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.8845396508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.8845396508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
     elseif(State == 'Walk')then
@@ -5510,14 +5510,14 @@ Lifetime = 2,
 
   			    
   			    
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),35+5*M.C(Sine/32),0)*CF.A(M.R(-15+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),35+5*M.C(Sine/32),0)*CF.A(M.R(-15+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-35),M.R(5+2.5*M.C(Sine/32)),M.R(35-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.3,0+.05*M.S(Sine/32),.1)*CF.A(M.R(-25),M.R(5-2.5*M.C(Sine/32)),M.R(-35+1.5*M.C(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			    elseif(State == 'Walk')then
@@ -5527,14 +5527,14 @@ Lifetime = 2,
 
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 
 		    
@@ -5554,14 +5554,14 @@ Lifetime = 2,
 				}
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),2+.2*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),2+.2*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
   elseif(State == 'Walk')then
@@ -5601,28 +5601,28 @@ Lifetime = 0.2,
 				}
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			  elseif(State == 'Walk')then
 		if(Mode=='INFINITY')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(3+2.20*M.C(Sine/17),3+2.20*M.C(Sine/17),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(3+2.20*M.C(Sine/17),3+2.20*M.C(Sine/17),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			 elseif(State == 'Walk')then
@@ -5651,14 +5651,14 @@ Lifetime = 0.2,
 				}
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			
@@ -5689,14 +5689,14 @@ Lifetime = .02,
 				}
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 						 elseif(State == 'Walk')then
@@ -5726,14 +5726,14 @@ Lifetime = .01,
 				}
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 						 elseif(State == 'Walk')then
@@ -5764,14 +5764,14 @@ Lifetime = .01,
 				}
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 									 elseif(State == 'Walk')then
@@ -5781,14 +5781,14 @@ Lifetime = .01,
 
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 												 elseif(State == 'Walk')then
@@ -5798,14 +5798,14 @@ Lifetime = .01,
 
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),55+5*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),55+5*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 												 elseif(State == 'Walk')then
@@ -5815,14 +5815,14 @@ Lifetime = .01,
 
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),75+5*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),75+5*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 												 elseif(State == 'Walk')then
@@ -5832,14 +5832,14 @@ Lifetime = .01,
 
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),4+3*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),4+3*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 												 elseif(State == 'Walk')then
@@ -5849,14 +5849,14 @@ Lifetime = .01,
 
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 									 elseif(State == 'Walk')then
@@ -5906,14 +5906,14 @@ Lifetime = .01,
 				}
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 												 elseif(State == 'Walk')then
@@ -5965,14 +5965,14 @@ Lifetime = .01,
 
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			  elseif(State == 'Walk')then
@@ -6002,14 +6002,14 @@ Lifetime = 0.25,
 			local wsVal = 4
 			local Alpha = .2
 			if(NeutralAnims)then
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
-				NK.C0 = NK.C0:lerp(NKC0,Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
+				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0,Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
-				LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
-				RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0+movement/15*M.C(Sine/wsVal)/2,(-.1-movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0+movement/15*M.C(Sine/wsVal)/2,(-.1-movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
 end
 
 			  elseif(State == 'Walk')then
@@ -6030,42 +6030,42 @@ Lifetime = .1,
 			local wsVal = 4
 			local Alpha = .2
 			if(NeutralAnims)then
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
-				NK.C0 = NK.C0:lerp(NKC0,Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
+				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0,Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
-				LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
-				RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0+movement/15*M.C(Sine/wsVal)/2,(-.1-movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0+movement/15*M.C(Sine/wsVal)/2,(-.1-movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
 end
 			
 			  elseif(State == 'Walk')then
 		if(Mode=='ILLUMINATION')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),4+3*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),4+3*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 	  elseif(State == 'Walk')then
 		if(Mode=='SYNCHRO')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+3*M.C(Sine/21),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+3*M.C(Sine/21),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			
@@ -6097,14 +6097,14 @@ end
 					Size=v3(.5,1,.5);
 					EndSize=v3(.1,3,.1);
 				}
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 							  elseif(State == 'Walk')then
@@ -6134,14 +6134,14 @@ end
 					Size=v3(.5,1,.5);
 					EndSize=v3(.1,3,.1);
 				}
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 			
@@ -6149,111 +6149,111 @@ end
 		if(Mode=='PRISM')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),3+1.5*M.C(Sine/17),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),3+1.5*M.C(Sine/17),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 
 	  elseif(State == 'Walk')then
 		if(Mode=='PARADOX')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 				  elseif(State == 'Walk')then
 		if(Mode=='=_-MADNESS-_=')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 	  elseif(State == 'Walk')then
 		if(Mode=='SPACETIME')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),5+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),5+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 				  elseif(State == 'Walk')then
 		if(Mode=='lost')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),6+5*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),6+5*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 				  elseif(State == 'Walk')then
 		if(Mode=='GALACTIA')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 				  elseif(State == 'Walk')then
 		if(Mode=='br0k3n')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),5+1*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),5+1*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 				  elseif(State == 'Walk')then
 		if(Mode=='LOSS')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 
@@ -6263,28 +6263,28 @@ end
 		if(Mode=='PESTILENCE')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-0+3*M.C(Sine/19),3+2*M.C(Sine/19),0)*CF.A(M.R(-56+4*M.S(Sine/19)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-0+3*M.C(Sine/19),3+2*M.C(Sine/19),0)*CF.A(M.R(-56+4*M.S(Sine/19)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 										  elseif(State == 'Walk')then
 		if(Mode=='PURIFIED')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-0+3*M.C(Sine/19),3+2*M.C(Sine/19),0)*CF.A(M.R(-56+4*M.S(Sine/19)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-0+3*M.C(Sine/19),3+2*M.C(Sine/19),0)*CF.A(M.R(-56+4*M.S(Sine/19)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 
@@ -6295,14 +6295,14 @@ end
 			local wsVal = 4
 			local Alpha = .2
 			if(NeutralAnims)then
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
-				NK.C0 = NK.C0:lerp(NKC0,Alpha)
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(0,0,0)*CF.A(M.R(0+55*(movement/8)*M.S(Sine/wsVal))*forwardvelocity,0,0),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(28),M.R(5-2.5*M.C(Sine/32)),M.R(30+1.5*M.C(Sine/32))),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
+				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0,Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(0,0,0)*CF.A(M.R(0+55*(movement/8)*M.S(Sine/wsVal))*forwardvelocity,0,0),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-.0,0+.1*M.S(Sine/32),.0)*CF.A(M.R(28),M.R(5-2.5*M.C(Sine/32)),M.R(30+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
-				LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
-				RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0+movement/15*M.C(Sine/wsVal)/2,(-.1-movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0+movement/15*M.C(Sine/wsVal)/2,(-.1-movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
 end
        
 	  elseif(State == 'Walk')then
@@ -6312,14 +6312,14 @@ end
 
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			
 				  elseif(State == 'Walk')then
@@ -6328,27 +6328,27 @@ end
 			local wsVal = 4
 			local Alpha = .2
 			if(NeutralAnims)then
-            	RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,23+.05*M.C(Sine/32),0)*CF.A(M.R(0+0*M.S(Sine/64)),0,0),Alpha)
-				NK.C0 = NK.C0:lerp(NKC0,Alpha)
-			LS.C0 = LH.C0:lerp(LHC0*CF.N(0,28-.0*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
-			RS.C0 = RH.C0:lerp(RHC0*CF.N(0,28-.0*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
+            	welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,23+.05*M.C(Sine/32),0)*CF.A(M.R(0+0*M.S(Sine/64)),0,0),Alpha)
+				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0,Alpha)
+			welds.welds.LS.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,28-.0*M.C(Sine/32),0)*CF.A(0,0,M.R(-2.5)),Alpha)
+			welds.RS.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,28-.0*M.C(Sine/32),0)*CF.A(0,0,M.R(2.5)),Alpha)
 			end
 			if(legAnims)then 
-				LH.C0 = LH.C0:lerp(LHC0*CF.N(0,-36-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
-				RH.C0 = RH.C0:lerp(RHC0*CF.N(0,-36+movement/15*M.C(Sine/wsVal)/2,(-.1-movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,-36-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,-36+movement/15*M.C(Sine/wsVal)/2,(-.1-movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
 end
 	  elseif(State == 'Walk')then
 		if(Mode=='HyPnOtIC')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 
 	  elseif(State == 'Walk')then
@@ -6356,27 +6356,27 @@ end
 			local wsVal = 4
 			local Alpha = .2
 			if(NeutralAnims)then
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
-				NK.C0 = NK.C0:lerp(NKC0,Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
+				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0,Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
-				LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
-				RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0+movement/15*M.C(Sine/wsVal)/2,(-.1-movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0+movement/15*M.C(Sine/wsVal)/2,(-.1-movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
 end
 	  elseif(State == 'Walk')then
 		if(Mode=='ZEN-X')then
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+4*M.C(Sine/39),13+4*M.C(Sine/32),0)*CF.A(M.R(-56+4*M.S(Sine/58)),M.R(0+4*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 
 
@@ -6386,14 +6386,14 @@ end
 			local wsVal = 4
 			local Alpha = .2
 			if(NeutralAnims)then
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
-				NK.C0 = NK.C0:lerp(NKC0,Alpha)
- 				LS.C0 = LS.C0:lerp(LSC0*CF.N(1,0+.05*M.S(Sine/32),.5)*CF.A(M.R(-0),M.R(0+1*M.C(Sine/32)),M.R(0-1.5*M.C(Sine/32))),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(-1,0+.05*M.S(Sine/32),.5)*CF.A(M.R(-0),M.R(0-1*M.C(Sine/32)),M.R(-0+1.5*M.C(Sine/32))),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
+				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0,Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(1,0+.05*M.S(Sine/32),.5)*CF.A(M.R(-0),M.R(0+1*M.C(Sine/32)),M.R(0-1.5*M.C(Sine/32))),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(-1,0+.05*M.S(Sine/32),.5)*CF.A(M.R(-0),M.R(0-1*M.C(Sine/32)),M.R(-0+1.5*M.C(Sine/32))),Alpha)
 			end
 			if(legAnims)then 
-				LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
-				RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0+movement/15*M.C(Sine/wsVal)/2,(-.1-movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0+movement/15*M.C(Sine/wsVal)/2,(-.1-movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
 end
 
 
@@ -6416,14 +6416,14 @@ Lifetime = 0.25,
 
 			local Alpha = .1
   			if(NeutralAnims)then
- 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
- 				LS.C0 = LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
-  				RS.C0 = RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
-  				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
+ 				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
+ 				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(cf(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 1)*CF.A(-1,0,M.R(-7+5*M.S(Sine/32))),Alpha)
+  				welds.RS.C0 = welds.RS.C0:lerp(cf(1.54895508, 0.519735038, 0.000380946265, 0.98034811, -0.197275475, -1.24170782e-07, 0.19727549, 0.980348051, 9.53674316e-07, -5.96046448e-08, -9.23871994e-07, 1)*CF.A(-1,0,M.R(7-5*M.S(Sine/32))),Alpha)
+  				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(M.R(65-5*M.S(Sine/58)),0,0),Alpha)
 			end
 			if(legAnims)then
-				LH.C0 = LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
-				RH.C0 = RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(cf(-0.49666214, -0.990924835, 0.00763010979, 1, 0, 0, 0, 1, 0, 0, 0, 1),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(cf(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 
 
@@ -6433,14 +6433,14 @@ Lifetime = 0.25,
 			local Alpha = .2
 			if(Mode=='UNBROKEN')then Change=.3 elseif(Mode=='PURIFIED' or Mode=='INFINITE VOID' or Mode=='Omniversal')then Change=1 else Change=.5 end
 			if(NeutralAnims)then
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
-				NK.C0 = NK.C0:lerp(NKC0,Alpha)
-				LS.C0 = LS.C0:lerp(LSC0*CF.N(0,0,0)*CF.A(M.R(0+55*(movement/8)*M.S(Sine/wsVal))*forwardvelocity,0,0),Alpha)
-				RS.C0 = RS.C0:lerp(RSC0*CF.N(0,0,0)*CF.A(M.R(0-55*(movement/8)*M.S(Sine/wsVal))*forwardvelocity,0,0),Alpha)
+				welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.N(0,.05+Change/4*M.C(Sine/(wsVal/2)),0)*CF.A(M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*forwardvelocity,M.R(0+5*M.C(Sine/wsVal)),M.R(-(Change*20)-movement/20*M.C(Sine/(wsVal/2)))*sidevelocity+M.R(0-1*M.C(Sine/wsVal))),Alpha)
+				welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0,Alpha)
+				welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.N(0,0,0)*CF.A(M.R(0+55*(movement/8)*M.S(Sine/wsVal))*forwardvelocity,0,0),Alpha)
+				welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.N(0,0,0)*CF.A(M.R(0-55*(movement/8)*M.S(Sine/wsVal))*forwardvelocity,0,0),Alpha)
 			end
 			if(legAnims)then 
-				LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
-				RH.C0 = RH.C0:lerp(RHC0*CF.N(0,0+movement/15*M.C(Sine/wsVal)/2,(-.1-movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
+				welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.N(0,0-movement/15*M.C(Sine/wsVal)/2,(-.1+movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5-movement*M.C(Sine/wsVal))+-(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
+				welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,0+movement/15*M.C(Sine/wsVal)/2,(-.1-movement/15*M.C(Sine/wsVal))*(.5+.5*forwardvelocity))*CF.A((M.R(-10*forwardvelocity+Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*forwardvelocity,0,(M.R(Change*5+movement*M.C(Sine/wsVal))+(movement/10)*M.S(Sine/wsVal))*(sidevec/(Hum.WalkSpeed*2))),Alpha)
 				local footstepIds = {141491460,141491460}
 				if(lhit and lhit.CanCollide and footstepSounds[lhit.Material])then
 					if(lhit.Material==Enum.Material.Sand and lhit.Color.r*255>=160 and lhit.Color.g*255>=160 and lhit.Color.b*255>=160)then
@@ -6464,39 +6464,39 @@ Lifetime = 0.25,
 		local Alpha = .1
 		local idk = math.min(math.max(Root.Velocity.Y/50,-M.R(90)),M.R(90))
 		if(NeutralAnims)then
-			LS.C0 = LS.C0:lerp(LSC0*CF.A(M.R(-5),0,M.R(-90)),Alpha)
-			RS.C0 = RS.C0:lerp(RSC0*CF.A(M.R(-5),0,M.R(90)),Alpha)
-			RJ.C0 = RJ.C0:lerp(RJC0*CF.A(math.min(math.max(Root.Velocity.Y/100,-M.R(45)),M.R(45)),0,0),Alpha)
-			NK.C0 = NK.C0:lerp(NKC0*CF.A(math.min(math.max(Root.Velocity.Y/100,-M.R(45)),M.R(45)),0,0),Alpha)
+			welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.A(M.R(-5),0,M.R(-90)),Alpha)
+			welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.A(M.R(-5),0,M.R(90)),Alpha)
+			welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.A(math.min(math.max(Root.Velocity.Y/100,-M.R(45)),M.R(45)),0,0),Alpha)
+			welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(math.min(math.max(Root.Velocity.Y/100,-M.R(45)),M.R(45)),0,0),Alpha)
 		end
 		if(legAnims)then 
-			LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-5)),Alpha)
-			RH.C0 = RH.C0:lerp(RHC0*CF.N(0,1,-1)*CF.A(M.R(-5),0,M.R(5)),Alpha)
+			welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-5)),Alpha)
+			welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,1,-1)*CF.A(M.R(-5),0,M.R(5)),Alpha)
 		end
 	elseif(State == 'Fall')then
 		local Alpha = .1
 		local idk = math.min(math.max(Root.Velocity.Y/50,-M.R(90)),M.R(90))
 		if(NeutralAnims)then
-			LS.C0 = LS.C0:lerp(LSC0*CF.A(M.R(-5),0,M.R(-90)+idk),Alpha)
-			RS.C0 = RS.C0:lerp(RSC0*CF.A(M.R(-5),0,M.R(90)-idk),Alpha)
-			RJ.C0 = RJ.C0:lerp(RJC0*CF.A(math.min(math.max(Root.Velocity.Y/100,-M.R(45)),M.R(45)),0,0),Alpha)
-			NK.C0 = NK.C0:lerp(NKC0*CF.A(math.min(math.max(Root.Velocity.Y/100,-M.R(45)),M.R(45)),0,0),Alpha)
+			welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0*CF.A(M.R(-5),0,M.R(-90)+idk),Alpha)
+			welds.RS.C0 = welds.RS.C0:lerp(RSC0*CF.A(M.R(-5),0,M.R(90)-idk),Alpha)
+			welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0*CF.A(math.min(math.max(Root.Velocity.Y/100,-M.R(45)),M.R(45)),0,0),Alpha)
+			welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0*CF.A(math.min(math.max(Root.Velocity.Y/100,-M.R(45)),M.R(45)),0,0),Alpha)
 		end
 		if(legAnims)then 
-			LH.C0 = LH.C0:lerp(LHC0*CF.A(0,0,M.R(-5)),Alpha)
-			RH.C0 = RH.C0:lerp(RHC0*CF.N(0,1,-1)*CF.A(M.R(-5),0,M.R(5)),Alpha)
+			welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0*CF.A(0,0,M.R(-5)),Alpha)
+			welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0*CF.N(0,1,-1)*CF.A(M.R(-5),0,M.R(5)),Alpha)
 		end
 	elseif(State == 'Paralyzed')then
 		local Alpha = .1
 		if(NeutralAnims)then
-			LS.C0 = LS.C0:lerp(LSC0,Alpha)
-			RS.C0 = RS.C0:lerp(RSC0,Alpha)
-			RJ.C0 = RJ.C0:lerp(RJC0,Alpha)
-			NK.C0 = NK.C0:lerp(NKC0,Alpha)
+			welds.welds.LS.C0 = welds.welds.LS.C0:lerp(welds.welds.LSC0,Alpha)
+			welds.RS.C0 = welds.RS.C0:lerp(RSC0,Alpha)
+			welds.RJ.C0 = welds.RJ.C0:lerp(welds.RJC0,Alpha)
+			welds.NK.C0 = welds.NK.C0:lerp(welds.NKC0,Alpha)
 		end
 		if(legAnims)then 
-			LH.C0 = LH.C0:lerp(LHC0,Alpha)
-			RH.C0 = RH.C0:lerp(RHC0,Alpha)
+			welds.LH.C0 = welds.LH.C0:lerp(welds.LH.C0,Alpha)
+			welds.RH.C0 = welds.RH.C0:lerp(welds.RHC0,Alpha)
 		end
 	elseif(State == 'Sit')then
 		
@@ -6505,7 +6505,7 @@ Lifetime = 0.25,
 		local syncStuff={
 			NeutralAnims;
 			legAnims;
-			{NK.C0,RJ.C0,RH.C0,RS.C0,LH.C0,LS.C0};
+			{welds.NK.C0,welds.RJ.C0,welds.RH.C0,welds.RS.C0,welds.LH.C0,welds.welds.LS.C0};
 			{NK.C1,RJ.C1,RH.C1,RS.C1,LH.C1,LS.C1};
 			Sine;
 			movement;
