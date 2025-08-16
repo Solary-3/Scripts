@@ -1406,8 +1406,7 @@ function ShowDamage(Pos, Text, Time, Color)
 	end)
 end
 
-
-local baseSound = IN("Sound")
+local baseSound = i("Sound")
 
 function Soond(parent,id,pitch,volume,looped,effect,autoPlay)
 	local Sound = baseSound:Clone()
@@ -1435,7 +1434,7 @@ end
 	
 function SoondPart(id,pitch,volume,looped,effect,autoPlay,cf)
 	local soundPart = NewInstance("Part",Effects,{Transparency=1,CFrame=cf or Torso.CFrame,Anchored=true,CanCollide=false,Size=V3.N()})
-	local Sound = IN("Sound")
+	local Sound = i("Sound")
 	Sound.SoundId = "rbxassetid://".. tostring(id or 0)
 	Sound.Pitch = pitch or 1
 	Sound.Volume = volume or 1
@@ -1467,7 +1466,7 @@ function Sound(...)
 end
 	
 function Part(parent,color,material,size,cframe,anchored,cancollide)
-	local part = IN("Part")
+	local part = i("Part")
 	part.Parent = parent or Char
 	part[typeof(color) == 'BrickColor' and 'BrickColor' or 'Color'] = color or C3.N(0,0,0)
 	part.Material = material or Enum.Material.SmoothPlastic
