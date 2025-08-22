@@ -284,7 +284,7 @@ local function stopreanimate()
 	return false
 end
 local function emptyfunction() end
-
+function Reanim()
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 local allowshiftlock=false
 local ctrltp=false
@@ -1754,3 +1754,4 @@ Connect(insGet(uis,"TouchMoved"),function(inputObject)
 		isFirstPerson=isFirstPerson,
 		IsWalking=IsWalking
 	}
+	end
