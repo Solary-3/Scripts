@@ -1754,4 +1754,9 @@ Connect(insGet(uis,"TouchMoved"),function(inputObject)
 		isFirstPerson=isFirstPerson,
 		IsWalking=IsWalking
 	}
-	end
+end
+
+return {
+     Reanim=Reanim,
+     stopreanimate=stopreanimate
+}
