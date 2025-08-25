@@ -43,6 +43,7 @@ ScreenGui.Name ="Patchers"
 --Adjust Here!
 local deltaTime=.250 --Default Speed 
 local Mode="Neptunian V"
+local Mw="Neptunian V"
 local Music1="Censored"
 
 local function notif(str,dur)
@@ -50,6 +51,7 @@ local function notif(str,dur)
     Title = "Service";
     Text = str;})
 end
+
 if not isfolder("Music") then 
      makefolder("Music")
 end
@@ -187,13 +189,11 @@ end)
 
 
 Load.MouseButton1Click:Connect(function()
-notif("Please wait for the rigs to load!")
+notif("please wait for the rigs to load")
 wait(1)
-notif('if the rigs are too slow to load and the "-sh"')
+notif('if the rigs is slow to load and the "-sh"" shows')
 wait(1)
-notif("already shows up...")
-wait(1)
-notif('type "-sh" again once the hats are done loading')
+notif('type"-sh"again once the rigs has done loading')
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 131385506535381 85392395166623 129462518582032  138364679836274 12850150835 106249329428811 5316479641 5316539421 5699795428 5268602207 4794315940 4458601937 4315489767 4506945409 112934510372081"..tostring(ja)) 
 wait(6.5)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
@@ -207,6 +207,8 @@ print(">--------------[=]---------------<")
 print("As always... Love From Theo!")
 print(">--------------[=]---------------<")
 print("please be kind to the owner of this script, the amount of effort that took into making this is alot, especially every animations thats inside this script ")
+print(">--------------[=]---------------<")
+print("BEFORE RELOADING THE GUI, PLEASE STOP THE CURRENT RUNNING SCRIPT LIKE THE ANIMATED CHARACTER, ONCE U RELOAD THE UI, U WONT STOP THE LAST SCRIPT, YOU WILL BE STUCK LIKE THAT!!!!")
 print(">--------------[=]---------------<")
 print("^^^^^^^^^^^^^^^^^^^^^")
 print("vvvvvvvvvvvvvvvvvvvvv")
@@ -576,11 +578,11 @@ j1.Thickness=1.5
 j1.Color=c3rgb(0,0,0)
 j1.LineJoinMode="Miter"
 
+
+
 local function getMusicAsset(filename)
-if not isfile("Music/"..filename) then
 writefile("Music/"..filename, 
 	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..filename.."?raw=true"))
-end
     if isfile("Music/"..filename) then
         return getcustomasset("Music/"..filename)  
     else
@@ -588,6 +590,8 @@ end
         return ""
     end
 end
+
+
 	
 local Info={
      {Name="Nameless",WalkSpeed=16,Font="Antique",WingAnim="Nameless1",Music="Shiawase",Tag="None"},
@@ -1238,14 +1242,14 @@ s0_4.C0 = Lerp(s0_4.C0,cfMul(cf(2.75, 3, -0.5), angles(0.8726646259971648, -0.43
 if Mode=="Nameless"  then Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(- .9198621771937625,0,3.141592653589793)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.75,0.65+0.25*sin(sine*2),-0.55),angles(-0.08726646259971647+0.17453292519943295*sin(sine*2),-0.3490658503988659,0.3490658503988659+0.08726646259971647*sin(sine*2))),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.25,-0.95+0.15*sin(sine*2),0.15),angles(-0.3490658503988659,0.3490658503988659,-0.17453292519943295+0.08726646259971647*sin(sine*2))),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.25,-1,0.25),angles(0.17453292519943295*sin(sine*2),-0.3490658503988659,0)),deltaTime)   LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,0.75+0.25*sin(sine*2),0.55),angles(3.141592653589793,-0.3490658503988659,-0.6981317007977318)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,7.5+0.95*sin(sine*2),0),angles(-1.5707963267948966,0.17453292519943295,3.141592653589793)),deltaTime) 
 
 
-elseif Mode=="Abyssal"  then RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.25 * sin(sine*1.15),0),angles(-0.6108652381980153,0,3.141592653589793)),deltaTime)    LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(-0.7853981633974483-0.17453292519943295*sin(sine*1.15),-155707963267948966,0)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.85,1.16,-0.45+0.1*sin(sine*1.15)),angles(1.5707963267948966,0.3490658503988659,-0.2617993877991494)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.25,0,-0.25+0.15*sin(sine*1.15)),angles(-1.0471975511965976-0.17453292519943295*sin(sine*1.16),0.3490658503988659,0.17453292519943295)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0.05 * sin(sine*1.15)),angles(-2.007128639793479,0,3.141592653589793)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(-1.3089969389957472-0.17453292519943295*sin(sine*1.15),1.5707963267948966,0)),deltaTime)
+elseif Mode=="Abyssal"  then RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.25 * sin(sine*1.15),0),angles(-0.6108652381980153,0,3.141592653589793)),deltaTime)    LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-.75,-.95,-.025),angles(-0.7853981633974483-0.17453292519943295*sin(sine*1.15),-155707963267948966,0)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.85,1.16,-0.45+0.1*sin(sine*1.15)),angles(1.5707963267948966,0.3490658503988659,-0.2617993877991494)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.25,0,-0.25+0.15*sin(sine*1.15)),angles(-1.0471975511965976-0.17453292519943295*sin(sine*1.16),0.3490658503988659,0.17453292519943295)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0.05 * sin(sine*1.15)),angles(-2.007128639793479,0,3.141592653589793)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(-1.3089969389957472-0.17453292519943295*sin(sine*1.15),1.5707963267948966,0)),deltaTime)
  
  
 elseif Mode=="Swordsman"  then Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.9198621771937625+0.08726646259971647*sin(sine*1.15),0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.45,-0.15-0.15*sin(sine*1),0),angles(-0.7853981633974483,0.3490658503988659,-0.6108652381980153+0.17453292519943295*sin(sine*1.15))),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,1-0.25*sin(sine*1.25),0),angles(-1.3962634015954636-0.08726646259971647*sin(sine*1.15),0,3.141592653589793)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.95,-0.55,-0.55),angles(-0.3490658503988659+0.17453292519943295*sin(sine*1.15),-1.5707963267948966,0)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.75,-0.75,0.35),angles(-0.8726646259971648-0.17453292519943295*sin(sine*1.15),0.4363323129985824,0)),deltaTime)   RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.35-0.15*sin(sine*1.15),-0.25),angles(1.5707963267948966-0.04363323129985824*sin(sine*1.15),0.3490658503988659,0.17453292519943295)),deltaTime) 
  
 
 elseif Mode=="Fallen"  then
-RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.25,0.25-0.15*sin(sine*1.15),0),angles(0.17453292519943295,0.3490658503988659,0.5235987755982988)),deltaTime) Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1-0.1*sin(sine*1.15),0),angles(-2.007128639793479-0.11344640137963143*sin(sine*1.15),0,3.141592653589793)),deltaTime) LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5+0.15*sin(sine*1.1),-1),angles(1.5707963267948966,0,1.4835298641951802)),deltaTime) RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,1.25-0.15*sin(sine*1.15),0),angles(-1.3089969389957472,0,3.141592653589793)),deltaTime) RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1-0.15*sin(sine*1.15),0),angles(-0.9599310885968813+0.17453292519943295*sin(sine*1),1.5707963267948966,0)),deltaTime) LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.45-0.15*sin(sine*1.15),-0.85),angles(0.08726646259971647-0.08726646259971647*sin(sine*1.15),-1.5707963267948966,0)),deltaTime) 
+RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.25,0.25-0.15*sin(sine*1.15),0),angles(0.17453292519943295,0.3490658503988659,0.5235987755982988)),deltaTime) Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1-0.035*sin(sine*1.15),0),angles(-2.007128639793479-0.11344640137963143*sin(sine*1.15),0,3.141592653589793)),deltaTime) LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5+0.15*sin(sine*1.1),-1),angles(1.5707963267948966,0,1.4835298641951802)),deltaTime) RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,1.25-0.15*sin(sine*1.15),0),angles(-1.3089969389957472,0,3.141592653589793)),deltaTime) RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1-0.15*sin(sine*1.15),0),angles(-0.9599310885968813+0.17453292519943295*sin(sine*1),1.5707963267948966,0)),deltaTime) LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.45-0.15*sin(sine*1.15),-0.85),angles(0.08726646259971647-0.08726646259971647*sin(sine*1.15),-1.5707963267948966,0)),deltaTime) 
  
 
 elseif Mode=="Apex"  then Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1-0.05*sin(sine*1.15),0),angles(-2.181661564992912,0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.55,0,0),angles(-0.17453292519943295+0.3490658503988659*sin(sine*1.15),0.3490658503988659,-0.7853981633974483)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-0.75-0.25*sin(sine*1.15),-0.55),angles(-0.5235987755982988+0.08726646259971647*sin(sine*1.25),1.5707963267948966,0)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(0.55,-0.15 * sin(sine*1.15),-0.75),angles(1.9198621771937625,2.356194490192345,0.9599310885968813)),deltaTime) RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.25 * sin(sine*1.15),0),angles(-1.9198621771937625-0.17453292519943295*sin(sine*1.15),0,3.141592653589793)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.75-0.25*sin(sine*1.15),0),angles(-0.3490658503988659-0.08726646259971647*sin(sine*1.15),-1.5707963267948966,0)),deltaTime)  
@@ -1378,16 +1382,6 @@ script.Parent.BackgroundColor3 = c3(255/255,0/255,0/255)
 			script.Parent.TextColor3 = c3(255/255,0/255,i/255)
 		end
 end
-
-
-
-
-
-
-
-
-
-
 
 
 
