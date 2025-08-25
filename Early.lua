@@ -50,6 +50,10 @@ local function notif(str,dur)
     Title = "Service";
     Text = str;})
 end
+if not isfolder("Music") then 
+     makefolder("Music")
+end
+notif('pls click "click me" first ty!!')
 local ui = Instance.new("Frame",ScreenGui)
 local title = Instance.new("TextLabel")
 local Frame = Instance.new("Frame")
@@ -199,7 +203,10 @@ Modes.MouseButton1Click:Connect(function()
 notif("Check F9 for info")
 print("About this script:")
 print("Please avoid any some sort of stuff when using this script , kind to the owner, because he is the only developer of this script and the effort of making each animations for every modes...")
+print(">--------------[=]---------------<")
 print("As always... Love From Theo!")
+print(">--------------[=]---------------<")
+print("please be kind to the owner of this script, the amount of effort that took into making this is alot, especially every animations thats inside this script ")
 print(">--------------[=]---------------<")
 print("^^^^^^^^^^^^^^^^^^^^^")
 print("vvvvvvvvvvvvvvvvvvvvv")
@@ -569,18 +576,18 @@ j1.Thickness=1.5
 j1.Color=c3rgb(0,0,0)
 j1.LineJoinMode="Miter"
 
-
-
 local function getMusicAsset(filename)
+if not isfile("Music/"..filename) then
+writefile("Music/"..filename, 
+	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..filename.."?raw=true"))
+end
     if isfile("Music/"..filename) then
-        return getcustomasset("Music/"..filename)
+        return getcustomasset("Music/"..filename)  
     else
         warn("Music file not found: "..filename)
         return ""
     end
 end
-
-
 	
 local Info={
      {Name="Nameless",WalkSpeed=16,Font="Antique",WingAnim="Nameless1",Music="Shiawase",Tag="None"},
