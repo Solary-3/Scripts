@@ -79,7 +79,7 @@ ui.Active = true
 ui.BackgroundColor3 = Color3.new(0, 0, 0)
 ui.BackgroundTransparency = 0
 ui.BorderSizePixel = 3
-ui.Position = UDim2.new(.35,0, .1, 0)
+ui.Position = UDim2.new(.35,0, 1, 0)
 ui.Size = UDim2.new(0, 200, 0, 200)
 
 title.Name = "title"
@@ -171,7 +171,7 @@ Show.TextColor3=Color3.new(1,1,1)
 Show.TextScaled=true
 Show.TextSize=14
 Show.Size=UDim2.new(0, 50, 0, 50)
-Show.Position=UDim2.new(0, 25, 0, 200)
+Show.Position=UDim2.new(0, 0, 2, 0)
 Show.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
 ui.Visible=false 
 local isenabled=true
@@ -179,19 +179,28 @@ wait(1)
 Show.MouseButton1Click:Connect(function()
 isenabled=not isenabled
       if isenabled then
-      ui.Visible=false
+local UI = TweenInfo.new(2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local tween300 = game:GetService("TweenService"):Create(ui, UI, {Position = UDim2.new(0, 300, 0, -300)})
+tween300:Play()
+wait(1.5)
+ui.Visible=false
      Show.Text="Enable"
       else
       ui.Visible=true
+local UI = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local tween = game:GetService("TweenService"):Create(ui, UI, {Position = UDim2.new(0,300, 0, 100)})
+tween:Play()
      Show.Text="Disable"
     end
 end)
 
-
+local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local tween = game:GetService("TweenService"):Create(Show, tweenInfo, {Position = UDim2.new(0, 0, .50, 0)})
+tween:Play()
 Load.MouseButton1Click:Connect(function()
 notif("please wait for the rigs to load")
 wait(1)
-notif('if the rigs is slow to load and the "-sh"" shows')
+notif('if the rigs is slow to load and the "-sh shows')
 wait(1)
 notif('type"-sh"again once the rigs has done loading')
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 131385506535381 85392395166623 129462518582032  138364679836274 12850150835 106249329428811 5316479641 5316539421 5699795428 5268602207 4794315940 4458601937 4315489767 4506945409 112934510372081"..tostring(ja)) 
@@ -226,9 +235,13 @@ print("9 - Crimtane")
 print("Q - Dual-Ultima")
 print("N - Toggle Music")
 print("F - Equip Sword and Unequip Swords on some modes...")
+print("T - To Transform into other Modes")
 print("Modes that swords can be toggle  to be equipped and unequipped:")
 print(">--------------[=]---------------<")
 print("Neptunian V \n\t\t -- Dual-Ultima")
+print(">--------------[=]---------------<")
+print("Modes that can transform by pressing T:")
+print("Apex")
 
 end)
 
@@ -435,7 +448,16 @@ local WingAnim="Neptunian"
 local Clicking=nil
 
 Run1.MouseButton1Click:Connect(function()
-     if Running then return end 
+if Running then return notif("Script is already running!!!") end 
+if ui.Visible then
+local UI = TweenInfo.new(2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local tween300 = game:GetService("TweenService"):Create(ui, UI, {Position = UDim2.new(0, 300, 0, -300)})
+tween300:Play()
+wait(1.5)
+ui.Visible=false
+Show.Text="Enable"
+isenabled=not isenabled
+end
      Running=true
      local t=reanimate()
 	if type(t)~="table" then  return end
@@ -510,7 +532,7 @@ local E=i("TextLabel",fi)
 local stroke=i("UIStroke",E)
 local R=i("TextLabel",fi)
 local j1=i("UIStroke",R)
-local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 local tween = game:GetService("TweenService"):Create(fi, tweenInfo, {Position = UDim2.new(0, 0, 0.85, 0)})
 tween:Play()
 local tweenInfo1 = TweenInfo.new(4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
@@ -526,7 +548,7 @@ fi.Active = true
 fi.BackgroundColor3 = A
 fi.BackgroundTransparency = .75
 fi.BorderSizePixel = 5.5
-fi.Position = UDim2.new(0, 0, .85, 0)
+fi.Position = UDim2.new(0, 0, 1, 0)
 fi.Size = UDim2.new(0, 1000, 0, 200)
 fo.BackgroundColor3=A
 fo.BackgroundTransparency=.55
@@ -580,13 +602,12 @@ j1.LineJoinMode="Miter"
 
 
 
-local function getMusicAsset(filename)
-writefile("Music/"..filename, 
-	game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..filename.."?raw=true"))
-    if isfile("Music/"..filename) then
-        return getcustomasset("Music/"..filename)  
+local function getMusicAsset(file)
+    if isfile("Music/"..file) then
+        return getcustomasset("Music/"..file)  
     else
-        warn("Music file not found: "..filename)
+writefile("Music/"..file, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..file.."?raw=true"))
+notif("Downloading Audio")
         return ""
     end
 end
@@ -595,7 +616,8 @@ end
 	
 local Info={
      {Name="Nameless",WalkSpeed=16,Font="Antique",WingAnim="Nameless1",Music="Shiawase",Tag="None"},
-     {Name="Swordsman",WalkSpeed=10,Font="SciFi",WingAnim="Swords",Music="Terabyte",Tag="None"}, {Name="Dual-Wielder",WalkSpeed=16,Font="PermanentMarker",WingAnim="Dual",Music="Malevolence",Tag="None"},
+     {Name="Swordsman",WalkSpeed=10,Font="SciFi",WingAnim="Swords",Music="Terabyte",Tag="None"}, 
+     {Name="Dual-Wielder",WalkSpeed=16,Font="PermanentMarker",WingAnim="Dual",Music="Malevolence",Tag="None"},
      {Name="Apex",WalkSpeed=5,Font="SourceSansItalic",WingAnim="Clock",Music="Cleartext",Tag="None"},
      {Name="Abyssal",WalkSpeed=10,Font="GrenzeGotisch",WingAnim="Hunter",Music="Clima",Tag="None"},
      {Name="Fallen",WalkSpeed=8.5,Font="Gotham",WingAnim="Memory",Music="Permafrost",Tag="None"},
@@ -604,14 +626,16 @@ local Info={
      {Name="NV -Unequipped-",Walkspeed=9,Font="Fantasy",WingAnim="NepIdle",Music="Censored",Tag="Neptune"},
      {Name="Crimtane",Walkspeed=9,Font="Bodoni",WingAnim="Crim",Music="Speed Of Light",Tag="None"},
     {Name="Dual-Ultima",Walkspeed=9,Font="Fondamento",WingAnim="DualEquip",Music="Glock",Tag="Dual"},
-     {Name="Dual -Unequipped-",Walkspeed=9,Font="Fondamento",WingAnim="DualUn",Music="Glock",Tag="Dual"}
+     {Name="Dual -Unequipped-",Walkspeed=9,Font="Fondamento",WingAnim="DualUn",Music="Glock",Tag="Dual"},
+     {Name="Andromeda",Walkspeed=9,Font="Fondamento",WingAnim="Andro",Music="Panorama",Tag="Andro"},
+     {Name="Transforming",Walkspeed=9,Font="Fondamento",WingAnim="Trans",Music="Speed Of Light",Tag="None"}
 }
 
 
 local ModeColors = {
     Nameless = {G = Color3.fromRGB(10, 10, 10), A = Color3.fromRGB(150, 150, 150), W = Color3.fromRGB(255, 255, 255)},
     Swordsman = {G = Color3.fromRGB(20, 20, 100), A = Color3.fromRGB(100, 100, 200), W = Color3.fromRGB(200, 200, 255)},
-    Dual = {G = Color3.fromRGB(100, 200, 100), A = Color3.fromRGB(200, 100, 100), W = Color3.fromRGB(255, 200, 200)},
+    ["Dual-Wielder"] = {G = Color3.fromRGB(100, 200, 100), A = Color3.fromRGB(200, 100, 100), W = Color3.fromRGB(255, 200, 200)},
     Apex = {G = Color3.fromRGB(100, 100, 150), A = Color3.fromRGB(200, 200, 175), W = Color3.fromRGB(255, 255, 200)},
     Abyssal = {G = Color3.fromRGB(0, 0, 50), A = Color3.fromRGB(0, 0, 150), W = Color3.fromRGB(0, 0, 200)},
     Fallen = {G = Color3.fromRGB(0, 100, 100), A = Color3.fromRGB(0, 100, 200), W = Color3.fromRGB(0, 200, 255)},
@@ -620,9 +644,10 @@ local ModeColors = {
     NepIdle = {G = Color3.fromRGB(100, 0, 200), A = Color3.fromRGB(100, 0, 150), W = Color3.fromRGB(100, 0, 150)},
     Crimtane = {G = Color3.fromRGB(50, 0, 0), A = Color3.fromRGB(100, 0, 0), W =Color3.fromRGB(200, 0, 0)},
     ["Dual-Ultima"] = {G = Color3.fromRGB(0,105,107), A = Color3.fromRGB(0,150,147), W =Color3.fromRGB(0,225,223)},
-   ["Dual -Unequipped-"] = {G = Color3.fromRGB(0,105,107), A = Color3.fromRGB(0,150,147), W =Color3.fromRGB(0,225,223)}
+   ["Dual -Unequipped-"] = {G = Color3.fromRGB(0,105,107), A = Color3.fromRGB(0,150,147), W =Color3.fromRGB(0,225,223)},
+    Andromeda = {G = Color3.fromRGB(166,68,0), A = Color3.fromRGB(166,68,0), W =Color3.fromRGB(255,117,20)},
+   Transforming = {G = Color3.fromRGB(100,100,100), A = Color3.fromRGB(150,150,150), W =Color3.fromRGB(255,225,225)}
 }
-
 function getMode(modeName)
 	for i,v in next, Info do
 		if(v.Name==modeName)then
@@ -703,6 +728,10 @@ Clicking=uis.InputBegan:Connect(function(io,gpe)
       elseif (io.KeyCode==Enum.KeyCode.Five and Mode~="Apex") then
            changeMode("Apex")
             
+      elseif (io.KeyCode==Enum.KeyCode.T and Mode=="Apex") then
+           changeMode("Transforming")
+           wait(4)
+           changeMode("Andromeda")
       elseif (io.KeyCode==Enum.KeyCode.Six and Mode~="Dual-Wielder") then 
            changeMode("Dual-Wielder")
            
@@ -1107,35 +1136,67 @@ s0_4.C0=Lerp(s0_4.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),de
 end
 end
 
-WingAnims.Nil=function()
+WingAnims.Trans=function()
 if nep then
-nep.C0=Lerp(nep.C0,cfMul(cf(0,0,0),angles(0,1.5707963267948966,0)),deltaTime)  
+nep.C0=Lerp(nep.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime)  
 end
 if s1_1 then 
-s1_1.C0=Lerp(s1_1.C0,cfMul(cf(0,0,0),angles(0,1.5707963267948966,0)),deltaTime)    
+s1_1.C0=Lerp(s1_1.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime)    
 end 
 if s1_2 then
-s1_2.C0=Lerp(s1_2.C0,cfMul(cf(0,0,0),angles(0,1.5707963267948966,0)),deltaTime)  
+s1_2.C0=Lerp(s1_2.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime)  
 end 
 if s1_3 then 
-s1_3.C0=Lerp(s1_3.C0,cfMul(cf(0,0,0),angles(0,1.5707963267948966,0)),deltaTime) 
+s1_3.C0=Lerp(s1_3.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime) 
 end 
 if s1_4 then
-s1_4.C0=Lerp(s1_4.C0,cfMul(cf(0,0,0),angles(0,1.5707963267948966,0)),deltaTime)
+s1_4.C0=Lerp(s1_4.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime)
 end 
 if s0_1 then
-s0_1.C0=Lerp(s0_1.C0,cfMul(cf(0,0,0),angles(0,1.5707963267948966,0)),deltaTime)
+s0_1.C0=Lerp(s0_1.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime)
 end 
 if s0_2 then
-s0_2.C0=Lerp(s0_2.C0,cfMul(cf(0,0,0),angles(0,1.5707963267948966,0)),deltaTime)
+s0_2.C0=Lerp(s0_2.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime)
 end 
 if s0_3 then
-s0_3.C0=Lerp(s0_3.C0,cfMul(cf(0,0,0),angles(0,1.5707963267948966,0)),deltaTime)
+s0_3.C0=Lerp(s0_3.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime)
 end 
 if s0_4 then
-s0_4.C0=Lerp(s0_4.C0,cfMul(cf(0,0,0),angles(0,1.5707963267948966,0)),deltaTime)
+s0_4.C0=Lerp(s0_4.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime)
 end
 end
+
+WingAnims.Andro=function()
+if nep then
+nep.C0=Lerp(nep.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime)  
+end
+if s1_1 then 
+s1_1.C0=Lerp(s1_1.C0,cfMul(cf(-1,5,-3.1),angles(4.537856055185257,1.5707963267948966+0.17453292519943295*sin(sine*1),0)),deltaTime)
+end 
+if s1_2 then
+s1_2.C0=Lerp(s1_2.C0,cfMul(cf(1,2,-6),angles(0.6981317007977318,-1.5707963267948966+0.17453292519943295*sin(sine*1),0)),deltaTime)
+end 
+if s1_3 then 
+s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-1,2.35,-5),angles(0,1.5707963267948966-0.17453292519943295*sin(sine*1),0)),deltaTime)
+end 
+if s1_4 then
+s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-1,2,-6),angles(0,1.5707963267948966-0.17453292519943295*sin(sine*1),0.6981317007977318)),deltaTime)
+end 
+if s0_1 then
+s0_1.C0=Lerp(s0_1.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime)
+end 
+if s0_2 then
+s0_2.C0=Lerp(s0_2.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime)
+end 
+if s0_3 then
+s0_3.C0=Lerp(s0_3.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime)
+end 
+if s0_4 then
+s0_4.C0=Lerp(s0_4.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime)
+end
+end
+
+
 
 
 
@@ -1210,11 +1271,30 @@ s0_3.C0=Lerp(s0_3.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),de
 end 
 if s0_4 then
 s0_4.C0=Lerp(s0_4.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime)
+
+
+elseif Mode == "Andromeda" then
+setWalkSpeed(16)
+RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.075+0.075*sin(sine*1),0),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime) RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.5,-1-0.025*sin((sine+0.65)*1),-0.5),angles(0,3.141592653589793,-0.017453292519943295+0.05235987755982989*sin(sine*1))),deltaTime) LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.5,-1-0.015*sin((sine+0.65)*1),-0.5),angles(0,-3.141592653589793,0.05235987755982989-0.05235987755982989*sin(sine*1))),deltaTime) Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1+0.025*sin((sine+0.55)*1),0),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime) LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.35,0.5-0.055*sin((sine+0.65)*1),0.55),angles(-0.3490658503988659,-3.141592653589793,-0.6981317007977318)),deltaTime) RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.35,0.5-0.055*sin((sine+0.65)*1),0.55),angles(-0.3490658503988659,3.141592653589793,0.6981317007977318)),deltaTime)
+if s1_1 then
+s1_1.C0 = Lerp(s1_1.C0,cfMul(cf(2.75, 3, -0.5), angles(0.8726646259971648, -0.4363323129985824, 0.17453292519943295 - 17.453292519943297 * sin(sine * 0.5))), deltaTime)
+            end
+if s1_2 then
+s1_2.C0 = Lerp(s1_2.C0,cfMul(cf(2.75, 3, -0.5), angles(0.8726646259971648, -0.4363323129985824, 2.6179938779914944 + 17.453292519943297 * sin(sine * 0.5))), deltaTime)
+end
+if s1_3 then
+s1_3.C0 = Lerp(s1_3.C0,cfMul(cf(2.65, 3, -0.5), angles(0.8726646259971648, -0.4363323129985824, 4.799655442984406 + 17.453292519943297 * sin(sine * 0.5))), deltaTime)
+end
+if s1_4 then
+s1_4.C0 = Lerp(s1_4.C0,cfMul(cf(2.75, 3, -0.5), angles(0.8726646259971648, -0.4363323129985824, 2.6179938779914944 - 17.453292519943297 * sin(sine * 0.5))), deltaTime)
+end
 end
 
 
 --Default Anims
 else
+
+
 setWalkSpeed(12.5)
 LeftShoulder.C0 = Lerp(LeftShoulder.C0, cfMul(cf(-1, 0.5 + 0.2 * sin((sine + 1) * 8), 0.25 * sin(sine * 8)), angles(-1.5707963267948966 * sin(sine * 8), -1.5707963267948966, 0)), deltaTime)Neck.C0 = Lerp(Neck.C0, cfMul(cf(0, 1 + 0.05 * sin((sine + 1) * 15), 0), angles(-1.4835298641951802, 0, 3.141592653589793)), deltaTime)RightShoulder.C0 = Lerp(RightShoulder.C0, cfMul(cf(1, 0.5 + 0.2 * sin((sine - 1) * 8), -0.25 * sin(sine * 8)), angles(1.5707963267948966 * sin(sine * 8), 1.5707963267948966, 0)), deltaTime)LeftHip.C0 = Lerp(LeftHip.C0, cfMul(cf(-1, -0.95 + 0.35 * sin((sine + 1) * 8), -0.1 - 0.25 * sin(sine * 8)), angles(-0.17453292519943295, -1.5707963267948966, -0.17453292519943295 - 0.8726646259971648 * sin(sine * 8))), deltaTime)RightHip.C0 = Lerp(RightHip.C0, cfMul(cf(1, -0.95 - 0.35 * sin((sine + 1) * 8), -0.1 + 0.25 * sin(sine * 8)), angles(0, 1.5707963267948966, -0.8726646259971648 * sin(sine * 8))), deltaTime)RootJoint.C0 = Lerp(RootJoint.C0, cfMul(cf(0, 0.1 * sin(sine * 15), 0), angles(-1.7453292519943295, 0, 3.141592653589793)), deltaTime)
 
@@ -1277,8 +1357,11 @@ elseif Mode=="Dual-Ultima"  then  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1+0.025*sin(si
 elseif Mode=="Dual -Unequipped-"  then  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(0.75,0.5-0.1*sin((sine+0.65)*1),-1.25),angles(0,-0.17453292519943295,-1.5707963267948966)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.15+0.1*sin(sine*1),0),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime) Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1+0.035*sin(sine*1),0),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime) LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.5,-1-0.1*sin(sine*1),-0.5),angles(0,-3.141592653589793,0.05235987755982989-0.05235987755982989*sin(sine*1))),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-0.75,-0.1 * sin((sine+0.65)*1),-1.25),angles(0,-0.17453292519943295,1.7453292519943295)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.5,-1-0.1*sin(sine*1),-0.5),angles(0,3.141592653589793,-0.05235987755982989+0.05235987755982989*sin(sine*1))),deltaTime) 
 
 
-elseif Mode=="Nil"  then  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(0.75,0.5-0.1*sin((sine+0.65)*1),-1.25),angles(0,-0.17453292519943295,-1.5707963267948966)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.15+0.1*sin(sine*1),0),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime) Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1+0.035*sin(sine*1),0),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime) LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.5,-1-0.1*sin(sine*1),-0.5),angles(0,-3.141592653589793,0.05235987755982989-0.05235987755982989*sin(sine*1))),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-0.75,-0.1 * sin((sine+0.65)*1),-1.25),angles(0,-0.17453292519943295,1.7453292519943295)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.5,-1-0.1*sin(sine*1),-0.5),angles(0,3.141592653589793,-0.05235987755982989+0.05235987755982989*sin(sine*1))),deltaTime) 
-             end
+elseif Mode=="Andromeda"  then  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.075+0.075*sin(sine*1),0),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime) RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.5,-1-0.025*sin((sine+0.65)*1),-0.5),angles(0,3.141592653589793,-0.017453292519943295+0.05235987755982989*sin(sine*1))),deltaTime) LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.5,-1-0.015*sin((sine+0.65)*1),-0.5),angles(0,-3.141592653589793,0.05235987755982989-0.05235987755982989*sin(sine*1))),deltaTime) Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1+0.025*sin((sine+0.55)*1),0),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime) LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.35,0.5-0.055*sin((sine+0.65)*1),0.55),angles(-0.3490658503988659,-3.141592653589793,-0.6981317007977318)),deltaTime) RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.35,0.5-0.055*sin((sine+0.65)*1),0.55),angles(-0.3490658503988659,3.141592653589793,0.6981317007977318)),deltaTime)
+
+
+elseif Mode=="Transforming"  then  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(0,1.5707963267948966,0.5235987755982988)),deltaTime) Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.9198621771937625,0,3.141592653589793)),deltaTime) RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.45,0.5,0.25),angles(0,3.141592653589793,2.0943951023931953)),deltaTime) RootJoint.C0=Lerp(RootJoint.C0,angles(-2.0943951023931953,0,3.141592653589793),deltaTime) LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(0,-1.5707963267948966,-0.5235987755982988)),deltaTime) LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.45,0.5,0.25),angles(0,-3.141592653589793,-2.0943951023931953)),deltaTime)
+           end
     end
 end
 
