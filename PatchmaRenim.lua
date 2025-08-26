@@ -108,6 +108,7 @@ local Inverse=cfGet(cf_0,"Inverse")
 local Lerp=cfGet(cf_0,"Lerp")
 local accessorylimbs={
 { meshid="110684113028749",textureid="70661572547971",C0=angles(0,0,0),Name="Torso" },
+{ meshid="104613079991268",textureid="83269599235494",C0=angles(0,0,0),Name="Torso" },
      
 { meshid="125405780718494",textureid="136752500636691",C0=angles(-1.5707963267948966,0,1.5707963267948966),Name="Right Arm" },
 
