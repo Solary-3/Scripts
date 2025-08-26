@@ -205,11 +205,12 @@ wait(1)
 notif('type"-sh"again once the rigs has done loading')
 local Place = game.placeId
 if Place == 17574618959 or Place == 88308889239232 then
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 131385506535381 85392395166623 129462518582032  138364679836274 12850150835 106249329428811 5316479641 5316539421 5699795428 5268602207 4794315940 4458601937 4315489767 4506945409 112934510372081"..tostring(ja)) 
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 131385506535381 85392395166623 129462518582032 138364679836274 12850150835 106249329428811 5316479641 5316539421 5699795428 5268602207 4794315940 4458601937 4315489767 4506945409 112934510372081"..tostring(ja)) 
 wait(6.5)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
 else
 notif("'-gh' command isnt supported...")
+end
 end)
 
 Modes.MouseButton1Click:Connect(function()
@@ -1221,7 +1222,6 @@ local function animate()
     local velXZ=velbycfrvec(v3_xz)
     local velXZ2=velbycfrvec(v3_xzL)
     local velNet=velbycfrvec(v3_net)
-    if Mode=="Transforming" then return setWalkSpeed(0) end
     if walking then
 if Mode == "Neptunian V" then
 setWalkSpeed(16)
