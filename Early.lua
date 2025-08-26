@@ -200,12 +200,16 @@ tween:Play()
 Load.MouseButton1Click:Connect(function()
 notif("please wait for the rigs to load")
 wait(1)
-notif('if the rigs is slow to load and the "-sh shows')
+notif('if the rigs is slow to load and the "-sh" shows')
 wait(1)
 notif('type"-sh"again once the rigs has done loading')
+local Place = game.placeId
+if Place == 17574618959 or Place == 88308889239232 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 131385506535381 85392395166623 129462518582032  138364679836274 12850150835 106249329428811 5316479641 5316539421 5699795428 5268602207 4794315940 4458601937 4315489767 4506945409 112934510372081"..tostring(ja)) 
 wait(6.5)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
+else
+notif("'-gh' command isnt supported...")
 end)
 
 Modes.MouseButton1Click:Connect(function()
@@ -1217,18 +1221,19 @@ local function animate()
     local velXZ=velbycfrvec(v3_xz)
     local velXZ2=velbycfrvec(v3_xzL)
     local velNet=velbycfrvec(v3_net)
-    
+    if Mode=="Transforming" then return setWalkSpeed(0) end
     if walking then
 if Mode == "Neptunian V" then
-if nep then 
 setWalkSpeed(16)
+if nep then 
 nep.C0=Lerp(nep.C0,cfMul(cf(5,-0.25+0.1*sin((sine+0.75)*15),0.25),angles(-0.5235987755982988,-3.0543261909900767,0.5235987755982988)),deltaTime)
 end
 Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1+0.065*sin(sine*15),0),angles(-1.4835298641951802,0,3.141592653589793)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.25,-0.25-0.15*sin((sine+0.65)*15),0.15),angles(-0.8726646259971648,0.3490658503988659,0.5235987755982988)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-0.95-0.45*sin((sine+0.1)*10),-0.065+0.65*sin(sine*10)),angles(0,1.5707963267948966,-0.17453292519943295-0.6108652381980153*sin((sine+0.65)*10))),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.95+0.45*sin((sine+0.1)*10),-0.065-0.65*sin(sine*10)),angles(0,-1.5707963267948966,-0.17453292519943295-0.6108652381980153*sin((sine+0.65)*10))),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,1.25-0.15*sin((sine+0.65)*15),-0.5),angles(1.9198621771937625,-0.3490658503988659,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,0.1 * sin(sine*15),0),angles(-1.9198621771937625,0,3.141592653589793)),deltaTime)
 
 
 elseif Mode == "NV -Unequipped-" then
-if nep then nep.C0=Lerp(nep.C0,cfMul(cf(1.55+0.1*sin((sine+0.65)*1),-0.1 * sin((sine+0.65)*1),0),angles(0,0,0.8726646259971648)),deltaTime) 
+if nep then 
+nep.C0=Lerp(nep.C0,cfMul(cf(1.55+0.1*sin((sine+0.65)*1),-0.1 * sin((sine+0.65)*1),0),angles(0,0,0.8726646259971648)),deltaTime) 
 end
 setWalkSpeed(12.5)
 LeftShoulder.C0 = Lerp(LeftShoulder.C0, cfMul(cf(-1, 0.5 + 0.2 * sin((sine + 1) * 8), 0.25 * sin(sine * 8)), angles(-1.5707963267948966 * sin(sine * 8), -1.5707963267948966, 0)), deltaTime)Neck.C0 = Lerp(Neck.C0, cfMul(cf(0, 1 + 0.05 * sin((sine + 1) * 15), 0), angles(-1.4835298641951802, 0, 3.141592653589793)), deltaTime)RightShoulder.C0 = Lerp(RightShoulder.C0, cfMul(cf(1, 0.5 + 0.2 * sin((sine - 1) * 8), -0.25 * sin(sine * 8)), angles(1.5707963267948966 * sin(sine * 8), 1.5707963267948966, 0)), deltaTime)LeftHip.C0 = Lerp(LeftHip.C0, cfMul(cf(-1, -0.95 + 0.35 * sin((sine + 1) * 8), -0.1 - 0.25 * sin(sine * 8)), angles(-0.17453292519943295, -1.5707963267948966, -0.17453292519943295 - 0.8726646259971648 * sin(sine * 8))), deltaTime)RightHip.C0 = Lerp(RightHip.C0, cfMul(cf(1, -0.95 - 0.35 * sin((sine + 1) * 8), -0.1 + 0.25 * sin(sine * 8)), angles(0, 1.5707963267948966, -0.8726646259971648 * sin(sine * 8))), deltaTime)RootJoint.C0 = Lerp(RootJoint.C0, cfMul(cf(0, 0.1 * sin(sine * 15), 0), angles(-1.7453292519943295, 0, 3.141592653589793)), deltaTime)
@@ -1271,14 +1276,14 @@ s0_3.C0=Lerp(s0_3.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),de
 end 
 if s0_4 then
 s0_4.C0=Lerp(s0_4.C0,cfMul(cf(1000,1000,1000),angles(0,1.5707963267948966,0)),deltaTime)
+end
 
-
-elseif Mode == "Andromeda" then
+elseif Mode =="Andromeda" then
 setWalkSpeed(16)
-RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.075+0.075*sin(sine*1),0),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime) RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.5,-1-0.025*sin((sine+0.65)*1),-0.5),angles(0,3.141592653589793,-0.017453292519943295+0.05235987755982989*sin(sine*1))),deltaTime) LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.5,-1-0.015*sin((sine+0.65)*1),-0.5),angles(0,-3.141592653589793,0.05235987755982989-0.05235987755982989*sin(sine*1))),deltaTime) Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1+0.025*sin((sine+0.55)*1),0),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime) LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.35,0.5-0.055*sin((sine+0.65)*1),0.55),angles(-0.3490658503988659,-3.141592653589793,-0.6981317007977318)),deltaTime) RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.35,0.5-0.055*sin((sine+0.65)*1),0.55),angles(-0.3490658503988659,3.141592653589793,0.6981317007977318)),deltaTime)
+LeftShoulder.C0 = Lerp(LeftShoulder.C0, cfMul(cf(-1, 0.5 + 0.2 * sin((sine + 1) * 8), 0.25 * sin(sine * 8)), angles(-1.5707963267948966 * sin(sine * 8), -1.5707963267948966, 0)), deltaTime)Neck.C0 = Lerp(Neck.C0, cfMul(cf(0, 1 + 0.05 * sin((sine + 1) * 15), 0), angles(-1.4835298641951802, 0, 3.141592653589793)), deltaTime)RightShoulder.C0 = Lerp(RightShoulder.C0, cfMul(cf(1, 0.5 + 0.2 * sin((sine - 1) * 8), -0.25 * sin(sine * 8)), angles(1.5707963267948966 * sin(sine * 8), 1.5707963267948966, 0)), deltaTime)LeftHip.C0 = Lerp(LeftHip.C0, cfMul(cf(-1, -0.95 + 0.35 * sin((sine + 1) * 8), -0.1 - 0.25 * sin(sine * 8)), angles(-0.17453292519943295, -1.5707963267948966, -0.17453292519943295 - 0.8726646259971648 * sin(sine * 8))), deltaTime)RightHip.C0 = Lerp(RightHip.C0, cfMul(cf(1, -0.95 - 0.35 * sin((sine + 1) * 8), -0.1 + 0.25 * sin(sine * 8)), angles(0, 1.5707963267948966, -0.8726646259971648 * sin(sine * 8))), deltaTime)RootJoint.C0 = Lerp(RootJoint.C0, cfMul(cf(0, 0.1 * sin(sine * 15), 0), angles(-1.7453292519943295, 0, 3.141592653589793)), deltaTime)
 if s1_1 then
 s1_1.C0 = Lerp(s1_1.C0,cfMul(cf(2.75, 3, -0.5), angles(0.8726646259971648, -0.4363323129985824, 0.17453292519943295 - 17.453292519943297 * sin(sine * 0.5))), deltaTime)
-            end
+end
 if s1_2 then
 s1_2.C0 = Lerp(s1_2.C0,cfMul(cf(2.75, 3, -0.5), angles(0.8726646259971648, -0.4363323129985824, 2.6179938779914944 + 17.453292519943297 * sin(sine * 0.5))), deltaTime)
 end
@@ -1288,12 +1293,10 @@ end
 if s1_4 then
 s1_4.C0 = Lerp(s1_4.C0,cfMul(cf(2.75, 3, -0.5), angles(0.8726646259971648, -0.4363323129985824, 2.6179938779914944 - 17.453292519943297 * sin(sine * 0.5))), deltaTime)
 end
-end
 
 
 --Default Anims
 else
-
 
 setWalkSpeed(12.5)
 LeftShoulder.C0 = Lerp(LeftShoulder.C0, cfMul(cf(-1, 0.5 + 0.2 * sin((sine + 1) * 8), 0.25 * sin(sine * 8)), angles(-1.5707963267948966 * sin(sine * 8), -1.5707963267948966, 0)), deltaTime)Neck.C0 = Lerp(Neck.C0, cfMul(cf(0, 1 + 0.05 * sin((sine + 1) * 15), 0), angles(-1.4835298641951802, 0, 3.141592653589793)), deltaTime)RightShoulder.C0 = Lerp(RightShoulder.C0, cfMul(cf(1, 0.5 + 0.2 * sin((sine - 1) * 8), -0.25 * sin(sine * 8)), angles(1.5707963267948966 * sin(sine * 8), 1.5707963267948966, 0)), deltaTime)LeftHip.C0 = Lerp(LeftHip.C0, cfMul(cf(-1, -0.95 + 0.35 * sin((sine + 1) * 8), -0.1 - 0.25 * sin(sine * 8)), angles(-0.17453292519943295, -1.5707963267948966, -0.17453292519943295 - 0.8726646259971648 * sin(sine * 8))), deltaTime)RightHip.C0 = Lerp(RightHip.C0, cfMul(cf(1, -0.95 - 0.35 * sin((sine + 1) * 8), -0.1 + 0.25 * sin(sine * 8)), angles(0, 1.5707963267948966, -0.8726646259971648 * sin(sine * 8))), deltaTime)RootJoint.C0 = Lerp(RootJoint.C0, cfMul(cf(0, 0.1 * sin(sine * 15), 0), angles(-1.7453292519943295, 0, 3.141592653589793)), deltaTime)
@@ -1312,8 +1315,8 @@ s0_3.C0 = Lerp(s0_3.C0,cfMul(cf(2.65, 3, -0.5), angles(0.8726646259971648, -0.43
 end
 if s0_4 then
 s0_4.C0 = Lerp(s0_4.C0,cfMul(cf(2.75, 3, -0.5), angles(0.8726646259971648, -0.4363323129985824, 2.6179938779914944 - 17.453292519943297 * sin(sine * 0.5))), deltaTime)
-            end
-        end
+end
+end
     else
         -- Idle animations (unchanged)
         if WingAnims[WingAnim] then
@@ -1465,6 +1468,7 @@ script.Parent.BackgroundColor3 = c3(255/255,0/255,0/255)
 			script.Parent.TextColor3 = c3(255/255,0/255,i/255)
 		end
 end
+
 
 
 -- Ello there!
