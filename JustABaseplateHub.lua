@@ -766,9 +766,22 @@ local Zeon = MainTab:CreateButton({
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
 --task.wait(2.150)
-  
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Zeon.lua"))()
 end,
 })
+
+local Andromeda = MainTab:CreateButton({
+   Name = "Andromeda Glitcher",
+   Callback = function(A) 
+        if Place == 17574618959 or Place == 88308889239232 then
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
+end
+--task.wait(2.150)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Andromeda.lua"))()
+end,
+})
+
+
 
 local NebulaDivider1 = MainTab:CreateDivider()
 if Place == 17574618959 or Place == 88308889239232 then
@@ -843,7 +856,7 @@ repeat task.wait() until finished
 end,
 })
 local MainSection = MainTab:CreateSection("Forsaken")
-local Forsaken = MainTab:CreateParagraph({Title = "Note:", Content = "This section automatically loads the rigs so dont worry going to the hats and rigs tab to load the rigs!"})
+local Forsaken = MainTab:CreateParagraph({Title = "Note:", Content = "This section automatically loads the rigs so dont worry going to the hats and rigs tab to load the rigs! Also, say -net once u clicked the blue button, Credits to Im Patrick! (not me!)"})
 local Button2 = MainTab:CreateButton({
    Name = "Noli",
    Callback = function()
@@ -1060,6 +1073,13 @@ local Button = HubsTab:CreateButton({
    -- https://scriptblox.com/script/Universal-Script-Gelatek-hub-26438l9cal
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/Main.lua"))()
+   end,
+})
+
+local Patchma = HubsTab:CreateButton({
+   Name = "Patchma Hub",
+   Callback = function() 
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Patchma-Hub-36193"))()
    end,
 })
 
