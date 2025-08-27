@@ -67,10 +67,11 @@ local Show =Instance.new("TextButton")
 local corner=Instance.new("UICorner",ui)
 local corner1=Instance.new("UICorner",Run1)
 local Modes=Instance.new("TextButton",ui)
- corner2=Instance.new("UICorner",Stop1)
- corner3=Instance.new("UICorner",Show)
- corner4=Instance.new("UICorner",Load)
- corner5=Instance.new("UICorner",Modes)
+corner2=Instance.new("UICorner",Stop1)
+corner3=Instance.new("UICorner",Show)
+corner4=Instance.new("UICorner",Load)
+corner5=Instance.new("UICorner",Modes)
+
 ScreenGui.Parent = game:GetService("CoreGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -79,7 +80,7 @@ ui.Active = true
 ui.BackgroundColor3 = Color3.new(0, 0, 0)
 ui.BackgroundTransparency = 0
 ui.BorderSizePixel = 3
-ui.Position = UDim2.new(.35,0, 1, 0)
+ui.Position=UDim2.new(0.35, 0, 0.5, -100)
 ui.Size = UDim2.new(0, 200, 0, 200)
 
 title.Name = "title"
@@ -164,39 +165,54 @@ ced.TextColor3 = Color3.new(1, 1, 1)
 ced.TextScaled = true
 ced.TextSize = 8
 ced.TextWrapped = true
+
 Show.Parent=ScreenGui
 Show.Font="Arcade"
-Show.Text="Enable"
+Show.Text="Disable"
 Show.TextColor3=Color3.new(1,1,1)
 Show.TextScaled=true
 Show.TextSize=14
 Show.Size=UDim2.new(0, 50, 0, 50)
 Show.Position=UDim2.new(0, 0, 2, 0)
 Show.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
-ui.Visible=false 
-local isenabled=true
-wait(1)
+ui.Visible=true
+-- Store the original position for when we show the UI again
+local originalUIPosition = ui.Position
+local isTweening = false
+
 Show.MouseButton1Click:Connect(function()
-isenabled=not isenabled
-      if isenabled then
-local UI = TweenInfo.new(2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-local tween300 = game:GetService("TweenService"):Create(ui, UI, {Position = UDim2.new(0, 300, 0, -300)})
-tween300:Play()
-wait(1.5)
-ui.Visible=false
-     Show.Text="Enable"
-      else
-      ui.Visible=true
-local UI = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-local tween = game:GetService("TweenService"):Create(ui, UI, {Position = UDim2.new(0,300, 0, 100)})
-tween:Play()
-     Show.Text="Disable"
+    if isTweening then return end -- Prevent spamming
+    
+    isTweening = true
+    isenabled = not isenabled
+    
+    if isenabled then
+        ui.Visible = true
+        local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+        local tween = game:GetService("TweenService"):Create(ui, tweenInfo, {Position = originalUIPosition})
+        tween:Play()
+        Show.Text = "Disable"
+        
+        tween.Completed:Connect(function()
+            isTweening = false
+        end)
+    else
+        local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+        local tween = game:GetService("TweenService"):Create(ui, tweenInfo, {Position = UDim2.new(1.5, 0, originalUIPosition.Y.Scale, originalUIPosition.Y.Offset)})
+        tween:Play()
+        Show.Text = "Enable"
+        
+        tween.Completed:Connect(function()
+            ui.Visible = false
+            isTweening = false
+        end)
     end
 end)
 
 local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 local tween = game:GetService("TweenService"):Create(Show, tweenInfo, {Position = UDim2.new(0, 0, .50, 0)})
 tween:Play()
+
 Load.MouseButton1Click:Connect(function()
 notif("please wait for the rigs to load")
 wait(1)
@@ -455,9 +471,9 @@ local Clicking=nil
 Run1.MouseButton1Click:Connect(function()
 if Running then return notif("Script is already running!!!") end 
 if ui.Visible then
-local UI = TweenInfo.new(2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-local tween300 = game:GetService("TweenService"):Create(ui, UI, {Position = UDim2.new(0, 300, 0, -300)})
-tween300:Play()
+local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local tween = game:GetService("TweenService"):Create(ui, tweenInfo, {Position = UDim2.new(1.5, 0, originalUIPosition.Y.Scale, originalUIPosition.Y.Offset)})
+tween:Play()
 wait(1.5)
 ui.Visible=false
 Show.Text="Enable"
@@ -496,6 +512,8 @@ end
      local sword0_4 = getPartFromMesh(4315410540, 4794299274)
      local s0_4 = sword0_4 and getPartJoint(sword0_4) or {C0 = cf_0}
      local Nep=getPartFromMesh(94522224942661,77410806060838)
+
+    -- Neptunian V
      local nep=Nep and getPartJoint(Nep) or {C0=cf_0}
 
      -- Mode 2
@@ -633,8 +651,9 @@ local Info={
     {Name="Dual-Ultima",Walkspeed=9,Font="Fondamento",WingAnim="DualEquip",Music="Glock",Tag="Dual"},
      {Name="Dual -Unequipped-",Walkspeed=9,Font="Fondamento",WingAnim="DualUn",Music="Glock",Tag="Dual"},
      {Name="Andromeda",Walkspeed=9,Font="Fondamento",WingAnim="Andro",Music="Panorama",Tag="Andro"},
-     {Name="Neptune Dispatch",Walkspeed=9,Font="Garamond",WingAnim="Dispatch",Music="Fluxxwave",Tag="Andro"},
-     {Name="Transforming",Walkspeed=9,Font="Code",WingAnim="Trans",Music="Speed Of Light",Tag="None"}
+     {Name="Neptune Dispatch",Walkspeed=9,Font="Garamond",WingAnim="Dispatch",Music="Xonada",Tag="Andro"},
+     {Name="Transforming",Walkspeed=9,Font="Code",WingAnim="Trans",Music="Speed
+     Of Light",Tag="None"}
 }
 
 
@@ -1459,17 +1478,15 @@ Stop1.MouseButton1Click:Connect(function()
         kofi:Disconnect()
         kofi = nil
     end
-    
     if kofi1 then
         kofi1:Disconnect()
         kofi1 = nil
     end
-    
     if kofi2 then
         kofi2:Disconnect()
         kofi2 = nil
     end
-    
+
     if Clicking then
         Clicking:Disconnect()
         Clicking = nil
@@ -1487,8 +1504,6 @@ Stop1.MouseButton1Click:Connect(function()
     if Clicking then
         Clicking=nil
       end
-    
-    
     wait(1)
     stopreanimate()
     if nep then nep = nil end
@@ -1500,7 +1515,6 @@ Stop1.MouseButton1Click:Connect(function()
     if s1_2 then s1_2 = nil end
     if s1_3 then s1_3 = nil end
     if s1_4 then s1_4 = nil end
-    
     game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs"..tostring(ja))
     wait(2.150)
     game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd"..tostring(ja))
