@@ -930,15 +930,6 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("net")
 
 
 
-
-
-
-
-
-
-
-
-
 local MOONICUI = Instance.new("ScreenGui")
 local Main = Instance.new("ImageLabel")
 local TagsAndShit = Instance.new("ImageLabel")
