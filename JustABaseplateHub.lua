@@ -737,16 +737,6 @@ end
 end,
 })
 
-local Button10= MainTab:CreateButton({
-   Name = "Encription Glitcher",
-   Callback = function(A) 
-        if Place == 17574618959 or Place == 88308889239232 then
-local NotDivider = MainTab:CreateDivider()
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
-end
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Encription%20Glitcher.lua"))()
-   end,
-})
 
 local Button11 = MainTab:CreateButton({
    Name = "Achromatic V5",
@@ -757,6 +747,17 @@ end
 --task.wait(2.150)
   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/achromatic%20v5%20edited%20yes.luau"))()
 end,
+})
+
+local Button10= MainTab:CreateButton({
+   Name = "Encription Glitcher",
+   Callback = function(A) 
+        if Place == 17574618959 or Place == 88308889239232 then
+local NotDivider = MainTab:CreateDivider()
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
+end
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Encription%20Glitcher.lua"))()
+   end,
 })
 
 local Zeon = MainTab:CreateButton({

@@ -236,8 +236,6 @@ print("Please avoid any some sort of stuff when using this script , kind to the 
 print(">--------------[=]---------------<")
 print("As always... Love From Theo!")
 print(">--------------[=]---------------<")
-print("please be kind to the owner of this script, the amount of effort that took into making this is alot, especially every animations thats inside this script ")
-print(">--------------[=]---------------<")
 print("BEFORE RELOADING THE GUI, PLEASE STOP THE CURRENT RUNNING SCRIPT LIKE THE ANIMATED CHARACTER, ONCE U RELOAD THE UI, U WONT STOP THE LAST SCRIPT, YOU WILL BE STUCK LIKE THAT!!!!")
 print(">--------------[=]---------------<")
 print("^^^^^^^^^^^^^^^^^^^^^")
