@@ -1083,10 +1083,10 @@ loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Patchma-Hub
    end,
 })
 
-local Patchma = HubsTab:CreateButton({
-   Name = "Patchma Hub",
+local FeHub = HubsTab:CreateButton({
+   Name = "Fe Hub",
    Callback = function() 
-loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Patchma-Hub-36193"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/gGB65rMr"))()
    end,
 })
 
