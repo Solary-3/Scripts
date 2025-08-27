@@ -898,7 +898,7 @@ if flingpart0 and flingpart1 then
 end
 
 lp:GetMouse().Button1Down:Connect(fling) --click fling
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("net")
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 
 
 wait(2.150)-- Add a bit of delay each reanimation 
@@ -1253,7 +1253,7 @@ Undead - Astronaut - Lost Soul
 Control - Synapse X
 =-REBORN-= - Th1rt3en
 INSANITY - Vanta Black
-F R E Z Z E D - Frostbite
+F R E E Z E D - Frostbite
 SYNAPSE-SCRIPTION
 M-A-D - Radioactive
 True-Love - DEATH
@@ -2415,8 +2415,8 @@ Uxi - Master of blades
 				changeMode'=-REBORN-='
 			elseif(io.KeyCode == Enum.KeyCode.Five and Mode~='INSANITY')then 
 				changeMode'INSANITY'
-			elseif(io.KeyCode == Enum.KeyCode.Six and Mode~='F R E Z Z E D')then 
-				changeMode'F R E Z Z E D'
+			elseif(io.KeyCode == Enum.KeyCode.Six and Mode~='F R E E Z E D')then 
+				changeMode'F R E E Z E D'
 			elseif(io.KeyCode == Enum.KeyCode.Seven and Mode~='SYNAPSE-SCRIPTION')then 
 				changeMode'SYNAPSE-SCRIPTION'
 			elseif(io.KeyCode == Enum.KeyCode.Eight and Mode~='M-A-D')then 
@@ -3248,7 +3248,7 @@ end
 					RH.C0 = RH.C0:lerp(RHC0,Alpha)
 				end
 			end
-				elseif(Mode=='F R E Z Z E D')then
+				elseif(Mode=='F R E E Z E D')then
 				local Alpha = .1
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+2*M.C(Sine/39),5+2*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
@@ -3740,7 +3740,7 @@ end
 
 				local wsVal = 4
 				local Alpha = .2
-				if(Mode=='F R E Z Z E D')then Change=.3 elseif(Mode=='Astronaut' or Mode=='Synapse X' or Mode=='=-RED XESTER-=')then Change=1 else Change=.5 end
+				if(Mode=='F R E E Z E D')then Change=.3 elseif(Mode=='Astronaut' or Mode=='Synapse X' or Mode=='=-RED XESTER-=')then Change=1 else Change=.5 end
 				local Alpha = .1
   			if(NeutralAnims)then
  				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),3+1*M.C(Sine/32),0)*CF.A(M.R(-56+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
