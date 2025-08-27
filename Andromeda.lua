@@ -52,8 +52,8 @@ local function notif(str,dur)
     Text = str;})
 end
 
-if not isfolder("Music") then 
-     makefolder("Music")
+if not isfolder("Andromeda") then 
+     makefolder("Andromeda")
 end
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
 notif('pls click "click me" first before using ty!!')
@@ -252,7 +252,7 @@ print("7 - Arcane")
 print("8 - Neptunian V")
 print("9 - Crimtane")
 print("Q - Dual-Ultima")
-print("N - Toggle Music")
+print("N - Toggle Andromeda")
 print("F - Equip Sword and Unequip Swords on some modes...")
 print("T - To Transform into other Modes")
 print("Modes that swords can be toggled to be equipped and unequipped:")
@@ -386,7 +386,7 @@ local exploit = "shitsploit"
         end)
 	local customasset = function(id)
         if exploit ~= "CaetSploit" then
-        idwithoutthatbit= string.gsub(id,"Music/","")
+        idwithoutthatbit= string.gsub(id,"Andromeda/","")
         if not isfile(id) then 
          writefile(id,game:HttpGet("https://github.com/Solary-3/Scripts/tree/Audios-1"..idwithoutthatbit))
         end
@@ -624,11 +624,13 @@ j1.LineJoinMode="Miter"
 
 
 local function getMusicAsset(file)
-    if isfile("Music/"..file) then
-        return getcustomasset("Music/"..file)  
-    else
-writefile("Music/"..file, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..file.."?raw=true"))
+     if not isfile("Andromeda/"..file) then 
+writefile("Andromeda/"..file, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..file.."?raw=true"))
 notif("Downloading Audio")
+          end
+    if isfile("Andromeda/"..file) then
+        return getcustomasset("Andromeda/"..file)  
+    else
         return ""
     end
 end
@@ -636,21 +638,21 @@ end
 
 	
 local Info={
-     {Name="Nameless",WalkSpeed=16,Font="Antique",WingAnim="Nameless1",Music="Shiawase",Tag="None"},
-     {Name="Swordsman",WalkSpeed=10,Font="SciFi",WingAnim="Swords",Music="Terabyte",Tag="None"}, 
-     {Name="Dual-Wielder",WalkSpeed=16,Font="PermanentMarker",WingAnim="Dual",Music="Malevolence",Tag="None"},
-     {Name="Apex",WalkSpeed=5,Font="SourceSansItalic",WingAnim="Clock",Music="Cleartext",Tag="None"},
-     {Name="Abyssal",WalkSpeed=10,Font="GrenzeGotisch",WingAnim="Hunter",Music="Clima",Tag="None"},
-     {Name="Fallen",WalkSpeed=8.5,Font="Gotham",WingAnim="Memory",Music="Permafrost",Tag="None"},
-     {Name="Arcane",Walkspeed=9,Font="Arcade",WingAnim="Arc",Music="Zero Grav"},
-     {Name="Neptunian V",Walkspeed=9,Font="Fantasy",WingAnim="Neptunian",Music="Censored",Tag="Neptune"},
-     {Name="NV -Unequipped-",Walkspeed=9,Font="Fantasy",WingAnim="NepIdle",Music="Censored",Tag="Neptune"},
-     {Name="Crimtane",Walkspeed=9,Font="Bodoni",WingAnim="Crim",Music="Speed Of Light",Tag="None"},
-    {Name="Dual-Ultima",Walkspeed=9,Font="Fondamento",WingAnim="DualEquip",Music="Glock",Tag="Dual"},
-     {Name="Dual -Unequipped-",Walkspeed=9,Font="Fondamento",WingAnim="DualUn",Music="Glock",Tag="Dual"},
-     {Name="Andromeda",Walkspeed=9,Font="Fondamento",WingAnim="Andro",Music="Panorama",Tag="Andro"},
-     {Name="Neptune Dispatch",Walkspeed=9,Font="Garamond",WingAnim="Dispatch",Music="Xonada",Tag="Andro"},
-     {Name="Transforming",Walkspeed=9,Font="Code",WingAnim="Trans",Music="Speed Of Light",Tag="None"}
+     {Name="Nameless",WalkSpeed=16,Font="Antique",WingAnim="Nameless1",Andromeda="Shiawase",Tag="None"},
+     {Name="Swordsman",WalkSpeed=10,Font="SciFi",WingAnim="Swords",Andromeda="Terabyte",Tag="None"}, 
+     {Name="Dual-Wielder",WalkSpeed=16,Font="PermanentMarker",WingAnim="Dual",Andromeda="Malevolence",Tag="None"},
+     {Name="Apex",WalkSpeed=5,Font="SourceSansItalic",WingAnim="Clock",Andromeda="Cleartext",Tag="None"},
+     {Name="Abyssal",WalkSpeed=10,Font="GrenzeGotisch",WingAnim="Hunter",Andromeda="Clima",Tag="None"},
+     {Name="Fallen",WalkSpeed=8.5,Font="Gotham",WingAnim="Memory",Andromeda="Permafrost",Tag="None"},
+     {Name="Arcane",Walkspeed=9,Font="Arcade",WingAnim="Arc",Andromeda="Zero Grav"},
+     {Name="Neptunian V",Walkspeed=9,Font="Fantasy",WingAnim="Neptunian",Andromeda="Censored",Tag="Neptune"},
+     {Name="NV -Unequipped-",Walkspeed=9,Font="Fantasy",WingAnim="NepIdle",Andromeda="Censored",Tag="Neptune"},
+     {Name="Crimtane",Walkspeed=9,Font="Bodoni",WingAnim="Crim",Andromeda="Speed Of Light",Tag="None"},
+    {Name="Dual-Ultima",Walkspeed=9,Font="Fondamento",WingAnim="DualEquip",Andromeda="Glock",Tag="Dual"},
+     {Name="Dual -Unequipped-",Walkspeed=9,Font="Fondamento",WingAnim="DualUn",Andromeda="Glock",Tag="Dual"},
+     {Name="Andromeda",Walkspeed=9,Font="Fondamento",WingAnim="Andro",Andromeda="Panorama",Tag="Andro"},
+     {Name="Neptune Dispatch",Walkspeed=9,Font="Garamond",WingAnim="Dispatch",Andromeda="Xonada",Tag="Andro"},
+     {Name="Transforming",Walkspeed=9,Font="Code",WingAnim="Trans",Andromeda="Speed Of Light",Tag="None"}
 }
 
 
@@ -709,7 +711,7 @@ function changeMode(modeName)
 	Q.Font=info.Font;
 	WingAnim=info.WingAnim or "Nameless1";
 	--setWalkSpeed(info.WalkSpeed);
-	R.Text=info.Music
+	R.Text=info.Andromeda
      local colors = ModeColors[modeName] or ModeColors.Neptunian
      G = colors.G
      A = colors.A
@@ -736,7 +738,7 @@ function changeMode(modeName)
      if Rq1 then
         Rq1.Color = H
      end
-    Playsound.SoundId=getMusicAsset(info.Music..".mp3");
+    Playsound.SoundId=getMusicAsset(info.Andromeda..".mp3");
 	timeposcur=Playsound.TimePosition;
 end
 changeMode(Mode)
