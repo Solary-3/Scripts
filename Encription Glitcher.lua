@@ -12,6 +12,26 @@
 --anyways. Enjoy!--
 --if this was obfuscated in any way. it most likely has a logger or other malicious material--
 
+
+
+
+
+
+
+
+setfpscap(90) --put this more if you have a pc slow, but if is it fast put in 60 
+--reanimate by MyWorld#4430 discord.gg/pYVHtSJmEY
+--"oMg tHIs cODe iS uNReaDabLe sO iT SUckS" -its not a script for u to understand and edit but to use with your other scripts
+local v3_net, v3_808 = Vector3.new(8000, 25.1, 0.1), Vector3.new(8, 0, 8)
+local function getNetlessVelocity(realPartVelocity)
+    if realPartVelocity.Magnitude > 1 then
+        local unit = realPartVelocity.Unit
+        if (unit.Y > 0.25) or (unit.Y < -0.75) then
+            return unit * (25.1 / unit.Y)
+        end
+    end
+    return v3_net + realPartVelocity * v3_808
+end
 local simradius = "shp" --simulation radius (net bypass) method
 --"shp" - sethiddenproperty
 --"ssr" - setsimulationradius
