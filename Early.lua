@@ -652,8 +652,7 @@ local Info={
      {Name="Dual -Unequipped-",Walkspeed=9,Font="Fondamento",WingAnim="DualUn",Music="Glock",Tag="Dual"},
      {Name="Andromeda",Walkspeed=9,Font="Fondamento",WingAnim="Andro",Music="Panorama",Tag="Andro"},
      {Name="Neptune Dispatch",Walkspeed=9,Font="Garamond",WingAnim="Dispatch",Music="Xonada",Tag="Andro"},
-     {Name="Transforming",Walkspeed=9,Font="Code",WingAnim="Trans",Music="Speed
-     Of Light",Tag="None"}
+     {Name="Transforming",Walkspeed=9,Font="Code",WingAnim="Trans",Music="Speed Of Light",Tag="None"}
 }
 
 
