@@ -903,6 +903,9 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 
 wait(2.150)-- Add a bit of delay each reanimation 
 
+
+
+
 HumanDied = false
 local CountSCIFIMOVIELOL = 1
 function SCIFIMOVIELOL(Part0,Part1,Position,Angle)
