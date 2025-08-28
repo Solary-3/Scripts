@@ -52,8 +52,8 @@ local function notif(str,dur)
     Text = str;})
 end
 
-if not isfolder(Andromeda) then 
-     makefolder(Andromeda)
+if not isfolder("Andromeda") then 
+     makefolder("Andromeda")
 end
 notif('pls click "click me" first ty!!')
 local ui = Instance.new("Frame",ScreenGui)
