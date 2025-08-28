@@ -637,8 +637,8 @@ j1.LineJoinMode="Miter"
 
 local function getMusicAsset(file)
 if not isfile("Andromeda/"..file) then 
-writefile("Andromeda/"..file, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..file.."?raw=true"))
 notif("Downloading Audio")
+writefile("Andromeda/"..file, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..file.."?raw=true"))
 end
     if isfile("Andromeda/"..file) then
         return getcustomasset("Andromeda/"..file)  
