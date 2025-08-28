@@ -52,8 +52,8 @@ local function notif(str,dur)
     Text = str;})
 end
 
-if not isfolder("Music") then 
-     makefolder("Music")
+if not isfolder(Andromeda) then 
+     makefolder(Andromeda)
 end
 notif('pls click "click me" first ty!!')
 local ui = Instance.new("Frame",ScreenGui)
@@ -392,7 +392,7 @@ local exploit = "shitsploit"
         end)
 	local customasset = function(id)
         if exploit ~= "CaetSploit" then
-        idwithoutthatbit= string.gsub(id,"Music/","")
+        idwithoutthatbit= string.gsub(id,"Andromeda/","")
         if not isfile(id) then 
          writefile(id,game:HttpGet("https://github.com/Solary-3/Scripts/tree/Audios-1"..idwithoutthatbit))
         end
@@ -636,12 +636,12 @@ j1.LineJoinMode="Miter"
 
 
 local function getMusicAsset(file)
-if not isfile("Music/"..file) then 
-writefile("Music/"..file, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..file.."?raw=true"))
+if not isfile("Andromeda/"..file) then 
+writefile("Andromeda/"..file, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..file.."?raw=true"))
 notif("Downloading Audio")
 end
-    if isfile("Music/"..file) then
-        return getcustomasset("Music/"..file)  
+    if isfile("Andromeda/"..file) then
+        return getcustomasset("Andromeda/"..file)  
     else
        notif("File Not Found")
         return ""
