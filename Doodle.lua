@@ -36,7 +36,7 @@ Head_k1_HumanoidRootPart_Torso_Head.Parent = Torso_k1_HumanoidRootPart_Torso
 
 --Left_Arm
 local Left_Arm_k1_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k1_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k1_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k1_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.571669, -0.098860, -0.023924, 0.953746, 0.297430, -0.043647, -0.295351, 0.954167, 0.048298, 0.056012, -0.033173, 0.997879)
 Left_Arm_k1_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k1_HumanoidRootPart_Torso
 
@@ -44,7 +44,7 @@ Left_Arm_k1_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k1_HumanoidRootPart_T
 
 --Right_Arm
 local Right_Arm_k1_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k1_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k1_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k1_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(0.065156, -0.415171, 0.041772, 0.468060, -0.863397, 0.188324, 0.850498, 0.497992, 0.169284, -0.239942, 0.080934, 0.967408)
 Right_Arm_k1_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k1_HumanoidRootPart_Torso
 
@@ -52,15 +52,15 @@ Right_Arm_k1_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k1_HumanoidRootPart
 
 --Left_Leg
 local Left_Leg_k1_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k1_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k1_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k1_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.780676, 0.390855, -0.063535, 0.732526, 0.680494, -0.018261, -0.680154, 0.732745, 0.021814, 0.028225, -0.003559, 0.999595)
 Left_Leg_k1_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k1_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
 local Right_Leg_k1_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k1_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k1_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k1_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.598748, 0.170406, 0.089866, 0.959811, 0.244479, -0.137814, -0.250547, 0.967691, -0.028280, 0.126448, 0.061672, 0.990054)
 Right_Leg_k1_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k1_HumanoidRootPart_Torso
 
@@ -97,7 +97,7 @@ Head_k2_HumanoidRootPart_Torso_Head.Parent = Torso_k2_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k2_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k2_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k2_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k2_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.648306, -0.042806, -0.019300, 0.977312, 0.206478, -0.047208, -0.203426, 0.977108, 0.062273, 0.058985, -0.051256, 0.996942)
 Left_Arm_k2_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k2_HumanoidRootPart_Torso
 
@@ -105,7 +105,7 @@ Left_Arm_k2_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k2_HumanoidRootPart_T
 
 --Right_Arm
  Right_Arm_k2_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k2_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k2_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k2_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(0.163519, -0.504524, 0.042760, 0.271532, -0.946063, 0.176736, 0.939369, 0.300478, 0.165226, -0.209420, 0.121156, 0.970291)
 Right_Arm_k2_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k2_HumanoidRootPart_Torso
 
@@ -113,15 +113,15 @@ Right_Arm_k2_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k2_HumanoidRootPart
 
 --Left_Leg
  Left_Leg_k2_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k2_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k2_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k2_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.778680, 0.325985, -0.064471, 0.746384, 0.664920, -0.028150, -0.664565, 0.746911, 0.021873, 0.035570, 0.002382, 0.999364)
 Left_Leg_k2_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k2_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k2_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k2_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k2_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k2_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.595304, 0.131527, 0.090098, 0.952947, 0.264646, -0.147829, -0.270942, 0.962300, -0.023841, 0.135947, 0.062773, 0.988726)
 Right_Leg_k2_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k2_HumanoidRootPart_Torso
 
@@ -158,7 +158,7 @@ Head_k3_HumanoidRootPart_Torso_Head.Parent = Torso_k3_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k3_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k3_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k3_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k3_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.713443, -0.000712, -0.008071, 0.985541, 0.160097, -0.055487, -0.155674, 0.984840, 0.076524, 0.066897, -0.066780, 0.995523)
 Left_Arm_k3_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k3_HumanoidRootPart_Torso
 
@@ -166,7 +166,7 @@ Left_Arm_k3_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k3_HumanoidRootPart_T
 
 --Right_Arm
  Right_Arm_k3_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k3_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k3_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k3_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(0.241122, -0.583261, 0.043569, 0.068753, -0.984017, 0.164268, 0.983173, 0.094766, 0.156175, -0.169246, 0.150767, 0.973974)
 Right_Arm_k3_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k3_HumanoidRootPart_Torso
 
@@ -174,15 +174,15 @@ Right_Arm_k3_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k3_HumanoidRootPart
 
 --Left_Leg
  Left_Leg_k3_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k3_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k3_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k3_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.792388, 0.279701, -0.065160, 0.786908, 0.616232, -0.032169, -0.615781, 0.787564, 0.023586, 0.039870, 0.001249, 0.999204)
 Left_Leg_k3_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k3_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k3_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k3_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k3_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k3_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.567735, 0.062077, 0.076246, 0.955577, 0.251260, -0.154082, -0.256539, 0.966417, -0.015064, 0.145122, 0.053923, 0.987943)
 Right_Leg_k3_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k3_HumanoidRootPart_Torso
 
@@ -219,7 +219,7 @@ Head_k4_HumanoidRootPart_Torso_Head.Parent = Torso_k4_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k4_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k4_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k4_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k4_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.758682, 0.029102, 0.005801, 0.987097, 0.144930, -0.068075, -0.138577, 0.986229, 0.090266, 0.080220, -0.079668, 0.993588)
 Left_Arm_k4_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k4_HumanoidRootPart_Torso
 
@@ -227,7 +227,7 @@ Left_Arm_k4_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k4_HumanoidRootPart_T
 
 --Right_Arm
  Right_Arm_k4_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k4_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k4_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k4_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(0.292034, -0.646073, 0.044116, -0.116915, -0.981454, 0.151916, 0.985201, -0.095310, 0.142461, -0.125339, 0.166323, 0.978073)
 Right_Arm_k4_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k4_HumanoidRootPart_Torso
 
@@ -235,15 +235,15 @@ Right_Arm_k4_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k4_HumanoidRootPart
 
 --Left_Leg
  Left_Leg_k4_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k4_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k4_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k4_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.823579, 0.271755, -0.065322, 0.841616, 0.539244, -0.029969, -0.538656, 0.842132, 0.025770, 0.039134, -0.005545, 0.999219)
 Left_Leg_k4_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k4_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k4_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k4_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k4_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k4_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.497097, -0.005409, 0.047398, 0.969356, 0.190020, -0.155694, -0.192925, 0.981207, -0.003618, 0.152080, 0.033544, 0.987799)
 Right_Leg_k4_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k4_HumanoidRootPart_Torso
 
@@ -280,7 +280,7 @@ Head_k5_HumanoidRootPart_Torso_Head.Parent = Torso_k5_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k5_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k5_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k5_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k5_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.775628, 0.048316, 0.018355, 0.985598, 0.146165, -0.085041, -0.137243, 0.985198, 0.102706, 0.098795, -0.089555, 0.991070)
 Left_Arm_k5_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k5_HumanoidRootPart_Torso
 
@@ -288,7 +288,7 @@ Left_Arm_k5_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k5_HumanoidRootPart_T
 
 --Right_Arm
  Right_Arm_k5_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k5_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k5_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k5_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(0.310323, -0.687653, 0.044317, -0.268699, -0.952986, 0.140067, 0.959578, -0.252195, 0.124930, -0.083732, 0.167973, 0.982229)
 Right_Arm_k5_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k5_HumanoidRootPart_Torso
 
@@ -296,15 +296,15 @@ Right_Arm_k5_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k5_HumanoidRootPart
 
 --Left_Leg
  Left_Leg_k5_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k5_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k5_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k5_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.891671, 0.330920, -0.065511, 0.906689, 0.421212, -0.022246, -0.420589, 0.906822, 0.027894, 0.031922, -0.015935, 0.999363)
 Left_Leg_k5_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k5_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k5_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k5_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k5_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k5_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.496504, 0.010582, 0.024872, 0.975708, 0.156609, -0.153194, -0.156703, 0.987579, 0.011535, 0.153097, 0.012751, 0.988129)
 Right_Leg_k5_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k5_HumanoidRootPart_Torso
 
@@ -341,7 +341,7 @@ Head_k6_HumanoidRootPart_Torso_Head.Parent = Torso_k6_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k6_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k6_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k6_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k6_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.757339, 0.058612, 0.026600, 0.981822, 0.157181, -0.106395, -0.145100, 0.982930, 0.113117, 0.122358, -0.095623, 0.987869)
 Left_Arm_k6_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k6_HumanoidRootPart_Torso
 
@@ -349,7 +349,7 @@ Left_Arm_k6_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k6_HumanoidRootPart_T
 
 --Right_Arm
  Right_Arm_k6_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k6_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k6_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k6_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(0.287602, -0.702693, 0.042473, -0.379384, -0.916241, 0.128723, 0.923946, -0.367817, 0.105045, -0.048900, 0.158786, 0.986101)
 Right_Arm_k6_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k6_HumanoidRootPart_Torso
 
@@ -357,15 +357,15 @@ Right_Arm_k6_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k6_HumanoidRootPart
 
 --Left_Leg
  Left_Leg_k6_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k6_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k6_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k6_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.961506, 0.391845, -0.061552, 0.957953, 0.286753, -0.009912, -0.286365, 0.957670, 0.029383, 0.017918, -0.025309, 0.999519)
 Left_Leg_k6_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k6_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k6_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k6_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k6_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k6_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.734186, 0.126888, 0.033927, 0.955159, 0.257029, -0.146995, -0.255200, 0.966375, 0.031499, 0.150149, 0.007427, 0.988636)
 Right_Leg_k6_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k6_HumanoidRootPart_Torso
 
@@ -402,7 +402,7 @@ Head_k7_HumanoidRootPart_Torso_Head.Parent = Torso_k7_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k7_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k7_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k7_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k7_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.706428, 0.061671, 0.031430, 0.974215, 0.183291, -0.131567, -0.167682, 0.978345, 0.121339, 0.150959, -0.096149, 0.983853)
 Left_Arm_k7_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k7_HumanoidRootPart_Torso
 
@@ -410,7 +410,7 @@ Left_Arm_k7_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k7_HumanoidRootPart_T
 
 --Right_Arm
  Right_Arm_k7_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k7_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k7_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k7_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(0.228000, -0.701361, 0.037973, -0.452462, -0.883939, 0.118029, 0.891474, -0.444837, 0.085988, -0.023504, 0.144126, 0.989280)
 Right_Arm_k7_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k7_HumanoidRootPart_Torso
 
@@ -418,15 +418,15 @@ Right_Arm_k7_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k7_HumanoidRootPart
 
 --Left_Leg
  Left_Leg_k7_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k7_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k7_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k7_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-1.004130, 0.402658, -0.050087, 0.987147, 0.159705, 0.005891, -0.159809, 0.986724, 0.028912, -0.001195, -0.029481, 0.999565)
 Left_Leg_k7_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k7_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k7_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k7_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k7_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k7_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(1.056491, 0.286841, 0.046348, 0.906128, 0.400020, -0.137535, -0.396153, 0.916498, 0.055634, 0.148305, 0.004073, 0.988933)
 Right_Leg_k7_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k7_HumanoidRootPart_Torso
 
@@ -463,7 +463,7 @@ Head_k8_HumanoidRootPart_Torso_Head.Parent = Torso_k8_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k8_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k8_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k8_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k8_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.628824, 0.046631, 0.034473, 0.960831, 0.226869, -0.159166, -0.207525, 0.969643, 0.129330, 0.183675, -0.091233, 0.978744)
 Left_Arm_k8_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k8_HumanoidRootPart_Torso
 
@@ -471,7 +471,7 @@ Left_Arm_k8_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k8_HumanoidRootPart_T
 
 --Right_Arm
  Right_Arm_k8_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k8_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k8_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k8_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(0.144354, -0.692036, 0.032363, -0.493773, -0.862906, 0.107616, 0.869549, -0.488750, 0.070760, -0.008462, 0.128516, 0.991671)
 Right_Arm_k8_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k8_HumanoidRootPart_Torso
 
@@ -479,15 +479,15 @@ Right_Arm_k8_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k8_HumanoidRootPart
 
 --Left_Leg
  Left_Leg_k8_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k8_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k8_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k8_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.985038, 0.340039, -0.031074, 0.997377, 0.068407, 0.023645, -0.068988, 0.997312, 0.024685, -0.021893, -0.026251, 0.999416)
 Left_Leg_k8_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k8_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k8_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k8_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k8_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k8_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(1.331845, 0.478077, 0.040450, 0.855233, 0.502962, -0.124924, -0.496393, 0.864275, 0.081378, 0.148899, -0.007586, 0.988823)
 Right_Leg_k8_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k8_HumanoidRootPart_Torso
 
@@ -524,7 +524,7 @@ Head_k9_HumanoidRootPart_Torso_Head.Parent = Torso_k9_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k9_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k9_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k9_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k9_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.530461, 0.005051, 0.036393, 0.938933, 0.290314, -0.184722, -0.267490, 0.953497, 0.138899, 0.216456, -0.081005, 0.972926)
 Left_Arm_k9_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k9_HumanoidRootPart_Torso
 
@@ -532,7 +532,7 @@ Left_Arm_k9_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k9_HumanoidRootPart_T
 
 --Right_Arm
  Right_Arm_k9_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k9_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k9_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k9_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(0.049504, -0.666727, 0.027191, -0.507216, -0.856280, 0.097554, 0.861811, -0.503473, 0.061609, -0.003638, 0.115322, 0.993321)
 Right_Arm_k9_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k9_HumanoidRootPart_Torso
 
@@ -540,15 +540,15 @@ Right_Arm_k9_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k9_HumanoidRootPart
 
 --Left_Leg
  Left_Leg_k9_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k9_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k9_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k9_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.880108, 0.233213, -0.010904, 0.998632, 0.031165, 0.041988, -0.031884, 0.999354, 0.016585, -0.041444, -0.017901, 0.998981)
 Left_Leg_k9_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k9_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k9_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k9_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k9_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k9_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(1.488980, 0.724891, 0.005696, 0.850966, 0.513808, -0.108893, -0.504540, 0.857303, 0.102330, 0.145932, -0.032138, 0.988772)
 Right_Leg_k9_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k9_HumanoidRootPart_Torso
 
@@ -585,7 +585,7 @@ Head_k10_HumanoidRootPart_Torso_Head.Parent = Torso_k10_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k10_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k10_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k10_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k10_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.417269, -0.057761, 0.037617, 0.904254, 0.375655, -0.202999, -0.350582, 0.924560, 0.149265, 0.243757, -0.063806, 0.967735)
 Left_Arm_k10_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k10_HumanoidRootPart_Torso
 
@@ -593,7 +593,7 @@ Left_Arm_k10_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k10_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k10_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k10_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k10_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k10_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.045817, -0.616119, 0.023206, -0.466084, -0.880127, 0.090233, 0.884690, -0.462540, 0.058139, -0.009433, 0.106926, 0.994222)
 Right_Arm_k10_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k10_HumanoidRootPart_Torso
 
@@ -601,15 +601,15 @@ Right_Arm_k10_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k10_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k10_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k10_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k10_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k10_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.696606, 0.124838, 0.002800, 0.997259, 0.043096, 0.060145, -0.043544, 0.999032, 0.006162, -0.059821, -0.008764, 0.998171)
 Left_Leg_k10_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k10_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k10_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k10_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k10_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k10_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(1.428241, 1.031513, -0.057100, 0.928304, 0.361074, -0.088758, -0.351502, 0.930035, 0.107150, 0.121237, -0.068269, 0.990273)
 Right_Leg_k10_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k10_HumanoidRootPart_Torso
 
@@ -646,7 +646,7 @@ Head_k11_HumanoidRootPart_Torso_Head.Parent = Torso_k11_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k11_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k11_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k11_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k11_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.295180, -0.136498, 0.038570, 0.849847, 0.484007, -0.208559, -0.459006, 0.874200, 0.158393, 0.258985, -0.038880, 0.965099)
 Left_Arm_k11_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k11_HumanoidRootPart_Torso
 
@@ -654,7 +654,7 @@ Left_Arm_k11_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k11_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k11_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k11_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k11_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k11_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.139295, -0.541710, 0.017967, -0.323942, -0.942262, 0.084878, 0.945749, -0.320162, 0.055278, -0.024911, 0.098180, 0.994857)
 Right_Arm_k11_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k11_HumanoidRootPart_Torso
 
@@ -662,15 +662,15 @@ Right_Arm_k11_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k11_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k11_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k11_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k11_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k11_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.498364, 0.054926, 0.009287, 0.994820, 0.065412, 0.077812, -0.065249, 0.997858, -0.004647, -0.077950, -0.000454, 0.996957)
 Left_Leg_k11_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k11_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k11_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k11_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k11_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k11_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(1.179580, 1.199800, -0.098847, 0.996360, 0.054852, -0.065253, -0.048874, 0.994749, 0.089921, 0.069843, -0.086404, 0.993809)
 Right_Leg_k11_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k11_HumanoidRootPart_Torso
 
@@ -707,7 +707,7 @@ Head_k12_HumanoidRootPart_Torso_Head.Parent = Torso_k12_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k12_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k12_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k12_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k12_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.170126, -0.225850, 0.039594, 0.763730, 0.612242, -0.204640, -0.589671, 0.790654, 0.164789, 0.262690, -0.005184, 0.964866)
 Left_Arm_k12_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k12_HumanoidRootPart_Torso
 
@@ -715,7 +715,7 @@ Left_Arm_k12_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k12_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k12_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k12_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k12_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k12_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.230718, -0.451725, 0.009163, -0.043292, -0.996021, 0.077901, 0.998029, -0.039570, 0.048710, -0.045434, 0.079856, 0.995770)
 Right_Arm_k12_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k12_HumanoidRootPart_Torso
 
@@ -723,15 +723,15 @@ Right_Arm_k12_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k12_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k12_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k12_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k12_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k12_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.466479, 0.068640, 0.025755, 0.995490, -0.002151, 0.094846, 0.003533, 0.999890, -0.014413, -0.094805, 0.014683, 0.995388)
 Left_Leg_k12_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k12_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k12_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k12_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k12_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k12_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.990232, 1.116977, -0.094718, 0.971413, -0.233860, -0.040829, 0.236103, 0.969654, 0.063449, 0.024752, -0.071276, 0.997150)
 Right_Leg_k12_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k12_HumanoidRootPart_Torso
 
@@ -768,7 +768,7 @@ Head_k13_HumanoidRootPart_Torso_Head.Parent = Torso_k13_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k13_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k13_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k13_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k13_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.048036, -0.320511, 0.040689, 0.636274, 0.745656, -0.197872, -0.727216, 0.665331, 0.168793, 0.257512, 0.036497, 0.965586)
 Left_Arm_k13_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k13_HumanoidRootPart_Torso
 
@@ -776,7 +776,7 @@ Left_Arm_k13_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k13_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k13_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k13_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k13_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k13_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.319877, -0.354387, -0.001781, 0.351501, -0.933773, 0.067189, 0.934156, 0.354559, 0.040496, -0.061636, 0.048530, 0.996918)
 Right_Arm_k13_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k13_HumanoidRootPart_Torso
 
@@ -784,15 +784,15 @@ Right_Arm_k13_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k13_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k13_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k13_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k13_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k13_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.546530, 0.128277, 0.054311, 0.986373, -0.121545, 0.110886, 0.124727, 0.991943, -0.022195, -0.107295, 0.035723, 0.993585)
 Left_Leg_k13_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k13_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k13_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k13_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k13_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k13_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.890801, 0.889863, -0.078073, 0.891284, -0.453111, -0.017416, 0.453437, 0.890365, 0.040555, -0.002869, -0.044044, 0.999025)
 Right_Leg_k13_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k13_HumanoidRootPart_Torso
 
@@ -829,7 +829,7 @@ Head_k14_HumanoidRootPart_Torso_Head.Parent = Torso_k14_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k14_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k14_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k14_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k14_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(-0.065156, -0.415172, 0.041772, 0.468060, 0.863397, -0.188323, -0.850498, 0.497992, 0.169283, 0.239942, 0.080934, 0.967408)
 Left_Arm_k14_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k14_HumanoidRootPart_Torso
 
@@ -837,7 +837,7 @@ Left_Arm_k14_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k14_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k14_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k14_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k14_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k14_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.406562, -0.257923, -0.012513, 0.692274, -0.719552, 0.054785, 0.718729, 0.694303, 0.037041, -0.064691, 0.013733, 0.997811)
 Right_Arm_k14_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k14_HumanoidRootPart_Torso
 
@@ -845,15 +845,15 @@ Right_Arm_k14_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k14_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k14_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k14_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k14_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k14_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.591539, 0.168846, 0.077819, 0.971061, -0.203294, 0.125345, 0.208204, 0.977705, -0.027266, -0.117007, 0.052574, 0.991739)
 Left_Leg_k14_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k14_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k14_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k14_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k14_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k14_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.828021, 0.605625, -0.067225, 0.794800, -0.606865, 0.002874, 0.606589, 0.794565, 0.026746, -0.018515, -0.019514, 0.999638)
 Right_Leg_k14_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k14_HumanoidRootPart_Torso
 
@@ -890,7 +890,7 @@ Head_k15_HumanoidRootPart_Torso_Head.Parent = Torso_k15_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k15_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k15_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k15_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k15_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(-0.163519, -0.504524, 0.042760, 0.271533, 0.946063, -0.176736, -0.939369, 0.300478, 0.165226, 0.209419, 0.121156, 0.970291)
 Left_Arm_k15_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k15_HumanoidRootPart_Torso
 
@@ -898,7 +898,7 @@ Left_Arm_k15_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k15_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k15_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k15_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k15_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k15_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.490563, -0.170556, -0.020679, 0.880910, -0.471048, 0.045947, 0.469539, 0.882000, 0.040117, -0.059423, -0.013766, 0.998138)
 Right_Arm_k15_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k15_HumanoidRootPart_Torso
 
@@ -906,15 +906,15 @@ Right_Arm_k15_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k15_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k15_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k15_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k15_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k15_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.598751, 0.170387, 0.089867, 0.959862, -0.244277, 0.137816, 0.250343, 0.967744, -0.028277, -0.126463, 0.061643, 0.990054)
 Left_Leg_k15_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k15_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k15_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k15_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k15_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k15_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.780691, 0.390843, -0.063536, 0.732715, -0.680291, 0.018262, 0.679951, 0.732933, 0.021816, -0.028226, -0.003568, 0.999595)
 Right_Leg_k15_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k15_HumanoidRootPart_Torso
 
@@ -951,7 +951,7 @@ Head_k16_HumanoidRootPart_Torso_Head.Parent = Torso_k16_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k16_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k16_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k16_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k16_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(-0.241122, -0.583261, 0.043569, 0.068753, 0.984017, -0.164268, -0.983173, 0.094765, 0.156175, 0.169246, 0.150767, 0.973974)
 Left_Arm_k16_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k16_HumanoidRootPart_Torso
 
@@ -959,7 +959,7 @@ Left_Arm_k16_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k16_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k16_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k16_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k16_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k16_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.571669, -0.098861, -0.023924, 0.953746, -0.297430, 0.043647, 0.295351, 0.954167, 0.048298, -0.056012, -0.033173, 0.997879)
 Right_Arm_k16_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k16_HumanoidRootPart_Torso
 
@@ -967,15 +967,15 @@ Right_Arm_k16_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k16_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k16_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k16_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k16_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k16_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.595307, 0.131503, 0.090097, 0.953001, -0.264451, 0.147830, 0.270745, 0.962356, -0.023838, -0.135961, 0.062742, 0.988725)
 Left_Leg_k16_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k16_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k16_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k16_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k16_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k16_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.778694, 0.325970, -0.064472, 0.746571, -0.664709, 0.028151, 0.664354, 0.747098, 0.021875, -0.035572, 0.002371, 0.999364)
 Right_Leg_k16_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k16_HumanoidRootPart_Torso
 
@@ -1012,7 +1012,7 @@ Head_k17_HumanoidRootPart_Torso_Head.Parent = Torso_k17_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k17_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k17_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k17_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k17_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(-0.292034, -0.646073, 0.044116, -0.116915, 0.981454, -0.151916, -0.985201, -0.095311, 0.142460, 0.125339, 0.166323, 0.978073)
 Left_Arm_k17_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k17_HumanoidRootPart_Torso
 
@@ -1020,7 +1020,7 @@ Left_Arm_k17_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k17_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k17_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k17_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k17_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k17_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.648306, -0.042806, -0.019300, 0.977310, -0.206408, 0.047553, 0.203533, 0.977289, 0.058997, -0.058650, -0.047980, 0.997125)
 Right_Arm_k17_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k17_HumanoidRootPart_Torso
 
@@ -1028,15 +1028,15 @@ Right_Arm_k17_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k17_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k17_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k17_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k17_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k17_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.567735, 0.062054, 0.076246, 0.955628, -0.251067, 0.154083, 0.256343, 0.966469, -0.015060, -0.145135, 0.053889, 0.987943)
 Left_Leg_k17_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k17_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k17_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k17_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k17_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k17_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.792399, 0.279680, -0.065161, 0.787081, -0.616010, 0.032170, 0.615559, 0.787738, 0.023587, -0.039871, 0.001238, 0.999204)
 Right_Leg_k17_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k17_HumanoidRootPart_Torso
 
@@ -1073,7 +1073,7 @@ Head_k18_HumanoidRootPart_Torso_Head.Parent = Torso_k18_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k18_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k18_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k18_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k18_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(-0.310323, -0.687653, 0.044317, -0.268699, 0.952986, -0.140066, -0.959578, -0.252196, 0.124929, 0.083732, 0.167973, 0.982229)
 Left_Arm_k18_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k18_HumanoidRootPart_Torso
 
@@ -1081,7 +1081,7 @@ Left_Arm_k18_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k18_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k18_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k18_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k18_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k18_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.713443, -0.000712, -0.008071, 0.985537, -0.159929, 0.056027, 0.155914, 0.985293, 0.069922, -0.066385, -0.060175, 0.995978)
 Right_Arm_k18_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k18_HumanoidRootPart_Torso
 
@@ -1089,15 +1089,15 @@ Right_Arm_k18_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k18_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k18_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k18_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k18_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k18_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.497090, -0.005427, 0.047396, 0.969396, -0.189820, 0.155694, 0.192721, 0.981247, -0.003614, -0.152089, 0.033509, 0.987799)
 Left_Leg_k18_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k18_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k18_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k18_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k18_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k18_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.823587, 0.271731, -0.065322, 0.841766, -0.539010, 0.029970, 0.538422, 0.842281, 0.025771, -0.039134, -0.005556, 0.999219)
 Right_Leg_k18_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k18_HumanoidRootPart_Torso
 
@@ -1134,7 +1134,7 @@ Head_k19_HumanoidRootPart_Torso_Head.Parent = Torso_k19_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k19_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k19_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k19_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k19_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(-0.287602, -0.702693, 0.042473, -0.379384, 0.916241, -0.128723, -0.923946, -0.367817, 0.105045, 0.048900, 0.158786, 0.986101)
 Left_Arm_k19_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k19_HumanoidRootPart_Torso
 
@@ -1142,7 +1142,7 @@ Left_Arm_k19_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k19_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k19_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k19_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k19_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k19_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.758682, 0.029102, 0.005801, 0.987093, -0.144661, 0.068709, 0.138945, 0.986920, 0.081756, -0.079637, -0.071154, 0.994281)
 Right_Arm_k19_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k19_HumanoidRootPart_Torso
 
@@ -1150,15 +1150,15 @@ Right_Arm_k19_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k19_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k19_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k19_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k19_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k19_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.496492, 0.010570, 0.024870, 0.975741, -0.156398, 0.153194, 0.156489, 0.987612, 0.011538, -0.153101, 0.012715, 0.988129)
 Left_Leg_k19_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k19_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k19_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k19_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k19_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k19_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.891681, 0.330900, -0.065511, 0.906805, -0.420964, 0.022247, 0.420341, 0.906937, 0.027895, -0.031919, -0.015944, 0.999363)
 Right_Leg_k19_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k19_HumanoidRootPart_Torso
 
@@ -1195,7 +1195,7 @@ Head_k20_HumanoidRootPart_Torso_Head.Parent = Torso_k20_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k20_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k20_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k20_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k20_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(-0.228000, -0.701361, 0.037973, -0.452462, 0.883939, -0.118029, -0.891474, -0.444837, 0.085988, 0.023504, 0.144126, 0.989280)
 Left_Arm_k20_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k20_HumanoidRootPart_Torso
 
@@ -1203,7 +1203,7 @@ Left_Arm_k20_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k20_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k20_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k20_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k20_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k20_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.775628, 0.048316, 0.018355, 0.985593, -0.145869, 0.085605, 0.137637, 0.985889, 0.095280, -0.098295, -0.082125, 0.991763)
 Right_Arm_k20_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k20_HumanoidRootPart_Torso
 
@@ -1211,15 +1211,15 @@ Right_Arm_k20_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k20_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k20_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k20_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k20_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k20_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.734173, 0.126874, 0.033925, 0.955217, -0.256813, 0.146995, 0.254981, 0.966433, 0.031501, -0.150151, 0.007391, 0.988636)
 Left_Leg_k20_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k20_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k20_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k20_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k20_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k20_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.961516, 0.391828, -0.061552, 0.958030, -0.286498, 0.009913, 0.286109, 0.957746, 0.029384, -0.017913, -0.025314, 0.999519)
 Right_Leg_k20_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k20_HumanoidRootPart_Torso
 
@@ -1256,7 +1256,7 @@ Head_k21_HumanoidRootPart_Torso_Head.Parent = Torso_k21_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k21_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k21_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k21_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k21_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(-0.144354, -0.692037, 0.032363, -0.493773, 0.862906, -0.107615, -0.869549, -0.488750, 0.070759, 0.008462, 0.128516, 0.991671)
 Left_Arm_k21_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k21_HumanoidRootPart_Torso
 
@@ -1264,7 +1264,7 @@ Left_Arm_k21_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k21_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k21_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k21_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k21_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k21_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.757339, 0.058612, 0.026600, 0.981819, -0.157033, 0.106638, 0.145294, 0.983236, 0.110169, -0.122151, -0.092672, 0.988176)
 Right_Arm_k21_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k21_HumanoidRootPart_Torso
 
@@ -1272,15 +1272,15 @@ Right_Arm_k21_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k21_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k21_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k21_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k21_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k21_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-1.056485, 0.286827, 0.046348, 0.906221, -0.399810, 0.137535, 0.395941, 0.916589, 0.055635, -0.148306, 0.004038, 0.988933)
 Left_Leg_k21_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k21_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k21_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k21_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k21_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k21_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(1.004137, 0.402644, -0.050087, 0.987188, -0.159451, -0.005890, 0.159555, 0.986766, 0.028912, 0.001202, -0.029482, 0.999565)
 Right_Leg_k21_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k21_HumanoidRootPart_Torso
 
@@ -1317,7 +1317,7 @@ Head_k22_HumanoidRootPart_Torso_Head.Parent = Torso_k22_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k22_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k22_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k22_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k22_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(-0.049504, -0.666727, 0.027191, -0.507202, 0.856256, -0.097835, -0.861820, -0.503478, 0.061447, 0.003357, 0.115482, 0.993304)
 Left_Arm_k22_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k22_HumanoidRootPart_Torso
 
@@ -1325,7 +1325,7 @@ Left_Arm_k22_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k22_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k22_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k22_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k22_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k22_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.706428, 0.061671, 0.031430, 0.974215, -0.183291, 0.131568, 0.167682, 0.978345, 0.121339, -0.150959, -0.096149, 0.983853)
 Right_Arm_k22_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k22_HumanoidRootPart_Torso
 
@@ -1333,15 +1333,15 @@ Right_Arm_k22_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k22_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k22_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k22_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k22_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k22_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-1.331845, 0.478070, 0.040450, 0.855352, -0.502760, 0.124924, 0.496188, 0.864393, 0.081379, -0.148898, -0.007622, 0.988823)
 Left_Leg_k22_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k22_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k22_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k22_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k22_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k22_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.985040, 0.340033, -0.031074, 0.997394, -0.068159, -0.023645, 0.068740, 0.997329, 0.024685, 0.021899, -0.026246, 0.999416)
 Right_Leg_k22_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k22_HumanoidRootPart_Torso
 
@@ -1378,7 +1378,7 @@ Head_k23_HumanoidRootPart_Torso_Head.Parent = Torso_k23_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k23_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k23_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k23_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k23_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.045817, -0.616119, 0.023206, -0.466045, 0.880049, -0.091197, -0.884721, -0.462555, 0.057553, 0.008466, 0.107507, 0.994168)
 Left_Arm_k23_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k23_HumanoidRootPart_Torso
 
@@ -1386,7 +1386,7 @@ Left_Arm_k23_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k23_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k23_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k23_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k23_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k23_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.628824, 0.046632, 0.034472, 0.960831, -0.226869, 0.159166, 0.207525, 0.969643, 0.129330, -0.183676, -0.091233, 0.978744)
 Right_Arm_k23_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k23_HumanoidRootPart_Torso
 
@@ -1394,15 +1394,15 @@ Right_Arm_k23_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k23_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k23_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k23_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k23_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k23_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-1.488978, 0.724937, 0.005691, 0.851099, -0.513588, 0.108894, 0.504318, 0.857434, 0.102330, -0.145924, -0.032176, 0.988772)
 Left_Leg_k23_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k23_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k23_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k23_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k23_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k23_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.880109, 0.233212, -0.010904, 0.998640, -0.030921, -0.041987, 0.031641, 0.999362, 0.016586, 0.041448, -0.017892, 0.998980)
 Right_Leg_k23_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k23_HumanoidRootPart_Torso
 
@@ -1439,7 +1439,7 @@ Head_k24_HumanoidRootPart_Torso_Head.Parent = Torso_k24_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k24_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k24_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k24_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k24_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.139295, -0.541710, 0.017966, -0.323887, 0.942118, -0.086664, -0.945813, -0.320190, 0.053994, 0.023120, 0.099456, 0.994773)
 Left_Arm_k24_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k24_HumanoidRootPart_Torso
 
@@ -1447,7 +1447,7 @@ Left_Arm_k24_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k24_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k24_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k24_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k24_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k24_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.530461, 0.005052, 0.036393, 0.938933, -0.290314, 0.184722, 0.267490, 0.953497, 0.138899, -0.216457, -0.081005, 0.972926)
 Right_Arm_k24_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k24_HumanoidRootPart_Torso
 
@@ -1455,15 +1455,15 @@ Right_Arm_k24_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k24_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k24_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k24_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k24_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k24_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-1.428176, 1.031632, -0.057118, 0.928416, -0.360785, 0.088759, 0.351213, 0.930144, 0.107150, -0.121217, -0.068306, 0.990273)
 Left_Leg_k24_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k24_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k24_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k24_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k24_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k24_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.696606, 0.124837, 0.002800, 0.997269, -0.042856, -0.060144, 0.043304, 0.999043, 0.006162, 0.059823, -0.008750, 0.998171)
 Right_Leg_k24_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k24_HumanoidRootPart_Torso
 
@@ -1500,7 +1500,7 @@ Head_k25_HumanoidRootPart_Torso_Head.Parent = Torso_k25_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k25_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k25_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k25_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k25_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.230718, -0.451725, 0.009163, -0.043252, 0.995837, -0.080238, -0.998135, -0.039608, 0.046463, 0.043091, 0.082098, 0.995692)
 Left_Arm_k25_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k25_HumanoidRootPart_Torso
 
@@ -1508,7 +1508,7 @@ Left_Arm_k25_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k25_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k25_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k25_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k25_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k25_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.417269, -0.057761, 0.037617, 0.904254, -0.375655, 0.202999, 0.350582, 0.924560, 0.149265, -0.243757, -0.063806, 0.967735)
 Right_Arm_k25_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k25_HumanoidRootPart_Torso
 
@@ -1516,15 +1516,15 @@ Right_Arm_k25_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k25_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k25_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k25_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k25_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k25_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-1.179497, 1.199880, -0.098859, 0.996377, -0.054552, 0.065254, 0.048575, 0.994764, 0.089920, -0.069818, -0.086425, 0.993809)
 Left_Leg_k25_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k25_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k25_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k25_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k25_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k25_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.498318, 0.054908, 0.009284, 0.994834, -0.065205, -0.077812, 0.065040, 0.997872, -0.004647, 0.077949, -0.000438, 0.996957)
 Right_Leg_k25_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k25_HumanoidRootPart_Torso
 
@@ -1561,7 +1561,7 @@ Head_k26_HumanoidRootPart_Torso_Head.Parent = Torso_k26_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k26_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k26_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k26_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k26_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.319877, -0.354388, -0.001781, 0.351509, 0.933613, -0.069337, -0.934293, 0.354542, 0.037385, 0.059486, 0.051640, 0.996893)
 Left_Arm_k26_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k26_HumanoidRootPart_Torso
 
@@ -1569,7 +1569,7 @@ Left_Arm_k26_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k26_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k26_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k26_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k26_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k26_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.295180, -0.136497, 0.038570, 0.849847, -0.484007, 0.208559, 0.459006, 0.874200, 0.158393, -0.258985, -0.038880, 0.965098)
 Right_Arm_k26_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k26_HumanoidRootPart_Torso
 
@@ -1577,15 +1577,15 @@ Right_Arm_k26_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k26_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k26_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k26_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k26_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k26_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.990196, 1.117011, -0.094721, 0.971351, 0.234115, 0.040830, -0.236358, 0.969592, 0.063449, -0.024734, -0.071282, 0.997150)
 Left_Leg_k26_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k26_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k26_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k26_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k26_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k26_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.466474, 0.068641, 0.025755, 0.995489, 0.002380, -0.094845, -0.003763, 0.999889, -0.014413, 0.094801, 0.014705, 0.995388)
 Right_Leg_k26_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k26_HumanoidRootPart_Torso
 
@@ -1622,7 +1622,7 @@ Head_k27_HumanoidRootPart_Torso_Head.Parent = Torso_k27_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k27_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k27_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k27_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k27_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.406562, -0.257923, -0.012513, 0.692268, 0.719453, -0.056134, -0.718855, 0.694335, 0.033870, 0.063344, 0.016905, 0.997849)
 Left_Arm_k27_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k27_HumanoidRootPart_Torso
 
@@ -1630,7 +1630,7 @@ Left_Arm_k27_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k27_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k27_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k27_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k27_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k27_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.170125, -0.225850, 0.039594, 0.763730, -0.612242, 0.204640, 0.589671, 0.790654, 0.164789, -0.262690, -0.005185, 0.964866)
 Right_Arm_k27_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k27_HumanoidRootPart_Torso
 
@@ -1638,15 +1638,15 @@ Right_Arm_k27_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k27_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k27_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k27_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k27_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k27_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.890784, 0.889871, -0.078073, 0.891166, 0.453342, 0.017417, -0.453667, 0.890248, 0.040554, 0.002879, -0.044042, 0.999026)
 Left_Leg_k27_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k27_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k27_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k27_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k27_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k27_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.546531, 0.128286, 0.054311, 0.986345, 0.121769, -0.110886, -0.124952, 0.991915, -0.022196, 0.107286, 0.035748, 0.993585)
 Right_Leg_k27_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k27_HumanoidRootPart_Torso
 
@@ -1683,7 +1683,7 @@ Head_k28_HumanoidRootPart_Torso_Head.Parent = Torso_k28_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k28_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k28_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k28_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k28_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.490562, -0.170556, -0.020679, 0.880907, 0.471002, -0.046483, -0.469612, 0.882056, 0.037981, 0.058890, -0.011629, 0.998197)
 Left_Arm_k28_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k28_HumanoidRootPart_Torso
 
@@ -1691,7 +1691,7 @@ Left_Arm_k28_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k28_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k28_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k28_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k28_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k28_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(-0.048036, -0.320511, 0.040689, 0.636274, -0.745656, 0.197872, 0.727216, 0.665331, 0.168793, -0.257512, 0.036497, 0.965586)
 Right_Arm_k28_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k28_HumanoidRootPart_Torso
 
@@ -1699,15 +1699,15 @@ Right_Arm_k28_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k28_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k28_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k28_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k28_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k28_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.828003, 0.605635, -0.067225, 0.794637, 0.607079, -0.002873, -0.606803, 0.794402, 0.026745, 0.018518, -0.019509, 0.999638)
 Left_Leg_k28_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k28_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k28_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k28_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k28_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k28_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.591537, 0.168859, 0.077819, 0.971017, 0.203506, -0.125344, -0.208418, 0.977660, -0.027268, 0.116995, 0.052601, 0.991739)
 Right_Leg_k28_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k28_HumanoidRootPart_Torso
 
@@ -1744,7 +1744,7 @@ Head_k29_HumanoidRootPart_Torso_Head.Parent = Torso_k29_HumanoidRootPart_Torso
 
 --Left_Arm
  Left_Arm_k29_HumanoidRootPart_Torso_Left_Arm = Instance.new("Pose")
-Left_Arm_k29_HumanoidRootPart_Torso_Left_Arm.Name = "Left_Arm"
+Left_Arm_k29_HumanoidRootPart_Torso_Left_Arm.Name = "Left Arn"
 Left_Arm_k29_HumanoidRootPart_Torso_Left_Arm.CFrame = CFrame(0.571669, -0.098860, -0.023924, 0.953746, 0.297430, -0.043647, -0.295351, 0.954167, 0.048298, 0.056012, -0.033173, 0.997879)
 Left_Arm_k29_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k29_HumanoidRootPart_Torso
 
@@ -1752,7 +1752,7 @@ Left_Arm_k29_HumanoidRootPart_Torso_Left_Arm.Parent = Torso_k29_HumanoidRootPart
 
 --Right_Arm
  Right_Arm_k29_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
-Right_Arm_k29_HumanoidRootPart_Torso_Right_Arm.Name = "Right_Arm"
+Right_Arm_k29_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm_k29_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(0.065156, -0.415171, 0.041772, 0.468060, -0.863397, 0.188324, 0.850498, 0.497992, 0.169284, -0.239942, 0.080934, 0.967408)
 Right_Arm_k29_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k29_HumanoidRootPart_Torso
 
@@ -1760,15 +1760,15 @@ Right_Arm_k29_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k29_HumanoidRootPa
 
 --Left_Leg
  Left_Leg_k29_HumanoidRootPart_Torso_Left_Leg = Instance.new("Pose")
-Left_Leg_k29_HumanoidRootPart_Torso_Left_Leg.Name = "Left_Leg"
+Left_Leg_k29_HumanoidRootPart_Torso_Left_Leg.Name = "Left Leg"
 Left_Leg_k29_HumanoidRootPart_Torso_Left_Leg.CFrame = CFrame(-0.780676, 0.390855, -0.063535, 0.732526, 0.680494, -0.018261, -0.680154, 0.732745, 0.021814, 0.028225, -0.003559, 0.999595)
 Left_Leg_k29_HumanoidRootPart_Torso_Left_Leg.Parent = Torso_k29_HumanoidRootPart_Torso
 
 
 
---Right_Leg
+--Right Leg
  Right_Leg_k29_HumanoidRootPart_Torso_Right_Leg = Instance.new("Pose")
-Right_Leg_k29_HumanoidRootPart_Torso_Right_Leg.Name = "Right_Leg"
+Right_Leg_k29_HumanoidRootPart_Torso_Right_Leg.Name = "Right Leg"
 Right_Leg_k29_HumanoidRootPart_Torso_Right_Leg.CFrame = CFrame(0.598748, 0.170406, 0.089866, 0.959811, 0.244479, -0.137814, -0.250547, 0.967691, -0.028280, 0.126448, 0.061672, 0.990054)
 Right_Leg_k29_HumanoidRootPart_Torso_Right_Leg.Parent = Torso_k29_HumanoidRootPart_Torso
 
