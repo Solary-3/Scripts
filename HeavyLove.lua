@@ -11097,4 +11097,4 @@ Head_k236_HumanoidRootPart_Torso_Head.Name = "Head"
 Head_k236_HumanoidRootPart_Torso_Head.CFrame = CFrame(0.000000, 0.000000, 0.000000, 0.996174, 0.050294, -0.071469, -0.062503, 0.981599, -0.180437, 0.061079, 0.184213, 0.980987)
 Head_k236_HumanoidRootPart_Torso_Head.Parent = Torso_k236_HumanoidRootPart_Torso
 
-return dance
+return KeyframeSequence
