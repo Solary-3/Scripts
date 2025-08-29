@@ -2,7 +2,7 @@
 -- Generated on 2025-08-29 20:17:03
 
 local KeyframeSequence = Instance.new("KeyframeSequence")
-KeyframeSequence.Name = "Imported Animation Clip"
+KeyframeSequence.Name = "114322394064953345"
 
  CFrame=CFrame.new 
 
