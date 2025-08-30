@@ -3,7 +3,7 @@
 
 local KeyframeSequence = Instance.new("KeyframeSequence")
 KeyframeSequence.Name = "KeyframeSequence_1"
-local CFrame=CFrame.new
+ CFrame=CFrame.new
 
 -- Keyframe 1 (Time: 0)
 local keyframe1 = Instance.new("Keyframe")

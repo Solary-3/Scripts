@@ -4,7 +4,7 @@
 local KeyframeSequence = Instance.new("KeyframeSequence")
 KeyframeSequence.Name = "StaticR6"
 
-local CFrame=CFrame.new 
+local CFrame=CFrame.new
 
 -- Keyframe 1 (Time: 0)
 local keyframe1 = Instance.new("Keyframe")
