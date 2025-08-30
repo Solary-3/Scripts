@@ -2,8 +2,8 @@
 -- Generated on 2025-08-29 19:50:56
 
 local KeyframeSequence = Instance.new("KeyframeSequence")
-KeyframeSequence.Name = "emotional prism"
- CFrame=CFrame.new 
+KeyframeSequence.Name = "PrismShuffle"
+local CFrame=CFrame.new 
 
 -- Keyframe 1 (Time: 0)
 local keyframe1 = Instance.new("Keyframe")

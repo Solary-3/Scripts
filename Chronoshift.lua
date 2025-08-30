@@ -2,9 +2,8 @@
 -- Generated on 2025-08-30 13:51:30
 
 local KeyframeSequence = Instance.new("KeyframeSequence")
-KeyframeSequence.Name = "new 2"
-
- CFrame=CFrame.new 
+KeyframeSequence.Name = "Chronoshift"
+local CFrame=CFrame.new
 
 -- Keyframe 1 (Time: 0)
 local keyframe1 = Instance.new("Keyframe")
@@ -44,7 +43,7 @@ Left_Leg2_k1_HumanoidRootPart_Torso_Left_Leg.Parent = Torso2_k1_HumanoidRootPart
 
 
 --Right Arm
- Right_Arm2_k1_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
+local Right_Arm2_k1_HumanoidRootPart_Torso_Right_Arm = Instance.new("Pose")
 Right_Arm2_k1_HumanoidRootPart_Torso_Right_Arm.Name = "Right Arm"
 Right_Arm2_k1_HumanoidRootPart_Torso_Right_Arm.CFrame = CFrame(0.159192, -0.838515, 0.227981, -0.246655, 0.027249, 0.968720, 0.445225, -0.884682, 0.138248, 0.860777, 0.465398, 0.206079)
 Right_Arm2_k1_HumanoidRootPart_Torso_Right_Arm.Parent = Torso2_k1_HumanoidRootPart_Torso

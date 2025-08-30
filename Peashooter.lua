@@ -2,8 +2,8 @@
 -- Generated on 2025-08-29 18:47:05
 
 local KeyframeSequence = Instance.new("KeyframeSequence")
-KeyframeSequence.Name = "R15ToR6ConvertedAnimation"
- CFrame=CFrame.new
+KeyframeSequence.Name = "Peashooter"
+local CFrame=CFrame.new
 
 -- Keyframe 1 (Time: 0)
 local keyframe1 = Instance.new("Keyframe")

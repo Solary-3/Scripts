@@ -2,8 +2,8 @@
 -- Generated on 2025-08-29 20:22:07
 
 local KeyframeSequence = Instance.new("KeyframeSequence")
-KeyframeSequence.Name = "Imported Animation Clip"
- CFrame=CFrame.new
+KeyframeSequence.Name = "Headlock"
+local CFrame=CFrame.new
 
 -- Keyframe 1 (Time: 0)
 local keyframe1 = Instance.new("Keyframe")

@@ -2,8 +2,8 @@
 -- Generated on 2025-08-30 16:37:48
 
 local KeyframeSequence = Instance.new("KeyframeSequence")
-KeyframeSequence.Name = "Egypt R6"
- CFrame=CFrame.new
+KeyframeSequence.Name = "Egypt"
+local CFrame=CFrame.new
 
 -- Keyframe 1 (Time: 0)
 local keyframe1 = Instance.new("Keyframe")

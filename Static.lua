@@ -2,8 +2,7 @@
 -- Generated on 2025-08-30 16:36:56
 
 local KeyframeSequence = Instance.new("KeyframeSequence")
-KeyframeSequence.Name = "StaticR6"
-
+KeyframeSequence.Name = "Static"
 local CFrame=CFrame.new
 
 -- Keyframe 1 (Time: 0)
