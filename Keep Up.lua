@@ -43,8 +43,8 @@ Right_Arm_k1_HumanoidRootPart_Torso_Right_Arm.Parent = Torso_k1_HumanoidRootPart
 
 
 --Head
- Head_k1_HumanoidRootPart_Torso_Head = Instance.new("Pose")
-localHead_k1_HumanoidRootPart_Torso_Head.Name = "Head"
+local Head_k1_HumanoidRootPart_Torso_Head = Instance.new("Pose")
+Head_k1_HumanoidRootPart_Torso_Head.Name = "Head"
 Head_k1_HumanoidRootPart_Torso_Head.CFrame = cf(0.004842, -0.006033, -0.000097, 0.807973, -0.578751, 0.110578, 0.589091, 0.797377, -0.131003, -0.012354, 0.170988, 0.985196)
 Head_k1_HumanoidRootPart_Torso_Head.Parent = Torso_k1_HumanoidRootPart_Torso
 
