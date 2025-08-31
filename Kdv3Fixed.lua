@@ -19,6 +19,7 @@ wait(.95)
 notify("Credits goes to Him!!!")
 wait(1)
 notify('pls click "click me" first ty!!')
+notify("also load a keyboard script...")
 local ScreenGui = Instance.new("ScreenGui",KDV3)
 ScreenGui.Name ="KRYSTALDANCE"
 local ui = Instance.new("Frame",ScreenGui)
@@ -175,9 +176,14 @@ end)
 local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 local tween = game:GetService("TweenService"):Create(Show, tweenInfo, {Position = UDim2.new(0, 0, .50, 0)})
 tween:Play()
+local CHECKF9=false
 DANCEINFO.MouseButton1Click:Connect(function()
 notify("Check Console!")
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
+if CHECKF9 then return end
+CHECKF9=true 
+DANCEINFO.Text="Check Console"
+print("------------------------------------------")
 print("Q - RAT DANCE, PAGE 2 - XO, PAGE 3 - C14")
 print("E - BOOGIE, PAGE 2 - SODA POP, PAGE 3 - Slickback")
 print("R - ASSUMPTIONS, PAGE 2 - LOVE FOR YOU, PAGE 3 - DOODLE")
@@ -203,6 +209,9 @@ print("LEFTBRACKET OR '[' - EMOTIONAL PRISM, PAGE 2 - I WANNA RUNAWAY")
 print("RIGHTBRACKET OR ']' - HEADLOCK, PAGE 2 - MIO HONDA")
 print("M - CHANGE PAGES")
 print("EQUALS OR '=' TOGGLE BACKGROUND MUSIC WHEN NOT DANCING")
+wait(1)
+DANCEINFO.Text="Click me!"
+CHECKF9=false
 end)
 
 
