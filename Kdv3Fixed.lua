@@ -2,11 +2,11 @@
 if isfolder and not isfolder("Dances") then 
 	makefolder("Dances")
 end
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
 local KDV3 = game:GetService("CoreGui")
 if KDV3:FindFirstChild("KRYSTALDANCE") then
     KDV3.KRYSTALDANCE:Destroy()
 end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
 local function notify(text,dur)
 local Notify=game:GetService("StarterGui")
 Notify:SetCore("SendNotification",{
@@ -338,7 +338,7 @@ Dance_44=AddDance("Flexworks", "https://raw.githubusercontent.com/Solary-3/Scrip
 end
 
 
-
+local timeposcur = 0 
 local sound69 = Instance.new("Sound",game:GetService("RunService"))
 sound69.Looped = true
 sound69.Name = "danc"
@@ -350,7 +350,7 @@ local exploit = "shitsploit"
         end)
 	local customasset = function(id)
         if exploit ~= "CaetSploit" then
-        idwithoutthatbit= string.gsub(id,"Music/","")
+        idwithoutthatbit= string.gsub(id,"KDV3/","")
         if not isfile(id) then 
          writefile(id,game:HttpGet("https://github.com/Solary-3/Scripts/tree/Audios-1"..idwithoutthatbit))
         end
@@ -367,13 +367,13 @@ local exploit = "shitsploit"
 	end
 
 local function DanceAsset(file)
-if not isfile("Dances/"..file) then 
+if not isfile("KDV3/"..file) then 
 notify("Downloading Audio")
-writefile("Dances/"..file, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..file.."?raw=true"))
-notify("Download Audio")
+writefile("KDV3/"..file, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..file.."?raw=true"))
+notify("Downloaded Audio")
 end
-    if isfile("Dances/"..file) then
-        return customasset("Dances/"..file)  
+    if isfile("KDV3/"..file) then
+        return customasset("KDV3/"..file)  
     else
        notify("File Not Found")
         return ""
@@ -420,7 +420,6 @@ coolparticles.Parent = randompart
 local playbacktrack = true 
 local script = Instance.new("LocalScript")
 real = true
-local timeposcur = 0 
 pcall(function()
 	local OxideApi = loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/Utils/refs/heads/main/OxideApi"))()
 	OxideApi.Notification("Krystal Dance V3, Made by Hemi, fixed by MrY7zz",10)
@@ -1710,7 +1709,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				stopanim()
 				dancing = true
 				task.wait(.005)
-				sound69.SoundId = customasset("unlockit.mp3")
+				sound69.SoundId = customasset("valen.mp3")
 				sound69.PlaybackSpeed = 1
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
