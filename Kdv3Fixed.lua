@@ -1,12 +1,14 @@
-
-if isfolder and not isfolder("Dances") then 
-	makefolder("Dances")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
+if isfolder and not isfolder("KDV3") then 
+	makefolder("KDV3")
+end
+if not isfolder("KRYSTALDANCE") then
+        makefolder("KRYSTALDANCE")
 end
 local KDV3 = game:GetService("CoreGui")
 if KDV3:FindFirstChild("KRYSTALDANCE") then
     KDV3.KRYSTALDANCE:Destroy()
 end
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
 local function notify(text,dur)
 local Notify=game:GetService("StarterGui")
 Notify:SetCore("SendNotification",{
@@ -14,12 +16,16 @@ Title="Krystal Dance V3";
 Text=text;
 Duration=5 or dur})
 end
-notify("KDV3 Made by MrY7zz")
+notify("KDV3 Made by Nitro-GT")
 wait(.95)
-notify("Credits goes to Him!!!")
+notify("Fixed By MrY7zz")
+wait(.95)
+notify("Modded By Theo")
+wait(.95)
+notify("Credits goes to them!!!!")
 wait(1)
 notify('pls click "click me" first ty!!')
-notify("also load a keyboard script...")
+wait(1)
 local ScreenGui = Instance.new("ScreenGui",KDV3)
 ScreenGui.Name ="KRYSTALDANCE"
 local ui = Instance.new("Frame",ScreenGui)
@@ -238,7 +244,17 @@ wait(1)
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 end)
 
-
+local delfile = delfile or function(path)
+    if isfile and isfile(path) then
+        pcall(function()
+            if syn and syn.io then
+                syn.io.remove(path)
+            else
+                writefile(path, "")
+            end
+        end)
+    end
+end
 
 
 local full = game:GetObjects("rbxassetid://107495486817639")[1]:Clone()
@@ -260,7 +276,29 @@ getmetatable(is).__namecall = function(_, id)
 	return loadlocalasset(id)
 end
 
-local function AddDance(Name,ScriptUrl)
+local function AddDance(Name, ScriptUrl)
+    local filePath = "KRYSTALDANCE/"..Name
+    if isfile(filePath) then
+        notify("Loading saved dance: "..Name)
+        local success, danceData = pcall(function()
+            return loadstring(readfile(filePath))()
+        end)
+        
+        if success and danceData then
+            if danceData:IsA("KeyframeSequence") then
+                local newDance = danceData:Clone()
+                newDance.Name = Name
+                newDance.Parent = full
+                notify("Loaded from storage: "..Name)
+                return newDance
+            else
+                notify("Saved dance doesn't return KeyframeSequence: "..Name)
+            end
+        else
+            notify("Failed to load saved dance: "..Name.." - "..tostring(danceData))
+        end
+    end
+    notify("Downloading dance: "..Name)
     local success, danceData = pcall(function()
         return loadstring(game:HttpGet(ScriptUrl))()
     end)
@@ -271,14 +309,14 @@ local function AddDance(Name,ScriptUrl)
             newDance.Name = Name
             newDance.Parent = full
             notify("Loaded: "..Name)
-            
+            writefile(filePath, game:HttpGet(ScriptUrl))
             return newDance
         else
-            notify("Dance doesnt return the KeyframeSequence: " ..Name)
+            notify("Dance doesn't return KeyframeSequence: "..Name)
             return nil
         end
     else
-        notify("Failed to load dance: " ..Name.. " - Check Line: " .. tostring(danceData))
+        notify("Failed to load dance: "..Name.." - "..tostring(danceData))
         return nil
     end
 end
@@ -288,53 +326,97 @@ end
 
 
 local LOADTHEDANCE=false
-wait(.1)
+wait(2)
 if not LOADTHEDANCE then
 LOADTHEDANCE=true
 local Dance_01=AddDance("Hakari", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Hakari.lua")
+wait(1)
 Dance_02=AddDance("Prism", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Prism Shuffle.lua")
+wait(1)
 Dance_03=AddDance("Soda", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Soda Pop.lua")
+wait(1)
 Dance_04=AddDance("Headlock", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Headlock.lua")
+wait(1)
 Dance_05=AddDance("C14", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/C14.lua")
+wait(1)
 Dance_06=AddDance("Slickback", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Slickback.lua")
+wait(1)
 Dance_07=AddDance("Chronoshift", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Chronoshift.lua")
+wait(1)
 Dance_08=AddDance("BillieJean", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/BillieJean.lua")
+wait(1)
 Dance_09=AddDance("Rat1", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rat1.lua")
+wait(1)
 Dance_10=AddDance("Egypt", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Egypt.lua")
+wait(1)
 Dance_11=AddDance("Liar", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Liar.lua")
+wait(1)
 Dance_12=AddDance("L4U", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Love4U.lua")
+wait(1)
 Dance_13=AddDance("Mesmerizer", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Mesmerizer.lua")
+wait(1)
 Dance_14=AddDance("Domino", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Domino.lua")
+wait(1)
 Dance_15=AddDance("Static", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Static.lua")
+wait(1)
 Dance_16=AddDance("HeelToeHop", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/HeelToeHop.lua")
+wait(1)
 Dance_17=AddDance("BombMonkey", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Bomb Monkey.lua")
+wait(1)
 Dance_18=AddDance("BoxSwing", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Box Swing.lua")
+wait(1)
 Dance_19=AddDance("Flop", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Flop.lua")
+wait(1)
 Dance_20=AddDance("Assumptions", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Assumptions.lua")
+wait(1)
 Dance_21=AddDance("Commercial", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Commercial.lua")
+wait(1)
 Dance_22=AddDance("Distraction", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Distraction.lua")
+wait(1)
 Dance_23=AddDance("ItBurns", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/It Burns.lua")
+wait(1)
 Dance_24=AddDance("Keep", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Keep Up.lua")
+wait(1)
 Dance_25=AddDance("Yamero", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Yamero.lua")
+wait(1)
 Dance_26=AddDance("Savor", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Savor.lua")
+wait(1)
 Dance_27=AddDance("Angel", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Angel.lua")
+wait(1)
 Dance_28=AddDance("ClubPenguin", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Club Penguin.lua")
+wait(1)
 Dance_29=AddDance("Firework", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Firework.lua")
+wait(1)
 Dance_30=AddDance("Runaway", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Runaway.lua")
+wait(1)
 Dance_31=AddDance("Miohonda", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Miohonda.lua")
+wait(1)
 Dance_32=AddDance("Rat2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rat2.lua")
+wait(1)
 Dance_33=AddDance("Stock", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Stock Shuffle.lua")
+wait(1)
 Dance_34=AddDance("Goat", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Goat.lua")
+wait(1)
 Dance_35=AddDance("Shuba", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Shuba Duck.lua")
+wait(1)
 Dance_36=AddDance("Bumblebee", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Bumblebee.lua")
+wait(1)
 Dance_37=AddDance("Popipo", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Popipo.lua")
+wait(1)
 Dance_38=AddDance("Fein", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Fein.lua")
+wait(1)
 Dance_39=AddDance("Birdbrain", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Birdbrain.lua")
+wait(1)
 Dance_40=AddDance("Billy", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Billy.lua")
+wait(1)
 Dance_41=AddDance("Spooky", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Spooky.lua")
+wait(1)
 Dance_42=AddDance("Pickup", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pickup.lua")
+wait(1)
 Dance_43=AddDance("Limited", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Limited.lua")
+wait(1)
 Dance_44=AddDance("Flexworks", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Flexworks.lua")
+wait(1)
 end
 
 
@@ -366,16 +448,116 @@ local exploit = "shitsploit"
         return s.SoundId
 	end
 
+local validAudioFiles = {
+    "Sphere.mp3",
+    "rat.mp3",
+    "FunkedUp.mp3",
+    "Assumptions.mp3",
+    "Egypt.mp3",
+    "DO THE FLOP.mp3",
+    "caramell.mp3",
+    "Heel.mp3",
+    "gangnamm.mp3",
+    "Monkey.mp3",
+    "dancingin.mp3",
+    "dr.wav",
+    "griddy.mp3",
+    "lux.ogg",
+    "kazot.mp3",
+    "Domino.mp3",
+    "Liar.mp3",
+    "Mesmerizer.mp3",
+    "Box.mp3",
+    "Static.mp3",
+    "Prism.mp3",
+    "Headlock.mp3",
+    "TUCA DONKA.mp3",
+    "Break.mp3",
+    "XO.mp3",
+    "Soda.mp3",
+    "LoveForU.mp3",
+    "assum.mp3",
+    "balls.mp3",
+    "Distraction.mp3",
+    "ItBurns.mp3",
+    "chronoshift.mp3",
+    "KeepUp.mp3",
+    "Boombox.mp3",
+    "bloodpop.mp3",
+    "leftright.mp3",
+    "heavylove.mp3",
+    "million.mp3",
+    "Bjean.mp3",
+    "Savor.mp3",
+    "Yamero.mp3",
+    "InternetAngel.mp3",
+    "CLUB PENGUIN DANCE.mp3",
+    "Runaway.mp3",
+    "MioHonda.mp3",
+    "Firework.mp3",
+    "C14.mp3",
+    "Slickback.mp3",
+    "Doodle.mp3",
+    "Goat.mp3",
+    "Bumblebee.mp3",
+    "Stock.mp3",
+    "Shuba Duck.mp3",
+    "Lemon.mp3",
+    "Birdbrain.mp3",
+    "Fein.mp3",
+    "Popipo.mp3",
+    "Pickup.mp3",
+    "Billy.mp3",
+    "rotten.mp3",
+    "Spooky.mp3",
+    "JK.mp3",
+    "Flexworks.mp3",
+    "valen.mp3"
+}
+
 local function DanceAsset(file)
-if not isfile("KDV3/"..file) then 
-notify("Downloading Audio")
-writefile("KDV3/"..file, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..file.."?raw=true"))
-notify("Downloaded Audio")
-end
-    if isfile("KDV3/"..file) then
-        return customasset("KDV3/"..file)  
+    if not table.find(validAudioFiles, file) then
+        notify("Audio file not found: " .. file)
+        return ""
+    end
+    local filePath = "KDV3/"..file
+    if isfile(filePath) then
+        local fileSize = 0
+        pcall(function()
+            fileSize = #readfile(filePath)
+        end)
+        if fileSize < 1024 then
+            notify("Redownloading corrupted audio: " .. file)
+            delfile(filePath)
+        end
+    end
+
+    if not isfile(filePath) then 
+        notify("Downloading Audio: " .. file)
+        local success, errorMsg = pcall(function()
+            writefile(filePath, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..file.."?raw=true"))
+        end)
+        
+        if not success then
+            notify("Failed to download audio: " .. file .. " - " .. errorMsg)
+            writefile(filePath, "")
+            return ""
+        end
+        notify("Downloaded Audio: " .. file)
+    end
+    if isfile(filePath) then
+        local fileSize = 0
+        pcall(function()
+            fileSize = #readfile(filePath)
+        end)
+        if fileSize > 1024 then
+            return customasset(filePath)  
+        else
+            notify("Audio file is empty/corrupted: " .. file)
+            return ""
+        end
     else
-       notify("File Not Found")
+        notify("File Not Found: " .. file)
         return ""
     end
 end
@@ -1969,7 +2151,7 @@ end)
 Stop1.MouseButton1Click:Connect(function()
 if RUNNING then
 RUNNING=false
-end
+
 Forcestop()
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 if UPDATE then
@@ -1988,6 +2170,7 @@ if INPUTLOOP then
 end
 if sprinting then
      sprinting=false
+end
 end
 wait(1)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
