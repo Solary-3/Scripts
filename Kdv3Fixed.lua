@@ -220,7 +220,17 @@ DANCEINFO.Text="Click me!"
 CHECKF9=false
 end)
 
-
+local delfile = delfile or function(path)
+    if isfile and isfile(path) then
+        pcall(function()
+            if syn and syn.io then
+                syn.io.remove(path)
+            else
+                writefile(path, "")
+            end
+        end)
+    end
+end
 
 
 local REANIMATION=false
@@ -244,23 +254,14 @@ wait(1)
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 end)
 
-local delfile = delfile or function(path)
-    if isfile and isfile(path) then
-        pcall(function()
-            if syn and syn.io then
-                syn.io.remove(path)
-            else
-                writefile(path, "")
-            end
-        end)
-    end
-end
+
 
 
 local full = game:GetObjects("rbxassetid://107495486817639")[1]:Clone()
 full.Parent = game:GetService("Workspace")
 local fallback = game:GetObjects("rbxassetid://117971041844492")[1]:FindFirstChildOfClass("KeyframeSequence")
 fallback.Parent = full
+
 local is = newproxy(true)
 local function loadlocalasset(id)
     local id = tostring(id)
@@ -279,7 +280,6 @@ end
 local function AddDance(Name, ScriptUrl)
     local filePath = "KRYSTALDANCE/"..Name
     if isfile(filePath) then
-        notify("Loading saved dance: "..Name)
         local success, danceData = pcall(function()
             return loadstring(readfile(filePath))()
         end)
@@ -417,6 +417,7 @@ Dance_43=AddDance("Limited", "https://raw.githubusercontent.com/Solary-3/Scripts
 wait(1)
 Dance_44=AddDance("Flexworks", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Flexworks.lua")
 wait(1)
+Dance_45=AddDance("Doodle", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Doodle.lua")
 end
 
 
@@ -565,6 +566,8 @@ end
 local function Forcestop()
      sound69:Stop()
 end
+
+
 local mode = 1 
 local INPUTLOOP =nil
 local STATES =nil
@@ -586,8 +589,12 @@ RUNNING = true
 
 
 
--- Krystal Dance V3, Made by Hemi (es muy janky)
 
+
+
+
+
+-- Krystal Dance V3, Made by Hemi (es muy janky)
 local char=game:GetService("Players").LocalPlayer.Character
 local lol = math.random(1,30)
 if lol == 2 then 
