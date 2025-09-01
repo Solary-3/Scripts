@@ -1,4 +1,4 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
+
 if isfolder and not isfolder("KDV3") then 
 	makefolder("KDV3")
 end
@@ -25,7 +25,11 @@ wait(.95)
 notify("Credits goes to them!!!!")
 wait(1)
 notify('pls click "click me" first ty!!')
-wait(1)
+wait(2)
+
+
+
+
 local ScreenGui = Instance.new("ScreenGui",KDV3)
 ScreenGui.Name ="KRYSTALDANCE"
 local ui = Instance.new("Frame",ScreenGui)
@@ -190,14 +194,14 @@ if CHECKF9 then return end
 CHECKF9=true 
 DANCEINFO.Text="Check Console"
 print("------------------------------------------")
-print("Q - RAT DANCE, PAGE 2 - XO, PAGE 3 - C14")
-print("E - BOOGIE, PAGE 2 - SODA POP, PAGE 3 - Slickback")
-print("R - ASSUMPTIONS, PAGE 2 - LOVE FOR YOU, PAGE 3 - DOODLE")
-print("T - EGYPT, PAGE 2 - ASSUMPTIONS SHUFFLE, PAGE 3 - GOAT")
-print("Y - DO THR FLOP, PAGE 2 - PEASHOOTER, PAGE 3 - BUMBLEBEE")
-print("U - CARAMELLDANSEN, PAGE 2 - BLOODPOP, PAGE 3 - STOCK SHUFFLE")
-print("P - BOMB MONKEY, PAGE 2 - INTERNET YAMERO, PAGE 3 - RAT DANCE 2")
-print("F - HEEL TOE HOP, PAGE 2 - CHRONOSHIFT, PAGE 3 - SHUBA DUCK")
+print("Q - RAT DANCE, PAGE 2 - XO, PAGE 3 - C14, PAGE 4 - UNLOCKIT")
+print("E - BOOGIE, PAGE 2 - SODA POP, PAGE 3 - Slickback, PAGE 4 - SMOOTHMOVES")
+print("R - ASSUMPTIONS, PAGE 2 - LOVE FOR YOU, PAGE 3 - DOODLE, PAGE 4 - LAGTRAIN")
+print("T - EGYPT, PAGE 2 - ASSUMPTIONS SHUFFLE, PAGE 3 - GOAT, PAGE 4 - SUKI")
+print("Y - DO THR FLOP, PAGE 2 - PEASHOOTER, PAGE 3 - BUMBLEBEE, PAGE 4 - CAFETERIA")
+print("U - CARAMELLDANSEN, PAGE 2 - BLOODPOP, PAGE 3 - STOCK SHUFFLE, PAGE 4 - DARE")
+print("P - BOMB MONKEY, PAGE 2 - INTERNET YAMERO, PAGE 3 - RAT DANCE 2, PAGE 4 - TENNA ")
+print("F - HEEL TOE HOP, PAGE 2 - CHRONOSHIFT, PAGE 3 - SHUBA DUCK, PAGE 4 - INSANITY")
 print("G - GANGNAM, PAGE 2 - IT BURNS, PAGE 3 - LEMON MELON COOKIE")
 print("H - DOMINO, PAGE 2 - DISTRACTION DANCE, PAGE 3 - BIRDBRAIN")
 print("J - STARLIT, PAGE 2 - KEEP UP, PAGE 3 - FEIN")
@@ -208,12 +212,12 @@ print("X - KAZOTSKY KICK, PAGE 2 - HEAVY LOVE, PAGE 3 - ROTTEN")
 print("C - MESMERIZER, PAGE 2 - MILLION, PAGE 3 - SPOOKY MONTH")
 print("V - LIAR DANCER, PAGE 2 - BILLIE JEAN, PAGE 3 - LIMITED FLEXWORKS")
 print("B - HAKARI, PAGE 2 - SAVOR THE W, PAGE 3 - UNLIMITED FLEXWORKS")
-print("N - BOX SWING, PAGE 2 - LAY, PAGE 3 - UNLOCKIT")
-print("MINUS OR '-' - COMMERCIAL BREAK, CLUB PENGUIN")
-print("COMMA OR ',' - STATIC, PAGE 2 - INTERNET YAMERO")
-print("LEFTBRACKET OR '[' - EMOTIONAL PRISM, PAGE 2 - I WANNA RUNAWAY")
-print("RIGHTBRACKET OR ']' - HEADLOCK, PAGE 2 - MIO HONDA")
+print("N - BOX SWING, PAGE 2 - LAY, PAGE 3 - CRISSCROSS")
 print("M - CHANGE PAGES")
+print("MINUS OR '-' - COMMERCIAL BREAK, PAGE 2 - CLUB PENGUIN, PAGE 3 - TORT")
+print("COMMA OR ',' - STATIC, PAGE 2 - INTERNET YAMERO, PAGE 3 - BRAIN")
+print("LEFTBRACKET OR '[' - EMOTIONAL PRISM, PAGE 2 - I WANNA RUNAWAY, PAGE 3 - ESPRESSO")
+print("RIGHTBRACKET OR ']' - HEADLOCK, PAGE 2 - MIO HONDA, PAGE 3 - RAKUTEN")
 print("EQUALS OR '=' TOGGLE BACKGROUND MUSIC WHEN NOT DANCING")
 wait(1)
 DANCEINFO.Text="Click me!"
@@ -418,6 +422,25 @@ wait(1)
 Dance_44=AddDance("Flexworks", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Flexworks.lua")
 wait(1)
 Dance_45=AddDance("Doodle", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Doodle.lua")
+wait(1)
+Dance_46=AddDance("Cafeteria", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Cafeteria.lua")
+wait(1)
+Dance_47=AddDance("Unlockit", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Unlockit.lua")
+wait(1)
+Dance_48=AddDance("Suki", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Suki.lua")
+wait(1)
+Dance_48=AddDance("CrissCross", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/CrissCross.lua")
+wait(1)
+Dance_49=AddDance("Lagtrain", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Lagtrain.lua")
+wait(1)
+Dance_50=AddDance("Dare", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Dare.lua")
+wait(1)
+Dance_51=AddDance("Insanity", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Insanity.lua")
+wait(1)
+Dance_52=AddDance("SmoothMoves", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/SmoothMoves.lua")
+Dance_53=AddDance("Tenna",
+"https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tenna.lua")
+wait(1)
 end
 
 
@@ -513,7 +536,19 @@ local validAudioFiles = {
     "Spooky.mp3",
     "JK.mp3",
     "Flexworks.mp3",
-    "valen.mp3"
+    "Unlockit.mp3",
+    "Insanity.mp3",
+    "Cafeteria.mp3",
+    "Tenna.mp3",
+    "Suki.mp3",
+    "CrissCross.mp3",
+    "Dare.mp3",
+    "Lagtrain.mp3",
+    "SmoothMoves.mp3",
+    "brain.mp3",
+    "espresso.mp3",
+    "rakuten.mp3",
+    "tort.mp3"
 }
 
 local function DanceAsset(file)
@@ -566,8 +601,9 @@ end
 local function Forcestop()
      sound69:Stop()
 end
-
-
+local char=game:GetService("Players").LocalPlayer.Character
+local Character =char
+local Humanoid = Character:WaitForChild("Humanoid")
 local mode = 1 
 local INPUTLOOP =nil
 local STATES =nil
@@ -595,7 +631,6 @@ RUNNING = true
 
 
 -- Krystal Dance V3, Made by Hemi (es muy janky)
-local char=game:GetService("Players").LocalPlayer.Character
 local lol = math.random(1,30)
 if lol == 2 then 
 	lol = true 
@@ -661,6 +696,7 @@ local count2;
 local maxcount2;
 local walking = false
 local idle = false
+local char=game:GetService("Players").LocalPlayer.Character
 local RunService = game:GetService("RunService")
 local hum=char:FindFirstChildOfClass("Humanoid")
 local h=char.Head
@@ -1676,7 +1712,8 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				stopanim()
 			end
 		end 
-	elseif mode == 3 then 
+	end
+	if mode == 3 then 
 		if k == "q" then 
 			if dancing == false then 
 				stopanim()
@@ -1898,11 +1935,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				stopanim()
 				dancing = true
 				task.wait(.005)
-				sound69.SoundId = customasset("valen.mp3")
+				sound69.SoundId = customasset("CrissCross.mp3")
 				sound69.PlaybackSpeed = 1
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
-				playanim(100632740547268) -- uuid. 136962185637891
+				playanim(109275255555630) -- uuid. 136962185637891
 			else
 				stopanim()
 			end
@@ -1911,27 +1948,149 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				stopanim()
 				dancing = true
 				task.wait(.005)
-				sound69.SoundId = DanceAsset("Prism.mp3")
+				sound69.SoundId = DanceAsset("brain.mp3")
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
-				playanim("Prism") -- uuid. 71723925114737
+				playanim(93547721311170) -- uuid. 71723925114737
 			else
 				stopanim()
 			end
-		--end 
+		elseif k == "leftbracket" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("espresso.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim(87342159331194) -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+		elseif k == "rightbracket" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("rakuten.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim(121967347012647) -- uuid. 71723925114737
+			else
+				stopanim()
+			end
 		elseif k == "minus" then 
 			if dancing == false then 
 				stopanim()
 				dancing = true
 				task.wait(.005)
-				sound69.SoundId = DanceAsset("Soda.mp3")
+				sound69.SoundId = DanceAsset("tort.mp3")
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
-				playanim("Soda") -- uuid. 71723925114737
+				playanim(99811468921857) -- uuid. 71723925114737
 			else
 				stopanim()
 			end
 		end 
+	end
+	if mode == 4 then
+			if k == "q" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Unlockit.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("Unlockit") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "e" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("SmoothMoves.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("SmoothMoves") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "r" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Lagtrain.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("Lagtrain") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "t" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Suki.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("Suki") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "y" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Cafeteria.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("Cafeteria") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "u" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Dare.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("Dare") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "p" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Tenna.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("Tenna") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "f" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Insanity.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("Insanity") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+		end
 	end
 	if k == "equals" then 
 		playbacktrack = not playbacktrack
@@ -1957,30 +2116,39 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 	if k == "leftcontrol" then 
 		sprinting = not sprinting
 	end
-	if k == "m" then 
-		if mode == 2 then 
-			mode = 3
-			game:GetService("StarterGui"):SetCore("SendNotification", {
-				Title = "Krystal Dance V3";
-				Duration = 5;
-				Text = "You are on page 3"
-			})
-		elseif mode == 1 then
-			mode = 2 
-			game:GetService("StarterGui"):SetCore("SendNotification", {
-				Title = "Krystal Dance V3";
-				Duration = 5;
-				Text = "You are on page 2"
-			})
-		elseif mode ==3 then 
-			mode = 1
-			game:GetService("StarterGui"):SetCore("SendNotification", {
-				Title = "Krystal Dance V3";
-				Duration = 5;
-				Text = "You are on page 1"
-			})
-		end
-	end
+if k == "m" then  --Modes
+    if mode == 3 then 
+mode = 4
+
+  game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 5;
+	Text = "Page 4"
+})
+elseif mode == 2  then
+    mode = 3 
+    
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 5;
+	Text = "Page 3"
+})
+elseif mode == 1 then
+        mode = 2 
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 5;
+	Text = "Page 2"
+})
+elseif mode == 4  then 
+    mode = 1
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 5;
+	Text = "Page 1"
+})
+    end
+end
 end)
 
 
@@ -2131,14 +2299,14 @@ UPDATE=RunService.RenderStepped:Connect(function(deltaTime: number)
 			if IsR6 then
 				NeckCFrame = CFrame.Angles(Pitch, 0, Yaw)
 			else
-				NeckCFrame = CFrame.Angles(-Pitch * 0.5, Yaw, -Roll * 0.5)				
-				local waistCFrame = CFrame.Angles(-Pitch * 0.5, Yaw * 0.5, 0)
-				Waist.C0 = Waist.C0:Lerp(WaistOriginC0 * waistCFrame, updatesPerSecond * deltaTime)
+			   	NeckCFrame = CFrame.Angles(-Pitch * 0.5, Yaw, -Roll * 0.5)				
+			   	local waistCFrame = CFrame.Angles(-Pitch * 0.5, Yaw * 0.5, 0)
+			   	Waist.C0 = Waist.C0:Lerp(WaistOriginC0 * waistCFrame, updatesPerSecond * deltaTime)
 			end			
 			Neck.C0 = Neck.C0:Lerp(NeckOriginC0 * NeckCFrame, updatesPerSecond * deltaTime)
 		end
 	elseif dancing == true then 
-		Neck.C0 = oldC0N
+	   	Neck.C0 = oldC0N
 	end	
 	if char.Humanoid.MoveDirection == Vector3.new(0,0,0) then 
 		walking = false 
@@ -2150,15 +2318,12 @@ UPDATE=RunService.RenderStepped:Connect(function(deltaTime: number)
 end)
 
 
-
-
-
 end)
+
 
 Stop1.MouseButton1Click:Connect(function()
 if RUNNING then
 RUNNING=false
-
 Forcestop()
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 if UPDATE then
