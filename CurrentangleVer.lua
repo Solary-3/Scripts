@@ -26,8 +26,11 @@ notify("Credits goes to them!!!!")
 wait(1)
 notify('pls click "click me" first ty!!')
 wait(2)
-
-
+notify("Also get a keyboard script")
+wait(2)
+notify("INPORTANT: If they dont see your anims, ask them to rejoin!")
+wait(2)
+notify("If they still dont see it, then the game isnt supported")
 
 
 local ScreenGui = Instance.new("ScreenGui",KDV3)
