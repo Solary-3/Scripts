@@ -213,7 +213,7 @@ print("L - GRIDDY, PAGE 2 - FIREWORK, PAGE 3 - PICKUP THE PHONE, PAGE 4 STEP")
 print("Z - LUX, PAGE 2 - TWO, PAGE 3 - SILLY BILLY, PAGE 4 - APPLE PEN")
 print("X - KAZOTSKY KICK, PAGE 2 - HEAVY LOVE, PAGE 3 - ROTTEN, PAGE 4 - CRANK THAT")
 print("C - MESMERIZER, PAGE 2 - MILLION, PAGE 3 - SPOOKY MONTH, PAGE 4 - TAKEDOWN")
-print("V - LIAR DANCER, PAGE 2 - BILLIE JEAN, PAGE 3 - LIMITED FLEXWORKS")
+print("V - LIAR DANCER, PAGE 2 - BILLIE JEAN, PAGE 3 - LIMITED FLEXWORKS, PAGE 4 - CALIFORNIA GURLS")
 print("B - HAKARI, PAGE 2 - SAVOR THE W, PAGE 3 - UNLIMITED FLEXWORKS")
 print("N - BOX SWING, PAGE 2 - LAY, PAGE 3 - CRISSCROSS")
 print("M - CHANGE PAGES")
@@ -480,6 +480,7 @@ local validAudioFiles = {
     "Electro Swing.mp3",
     "Crank.mp3",
     "Apple Pen.mp3",
+    "California.mp3"
 }
 
 
@@ -2300,6 +2301,21 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				sound69.SoundId = DanceAsset("TakeDown.mp3")
 				timeposcur = sound69.TimePosition 
 				local dance=LoadDance("Takedown", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Takedown.lua")
+				sound69:Play()
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "v" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("California.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("California", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Califonia Gurls.lua")
 				sound69:Play()
 				if dance then
 				playanim(dance) 
