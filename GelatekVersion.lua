@@ -328,6 +328,19 @@ local function AddDance(Name, ScriptUrl)
     end
 end
 
+local danceCache = {}
+local function LoadDance(danceName, scriptUrl)
+    if danceCache[danceName] then
+        return danceCache[danceName]
+    end
+    
+    local dance = AddDance(danceName, scriptUrl)
+    if dance then
+        danceCache[danceName] = dance
+    end
+    return dance
+end
+
 
 local timeposcur = 0 
 local sound69 = Instance.new("Sound",game:GetService("RunService"))
