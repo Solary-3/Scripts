@@ -42,7 +42,6 @@ local ced = Instance.new("TextLabel")
 local Show =Instance.new("TextButton")
 local corner=Instance.new("UICorner",ui)
 local DANCEINFO=Instance.new("TextButton",ui)
-local Enable =Instance.new("TextButton",ui)
 local corner1=Instance.new("UICorner",Run1)
 corner2=Instance.new("UICorner",Stop1)
 corner3=Instance.new("UICorner",Show)
@@ -117,20 +116,6 @@ Run1.TextColor3 = Color3.new(1,1,1)
 Run1.TextScaled = true
 Run1.TextSize = 10
 Run1.TextWrapped = true
-
-Enable.Name = "Stick"
-Enable.Parent = ui
-Enable.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
-Enable.BackgroundTransparency = 0
-Enable.BorderSizePixel = 0
-Enable.Position = UDim2.new(1, 0, .35, 0)
-Enable.Size = UDim2.new(0.5, 0, 0, 45)
-Enable.Font = Enum.Font.Sarpanch
-Enable.Text = "Enabled"
-Enable.TextColor3 = Color3.new(1,1,1)
-Enable.TextScaled = true
-Enable.TextSize = 10
-Enable.TextWrapped = true
 
 Stop1.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
 Stop1.Position=UDim2.new(0.50, 0, 0.629999971, 0)
@@ -250,19 +235,6 @@ local delfile = delfile or function(path)
         end)
     end
 end
-local ALLOWPROTECTION=true
-local ALLOWPROTECTION1=true
-Enable.MouseButton1Click:Connect(function()
-ALLOWPROTECTION1=not ALLOWPROTECTION1
-if ALLOWPROTECTION1 then 
-ALLOWPROTECTION=true
-Enable.Text="Enabled"
-else
-ALLOWPROTECTION=false
-Enable.Text="Disabled"
-end
-end)
-
 local REANIMATION=false
 local char=game:GetService("Players").LocalPlayer.Character
 local Character =char

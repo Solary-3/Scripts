@@ -55,20 +55,6 @@ Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(0.07, 0, 0.860000014, 0)
 Frame.Size = UDim2.new(0.85, 0, 0, 6)
 
-Wings.Name = "F20 FR"
-Wings.Parent = ui
-Wings.BackgroundColor3 = Color3.new(1, 1, 1)
-Wings.BorderSizePixel = 0
-Wings.Position = UDim2.new(0.100000001, 0, 0.300000012, 0)
-Wings.Size = UDim2.new(0.800000012, 0, 0, 50)
-Wings.Font = "Sarpanch"
-Wings.PlaceholderText = "Insert Name"
-Wings.Text = "Nameless1"
-Wings.TextColor3 = Color3.new(0, 0, 0)
-Wings.TextScaled = true
-Wings.TextSize = 14
-Wings.TextWrapped = true
-
 
 GELATEK.Name = "Stick"
 GELATEK.Parent = ui
