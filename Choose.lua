@@ -5,7 +5,6 @@ Title="Service";
 Text=text})
 Duration=5 or dur
 end
-
 local Cgui = game:GetService("CoreGui")
 if Cgui:FindFirstChild("CHOOSE") then
     Cgui.CHOOSE:Destroy()
@@ -25,7 +24,6 @@ local ced = Instance.new("TextLabel")
 local corner=Instance.new("UICorner",ui)
  corner1=Instance.new("UICorner",GELATEK)
  corner2=Instance.new("UICorner",CURRENTANGLE)
- corner3=Instance.new("UICorner",Show)
 ScreenGui.Parent = game:GetService("CoreGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ui.Name = "ui"
