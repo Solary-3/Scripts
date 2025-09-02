@@ -880,7 +880,7 @@ HumanoidRootPart_k16_HumanoidRootPart.Parent = keyframe16
 --Torso
  Torso_k16_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k16_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k16_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k16_HumanoidRootPart_Torso.CFrame = cf(-0.019814, 0.000000, -0.341387, 0.995691, -0.065843, -0.065308, 0.059805, 0.994104, -0.090449, 0.070878, 0.086154, 0.993757)
 Torso_k16_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k16_HumanoidRootPart
 
 
@@ -954,7 +954,7 @@ HumanoidRootPart_k18_HumanoidRootPart.Parent = keyframe18
 --Torso
  Torso_k18_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k18_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k18_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k18_HumanoidRootPart_Torso.CFrame = cf(-0.019814, 0.000000, -0.197637, 0.997975, -0.063526, -0.003305, 0.063061, 0.994816, -0.079781, 0.008357, 0.079411, 0.996807)
 Torso_k18_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k18_HumanoidRootPart
 
 
@@ -1020,7 +1020,7 @@ keyframe20.Parent = KeyframeSequence
 --HumanoidRootPart
  HumanoidRootPart_k20_HumanoidRootPart = Instance.new("Pose")
 HumanoidRootPart_k20_HumanoidRootPart.Name = "HumanoidRootPart"
-HumanoidRootPart_k20_HumanoidRootPart.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+HumanoidRootPart_k20_HumanoidRootPart.CFrame = cf(-0.019814, 0.000000, -0.064931, 0.997276, -0.063161, 0.038084, 0.064206, 0.997575, -0.026866, -0.036295, 0.029238, 0.998913)
 HumanoidRootPart_k20_HumanoidRootPart.Parent = keyframe20
 
 
@@ -1179,7 +1179,7 @@ HumanoidRootPart_k23_HumanoidRootPart.Parent = keyframe23
 --Torso
  Torso_k23_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k23_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k23_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k23_HumanoidRootPart_Torso.CFrame = cf(-0.019814, 0.000000, -0.048001, 0.998723, -0.039511, 0.031488, 0.038496, 0.998739, 0.032232, -0.032722, -0.030979, 0.998984)
 Torso_k23_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k23_HumanoidRootPart
 
 
@@ -1240,7 +1240,7 @@ HumanoidRootPart_k24_HumanoidRootPart.Parent = keyframe24
 --Torso
  Torso_k24_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k24_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k24_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k24_HumanoidRootPart_Torso.CFrame = cf(-0.019814, 0.000000, -0.048001, 0.998723, -0.039511, 0.031488, 0.038496, 0.998739, 0.032232, -0.032722, -0.030979, 0.998984)
 Torso_k24_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k24_HumanoidRootPart
 
 
@@ -1399,7 +1399,7 @@ HumanoidRootPart_k27_HumanoidRootPart.Parent = keyframe27
 --Torso
  Torso_k27_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k27_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k27_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k27_HumanoidRootPart_Torso.CFrame = cf(-0.019814, 0.000000, -0.285783, 0.987176, -0.159628, -0.001856, 0.157810, 0.977559, -0.139548, 0.024090, 0.137465, 0.990214)
 Torso_k27_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k27_HumanoidRootPart
 
 
@@ -1969,7 +1969,7 @@ HumanoidRootPart_k37_HumanoidRootPart.Parent = keyframe37
 --Torso
  Torso_k37_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k37_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k37_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k37_HumanoidRootPart_Torso.CFrame = cf(0.070249, 0.000000, -0.050690, 0.994895, -0.044972, 0.090338, 0.049695, 0.997475, -0.050731, -0.087829, 0.054962, 0.994618)
 Torso_k37_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k37_HumanoidRootPart
 
 
@@ -2682,7 +2682,7 @@ HumanoidRootPart_k50_HumanoidRootPart.Parent = keyframe50
 --Torso
  Torso_k50_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k50_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k50_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k50_HumanoidRootPart_Torso.CFrame = cf(0.125710, -0.123055, 0.012296, 0.993794, -0.110411, 0.013536, 0.111081, 0.991476, -0.068097, -0.005902, 0.069178, 0.997587)
 Torso_k50_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k50_HumanoidRootPart
 
 
@@ -2931,7 +2931,7 @@ HumanoidRootPart_k55_HumanoidRootPart.Parent = keyframe55
 --Torso
  Torso_k55_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k55_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k55_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k55_HumanoidRootPart_Torso.CFrame = cf(0.029645, -0.069607, -0.140927, 0.999083, -0.041978, 0.008366, 0.042344, 0.997863, -0.049761, -0.006259, 0.050070, 0.998726)
 Torso_k55_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k55_HumanoidRootPart
 
 
@@ -3005,7 +3005,7 @@ HumanoidRootPart_k57_HumanoidRootPart.Parent = keyframe57
 --Torso
  Torso_k57_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k57_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k57_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k57_HumanoidRootPart_Torso.CFrame = cf(0.029645, -0.069607, -0.140927, 0.999083, -0.041978, 0.008366, 0.042344, 0.997863, -0.049761, -0.006259, 0.050070, 0.998726)
 Torso_k57_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k57_HumanoidRootPart
 
 
@@ -3087,7 +3087,7 @@ HumanoidRootPart_k59_HumanoidRootPart.Parent = keyframe59
 --Torso
  Torso_k59_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k59_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k59_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k59_HumanoidRootPart_Torso.CFrame = cf(0.029645, -0.069607, -0.140927, 0.999083, -0.041978, 0.008366, 0.042344, 0.997863, -0.049761, -0.006259, 0.050070, 0.998726)
 Torso_k59_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k59_HumanoidRootPart
 
 
@@ -3116,7 +3116,7 @@ HumanoidRootPart_k60_HumanoidRootPart.Parent = keyframe60
 --Torso
  Torso_k60_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k60_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k60_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k60_HumanoidRootPart_Torso.CFrame = cf(0.029645, -0.069607, -0.140927, 0.999083, -0.041978, 0.008366, 0.042344, 0.997863, -0.049761, -0.006259, 0.050070, 0.998726)
 Torso_k60_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k60_HumanoidRootPart
 
 
@@ -3198,7 +3198,7 @@ HumanoidRootPart_k62_HumanoidRootPart.Parent = keyframe62
 --Torso
  Torso_k62_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k62_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k62_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k62_HumanoidRootPart_Torso.CFrame = cf(0.027163, -0.042631, -0.057617, 0.984663, -0.168995, 0.043352, 0.170681, 0.984568, -0.038655, -0.036150, 0.045462, 0.998312)
 Torso_k62_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k62_HumanoidRootPart
 
 
@@ -3280,7 +3280,7 @@ HumanoidRootPart_k64_HumanoidRootPart.Parent = keyframe64
 --Torso
  Torso_k64_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k64_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k64_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k64_HumanoidRootPart_Torso.CFrame = cf(0.029645, -0.042631, -0.095102, 0.980667, -0.195135, 0.014666, 0.195558, 0.979973, -0.037545, -0.007046, 0.039687, 0.999187)
 Torso_k64_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k64_HumanoidRootPart
 
 
@@ -3439,7 +3439,7 @@ HumanoidRootPart_k67_HumanoidRootPart.Parent = keyframe67
 --Torso
  Torso_k67_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k67_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k67_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k67_HumanoidRootPart_Torso.CFrame = cf(0.029261, -0.043558, -0.149121, 0.999805, 0.003670, -0.019386, -0.004157, 0.999675, -0.025165, 0.019287, 0.025240, 0.999495)
 Torso_k67_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k67_HumanoidRootPart
 
 
@@ -3468,7 +3468,7 @@ HumanoidRootPart_k68_HumanoidRootPart.Parent = keyframe68
 --Torso
  Torso_k68_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k68_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k68_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k68_HumanoidRootPart_Torso.CFrame = cf(0.029261, -0.043558, -0.149121, 0.999805, 0.003670, -0.019386, -0.004157, 0.999675, -0.025165, 0.019287, 0.025240, 0.999495)
 Torso_k68_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k68_HumanoidRootPart
 
 
@@ -3558,7 +3558,7 @@ HumanoidRootPart_k70_HumanoidRootPart.Parent = keyframe70
 --Torso
  Torso_k70_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k70_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k70_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k70_HumanoidRootPart_Torso.CFrame = cf(0.029261, -0.043558, -0.068233, 0.997504, 0.070195, 0.007637, -0.070433, 0.996808, 0.037583, -0.004975, -0.038027, 0.999264)
 Torso_k70_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k70_HumanoidRootPart
 
 
@@ -3754,7 +3754,7 @@ HumanoidRootPart_k74_HumanoidRootPart.Parent = keyframe74
 --Torso
  Torso_k74_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k74_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k74_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k74_HumanoidRootPart_Torso.CFrame = cf(0.029261, -0.043558, -0.142214, 0.958388, 0.285383, 0.006969, -0.284763, 0.954024, 0.093533, 0.020044, -0.091625, 0.995592)
 Torso_k74_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k74_HumanoidRootPart
 
 
@@ -4263,7 +4263,7 @@ HumanoidRootPart_k83_HumanoidRootPart.Parent = keyframe83
 --Torso
  Torso_k83_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k83_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k83_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k83_HumanoidRootPart_Torso.CFrame = cf(-0.002201, 0.178768, -0.205642, 0.969800, -0.242445, -0.026609, 0.240510, 0.968738, -0.060836, 0.040527, 0.052599, 0.997793)
 Torso_k83_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k83_HumanoidRootPart
 
 
@@ -4390,7 +4390,7 @@ HumanoidRootPart_k86_HumanoidRootPart.Parent = keyframe86
 --Torso
  Torso_k86_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k86_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k86_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k86_HumanoidRootPart_Torso.CFrame = cf(-0.002201, 0.178768, -0.086920, 0.983766, 0.172193, 0.050538, -0.170683, 0.984778, -0.032849, -0.055425, 0.023690, 0.998182)
 Torso_k86_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k86_HumanoidRootPart
 
 
@@ -4586,7 +4586,7 @@ HumanoidRootPart_k90_HumanoidRootPart.Parent = keyframe90
 --Torso
  Torso_k90_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k90_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k90_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k90_HumanoidRootPart_Torso.CFrame = cf(-0.002201, 0.178768, -0.164008, 0.957335, 0.280020, 0.071402, -0.279979, 0.959946, -0.010778, -0.071560, -0.009673, 0.997389)
 Torso_k90_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k90_HumanoidRootPart
 
 
@@ -4668,7 +4668,7 @@ HumanoidRootPart_k92_HumanoidRootPart.Parent = keyframe92
 --Torso
  Torso_k92_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k92_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k92_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k92_HumanoidRootPart_Torso.CFrame = cf(-0.002201, 0.178768, -0.164008, 0.957335, 0.280020, 0.071402, -0.279979, 0.959946, -0.010778, -0.071560, -0.009673, 0.997389)
 Torso_k92_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k92_HumanoidRootPart
 
 
@@ -4742,7 +4742,7 @@ HumanoidRootPart_k94_HumanoidRootPart.Parent = keyframe94
 --Torso
  Torso_k94_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k94_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k94_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k94_HumanoidRootPart_Torso.CFrame = cf(0.036608, 0.178768, -0.197708, 0.940565, 0.332062, 0.071220, -0.331468, 0.943247, -0.020353, -0.073936, -0.004464, 0.997253)
 Torso_k94_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k94_HumanoidRootPart
 
 
@@ -5569,7 +5569,7 @@ HumanoidRootPart_k109_HumanoidRootPart.Parent = keyframe109
 --Torso
  Torso_k109_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k109_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k109_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k109_HumanoidRootPart_Torso.CFrame = cf(-0.293778, 0.171448, -0.132973, 0.458942, -0.887514, 0.041130, 0.887774, 0.456266, -0.060649, 0.035060, 0.064348, 0.997311)
 Torso_k109_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k109_HumanoidRootPart
 
 
@@ -5956,7 +5956,7 @@ HumanoidRootPart_k116_HumanoidRootPart.Parent = keyframe116
 --Torso
  Torso_k116_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k116_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k116_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k116_HumanoidRootPart_Torso.CFrame = cf(-0.490893, 0.171448, -0.217263, 0.407763, -0.891908, 0.195523, 0.910182, 0.414108, -0.009165, -0.072793, 0.181698, 0.980656)
 Torso_k116_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k116_HumanoidRootPart
 
 
@@ -6258,7 +6258,7 @@ HumanoidRootPart_k122_HumanoidRootPart.Parent = keyframe122
 --Torso
  Torso_k122_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k122_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k122_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k122_HumanoidRootPart_Torso.CFrame =  cf(0.365107, 0.215628, -0.114239, 0.999338, 0.027757, 0.023536, -0.027950, 0.999578, 0.007929, -0.023306, -0.008581, 0.999692)
 Torso_k122_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k122_HumanoidRootPart
 
 
@@ -6332,7 +6332,7 @@ HumanoidRootPart_k124_HumanoidRootPart.Parent = keyframe124
 --Torso
  Torso_k124_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k124_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k124_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k124_HumanoidRootPart_Torso.CFrame =  cf(0.365107, 0.215628, -0.114239, 0.999338, 0.027757, 0.023536, -0.027950, 0.999578, 0.007929, -0.023306, -0.008581, 0.999692)
 Torso_k124_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k124_HumanoidRootPart
 
 
@@ -6414,7 +6414,7 @@ HumanoidRootPart_k126_HumanoidRootPart.Parent = keyframe126
 --Torso
  Torso_k126_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k126_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k126_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k126_HumanoidRootPart_Torso.CFrame = cf(0.346150, 0.215628, -0.069259, 0.926015, 0.362567, 0.105081, -0.364780, 0.931091, 0.001986, -0.097120, -0.040171, 0.994462)
 Torso_k126_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k126_HumanoidRootPart
 
 
@@ -6496,7 +6496,7 @@ HumanoidRootPart_k128_HumanoidRootPart.Parent = keyframe128
 --Torso
  Torso_k128_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k128_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k128_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k128_HumanoidRootPart_Torso.CFrame = cf(0.346150, 0.215628, -0.069227, 0.827222, 0.525255, 0.199525, -0.534826, 0.844934, -0.006945, -0.172234, -0.100966, 0.979868)
 Torso_k128_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k128_HumanoidRootPart
 
 
@@ -6525,7 +6525,7 @@ HumanoidRootPart_k129_HumanoidRootPart.Parent = keyframe129
 --Torso
  Torso_k129_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k129_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k129_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k129_HumanoidRootPart_Torso.CFrame = cf(0.346150, 0.215628, -0.069227, 0.827222, 0.525255, 0.199525, -0.534826, 0.844934, -0.006945, -0.172234, -0.100966, 0.979868)
 Torso_k129_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k129_HumanoidRootPart
 
 
@@ -6554,7 +6554,7 @@ HumanoidRootPart_k130_HumanoidRootPart.Parent = keyframe130
 --Torso
  Torso_k130_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k130_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k130_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k130_HumanoidRootPart_Torso.CFrame = cf(0.346150, 0.215628, -0.069227, 0.827222, 0.525255, 0.199525, -0.534826, 0.844934, -0.006945, -0.172234, -0.100966, 0.979868)
 Torso_k130_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k130_HumanoidRootPart
 
 
@@ -6649,7 +6649,7 @@ HumanoidRootPart_k133_HumanoidRootPart.Parent = keyframe133
 --Torso
  Torso_k133_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k133_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k133_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k133_HumanoidRootPart_Torso.CFrame = cf(0.146315, 0.170055, -0.165296, 0.967954, 0.237709, 0.080990, -0.243271, 0.967607, 0.067495, -0.062322, -0.085035, 0.994427)
 Torso_k133_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k133_HumanoidRootPart
 
 
@@ -6845,7 +6845,7 @@ HumanoidRootPart_k137_HumanoidRootPart.Parent = keyframe137
 --Torso
  Torso_k137_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k137_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k137_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k137_HumanoidRootPart_Torso.CFrame = cf(0.044088, 0.154865, -0.175837, 0.997042, -0.050447, -0.057978, 0.055053, 0.995208, 0.080805, 0.053623, -0.083758, 0.995042)
 Torso_k137_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k137_HumanoidRootPart
 
 
@@ -7319,7 +7319,7 @@ HumanoidRootPart_k147_HumanoidRootPart.Parent = keyframe147
 --Torso
  Torso_k147_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k147_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k147_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k147_HumanoidRootPart_Torso.CFrame = cf(0.004003, 0.103027, -0.049883, 0.961559, 0.273570, 0.023726, -0.272609, 0.940648, 0.202151, 0.032985, -0.200848, 0.979067)
 Torso_k147_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k147_HumanoidRootPart
 
 
@@ -7438,7 +7438,7 @@ keyframe150.Parent = KeyframeSequence
 --HumanoidRootPart
  HumanoidRootPart_k150_HumanoidRootPart = Instance.new("Pose")
 HumanoidRootPart_k150_HumanoidRootPart.Name = "HumanoidRootPart"
-HumanoidRootPart_k150_HumanoidRootPart.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+HumanoidRootPart_k150_HumanoidRootPart.CFrame = cf(0.004003, 0.103027, -0.083358, 0.988472, 0.072785, -0.132763, -0.048018, 0.982307, 0.181018, 0.143589, -0.172556, 0.974478)
 HumanoidRootPart_k150_HumanoidRootPart.Parent = keyframe150
 
 
@@ -7446,7 +7446,7 @@ HumanoidRootPart_k150_HumanoidRootPart.Parent = keyframe150
 --Torso
  Torso_k150_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k150_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k150_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k150_HumanoidRootPart_Torso.CFrame = cf(0.004003, 0.103027, -0.083358, 0.988472, 0.072785, -0.132763, -0.048018, 0.982307, 0.181018, 0.143589, -0.172556, 0.974478)
 Torso_k150_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k150_HumanoidRootPart
 
 
@@ -7573,7 +7573,7 @@ HumanoidRootPart_k153_HumanoidRootPart.Parent = keyframe153
 --Torso
  Torso_k153_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k153_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k153_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k153_HumanoidRootPart_Torso.CFrame = cf(0.004003, 0.103027, -0.178845, 0.967738, -0.181518, -0.174739, 0.207038, 0.968130, 0.140925, 0.143589, -0.172556, 0.974478)
 Torso_k153_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k153_HumanoidRootPart
 
 
@@ -7708,7 +7708,7 @@ HumanoidRootPart_k156_HumanoidRootPart.Parent = keyframe156
 --Torso
  Torso_k156_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k156_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k156_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k156_HumanoidRootPart_Torso.CFrame = cf(0.004003, 0.103027, -0.075357, 0.976794, -0.212632, 0.025702, 0.207038, 0.968130, 0.140926, -0.054848, -0.132334, 0.989687)
 Torso_k156_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k156_HumanoidRootPart
 
 
@@ -7737,7 +7737,7 @@ HumanoidRootPart_k157_HumanoidRootPart.Parent = keyframe157
 --Torso
  Torso_k157_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k157_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k157_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k157_HumanoidRootPart_Torso.CFrame = cf(0.004003, 0.103027, -0.075357, 0.976794, -0.212632, 0.025702, 0.207038, 0.968130, 0.140926, -0.054848, -0.132334, 0.989687)
 Torso_k157_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k157_HumanoidRootPart
 
 
@@ -7811,7 +7811,7 @@ HumanoidRootPart_k159_HumanoidRootPart.Parent = keyframe159
 --Torso
  Torso_k159_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k159_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k159_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k159_HumanoidRootPart_Torso.CFrame =  cf(0.004003, 0.103027, -0.017210, 0.975104, -0.215896, 0.050610, 0.207038, 0.968130, 0.140925, -0.079423, -0.126939, 0.988726)
 Torso_k159_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k159_HumanoidRootPart
 
 
@@ -7840,7 +7840,7 @@ HumanoidRootPart_k160_HumanoidRootPart.Parent = keyframe160
 --Torso
  Torso_k160_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k160_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k160_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k160_HumanoidRootPart_Torso.CFrame =  cf(0.004003, 0.103027, -0.017210, 0.975104, -0.215896, 0.050610, 0.207038, 0.968130, 0.140925, -0.079423, -0.126939, 0.988726)
 Torso_k160_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k160_HumanoidRootPart
 
 
@@ -7898,7 +7898,7 @@ HumanoidRootPart_k162_HumanoidRootPart.Parent = keyframe162
 --Torso
  Torso_k162_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k162_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k162_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k162_HumanoidRootPart_Torso.CFrame = cf(0.002501, 0.064392, -0.109869, 0.994377, -0.102467, 0.026730, 0.099886, 0.991398, 0.084579, -0.035166, -0.081434, 0.996058)
 Torso_k162_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k162_HumanoidRootPart
 
 
@@ -7964,7 +7964,7 @@ HumanoidRootPart_k164_HumanoidRootPart.Parent = keyframe164
 --Torso
  Torso_k164_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k164_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k164_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
+Torso_k164_HumanoidRootPart_Torso.CFrame = cf(0.001501, 0.038635, -0.213398, 0.999616, -0.026738, 0.007253, 0.026355, 0.998476, 0.048483, -0.008539, -0.048273, 0.998798)
 Torso_k164_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k164_HumanoidRootPart
 
 
