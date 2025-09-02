@@ -332,10 +332,10 @@ Right_Leg_k6_HumanoidRootPart_Torso.Parent = Torso_k6_HumanoidRootPart_Torso
 
 
 --Left Arm
- Left_Arm_k6_HumanoidRootPart_Torso_LeftArm = Instance.new("Pose")
-Left_Arm_k6_HumanoidRootPart_Torso_LeftArm.Name = "Left Arm"
-Left_Arm_k6_HumanoidRootPart_Torso_LeftArm.CFrame = cf(-0.260412, -0.529817, 0.244284, 0.123035, 0.921936, -0.367281, -0.366805, 0.386131, 0.846378, 0.922126, 0.030586, 0.385679)
-Left_Arm_k6_HumanoidRootPart_Torso_LeftArm.Parent = Torso_k6_HumanoidRootPart_Torso
+ Left_Arm_k6_HumanoidRootPart_Torso = Instance.new("Pose")
+Left_Arm_k6_HumanoidRootPart_Torso.Name = "Left Arm"
+Left_Arm_k6_HumanoidRootPart_Torso.CFrame = cf(-0.260412, -0.529817, 0.244284, 0.123035, 0.921936, -0.367281, -0.366805, 0.386131, 0.846378, 0.922126, 0.030586, 0.385679)
+Left_Arm_k6_HumanoidRootPart_Torso.Parent = Torso_k6_HumanoidRootPart_Torso
 
 
 

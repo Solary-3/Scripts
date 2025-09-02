@@ -2315,7 +2315,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("California.mp3")
 				timeposcur = sound69.TimePosition 
-				local dance=LoadDance("California", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Califonia Gurls.lua")
+				local dance=LoadDance("California", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/California Gurls.lua")
 				sound69:Play()
 				if dance then
 				playanim(dance) 
