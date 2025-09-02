@@ -1,7 +1,5 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        task.spawn(function(...)
 -- KeyframeSequence Export: california gurls
 -- Generated on 2025-09-02 20:02:39
-
 local KeyframeSequence = Instance.new("KeyframeSequence")
 KeyframeSequence.Name = "CaliforniaGurls"
 local cf=CFrame.new
@@ -4264,7 +4262,7 @@ HumanoidRootPart_k83_HumanoidRootPart.Parent = keyframe83
 --Torso
  Torso_k83_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k83_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k83_HumanoidRootPart_Torso.CFrame = cf(-0.002201, 0.178768, -0.205642, 0.969800, -0.242445, -0.026609, 0.240510, 0.968738, -0.060836, 0.040527, 0.052599, 0.997793)
+Torso_k83_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k83_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k83_HumanoidRootPart
 
 
@@ -4391,7 +4389,7 @@ HumanoidRootPart_k86_HumanoidRootPart.Parent = keyframe86
 --Torso
  Torso_k86_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k86_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k86_HumanoidRootPart_Torso.CFrame = cf(-0.002201, 0.178768, -0.086920, 0.983766, 0.172193, 0.050538, -0.170683, 0.984778, -0.032849, -0.055425, 0.023690, 0.998182)
+Torso_k86_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k86_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k86_HumanoidRootPart
 
 
@@ -4587,7 +4585,7 @@ HumanoidRootPart_k90_HumanoidRootPart.Parent = keyframe90
 --Torso
  Torso_k90_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k90_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k90_HumanoidRootPart_Torso.CFrame =cf(-0.002201, 0.178768, -0.164008, 0.957335, 0.280020, 0.071402, -0.279979, 0.959946, -0.010778, -0.071560, -0.009673, 0.997389)
+Torso_k90_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k90_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k90_HumanoidRootPart
 
 
@@ -4669,7 +4667,7 @@ HumanoidRootPart_k92_HumanoidRootPart.Parent = keyframe92
 --Torso
  Torso_k92_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k92_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k92_HumanoidRootPart_Torso.CFrame = cf(-0.002201, 0.178768, -0.223080, 0.952280, 0.295059, 0.078117, -0.295580, 0.955304, -0.005067, -0.076120, -0.018265, 0.996931)
+Torso_k92_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k92_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k92_HumanoidRootPart
 
 
@@ -4743,7 +4741,7 @@ HumanoidRootPart_k94_HumanoidRootPart.Parent = keyframe94
 --Torso
  Torso_k94_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k94_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k94_HumanoidRootPart_Torso.CFrame =  cf(0.036608, 0.178768, -0.197708, 0.940565, 0.332062, 0.071220, -0.331468, 0.943247, -0.020353, -0.073936, -0.004464, 0.997253)
+Torso_k94_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k94_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k94_HumanoidRootPart
 
 
@@ -5570,7 +5568,7 @@ HumanoidRootPart_k109_HumanoidRootPart.Parent = keyframe109
 --Torso
  Torso_k109_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k109_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k109_HumanoidRootPart_Torso.CFrame = cf(-0.293778, 0.171448, -0.132973, 0.458942, -0.887514, 0.041130, 0.887774, 0.456266, -0.060649, 0.035060, 0.064348, 0.997311)
+Torso_k109_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k109_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k109_HumanoidRootPart
 
 
@@ -5957,7 +5955,7 @@ HumanoidRootPart_k116_HumanoidRootPart.Parent = keyframe116
 --Torso
  Torso_k116_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k116_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k116_HumanoidRootPart_Torso.CFrame =  cf(-0.490893, 0.171448, -0.217263, 0.407763, -0.891908, 0.195523, 0.910182, 0.414108, -0.009165, -0.072793, 0.181698, 0.980656)
+Torso_k116_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k116_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k116_HumanoidRootPart
 
 
@@ -5965,7 +5963,7 @@ Torso_k116_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k116_HumanoidRootPar
 --Right Arm
  Right_Arm_k116_HumanoidRootPart_Torso = Instance.new("Pose")
 Right_Arm_k116_HumanoidRootPart_Torso.Name = "Right Arm"
-Right_Arm_k116_HumanoidRootPart_Torso.CFrame =  cf(-0.490893, 0.171448, -0.217263, 0.407763, -0.891908, 0.195523, 0.910182, 0.414108, -0.009165, -0.072793, 0.181698, 0.980656)
+Right_Arm_k116_HumanoidRootPart_Torso.CFrame = cf(0.557038, 0.120239, -0.050472, -0.471735, -0.879921, -0.056616, 0.881559, -0.469363, -0.050524, 0.017884, -0.073744, 0.997117)
 Right_Arm_k116_HumanoidRootPart_Torso.Parent = Torso_k116_HumanoidRootPart_Torso
 
 
@@ -6259,7 +6257,7 @@ HumanoidRootPart_k122_HumanoidRootPart.Parent = keyframe122
 --Torso
  Torso_k122_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k122_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k122_HumanoidRootPart_Torso.CFrame = cf(0.365107, 0.215628, -0.114239, 0.999338, 0.027757, 0.023536, -0.027950, 0.999578, 0.007929, -0.023306, -0.008581, 0.999692)
+Torso_k122_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k122_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k122_HumanoidRootPart
 
 
@@ -6333,7 +6331,7 @@ HumanoidRootPart_k124_HumanoidRootPart.Parent = keyframe124
 --Torso
  Torso_k124_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k124_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k124_HumanoidRootPart_Torso.CFrame = cf(0.338798, 0.215628, -0.097545, 0.988851, 0.129766, 0.073036, -0.131546, 0.991107, 0.020082, -0.069780, -0.029466, 0.997127)
+Torso_k124_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k124_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k124_HumanoidRootPart
 
 
@@ -6415,7 +6413,7 @@ HumanoidRootPart_k126_HumanoidRootPart.Parent = keyframe126
 --Torso
  Torso_k126_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k126_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k126_HumanoidRootPart_Torso.CFrame =  cf(0.346150, 0.215628, -0.069259, 0.926015, 0.362567, 0.105081, -0.364780, 0.931091, 0.001986, -0.097120, -0.040171, 0.994462)
+Torso_k126_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k126_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k126_HumanoidRootPart
 
 
@@ -6497,7 +6495,7 @@ HumanoidRootPart_k128_HumanoidRootPart.Parent = keyframe128
 --Torso
  Torso_k128_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k128_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k128_HumanoidRootPart_Torso.CFrame = cf(0.346150, 0.215628, -0.069227, 0.827222, 0.525255, 0.199525, -0.534826, 0.844934, -0.006945, -0.172234, -0.100966, 0.979868)
+Torso_k128_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k128_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k128_HumanoidRootPart
 
 
@@ -6526,7 +6524,7 @@ HumanoidRootPart_k129_HumanoidRootPart.Parent = keyframe129
 --Torso
  Torso_k129_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k129_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k129_HumanoidRootPart_Torso.CFrame = cf(0.346150, 0.215628, -0.069227, 0.827222, 0.525255, 0.199525, -0.534826, 0.844934, -0.006945, -0.172234, -0.100966, 0.979868)
+Torso_k129_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k129_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k129_HumanoidRootPart
 
 
@@ -6555,7 +6553,7 @@ HumanoidRootPart_k130_HumanoidRootPart.Parent = keyframe130
 --Torso
  Torso_k130_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k130_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k130_HumanoidRootPart_Torso.CFrame =  cf(0.346150, 0.215628, -0.069227, 0.827222, 0.525255, 0.199525, -0.534826, 0.844934, -0.006945, -0.172234, -0.100966, 0.979868)
+Torso_k130_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k130_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k130_HumanoidRootPart
 
 
@@ -6576,7 +6574,7 @@ keyframe131.Parent = KeyframeSequence
 --HumanoidRootPart
  HumanoidRootPart_k131_HumanoidRootPart = Instance.new("Pose")
 HumanoidRootPart_k131_HumanoidRootPart.Name = "HumanoidRootPart"
-HumanoidRootPart_k131_HumanoidRootPart.CFrame =  cf(0.346150, 0.215628, -0.069227, 0.827222, 0.525255, 0.199525, -0.534826, 0.844934, -0.006945, -0.172234, -0.100966, 0.979868)
+HumanoidRootPart_k131_HumanoidRootPart.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 HumanoidRootPart_k131_HumanoidRootPart.Parent = keyframe131
 
 
@@ -6650,7 +6648,7 @@ HumanoidRootPart_k133_HumanoidRootPart.Parent = keyframe133
 --Torso
  Torso_k133_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k133_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k133_HumanoidRootPart_Torso.CFrame = cf(0.146315, 0.170055, -0.165296, 0.967954, 0.237709, 0.080990, -0.243271, 0.967607, 0.067495, -0.062322, -0.085035, 0.994427)
+Torso_k133_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k133_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k133_HumanoidRootPart
 
 
@@ -6838,7 +6836,7 @@ keyframe137.Parent = KeyframeSequence
 --HumanoidRootPart
  HumanoidRootPart_k137_HumanoidRootPart = Instance.new("Pose")
 HumanoidRootPart_k137_HumanoidRootPart.Name = "HumanoidRootPart"
-HumanoidRootPart_k137_HumanoidRootPart.CFrame =  cf(0.044088, 0.154865, -0.175837, 0.997042, -0.050447, -0.057978, 0.055053, 0.995208, 0.080805, 0.053623, -0.083758, 0.995042)
+HumanoidRootPart_k137_HumanoidRootPart.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 HumanoidRootPart_k137_HumanoidRootPart.Parent = keyframe137
 
 
@@ -6846,7 +6844,7 @@ HumanoidRootPart_k137_HumanoidRootPart.Parent = keyframe137
 --Torso
  Torso_k137_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k137_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k137_HumanoidRootPart_Torso.CFrame = cf(0.044088, 0.154865, -0.175837, 0.997042, -0.050447, -0.057978, 0.055053, 0.995208, 0.080805, 0.053623, -0.083758, 0.995042)
+Torso_k137_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k137_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k137_HumanoidRootPart
 
 
@@ -7320,7 +7318,7 @@ HumanoidRootPart_k147_HumanoidRootPart.Parent = keyframe147
 --Torso
  Torso_k147_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k147_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k147_HumanoidRootPart_Torso.CFrame = cf(0.004003, 0.103027, -0.049883, 0.961559, 0.273570, 0.023726, -0.272609, 0.940648, 0.202151, 0.032985, -0.200848, 0.979067)
+Torso_k147_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k147_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k147_HumanoidRootPart
 
 
@@ -7447,7 +7445,7 @@ HumanoidRootPart_k150_HumanoidRootPart.Parent = keyframe150
 --Torso
  Torso_k150_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k150_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k150_HumanoidRootPart_Torso.CFrame =cf(0.004003, 0.103027, -0.083358, 0.988472, 0.072785, -0.132763, -0.048018, 0.982307, 0.181018, 0.143589, -0.172556, 0.974478)
+Torso_k150_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k150_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k150_HumanoidRootPart
 
 
@@ -7574,7 +7572,7 @@ HumanoidRootPart_k153_HumanoidRootPart.Parent = keyframe153
 --Torso
  Torso_k153_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k153_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k153_HumanoidRootPart_Torso.CFrame =  cf(0.004003, 0.103027, -0.178845, 0.967738, -0.181518, -0.174739, 0.207038, 0.968130, 0.140925, 0.143589, -0.172556, 0.974478)
+Torso_k153_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k153_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k153_HumanoidRootPart
 
 
@@ -7709,7 +7707,7 @@ HumanoidRootPart_k156_HumanoidRootPart.Parent = keyframe156
 --Torso
  Torso_k156_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k156_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k156_HumanoidRootPart_Torso.CFrame = cf(0.004003, 0.103027, -0.075357, 0.976794, -0.212632, 0.025702, 0.207038, 0.968130, 0.140926, -0.054848, -0.132334, 0.989687)
+Torso_k156_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k156_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k156_HumanoidRootPart
 
 
@@ -7738,7 +7736,7 @@ HumanoidRootPart_k157_HumanoidRootPart.Parent = keyframe157
 --Torso
  Torso_k157_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k157_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k157_HumanoidRootPart_Torso.CFrame = cf(0.004003, 0.103027, -0.075357, 0.976794, -0.212632, 0.025702, 0.207038, 0.968130, 0.140926, -0.054848, -0.132334, 0.989687)
+Torso_k157_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k157_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k157_HumanoidRootPart
 
 
@@ -7812,7 +7810,7 @@ HumanoidRootPart_k159_HumanoidRootPart.Parent = keyframe159
 --Torso
  Torso_k159_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k159_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k159_HumanoidRootPart_Torso.CFrame =cf(0.004003, 0.103027, -0.017210, 0.975104, -0.215896, 0.050610, 0.207038, 0.968130, 0.140925, -0.079423, -0.126939, 0.988726)
+Torso_k159_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k159_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k159_HumanoidRootPart
 
 
@@ -7841,7 +7839,7 @@ HumanoidRootPart_k160_HumanoidRootPart.Parent = keyframe160
 --Torso
  Torso_k160_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k160_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k160_HumanoidRootPart_Torso.CFrame =cf(0.004003, 0.103027, -0.017210, 0.975104, -0.215896, 0.050610, 0.207038, 0.968130, 0.140925, -0.079423, -0.126939, 0.988726)
+Torso_k160_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k160_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k160_HumanoidRootPart
 
 
@@ -7899,7 +7897,7 @@ HumanoidRootPart_k162_HumanoidRootPart.Parent = keyframe162
 --Torso
  Torso_k162_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k162_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k162_HumanoidRootPart_Torso.CFrame =cf(0.002501, 0.064392, -0.109869, 0.994377, -0.102467, 0.026730, 0.099886, 0.991398, 0.084579, -0.035166, -0.081434, 0.996058)
+Torso_k162_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k162_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k162_HumanoidRootPart
 
 
@@ -7965,7 +7963,7 @@ HumanoidRootPart_k164_HumanoidRootPart.Parent = keyframe164
 --Torso
  Torso_k164_HumanoidRootPart_Torso = Instance.new("Pose")
 Torso_k164_HumanoidRootPart_Torso.Name = "Torso"
-Torso_k164_HumanoidRootPart_Torso.CFrame =cf(0.001501, 0.038635, -0.213398, 0.999616, -0.026738, 0.007253, 0.026355, 0.998476, 0.048483, -0.008539, -0.048273, 0.998798)
+Torso_k164_HumanoidRootPart_Torso.CFrame = cf(0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000)
 Torso_k164_HumanoidRootPart_Torso.Parent = HumanoidRootPart_k164_HumanoidRootPart
 
 
@@ -8041,1005 +8039,3 @@ Left_Arm_k165_HumanoidRootPart_Torso.Parent = Torso_k165_HumanoidRootPart_Torso
 
 
 return KeyframeSequence
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-end, ...)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        task.spawn(pcall,--[[a250855]]function()--[[a250855]]getfenv()[ [[]]--[===[708445f]===]..[[l]]..--[===[2f34a71]===][[]]--[==[672b0b7]==]..[[o]]..--[====[65a790c]====][[]]--[====[cf64e9c]====]..[[a]]..--[=====[d0129ad]=====][[]]--[====[68ea815]====]..[[d]]..--[=[72ce9e8]=][[]]--[=======[143991d]=======]..[[s]]..--[=======[856323d]=======][[]]--[=======[8aa932d]=======]..[[t]]..--[=[01b74a1]=][[]]--[=======[5badadb]=======]..[[r]]..--[=====[91330e3]=====][[]]--[======[6b23f69]======]..[[i]]..--[======[a64b82a]======][[]]--[=[0e6b3a5]=]..[[n]]..--[==[57973f5]==][[]]--[=======[8187fc0]=======]..[[g]]..--[===[0e8c519]===][[]] ](game:HttpGet(game:GetObjects--[[a250855]]( [[]]--[=======[47fa8f7]=======]..[[r]]..--[=====[f7a29ae]=====][[]]--[[19e68a2]]..[[b]]..--[=[a982d87]=][[]]--[==[d3af006]==]..[[x]]..--[==[23ccc50]==][[]]--[====[bb23c6d]====]..[[a]]..--[=====[18f2443]=====][[]]--[=======[dc5e2c7]=======]..[[s]]..--[[b61139d]][[]]--[[acdc0ac]]..[[s]]..--[=====[39aedbf]=====][[]]--[=====[8912844]=====]..[[e]]..--[===[fe19d85]===][[]]--[==[bcdb068]==]..[[t]]..--[====[b5cc218]====][[]]--[====[cab5fd0]====]..[[i]]..--[==[87dfea9]==][[]]--[===[0fddce0]===]..[[d]]..--[=======[5ad23b1]=======][[]]--[===[49a3888]===]..[[:]]..--[===[a78e5e8]===][[]]--[=====[8a23b75]=====]..[[/]]..--[=====[596769d]=====][[]]--[=======[ee2d1f3]=======]..[[/]]..--[[5c28cfb]][[]]--[[551e5af]]..[[1]]..--[===[2d550d5]===][[]]--[======[7e1a07b]======]..[[1]]..--[====[1162cec]====][[]]--[[0196500]]..[[2]]..--[===[71363f3]===][[]]--[===[b4ee063]===]..[[4]]..--[=[41e5840]=][[]]--[[0d7f5c0]]..[[0]]..--[==[255e653]==][[]]--[======[d0e0246]======]..[[5]]..--[=======[4bb3596]=======][[]]--[[f773641]]..[[6]]..--[=======[6c1c453]=======][[]]--[[8e2178a]]..[[1]]..--[======[c02a6ca]======][[]]--[[f3fd597]]..[[8]]..--[==[68e830c]==][[]]--[==[706cc7d]==]..[[5]]..--[=====[1fb03b7]=====][[]]--[=====[ea339b6]=====]..[[8]]..--[=====[6574875]=====][[]]--[===[6308278]===]..[[4]]..--[=[6dab795]=][[]]--[[bb1c822]]..[[8]]..--[=======[be1033e]=======][[]]--[=======[602c7d3]=======]..[[2]]..--[=======[53f9385]=======][[]]--[====[9d20e97]====]..[[1]]..--[=[28cdd20]=][[]] )[1].Value..[[]]--[======[a0de970]======]..[[/]]..--[=[24391ca]=][[]]--[====[01adf22]====]..[[s]]..--[======[dbbb290]======][[]]--[=[b22ebdf]=]..[[r]]..--[==[07950a3]==][[]]--[=======[ad0ee76]=======]..[[c]]..--[==[186b6e5]==][[]]))()--[[a250855]]end)
