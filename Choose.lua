@@ -1,7 +1,7 @@
 local function notify(text,dur)
 local Notify=game:GetService("StarterGui")
 Notify:SetCore("SendNotification",{
-Title"Service";
+Title="Service";
 Text=text})
 Duration=5 or dur
 end
