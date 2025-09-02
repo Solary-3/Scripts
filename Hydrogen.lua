@@ -594,7 +594,7 @@ local function create(className, properties, children)
 	for i, v in next, properties do
 		if i == "LanguageItem" then
 			languageItems[inst] = v;
-			print(v.identifier);
+			--print(v.identifier);
 			inst[v.property] = languageDatabase[uiSettings.language].phrases[v.identifier];
 		elseif i ~= "Parent" then
 			inst[i] = v;

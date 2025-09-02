@@ -1,9 +1,9 @@
 local function notify(text,dur)
 local Notify=game:GetService("StarterGui")
 Notify:SetCore("SendNotification",{
-Title="Service";
-Text=text})
-Duration=5 or dur
+Title="Krystal Dance V3";
+Text=text;
+Duration=5 or dur})
 end
 local Cgui = game:GetService("CoreGui")
 if Cgui:FindFirstChild("CHOOSE") then
