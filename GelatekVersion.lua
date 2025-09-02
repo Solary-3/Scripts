@@ -1979,7 +1979,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				char.Humanoid.WalkSpeed = 4*char:GetScale()
 				playanim(93547721311170) -- uuid. 71723925114737
 			else
-				har.Humanoid.WalkSpeed = 4*char:GetScale()
+				char.Humanoid.WalkSpeed = 4*char:GetScale()
 				stopanim()
 			end
 		elseif k == "leftbracket" then 
@@ -2173,6 +2173,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				sound69.SoundId = DanceAsset("MioHonda.mp3")
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
+				char.Humanoid.WalkSpeed = 4*char:GetScale()
 				playanim("Step") -- uuid. 71723925114737
 			else
 				stopanim()
