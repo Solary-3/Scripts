@@ -352,140 +352,6 @@ local function AddDance(Name, ScriptUrl)
 end
 
 
-
-
-
-local LOADTHEDANCE=false
-wait(2)
-if not LOADTHEDANCE then
-LOADTHEDANCE=true
-local Dance_01=AddDance("Hakari", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Hakari.lua")
-wait(1)
-Dance_02=AddDance("Prism", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Prism Shuffle.lua")
-wait(1)
-Dance_03=AddDance("Soda", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Soda Pop.lua")
-wait(1)
-Dance_04=AddDance("Headlock", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Headlock.lua")
-wait(1)
-Dance_05=AddDance("C14", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/C14.lua")
-wait(1)
-Dance_06=AddDance("Slickback", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Slickback.lua")
-wait(1)
-Dance_07=AddDance("Chronoshift", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Chronoshift.lua")
-wait(1)
-Dance_08=AddDance("BillieJean", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/BillieJean.lua")
-wait(1)
-Dance_09=AddDance("Rat1", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rat1.lua")
-wait(1)
-Dance_10=AddDance("Egypt", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Egypt.lua")
-wait(1)
-Dance_11=AddDance("Liar", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Liar.lua")
-wait(1)
-Dance_12=AddDance("L4U", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Love4U.lua")
-wait(1)
-Dance_13=AddDance("Mesmerizer", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Mesmerizer.lua")
-wait(1)
-Dance_14=AddDance("Domino", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Domino.lua")
-wait(1)
-Dance_15=AddDance("Static", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Static.lua")
-wait(1)
-Dance_16=AddDance("HeelToeHop", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/HeelToeHop.lua")
-wait(1)
-Dance_17=AddDance("BombMonkey", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Bomb Monkey.lua")
-wait(1)
-Dance_18=AddDance("BoxSwing", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Box Swing.lua")
-wait(1)
-Dance_19=AddDance("Flop", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Flop.lua")
-wait(1)
-Dance_20=AddDance("Assumptions", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Assumptions.lua")
-wait(1)
-Dance_21=AddDance("Commercial", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Commercial.lua")
-wait(1)
-Dance_22=AddDance("Distraction", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Distraction.lua")
-wait(1)
-Dance_23=AddDance("ItBurns", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/It Burns.lua")
-wait(1)
-Dance_24=AddDance("Keep", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Keep Up.lua")
-wait(1)
-Dance_25=AddDance("Yamero", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Yamero.lua")
-wait(1)
-Dance_26=AddDance("Savor", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Savor.lua")
-wait(1)
-Dance_27=AddDance("Angel", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Angel.lua")
-wait(1)
-Dance_28=AddDance("ClubPenguin", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Club Penguin.lua")
-wait(1)
-Dance_29=AddDance("Firework", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Firework.lua")
-wait(1)
-Dance_30=AddDance("Runaway", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Runaway.lua")
-wait(1)
-Dance_31=AddDance("Miohonda", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Miohonda.lua")
-wait(1)
-Dance_32=AddDance("Rat2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rat2.lua")
-wait(1)
-Dance_33=AddDance("Stock", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Stock Shuffle.lua")
-wait(1)
-Dance_34=AddDance("Goat", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Goat.lua")
-wait(1)
-Dance_35=AddDance("Shuba", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Shuba Duck.lua")
-wait(1)
-Dance_36=AddDance("Bumblebee", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Bumblebee.lua")
-wait(1)
-Dance_37=AddDance("Popipo", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Popipo.lua")
-wait(1)
-Dance_38=AddDance("Fein", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Fein.lua")
-wait(1)
-Dance_39=AddDance("Birdbrain", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Birdbrain.lua")
-wait(1)
-Dance_40=AddDance("Billy", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Billy.lua")
-wait(1)
-Dance_41=AddDance("Spooky", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Spooky.lua")
-wait(1)
-Dance_42=AddDance("Pickup", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pickup.lua")
-wait(1)
-Dance_43=AddDance("Limited", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Limited.lua")
-wait(1)
-Dance_44=AddDance("Flexworks", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Flexworks.lua")
-wait(1)
-Dance_45=AddDance("Doodle", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Doodle.lua")
-wait(1)
-Dance_46=AddDance("Cafeteria", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Cafeteria.lua")
-wait(1)
-Dance_47=AddDance("Unlockit", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Unlockit.lua")
-wait(1)
-Dance_48=AddDance("Suki", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Suki.lua")
-wait(1)
-Dance_48=AddDance("CrissCross", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/CrissCross.lua")
-wait(1)
-Dance_49=AddDance("Lagtrain", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Lagtrain.lua")
-wait(1)
-Dance_50=AddDance("Dare", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Dare.lua")
-wait(1)
-Dance_51=AddDance("Insanity", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Insanity.lua")
-wait(1)
-Dance_52=AddDance("SmoothMoves", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/SmoothMoves.lua")
-wait(1)
-Dance_53=AddDance("Tenna", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tenna.lua")
-wait(1)
-Dance_54=AddDance("Tenna2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tenna 2.lua")
-wait(1)
-Dance_55=AddDance("Takedown", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Takedown.lua")
-wait(1)
-Dance_56=AddDance("Step", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Step.lua")
-wait(1)
-Dance_57=AddDance("Sideshuffle", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Side Shuffle.lua")
-wait(1)
-Dance_58=AddDance("Crankthat", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Crank That.lua")
-wait(1)
-Dance_59=AddDance("Electro", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Electro Swing.lua")
-wait(1)
-Dance_60=AddDance("Applepen", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Apple Pen.lua")
-wait(1)
-Dance_61=AddDance("Rambunctious", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rambunctious.lua")
-wait(1)
-end
-
-
 local timeposcur = 0 
 local sound69 = Instance.new("Sound",game:GetService("RunService"))
 sound69.Looped = true
@@ -667,6 +533,7 @@ local uis = game:GetService("UserInputService")
 
 local RUNNING = false
 Run1.MouseButton1Click:Connect(function()
+if REANIMATION then return notify("Reanimating please wait") end
 if RUNNING then return notify("SCRIPT IS RUNNING!!") end
 if game:GetService("Players").LocalPlayer.Character.Name ~= Character.Name.."_Fake" then
 return notify("REANIMATE FIRST CUH") end
@@ -1162,8 +1029,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("rat.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Rat1", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rat1.lua")
 				sound69:Play()
-				playanim("Rat1") -- uuid. 106353328250763
+				if dance then
+				playanim(dance) -- uuid. 106353328250763
+				end
 			else
 				stopanim()
 			end
@@ -1190,8 +1060,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				sound69.SoundId = DanceAsset("Assumptions.mp3")
 				sound69.PlaybackSpeed = 1
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Assumptions", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Assumptions.lua")
 				sound69:Play()
-				playanim("Assumptions") -- uuid. 136962185637891
+				if dance then
+				playanim(dance) -- uuid. 136962185637891
+				end
 			else
 				stopanim()
 				sound69.PlaybackSpeed = 1
@@ -1205,8 +1078,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				sound69.SoundId = DanceAsset("Egypt.mp3")
 				sound69.PlaybackSpeed = 1
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Egypt", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Egypt.lua")
 				sound69:Play()
-				playanim("Egypt") -- uuid. 130968726197789
+				if dance then
+				playanim(dance) -- uuid. 130968726197789
+				end
 			else
 				stopanim()
 				sound69.PlaybackSpeed = 1
@@ -1220,8 +1096,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				sound69.SoundId = DanceAsset("DO THE FLOP.mp3")
 				sound69.PlaybackSpeed = 1
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Flop", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Flop.lua")
 				sound69:Play()
-				playanim("Flop") -- uuid. 100864643591096
+				if dance then 
+				playanim(dance) -- uuid. 100864643591096
+				end
 			else
 				stopanim()
 				sound69.PlaybackSpeed = 1
@@ -1250,8 +1129,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				sound69.SoundId = DanceAsset("Heel.mp3")
 				char.Humanoid.WalkSpeed = 4*char:GetScale()
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("HeelToeHop", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/HeelToeHop.lua")
 				sound69:Play()
-				playanim('HeelToeHop')
+				if dance then
+				playanim(dance)
+				end
 			else
 				stopanim()
 
@@ -1276,8 +1158,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Monkey.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("BombMonkey", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Bomb Monkey.lua")
 				sound69:Play()
-				playanim("BombMonkey")
+				if dance then
+				playanim(dance)
+				end
 			else
 				stopanim()
 
@@ -1358,8 +1243,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Domino.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Domino", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Domino.lua")
 				sound69:Play()
-				playanim("Domino") -- impossible for now
+				if dance then 
+				playanim(dance) -- impossible for now
+				end
 			else
 				stopanim()
 
@@ -1371,8 +1259,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Liar.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Liar", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Liar.lua")
 				sound69:Play()
-				playanim("Liar") -- uuid. 16361564081
+				if dance then
+				playanim(dance) -- uuid. 16361564081
+				end
 			else
 				stopanim()
 
@@ -1385,8 +1276,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Mesmerizer.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Mesmerizer", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Mesmerizer.lua")
 				sound69:Play()
-				playanim("Mesmerizer") -- uuid. 118766274919427
+				if dance then
+				playanim(dance) -- uuid. 118766274919427
+				end
 			else
 				stopanim()
 
@@ -1398,8 +1292,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Box.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("BoxSwing", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Box Swing.lua")
 				sound69:Play()
+				if dance then
 				playanim("BoxSwing")
+				end
 			else
 				stopanim()
 
@@ -1412,8 +1309,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Static.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Static", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Static.lua")
 				sound69:Play()
-				playanim("Static") -- uuid. 131401099812672
+				if dance then 
+				playanim(dance) -- uuid. 131401099812672
+				end
 			else
 				stopanim()
 
@@ -1425,8 +1325,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Prism.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Prism", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Prism Shuffle.lua")
 				sound69:Play()
-				playanim("Prism")
+				if dance then
+				playanim(dance)
+				end
 			else
 				stopanim()
 
@@ -1438,8 +1341,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Headlock.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Soda", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Soda Pop.lua")
 				sound69:Play()
-				playanim("Headlock")
+				if dance then
+				playanim(dance)
+				end
 			else
 				stopanim()
 
@@ -1451,8 +1357,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("TUCA DONKA.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Hakari", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Hakari.lua")
 				sound69:Play()
-				playanim("Hakari")
+				if dance then 
+				     playanim(dance)
+				end
 			else
 				stopanim()
 
@@ -1464,8 +1373,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Break.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Commercial", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Commercial.lua")
 				sound69:Play()
+				if dance then
 				playanim("Commercial")
+				end
 			else
 				stopanim()
 
@@ -1493,8 +1405,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Soda.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Soda", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Soda Pop.lua")
 				sound69:Play()
-				playanim("Soda") -- uuid. 100177280567649
+				if dance then
+				playanim(dance) -- uuid. 100177280567649
+				end
 			else
 				stopanim()
 
@@ -1506,8 +1421,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("LoveForU.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("L4U", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Love4U.lua")
 				sound69:Play()
-				playanim("L4U") -- uuid. 101564911432113
+				if dance then
+				playanim(dance) -- uuid. 101564911432113
+				end
 			else
 				stopanim()
 
@@ -1545,8 +1463,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Distraction.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Distraction", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Distraction.lua")
 				sound69:Play()
-				playanim("Distraction")
+				if dance then 
+				playanim(dance)
+				end
 			else
 				stopanim()
 
@@ -1558,8 +1479,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("ItBurns.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("ItBurns", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/It Burns.lua")
 				sound69:Play()
-				playanim("ItBurns") -- uuid. 14887006269
+				if dance then
+				playanim(dance) -- uuid. 14887006269
+				end
 			else
 				stopanim()
 
@@ -1571,8 +1495,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("chronoshift.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Chronoshift", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Chronoshift.lua")
 				sound69:Play()
-				playanim("Chronoshift") -- uuid. 125834337223799
+				if dance then 
+				playanim(dance) -- uuid. 125834337223799
+				end
 			else
 				stopanim()
 
@@ -1585,9 +1512,12 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				sound69.SoundId = DanceAsset("KeepUp.mp3")
 				sound69.PlaybackSpeed = 1
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Keep", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Keep Up.lua")
 				sound69:Play()
 				coolparticles.Parent = char.Torso
-				playanim("Keep") -- uuid. 93585895457618
+				if dance then 
+				playanim(dance) -- uuid. 93585895457618
+				end
 			else
 				stopanim()
 				sound69.PlaybackSpeed = 1
@@ -1674,8 +1604,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Bjean.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("BillieJean", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/BillieJean.lua")
 				sound69:Play()
-				playanim("BillieJean") -- uuid. 118311613925473
+				if dance then
+				playanim(dance) -- uuid. 118311613925473
+				end
 			else
 				stopanim()
 			end
@@ -1686,8 +1619,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Savor.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Savor", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Savor.lua")
 				sound69:Play()
-				playanim("Savor") -- uuid. 118311613925473
+				if dance then 
+				playanim(dance) -- uuid. 118311613925473
+				end
 			else
 				stopanim()
 			end
@@ -1698,8 +1634,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Yamero.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Yamero", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Yamero.lua")
 				sound69:Play()
-				playanim("Yamero") -- uuid. 118311613925473
+				if dance then
+				playanim(dance) -- uuid. 118311613925473
+				end
 			else
 				stopanim()
 			end
@@ -1710,8 +1649,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("InternetAngel.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Angel", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Angel.lua")
 				sound69:Play()
-				playanim("Angel") -- uuid. 118311613925473
+				if dance then
+				playanim(dance) -- uuid. 118311613925473
+				end
 			else
 				stopanim()
 			end
@@ -1722,8 +1664,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("CLUB PENGUIN DANCE.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("ClubPenguin", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Club Penguin.lua")
 				sound69:Play()
-				playanim("ClubPenguin") -- uuid. 118311613925473
+				if dance then
+				playanim(dance) -- uuid. 118311613925473
+				end
 			else
 				stopanim()
 			end
@@ -1734,8 +1679,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Runaway.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Runaway", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Runaway.lua")
 				sound69:Play()
-				playanim("Runaway") -- uuid. 118311613925473
+				if dance then
+				playanim(dance) -- uuid. 118311613925473
+				end
 			else
 				stopanim()
 			end
@@ -1746,8 +1694,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("MioHonda.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Miohonda", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Miohonda.lua")
 				sound69:Play()
-				playanim("Miohonda") -- uuid. 118311613925473
+				if dance then
+				playanim(dance) -- uuid. 118311613925473
+				end
 			else
 				stopanim()
 			end
@@ -1758,8 +1709,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Firework.mp3")
 				timeposcur = sound69.TimePosition 
-				sound69:Play(Firework)
-				playanim("Firework") -- uuid. 118311613925473
+				local dance=LoadDance("Firework", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Firework.lua")
+				sound69:Play()
+				if dance then
+				playanim(dance) -- uuid. 118311613925473
+				end
 			else
 				stopanim()
 			end
@@ -1773,8 +1727,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("C14.mp3")
 				timeposcur = sound69.TimePosition  
+				local dance=LoadDance("C14", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/C14.lua")
 				sound69:Play()
-				playanim("C14") -- uuid. 72723551972407
+				if dance then 
+				playanim(dance) -- uuid. 72723551972407
+				end
 			else
 				stopanim()
 			end
@@ -1785,8 +1742,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Slickback.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Slickback", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Slickback.lua")
 				sound69:Play()
-				playanim("Slickback") -- uuid. 90069083924245
+				if dance then
+				playanim(dance) -- uuid. 90069083924245
+				end
 			else
 				stopanim()
 			end
@@ -1797,8 +1757,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Doodle.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Doodle", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Doodle.lua")
 				sound69:Play()
-				playanim("Doodle") -- uuid. 13357063395
+				if dance then
+				playanim(dance) -- uuid. 13357063395
+				end
 			else
 				stopanim()
 			end
@@ -1809,8 +1772,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Goat.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Goat", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Goat.lua")
 				sound69:Play()
-				playanim("Goat") -- uuid. 87342159331194
+				if dance then
+				playanim(dance) -- uuid. 87342159331194
+				end
 			else
 				stopanim()
 			end
@@ -1821,8 +1787,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Bumblebee.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Bumblebee", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Bumblebee.lua")
 				sound69:Play()
-				playanim("Bumblebee") -- uuid. 18985726113
+				if dance then
+				playanim(dance) -- uuid. 18985726113
+				end
 			else
 				stopanim()
 			end
@@ -1833,8 +1802,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Stock.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Stock", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Stock Shuffle.lua")
 				sound69:Play()
-				playanim("Stock") -- uuid. 8915458946
+				if dance then
+				playanim(dance) -- uuid. 8915458946
+				end
 			else
 				stopanim()
 			end
@@ -1845,8 +1817,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("rat.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Rat2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rat2.lua")
 				sound69:Play()
-				playanim("Rat2") -- uuid. 8915458946
+				if dance then
+				playanim(dance) -- uuid. 8915458946
+				end
 			else
 				stopanim()
 			end
@@ -1857,8 +1832,12 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Shuba Duck.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Shuba",
+				"https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Shuba Duck.lua")
 				sound69:Play()
-				playanim("Shuba") -- uuid. 79630525228564
+				     if dance then
+				playanim(dance) -- uuid. 79630525228564
+				end
 			else
 				stopanim()
 			end
@@ -1881,8 +1860,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Birdbrain.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Birdbrain", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Birdbrain.lua")
 				sound69:Play()
-				playanim("Birdbrain") -- uuid. 84471848998012
+				if dance then
+				playanim(dance) -- uuid. 84471848998012
+				end
 			else
 				stopanim()
 			end
@@ -1893,8 +1875,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Fein.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Fein", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Fein.lua")
 				sound69:Play()
-				playanim("Fein") -- uuid. 13357063395
+				if dance then
+				playanim(dance) -- uuid. 13357063395
+				end
 			else
 				stopanim()
 			end
@@ -1905,8 +1890,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Popipo.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Popipo", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Popipo.lua")
 				sound69:Play()
-				playanim("Popipo") -- uuid. 13357063395
+				if dance then
+				playanim(dance) -- uuid. 13357063395
+				end
 			else
 				stopanim()
 			end
@@ -1917,8 +1905,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Pickup.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Pickup", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pickup.lua")
 				sound69:Play()
-				playanim("Pickup") -- uuid. 13357063395
+				if dance then
+				playanim(dance) -- uuid. 13357063395
+				end
 			else
 				stopanim()
 			end
@@ -1929,8 +1920,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Billy.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Billy", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Billy.lua")
 				sound69:Play()
-				playanim("Billy") -- uuid. 15705077587
+				if dance then
+				playanim(dance) -- uuid. 15705077587
+				end
 			else
 				stopanim()
 			end
@@ -1953,8 +1947,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Spooky.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Spooky", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Spooky.lua")
 				sound69:Play()
-				playanim("Spooky") -- uuid. 84587788869282
+				if dance then
+				playanim(dance) -- uuid. 84587788869282
+				end
 			else
 				stopanim()
 			end
@@ -1965,8 +1962,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("JK.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Limited", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Limited.lua")
 				sound69:Play()
-				playanim("Limited") -- uuid. 100305033962391
+				if dance then
+				playanim(dance) -- uuid. 100305033962391
+				end
 			else
 				stopanim()
 			end
@@ -1977,8 +1977,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Flexworks.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Flexworks", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Flexworks.lua")
 				sound69:Play()
-				playanim("Flexworks") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) -- uuid. 71723925114737
+				end
 			else
 				stopanim()
 			end
@@ -1987,10 +1990,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				stopanim()
 				dancing = true
 				task.wait(.005)
-				sound69.SoundId = customasset("CrissCross.mp3")
+				sound69.SoundId = DanceAsset("CrissCross.mp3")
 				sound69.PlaybackSpeed = 1
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
+				--Dance_48=LoadDance("CrissCross", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/CrissCross.lua")
 				playanim(109275255555630) -- uuid. 136962185637891
 			else
 				stopanim()
@@ -2055,8 +2059,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Unlockit.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Unlockit", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Unlockit.lua")
 				sound69:Play()
-				playanim("Unlockit") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) -- uuid. 71723925114737
+				end
 			else
 				stopanim()
 			end
@@ -2067,8 +2074,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("SmoothMoves.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("SmoothMoves", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/SmoothMoves.lua")
 				sound69:Play()
-				playanim("SmoothMoves") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) -- 
+				end
 			else
 				stopanim()
 			end
@@ -2079,8 +2089,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Lagtrain.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Lagtrain", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Lagtrain.lua")
 				sound69:Play()
-				playanim("Lagtrain") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) -- uuid. 71723925114737
+				end
 			else
 				stopanim()
 			end
@@ -2091,8 +2104,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Suki.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Suki", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Suki.lua")
 				sound69:Play()
-				playanim("Suki") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) -- uuid. 71723925114737
+				end
 			else
 				stopanim()
 			end
@@ -2103,8 +2119,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Cafeteria.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Cafeteria", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Cafeteria.lua")
 				sound69:Play()
-				playanim("Cafeteria") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) -- uuid. 71723925114737
+				end
 			else
 				stopanim()
 			end
@@ -2115,8 +2134,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Dare.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Dare", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Dare.lua")
 				sound69:Play()
-				playanim("Dare") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) -- uuid. 71723925114737
+				end
 			else
 				stopanim()
 			end
@@ -2127,8 +2149,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Tenna.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Tenna", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tenna.lua")
 				sound69:Play()
-				playanim("Tenna") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
 			else
 				stopanim()
 			end
@@ -2139,8 +2164,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Insanity.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Insanity", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Insanity.lua")
 				sound69:Play()
-				playanim("Insanity") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
 			else
 				stopanim()
 			end
@@ -2151,8 +2179,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Tenna.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Tenna2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tenna 2.lua")
 				sound69:Play()
-				playanim("Tenna2") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) -- uuid. 71723925114737
+				end
 			else
 				stopanim()
 			end
@@ -2163,8 +2194,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Rambunctious.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Rambunctious", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rambunctious.lua")
 				sound69:Play()
-				playanim("Rambunctious") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
 			else
 				stopanim()
 			end
@@ -2175,8 +2209,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Side Shuffle.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Sideshuffle", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Side Shuffle.lua")
 				sound69:Play()
-				playanim("Sideshuffle") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) -- uuid. 71723925114737
+				end
 			else
 				stopanim()
 			end
@@ -2187,8 +2224,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Electro Swing.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Electro", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Electro Swing.lua")
 				sound69:Play()
-				playanim("Electro") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) -- uuid. 71723925114737
+				end
 			else
 				stopanim()
 			end
@@ -2199,9 +2239,12 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("MioHonda.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Step", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Step.lua")
 				sound69:Play()
 				char.Humanoid.WalkSpeed = 4*char:GetScale()
-				playanim("Step") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) -- uuid. 71723925114737
+				end
 			else
 				stopanim()
 			end
@@ -2212,8 +2255,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Apple Pen.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Applepen", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Apple Pen.lua")
 				sound69:Play()
-				playanim("Applepen") -- uuid. 71723925114737
+				if dance then 
+				playanim(dance) -- uuid. 71723925114737
+				end
 			else
 				stopanim()
 			end
@@ -2224,8 +2270,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Crank.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Crankthat", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Crank That.lua")
 				sound69:Play()
-				playanim("Crankthat") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) -- uuid. 71723925114737
+				end
 			else
 				stopanim()
 			end
@@ -2236,8 +2285,11 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("TakeDown.mp3")
 				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Takedown", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Takedown.lua")
 				sound69:Play()
-				playanim("Takedown") -- uuid. 71723925114737
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
 			else
 				stopanim()
 			end
