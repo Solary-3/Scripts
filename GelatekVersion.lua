@@ -24,7 +24,7 @@ notify("Modded By Theo")
 wait(.95)
 notify("Credits goes to them!!!!")
 wait(1)
-notify('pls click "click me" first ty!!')
+notify('pls click "click me" first for updates!!!')
 wait(2)
 
 
@@ -41,13 +41,12 @@ local Stop1 = Instance.new("TextButton",ui)
 local ced = Instance.new("TextLabel")
 local Show =Instance.new("TextButton")
 local corner=Instance.new("UICorner",ui)
-local corner1=Instance.new("UICorner",Run1)
 local DANCEINFO=Instance.new("TextButton",ui)
+local corner1=Instance.new("UICorner",Run1)
 corner2=Instance.new("UICorner",Stop1)
 corner3=Instance.new("UICorner",Show)
 corner4=Instance.new("UICorner",REANIMATE)
 corner5=Instance.new("UICorner",DANCEINFO)
-
 ScreenGui.Parent = game:GetService("CoreGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -186,6 +185,11 @@ end)
 local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 local tween = game:GetService("TweenService"):Create(Show, tweenInfo, {Position = UDim2.new(0, 0, .50, 0)})
 tween:Play()
+
+
+
+
+
 local CHECKF9=false
 DANCEINFO.MouseButton1Click:Connect(function()
 notify("Check Console!")
@@ -202,14 +206,14 @@ print("Y - DO THR FLOP, PAGE 2 - PEASHOOTER, PAGE 3 - BUMBLEBEE, PAGE 4 - CAFETE
 print("U - CARAMELLDANSEN, PAGE 2 - BLOODPOP, PAGE 3 - STOCK SHUFFLE, PAGE 4 - DARE")
 print("P - BOMB MONKEY, PAGE 2 - INTERNET YAMERO, PAGE 3 - RAT DANCE 2, PAGE 4 - TENNA ")
 print("F - HEEL TOE HOP, PAGE 2 - CHRONOSHIFT, PAGE 3 - SHUBA DUCK, PAGE 4 - INSANITY")
-print("G - GANGNAM, PAGE 2 - IT BURNS, PAGE 3 - LEMON MELON COOKIE")
-print("H - DOMINO, PAGE 2 - DISTRACTION DANCE, PAGE 3 - BIRDBRAIN")
-print("J - STARLIT, PAGE 2 - KEEP UP, PAGE 3 - FEIN")
-print("K - WALK, PAGE 2 - BOOMBOX, PAGE 3 - POPIPO")
-print("L - GRIDDY, PAGE 2 - FIREWORK, PAGE 3 - PICKUP THE PHONE")
-print("Z - LUX, PAGE 2 - TWO, PAGE 3 - SILLY BILLY")
-print("X - KAZOTSKY KICK, PAGE 2 - HEAVY LOVE, PAGE 3 - ROTTEN")
-print("C - MESMERIZER, PAGE 2 - MILLION, PAGE 3 - SPOOKY MONTH")
+print("G - GANGNAM, PAGE 2 - IT BURNS, PAGE 3 - LEMON MELON COOKIE, PAGE 4 - TENNA 2")
+print("H - DOMINO, PAGE 2 - DISTRACTION DANCE, PAGE 3 - BIRDBRAIN, PAGE 4 - RAMBUNCTIOUS")
+print("J - STARLIT, PAGE 2 - KEEP UP, PAGE 3 - FEIN, PAGE 4 - SIDE SHUFFLE")
+print("K - WALK, PAGE 2 - BOOMBOX, PAGE 3 - POPIPO, PAGE 4 - ELECTRO SWING")
+print("L - GRIDDY, PAGE 2 - FIREWORK, PAGE 3 - PICKUP THE PHONE, PAGE 4 STEP")
+print("Z - LUX, PAGE 2 - TWO, PAGE 3 - SILLY BILLY, PAGE 4 - APPLE PEN")
+print("X - KAZOTSKY KICK, PAGE 2 - HEAVY LOVE, PAGE 3 - ROTTEN, PAGE 4 - CRANK THAT")
+print("C - MESMERIZER, PAGE 2 - MILLION, PAGE 3 - SPOOKY MONTH, PAGE 4 - TAKEDOWN")
 print("V - LIAR DANCER, PAGE 2 - BILLIE JEAN, PAGE 3 - LIMITED FLEXWORKS")
 print("B - HAKARI, PAGE 2 - SAVOR THE W, PAGE 3 - UNLIMITED FLEXWORKS")
 print("N - BOX SWING, PAGE 2 - LAY, PAGE 3 - CRISSCROSS")
@@ -235,8 +239,6 @@ local delfile = delfile or function(path)
         end)
     end
 end
-
-
 local REANIMATION=false
 REANIMATE.MouseButton1Click:Connect(function()
 if REANIMATION then return end
@@ -253,6 +255,7 @@ wait(2.15)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
 wait(6.25)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+
 REANIMATION=false
 wait(1)
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
@@ -438,8 +441,24 @@ wait(1)
 Dance_51=AddDance("Insanity", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Insanity.lua")
 wait(1)
 Dance_52=AddDance("SmoothMoves", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/SmoothMoves.lua")
-Dance_53=AddDance("Tenna",
-"https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tenna.lua")
+wait(1)
+Dance_53=AddDance("Tenna", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tenna.lua")
+wait(1)
+Dance_54=AddDance("Tenna2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tenna 2.lua")
+wait(1)
+Dance_55=AddDance("Takedown", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Takedown.lua")
+wait(1)
+Dance_56=AddDance("Step", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Step.lua")
+wait(1)
+Dance_57=AddDance("Sideshuffle", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Side Shuffle.lua")
+wait(1)
+Dance_58=AddDance("Crankthat", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Crank That.lua")
+wait(1)
+Dance_59=AddDance("Electro", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Electro Swing.lua")
+wait(1)
+Dance_60=AddDance("Applepen", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Apple Pen.lua")
+wait(1)
+Dance_61=AddDance("Rambunctious", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rambunctious.lua")
 wait(1)
 end
 
@@ -548,7 +567,13 @@ local validAudioFiles = {
     "brain.mp3",
     "espresso.mp3",
     "rakuten.mp3",
-    "tort.mp3"
+    "tort.mp3",
+    "TakeDown.mp3",
+    "Side Shuffle.mp3",
+    "Rambunctious.mp3",
+    "Electro Swing.mp3",
+    "Crank.mp3",
+    "Apple Pen.mp3",
 }
 
 local function DanceAsset(file)
@@ -1951,8 +1976,10 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				sound69.SoundId = DanceAsset("brain.mp3")
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
+				char.Humanoid.WalkSpeed = 4*char:GetScale()
 				playanim(93547721311170) -- uuid. 71723925114737
 			else
+				har.Humanoid.WalkSpeed = 4*char:GetScale()
 				stopanim()
 			end
 		elseif k == "leftbracket" then 
@@ -2087,6 +2114,102 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
 				playanim("Insanity") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "g" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Tenna.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("Tenna2") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "h" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Rambunctious.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("Rambunctious") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "j" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Side Shuffle.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("Sideshuffle") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "k" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Electro Swing.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("Electro") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "l" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("MioHonda.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("Step") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "z" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Apple Pen.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("Applepen") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "x" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Crank.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("Crankthat") -- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "c" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("TakeDown.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				playanim("Takedown") -- uuid. 71723925114737
 			else
 				stopanim()
 			end
@@ -2324,6 +2447,7 @@ end)
 Stop1.MouseButton1Click:Connect(function()
 if RUNNING then
 RUNNING=false
+end
 Forcestop()
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 if UPDATE then
@@ -2342,7 +2466,6 @@ if INPUTLOOP then
 end
 if sprinting then
      sprinting=false
-end
 end
 wait(1)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
