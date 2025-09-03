@@ -26,6 +26,7 @@ notify("Credits goes to them!!!!")
 wait(1)
 notify('pls click "click me" first for updates!!!')
 wait(2)
+notify("Also a keyboard script")
 
 
 
@@ -199,29 +200,55 @@ CHECKF9=true
 DANCEINFO.Text="Check Console"
 print("------------------------------------------")
 print("Q - RAT DANCE, PAGE 2 - XO, PAGE 3 - C14, PAGE 4 - UNLOCKIT")
+print("------------------------------------------")
 print("E - BOOGIE, PAGE 2 - SODA POP, PAGE 3 - Slickback, PAGE 4 - SMOOTHMOVES")
+print("------------------------------------------")
 print("R - ASSUMPTIONS, PAGE 2 - LOVE FOR YOU, PAGE 3 - DOODLE, PAGE 4 - LAGTRAIN")
+print("------------------------------------------")
 print("T - EGYPT, PAGE 2 - ASSUMPTIONS SHUFFLE, PAGE 3 - GOAT, PAGE 4 - SUKI")
+print("------------------------------------------")
 print("Y - DO THR FLOP, PAGE 2 - PEASHOOTER, PAGE 3 - BUMBLEBEE, PAGE 4 - CAFETERIA")
+print("------------------------------------------")
 print("U - CARAMELLDANSEN, PAGE 2 - BLOODPOP, PAGE 3 - STOCK SHUFFLE, PAGE 4 - DARE")
+print("------------------------------------------")
 print("P - BOMB MONKEY, PAGE 2 - INTERNET YAMERO, PAGE 3 - RAT DANCE 2, PAGE 4 - TENNA ")
+print("------------------------------------------")
 print("F - HEEL TOE HOP, PAGE 2 - CHRONOSHIFT, PAGE 3 - SHUBA DUCK, PAGE 4 - INSANITY")
+print("------------------------------------------")
 print("G - GANGNAM, PAGE 2 - IT BURNS, PAGE 3 - LEMON MELON COOKIE, PAGE 4 - TENNA 2")
+print("------------------------------------------")
 print("H - DOMINO, PAGE 2 - DISTRACTION DANCE, PAGE 3 - BIRDBRAIN, PAGE 4 - RAMBUNCTIOUS")
+print("------------------------------------------")
 print("J - STARLIT, PAGE 2 - KEEP UP, PAGE 3 - FEIN, PAGE 4 - SIDE SHUFFLE")
+print("------------------------------------------")
 print("K - WALK, PAGE 2 - BOOMBOX, PAGE 3 - POPIPO, PAGE 4 - ELECTRO SWING")
+print("------------------------------------------")
 print("L - GRIDDY, PAGE 2 - FIREWORK, PAGE 3 - PICKUP THE PHONE, PAGE 4 STEP")
+print("------------------------------------------")
 print("Z - LUX, PAGE 2 - TWO, PAGE 3 - SILLY BILLY, PAGE 4 - APPLE PEN")
+print("------------------------------------------")
 print("X - KAZOTSKY KICK, PAGE 2 - HEAVY LOVE, PAGE 3 - ROTTEN, PAGE 4 - CRANK THAT")
+print("------------------------------------------")
 print("C - MESMERIZER, PAGE 2 - MILLION, PAGE 3 - SPOOKY MONTH, PAGE 4 - TAKEDOWN")
-print("V - LIAR DANCER, PAGE 2 - BILLIE JEAN, PAGE 3 - LIMITED FLEXWORKS, PAGE 4 - CALIFORNIA GURLS")
-print("B - HAKARI, PAGE 2 - SAVOR THE W, PAGE 3 - UNLIMITED FLEXWORKS")
-print("N - BOX SWING, PAGE 2 - LAY, PAGE 3 - CRISSCROSS")
+print("------------------------------------------")
+print("V - LIAR DANCER, PAGE 2 - BILLIE JEAN, PAGE 3 - LIMITED FLEXWORKS, PAGE 4 - GOING DOWN")
+print("------------------------------------------")
+print("B - HAKARI, PAGE 2 - SAVOR THE W, PAGE 3 - UNLIMITED FLEXWORKS, PAGE 4 - SPAMTON")
+print("------------------------------------------")
+print("N - BOX SWING, PAGE 2 - LAY, PAGE 3 - CRISSCROSS, PAGE 4 - KEMUSAN")
+print("------------------------------------------")
 print("M - CHANGE PAGES")
-print("MINUS OR '-' - COMMERCIAL BREAK, PAGE 2 - CLUB PENGUIN, PAGE 3 - TORT")
-print("COMMA OR ',' - STATIC, PAGE 2 - INTERNET YAMERO, PAGE 3 - BRAIN")
-print("LEFTBRACKET OR '[' - EMOTIONAL PRISM, PAGE 2 - I WANNA RUNAWAY, PAGE 3 - ESPRESSO")
-print("RIGHTBRACKET OR ']' - HEADLOCK, PAGE 2 - MIO HONDA, PAGE 3 - RAKUTEN")
+print("------------------------------------------")
+print("MINUS OR '-' - COMMERCIAL BREAK, PAGE 2 - CLUB PENGUIN, PAGE 3 - TORT, PAGE 4 -  IGAKU")
+print("------------------------------------------")
+print("COMMA OR ',' - STATIC, PAGE 2 - INTERNET YAMERO, PAGE 3 - BRAIN, PAGE 4 - IM OK")
+print("------------------------------------------")
+print("LEFTBRACKET OR '[' - EMOTIONAL PRISM, PAGE 2 - I WANNA RUNAWAY, PAGE 3 - ESPRESSO, PAGE 4 - HEADLOCK 2")
+print("------------------------------------------")
+print("RIGHTBRACKET OR ']' - HEADLOCK, PAGE 2 - MIO HONDA, PAGE 3 - RAKUTEN, PAGE 4 - LINGA GULI GULI")
+print("------------------------------------------")
+print("LEFTCONTROL OR 'LCTRL' - TOGGLE SPRINT")
+print("------------------------------------------")
 print("EQUALS OR '=' TOGGLE BACKGROUND MUSIC WHEN NOT DANCING")
 wait(1)
 DANCEINFO.Text="Click me!"
@@ -284,6 +311,8 @@ getmetatable(is).__namecall = function(_, id)
 	return loadlocalasset(id)
 end
 
+--THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP, LIKE IT DOEST LOAD THE DANCE 
+-- VVVVVVVV
 local function AddDance(Name, ScriptUrl)
     local filePath = "KRYSTALDANCE/"..Name
     if isfile(filePath) then
@@ -453,9 +482,15 @@ local validAudioFiles = {
     "Electro Swing.mp3",
     "Crank.mp3",
     "Apple Pen.mp3",
-    "California.mp3"
+    "Igaku.mp3",
+    "Down.mp3",
+    "Kemusan.mp3",
+    "Guli.mp3",
+    "ImOk.mp3",
+    "Spamton.mp3"
 }
 
+--THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
 local function DanceAsset(file)
     if not table.find(validAudioFiles, file) then
         notify("Audio file not found: " .. file)
@@ -467,7 +502,7 @@ local function DanceAsset(file)
         pcall(function()
             fileSize = #readfile(filePath)
         end)
-        if fileSize < 1024 then
+        if fileSize < 204800 then
             notify("Redownloading corrupted audio: " .. file)
             delfile(filePath)
         end
@@ -491,7 +526,7 @@ local function DanceAsset(file)
         pcall(function()
             fileSize = #readfile(filePath)
         end)
-        if fileSize > 1024 then
+        if fileSize > 204800 then
             return customasset(filePath)  
         else
             notify("Audio file is empty/corrupted: " .. file)
@@ -2285,9 +2320,99 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				stopanim()
 				dancing = true
 				task.wait(.005)
-				sound69.SoundId = DanceAsset("California.mp3")
+				sound69.SoundId = DanceAsset("Down.mp3")
 				timeposcur = sound69.TimePosition 
-				local dance=LoadDance("California", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/California.lua")
+				local dance=LoadDance("Down", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Going Down.lua")
+				sound69:Play()
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "b" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Spamton.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Spamton", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Spamton.lua")
+				sound69:Play()
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "n" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Kemusan.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Kemusan", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kemusan.lua")
+				sound69:Play()
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "comma" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("ImOk.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("ImOk", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/ImOk.lua")
+				sound69:Play()
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "minus" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Igaku.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Igaku", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Igaku.lua")
+				sound69:Play()
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "leftbracket" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Headlock.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Headlock2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Headlock2.lua")
+				sound69:Play()
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+			elseif k == "rightbracket" then 
+			if dancing == false then 
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Guli.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Guli", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Guli.lua")
 				sound69:Play()
 				if dance then
 				playanim(dance) 
@@ -2301,15 +2426,15 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 		playbacktrack = not playbacktrack
 		if dancing == false then 
 			if playbacktrack == true then 
-				sound69:Play()
-				sound69.Volume = .75
-				game:GetService("StarterGui"):SetCore("SendNotification", {
-					Title = "Krystal Dance V3";
-					Duration = 5;
-					Text = "Background music enabled"
-				})
+			--	sound69:Play()
+			  	sound69.Volume = .75
+			  	game:GetService("StarterGui"):SetCore("SendNotification", {
+			  		Title = "Krystal Dance V3";
+			  		Duration = 5;
+			  		Text = "Background music enabled"
+			  	})
 			else 
-				sound69:Stop()
+				sound69.Volume=0
 				game:GetService("StarterGui"):SetCore("SendNotification", {
 					Title = "Krystal Dance V3";
 					Duration = 5;
@@ -2321,10 +2446,9 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 	if k == "leftcontrol" then 
 		sprinting = not sprinting
 	end
-if k == "m" then  --Modes
-    if mode == 3 then 
+if k == "m" then
+if mode == 3 then 
 mode = 4
-
   game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
 	Duration = 5;
@@ -2387,7 +2511,10 @@ STATES=char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function(
 			else
 				char.Humanoid.WalkSpeed = 24*char:GetScale()
 				if walking == true and idle == false and  char.Humanoid.MoveDirection ~= Vector3.new(0,0,0) and dancing == false and playanother==true  then 
-					playanim(130213485744288,2.2,false,sprintanim)
+				     local dance=LoadDance("Sprint", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Sprint.lua")
+				     if dance then
+					playanim(dance,2.2,false)
+					end
 				end
 			end
 		end
