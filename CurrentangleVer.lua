@@ -677,7 +677,9 @@ if RUNNING then return notify("SCRIPT IS RUNNING!!") end
 if game:GetService("Players").LocalPlayer.Character.Name ~= Character.Name.."_Fake" then
 return notify("REANIMATE FIRST CUH") end
 Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
+local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 local tween = game:GetService("TweenService"):Create(CurrentFrame, tweenInfo, {Position = UDim2.new(0.385, 0, .75, 0)})
+tween:Play()
 RUNNING = true
 
 
