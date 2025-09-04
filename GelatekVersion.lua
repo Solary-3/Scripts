@@ -287,7 +287,7 @@ print("R - ASSUMPTIONS, PAGE 2 - LOVE FOR YOU, PAGE 3 - DOODLE, PAGE 4 - LAGTRAI
 print("------------------------------------------")
 print("T - EGYPT, PAGE 2 - ASSUMPTIONS SHUFFLE, PAGE 3 - GOAT, PAGE 4 - SUKI, PAGE 5 - SQUIDWARD YELL 2")
 print("------------------------------------------")
-print("Y - DO THR FLOP, PAGE 2 - PEASHOOTER, PAGE 3 - BUMBLEBEE, PAGE 4 - CAFETERIA")
+print("Y - DO THR FLOP, PAGE 2 - PEASHOOTER, PAGE 3 - BUMBLEBEE, PAGE 4  CAFETERIA, PAGE 5 - YELL 3")
 print("------------------------------------------")
 print("U - CARAMELLDANSEN, PAGE 2 - BLOODPOP, PAGE 3 - STOCK SHUFFLE, PAGE 4 - DARE")
 print("------------------------------------------")
@@ -2668,7 +2668,23 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				timeposcur = sound69.TimePosition 
 				local dance=LoadDance("Yell", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Yell.lua")
 				sound69:Play()
-				Info("Yell","T")
+				Info("Yell 3","T")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+	     elseif k == "y" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Yell1.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Yell1", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Yell1.lua")
+				sound69:Play()
+				Info("Yell 3","Y")
 				if dance then
 				playanim(dance) 
 				end-- uuid. 71723925114737
