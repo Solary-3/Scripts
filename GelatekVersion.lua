@@ -28,7 +28,7 @@ notify('pls click "click me" first for updates!!!')
 wait(.75)
 notify('or reanimate directly', 10)
 wait(2)
-notify("Also a keyboard script")
+notify("Also get a keyboard script")
 
 
 
@@ -46,6 +46,10 @@ local Show =Instance.new("TextButton")
 local corner=Instance.new("UICorner",ui)
 local DANCEINFO=Instance.new("TextButton",ui)
 local corner1=Instance.new("UICorner",Run1)
+corner2=Instance.new("UICorner",Stop1)
+corner3=Instance.new("UICorner",Show)
+corner4=Instance.new("UICorner",REANIMATE)
+corner5=Instance.new("UICorner",DANCEINFO)
 local CurrentFrame=Instance.new("Frame",ScreenGui)
 local Stroke=Instance.new("UIStroke",CurrentFrame)
 local Corner=Instance.new("UICorner",CurrentFrame)
@@ -58,10 +62,6 @@ local Mode=Instance.new("TextLabel",CurrentFrame)
 local Keypressed=Instance.new("TextLabel",CurrentFrame)
 local Pressed=Instance.new("TextLabel",CurrentFrame)
 local Credits=Instance.new("TextLabel",CurrentFrame)
-corner2=Instance.new("UICorner",Stop1)
-corner3=Instance.new("UICorner",Show)
-corner4=Instance.new("UICorner",REANIMATE)
-corner5=Instance.new("UICorner",DANCEINFO)
 
 ui.Name = "ui"
 ui.Active = true
