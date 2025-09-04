@@ -33,6 +33,9 @@ notify("Also get a keyboard script")
 
 
 
+
+
+
 local ScreenGui = Instance.new("ScreenGui",KDV3)
 ScreenGui.Name ="KRYSTALDANCE"
 local ui = Instance.new("Frame",ScreenGui)

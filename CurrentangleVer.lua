@@ -35,6 +35,11 @@ wait(2)
 notify("If they still dont see it, then the game isnt supported")
 
 
+
+
+
+
+
 local ScreenGui = Instance.new("ScreenGui",KDV3)
 ScreenGui.Name ="KRYSTALDANCE"
 local ui = Instance.new("Frame",ScreenGui)
