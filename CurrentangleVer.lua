@@ -598,7 +598,8 @@ local validAudioFiles = {
     "Spamton.mp3",
     "Sit.mp3",
     "Results.mp3",
-    "Yell.mp3"
+    "Yell.mp3",
+    "Yell1.mp3"
 }
 
 --THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
