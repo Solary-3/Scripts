@@ -53,12 +53,17 @@ corner3=Instance.new("UICorner",Show)
 corner4=Instance.new("UICorner",REANIMATE)
 corner5=Instance.new("UICorner",DANCEINFO)
 corner4=Instance.new("UICorner",Enable)
+local CurrentFrame=Instance.new("Frame",ScreenGui)
+local Stroke=Instance.new("UIStroke",CurrentFrame)
+local Corner=Instance.new("UICorner",CurrentFrame)
+Stroke.Thickness=3
+Stroke.Transparency=.65
 local CurrentPage=Instance.new("TextLabel",CurrentFrame)
 local Page=Instance.new("TextLabel",CurrentFrame)
-local CurrentKey=Instance.new("TextLabel",CurrentFrame)
-local Key=Instance.new("TextLabel",CurrentFrame)
-local DanceInfo=Instance.new("TextLabel",CurrentFrame)
-local Dance=Instance.new("TextLabel",CurrentFrame)
+local CurrentMode=Instance.new("TextLabel",CurrentFrame)
+local Mode=Instance.new("TextLabel",CurrentFrame)
+local Keypressed=Instance.new("TextLabel",CurrentFrame)
+local Pressed=Instance.new("TextLabel",CurrentFrame)
 local Credits=Instance.new("TextLabel",CurrentFrame)
 
 ui.Name = "ui"
@@ -633,6 +638,11 @@ local function DanceAsset(file)
         notify("File Not Found: " .. file)
         return ""
     end
+end
+
+local function Info(DanceInfo,KeyInfo)
+     Dance.Text=DanceInfo
+     Key.Text=KeyInfo
 end
 
 local function Forcestop()

@@ -62,13 +62,6 @@ corner2=Instance.new("UICorner",Stop1)
 corner3=Instance.new("UICorner",Show)
 corner4=Instance.new("UICorner",REANIMATE)
 corner5=Instance.new("UICorner",DANCEINFO)
-local CurrentPage=Instance.new("TextLabel",CurrentFrame)
-local Page=Instance.new("TextLabel",CurrentFrame)
-local CurrentKey=Instance.new("TextLabel",CurrentFrame)
-local Key=Instance.new("TextLabel",CurrentFrame)
-local DanceInfo=Instance.new("TextLabel",CurrentFrame)
-local Dance=Instance.new("TextLabel",CurrentFrame)
-local Credits=Instance.new("TextLabel",CurrentFrame)
 
 ui.Name = "ui"
 ui.Active = true
@@ -620,6 +613,11 @@ local function DanceAsset(file)
         notify("File Not Found: " .. file)
         return ""
     end
+end
+
+local function Info(DanceInfo,KeyInfo)
+     Dance.Text=DanceInfo
+     Key.Text=KeyInfo
 end
 
 local function Forcestop()
