@@ -60,11 +60,12 @@ Stroke.Thickness=3
 Stroke.Transparency=.65
 local CurrentPage=Instance.new("TextLabel",CurrentFrame)
 local Page=Instance.new("TextLabel",CurrentFrame)
-local CurrentMode=Instance.new("TextLabel",CurrentFrame)
-local Mode=Instance.new("TextLabel",CurrentFrame)
-local Keypressed=Instance.new("TextLabel",CurrentFrame)
-local Pressed=Instance.new("TextLabel",CurrentFrame)
+local CurrentKey=Instance.new("TextLabel",CurrentFrame)
+local Key=Instance.new("TextLabel",CurrentFrame)
+local DanceInfo=Instance.new("TextLabel",CurrentFrame)
+local Dance=Instance.new("TextLabel",CurrentFrame)
 local Credits=Instance.new("TextLabel",CurrentFrame)
+
 
 ui.Name = "ui"
 ui.Active = true
@@ -167,6 +168,12 @@ Show.Size=UDim2.new(0, 50, 0, 50)
 Show.Position=UDim2.new(0, 0, 2, 0)
 Show.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
 ui.Visible=true 
+
+CurrentFrame.Size=UDim2.new(0.26572, 0, 0.16564, 0);
+CurrentFrame.Name=[[Current]]
+CurrentFrame.Position=UDim2.new(0.385, 0, 1, 0);
+CurrentFrame.BackgroundColor3=Color3.fromRGB(50,50,50)
+CurrentFrame.BackgroundTransparency=.55
 
 CurrentPage.Text=[[Page:]]
 CurrentPage.Font=[[Arcade]]
