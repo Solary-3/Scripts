@@ -281,11 +281,11 @@ DANCEINFO.Text="Check Console"
 print("------------------------------------------")
 print("Q - RAT DANCE, PAGE 2 - XO, PAGE 3 - C14, PAGE 4 - UNLOCKIT, PAGE 5 - RESULTS")
 print("------------------------------------------")
-print("E - BOOGIE, PAGE 2 - SODA POP, PAGE 3 - Slickback, PAGE 4 - SMOOTHMOVES")
+print("E - BOOGIE, PAGE 2 - SODA POP, PAGE 3 - Slickback, PAGE 4 - SMOOTHMOVES, PAGE 5 - STATIC 2")
 print("------------------------------------------")
-print("R - ASSUMPTIONS, PAGE 2 - LOVE FOR YOU, PAGE 3 - DOODLE, PAGE 4 - LAGTRAIN")
+print("R - ASSUMPTIONS, PAGE 2 - LOVE FOR YOU, PAGE 3 - DOODLE, PAGE 4 - LAGTRAIN, PAGE 5 - SILLY BILLY 2 ")
 print("------------------------------------------")
-print("T - EGYPT, PAGE 2 - ASSUMPTIONS SHUFFLE, PAGE 3 - GOAT, PAGE 4 - SUKI")
+print("T - EGYPT, PAGE 2 - ASSUMPTIONS SHUFFLE, PAGE 3 - GOAT, PAGE 4 - SUKI, PAGE 5 - SQUIDWARD YELL 2")
 print("------------------------------------------")
 print("Y - DO THR FLOP, PAGE 2 - PEASHOOTER, PAGE 3 - BUMBLEBEE, PAGE 4 - CAFETERIA")
 print("------------------------------------------")
@@ -597,7 +597,8 @@ local validAudioFiles = {
     "ImOk.mp3",
     "Spamton.mp3",
     "Sit.mp3",
-    "Results.mp3"
+    "Results.mp3",
+    "Yell.mp3"
 }
 
 --THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
@@ -2646,6 +2647,54 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				local dance=LoadDance("Results", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Results.lua")
 				sound69:Play()
 				Info("Results","Q")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+	     elseif k == "e" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Static.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Static2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Static2.lua")
+				sound69:Play()
+				Info("Static 2","E")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+	     elseif k == "r" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Billy.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Billy2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Billy2.lua")
+				sound69:Play()
+				Info("Billy 2","R")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+	     elseif k == "t" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Yell.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Yell", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Yell.lua")
+				sound69:Play()
+				Info("Yell","T")
 				if dance then
 				playanim(dance) 
 				end-- uuid. 71723925114737
