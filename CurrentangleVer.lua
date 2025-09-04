@@ -583,7 +583,7 @@ local validAudioFiles = {
     "Guli.mp3",
     "ImOk.mp3",
     "Spamton.mp3",
-    "Sit.mp3"
+    "Sit.mp3",
     "Results.mp3"
 }
 
