@@ -358,12 +358,10 @@ Run1.Position = UDim2.new(100, 0, 0.629999971, 0)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
 wait(6.25)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
-wait(2.15)
+wait(1)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
 wait(6.25)
-if ALLOWPROTECTION==true then 
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
-end
 REANIMATION=false
 wait(1)
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
