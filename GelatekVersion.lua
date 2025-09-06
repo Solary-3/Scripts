@@ -330,6 +330,8 @@ print("------------------------------------------")
 print("LEFTCONTROL OR 'LCTRL' - TOGGLE SPRINT")
 print("------------------------------------------")
 print("EQUALS OR '=' TOGGLE BACKGROUND MUSIC WHEN NOT DANCING")
+print("------------------------------------------")
+print([[UPDATE:\n\t\t-- Audio Fix ]])
 wait(1)
 DANCEINFO.Text="Click me!"
 CHECKF9=false
@@ -453,6 +455,11 @@ end
 
 local timeposcur = 0 
 local sound69 = Instance.new("Sound",game:GetService("RunService"))
+local Playsound = Instance.new("Sound",game:GetService("RunService"))
+Playsound.Name = "Danc"
+Playsound.Volume = .75
+Playsound.Looped = true
+Playsound.Parent = game:GetService("RunService")
 sound69.Looped = true
 sound69.Name = "danc"
 sound69.Playing = true
@@ -1080,54 +1087,51 @@ end
 wait(.1)
 playbacktrack=true
 local function stopanim()
-	if loopsplaying>0 then 
-		loopsplaying-=1
-	end
-	playanother = true 
-	playanother = true 
-	playanother = true 
-	playanother = true 
-	if dancing then
-		sound69.PlaybackSpeed = 1
-		if playbacktrack == true then 
-            sound69:Stop()
-			sound69.SoundId = DanceAsset("Sphere.mp3")
-			sound69.Volume = .75
-			sound69.TimePosition=timeposcur
-		else 
-			sound69:Stop()
-		end
-	end
-	
-	coolparticles.Parent = randompart
-	pcall(function()
-		rst:Cancel()
-		rht:Cancel()
-		lht:Cancel()
-		lst:Cancel()
-		nt:Cancel()
-		rjt:Cancel()
-	end)
-	
-	if dancing == true then 
-		dancing = false
-		idle = true 
-		char.Humanoid:Move(Vector3.new(0,0,-1),true)
-		walking = false 
-		wait(.065)
-		if playbacktrack and not dancing then
-            sound69.TimePosition=timeposcur
-			sound69.SoundId = DanceAsset("Sphere.mp3")
-			sound69.Volume = .75
-			sound69:Play()
-		end
-		
-		if walking == true and idle == false and char.Humanoid.MoveDirection ~= Vector3.new(0,0,0) and dancing == false and playanother==true then 
-			task.spawn(function()
-				playanim(74204337812128,1,false) -- uuid.
-			end)
-		end
-	end
+     loopsplaying = math.max(0, loopsplaying - 1)
+     local SavedTime = Playsound.TimePosition
+     playanother = true 
+     if dancing then
+         Playsound.PlaybackSpeed = 1
+         if playbacktrack == true then
+             Playsound.Volume = 0
+             Playsound:Stop() 
+         else 
+             Playsound.Volume = 0
+             Playsound:Stop()
+         end
+     end
+     
+     coolparticles.Parent = randompart
+     pcall(function()
+          rst:Cancel()
+          rht:Cancel()
+          lht:Cancel()
+          lst:Cancel()
+          nt:Cancel()
+          rjt:Cancel()
+     end)
+     
+     if dancing == true then 
+         dancing = false
+         idle = true 
+         char.Humanoid:Move(Vector3.new(0,0,-1),true)
+         walking = false 
+         wait(.065)
+         
+         if playbacktrack and not dancing then
+             sound69:Stop()
+             Playsound.SoundId = DanceAsset("Sphere.mp3")
+             Playsound.TimePosition = SavedTime
+             Playsound.Volume = .75
+             Playsound:Play()
+         end
+         
+         if walking == true and idle == false and char.Humanoid.MoveDirection ~= Vector3.new(0,0,0) and dancing == false and playanother == true then 
+             task.spawn(function()
+                 playanim(74204337812128, 1, false) -- uuid.
+             end)
+         end
+     end
 end
 
 
@@ -1140,6 +1144,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("rat.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1156,6 +1161,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("FunkedUp.mp3")
 				sound69.PlaybackSpeed = 1
@@ -1172,6 +1178,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Assumptions.mp3")
 				sound69.PlaybackSpeed = 1
@@ -1191,6 +1198,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Egypt.mp3")
 				sound69.PlaybackSpeed = 1
@@ -1210,6 +1218,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("DO THE FLOP.mp3")
 				sound69.PlaybackSpeed = 1
@@ -1229,6 +1238,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("caramell.mp3")
 				sound69.PlaybackSpeed = 1
@@ -1245,6 +1255,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Heel.mp3")
 				char.Humanoid.WalkSpeed = 4*char:GetScale()
@@ -1263,6 +1274,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("gangnamm.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1277,6 +1289,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Monkey.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1294,6 +1307,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("dancingin.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1308,6 +1322,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("dr.wav")
 				char.Humanoid.WalkSpeed = 4*char:GetScale()
@@ -1324,6 +1339,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("griddy.mp3")
 				char.Humanoid.WalkSpeed = 4*char:GetScale()
@@ -1340,6 +1356,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("lux.ogg")
 				timeposcur = sound69.TimePosition 
@@ -1354,6 +1371,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("kazot.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1368,6 +1386,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Domino.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1385,6 +1404,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Liar.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1403,6 +1423,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Mesmerizer.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1420,6 +1441,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Box.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1438,6 +1460,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Static.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1455,6 +1478,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Prism.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1472,9 +1496,10 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Headlock.mp3")
-				timeposcur = sound69.TimePosition 
+				sound69.TimePosition=6.5
 				local dance=LoadDance("Headlock", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Headlock.lua")
 				sound69:Play()
 				Info("Headlock","]")
@@ -1489,6 +1514,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("TUCA DONKA.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1506,6 +1532,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Break.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1526,6 +1553,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("XO.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1540,6 +1568,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Soda.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1557,6 +1586,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("LoveForU.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1574,6 +1604,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("assum.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1588,6 +1619,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("balls.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1602,6 +1634,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Distraction.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1619,6 +1652,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("ItBurns.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1636,6 +1670,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("chronoshift.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1653,6 +1688,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("KeepUp.mp3")
 				sound69.PlaybackSpeed = 1
@@ -1673,6 +1709,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Boombox.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1687,6 +1724,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("bloodpop.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1701,6 +1739,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				sound69.SoundId = DanceAsset("Sit.mp3")
 				timeposcur = sound69.TimePosition 
 				local dance=LoadDance("Sit", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Sit.lua")
@@ -1717,6 +1756,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("leftright.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1731,6 +1771,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("heavylove.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1745,6 +1786,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Million.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1758,6 +1800,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Bjean.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1774,6 +1817,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Savor.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1790,6 +1834,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Yamero.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1806,6 +1851,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("InternetAngel.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1822,6 +1868,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("CLUB PENGUIN DANCE.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1838,6 +1885,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Runaway.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1854,6 +1902,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("MioHonda.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1870,6 +1919,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Firework.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1889,6 +1939,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("C14.mp3")
 				timeposcur = sound69.TimePosition  
@@ -1905,6 +1956,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Slickback.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1921,6 +1973,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Doodle.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1937,6 +1990,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Goat.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1953,6 +2007,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Bumblebee.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1969,6 +2024,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Stock.mp3")
 				timeposcur = sound69.TimePosition 
@@ -1985,6 +2041,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("rat.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2001,6 +2058,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Shuba Duck.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2018,6 +2076,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Lemon.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2031,6 +2090,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Birdbrain.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2047,6 +2107,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Fein.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2063,6 +2124,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Popipo.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2079,6 +2141,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Pickup.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2095,6 +2158,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Billy.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2111,6 +2175,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("rotten.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2124,6 +2189,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Spooky.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2140,6 +2206,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("JK.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2156,6 +2223,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Flexworks.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2172,6 +2240,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("CrissCross.mp3")
 				sound69.PlaybackSpeed = 1
@@ -2187,6 +2256,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("brain.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2202,6 +2272,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("espresso.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2215,6 +2286,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("rakuten.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2228,6 +2300,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("tort.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2244,6 +2317,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Unlockit.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2260,6 +2334,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("SmoothMoves.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2276,6 +2351,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Lagtrain.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2292,6 +2368,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Suki.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2308,6 +2385,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Cafeteria.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2324,6 +2402,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Dare.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2340,6 +2419,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Tenna.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2356,6 +2436,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Insanity.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2372,6 +2453,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Tenna.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2388,6 +2470,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Rambunctious.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2404,6 +2487,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Side Shuffle.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2420,6 +2504,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Electro Swing.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2436,6 +2521,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("MioHonda.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2453,6 +2539,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Apple Pen.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2469,6 +2556,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Crank.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2485,6 +2573,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("TakeDown.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2501,6 +2590,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Down.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2517,6 +2607,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Spamton.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2533,6 +2624,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Kemusan.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2549,6 +2641,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("ImOk.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2565,6 +2658,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Igaku.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2581,6 +2675,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Headlock.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2597,6 +2692,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then 
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Guli.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2616,6 +2712,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Results.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2632,6 +2729,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Static.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2648,6 +2746,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Billy.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2664,6 +2763,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Yell.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2680,6 +2780,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if dancing == false then
 				stopanim()
 				dancing = true
+				Playsound.Volume=0
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Yell1.mp3")
 				timeposcur = sound69.TimePosition 
@@ -2945,6 +3046,7 @@ local tween = game:GetService("TweenService"):Create(CurrentFrame, tweenInfo, {P
 tween:Play()
 end
 Forcestop()
+Playsound:Stop()
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 if UPDATE then
      UPDATE:Disconnect()
