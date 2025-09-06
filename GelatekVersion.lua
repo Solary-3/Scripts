@@ -350,21 +350,20 @@ local delfile = delfile or function(path)
 end
 local REANIMATION=false
 REANIMATE.MouseButton1Click:Connect(function()
-if REANIMATION then return end
+if REANIMATION then return notify([[ALREADY REANIMATING]]) end
 if game:GetService("Players").LocalPlayer.Character.Name == "GelatekReanimate" then
 return notify("ALREADY REANIMATED CUH") end
 REANIMATION=true
 Run1.Position = UDim2.new(100, 0, 0.629999971, 0)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
-wait(2.15)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
 wait(6.25)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
 wait(2.15)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
 wait(6.25)
+if ALLOWPROTECTION==true then 
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
-
+end
 REANIMATION=false
 wait(1)
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)

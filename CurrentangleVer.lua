@@ -2893,11 +2893,6 @@ end)
 
 
 
-
-
-
-
-
 STATES=char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
 	if char.Humanoid.Sit == false then 
 		if char.Humanoid.MoveDirection == Vector3.new(0,0,0) and dancing == false and idle == false then
@@ -2951,7 +2946,6 @@ SITTING=char.Humanoid:GetPropertyChangedSignal("Sit"):Connect(function()
 		char.Humanoid:Move(Vector3.new(0,0,-1),true)
 	end
 end)
-
 local RunService = game:GetService("RunService")
 local Player = game:GetService("Players").LocalPlayer
 local PlayerMouse = Player:GetMouse()
