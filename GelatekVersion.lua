@@ -370,6 +370,10 @@ end)
 
 
 
+
+
+
+
 local full = game:GetObjects("rbxassetid://107495486817639")[1]:Clone()
 full.Parent = game:GetService("Workspace")
 local fallback = game:GetObjects("rbxassetid://117971041844492")[1]:FindFirstChildOfClass("KeyframeSequence")
