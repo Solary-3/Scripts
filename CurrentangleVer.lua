@@ -289,9 +289,9 @@ print("T - EGYPT, PAGE 2 - ASSUMPTIONS SHUFFLE, PAGE 3 - GOAT, PAGE 4 - SUKI, PA
 print("------------------------------------------")
 print("Y - DO THR FLOP, PAGE 2 - PEASHOOTER, PAGE 3 - BUMBLEBEE, PAGE 4  CAFETERIA, PAGE 5 - YELL 3")
 print("------------------------------------------")
-print("U - CARAMELLDANSEN, PAGE 2 - BLOODPOP, PAGE 3 - STOCK SHUFFLE, PAGE 4 - DARE")
+print("U - CARAMELLDANSEN, PAGE 2 - BLOODPOP, PAGE 3 - STOCK SHUFFLE, PAGE 4 - DARE, PAGE 5 - YELL 1")
 print("------------------------------------------")
-print("P - BOMB MONKEY, PAGE 2 - INTERNET YAMERO, PAGE 3 - RAT DANCE 2, PAGE 4 - TENNA ")
+print("P - BOMB MONKEY, PAGE 2 - INTERNET YAMERO, PAGE 3 - RAT DANCE 2, PAGE 4 - TENNA, PAGE 5 - OUT OF TOUCH")
 print("------------------------------------------")
 print("F - HEEL TOE HOP, PAGE 2 - CHRONOSHIFT, PAGE 3 - SHUBA DUCK, PAGE 4 - INSANITY")
 print("------------------------------------------")
@@ -331,7 +331,7 @@ print("LEFTCONTROL OR 'LCTRL' - TOGGLE SPRINT")
 print("------------------------------------------")
 print("EQUALS OR '=' TOGGLE BACKGROUND MUSIC WHEN NOT DANCING")
 print("------------------------------------------")
-print([[UPDATE:\n\t\t-- Audio Fix ]])
+print("UPDATE:\n\t\t -- 2 New dances ")
 wait(1)
 DANCEINFO.Text="Click me!"
 CHECKF9=false
@@ -606,7 +606,10 @@ local validAudioFiles = {
     "Sit.mp3",
     "Results.mp3",
     "Yell.mp3",
-    "Yell1.mp3"
+    "Yell1.mp3",
+    "Pixelation.mp3",
+    "Yell2.mp3",
+    "Touch.mp3"
 }
 
 --THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
@@ -2795,7 +2798,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				timeposcur = sound69.TimePosition 
 				local dance=LoadDance("Yell", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Yell.lua")
 				sound69:Play()
-				Info("Yell 3","T")
+				Info("Yell 2","T")
 				if dance then
 				playanim(dance) 
 				end-- uuid. 71723925114737
@@ -2813,6 +2816,40 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				local dance=LoadDance("Yell1", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Yell1.lua")
 				sound69:Play()
 				Info("Yell 3","Y")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+	     elseif k == "u" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				Playsound.Volume=0
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Yell2.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Yell2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Yell2.lua")
+				sound69:Play()
+				Info("Yell 1","U")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+	     elseif k == "p" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				Playsound.Volume=0
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Touch.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Touch", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Touch.lua")
+				sound69:Play()
+				Info("Touch","P")
 				if dance then
 				playanim(dance) 
 				end-- uuid. 71723925114737
