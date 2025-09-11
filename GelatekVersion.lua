@@ -293,7 +293,7 @@ print("U - CARAMELLDANSEN, PAGE 2 - BLOODPOP, PAGE 3 - STOCK SHUFFLE, PAGE 4 - D
 print("------------------------------------------")
 print("P - BOMB MONKEY, PAGE 2 - INTERNET YAMERO, PAGE 3 - RAT DANCE 2, PAGE 4 - TENNA, PAGE 5 - OUT OF TOUCH")
 print("------------------------------------------")
-print("F - HEEL TOE HOP, PAGE 2 - CHRONOSHIFT, PAGE 3 - SHUBA DUCK, PAGE 4 - INSANITY")
+print("F - HEEL TOE HOP, PAGE 2 - CHRONOSHIFT, PAGE 3 - SHUBA DUCK, PAGE 4 - INSANITY, PAGE 5 - LONELY")
 print("------------------------------------------")
 print("G - GANGNAM, PAGE 2 - IT BURNS, PAGE 3 - LEMON MELON COOKIE, PAGE 4 - TENNA 2")
 print("------------------------------------------")
@@ -331,7 +331,7 @@ print("LEFTCONTROL OR 'LCTRL' - TOGGLE SPRINT")
 print("------------------------------------------")
 print("EQUALS OR '=' TOGGLE BACKGROUND MUSIC WHEN NOT DANCING")
 print("------------------------------------------")
-print("UPDATE:\n\t\t -- 2 New dances ")
+print("UPDATE:\n\t\t -- 1 New dance/s ")
 wait(1)
 DANCEINFO.Text="Click me!"
 CHECKF9=false
@@ -582,7 +582,8 @@ local validAudioFiles = {
     "Yell1.mp3",
     "Pixelation.mp3",
     "Yell2.mp3",
-    "Touch.mp3"
+    "Touch.mp3",
+    "Lonely.mp3"
 }
 
 --THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
@@ -2825,6 +2826,23 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				local dance=LoadDance("Touch", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Touch.lua")
 				sound69:Play()
 				Info("Touch","P")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+	     elseif k == "f" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				Playsound.Volume=0
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Lonely.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Hakari", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Hakari.lua")
+				sound69:Play()
+				Info("Lonely","F")
 				if dance then
 				playanim(dance) 
 				end-- uuid. 71723925114737
