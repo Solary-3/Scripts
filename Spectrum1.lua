@@ -5194,7 +5194,7 @@ chaosmode = false
 ModeOfGlitch = 1
 storehumanoidWS = 16
 newTheme("rbxassetid://614032233",48.6,1,1.25)
-RecolorTextAndRename("LOUCO",Color3.new(0.25,0,0),Color3.new(1,0,0),"Antique")
+RecolorTextAndRename("MAYHEM",Color3.new(0.25,0,0),Color3.new(1,0,0),"Antique")
 CameraEnshaking(5,2.5)
 MAINRUINCOLOR = BrickColor.new("Really red")
 sphere(2.5,"Add",root.CFrame,vt(0,0,0),1,MAINRUINCOLOR)
@@ -6572,9 +6572,9 @@ end
 Humanoid.Animator.Parent = nil
 
 -------------------------------------
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name="Float"
-local Show = Instance.new("TextButton",ScreenGui)
+local ScreenGui1 = Instance.new("ScreenGui")
+ScreenGui1.Name="Float"
+local Show = Instance.new("TextButton",ScreenGui1)
 Show.Name = "Stick"
 Show.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
 Show.BackgroundTransparency = 0
