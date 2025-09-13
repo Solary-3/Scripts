@@ -5214,7 +5214,7 @@ imgl2b.Size = UDim2.new(0,500,0,500)
 imgl2b.Position = UDim2.new(0.75,50,0.55,50)
 local ned = Instance.new("TextLabel",fullscreenz)
 ned.ZIndex = 2
-ned.Font = "SciFi"
+ned.Font = "Arcade"
 ned.BackgroundTransparency = 1
 ned.BorderSizePixel = 0.65
 ned.Size = UDim2.new(0.4,0,0.2,0)
@@ -5983,14 +5983,14 @@ end
 if Hat then
 	Hat.Handle:BreakJoints()
 	table.insert(Events, game:GetService("RunService").PostSimulation:Connect(function()
-		Hat.Handle.CFrame = weaponweld.Parent.CFrame * CFrame.new(-2.6, 0, 0) * CFrame.Angles(math.rad(2),0,math.rad(-45))
+		Hat.Handle.CFrame = weaponweld.Parent.CFrame * CFrame.new(-2.6, 0, 0) * CFrame.Angles(math.rad(2),0,math.rad(0))
 		Hat.Handle.Velocity = Vector3.new()
 	end))
 end
 if HatAlt then
 	HatAlt.Handle:BreakJoints()
 	table.insert(Events, game:GetService("RunService").PostSimulation:Connect(function()
-		HatAlt.Handle.CFrame = weaponweld.Parent.CFrame * CFrame.new(-2.2, -0.17, 0) * CFrame.Angles(0,0,math.rad(-45))
+		HatAlt.Handle.CFrame = weaponweld.Parent.CFrame * CFrame.new(-2.2, -0.17, 0) * CFrame.Angles(0,0,math.rad(0))
 		HatAlt.Handle.Velocity = Vector3.new()
 	end))
 end
