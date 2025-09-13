@@ -1,14 +1,25 @@
 local imageId = "rbxassetid://89287417287641"
 local Players = game:GetService("Players")
-local Players = game:GetService("Players")
 
 local TAG_NAME = "ScriptOwnerTag"
-local TARGET_USERNAMES = { "Mocaxery", "rWeFrRoblox", "TeenageTungTungSahur", "AstraOutLight",  "skibidaneosn",  "SHIMYMSHIMMYAYE", "rWeFrRoblox2", "ferxD", "rWeDeadahhRoblox", "Xyrevexxx","hairyPu1beMuncher", "Theo_TheoBenzo", "theyneverstopsmiling" } -- Add more here
 local CHECK_INTERVAL = 2
+local PERMS_URL = "https://raw.githubusercontent.com/AstraOutlight/my-scripts/refs/heads/main/perms%20list"
 
 local TargetLookup = {}
-for _, name in pairs(TARGET_USERNAMES) do
-	TargetLookup[name] = true
+
+local function fetchTargetUsernames()
+    local success, result = pcall(function()
+        return game:HttpGet(PERMS_URL)
+    end)
+
+    if success then
+        TargetLookup = {}
+        for name in result:gmatch("([^,%s]+)") do
+            TargetLookup[name] = true
+        end
+    else
+        warn("Failed to fetch target usernames:", result)
+    end
 end
 
 local function createTag(player)
