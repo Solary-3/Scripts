@@ -5165,7 +5165,7 @@ kan.Volume = 1.15
 kan.TimePosition = 0
 kan.PlaybackSpeed = 1.01
 kan.Pitch = 1.01
-kan.SoundId = getsynasset("GelatekHub/Scripts/NeptunianV.mp3")
+kan.SoundId = getsynasset("Music/Shiawase.mp3")
 kan.Name = "nepnepnep"
 kan.Looped = true
 kan:Play()
@@ -7645,7 +7645,7 @@ if k == "2" and attack == false then
        hum.WalkSpeed = 40
        Speed = 40
        kan.Pitch = 0.92
-       kan.SoundId = "rbxassetid://5409360995"
+     --  kan.SoundId = "rbxassetid://5409360995"
 		BanishMode = 2
 	end
 
@@ -7653,7 +7653,7 @@ if k == "1" and attack == false then
       hum.WalkSpeed = 24
       Speed = 24
       kan.Pitch = 0.91
-      kan.SoundId = "rbxassetid://5409360995"
+--      kan.SoundId = "rbxassetid://5409360995"
 		BanishMode = 1
 	end
 
@@ -7661,7 +7661,7 @@ if k == "3" and attack == false then
       hum.WalkSpeed = 13.8
       Speed = 13.8
       kan.Pitch = 0.8
-      kan.SoundId = "rbxassetid://5409360995"
+--      kan.SoundId = "rbxassetid://5409360995"
 		BanishMode = 4
 	end
 
@@ -7669,7 +7669,7 @@ if k == "4" and attack == false then
       hum.WalkSpeed = 8
       Speed = 8
       kan.Pitch = 0.9
-      kan.SoundId = "rbxassetid://5409360995"
+--      kan.SoundId = "rbxassetid://5409360995"
 		BanishMode = 5
 	end
 
@@ -7677,7 +7677,7 @@ if k == "5" and attack == false then
       hum.WalkSpeed = 35
       Speed = 35
       kan.Pitch = 1
-      kan.SoundId = "rbxassetid://5409360995"
+--      kan.SoundId = "rbxassetid://5409360995"
 		BanishMode = 7
 	end
 if k == "q" and attack == false and BanishMode == 2 then
@@ -7719,7 +7719,7 @@ elseif message:sub(1,4) == "vol/" then
 ORVOL = message:sub(5)
 elseif message:sub(1,7) == "skipto/" then
 kan.TimePosition = message:sub(8)
-elseif message == "/glitch" and attack == false and BanishMode == 5 then
+elseif message:sub(1,7) == "/glitch" and attack == false and BanishMode == 5 then
 Speed = 8
 hum.WalkSpeed = 8
 kan.Pitch = 0.6
