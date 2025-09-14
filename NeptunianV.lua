@@ -7476,6 +7476,7 @@ if equipped == true then
   end
 end
 end))
+equip()
 table.insert(Events,mouse.KeyDown:connect(function(k)
 if k == "f" and attack == false and equipped == false then
 	equip()
