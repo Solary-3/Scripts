@@ -7719,6 +7719,16 @@ elseif message:sub(1,4) == "vol/" then
 ORVOL = message:sub(5)
 elseif message:sub(1,7) == "skipto/" then
 kan.TimePosition = message:sub(8)
+elseif message == "/glitch" and attack == false and BanishMode == 5 then
+Speed = 8
+hum.WalkSpeed = 8
+kan.Pitch = 0.6
+      BanishMode = 1000
+      kan.Pitch = 0.6
+wait(0.02)
+      kan.Pitch = 0.5
+wait(0.02)
+kan.Pitch = 0.467
 end
 end))
 
