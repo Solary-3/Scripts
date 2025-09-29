@@ -5172,6 +5172,15 @@ local ORGID = 1873219898
 local ORVOL = 1.15
 local ORPIT = 1.01
 local kan = Instance.new("Sound",plr.PlayerGui)
+
+ function Asset(filename)
+    if isfile("Music/"..filename) then
+        return getcustomasset("Music/"..filename)
+    else
+        warn("File "..filename.." .mp3 isnt found")
+        return ""
+    end
+end
 kan.Volume = 1.15
 kan.TimePosition = 0
 kan.PlaybackSpeed = 1.01
