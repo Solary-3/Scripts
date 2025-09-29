@@ -5647,13 +5647,6 @@ function CreateWeld(Parent, Part0, Part1, C0, C1)
 end
 
 
-
-
-
-
-
-
-
 Player=game:GetService("Players").LocalPlayer
 Character=Player.Character 
 PlayerGui=Player.PlayerGui 
@@ -5708,9 +5701,7 @@ local change = 1
 player=nil 
 
 mouse=Player:GetMouse()
---save shoulders 
 RSH, LSH=nil, nil 
---welds 
 RW, LW=Instance.new("Weld"), Instance.new("Weld") 
 RW.Name="Right Shoulder" LW.Name="Left Shoulder"
 LH=Torso["Left Hip"]
@@ -5729,14 +5720,14 @@ LSH.Parent=nil
 -- 
 RW.Name="Right Shoulder"
 RW.Part0=ch.Torso 
-RW.C0=cf(1.5, 0.5, 0) --* CFrame.fromEulerAnglesXYZ(1.3, 0, -0.5) 
+RW.C0=cf(1.5, 0.5, 0)) 
 RW.C1=cf(0, 0.5, 0) 
 RW.Part1=ch["Right Arm"] 
 RW.Parent=ch.Torso 
 -- 
 LW.Name="Left Shoulder"
 LW.Part0=ch.Torso 
-LW.C0=cf(-1.5, 0.5, 0) --* CFrame.fromEulerAnglesXYZ(1.7, 0, 0.8) 
+LW.C0=cf(-1.5, 0.5, 0)  
 LW.C1=cf(0, 0.5, 0) 
 LW.Part1=ch["Left Arm"] 
 LW.Parent=ch.Torso 
