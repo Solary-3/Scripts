@@ -5173,6 +5173,13 @@ local ORVOL = 1.15
 local ORPIT = 1.01
 local kan = Instance.new("Sound",plr.PlayerGui)
 
+
+
+
+
+
+
+
  function Asset(filename)
     if isfile("Music/"..filename) then
         return getcustomasset("Music/"..filename)
