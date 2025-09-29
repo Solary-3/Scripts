@@ -25,17 +25,6 @@ function sandbox(var,func)
 	setfenv(func,newenv)
 	return func
 end
-local function Asset(filename)
-    if isfile("Music/"..filename) then
-        return getcustomasset("Music/"..filename)
-    else
-        notify("File "..filename.." .mp3 isnt found")
-        return ""
-    end
-end
-local Character=game.Players.LocalPlayer.Character
-local Hat = Character:FindFirstChild("Accessory (NepV)")
-local HatAlt = Character:FindFirstChild("Accessory (NepV)")
 cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
 Model0 = Instance.new("Model")
@@ -5657,6 +5646,14 @@ function CreateWeld(Parent, Part0, Part1, C0, C1)
   return Weld
 end
 
+
+
+
+
+
+
+
+
 Player=game:GetService("Players").LocalPlayer
 Character=Player.Character 
 PlayerGui=Player.PlayerGui 
@@ -5999,7 +5996,8 @@ table.insert(list,w2)
 end
 return unpack(list)
 end
- 
+ local Hat = Character:FindFirstChild("Accessory (NepV)")
+local HatAlt = Character:FindFirstChild("Accessory (NepV)")
 local Bullet = Global.RealChar:FindFirstChild("Bullet")
 local funnyfunction
 local funnyattacking = "yes"
