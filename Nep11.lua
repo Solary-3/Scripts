@@ -7666,7 +7666,7 @@ RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0 + 0.02 * math.cos(sine / 40),0 - 0.0
 Torso.Neck.C0=clerp(Torso.Neck.C0,necko*angles(math.rad(1+math.random(-10,10)), math.rad(0+math.random(-10,10)), math.rad(0+math.random(-10,10))),.1)
 RW.C0=clerp(RW.C0,cf(1.45,0.5 + 0.3 * math.sin(sine / 20),0.1)*angles(math.rad(10 + 3 * math.cos(sine / 26)),math.rad(8 - 3 * math.cos(sine / 24)),math.rad(20 - 5 * math.cos(sine / 34))),.1)
 LW.C0=clerp(LW.C0,cf(-1.45,0.5 + 0.3 * math.sin(sine / 20),0.1)*angles(math.rad(10 - 3 * math.cos(sine / 25)),math.rad(10 + 3 * math.cos(sine / 24)),math.rad(-10 + 5 * math.cos(sine / 34))),.1)
-weaponweld.C1=clerp(weaponweld.C1,cf(0.5 + kan.PlaybackLoudness/350,0,-1.5)*angles(math.rad(0),math.rad(0),math.rad(190 +kan.PlaybackLoudness/750+sine/19)),.3)
+weaponweld.C1=clerp(weaponweld.C1,cf(0.5 + kan.PlaybackLoudness/350,0,-1.5)*angles(math.rad(0),math.rad(0),math.rad(190 +kan.PlaybackLoudness/750+sine/10)),.3)
 end
 end
 
