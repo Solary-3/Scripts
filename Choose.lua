@@ -1,3 +1,8 @@
+print("Test")
+
+
+
+
 local function notify(text,dur)
 local Notify=game:GetService("StarterGui")
 Notify:SetCore("SendNotification",{
@@ -11,9 +16,9 @@ if Cgui:FindFirstChild("CHOOSE") then
 end
 local ScreenGui = Instance.new("ScreenGui",Cgui)
 ScreenGui.Name ="CHOOSE"
-notify("If your executor doesnt support Gelatek Reanimate")
+notify("If your turn invisible on Gelatek Reanimate...")
 wait(1)
-notify("Choose Currentangle")
+notify("Choose Currentangle!")
 local ui = Instance.new("Frame",ScreenGui)
 local title = Instance.new("TextLabel")
 local Frame = Instance.new("Frame")
