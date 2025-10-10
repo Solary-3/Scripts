@@ -2,6 +2,13 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs
 if isfolder and not isfolder("KDV3") then 
 	makefolder("KDV3")
 end
+local ws=game.Workspace
+if ws:FindFirstChild("full") then
+ws.full:Destroy()
+print("Deleted!")
+else
+print("Not Found")
+end
 if not isfolder("KRYSTALDANCE") then
         makefolder("KRYSTALDANCE")
 end
