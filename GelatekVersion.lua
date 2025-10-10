@@ -16,7 +16,8 @@ Title="Krystal Dance V3";
 Text=text;
 Duration=5 or dur})
 end
-notify("KDV3 Made by Nitro-GT")
+coroutine.resume(coroutine.create(function()
+notify("KDV3 Made by Nitro-GT (Dont support him)")
 wait(.95)
 notify("Fixed By MrY7zz")
 wait(.95)
@@ -29,6 +30,11 @@ wait(.75)
 notify('or reanimate directly', 10)
 wait(2)
 notify("Also get a keyboard script")
+wait(2)
+notify("This will be prob the last update...")
+wait(1)
+notify("I barely do scripting nowadays...")
+end))
 
 
 
@@ -356,14 +362,9 @@ return notify("ALREADY REANIMATED CUH") end
 REANIMATION=true
 Run1.Position = UDim2.new(100, 0, 0.629999971, 0)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
-wait(6.25)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
-wait(1)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
-wait(6.25)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+wait(2)
 REANIMATION=false
-wait(1)
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 end)
 
