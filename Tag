@@ -1,4 +1,4 @@
-
+print("Test")
 
 
 
@@ -17,7 +17,7 @@ local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
     TargetLookup[name] = true
 end
-
+while wait(.005) do
 local function createTag(player)
 	if player.Character and player.Character:FindFirstChild("Head") then
 		if player.Character.Head:FindFirstChild(TAG_NAME) then return end
@@ -74,3 +74,5 @@ Players.PlayerAdded:Connect(function(player)
         end)
     end
 end)
+
+end
