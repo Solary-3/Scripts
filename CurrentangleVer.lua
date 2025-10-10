@@ -2,6 +2,13 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs
 if isfolder and not isfolder("KDV3") then 
 	makefolder("KDV3")
 end
+local ws=game.Workspace
+if ws:FindFirstChild("full") then
+ws.full:Destroy()
+print("Deleted!")
+else
+print("Not Found")
+end
 if not isfolder("KRYSTALDANCE") then
         makefolder("KRYSTALDANCE")
 end
@@ -16,7 +23,8 @@ Title="Krystal Dance V3";
 Text=text;
 Duration=5 or dur})
 end
-notify("KDV3 Made by Nitro-GT")
+coroutine.resume(coroutine.create(function()
+notify("KDV3 Made by Nitro-GT (Dont Support him)")
 wait(.95)
 notify("Fixed By MrY7zz")
 wait(.95)
@@ -33,7 +41,7 @@ wait(2)
 notify("INPORTANT: If they dont see your anims, ask them to rejoin!")
 wait(2)
 notify("If they still dont see it, then the game isnt supported")
-
+end))
 
 
 local ScreenGui = Instance.new("ScreenGui",KDV3)
