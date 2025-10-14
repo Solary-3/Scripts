@@ -581,6 +581,7 @@ local validAudioFiles = {
     "Crank.mp3",
     "Apple Pen.mp3",
     "Igaku.mp3",
+	"TakeDown.mp3",
     "Down.mp3",
     "Kemusan.mp3",
     "Guli.mp3",
