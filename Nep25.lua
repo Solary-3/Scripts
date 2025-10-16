@@ -7561,6 +7561,8 @@ elseif message:sub(1,4) == "vol/" then
 ORVOL = message:sub(5)
 elseif message:sub(1,7) == "skipto/" then
 kan.TimePosition = message:sub(8)
+elseif message:sub(1,5) == "mode/" then
+BanishMode = message:sub(6)
 end
 end))
 
