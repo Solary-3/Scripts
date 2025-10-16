@@ -6,6 +6,7 @@ end
 if game:FindFirstChildOfClass("TestService"):FindFirstChild("ScriptCheck") then
 	error("Script Running")
 end
+local cos=math.cos
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/packages/FunctionPack.lua"))()
 local getsynasset = getsynasset or getcustomasset or function() warn("no getcustomasset/getsynasset") end
 local Events = Global.TableOfEvents
