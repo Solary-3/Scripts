@@ -1022,8 +1022,8 @@ ned.TextColor3 = Color3.new(1,0,0)
 ned.TextStrokeColor3 = Color3.new(0,0,0)
 ned.TextScaled = true
 ned.TextStrokeTransparency = 0
-ned.Text = "▣ PIXELATION ▣"
-ned.TextSize = 24
+ned.Text = "▣ KDV3 ▣"
+ned.TextSize = 12
 ned.Rotation = 1
 ned.TextYAlignment = "Bottom"
 local Text3 = Instance.new("UIStroke",ned)
@@ -3498,10 +3498,7 @@ STATES=char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function(
 			stopanim()
 			fwait(1/500)
 			if idle == true and walking == false and char.Humanoid.MoveDirection == Vector3.new(0,0,0) and dancing == false and playanother==true then
-				local dance=LoadDance("Pixelation", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pixelation.lua")
-				     if dance then
-					playanim(dance,2.2,false)
-					end
+				playanim(0,1,false,idleanim )
 			end
 		elseif char.Humanoid.MoveDirection ~= Vector3.new(0,0,0) and dancing == false and walking == false then 
 			char.Humanoid.WalkSpeed = 14*char:GetScale()
