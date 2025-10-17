@@ -2,7 +2,7 @@ print("Test")
 
 
 
-getgenv().Reanimate=="Gelatek"
+getgenv().Reanimate="Gelatek"
 local function notify(text,dur)
 local Notify=game:GetService("StarterGui")
 Notify:SetCore("SendNotification",{
