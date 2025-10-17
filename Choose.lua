@@ -2,7 +2,7 @@ print("Test")
 
 
 
-
+getgenv().Reanimate=="Gelatek"
 local function notify(text,dur)
 local Notify=game:GetService("StarterGui")
 Notify:SetCore("SendNotification",{
@@ -96,14 +96,16 @@ Cgui = game:GetService("CoreGui")
 if Cgui:FindFirstChild("CHOOSE") then
     Cgui.CHOOSE:Destroy()
 end
+getgenv().Reanimate="Current"
 notify("Chosen Currentangle")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/CurrentangleVer.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Compile.lua"))()
 end)
 GELATEK.MouseButton1Click:Connect(function()
 Cgui = game:GetService("CoreGui")
 if Cgui:FindFirstChild("CHOOSE") then
     Cgui.CHOOSE:Destroy()
 end
+getgenv().Reanimate="Gelatek"
 notify("Chosen Gelatek")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/GelatekVersion.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kdv3Compile.lua"))()
 end)
