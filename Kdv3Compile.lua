@@ -1,4 +1,4 @@
-print("TWESYT")
+print("TWESYAAAAAAAAAAAAAT")
 if isfolder and not isfolder("KDV3") then 
 	makefolder("KDV3")
 end
@@ -927,7 +927,7 @@ local function AsyncPreloadDances()
         task.wait(delayBetweenBatches)
     end
 end
-coroutine.wrap(AsyncPreloadDances)()
+--coroutine.wrap(AsyncPreloadDances)()
 
 
 local RUNNING = false
@@ -1017,7 +1017,7 @@ imgl2b.Size = UDim2.new(0,500,0,500)
 imgl2b.Position = UDim2.new(0.75,50,0.55,50)
 local ned = Instance.new("TextLabel",fullscreenz)
 ned.ZIndex = 2
-ned.FontFace = Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic)
+ned.FontFace = Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic)
 ned.BackgroundTransparency = 1
 ned.BorderSizePixel = 0.65
 ned.Size = UDim2.new(0.4,0,0.2,0)
@@ -1027,7 +1027,7 @@ ned.TextStrokeColor3 = Color3.new(0,0,0)
 ned.TextScaled = true
 ned.TextStrokeTransparency = 0
 ned.Text = "▣ KDV3 ▣"
-ned.TextSize = 12
+ned.TextSize = 10
 ned.Rotation = 1
 ned.TextYAlignment = "Bottom"
 local Text3 = Instance.new("UIStroke",ned)
