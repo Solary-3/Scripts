@@ -1,4 +1,7 @@
 print("TWESYAAAAAAAAIZU00AAAAAT")
+
+
+
 if isfolder and not isfolder("KDV3") then 
 	makefolder("KDV3")
 end
