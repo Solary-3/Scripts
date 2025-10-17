@@ -2,6 +2,8 @@
 if isfolder and not isfolder("KDV3") then 
 	makefolder("KDV3")
 end
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
 local ReanimateVer=getgenv().Reanimate
 if not isfolder("KRYSTALDANCE") then
         makefolder("KRYSTALDANCE")
