@@ -4,7 +4,6 @@ if isfolder and not isfolder("KDV3") then
 end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
-local ReanimateVer=getgenv().Reanimate
 if not isfolder("KRYSTALDANCE") then
         makefolder("KRYSTALDANCE")
 end
@@ -466,6 +465,7 @@ settings["Names to exclude from transparency"] = {
 loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV4/refs/heads/main/v4.lua"))()
 REANIMATION=false 
 end
+ReanimateVer=getgenv().Reanimate
 REANIMATE.MouseButton1Click:Connect(function()
 if Place == 17574618959 or Place == 88308889239232 then
 if REANIMATION then return notify([[ALREADY REANIMATING]]) end
