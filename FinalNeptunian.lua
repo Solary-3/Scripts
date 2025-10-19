@@ -1,8 +1,8 @@
 warn[[Absolutely. Created by NoobyGames12]] 
 print[[Last Test!1]]
 print[[Hello! :3]]
-
-
+local ss=game.SoundService
+ss.AmbientReverb="Cave"
 local Global = (getgenv and getgenv()) or shared
 if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then
 	error("Not Reanimated")
@@ -7583,6 +7583,7 @@ while true do
 	if Global.Stopped == true then
 		basgui:Destroy()
 		kan:Destroy()
+		ss.AmbientReverb="NoReverb"
 		break
 	end
 swait()
