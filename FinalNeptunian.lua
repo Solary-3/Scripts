@@ -1,5 +1,5 @@
 warn[[Absolutely. Created by NoobyGames12]] 
-print[[Last Final Test!1]]
+print[[Dear god, when will this end on these bug fixes?]]
 print[[Hello! :3]]
 print[[Test! :3]]
 local ss=game.SoundService
@@ -5186,6 +5186,8 @@ kan.Pitch = 1.01
 kan.SoundId =MusicAsset("Triple.mp3")
 kan.Name = "nepnepnep"
 kan.Looped = true
+kan:Play()
+kan:Play()
 kan:Play()
 kan:Play()
 
