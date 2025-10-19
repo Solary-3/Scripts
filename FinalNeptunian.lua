@@ -1,5 +1,5 @@
 warn[[Absolutely. Created by NoobyGames12]] 
-print[[Last Test!]]
+print[[Last Test!1]]
 print[[Hello! :3]]
 
 
