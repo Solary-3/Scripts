@@ -5159,11 +5159,14 @@ br = BrickColor.random
 it = Instance.new
 cf = CFrame.new
 ceuler = CFrame.fromEulerAnglesXYZ
-
+if not isfolder("Music") then
+makefolder("Music")
+end
 function MusicAsset(filename)
     if isfile("Music/"..filename) then
         return getcustomasset("Music/"..filename)
     else
+      writefile("Music/"..filename, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..file.."?raw=true"))
         warn("File "..filename.." .mp3 isnt found")
         return ""
     end
