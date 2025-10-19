@@ -1,6 +1,6 @@
 warn[[Absolutely. Created by NoobyGames12]] 
 print[[HIIIIIIII]]
-print[[Vas3 :3]]
+print[[Vas3ss :3]]
 local Global = (getgenv and getgenv()) or shared
 if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then
 	error("Not Reanimated")
