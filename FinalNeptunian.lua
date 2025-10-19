@@ -5170,6 +5170,7 @@ function MusicAsset(filename)
         warn("File "..filename.." .mp3 isnt found")
         return ""
     end
+wait(1)
 end
 local BanishMode=68
 local muter = false
@@ -5185,6 +5186,10 @@ kan.SoundId =MusicAsset("Triple.mp3")
 kan.Name = "nepnepnep"
 kan.Looped = true
 kan:Play()
+kan:Play()
+
+
+
 
 --------------------------- GUI STUFF
 local basgui = it("GuiMain")
