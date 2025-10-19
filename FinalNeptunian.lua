@@ -1,6 +1,7 @@
 warn[[Absolutely. Created by NoobyGames12]] 
 print[[Last Final Test!1]]
 print[[Hello! :3]]
+print[[Test! :3]]
 local ss=game.SoundService
 ss.AmbientReverb="Cave"
 local Global = (getgenv and getgenv()) or shared
