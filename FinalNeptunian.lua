@@ -7816,8 +7816,8 @@ RH.C0=clerp(RH.C0,cf(0.500, -.25-.15*math.cos(sine/20), -0.250-.15*math.cos(sine
 LH.C0=clerp(LH.C0,cf(-0.500, -.15-.15*math.cos(sine/20), -.15-.15*math.cos(sine/20)) * angles(math.rad(35.000), math.rad(0.000), math.rad(-0.000)),.3)
 RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0.000, 0.000, -1.000+.25*math.cos(sine/20)) * angles(math.rad(30.500), math.rad(0.000), math.rad(0.000)),.3)
 Torso.Neck.C0=clerp(Torso.Neck.C0,necko*angles(math.rad(-30.000+math.random(-2,2)), math.rad(0.000+math.random(-2,2)), math.rad(-0.000+math.random(2,2))),.3)
-RW.C0=clerp(RW.C0,cf(1.55, 0.500+.25*math.cos(sine/20), 0.550) * angles(math.rad(-0.000), math.rad(-30.000), math.rad(90.000)),.3)
-LW.C0=clerp(LW.C0,cf(-1.500, -0.150-.25*math.cos(sine/20), -0.750) * angles(math.rad(40.000), math.rad(0.000), math.rad(-10.000)),.3)
+RW.C0=clerp(RW.C0,cf(1.55, 0.500+.15*math.cos(sine/20), 0.550) * angles(math.rad(-0.000), math.rad(-30.000), math.rad(90.000)),.3)
+LW.C0=clerp(LW.C0,cf(-1.500, -0.150-.15*math.cos(sine/20), -0.750) * angles(math.rad(40.000), math.rad(0.000), math.rad(-10.000)),.3)
 weaponweld.C1=clerp(weaponweld.C1,cf(0.5 + kan.PlaybackLoudness/350,0,-1.5)*angles(math.rad(0),math.rad(0),math.rad(190 *sine*.5+kan.PlaybackLoudness/550)),.3)
 end
 end
