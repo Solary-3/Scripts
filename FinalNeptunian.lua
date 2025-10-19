@@ -1,5 +1,5 @@
 warn[[Absolutely. Created by NoobyGames12]] 
-print[[Last Test 2]]
+print[[Last Test 3]]
 print[[Hello! :3]]
 
 
@@ -5166,7 +5166,7 @@ function MusicAsset(filename)
     if isfile("Music/"..filename) then
         return getcustomasset("Music/"..filename)
     else
-      writefile("Music/"..filename, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..file.."?raw=true"))
+      writefile("Music/"..filename, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..filename.."?raw=true"))
         warn("File "..filename.." .mp3 isnt found")
         return ""
     end
