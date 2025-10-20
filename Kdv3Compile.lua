@@ -1,4 +1,4 @@
-print("LAST UPDATE FOR THE BLACKLIST FUCKER")
+print("LAST UPDATE FOR THE BLACKLIST FUCKER!!!!!!!!")
 local Players = game:GetService("Players")
 local function notif(str,dur)
 	game:GetService("StarterGui"):SetCore("SendNotification", { 
