@@ -1,8 +1,5 @@
 print("Femboy :3 <3")
-
-
-
-
+print("Erm Aktwually")
 local Players = game:GetService("Players")
 local function notif(str,dur)
 	game:GetService("StarterGui"):SetCore("SendNotification", { 
