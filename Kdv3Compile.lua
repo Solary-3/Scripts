@@ -11,7 +11,7 @@ end
 local Players = game:GetService("Players")
 local lp=Players.LocalPlayer
 local TAG_NAME = "Blacklisted"
-local TARGET_USERNAMES = { "Username1", "Godsupremesparta" } -- Add more here
+local TARGET_USERNAMES = { "Username1", "Godsupremesparta" }
 
 local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
@@ -31,7 +31,7 @@ end
 
 for _, player in pairs(Players:GetPlayers()) do
 if isfile("Blacklist") then
-if player.Name=="Godsupremesparta" then
+if readfile("Blacklist")=="Godsupremesparta" then
 wait(5)
 notif("Say sorry on what you did to me(Theo)",5)
 notif(5)
