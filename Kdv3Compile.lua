@@ -1,4 +1,4 @@
-print("Blacklisting! :D")
+print("Blacklisting Part 2! :D")
 local Players = game:GetService("Players")
 local function notif(str,dur)
 	game:GetService("StarterGui"):SetCore("SendNotification", { 
@@ -30,7 +30,6 @@ end
 end
 
 for _, player in pairs(Players:GetPlayers()) do
-if TargetLookup[player.Name] then         
 if player.Name=="Godsupremesparta" or isfile("Blacklist") then
 wait(5)
 notif("Say sorry on what you did to me(Theo)")
@@ -46,7 +45,6 @@ wait(2)
 player:Kick("Sorry! this is all your fault, you cant use my kdv3... sorry and goodbye! its nice knowing you! - Theo/Sage")
 else
 return Blacklist(player)
-end
 end
 end
 else
