@@ -27,7 +27,7 @@ if ws:FindFirstChild("full") then
 ws.full:Destroy()
 end
 coroutine.resume(coroutine.create(function()
-notify("KDV3 Made by Nitro-GT")
+notify("KDV3 Made by Nitro-GT (Dont Support him)")
 wait(.95)
 notify("Fixed By MrY7zz")
 wait(.95)
