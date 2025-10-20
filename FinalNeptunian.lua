@@ -1,5 +1,5 @@
 warn[[Absolutely. Created by NoobyGames12]] 
-print[[Dear god, when will this end on these bug fixes?]]
+print[[Dear god, when will this end on these bug fixes for the last time??]]
 print[[Hello! :3]]
 print[[Test! :3]]
 local ss=game.SoundService
@@ -7596,7 +7596,11 @@ else
 kan.Volume = 0
 end
 kan.PlaybackSpeed = ORPIT
+if BanishMode == 5 then
+kan.Pitch = 0.95
+else
 kan.Pitch = ORPIT
+end
 kan.Looped = true
 kan.Parent = plr.PlayerGui
 kan:Resume()
