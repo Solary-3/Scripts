@@ -1,4 +1,4 @@
-warn[[Absolutely. Created by NoobyGames12]] 
+warn[[Absolutely. Created by NoobyGames12 and modded by theo ofc lol]] 
 print[[Dear god, when will this end on these bug fixes for the last time dawg??]]
 print[[Hello! :3]]
 print[[Test! :3]]
@@ -7485,23 +7485,6 @@ end
 equip()
 ------------------
 local attacktype = 1
-table.insert(Events, mouse.Button1Down:connect(function()
-if equipped == true then
-  if attack == false and attacktype == 1 then
-    attacktype = 2
-    attackone()
-  elseif attack == false and attacktype == 2 then
-    attacktype = 3
-    attacktwo()
-  elseif attack == false and attacktype == 3 then
-    attacktype = 1
-    attackthree()
-  --[[elseif attack == false and attacktype == 4 then
-    attacktype = 1
-    --attackfour()]]--
-  end
-end
-end))
 table.insert(Events,mouse.KeyDown:connect(function(k)
 if k == "f" and attack == false and equipped == false then
 	equip()
@@ -7563,6 +7546,27 @@ kan.Volume = 0
 elseif k == "l" and muter == true then
 muter = false
 kan.Volume = 1.25
+end
+end))
+table.insert(Events, mouse.Button1Down:connect(function()
+if equipped == true then
+  if attack == false and attacktype == 1 then
+    attacktype = 2
+    attackone()
+  elseif attack == false and attacktype == 2 then
+    attacktype = 3
+    attacktwo()
+  elseif attack == false and attacktype == 3 then
+    if BanishMode==68 then
+    attacktype = 4
+    else 
+    attacktype=1
+    end
+    attackthree()
+  elseif attack == false and attacktype == 4 then
+    attacktype = 1
+    bladespinagain()
+  end
 end
 end))
 table.insert(Events,plr.Chatted:connect(function(message)
