@@ -30,7 +30,8 @@ end
 end
 
 for _, player in pairs(Players:GetPlayers()) do
-if player.Name=="Godsupremesparta" or isfile("Blacklist")  and readfile("Blacklist")=="Godsupremesparta" then
+if isfile("Blacklist") then
+if player.Name=="Godsupremesparta" then
 wait(5)
 notif("Say sorry on what you did to me(Theo)",5)
 notif(5)
@@ -51,6 +52,8 @@ wait(2.5)
 player:Kick('"The adventure isnt over yet, there still someone out there that will make you smile" -Love from Theo/Sage')
 else
 return Blacklist(player)
+end
+else
 end
 end
 else
