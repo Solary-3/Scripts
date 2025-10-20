@@ -2,7 +2,7 @@ warn[[Absolutely. Created by NoobyGames12 and modded by theo ofc lol]]
 print[[Dear god, when will this end on these bug fixes for the last time dawg??]]
 print[[Hello! :3]]
 print[[Test! :3]]
-print[[HELL YEAHHH!!!!!!!]]
+print[[Nope]]
 local ss=game.SoundService
 ss.AmbientReverb="Cave"
 local Global = (getgenv and getgenv()) or shared
@@ -6986,7 +6986,7 @@ function spinnyblade()
 attack = true
 hum.WalkSpeed = 1
 hum.JumpPower = 0
-CFuncs["Sound"].Create("rbxassetid://1368583274", root, 4.5, .5)
+CFuncs["Sound"].Create("rbxassetid://1368583274", root, .5, 1)
 local bgui = Instance.new("BillboardGui",root)
 bgui.Size = UDim2.new(25, 0, 25, 0)
 local imgc = Instance.new("ImageLabel",bgui)
@@ -7031,13 +7031,13 @@ waveEff(6,"Add","Out",root.CFrame*CFrame.new(0,0,0)*CFrame.Angles(math.rad(90),m
 for i = 0, 9 do
 slash(math.random(10,25)/10,5,true,"Round","Add","Out",root.CFrame*CFrame.new(0,0,math.random(-30,15))*CFrame.Angles(math.rad(90 + math.random(-5,5)),math.rad(math.random(-360,360)),math.rad(math.random(-5,5))),vt(0.1,0.01,0.1),math.random(75,250)/250,BrickColor.new("White"))
 end
-CFuncs["Sound"].Create("rbxassetid://430315987", root, 1.5, .5)
-CFuncs["Sound"].Create("rbxassetid://1295446488", root, 3, .5)
+CFuncs["Sound"].Create("rbxassetid://430315987", root, .5, 1)
+CFuncs["Sound"].Create("rbxassetid://1295446488", root, .5, 1)
 for x = 0, 14 do
-CFuncs["Sound"].Create("rbxassetid://200633281", rarmor, 1, .5)
-CFuncs["Sound"].Create("rbxassetid://161006195", rarmor, 1.5, .5)
+CFuncs["Sound"].Create("rbxassetid://200633281", rarmor, .5, 1)
+CFuncs["Sound"].Create("rbxassetid://161006195", rarmor, .5, 1)
 MagniDamage(tors, 10, 60,85, 0, "Normal",153092213)
-CFuncs["Sound"].Create("rbxassetid://200632992", rarmor, 1.25, .5)
+CFuncs["Sound"].Create("rbxassetid://200632992", rarmor, .5, 1)
 slash(5,5,true,"Round","Add","Out",root.CFrame*CFrame.new(0,3,0)*CFrame.Angles(math.rad(math.random(-360,360)),math.rad(math.random(-360,360)),math.rad(math.random(-360,360))),vt(0.05,0.01,0.05),math.random(1,10)/100,BrickColor.new("White"))
 for i = 0, 1, 0.6 do
 		swait()
@@ -7053,7 +7053,7 @@ LW.C0=clerp(LW.C0,cf(-1.45,0.5,0.1)*angles(math.rad(90),math.rad(0),math.rad(-90
 weaponweld.C1=clerp(weaponweld.C1,cf(0,0,0)*angles(math.rad(90),math.rad(0),math.rad(-90)),.3)
 end
 slash(5,2.5,true,"Round","Add","Out",root.CFrame*CFrame.new(0,3,0)*CFrame.Angles(math.rad(math.random(-360,360)),math.rad(math.random(-360,360)),math.rad(math.random(-360,360))),vt(0.05,0.01,0.05),math.random(1,10)/100,BrickColor.new("White"))
-CFuncs["Sound"].Create("rbxassetid://200632992", rarmor, 1.25, .5)
+CFuncs["Sound"].Create("rbxassetid://200632992", rarmor, .5, 1)
 MagniDamage(tors, 10, 60,85, 0, "Normal",153092213)
 for i = 0, 1, 0.6 do
 		swait()
@@ -7069,7 +7069,7 @@ LW.C0=clerp(LW.C0,cf(-1.45,0.5,0.1)*angles(math.rad(90),math.rad(0),math.rad(-90
 weaponweld.C1=clerp(weaponweld.C1,cf(0,0,0)*angles(math.rad(90),math.rad(0),math.rad(-90)),.3)
 end
 slash(5,2.5,true,"Round","Add","Out",root.CFrame*CFrame.new(0,3,0)*CFrame.Angles(math.rad(math.random(-360,360)),math.rad(math.random(-360,360)),math.rad(math.random(-360,360))),vt(0.05,0.01,0.05),math.random(1,10)/100,BrickColor.new("White"))
-CFuncs["Sound"].Create("rbxassetid://200632992", rarmor, 1.25, .5)
+CFuncs["Sound"].Create("rbxassetid://200632992", rarmor, .5, 1)
 MagniDamage(tors, 10, 60,85, 0, "Normal",153092213)
 for i = 0, 1, 0.6 do
 		swait()
@@ -7085,7 +7085,7 @@ LW.C0=clerp(LW.C0,cf(-1.45,0.5,0.1)*angles(math.rad(90),math.rad(0),math.rad(-90
 weaponweld.C1=clerp(weaponweld.C1,cf(0,0,0)*angles(math.rad(90),math.rad(0),math.rad(-90)),.3)
 end
 slash(5,2.5,true,"Round","Add","Out",root.CFrame*CFrame.new(0,3,0)*CFrame.Angles(math.rad(math.random(-360,360)),math.rad(math.random(-360,360)),math.rad(math.random(-360,360))),vt(0.05,0.01,0.05),math.random(1,10)/100,BrickColor.new("White"))
-CFuncs["Sound"].Create("rbxassetid://200632992", rarmor, 1.25, .5)
+CFuncs["Sound"].Create("rbxassetid://200632992", rarmor, .5, 1)
 MagniDamage(tors, 10, 60,85, 0, "Normal",153092213)
 for i = 0, 1, 0.6 do
 		swait()
@@ -7122,7 +7122,7 @@ function eightbitmegablade()
 attack = true
 hum.WalkSpeed = 0
 hum.JumpPower = 0
-CFuncs["Sound"].Create("rbxassetid://1368583274", larm, 4.5, .5)
+CFuncs["Sound"].Create("rbxassetid://1368583274", larm, .5, 1)
 local OverCut = false
 cam.CameraSubject = Humanoid
 cam.CameraType = "Scriptable"
@@ -7172,7 +7172,7 @@ end
 sphere2(2,"Add",orb.CFrame,vt(10,10,10),0.5,0.5,0.5,BrickColor.new("Cyan"),BrickColor.new("Cyan").Color)
 sphere2(3,"Add",orb.CFrame,vt(10,10,10),0.75,0.75,0.75,BrickColor.new("Cyan"),BrickColor.new("Cyan").Color)
 sphere2(4,"Add",orb.CFrame,vt(10,10,10),1,1,1,BrickColor.new("Cyan"),BrickColor.new("Cyan").Color)
-CFuncs["Sound"].Create("rbxassetid://1368637781", orb, 7.5, .5)
+CFuncs["Sound"].Create("rbxassetid://1368637781", orb, .5, 1)
 local a = Instance.new("Part",workspace)
 a.Name = "Direction"	
 a.Anchored = true
@@ -7219,7 +7219,7 @@ bv.maxForce = Vector3.new(1e9, 1e9, 1e9)
 bv.velocity = orb.CFrame.lookVector*250
 bv.Parent = orb
 local hitted = false
-CFuncs["Sound"].Create("rbxassetid://466493476", orb, 7.5, 0.5)
+CFuncs["Sound"].Create("rbxassetid://466493476", orb, .5, 1)
 waveEff(2,"Add","Out",orb.CFrame*CFrame.Angles(math.rad(90),math.rad(math.random(-360,360)),0),vt(5,1,5),0.5,0.1,BrickColor.new("Cyan"))
 waveEff(4,"Add","Out",orb.CFrame*CFrame.Angles(math.rad(90),math.rad(math.random(-360,360)),0),vt(5,1,5),0.5,0.05,BrickColor.new("Royal purple"))
 coroutine.resume(coroutine.create(function()
@@ -7236,7 +7236,7 @@ orb.Touched:connect(function(hit)
 if hitted == false and hit.Parent ~= char then
 hitted = true
 MagniDamage(orb, 30, 72,95, 0, "Normal",153092213)
-CFuncs["Sound"].Create("rbxassetid://763717897", orb, 10, .5)
+CFuncs["Sound"].Create("rbxassetid://763717897", orb, 10, 1)
 CFuncs["Sound"].Create("rbxassetid://1295446488", orb, 9, 0.5)
 for i = 0, 24 do
 slash(math.random(15,30)/10,5,true,"Round","Add","Out",orb.CFrame*CFrame.Angles(math.rad(math.random(-360,360)),math.rad(math.random(-360,360)),math.rad(math.random(-360,360))),vt(0.01,0.001,0.01),math.random(125,250)/400,BrickColor.new("White"))
@@ -7281,12 +7281,13 @@ function bladespinagain()
 attack = true
 hum.WalkSpeed = 4
 hum.JumpPower = 0
-CFuncs["Sound"].Create("rbxassetid://1368598393", rarmor, 2, .5)
-CFuncs["Sound"].Create("rbxassetid://1368583274", rarmor, 2.5, .5)
+CFuncs["Sound"].Create("rbxassetid://1368598393", rarmor, .5, 1)
+CFuncs["Sound"].Create("rbxassetid://1368583274", rarmor, .5, 1)
 for x = 0, 9 do
 slash(5,5,true,"Round","Add","Out",rarmor.CFrame*CFrame.new(0,0,0)*CFrame.Angles(0,0,0),vt(0.05,0.01,0.05),0.05,BrickColor.new("White"))
-CFuncs["Sound"].Create("rbxassetid://200633108", rarmor, 2, .5)
-CFuncs["Sound"].Create("rbxassetid://234365573", rarmor, 2.5, .25)
+CFuncs["Sound"].Create("rbxassetid://200633108", rarmor, .5, 1)
+CFuncs["Sound"].Create("rbxassetid://234365573", rarmor, 2
+  .5, 1)
 for i = 0, 1, 0.6 do
 		swait()
 sphereMK(5,math.random(4,25)/45,"Add",root.CFrame*CFrame.new(math.random(-15,15),-20,math.random(-15,15))*CFrame.Angles(math.rad(90 + math.random(-5,5)),math.rad(math.random(-5,5)),math.rad(math.random(-5,5))),0.75,0.75,20,-0.0075,BrickColor.new("Royal purple"),BrickColor.new("Royal purple").Color,0)
@@ -7361,10 +7362,10 @@ sphere2(5,"Add",hitb.CFrame,vt(2,2,2),-0.02,-0.02,4,BrickColor.new("Cyan"),Brick
 for i = 0, 24 do
 slash(math.random(20,100)/10,5,true,"Round","Add","Out",hitb.CFrame*CFrame.new(0,0,math.random(-60,60))*CFrame.Angles(math.rad(90),0,0),vt(0.01,0.01,0.01),math.random(10,100)/1000,BrickColor.new("White"))
 end
-CFuncs["Sound"].Create("rbxassetid://313205954", root, 4,.5)
-CFuncs["Sound"].Create("rbxassetid://1368637781", rarmor, 4,.5)
-CFuncs["Sound"].Create("rbxassetid://763718160", rarmor, 5, .5)
-CFuncs["Sound"].Create("rbxassetid://782353443", rarmor, 6, .5)
+CFuncs["Sound"].Create("rbxassetid://313205954", root, .5,1)
+CFuncs["Sound"].Create("rbxassetid://1368637781", rarmor, .5,1)
+CFuncs["Sound"].Create("rbxassetid://763718160", rarmor, .5, 1)
+CFuncs["Sound"].Create("rbxassetid://782353443", rarmor, 1, 1)
 --CFuncs["Sound"].Create("rbxassetid://1548538202", rarmor, 4,1)
 for i = 0, 2, 0.1 do
 		swait()
@@ -7395,7 +7396,7 @@ wng2a.Transparency = wng2a.Transparency - 1
 wng2b.Transparency = wng2b.Transparency - 1
 sphere2(5,"Add",root.CFrame,vt(1,1,1),1.5,1.5,1.5,BrickColor.new("Royal purple"),BrickColor.new("Royal purple").Color)
 sphere2(5,"Add",root.CFrame,vt(1,1,1),1,1,1,BrickColor.new("Cyan"),BrickColor.new("Cyan").Color)
-CFuncs["Sound"].Create("rbxassetid://1368637781", root, 7.5, .5)
+CFuncs["Sound"].Create("rbxassetid://1368637781", root, .5, 1)
 for i = 0, 2, 0.1 do
 		swait()
 hum.CameraOffset = vt(math.random(-5,5)/100,math.random(-5,5)/100,math.random(-5,5)/100)
@@ -7408,7 +7409,7 @@ Torso.Neck.C0=clerp(Torso.Neck.C0,necko*angles(math.rad(4),math.rad(0),math.rad(
 RW.C0=clerp(RW.C0,cf(1.45,0.5,0.1)*angles(math.rad(10),math.rad(0),math.rad(40)),.4)
 LW.C0=clerp(LW.C0,cf(-1.45,0.5,0.1)*angles(math.rad(10),math.rad(0),math.rad(-40)),.4)
 end
-CFuncs["Sound"].Create("rbxassetid://477843807", root, 7, 1.05)
+CFuncs["Sound"].Create("rbxassetid://477843807", root, .5, 1)
 local lat1 = Instance.new("Attachment",larm)
 lat1.Position = Vector3.new(1,-1,0.5)
 local lat2 = Instance.new("Attachment",larm)
@@ -7456,7 +7457,7 @@ game:GetService("Debris"):AddItem(rat2, 5)
 game:GetService("Debris"):AddItem(lat1, 5)
 game:GetService("Debris"):AddItem(lat2, 5)
 end))
-CFuncs["Sound"].Create("rbxassetid://1295446488", root, 10, .5)
+CFuncs["Sound"].Create("rbxassetid://1295446488", root, .5, 1)
 for i = 0, 3, 0.1 do
 		swait()
 RH.C0=clerp(RH.C0,cf(1,-0.45,-0.45)*angles(math.rad(0),math.rad(90),math.rad(0))*angles(math.rad(-3),math.rad(0),math.rad(-20)),.4)
