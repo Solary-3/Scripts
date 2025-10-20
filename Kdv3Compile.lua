@@ -1,4 +1,57 @@
-print("TWESYAAAAAAAAIZU00AAAAAT")
+print("Blacklisting! :D")
+local Players = game:GetService("Players")
+local function notif(str,dur)
+	game:GetService("StarterGui"):SetCore("SendNotification", { 
+    Title = "Service";
+    Text = str;})
+Duration = dur or 3;
+end
+
+
+local Players = game:GetService("Players")
+local lp=Players.LocalPlayer
+local TAG_NAME = "Blacklisted"
+local TARGET_USERNAMES = { "Username1", "Godsupremesparta" } -- Add more here
+
+local TargetLookup = {}
+for _, name in pairs(TARGET_USERNAMES) do
+	TargetLookup[name] = true
+if lp.Name==name then
+if not isfile("Blacklist") then 
+writefile("Blacklist","Blacklisted")
+end
+end
+end
+if isfile("Blacklist")  then
+local function Blacklist(player)
+if player.Character then
+notif("You Are Blacklisted by the owner! sorry! :( ")
+end
+end
+
+for _, player in pairs(Players:GetPlayers()) do
+if TargetLookup[player.Name] then         
+if player.Name=="Godsupremesparta" or isfile("Blacklist") then
+wait(5)
+notif("Say sorry on what you did to me(Theo)")
+notif(5)
+notif("if you feel sorry or not, i wont let you use my kdv3")
+wait(5)
+notif("I know it hurts losing me, but this is your fault, not mine")
+wait(5)
+notif("Hopefully youll feel the  pain that im having right now")
+wait(5)
+notif("So yeah... see you around!")
+wait(2)
+player:Kick("Sorry! this is all your fault, you cant use my kdv3... sorry and goodbye! its nice knowing you! - Theo/Sage")
+else
+return Blacklist(player)
+end
+end
+end
+else
+notif("Not Banned! :)")
+end 
 
 if isfolder and not isfolder("KDV3") then 
 	makefolder("KDV3")
