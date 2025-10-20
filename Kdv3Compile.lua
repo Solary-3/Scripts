@@ -10,7 +10,6 @@ end
 
 local Players = game:GetService("Players")
 local lp=Players.LocalPlayer
-local TAG_NAME = "Blacklisted"
 local TARGET_USERNAMES = { "Username1", "Godsupremesparta" }
 
 local TargetLookup = {}
