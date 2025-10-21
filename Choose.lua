@@ -1,4 +1,4 @@
-print("Test")
+print("Fish")
 
 
 
@@ -16,6 +16,7 @@ if Cgui:FindFirstChild("CHOOSE") then
 end
 local ScreenGui = Instance.new("ScreenGui",Cgui)
 ScreenGui.Name ="CHOOSE"
+coroutine.resume(coroutine.create(function()
 notify("If your turn invisible on Gelatek Reanimate...")
 wait(1)
 notify("Choose Currentangle!")
@@ -25,6 +26,7 @@ wait(1)
 notify("Choose Currentangle because it supports some games")
 wait(1)
 notify("Gelatek is useless outside Green baseplate and Just a baseplate")
+end))
 local ui = Instance.new("Frame",ScreenGui)
 local title = Instance.new("TextLabel")
 local Frame = Instance.new("Frame")
