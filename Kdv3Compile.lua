@@ -1,4 +1,4 @@
-print("Fish!")
+print("Fractal!")
 print("Erm Aktwually")
 local Players = game:GetService("Players")
 local function notif(str,dur)
@@ -7,8 +7,6 @@ local function notif(str,dur)
     Text = str;})
 Duration = dur or 3;
 end
-
-
 local Players = game:GetService("Players")
 local lp=Players.LocalPlayer
 local TARGET_USERNAMES = { "Username1", "Godsupremesparta" }
@@ -99,10 +97,15 @@ notify('pls click "click me" first for updates!!!', 10)
 wait(.75)
 notify('or reanimate directly', 10)
 wait(2)
-notify('Dont Use Mizus script, literally skidded off from mine', 10)
+notify('Dont Use Mizus script, literally skidded off from mine', 2)
 wait(2)
 end))
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/packages/FunctionPack.lua"))()
+local touch=game.UserInputService
+if touch.TouchEnabled==true then
+notify("Mobile user detected."4)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/main/MobileKeyboard.txt'))()
+end
 local Global = (getgenv and getgenv()) or shared
 local function choot(msg)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(msg)
