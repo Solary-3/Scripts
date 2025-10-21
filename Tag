@@ -1,4 +1,4 @@
-print("Tag Test")
+print("Sayfalse")
 
 
 
@@ -53,7 +53,6 @@ end
 local function OtherTag(player,Text)
 	if player.Character and player.Character:FindFirstChild("Head") then
 		if player.Character.Head:FindFirstChild(TAG_NAME) then return end
-
 		local billboard = Instance.new("BillboardGui")
 		billboard.Name = TAG_NAME
 		billboard.Size = UDim2.new(3, 0, 2, 0)
@@ -90,9 +89,9 @@ end
 task.spawn(function()
     while true do
         for _, player in pairs(Players:GetPlayers()) do
-            if player.Name=="Theo_TheoBenzo" then
+            if TargetLookup[player.Name]=="Theo_TheoBenzo" then
                 createTag("Theo_TheoBenzo")
-            elseif player.Name=="NewplayerNewGuy8" then
+            elseif TargetLookup[player.Name]=="NewplayerNewGuy8" then
                 OtherTag("NewplayerNewGuy8","Supporter / Cool Guy")
             end
         end
