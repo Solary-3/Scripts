@@ -4,7 +4,7 @@ print("Sayfalse")
 
 
 
-
+local ws=game.Workspace
 local imageId = "rbxassetid://89287417287641"
 local Players = game:GetService("Players")
 local TAG_NAME = "ScriptOwnerTag"
@@ -17,23 +17,23 @@ for _, name in pairs(TARGET_USERNAMES) do
 end
 while wait(.005) do
 local function createTag(player)
-	if player.Character and player.Character:FindFirstChild("Head") then
-		if player.Character.Head:FindFirstChild(TAG_NAME) then return end
+	if ws:FindFirstChild(player) and ws:FindFirstChild(player):FindFirstChild("Head") then
+		if ws:FindFirstChild(player).Head:FindFirstChild(TAG_NAME) then return end
 
 		local billboard = Instance.new("BillboardGui")
 		billboard.Name = TAG_NAME
 		billboard.Size = UDim2.new(3, 0, 2, 0)
 		billboard.StudsOffset = Vector3.new(-0.6, 0, 0)
-		billboard.Adornee = player.Character.Head
+		billboard.Adornee = ws:FindFirstChild(player):WaitForChild("Head")
 		billboard.AlwaysOnTop = true
-		billboard.Parent = player.Character.Head
+		billboard.Parent = ws:FindFirstChild(player):WaitForChild("Head")
         local billboard1 = Instance.new("BillboardGui")
 		billboard1.Name = TAG_NAME
 		billboard1.Size = UDim2.new(0, 100, 0, 40)
 		billboard1.StudsOffset = Vector3.new(0, 2.5, 0)
-		billboard1.Adornee = player.Character.Head
+		billboard1.Adornee = ws:FindFirstChild(player):WaitForChild("Head")
 		billboard1.AlwaysOnTop = true
-		billboard1.Parent = player.Character.Head
+		billboard1.Parent = ws:FindFirstChild(player):WaitForChild("Head")
 		local label = Instance.new("TextLabel")
 		label.Size = UDim2.new(1, 0, 1, 0)
 		label.BackgroundTransparency = 1
@@ -53,22 +53,22 @@ local function createTag(player)
 	end
 end
 local function OtherTag(player,Text)
-	if player.Character and player.Character:FindFirstChild("Head") then
-		if player.Character.Head:FindFirstChild(TAG_NAME) then return end
+if ws:FindFirstChild(player) and ws:FindFirstChild(player):FindFirstChild("Head") then
+		if ws:FindFirstChild(player).Head:FindFirstChild(TAG_NAME) then return end
 		local billboard = Instance.new("BillboardGui")
 		billboard.Name = TAG_NAME
 		billboard.Size = UDim2.new(3, 0, 2, 0)
 		billboard.StudsOffset = Vector3.new(-0.6, 0, 0)
-		billboard.Adornee = player.Character.Head
+		billboard.Adornee = ws:FindFirstChild(player):WaitForChild("Head")
 		billboard.AlwaysOnTop = true
-		billboard.Parent = player.Character.Head
+		billboard.Parent = ws:FindFirstChild(player):WaitForChild("Head")
         local billboard1 = Instance.new("BillboardGui")
 		billboard1.Name = TAG_NAME
 		billboard1.Size = UDim2.new(0, 100, 0, 40)
 		billboard1.StudsOffset = Vector3.new(0, 2.5, 0)
-		billboard1.Adornee = player.Character.Head
+		billboard1.Adornee = ws:FindFirstChild(player):WaitForChild("Head")
 		billboard1.AlwaysOnTop = true
-		billboard1.Parent = player.Character.Head
+		billboard1.Parent = ws:FindFirstChild(player):WaitForChild("Head")
 		local label = Instance.new("TextLabel")
 		label.Size = UDim2.new(1, 0, 1, 0)
 		label.BackgroundTransparency = 1
