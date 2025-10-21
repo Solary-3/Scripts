@@ -1,4 +1,4 @@
-print("Fosh Iupdote")
+print("Quote fish")
 
 
 
@@ -10,7 +10,7 @@ local ws=game.Workspace
 local imageId = "rbxassetid://89287417287641"
 local Players = game:GetService("Players")
 local TAG_NAME = "ScriptOwnerTag"
-local TARGET_USERNAMES = { "Username10000","Theo_TheoBenzo", "NewplayerNewGuy8", "VI_lato"} -- Add more here
+local TARGET_USERNAMES = { "Username10000","Theo_TheoBenzo", "NewplayerNewGuy8", "VI_lato","russki_krutoi"} -- Add more here
 local CHECK_INTERVAL = 2
 
 local TargetLookup = {}
@@ -99,6 +99,8 @@ task.spawn(function()
                 OtherTag("NewplayerNewGuy8","Supporter / Cool Guy",Color3.new(0, 0, 1))
             elseif player.Name=="VI_lato" then
                 OtherTag("VI_lato","Theos Pookie",Color3.new(1, 0, 1))
+            elseif player.Name=="russki_krutoi" then
+                OtherTag("russki_krutoi","Supporter / Anim Finder",Color3.new(1, 0, 0))
             end
         end
         task.wait(CHECK_INTERVAL)
