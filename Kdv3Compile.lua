@@ -103,7 +103,7 @@ end))
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/packages/FunctionPack.lua"))()
 local touch=game.UserInputService
 if touch.TouchEnabled==true then
-notify("Mobile user detected."4)
+notify("Mobile user detected.",4)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/main/MobileKeyboard.txt'))()
 end
 local Global = (getgenv and getgenv()) or shared
