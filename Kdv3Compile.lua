@@ -1,4 +1,4 @@
-print("Fractal!")
+print("Hey!")
 print("Erm Aktwually")
 local Players = game:GetService("Players")
 local function notif(str,dur)
@@ -57,7 +57,6 @@ end
 else
 notif("Not Banned! :)")
 end 
-
 if isfolder and not isfolder("KDV3") then 
 	makefolder("KDV3")
 end
