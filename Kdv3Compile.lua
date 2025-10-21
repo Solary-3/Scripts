@@ -1,5 +1,5 @@
 print("Fih!")
-print("Erm 0")
+print("o 0")
 local Players = game:GetService("Players")
 local function notif(str,dur)
 	game:GetService("StarterGui"):SetCore("SendNotification", { 
