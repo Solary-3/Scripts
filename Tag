@@ -92,7 +92,7 @@ end
 task.spawn(function()
     while true do
         for _, player in pairs(Players:GetPlayers()) do
-            if TargetLookup[player.Name] then
+            if player.Name=="Theo_TheoBenzo" then
                 createTag(player)
             elseif player.Name=="NewplayerNewGuy8" then
                 OtherTag("NewplayerNewGuy8")
