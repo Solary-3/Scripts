@@ -3684,9 +3684,9 @@ repeat
 	char.Humanoid:Move(Vector3.new(0,0,-1),true)
 	task.wait(1/60)
 	nim=nim+1
-until nim==10
-wait(2)-- Add a small delay to make the head get animated, instead of being static
-print("AAAAAAA HELP THIS IS A TEXT")																															
+until nim==5
+wait(.5)-- Add a small delay to make the head get animated, instead of being static
+print("AAAAAAA HELP THIS IS A TEXT")
 UPDATE=RunService.RenderStepped:Connect(function(deltaTime: number)
 sine = sine + change
 	local function Alpha(n)
