@@ -52,7 +52,7 @@ local function createTag(player)
 		
 	end
 end
-local function OtherTag(player)
+local function OtherTag(player,Text)
 	if player.Character and player.Character:FindFirstChild("Head") then
 		if player.Character.Head:FindFirstChild(TAG_NAME) then return end
 
@@ -73,7 +73,7 @@ local function OtherTag(player)
 		local label = Instance.new("TextLabel")
 		label.Size = UDim2.new(1, 0, 1, 0)
 		label.BackgroundTransparency = 1
-		label.Text = "Supporter / Cool Guy"
+		label.Text = Text
 		label.TextColor3 = Color3.new(1, 1, 0)
 		label.TextStrokeTransparency = 0
 		label.TextScaled = true
@@ -93,9 +93,9 @@ task.spawn(function()
     while true do
         for _, player in pairs(Players:GetPlayers()) do
             if player.Name=="Theo_TheoBenzo" then
-                createTag(player)
+                createTag("Theo_TheoBenzo")
             elseif player.Name=="NewplayerNewGuy8" then
-                OtherTag("NewplayerNewGuy8")
+                OtherTag("NewplayerNewGuy8","Supporter / Cool Guy")
             end
         end
         task.wait(CHECK_INTERVAL)
