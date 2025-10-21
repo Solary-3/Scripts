@@ -1,4 +1,4 @@
-print("Hello!")
+print("Fish!")
 print("Erm Aktwually")
 local Players = game:GetService("Players")
 local function notif(str,dur)
@@ -3650,6 +3650,7 @@ mbigfedora = Instance.new("SpecialMesh", bigfedora)
 mbigfedora.MeshType = "FileMesh"
 mbigfedora.Scale = Vector3.new(5, 5, 5)
 mbigfedora.MeshId,mbigfedora.TextureId = 'http://www.roblox.com/asset/?id=1125478','http://www.roblox.com/asset/?id=1125479'
+coroutine.resume(coroutine.create(function()
 for i = 1, 60 do
 	bigfedora.CFrame = bigfedora.CFrame:lerp(CFrame.new(Root.Position) * CFrame.new(0,-.1,0) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),.09)
 	task.wait(1/60)
@@ -3667,6 +3668,7 @@ for i = 1, 29 do
 	task.wait(1/60)
 end
 bigfedora:Remove()
+end))
 local nim= 0
 char.Humanoid.Died:Connect(function()
 	sound69.PlaybackSpeed = 0
