@@ -1,12 +1,6 @@
 print("Tag Test")
-
-
-
-
-
 local imageId = "rbxassetid://89287417287641"
 local Players = game:GetService("Players")
-
 local TAG_NAME = "ScriptOwnerTag"
 local TARGET_USERNAMES = { "Username10000","Theo_TheoBenzo", "NewplayerNewGuy8"} -- Add more here
 local CHECK_INTERVAL = 2
