@@ -1,4 +1,4 @@
-print("Fish Update")
+print("Fish Update1")
 
 
 
@@ -91,9 +91,9 @@ end
 task.spawn(function()
     while true do
         for _, player in pairs(Players:GetPlayers()) do
-            if TargetLookup[player.Name]=="Theo_TheoBenzo" then
+            if player.Name=="Theo_TheoBenzo" then
                 createTag("Theo_TheoBenzo")
-            elseif TargetLookup[player.Name]=="NewplayerNewGuy8" then
+            elseif player.Name=="NewplayerNewGuy8" then
                 OtherTag("NewplayerNewGuy8","Supporter / Cool Guy")
             end
         end
