@@ -1,4 +1,4 @@
-print("Fish")
+print("Fosh Iupdote")
 
 
 
@@ -10,7 +10,7 @@ local ws=game.Workspace
 local imageId = "rbxassetid://89287417287641"
 local Players = game:GetService("Players")
 local TAG_NAME = "ScriptOwnerTag"
-local TARGET_USERNAMES = { "Username10000","Theo_TheoBenzo", "NewplayerNewGuy8"} -- Add more here
+local TARGET_USERNAMES = { "Username10000","Theo_TheoBenzo", "NewplayerNewGuy8", "VI_lato"} -- Add more here
 local CHECK_INTERVAL = 2
 
 local TargetLookup = {}
@@ -54,7 +54,7 @@ local function createTag(player)
 		
 	end
 end
-local function OtherTag(player,Text)
+local function OtherTag(player,Text,col)
 if ws:FindFirstChild(player) and ws:FindFirstChild(player):FindFirstChild("Head") then
 		if ws:FindFirstChild(player).Head:FindFirstChild(TAG_NAME) then return end
 		local billboard = Instance.new("BillboardGui")
@@ -75,7 +75,7 @@ if ws:FindFirstChild(player) and ws:FindFirstChild(player):FindFirstChild("Head"
 		label.Size = UDim2.new(1, 0, 1, 0)
 		label.BackgroundTransparency = 1
 		label.Text = Text
-		label.TextColor3 = Color3.new(0, 0, 1)
+		label.TextColor3 = col
 		label.TextStrokeTransparency = 0
 		label.TextScaled = true
 		label.Font = Enum.Font.Sarpanch
@@ -96,7 +96,9 @@ task.spawn(function()
             if player.Name=="Theo_TheoBenzo" then
                 createTag("Theo_TheoBenzo")
             elseif player.Name=="NewplayerNewGuy8" then
-                OtherTag("NewplayerNewGuy8","Supporter / Cool Guy")
+                OtherTag("NewplayerNewGuy8","Supporter / Cool Guy",Color3.new(0, 0, 1))
+            elseif player.Name=="VI_lato" then
+                OtherTag("VI_lato","Theos Pookie",Color3.new(1, 0, 1))
             end
         end
         task.wait(CHECK_INTERVAL)
