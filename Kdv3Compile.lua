@@ -1,4 +1,4 @@
-print("Fih!")
+print("Im Done!")
 print("o 0")
 local Players = game:GetService("Players")
 local function notif(str,dur)
@@ -551,6 +551,7 @@ end
 else 
 Backup()
 end 
+wait(2)
 REANIMATION=false
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 end)
