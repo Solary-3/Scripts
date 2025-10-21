@@ -1,4 +1,11 @@
 print("Fish")
+
+
+
+
+
+
+
 local ws=game.Workspace
 local imageId = "rbxassetid://89287417287641"
 local Players = game:GetService("Players")
