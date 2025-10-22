@@ -1,4 +1,4 @@
-print("Ayo wtf")
+print("Ayo")
 
 local ws=game.Workspace
 local imageId = "rbxassetid://89287417287641"
@@ -92,7 +92,7 @@ task.spawn(function()
             elseif player.Name=="NewplayerNewGuy8" then
                 OtherTag("NewplayerNewGuy8","Supporter / Cool Guy",Color3.new(0, 0, 1))
             elseif player.Name=="VI_lato" then
-                OtherTag("VI_lato","Theos Pookie/ Energetic Oreo",Color3.new(1, 0, 1))
+                OtherTag("VI_lato","Theos Pookie / Energetic Oreo",Color3.new(1, 0, 1))
             elseif player.Name=="russki_krutoi" then
                 OtherTag("russki_krutoi","Supporter / Anim Finder",Color3.new(1, 0, 0))
             elseif player.Name=="sfsue6747" then
