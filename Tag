@@ -1,4 +1,4 @@
-print("Interlinked memories Part 1")
+print("Ayo wtf")
 
 local ws=game.Workspace
 local imageId = "rbxassetid://89287417287641"
