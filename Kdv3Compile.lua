@@ -61,9 +61,7 @@ if isfolder and not isfolder("KDV3") then
 	makefolder("KDV3")
 end
 coroutine.resume(coroutine.create(function()
-while wait(.005) do
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
-end
 end))
 if not isfolder("KRYSTALDANCE") then
         makefolder("KRYSTALDANCE")
