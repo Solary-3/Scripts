@@ -1,4 +1,4 @@
-print("Im Done!")
+print("Toes who!")
 print("o 0")
 local Players = game:GetService("Players")
 local function notif(str,dur)
@@ -9,7 +9,7 @@ Duration = dur or 3;
 end
 local Players = game:GetService("Players")
 local lp=Players.LocalPlayer
-local TARGET_USERNAMES = { "Username1", "Godsupremesparta" }
+local TARGET_USERNAMES = { "Username1", "None"}
 
 local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
