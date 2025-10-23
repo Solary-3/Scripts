@@ -1,5 +1,5 @@
 print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
-print("0")
+print("Welcome")
 local Occasions="Halloween"
 local Players = game:GetService("Players")
 local function notif(str,dur)
