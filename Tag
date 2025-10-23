@@ -1,4 +1,4 @@
-print("w")
+print("fake")
 
 local ws=game.Workspace
 local imageId = "rbxassetid://89287417287641"
@@ -11,7 +11,6 @@ local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
     TargetLookup[name] = true
 end
-while wait(.005) do
 local function createTag(player)
 	if ws:FindFirstChild(player) and ws:FindFirstChild(player):FindFirstChild("Head") then
 		if ws:FindFirstChild(player).Head:FindFirstChild(TAG_NAME) then return end
@@ -111,5 +110,3 @@ Players.PlayerAdded:Connect(function(player)
         end)
     end
 end)
-
-end
