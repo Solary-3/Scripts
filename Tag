@@ -96,7 +96,7 @@ task.spawn(function()
             elseif player.Name=="russki_krutoi" then
                 OtherTag("russki_krutoi","Supporter / Anim Finder",Color3.new(1, 0, 0))
             elseif player.Name=="sfsue6747" then
-                OtherTag("sfsue6747","Sweet Femboy / 24-Hours",Color3.new(110/255, 0, 0))
+                OtherTag("sfsue6747","Sweet Femboy / 24-Hours Owner",Color3.new(110/255, 0, 0))
             end
         end
         task.wait(CHECK_INTERVAL)
