@@ -1,10 +1,10 @@
 print[[Source of ego!!!!!!]]
-print[[Source of ego!!!!!!]]
-print[[Source of ego!!!!!!]]
-print[[Source of ego!!!!!!]]
-print[[Source of ego!!!!!!]]
-print[[Source of ego!!!!!!]]
-print[[Source of ego!!!!!!]]
+print[[Source ]]
+print[[Source]]
+print[[Source]]
+print[[eys]]
+print[[hi]]
+print[[d]]
 if IY_LOADED and not _G.IY_DEBUG == true then
     -- error("Infinite Yield is already running!", 0)
     return
