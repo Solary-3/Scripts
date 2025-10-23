@@ -1,5 +1,6 @@
-print("Halloween!!")
+print("HAPPY HALLOWEEN YALLL!!")
 print("0")
+local Occasions="Halloween"
 local Players = game:GetService("Players")
 local function notif(str,dur)
 	game:GetService("StarterGui"):SetCore("SendNotification", { 
@@ -3720,21 +3721,37 @@ sine = sine + change
 		idle = false 
 	end
 if dancing==true then
+if Occasions=="Halloween" then
+techc.Rotation = techc.Rotation + 0.1
+imgl2.Rotation = imgl2.Rotation - sound69.PlaybackLoudness/50
+imgl2.ImageColor3 = Color3.new(0,0,0)
+imgl2b.Rotation = imgl2b.Rotation + sound69.PlaybackLoudness/25
+imgl2b.ImageColor3 = Color3.new(220/255 + sound69.PlaybackLoudness/500,100/255 + sound69.PlaybackLoudness/750,0)
+else
 techc.Rotation = techc.Rotation + 0.1
 imgl2.Rotation = imgl2.Rotation - sound69.PlaybackLoudness/50
 imgl2.ImageColor3 = Color3.new(0.15 + sound69.PlaybackLoudness/2500,0,0.6 + sound69.PlaybackLoudness/1000)
 imgl2b.Rotation = imgl2b.Rotation + sound69.PlaybackLoudness/25
 imgl2b.ImageColor3 = Color3.new(0,0.3 + sound69.PlaybackLoudness/1500,0.6 + sound69.PlaybackLoudness/1000)
+end
 CurrentFrame.BackgroundColor3=Color3.fromRGB(50-sound69.PlaybackLoudness/25,50-sound69.PlaybackLoudness/25,50-sound69.PlaybackLoudness/25)
 CurrentFrame.BackgroundTransparency=.75-sound69.PlaybackLoudness/500
 else
 CurrentFrame.BackgroundColor3=Color3.fromRGB(25+Playsound.PlaybackLoudness/25,25+Playsound.PlaybackLoudness/25,25+Playsound.PlaybackLoudness/25)
 CurrentFrame.BackgroundTransparency=.25+Playsound.PlaybackLoudness/200
+if Occasions=="Halloween" then
+techc.Rotation = techc.Rotation + 0.1
+imgl2.Rotation = imgl2.Rotation - Playsound.PlaybackLoudness/50
+imgl2.ImageColor3 = Color3.new(0,0,0)
+imgl2b.Rotation = imgl2b.Rotation + Playsound.PlaybackLoudness/25
+imgl2b.ImageColor3 = Color3.new(220/255 + Playsound.PlaybackLoudness/500,100/255 + Playsound.PlaybackLoudness/750,0)
+else
 techc.Rotation = techc.Rotation + 0.1
 imgl2.Rotation = imgl2.Rotation - Playsound.PlaybackLoudness/50
 imgl2.ImageColor3 = Color3.new(0.15 + Playsound.PlaybackLoudness/2500,0,0.6 + Playsound.PlaybackLoudness/1000)
 imgl2b.Rotation = imgl2b.Rotation + Playsound.PlaybackLoudness/25
 imgl2b.ImageColor3 = Color3.new(0,0.3 + Playsound.PlaybackLoudness/1500,0.6 + Playsound.PlaybackLoudness/1000)
+end
 end
 --textLabel1.Rotation=5*cos(sine/1)+math.random(-2.5,2.5)
 ned.Rotation = 0 - 2 * math.cos(sine / 24)
