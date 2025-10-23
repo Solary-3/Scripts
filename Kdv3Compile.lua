@@ -1,4 +1,4 @@
-print("Head Update Fix!!")
+print("Aeronauts!!")
 print("o 0")
 local Players = game:GetService("Players")
 local function notif(str,dur)
@@ -998,8 +998,6 @@ if RUNNING then return notify("SCRIPT IS RUNNING!!") end
 if Place == 17574618959 or Place == 88308889239232 then
 if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then return notify("REANIMATE FIRST CUH")
 end
-Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
-RUNNING = true
 else 
 if game:GetService("Players").LocalPlayer.Character.Name ~= Character.Name.."_Fake" then
      return notify("REANIMATE FIRST CUH") 
@@ -3838,7 +3836,7 @@ coroutine.wrap(RG3_FAKE_SCRIPT)()
 
 
 else
-notify("Wait for the health to he 0")
+notify("Wait for the health to be 0")
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
  return end
 end)
