@@ -1,4 +1,4 @@
-print("Aeronaut!!")
+print("Halloween!!")
 print("0")
 local Players = game:GetService("Players")
 local function notif(str,dur)
@@ -806,7 +806,8 @@ local validAudioFiles = {
     "BrickBattler.mp3",
     "BreakDance2005.mp3",
     "BreakDance.mp3",
-    "CrackDown.mp3"
+    "CrackDown.mp3",
+    "Halloween.mp3"
 }
 
 --THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
@@ -1554,7 +1555,7 @@ local function stopanim()
          if playbacktrack and not dancing then
              sound69:Stop()
              sound69.Volume=.75
-             Playsound.SoundId = DanceAsset("Pixelation.mp3")
+             Playsound.SoundId = DanceAsset("Halloween.mp3")
              Playsound.TimePosition = SavedTime
              Playsound.Volume = .75
              Playsound:Play()
@@ -1567,7 +1568,7 @@ local function stopanim()
          end
      end
 end
-Playsound.SoundId = DanceAsset("Pixelation.mp3")
+Playsound.SoundId = DanceAsset("Halloween.mp3")
 Playsound.TimePosition =0
 Playsound.Volume = .75
 Playsound:Play()
