@@ -1,4 +1,4 @@
-print("Ayo")
+print("w")
 
 local ws=game.Workspace
 local imageId = "rbxassetid://89287417287641"
