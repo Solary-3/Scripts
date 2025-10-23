@@ -1,5 +1,14 @@
 print("Aeronaut!!")
 print("0")
+
+
+
+
+
+
+
+
+
 local Players = game:GetService("Players")
 local function notif(str,dur)
 	game:GetService("StarterGui"):SetCore("SendNotification", { 
