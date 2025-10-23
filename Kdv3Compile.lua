@@ -1,4 +1,4 @@
-print("Toes who!")
+print("Head Update Fix!!")
 print("o 0")
 local Players = game:GetService("Players")
 local function notif(str,dur)
@@ -618,7 +618,7 @@ local function AddDance(Name, ScriptUrl)
                 local newDance = danceData:Clone()
                 newDance.Name = Name
                 newDance.Parent = full
-                notify("Loaded from storage: "..Name)
+                print("Loaded from storage: "..Name)
                 return newDance
             else
                 notify("Saved dance doesn't return KeyframeSequence: "..Name)
@@ -1004,9 +1004,10 @@ else
 if game:GetService("Players").LocalPlayer.Character.Name ~= Character.Name.."_Fake" then
      return notify("REANIMATE FIRST CUH") 
 end
+end
+if ws:FindFirstChild("GelatekReanimate").Humanoid.Health==0.03500000014901161 then
 Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
 RUNNING = true
-end
 
 
 
@@ -3684,7 +3685,6 @@ repeat
 	nim=nim+1
 until nim==5
 wait(.5)-- Add a small delay to make the head get animated, instead of being static
-print("AAAAAAA HELP THIS IS A TEXT")
 UPDATE=RunService.RenderStepped:Connect(function(deltaTime: number)
 sine = sine + change
 	local function Alpha(n)
@@ -3837,7 +3837,10 @@ end
 coroutine.wrap(RG3_FAKE_SCRIPT)()
 
 
-
+else
+notify("Wait for the health to he 0")
+Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
+ return end
 end)
 
 Stop1.MouseButton1Click:Connect(function()
