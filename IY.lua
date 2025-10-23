@@ -10857,6 +10857,7 @@ end)
 
 addcmd('notifyping',{'ping'},function(args, speaker)
 	notify("Ping", math.round(speaker:GetNetworkPing() * 1000) .. "ms")
+   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Pong!", math.round(speaker:GetNetworkPing() * 1000) .. "ms")
 end)
 
 addcmd('grabtools', {}, function(args, speaker)
