@@ -1,9 +1,7 @@
 print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
 print("Welcome")
 print[[IDC IF ITS EARLY, LOVE YALL!!]]
-
 local Occasions="Halloween"
-
 
 
 local Players = game:GetService("Players")
