@@ -1,4 +1,4 @@
-print("HAPPY HALLOWEEN YALLL!!")
+print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
 print("0")
 local Occasions="Halloween"
 local Players = game:GetService("Players")
@@ -1058,7 +1058,6 @@ techc.Parent = fullscreenz
 techc.ImageTransparency = 0.5
 techc.Size = UDim2.new(0,700,0,700)
 techc.Position = UDim2.new(0.75,-50,0.55,-50)
-techc.ImageColor3 = Color3.new(0.5,0,1)
 techc.Image = "rbxassetid://521073910"
 local circl = imgl2:Clone()
 circl.Parent = fullscreenz
@@ -1070,7 +1069,13 @@ circl.Image = "rbxassetid://997291547"
 local circl2 = imgl2:Clone()
 circl2.Parent = fullscreenz
 circl2.ImageTransparency = 0
+if Occasions=="Halloween" then
+techc.ImageColor3 = Color3.new(0,0,0)
+circl2.ImageColor3 = Color3.new(0,0,0)
+else
+techc.ImageColor3 = Color3.new(0.5,0,1)
 circl2.ImageColor3 = Color3.new(0.5,0,1)
+end
 circl2.Image = "rbxassetid://997291547"
 local imgl2b = imgl2:Clone()
 imgl2b.Parent = fullscreenz
