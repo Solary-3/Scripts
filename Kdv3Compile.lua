@@ -1,6 +1,6 @@
 print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
 print("Welcome")
-
+print[[IDC IF ITS EARLY, LOVE YALL!!]]
 
 local Occasions="Halloween"
 
@@ -1054,7 +1054,6 @@ local imgl2 = Instance.new("ImageLabel",fullscreenz)
 imgl2.BackgroundTransparency = 1
 imgl2.BorderSizePixel = 0
 imgl2.ImageTransparency = 0.5
-imgl2.ImageColor3 = Color3.new(0,0.5,1)
 imgl2.Position = UDim2.new(0.75,0,0.55,0)
 imgl2.Size = UDim2.new(0,600,0,600)
 imgl2.Image = "rbxassetid://320731120"
@@ -1069,24 +1068,27 @@ circl.Parent = fullscreenz
 circl.ImageTransparency = 0
 circl.Size = UDim2.new(0,500,0,500)
 circl.Position = UDim2.new(0.75,50,0.55,50)
-circl.ImageColor3 = Color3.new(0,0.5,1)
 circl.Image = "rbxassetid://997291547"
 local circl2 = imgl2:Clone()
 circl2.Parent = fullscreenz
 circl2.ImageTransparency = 0
-if Occasions=="Halloween" then
-techc.ImageColor3 = Color3.new(0,0,0)
-circl2.ImageColor3 = Color3.new(0,0,0)
-else
-techc.ImageColor3 = Color3.new(0.5,0,1)
-circl2.ImageColor3 = Color3.new(0.5,0,1)
-end
 circl2.Image = "rbxassetid://997291547"
 local imgl2b = imgl2:Clone()
 imgl2b.Parent = fullscreenz
 imgl2b.ImageTransparency = 0
 imgl2b.Size = UDim2.new(0,500,0,500)
 imgl2b.Position = UDim2.new(0.75,50,0.55,50)
+if Occasions=="Halloween" then
+imgl2.ImageColor3 = Color3.new(0,0,0)
+techc.ImageColor3 = Color3.new(0,0,0)
+circl2.ImageColor3 = Color3.new(0,0,0)
+circl.ImageColor3 = Color3.new(0,0,0)
+else
+imgl2.ImageColor3 = Color3.new(0,0.5,1)
+techc.ImageColor3 = Color3.new(0.5,0,1)
+circl.ImageColor3 = Color3.new(0,0.5,1)
+circl2.ImageColor3 = Color3.new(0.5,0,1)
+end
 local ned = Instance.new("TextLabel",fullscreenz)
 ned.ZIndex = 2
 ned.FontFace = Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic)
