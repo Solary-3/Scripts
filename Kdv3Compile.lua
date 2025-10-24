@@ -3874,7 +3874,7 @@ RUNNING = true
 else
 notify("Wait for the health to be 0")
 end
-end
+
 elseif ReanimateVer=="Current" then 
 if ws:FindFirstChild(Character1.Name.."_Fake") then
 Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
