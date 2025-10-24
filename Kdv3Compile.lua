@@ -3860,25 +3860,21 @@ end
 local RUNNING = false
 Run1.MouseButton1Click:Connect(function()
 if REANIMATION then return notify("Reanimating please wait") end
+if game.Players.Localp
 if RUNNING then return notify("SCRIPT IS RUNNING!!") end
-if ws:FindFirstChild(Character1.Name.."_Fake") or ws:FindFirstChild("GelatekReanimate") then
-
+if ReanimateVer=="Gelatek" then
 if ws:FindFirstChild("GelatekReanimate").Humanoid.Health==0.03500000014901161 then
 MainScript()
 Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
 RUNNING = true
-elseif ws:FindFirstChild(Character1.Name.."_Fake") then
+end
+end
+elseif ReanimateVer=="Current" then 
+if ws:FindFirstChild(Character1.Name.."_Fake") then
 Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
 RUNNING = true
 MainScript()
-
-else
-if ReanimateVer=="Gelatek" then
-notify("Wait for the health to be 0")
-end 
-Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
- return end
- end
+end
 end)
 
 Stop1.MouseButton1Click:Connect(function()
