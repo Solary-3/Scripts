@@ -1,6 +1,6 @@
 print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
 print("Welcome")
-print[[IDC IF ITS EARLY, LOVE YALL!!]]
+print[[Sorry for me didnt noticing the current angle version :<]]
 local Occasions="Halloween"
 
 
@@ -1008,7 +1008,7 @@ if game:GetService("Players").LocalPlayer.Character.Name ~= Character.Name.."_Fa
      return notify("REANIMATE FIRST CUH") 
 end
 end
-if ws:FindFirstChild("GelatekReanimate").Humanoid.Health==0.03500000014901161 then
+if ws:FindFirstChild("GelatekReanimate").Humanoid.Health==0.03500000014901161 or ws:FindFirstChild(Character.Name.."Fale") then
 Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
 RUNNING = true
 
@@ -3864,7 +3864,9 @@ coroutine.wrap(RG3_FAKE_SCRIPT)()
 
 
 else
+if ReanimateVer=="Gelatek" then
 notify("Wait for the health to be 0")
+end 
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
  return end
 end)
