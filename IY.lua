@@ -1,10 +1,5 @@
-print[[Source of ego!!!!!!]]
-print[[Source of ego!!!!!!]]
-print[[Source of ego!!!!!!]]
-print[[Source of ego!!!!!!]]
-print[[Source of ego!!!!!!]]
-print[[Source of ego!!!!!!]]
-print[[Source of ego!!!!!!]]
+print[[FAAAAAAHH]]
+
 if IY_LOADED and not _G.IY_DEBUG == true then
     -- error("Infinite Yield is already running!", 0)
     return
@@ -10864,7 +10859,7 @@ end)
 addcmd('notifyping',{'ping'},function(args, speaker)
 	notify("Ping", math.round(speaker:GetNetworkPing() * 1000) .. "ms")
 	wait(1)
-   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Pong!"..math.round(speaker:GetNetworkPing() * 1000) .. "ms")
+--   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("Pong!"..math.round(speaker:GetNetworkPing() * 1000) .. "ms")
 end)
 
 addcmd('grabtools', {}, function(args, speaker)
