@@ -155,7 +155,7 @@ task.spawn(function()
 --[[elseif player.Name=="da_bebe3" then
                 OtherTag("da_bebe3","Nyan Car / Cool Guy",Color3.new(0, 255, 255))]]
             elseif player.Name=="sfsue6747" then
-                Tag("sfsue6747", "Sweet Femboy","_________","[] 24 Hours Dev []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),false,9,8.5,5)
+                Tag("sfsue6747", "Sweet Femboy","_________","[] 24 Hours Dev []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Fondamento.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),false,9,8.5,5)
             end
         end
         task.wait(CHECK_INTERVAL)
