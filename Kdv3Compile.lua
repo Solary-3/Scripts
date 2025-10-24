@@ -1,7 +1,7 @@
 print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
 print("Welcome")
 print[[Sorry for me didnt noticing the currentangle version :<]]
-print[[Another Day, Another fixes thats being reported...]]
+print[[Another Day, Another fixes thats being reported on this script...]]
 local Occasions="Halloween"
 
 
@@ -3862,7 +3862,8 @@ Run1.MouseButton1Click:Connect(function()
 if REANIMATION then return notify("Reanimating please wait") end
 if game.Players.LocalPlayer.Character.Name~="GelatekReanimate" then
 return notify("Not Reanimated")
-elseif game.Players.LocalPlayer.Character.Name~=Character.Name.."_Fake" then
+end
+if game.Players.LocalPlayer.Character.Name~=Character.Name.."_Fake" then
 return notify("Not Reanimated")
 end
 if RUNNING then return notify("SCRIPT IS RUNNING!!") end
