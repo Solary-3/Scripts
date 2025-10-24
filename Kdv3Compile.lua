@@ -1,7 +1,7 @@
 print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
 print("Welcome")
 print[[Sorry for me didnt noticing the currentangle version :<]]
-print[[Another Day, Another fixed]]
+print[[Another Day, Another fixes]]
 local Occasions="Halloween"
 
 
@@ -1005,14 +1005,8 @@ local RUNNING = false
 Run1.MouseButton1Click:Connect(function()
 if REANIMATION then return notify("Reanimating please wait") end
 if RUNNING then return notify("SCRIPT IS RUNNING!!") end
-if Place == 17574618959 or Place == 88308889239232 then
-if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then return notify("REANIMATE FIRST CUH")
-end
-else 
-if game:GetService("Players").LocalPlayer.Name ~= Character1.Name.."_Fake" then
-     return notify("REANIMATE FIRST CUH") 
-end
-end
+if ws:FindFirstChild(Character1.Name.."_Fake") or ws:FindFirstChild("GelatekReanimate") then
+
 if ws:FindFirstChild("GelatekReanimate").Humanoid.Health==0.03500000014901161 or ws:WaitForChild(Character1.Name.."_Fake") then
 Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
 RUNNING = true
@@ -3878,6 +3872,7 @@ notify("Wait for the health to be 0")
 end 
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
  return end
+ end
 end)
 
 Stop1.MouseButton1Click:Connect(function()
