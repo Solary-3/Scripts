@@ -1,4 +1,4 @@
-print("Tag Update1")
+print("New Upd")
 
 local ws=game.Workspace
 local imageId = "rbxassetid://89287417287641"
@@ -11,93 +11,151 @@ local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
     TargetLookup[name] = true
 end
-local function createTag(player)
-	if ws:FindFirstChild(player) and ws:FindFirstChild(player):FindFirstChild("Head") then
-		if ws:FindFirstChild(player).Head:FindFirstChild(TAG_NAME) then return end
-
-		local billboard = Instance.new("BillboardGui")
-		billboard.Name = TAG_NAME
-		billboard.Size = UDim2.new(3, 0, 2, 0)
-		billboard.StudsOffset = Vector3.new(-0.6, 0, 0)
-		billboard.Adornee = ws:FindFirstChild(player):WaitForChild("Head")
-		billboard.AlwaysOnTop = true
-		billboard.Parent = ws:FindFirstChild(player):WaitForChild("Head")
-        local billboard1 = Instance.new("BillboardGui")
-		billboard1.Name = TAG_NAME
-		billboard1.Size = UDim2.new(0, 100, 0, 40)
-		billboard1.StudsOffset = Vector3.new(0, 2.5, 0)
-		billboard1.Adornee = ws:FindFirstChild(player):WaitForChild("Head")
-		billboard1.AlwaysOnTop = true
-		billboard1.Parent = ws:FindFirstChild(player):WaitForChild("Head")
-		local label = Instance.new("TextLabel")
-		label.Size = UDim2.new(1, 0, 1, 0)
-		label.BackgroundTransparency = 1
-		label.Text = "Modded Kdv3 / Theo Hub Owner / Developer"
-		label.TextColor3 = Color3.new(1, 1, 0)
-		label.TextStrokeTransparency = 0
-		label.TextScaled = true
-		label.Font = Enum.Font.Sarpanch
-       -- label.Position = UDim2.new(0,0.6,0,-100)
-		label.Parent = billboard1
-          local imageLabel = Instance.new("ImageLabel")
-          imageLabel.Size = UDim2.new(1, 0, 1, 0)
-          imageLabel.BackgroundTransparency = 1
-          imageLabel.Image = imageId
-          imageLabel.Parent = billboard
-		
-	end
+local function Tag(target, txt, divider, type, col1, col2, usefontface, font, allowrgb, yoff1,yoff2,yoff3, customglitch, colg1, colg2)
+local ws=game.Workspace
+if ws:FindFirstChild(target).Head:FindFirstChild("Main") then return end
+local head=ws:FindFirstChild(target).Head
+local rus=game.RunService
+for _,a in ipairs(head:GetChildren()) do
+if a:IsA("BillboardGui") then 
+a:Destroy()
 end
-local function OtherTag(player,Text,col)
-if ws:FindFirstChild(player) and ws:FindFirstChild(player):FindFirstChild("Head") then
-		if ws:FindFirstChild(player).Head:FindFirstChild(TAG_NAME) then return end
-		local billboard = Instance.new("BillboardGui")
-		billboard.Name = TAG_NAME
-		billboard.Size = UDim2.new(3, 0, 2, 0)
-		billboard.StudsOffset = Vector3.new(-0.6, 0, 0)
-		billboard.Adornee = ws:FindFirstChild(player):WaitForChild("Head")
-		billboard.AlwaysOnTop = true
-		billboard.Parent = ws:FindFirstChild(player):WaitForChild("Head")
-        local billboard1 = Instance.new("BillboardGui")
-		billboard1.Name = TAG_NAME
-		billboard1.Size = UDim2.new(0, 100, 0, 40)
-		billboard1.StudsOffset = Vector3.new(0, 2.5, 0)
-		billboard1.Adornee = ws:FindFirstChild(player):WaitForChild("Head")
-		billboard1.AlwaysOnTop = true
-		billboard1.Parent = ws:FindFirstChild(player):WaitForChild("Head")
-		local label = Instance.new("TextLabel")
-		label.Size = UDim2.new(1, 0, 1, 0)
-		label.BackgroundTransparency = 1
-		label.Text = Text
-		label.TextColor3 = col
-		label.TextStrokeTransparency = 0
-		label.TextScaled = true
-		label.Font = Enum.Font.Sarpanch
-       -- label.Position = UDim2.new(0,0.6,0,-100)
-		label.Parent = billboard1
-          local imageLabel = Instance.new("ImageLabel")
-          imageLabel.Size = UDim2.new(1, 0, 1, 0)
-          imageLabel.BackgroundTransparency = 1
-          imageLabel.Image = imageId
-          imageLabel.Parent = billboard
-		
-	end
+end
+local bilguit = Instance.new("BillboardGui", head)
+bilguit.Adornee = nil
+bilguit.Name = "Main"
+bilguit.Size = UDim2.new(4, 0, 1.2, 0)
+bilguit.StudsOffset = Vector3.new(-8, yoff1, 0)
+local modet = Instance.new("TextLabel", bilguit)
+modet.Size = UDim2.new(5, 0, 3.5, 0)
+modet.Position=UDim2.new(0,0,0,0)
+modet.FontSize = "Size8"
+modet.Name="Title"
+modet.TextScaled = true
+modet.TextTransparency = 0
+modet.BackgroundTransparency = 1 
+modet.TextTransparency = 0
+modet.TextStrokeTransparency = 0
+modet.Text = txt
+
+local bbg = Instance.new("BillboardGui", head)
+bbg.Adornee = nil
+bbg.Name = "Divider"
+bbg.Size = UDim2.new(4, 0, 1.2, 0)
+bbg.StudsOffset = Vector3.new(-8, yoff2, 0)
+
+local txt = Instance.new("TextLabel", bbg)
+txt.Size = UDim2.new(10/2, 0, 7/2, 0)
+txt.Position=UDim2.new(0,0,0,0)
+txt.FontSize = "Size24"
+txt.TextScaled = true 
+txt.TextTransparency = 0
+txt.BackgroundTransparency = 1 
+txt.TextTransparency = 0
+txt.TextStrokeTransparency = 0
+txt.Name="Divider"
+txt.Text = divider
+
+local bbg1 = Instance.new("BillboardGui", head)
+bbg1.Adornee = nil
+bbg1.Name = "Type"
+bbg1.Size = UDim2.new(4, 0, 1.2, 0)
+bbg1.StudsOffset = Vector3.new(-7.95, yoff3, 0)
+
+local txt1 = Instance.new("TextLabel", bbg1)
+txt1.Size = UDim2.new(10/2, 0, 7/2, 0)
+txt1.Position=UDim2.new(0,0,0,0)
+txt1.FontSize = "Size8"
+txt1.TextScaled = true 
+txt1.TextTransparency = 0
+txt1.BackgroundTransparency = 1 
+txt1.TextTransparency = 0
+txt1.TextStrokeTransparency = 0
+txt1.Name="Type"
+txt1.Text = type.."\nv"
+if usefontface then
+modet.FontFace=font
+txt.FontFace=font
+txt1.FontFace=font
+else
+modet.FontFace=font
+txt.FontFace=font
+txt1.FontFace=font
+end
+if allowrgb then
+local r = 255
+local g = 0
+local b = 0
+local stage = 1
+rus.RenderStepped:Connect(function()
+if stage == 1 then
+g = g + 2.5
+if g >= 255 then
+g = 255
+stage = 2
+end
+elseif stage == 2 then
+r = r - 2.5
+if r <= 0 then
+r = 0
+stage = 3
+end
+elseif stage == 3 then
+b = b + 2.5
+if b >= 255 then
+b = 255
+stage = 4
+end
+elseif stage == 4 then
+g = g - 2.5
+if g <= 0 then
+g = 0
+stage = 5
+end
+elseif stage == 5 then
+r = r + 2.5
+if r >= 255 then
+r = 255
+stage = 6
+end
+elseif stage == 6 then
+b = b - 2.5
+if b <= 0 then
+b = 0
+stage = 1
+end
+end
+local rgb=Color3.fromRGB(r,g,b)
+modet.TextColor3=rgb
+txt.TextColor3=rgb
+txt1.TextColor3=rgb
+end)
+else 
+txt1.TextStrokeColor3 = col1
+txt1.TextColor3 = col2
+modet.TextStrokeColor3 = col1
+modet.TextColor3 = col2
+txt.TextStrokeColor3 = col1
+txt.TextColor3 = col2
+end
+
 end
 
 task.spawn(function()
     while true do
         for _, player in pairs(Players:GetPlayers()) do
             if player.Name=="Theo_TheoBenzo" then
-                createTag("Theo_TheoBenzo")
+                Tag("Theo_TheoBenzo", " [ Kdv3 Modder ]\n[ Theo Hub ]","_________","[] Developer []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,10,8.5,5)
             elseif player.Name=="NewplayerNewGuy8" then
-                OtherTag("NewplayerNewGuy8","Supporter / Cool Guy",Color3.new(0, 0, 1))
+                Tag("NewplayerNewGuy8", " --Cool Guy--","_________","--Supporter--",Color3.fromRGB(0,0,255),Color3.fromRGB(0,0,100),true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,8,7.5,4)
             elseif player.Name=="VI_lato" then
-                OtherTag("VI_lato","Theos Pookie / Energetic Oreo",Color3.new(1, 0, 1))
+                Tag(VI_lato, "~ Theos Pookie ~","_________","[] Energetic Car []",Color3.fromRGB(255,0,200),Color3.fromRGB(150,0,100),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,9,8.5,5)
             elseif player.Name=="russki_krutoi" then
-                OtherTag("russki_krutoi","Supporter / Anim Finder",Color3.new(1, 0, 0))
-            elseif player.Name=="da_bebe3" then
-                OtherTag("da_bebe3","Nyan Car / Cool Guy",Color3.new(0, 255, 255))
+                Tag("russki_krutoi", "- Anims Finder -","_________","[] Supporter []",Color3.fromRGB(0,0,0),Color3.fromRGB(225,125,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,9,8.5,5)
+--[[elseif player.Name=="da_bebe3" then
+                OtherTag("da_bebe3","Nyan Car / Cool Guy",Color3.new(0, 255, 255))]]
             elseif player.Name=="sfsue6747" then
-                OtherTag("sfsue6747","Sweet Femboy / 24-Hours Owner",Color3.new(110/255, 0, 0))
+                Tag("sfsue6747", "Sweet Femboy","_________","[] 24 Hours Dev []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),false,9,8.5,5)
             end
         end
         task.wait(CHECK_INTERVAL)
