@@ -11,7 +11,7 @@ local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
     TargetLookup[name] = true
 end
-local function Tag(target, txt, divider, type, col1, col2, usefontface, font, allowrgb, yoff1,yoff2,yoff3, customglitch, colg1, colg2)
+function Tag(target, txt, divider, type, col1, col2, usefontface, font, allowrgb, yoff1,yoff2,yoff3,idk, customglitch, colg1, colg2)
 local ws=game.Workspace
 if ws:FindFirstChild(target).Head:FindFirstChild("Main") then return end
 local head=ws:FindFirstChild(target).Head
@@ -138,14 +138,70 @@ modet.TextColor3 = col2
 txt.TextStrokeColor3 = col1
 txt.TextColor3 = col2
 end
-
+if idk then
+local cs=ColorSequence.new
+local csk=ColorSequenceKeypoint.new
+local grad=Instance.new("UIGradient",txt1)
+local grad1=Instance.new("UIGradient",txt)
+--[[grad.Color=cs({
+csk(0,Color3.new(0,0,0)),
+csk(.1,Color3.new(1,1,1)),
+csk(.25,Color3.new(0,0,0)),
+csk(.5,Color3.new(1,1,1)),
+csk(.95,Color3.new(0,0,0)),
+csk(1,Color3.new(1,1,1))
+})]]
+function fine(obj, speed, whattype, anim)
+local Tinfo=TweenInfo.new
+local TweenService=game.TweenService
+local hii = Tinfo(speed, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+if whattype =="pos" then
+return TweenService:Create(obj, hii,{Position = anim})
+elseif whattype =="size" then
+return TweenService:Create(obj, hii,{Size = anim})
+elseif whattype =="bt" then
+return TweenService:Create(obj, hii,{BackgroundTransparency = anim})
+elseif whattype =="trans" then
+return TweenService:Create(obj, hii,{Transparency = anim})
+elseif whattype=="rot" then
+return TweenService:Create(obj, hii,{Rotation = anim})
+end
+end
+local st=1
+grad.Rotation=90
+local pos=0.05
+rus.RenderStepped:Connect(function()
+if st==1 then
+pos=pos+.01
+if pos>= 1 then 
+st=2
+end
+end
+if st==2 then 
+pos=pos-.01
+if pos<=.05 then
+st=1
+end
+end
+grad.Color=cs({
+csk(0,Color3.new(0,0,0)),
+csk(pos,Color3.new(1,1,1)),
+csk(1,Color3.new(0,0,0))
+})
+grad1.Color=cs({
+csk(0,Color3.new(0,0,0)),
+csk(pos,Color3.new(1,1,1)),
+csk(1,Color3.new(0,0,0))
+})
+end)
+end
 end
 
 task.spawn(function()
     while true do
         for _, player in pairs(Players:GetPlayers()) do
             if player.Name=="Theo_TheoBenzo" then
-                Tag("Theo_TheoBenzo", " [ Kdv3 Modder ]\n[ Theo Hub ]","_________","[] Developer []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,10,8.5,5)
+                Tag("Theo_TheoBenzo", " [ Kdv3 Modder ]\n[ Theo Hub ]","_________","[] Developer []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,10,8.5,5,true)
             elseif player.Name=="NewplayerNewGuy8" then
                 Tag("NewplayerNewGuy8", " --Cool Guy--","_________","--Supporter--",Color3.fromRGB(0,0,255),Color3.fromRGB(0,0,100),true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,8,7.5,4)
             elseif player.Name=="VI_lato" then
