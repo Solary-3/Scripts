@@ -1,7 +1,7 @@
 print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
 print("Welcome")
 print[[Sorry for me didnt noticing the currentangle version :<]]
-print[[Another Fix]]
+print[[Another Fix, Another Bug Report]]
 local Occasions="Halloween"
 
 
@@ -479,6 +479,7 @@ end)
 
 local char=game:GetService("Players").LocalPlayer.Character
 local Character =char
+local Character1=game.Players.LocalPlayer
 local delfile = delfile or function(path)
     if isfile and isfile(path) then
         pcall(function()
@@ -540,24 +541,26 @@ if Place == 17574618959 or Place == 88308889239232 then
 if REANIMATION then return notify([[ALREADY REANIMATING]]) end
 if game:GetService("Players").LocalPlayer.Character.Name == "GelatekReanimate" then
 return notify("ALREADY REANIMATED CUH") end
-if game:GetService("Players").LocalPlayer.Character.Name == Character.Name.."_Fake" then
+if game:GetService("Players").LocalPlayer.Character.Name == Character1.Name.."_Fake" then
 return notify("ALREADY REANIMATED CUH") end
 if ReanimateVer=="Gelatek" then
 Run1.Position = UDim2.new(100, 0, 0.629999971, 0)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 REANIMATION=true
-end
-if ReanimateVer=="Current" then
+elseif ReanimateVer=="Current" then
 Backup()
 REANIMATION=true
 end
 else 
 Backup()
+REANIMATION=true
 end 
 wait(2)
+if ws:FindFirstChild("GelatekReanimate") or ws:WaitForChild(Character.Name.."_Fake") then
 REANIMATION=false
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
+end
 end)
 
 function respawn()
@@ -1006,11 +1009,11 @@ if Place == 17574618959 or Place == 88308889239232 then
 if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then return notify("REANIMATE FIRST CUH")
 end
 else 
-if game:GetService("Players").LocalPlayer.Character.Name ~= Character.Name.."_Fake" then
+if game:GetService("Players").LocalPlayer.Character.Name ~= Character1.Name.."_Fake" then
      return notify("REANIMATE FIRST CUH") 
 end
 end
-if ws:FindFirstChild("GelatekReanimate").Humanoid.Health==0.03500000014901161 or ws:FindFirstChild(Character.Name.."Fale") then
+if ws:FindFirstChild("GelatekReanimate").Humanoid.Health==0.03500000014901161 or ws:FindFirstChild(Character1.Name.."_Fake") then
 Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
 RUNNING = true
 
