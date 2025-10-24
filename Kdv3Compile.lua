@@ -1,6 +1,6 @@
 print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
 print("Welcome")
-print[[Sorry for me didnt noticing the current angle version :<]]
+print[[Sorry for me didnt noticing the currentangle version :<]]
 print[[Another Fix]]
 local Occasions="Halloween"
 
@@ -1568,7 +1568,9 @@ local function stopanim()
          if playbacktrack and not dancing then
              sound69:Stop()
              sound69.Volume=.75
+             if Occasions=="Halloween" then
              Playsound.SoundId = DanceAsset("Halloween.mp3")
+             end
              Playsound.TimePosition = SavedTime
              Playsound.Volume = .75
              Playsound:Play()
@@ -1581,7 +1583,9 @@ local function stopanim()
          end
      end
 end
+if Occasions=="Halloween" then
 Playsound.SoundId = DanceAsset("Halloween.mp3")
+end 
 Playsound.TimePosition =0
 Playsound.Volume = .75
 Playsound:Play()
