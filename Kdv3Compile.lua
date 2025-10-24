@@ -1,7 +1,7 @@
 print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
 print("Welcome")
 print[[Sorry for me didnt noticing the currentangle version :<]]
-print[[Bug reports and concerns]]
+print[[Its Fixed]]
 local Occasions="Halloween"
 
 local Players = game:GetService("Players")
@@ -3859,14 +3859,9 @@ end
 local RUNNING = false
 Run1.MouseButton1Click:Connect(function()
 if REANIMATION then return notify("Reanimating please wait") end
---[[if game:GetService("Players").LocalPlayer.Character.Name~="GelatekReanimate" then
-return notify("Not Reanimated")
-end
-if game:GetService("Players").LocalPlayer.Character.Name~=Character.Name.."_Fake" then
-return notify("Not Reanimated")
-end
-]]
 if RUNNING then return notify("SCRIPT IS RUNNING!!") end
+if ReanimateVer=="Gelatek" then
+if ws:FindFirstChild("GelatekReanimate") then
 if ReanimateVer=="Gelatek" then
 if ws:FindFirstChild("GelatekReanimate").Humanoid.Health==0.03500000014901161 then
 MainScript()
@@ -3875,14 +3870,26 @@ RUNNING = true
 else
 notify("Wait for the health to be 0")
 end
-elseif ReanimateVer=="Current" then 
+end
+else
+notif("Not Reanimated")
+end
+end
+if ReanimateVer=="Current" then
+if ws:FindFirstChild(Character1.Name.."_Fake") then
+if ReanimateVer=="Current" then
 if ws:FindFirstChild(Character1.Name.."_Fake") then
 Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
 RUNNING = true
 MainScript()
 end
 end
+else
+notify("Not Reanimated")
+end
+end
 end)
+
 
 Stop1.MouseButton1Click:Connect(function()
     if RUNNING then
@@ -3941,8 +3948,10 @@ Stop1.MouseButton1Click:Connect(function()
         currentanim = nil
     end
     if Place == 17574618959 or Place == 88308889239232 then
+      if ReanimateVer=="Gelatek" then 
         StopScript()
         wait(1)
+        end
         choot("-rs")
     else
         wait(1)
