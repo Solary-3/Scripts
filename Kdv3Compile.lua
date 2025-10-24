@@ -4,7 +4,6 @@ print[[Sorry for me didnt noticing the currentangle version :<]]
 print[[Bug reports and concerns]]
 local Occasions="Halloween"
 
-
 local Players = game:GetService("Players")
 local function notif(str,dur)
 	game:GetService("StarterGui"):SetCore("SendNotification", { 
