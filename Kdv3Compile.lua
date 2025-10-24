@@ -1,6 +1,7 @@
 print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
 print("Welcome")
 print[[Sorry for me didnt noticing the current angle version :<]]
+print[[Another Fix]]
 local Occasions="Halloween"
 
 
@@ -541,14 +542,15 @@ if game:GetService("Players").LocalPlayer.Character.Name == "GelatekReanimate" t
 return notify("ALREADY REANIMATED CUH") end
 if game:GetService("Players").LocalPlayer.Character.Name == Character.Name.."_Fake" then
 return notify("ALREADY REANIMATED CUH") end
-REANIMATION=true
 if ReanimateVer=="Gelatek" then
 Run1.Position = UDim2.new(100, 0, 0.629999971, 0)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+REANIMATION=true
 end
 if ReanimateVer=="Current" then
 Backup()
+REANIMATION=true
 end
 else 
 Backup()
