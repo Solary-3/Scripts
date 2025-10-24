@@ -3863,7 +3863,7 @@ if REANIMATION then return notify("Reanimating please wait") end
 if RUNNING then return notify("SCRIPT IS RUNNING!!") end
 if ws:FindFirstChild(Character1.Name.."_Fake") or ws:FindFirstChild("GelatekReanimate") then
 
-if ws:FindFirstChild("GelatekReanimate").Humanoid.Health==0.03500000014901161 
+if ws:FindFirstChild("GelatekReanimate").Humanoid.Health==0.03500000014901161 then
 MainScript()
 Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
 RUNNING = true
