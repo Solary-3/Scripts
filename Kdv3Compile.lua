@@ -1,7 +1,7 @@
 print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
 print("Welcome")
 print[[Sorry for me didnt noticing the currentangle version :<]]
-print[[Another Day, Another fixes]]
+print[[Another Day, Another fixes...]]
 local Occasions="Halloween"
 
 
@@ -1001,23 +1001,13 @@ end
 --coroutine.wrap(AsyncPreloadDances)()
 
 
-local RUNNING = false
-Run1.MouseButton1Click:Connect(function()
-if REANIMATION then return notify("Reanimating please wait") end
-if RUNNING then return notify("SCRIPT IS RUNNING!!") end
-if ws:FindFirstChild(Character1.Name.."_Fake") or ws:FindFirstChild("GelatekReanimate") then
-
-if ws:FindFirstChild("GelatekReanimate").Humanoid.Health==0.03500000014901161 or ws:WaitForChild(Character1.Name.."_Fake") then
-Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
-RUNNING = true
 
 
 
 
 
 
-
-
+function MainScript()
 local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 local tween = game:GetService("TweenService"):Create(CurrentFrame, tweenInfo, {Position = UDim2.new(0.385, 0, .75, 0)})
 tween:Play()
@@ -3865,6 +3855,22 @@ end
 end
 coroutine.wrap(RG3_FAKE_SCRIPT)()
 
+end
+
+local RUNNING = false
+Run1.MouseButton1Click:Connect(function()
+if REANIMATION then return notify("Reanimating please wait") end
+if RUNNING then return notify("SCRIPT IS RUNNING!!") end
+if ws:FindFirstChild(Character1.Name.."_Fake") or ws:FindFirstChild("GelatekReanimate") then
+
+if ws:FindFirstChild("GelatekReanimate").Humanoid.Health==0.03500000014901161 
+MainScript()
+Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
+RUNNING = true
+elseif ws:FindFirstChild(Character1.Name.."_Fake") then
+Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
+RUNNING = true
+MainScript()
 
 else
 if ReanimateVer=="Gelatek" then
