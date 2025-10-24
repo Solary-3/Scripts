@@ -1,7 +1,7 @@
 print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
 print("Welcome")
 print[[Sorry for me didnt noticing the currentangle version :<]]
-print[[Another Fix, Another Bug Report]]
+print[[Another Day, Another fixed]]
 local Occasions="Halloween"
 
 
@@ -1009,11 +1009,11 @@ if Place == 17574618959 or Place == 88308889239232 then
 if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then return notify("REANIMATE FIRST CUH")
 end
 else 
-if game:GetService("Players").LocalPlayer.Character.Name ~= Character1.Name.."_Fake" then
+if game:GetService("Players").LocalPlayer.Name ~= Character1.Name.."_Fake" then
      return notify("REANIMATE FIRST CUH") 
 end
 end
-if ws:FindFirstChild("GelatekReanimate").Humanoid.Health==0.03500000014901161 or ws:FindFirstChild(Character1.Name.."_Fake") then
+if ws:FindFirstChild("GelatekReanimate").Humanoid.Health==0.03500000014901161 or ws:WaitForChild(Character1.Name.."_Fake") then
 Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
 RUNNING = true
 
