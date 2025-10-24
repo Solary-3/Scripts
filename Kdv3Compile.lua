@@ -557,7 +557,7 @@ Backup()
 REANIMATION=true
 end 
 wait(2)
-if ws:FindFirstChild("GelatekReanimate") or ws:WaitForChild(Character.Name.."_Fake") then
+if ws:FindFirstChild("GelatekReanimate") or ws:FindFirstChild(Character.Name.."_Fake") then
 REANIMATION=false
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 end
@@ -3862,7 +3862,7 @@ Run1.MouseButton1Click:Connect(function()
 if REANIMATION then return notify("Reanimating please wait") end
 if game.Players.LocalPlayer.Character.Name~="GelatekReanimate" then
 return notify("Not Reanimated")
-elseif game.Players.LocalPlayer.Character.Name~=Character1.Name.."_Fake" then
+elseif game.Players.LocalPlayer.Character.Name~=Character.Name.."_Fake" then
 return notify("Not Reanimated")
 end
 if RUNNING then return notify("SCRIPT IS RUNNING!!") end
