@@ -1,7 +1,7 @@
 print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
 print("Welcome")
 print[[Sorry for me didnt noticing the currentangle version :<]]
-print[[Its Fixed]]
+print[[Final Adjustments]]
 local Occasions="Halloween"
 
 local Players = game:GetService("Players")
@@ -3953,6 +3953,14 @@ Stop1.MouseButton1Click:Connect(function()
         wait(1)
         end
         choot("-rs")
+        if ReanimateVer=="Current" then
+          wait(1)
+          for _,v in ipairs(ws:GetChildren()) do
+            if v.Name==Character1.Name.."_Fake" then 
+              v:Destroy()
+              end
+            end
+          end
     else
         wait(1)
         respawn()
