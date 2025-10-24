@@ -3881,6 +3881,7 @@ Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
 RUNNING = true
 MainScript()
 end
+end
 end)
 
 Stop1.MouseButton1Click:Connect(function()
