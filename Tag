@@ -1,4 +1,4 @@
-print("New Upd")
+print("New Wow")
 
 local ws=game.Workspace
 local imageId = "rbxassetid://89287417287641"
@@ -15,7 +15,7 @@ function Tag(target, txt, divider, type, col1, col2, usefontface, font, allowrgb
 local ws=game.Workspace
 if ws:FindFirstChild(target).Head:FindFirstChild("Main") then return end
 local head=ws:FindFirstChild(target).Head
-local rus=game.RunService
+local rus=game:GetService("RunService")
 for _,a in ipairs(head:GetChildren()) do
 if a:IsA("BillboardGui") then 
 a:Destroy()
