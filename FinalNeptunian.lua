@@ -2,7 +2,7 @@ warn[[Absolutely. Created by NoobyGames12 and modded by theo ofc lol]]
 print[[Dear god, when will this end on these bug fixes for the last time dawg??]]
 print[[Hello! :3]]
 print[[Test! :3]]
-print[[FAAAAAAH]]
+print[[AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]
 local ss=game.SoundService
 ss.AmbientReverb="Cave"
 local Global = (getgenv and getgenv()) or shared
@@ -6099,9 +6099,9 @@ h.MaxHealth = 100
       print(block.Value)
     end
     if blocked == false then
-      if Bullet then funnyfunction(h.Parent) end
+    --  if Bullet then funnyfunction(h.Parent) end
     else
-      if Bullet then funnyfunction(h.Parent) end
+--      if Bullet then funnyfunction(h.Parent) end
     end
     if Type == "Knockdown" then
       local hum = hit.Parent.Humanoid
