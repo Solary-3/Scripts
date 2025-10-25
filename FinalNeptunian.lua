@@ -2,7 +2,7 @@ warn[[Absolutely. Created by NoobyGames12 and modded by theo ofc lol]]
 print[[Dear god, when will this end on these bug fixes for the last time dawg??]]
 print[[Hello! :3]]
 print[[Test! :3]]
-print[[I FEEL SO SIGMA]]
+print[[FAAAAAAH]]
 local ss=game.SoundService
 ss.AmbientReverb="Cave"
 local Global = (getgenv and getgenv()) or shared
@@ -6000,7 +6000,7 @@ end
  
 local Bullet = Global.RealChar:FindFirstChild("Bullet")
 local funnyfunction
-local funnyattacking = "yes"
+local funnyattacking = "no"
 local Hat = Character:FindFirstChild("Accessory (NepV)")
 local HatAlt = Character:FindFirstChild("Accessory (NepV)")
 if HatAlt and Hat then
