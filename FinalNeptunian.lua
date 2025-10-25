@@ -6000,7 +6000,7 @@ end
  
 local Bullet = Global.RealChar:FindFirstChild("Bullet")
 local funnyfunction
-local funnyattacking = "no"
+local funnyattacking = "yes"
 local Hat = Character:FindFirstChild("Accessory (NepV)")
 local HatAlt = Character:FindFirstChild("Accessory (NepV)")
 if HatAlt and Hat then
