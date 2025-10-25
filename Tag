@@ -151,7 +151,7 @@ csk(.5,Color3.new(1,1,1)),
 csk(.95,Color3.new(0,0,0)),
 csk(1,Color3.new(1,1,1))
 })]]
-function fine(obj, speed, whattype, anim)
+--[[function fine(obj, speed, whattype, anim)
 local Tinfo=TweenInfo.new
 local TweenService=game.TweenService
 local hii = Tinfo(speed, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
@@ -166,7 +166,7 @@ return TweenService:Create(obj, hii,{Transparency = anim})
 elseif whattype=="rot" then
 return TweenService:Create(obj, hii,{Rotation = anim})
 end
-end
+end]]
 local st=1
 grad.Rotation=90
 local pos=0.05
