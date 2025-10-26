@@ -3687,6 +3687,10 @@ repeat
 	nim=nim+1
 until nim==5
 wait(.5)-- Add a small delay to make the head get animated, instead of being static
+local r = 255
+local g = 0
+local b = 0
+local stage = 1
 UPDATE=RunService.RenderStepped:Connect(function(deltaTime: number)
 sine = sine + change
 	local function Alpha(n)
@@ -3722,6 +3726,46 @@ sine = sine + change
 		walking = true 
 		idle = false 
 	end
+if stage == 1 then
+g = g + 2.5
+if g >= 255 then
+g = 255
+stage = 2
+end
+elseif stage == 2 then
+r = r - 2.5
+if r <= 0 then
+r = 0
+stage = 3
+end
+elseif stage == 3 then
+b = b + 2.5
+if b >= 255 then
+b = 255
+stage = 4
+end
+elseif stage == 4 then
+g = g - 2.5
+if g <= 0 then
+g = 0
+stage = 5
+end
+elseif stage == 5 then
+r = r + 2.5
+if r >= 255 then
+r = 255
+stage = 6
+end
+elseif stage == 6 then
+b = b - 2.5
+if b <= 0 then
+b = 0
+stage = 1
+end
+end
+local rgb=Color3.fromRGB(r,g,b)
+techc.ImageColor3=rgb
+ned.TextColor3=rgb
 if dancing==true then
 if Occasions=="Halloween" then
 techc.Rotation = techc.Rotation + 0.1
@@ -3759,101 +3803,6 @@ end
 ned.Rotation = 0 - 2 * math.cos(sine / 24)
 ned.Position = UDim2.new(0.6,0 - 10 * math.cos(sine / 32),0.8,0 - 10 * math.cos(sine / 45))
 end)
-local c3=Color3.new
-local script=Instance.new("LocalScript",ned)
-local function RG1_FAKE_SCRIPT()
-while wait() do
-script.Parent.TextColor3 = c3(255/255,0/255,0/255)
-		for i = 0,255,10 do
-			wait()
-			script.Parent.TextColor3 = c3(255/255,i/255,0/255)
-		end
-		for i = 255,0,-10 do
-			wait()
-			script.Parent.TextColor3 = c3(i/255,255/255,0/255)
-		end
-		for i = 0,255,10 do
-			wait()
-			script.Parent.TextColor3 = c3(0/255,255/255,i/255)
-		end
-		for i = 255,0,-10 do
-			wait()
-			script.Parent.TextColor3 = c3(0/255,i/255,255/255)
-		end
-		for i = 0,255,10 do
-			wait()
-			script.Parent.TextColor3 = c3(i/255,0/255,255/255)
-		end
-		for i = 255,0,-10 do
-			wait()
-			script.Parent.TextColor3 = c3(255/255,0/255,i/255)
-		end
-end
-end
-coroutine.wrap(RG1_FAKE_SCRIPT)()
-local script1=Instance.new("LocalScript",Text3)
---[[local function RG2_FAKE_SCRIPT()
-while wait() do
-script1.Parent.Color = c3(100/255,0/255,0/255)
-		for i = 0,100,10 do
-			wait()
-			script1.Parent.Color = c3(255/255,i/255,0/255)
-		end
-		for i = 100,0,-10 do
-			wait()
-			script1.Parent.Color = c3(i/255,255/255,0/255)
-		end
-		for i = 0,100,10 do
-			wait()
-			script1.Parent.Color = c3(0/255,255/255,i/255)
-		end
-		for i = 100,0,-10 do
-			wait()
-			script1.Parent.Color = c3(0/255,i/255,255/255)
-		end
-		for i = 0,100,10 do
-			wait()
-			script1.Parent.Color = c3(i/255,0/255,255/255)
-		end
-		for i = 100,0,-10 do
-			wait()
-			script1.Parent.Color = c3(255/255,0/255,i/255)
-		end
-end
-end
-coroutine.wrap(RG2_FAKE_SCRIPT)()]]
-local script2=Instance.new("LocalScript",techc)
-local function RG3_FAKE_SCRIPT()
-while wait() do
-script2.Parent.ImageColor3 = c3(255/255,0/255,0/255)
-		for i = 0,255,10 do
-			wait()
-			script2.Parent.ImageColor3 = c3(255/255,i/255,0/255)
-		end
-		for i = 255,0,-10 do
-			wait()
-			script2.Parent.ImageColor3 = c3(i/255,255/255,0/255)
-		end
-		for i = 0,255,10 do
-			wait()
-			script2.Parent.ImageColor3 = c3(0/255,255/255,i/255)
-		end
-		for i = 255,0,-10 do
-			wait()
-			script2.Parent.ImageColor3 = c3(0/255,i/255,255/255)
-		end
-		for i = 0,255,10 do
-			wait()
-			script2.Parent.ImageColor3 = c3(i/255,0/255,255/255)
-		end
-		for i = 255,0,-10 do
-			wait()
-			script2.Parent.ImageColor3 = c3(255/255,0/255,i/255)
-		end
-end
-end
-coroutine.wrap(RG3_FAKE_SCRIPT)()
-
 end
 
 local RUNNING = false
