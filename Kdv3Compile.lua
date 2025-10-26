@@ -2062,7 +2062,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				sound69.SoundId = DanceAsset("assum.mp3")
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
-				Info("Assumptions","R")
+				Info("Assumptions","T")
 				playanim(129275138998868) -- uuid. 15705077587
 			else
 				stopanim()
