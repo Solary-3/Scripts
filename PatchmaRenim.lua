@@ -1,3 +1,4 @@
+
 local osclock=os.clock
 local tspawn=task.spawn
 local twait=task.wait
@@ -127,7 +128,6 @@ local accessorylimbs={
 {meshid="11263221350",textureid="11263219250",C0=angles(0,0,0),Name="Left Arm"},
 
 {meshid="11159370334",textureid="11159284657",C0=angles(0,0,0),Name="Right Arm"},
-
 
 
 
@@ -287,7 +287,7 @@ return false
 end
 local function emptyfunction() end
 function Reanim()
-print("23")
+print("22")
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 
 
@@ -329,6 +329,11 @@ end
 cam=newcam
 end
 refcam()
+
+-- Store original camera properties
+local originalCameraType = insGet(cam,"CameraType")
+local originalCameraSubject = insGet(cam,"CameraSubject")
+
 local camcf=insGet(cam,"CFrame")
 local enumCamS=e.CameraType.Scriptable
 local camt=insGet(cam,"CameraType")
@@ -345,26 +350,37 @@ camcon0=nil
 end
 if not c then 
 if insGet(cam,"CameraType")==enumCamS then
-insSet(cam,"CameraType",camt)
+insSet(cam,"CameraType",originalCameraType)
+end
+if originalCameraSubject then
+insSet(cam,"CameraSubject",originalCameraSubject)
 end
 return Disconnect(camcon2) 
 end
+
+-- Set camera to follow character's head
+local headPart = getPart("Head")
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+end
+
 camcon0=Connect(GetPropertyChangedSignal(cam,"CFrame"),function()
-if insGet(cam,"CFrame")~=camcf then
-insSet(cam,"CFrame",camcf)
+-- Allow camera movement when not in scriptable mode
+if insGet(cam,"CameraType")~=enumCamS then
+camcf=insGet(cam,"CFrame")
+camrot=cfl(v3_0,cfGet(camcf,"LookVector"))
+camcfLV=cfGet(camrot,"LookVector")
+camcfRV=cfGet(camrot,"RightVector")
 end
 end)
+
 camcon1=Connect(GetPropertyChangedSignal(cam,"CameraType"),function()
-if insGet(cam,"CameraType")~=enumCamS then
-insSet(cam,"CameraType",enumCamS)
-end
+-- Allow temporary camera type changes
 end)
-if insGet(cam,"CameraType")~=enumCamS then
-insSet(cam,"CameraType",enumCamS)
-end
-if insGet(cam,"CFrame")~=camcf then
-insSet(cam,"CFrame",camcf)
-end
+
+-- Set camera to follow character
+insSet(cam,"CameraSubject",FindFirstChildOfClass(c,"Humanoid") or headPart or rootpart)
 end
 
 camcon2=Connect(GetPropertyChangedSignal(ws,"CurrentCamera"),onnewcamera)
@@ -1238,13 +1254,12 @@ local c=insGet(lp,"Character")
 	  		if c then
 insSet(cam,"CameraSubject",FindFirstChildOfClass(c,"Humanoid"))
 else
-insSet(cam,"CameraSubject",FindFirstChild(c,"BestFittingBlack"))
+insSet(cam,"CameraSubject",nil)
 	  		end
   return con and Disconnect(con) 
   end
 --updateMovementState()
 
-game.Workspace.CurrentCamera.CameraSubject=game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("BestFittingBlack").Handle
 sine=osclock()
 local delta=sine-lastsine
 deltaTime=min(delta*10,1)
@@ -1296,6 +1311,18 @@ Yvel=0
 onground=false
 end
 
+-- Update camera to follow head
+local headPart = getPart("Head")
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+end
+
+-- Set camera CFrame
+insSet(cam,"CFrame",camcf)
+
 if firstperson then
 if isWalking then
 if walkSpeed==0 then
@@ -1303,15 +1330,6 @@ xzvel=v3_0
 if onground then
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsIdle()
 --isWalking=false
 noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1320,30 +1338,12 @@ elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-local headPos = cfGet(cframes[headPart], "Position")
-camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
-else
-camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
-end
 lerpsFall()
 noYvelTime=0
 end
@@ -1353,15 +1353,6 @@ if onground then
 pos=pos+xzvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsWalk()
 --isWalking=true
 noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1370,30 +1361,12 @@ elseif Yvel>0 then
 pos=pos+(xzvel+v3_010*Yvel)*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsJump()
 noYvelTime=0
 else 
 pos=pos+(xzvel+v3_010*Yvel)*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsFall()
 noYvelTime=0
 end
@@ -1402,17 +1375,7 @@ else
 xzvel=v3_0
 if onground then
   cfr=cfl(pos,pos+camcfLV*v3_101)
-  cframes[rootpart]=cfrlocal headPart = getPart("Head")
-  local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
-
+  cframes[rootpart]=cfr
   lerpsIdle()
 --isWalking=false
   noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1421,30 +1384,12 @@ elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsFall()
 noYvelTime=0
 end
@@ -1456,15 +1401,6 @@ xzvel=v3_0
 if onground then
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsIdle()
 --isWalking=false
 noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1473,29 +1409,12 @@ elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-local headPos = cfGet(cframes[headPart], "Position")
-camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam,"CameraSubject",FindFirstChild(c,"BestFittingBlack"))
-else
-insSet(cam,"CameraSubject",FindFirstChild(c,"BestFittingBlack"))
-end
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsFall()
 noYvelTime=0
 end
@@ -1505,15 +1424,6 @@ if onground then
 pos=pos+xzvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsWalk()
 --isWalking=true
 noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1522,30 +1432,12 @@ elseif Yvel>0 then
 pos=pos+(xzvel+v3_010*Yvel)*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+(xzvel+v3_010*Yvel)*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsFall()
 noYvelTime=0
 end
@@ -1555,15 +1447,6 @@ xzvel=v3_0
 if onground then
   cfr=cfl(pos,pos+camcfLV*v3_101)
   cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
   lerpsIdle()
 --isWalking=false
   noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1572,30 +1455,12 @@ elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsFall()
 noYvelTime=0
 end
@@ -1607,15 +1472,6 @@ xzvel=v3_0
 if onground then
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsIdle()
 --isWalking=false
 noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1624,30 +1480,12 @@ elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+v3_010*Yvel*delta
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsFall()
 noYvelTime=0
 end
@@ -1657,15 +1495,6 @@ if onground then
 pos=pos+xzvel*delta
 cfr=cfAdd(Lerp(cfGet(cfr,"Rotation"),cfl(v3_0,xzvel),deltaTime),pos)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsWalk()
 --isWalking=true
 noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1674,30 +1503,12 @@ elseif Yvel>0 then
 pos=pos+(xzvel+(v3_010*Yvel))*delta
 cfr=cfAdd(Lerp(cfGet(cfr,"Rotation"),cfl(v3_0,xzvel),deltaTime),pos)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+(xzvel+(v3_010*Yvel))*delta
 cfr=cfAdd(Lerp(cfGet(cfr,"Rotation"),cfl(v3_0,xzvel),deltaTime),pos)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsFall()
 noYvelTime=0
 end
@@ -1707,15 +1518,6 @@ xzvel=v3_0
 if onground then
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsIdle()
 --isWalking=false 
 noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1724,30 +1526,12 @@ elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+v3_010*Yvel*delta
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
 cframes[rootpart]=cfr
-local headPart = getPart("Head")
-if headPart and cframes[headPart] then
-    local headPos = cfGet(cframes[headPart], "Position")
-    camcf = cfl(cfGet(cam,"CFrame").Position, headPos) -- camera looks at the head
-else
-    camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-end
-insSet(cam, "CFrame", camcf)
-
 lerpsFall()
 noYvelTime=0
 end
