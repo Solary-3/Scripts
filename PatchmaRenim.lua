@@ -362,6 +362,7 @@ end)
 camcon1=Connect(GetPropertyChangedSignal(cam,"CameraType"),function()
 if insGet(cam,"CameraType")~=enumCamS then
 insSet(cam,"CameraType",enumCamS)
+FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("BestFittingBlack").Handle
 end
 end)
 if insGet(cam,"CameraType")~=enumCamS then
