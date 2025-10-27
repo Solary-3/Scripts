@@ -286,7 +286,7 @@ return false
 end
 local function emptyfunction() end
 function Reanim()
-print("9")
+print("10")
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 local allowshiftlock=true
 local ctrltp=false
@@ -1294,9 +1294,16 @@ if walkSpeed==0 then
 xzvel=v3_0
 if onground then
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+local headPart = getPart("Head")
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsIdle()
 --isWalking=false
 noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1304,17 +1311,31 @@ xzvel=xzvel*(1-noYvelTime)
 elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+local headPart = getPart("Head")
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+local headPart = getPart("Head")
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsFall()
 noYvelTime=0
 end
@@ -1333,15 +1354,23 @@ xzvel=xzvel*(1-noYvelTime)
 elseif Yvel>0 then
 pos=pos+(xzvel+v3_010*Yvel)*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+local headPart = getPart("Head")
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsJump()
 noYvelTime=0
 else 
 pos=pos+(xzvel+v3_010*Yvel)*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 camcf=cfAdd(camrot,pos+v3_0150)
+insSet(cam, "CFrame", camcf)
 cframes[rootpart]=cfr
 lerpsFall()
 noYvelTime=0
@@ -1351,9 +1380,16 @@ else
 xzvel=v3_0
 if onground then
   cfr=cfl(pos,pos+camcfLV*v3_101)
- camcf=cfAdd(camrot,pos+v3_0150)
-  cframes[rootpart]=cfr
-  insSet(cam,"CFrame",camcf)
+  cframes[rootpart]=cfrlocal headPart = getPart("Head")
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
+
   lerpsIdle()
 --isWalking=false
   noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1361,17 +1397,29 @@ if onground then
 elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsFall()
 noYvelTime=0
 end
@@ -1382,9 +1430,15 @@ if walkSpeed==0 then
 xzvel=v3_0
 if onground then
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150+camcfRV*1.75+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsIdle()
 --isWalking=false
 noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1392,17 +1446,29 @@ xzvel=xzvel*(1-noYvelTime)
 elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150+camcfRV*1.75+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150+camcfRV*1.75+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsFall()
 noYvelTime=0
 end
@@ -1411,9 +1477,15 @@ xzvel=v3Get(v3Get(camcfLV*v3_101,"Unit")*FWmovement+v3Get(camcfRV*v3_101,"Unit")
 if onground then
 pos=pos+xzvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150+camcfRV*1.75+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsWalk()
 --isWalking=true
 noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1421,17 +1493,29 @@ xzvel=xzvel*(1-noYvelTime)
 elseif Yvel>0 then
 pos=pos+(xzvel+v3_010*Yvel)*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150+camcfRV*1.75+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+(xzvel+v3_010*Yvel)*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150+camcfRV*1.75+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsFall()
 noYvelTime=0
 end
@@ -1440,9 +1524,15 @@ else
 xzvel=v3_0
 if onground then
   cfr=cfl(pos,pos+camcfLV*v3_101)
-  camcf=cfAdd(camrot,pos+v3_0150+camcfRV*1.75+camcfLV*cammag)
   cframes[rootpart]=cfr
-  insSet(cam,"CFrame",camcf)
+  if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
   lerpsIdle()
 --isWalking=false
   noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1450,17 +1540,29 @@ if onground then
 elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150+camcfRV*1.75+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150+camcfRV*1.75+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsFall()
 noYvelTime=0
 end
@@ -1471,9 +1573,15 @@ if walkSpeed==0 then
 xzvel=v3_0
 if onground then
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
-camcf=cfAdd(camrot,pos+v3_0150+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsIdle()
 --isWalking=false
 noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1481,17 +1589,29 @@ xzvel=xzvel*(1-noYvelTime)
 elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
-camcf=cfAdd(camrot,pos+v3_0150+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+v3_010*Yvel*delta
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
-camcf=cfAdd(camrot,pos+v3_0150+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsFall()
 noYvelTime=0
 end
@@ -1500,9 +1620,15 @@ xzvel=v3Get(v3Get(camcfLV*v3_101,"Unit")*FWmovement+v3Get(camcfRV*v3_101,"Unit")
 if onground then
 pos=pos+xzvel*delta
 cfr=cfAdd(Lerp(cfGet(cfr,"Rotation"),cfl(v3_0,xzvel),deltaTime),pos)
-camcf=cfAdd(camrot,pos+v3_0150+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsWalk()
 --isWalking=true
 noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1510,17 +1636,29 @@ xzvel=xzvel*(1-noYvelTime)
 elseif Yvel>0 then
 pos=pos+(xzvel+(v3_010*Yvel))*delta
 cfr=cfAdd(Lerp(cfGet(cfr,"Rotation"),cfl(v3_0,xzvel),deltaTime),pos)
-camcf=cfAdd(camrot,pos+v3_0150+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+(xzvel+(v3_010*Yvel))*delta
 cfr=cfAdd(Lerp(cfGet(cfr,"Rotation"),cfl(v3_0,xzvel),deltaTime),pos)
-camcf=cfAdd(camrot,pos+v3_0150+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsFall()
 noYvelTime=0
 end
@@ -1529,9 +1667,15 @@ else
 xzvel=v3_0
 if onground then
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
-camcf=cfAdd(camrot,pos+v3_0150+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsIdle()
 --isWalking=false 
 noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1539,17 +1683,29 @@ xzvel=xzvel*(1-noYvelTime)
 elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
-camcf=cfAdd(camrot,pos+v3_0150+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsJump()
 noYvelTime=0
 else
 pos=pos+v3_010*Yvel*delta
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
-camcf=cfAdd(camrot,pos+v3_0150+camcfLV*cammag)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsFall()
 noYvelTime=0
 end
