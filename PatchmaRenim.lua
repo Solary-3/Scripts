@@ -288,6 +288,8 @@ local function emptyfunction() end
 function Reanim()
 print("11")
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+
+
 local allowshiftlock=true
 local ctrltp=false
 local placeholders=true
