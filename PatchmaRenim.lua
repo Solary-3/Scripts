@@ -287,7 +287,7 @@ return false
 end
 local function emptyfunction() end
 function Reanim()
-print("29")
+print("30")
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 
 
@@ -1276,7 +1276,7 @@ local raycastresult=Raycast(ws,pos,v3_010*(fpdh-v3Get(pos,"Y")),raycastparams)
 local onground=nil
 if raycastresult then
 raycastresult=v3Get(raycastresult.Position,"Y")
-onground=v3Get(pos,"Y")-raycastresult<hhOff1
+onground=v3Get(pos,"Y")-raycastresult<3.01
 if onground then
 Yvel=0
 pos=pos+v3_010*(raycastresult+hhOff-v3Get(pos,"Y"))*min(delta*20,1)
