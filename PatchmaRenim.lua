@@ -286,7 +286,8 @@ return false
 end
 local function emptyfunction() end
 function Reanim()
-6game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+print("16")
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 
 
 local allowshiftlock=true
