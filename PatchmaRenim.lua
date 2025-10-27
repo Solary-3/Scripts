@@ -1452,7 +1452,7 @@ pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 camcf=cfAdd(camrot,pos+v3_0150+camcfRV*1.75+camcfLV*cammag)
 cframes[rootpart]=cfr
---insSet(cam,"CFrame",camcf)
+insSet(cam,"CFrame",camcf)
 lerpsJump()
 noYvelTime=0
 else
@@ -1460,7 +1460,7 @@ pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 camcf=cfAdd(camrot,pos+v3_0150+camcfRV*1.75+camcfLV*cammag)
 cframes[rootpart]=cfr
---insSet(cam,"CFrame",camcf)
+insSet(cam,"CFrame",camcf)
 lerpsFall()
 noYvelTime=0
 end
