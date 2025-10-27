@@ -286,7 +286,7 @@ return false
 end
 local function emptyfunction() end
 function Reanim()
-print("17")
+print("18")
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 
 
@@ -334,6 +334,7 @@ local camt=insGet(cam,"CameraType")
 local camcon0=nil
 local camcon1=nil
 local camcon2=nil
+
 local function onnewcamera()
 refcam()
 if camcon0 then 
@@ -364,6 +365,7 @@ if insGet(cam,"CFrame")~=camcf then
 insSet(cam,"CFrame",camcf)
 end
 end
+
 camcon2=Connect(GetPropertyChangedSignal(ws,"CurrentCamera"),onnewcamera)
 onnewcamera()
 
@@ -1230,7 +1232,11 @@ local function mainFunction()
   end
   mouseBehavior=nil
   insSet(uis,"MouseBehavior",enumMD)
---  onnewcamera()
+  onnewcamera()
+local c=insGet(lp,"Character")
+	  		if c then
+insSet(cam,"CameraSubject",FindFirstChildOfClass(c,"Humanoid"))
+	  		end
   return con and Disconnect(con) 
   end
 --updateMovementState()
