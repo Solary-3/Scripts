@@ -1231,10 +1231,7 @@ local function mainFunction()
   mouseBehavior=nil
   insSet(uis,"MouseBehavior",enumMD)
   onnewcamera()
-  local c=insGet(lp,"Character")
-  if c then
-  ws.CurrentCamera.CameraSubject=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("BestFittingBlack")
-  end
+  game.Workspace.CurrentCamera.CameraSubject=game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("BestFittingBlack")
   return con and Disconnect(con) 
   end
 --updateMovementState()
