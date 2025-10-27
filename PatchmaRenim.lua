@@ -286,7 +286,7 @@ return false
 end
 local function emptyfunction() end
 function Reanim()
-print("18")
+print("19")
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 
 
@@ -1455,6 +1455,7 @@ xzvel=v3_0
 if onground then
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
@@ -1471,6 +1472,7 @@ elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
@@ -1485,6 +1487,7 @@ else
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
@@ -1502,6 +1505,7 @@ if onground then
 pos=pos+xzvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
@@ -1518,6 +1522,7 @@ elseif Yvel>0 then
 pos=pos+(xzvel+v3_010*Yvel)*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
@@ -1532,13 +1537,14 @@ else
 pos=pos+(xzvel+v3_010*Yvel)*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsFall()
 noYvelTime=0
@@ -1549,7 +1555,8 @@ xzvel=v3_0
 if onground then
   cfr=cfl(pos,pos+camcfLV*v3_101)
   cframes[rootpart]=cfr
-  if headPart and cframes[headPart] then
+local headPart = getPart("Head")
+if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
 insSet(cam, "CameraSubject", "BestFittingBlack")
@@ -1565,13 +1572,14 @@ elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsJump()
 noYvelTime=0
@@ -1579,13 +1587,14 @@ else
 pos=pos+v3_010*Yvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsFall()
 noYvelTime=0
@@ -1598,13 +1607,14 @@ xzvel=v3_0
 if onground then
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsIdle()
 --isWalking=false
@@ -1614,13 +1624,14 @@ elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsJump()
 noYvelTime=0
@@ -1628,13 +1639,14 @@ else
 pos=pos+v3_010*Yvel*delta
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsFall()
 noYvelTime=0
@@ -1645,13 +1657,14 @@ if onground then
 pos=pos+xzvel*delta
 cfr=cfAdd(Lerp(cfGet(cfr,"Rotation"),cfl(v3_0,xzvel),deltaTime),pos)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsWalk()
 --isWalking=true
@@ -1661,13 +1674,14 @@ elseif Yvel>0 then
 pos=pos+(xzvel+(v3_010*Yvel))*delta
 cfr=cfAdd(Lerp(cfGet(cfr,"Rotation"),cfl(v3_0,xzvel),deltaTime),pos)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsJump()
 noYvelTime=0
@@ -1675,13 +1689,14 @@ else
 pos=pos+(xzvel+(v3_010*Yvel))*delta
 cfr=cfAdd(Lerp(cfGet(cfr,"Rotation"),cfl(v3_0,xzvel),deltaTime),pos)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsFall()
 noYvelTime=0
@@ -1692,13 +1707,14 @@ xzvel=v3_0
 if onground then
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsIdle()
 --isWalking=false 
@@ -1708,13 +1724,14 @@ elseif Yvel>0 then
 pos=pos+v3_010*Yvel*delta
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsJump()
 noYvelTime=0
@@ -1722,13 +1739,14 @@ else
 pos=pos+v3_010*Yvel*delta
 cfr=cfAdd(cfGet(cfr,"Rotation"),pos)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsFall()
 noYvelTime=0
