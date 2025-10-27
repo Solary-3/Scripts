@@ -286,7 +286,7 @@ return false
 end
 local function emptyfunction() end
 function Reanim()
-print("19")
+print("20")
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 
 
@@ -1306,10 +1306,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsIdle()
 --isWalking=false
@@ -1323,10 +1323,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsJump()
 noYvelTime=0
@@ -1356,10 +1356,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsWalk()
 --isWalking=true
@@ -1373,10 +1373,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsJump()
 noYvelTime=0
@@ -1388,10 +1388,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsFall()
 noYvelTime=0
@@ -1406,10 +1406,10 @@ if onground then
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 
   lerpsIdle()
@@ -1424,10 +1424,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsJump()
 noYvelTime=0
@@ -1439,10 +1439,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsFall()
 noYvelTime=0
@@ -1459,10 +1459,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsIdle()
 --isWalking=false
@@ -1491,10 +1491,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsFall()
 noYvelTime=0
@@ -1509,10 +1509,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsWalk()
 --isWalking=true
@@ -1526,10 +1526,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsJump()
 noYvelTime=0
@@ -1541,10 +1541,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsFall()
 noYvelTime=0
@@ -1559,10 +1559,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
   lerpsIdle()
 --isWalking=false
@@ -1576,10 +1576,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsJump()
 noYvelTime=0
@@ -1591,10 +1591,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsFall()
 noYvelTime=0
@@ -1611,10 +1611,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsIdle()
 --isWalking=false
@@ -1628,10 +1628,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsJump()
 noYvelTime=0
@@ -1643,10 +1643,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsFall()
 noYvelTime=0
@@ -1661,10 +1661,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsWalk()
 --isWalking=true
@@ -1678,10 +1678,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsJump()
 noYvelTime=0
@@ -1693,10 +1693,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsFall()
 noYvelTime=0
@@ -1711,10 +1711,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsIdle()
 --isWalking=false 
@@ -1728,10 +1728,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsJump()
 noYvelTime=0
@@ -1743,10 +1743,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CameraSubject", "BestFittingBlack")
+insSet(cam, "CameraSubject", game.Workspace(lp.Name):FindFirstChild("BestFittingBlack"))
 end
 lerpsFall()
 noYvelTime=0
