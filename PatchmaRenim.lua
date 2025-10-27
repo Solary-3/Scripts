@@ -1236,6 +1236,8 @@ local function mainFunction()
 local c=insGet(lp,"Character")
 	  		if c then
 insSet(cam,"CameraSubject",FindFirstChildOfClass(c,"Humanoid"))
+else
+insSet(cam,"CameraSubject",FindFirstChild(c,"BestFittingBlack"))
 	  		end
   return con and Disconnect(con) 
   end
@@ -1304,10 +1306,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsIdle()
 --isWalking=false
@@ -1321,10 +1323,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsJump()
 noYvelTime=0
@@ -1354,10 +1356,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsWalk()
 --isWalking=true
@@ -1371,10 +1373,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsJump()
 noYvelTime=0
@@ -1386,10 +1388,10 @@ local headPart = getPart("Head")
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsFall()
 noYvelTime=0
@@ -1403,10 +1405,10 @@ if onground then
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 
   lerpsIdle()
@@ -1420,10 +1422,10 @@ cframes[rootpart]=cfr
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsJump()
 noYvelTime=0
@@ -1434,10 +1436,10 @@ cframes[rootpart]=cfr
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsFall()
 noYvelTime=0
@@ -1453,10 +1455,10 @@ cframes[rootpart]=cfr
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsIdle()
 --isWalking=false
@@ -1483,10 +1485,10 @@ cframes[rootpart]=cfr
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsFall()
 noYvelTime=0
@@ -1500,10 +1502,10 @@ cframes[rootpart]=cfr
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsWalk()
 --isWalking=true
@@ -1516,10 +1518,10 @@ cframes[rootpart]=cfr
 if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
 lerpsJump()
 noYvelTime=0
@@ -1547,10 +1549,10 @@ if onground then
   if headPart and cframes[headPart] then
 local headPos = cfGet(cframes[headPart], "Position")
 camcf = cfAdd(camrot, headPos + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 else
 camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
-insSet(cam, "CFrame", camcf)
+insSet(cam, "CameraSubject", "BestFittingBlack")
 end
   lerpsIdle()
 --isWalking=false
