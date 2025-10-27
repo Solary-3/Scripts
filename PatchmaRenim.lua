@@ -286,17 +286,18 @@ local function stopreanimate()
 end
 local function emptyfunction() end
 function Reanim()
+print("7")
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
-local allowshiftlock=false
+local allowshiftlock=true
 local ctrltp=false
-local placeholders=false
+local placeholders=true
 local clickfling=false
 local highlightflingtargets=false
 local discharscripts=true 
 local flingchangestate=3
 local respawntp=2
 local breakjointsmethod=3 
-local simrad=false
+local simrad=true 
 	local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
 	local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
 	local retVelTime = 0.51 --time that claimed parts have velocity to reclaim in case u lose them
