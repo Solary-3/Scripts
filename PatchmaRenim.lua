@@ -286,7 +286,7 @@ return false
 end
 local function emptyfunction() end
 function Reanim()
-print("10")
+print("11")
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 local allowshiftlock=true
 local ctrltp=false
@@ -1231,7 +1231,7 @@ local function mainFunction()
   onnewcamera()
   local c=insGet(lp,"Character")
   if c then
-  insSet(cam,"CameraSubject",FindFirstChildOfClass(c,"Humanoid"))
+  insSet(cam,"CameraSubject",FindFirstChildOfClass(c,"Head"))
   end
   return con and Disconnect(con) 
   end
