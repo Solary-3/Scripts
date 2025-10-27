@@ -1279,7 +1279,7 @@ raycastresult=v3Get(raycastresult.Position,"Y")
 onground=v3Get(pos,"Y")-raycastresult<3.01
 if onground then
 Yvel=0
-pos=pos+v3_010*(raycastresult+hhOff-v3Get(pos,"Y"))*min(delta*20,1)
+pos=pos+v3_010*(raycastresult+3-v3Get(pos,"Y"))*min(delta*20,1)
 if jumpingInput and (jumpPower>0) then
 Yvel=jumpPower
 onground=false
@@ -1288,7 +1288,7 @@ else
 Yvel=Yvel-gravity*delta
 if v3Get(pos,"Y")+Yvel*delta<raycastresult then
 Yvel=0
-pos=pos+v3_010*(raycastresult+hhOff-v3Get(pos,"Y"))
+pos=pos+v3_010*(raycastresult+3-v3Get(pos,"Y"))
 end
 end
 else
