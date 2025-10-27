@@ -287,7 +287,7 @@ return false
 end
 local function emptyfunction() end
 function Reanim()
-print("25")
+print("26")
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 
 
