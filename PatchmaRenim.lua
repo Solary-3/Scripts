@@ -329,7 +329,7 @@ end
 cam=newcam
 end
 refcam()
-local camcf=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("BestFittingBlack")
+local camcf=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("BestFittingBlack").Handle.CFrame
 --insGet(cam,"CFrame")
 local enumCamS=e.CameraType.Scriptable
 local camt=insGet(cam,"CameraType")
