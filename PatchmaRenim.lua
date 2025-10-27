@@ -1233,7 +1233,7 @@ local function mainFunction()
   onnewcamera()
   local c=insGet(lp,"Character")
   if c then
-  insSet(cam,"CameraSubject",FindFirstChild(c,"BestFittingBlack"))
+  ws.CurrentCamera.CameraSubject=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("BestFittingBlack")
   end
   return con and Disconnect(con) 
   end
