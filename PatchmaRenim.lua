@@ -1231,11 +1231,11 @@ local function mainFunction()
   mouseBehavior=nil
   insSet(uis,"MouseBehavior",enumMD)
   onnewcamera()
-  game.Workspace.CurrentCamera.CameraSubject=game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("BestFittingBlack")
   return con and Disconnect(con) 
   end
 --updateMovementState()
 
+  game.Workspace.CurrentCamera.CameraSubject=game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("BestFittingBlack").Handle
 sine=osclock()
 local delta=sine-lastsine
 deltaTime=min(delta*10,1)
