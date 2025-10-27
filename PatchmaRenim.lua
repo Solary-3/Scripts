@@ -109,7 +109,7 @@ local Lerp=cfGet(cf_0,"Lerp")
 local accessorylimbs={
 { meshid="110684113028749",textureid="70661572547971",C0=angles(0,0,0),Name="Torso" },
 { meshid="104613079991268",textureid="83269599235494",C0=angles(0,0,0),Name="Torso" },
-     
+ 
 { meshid="125405780718494",textureid="136752500636691",C0=angles(-1.5707963267948966,0,1.5707963267948966),Name="Right Arm" },
 
 { meshid="125405780718494",textureid="136752500636691",C0=angles(1.5707963267948966,0,1.5707963267948966),Name="Left Arm" },
@@ -889,37 +889,37 @@ local FWmovement=0
 local RTmovement=0
 local isWalking=false
 local function refreshKeyboardMovement()
-    local anyKeyPressed = (Wpressed or Apressed or Spressed or Dpressed)
-    
-    if anyKeyPressed then
-        if Wpressed then
-            if Spressed then
-                FWmovement = 0
-            else
-                FWmovement = 1
-            end
-        elseif Spressed then
-            FWmovement = -1
-        else
-            FWmovement = 0
-        end
-        
-        if Dpressed then
-            if Apressed then
-                RTmovement = 0
-            else
-                RTmovement = 1
-            end
-        elseif Apressed then
-            RTmovement = -1
-        else
-            RTmovement = 0
-        end
-    else
-        isWalking = false
-        FWmovement = 0
-        RTmovement = 0
-    end
+local anyKeyPressed = (Wpressed or Apressed or Spressed or Dpressed)
+
+if anyKeyPressed then
+if Wpressed then
+if Spressed then
+FWmovement = 0
+else
+FWmovement = 1
+end
+elseif Spressed then
+FWmovement = -1
+else
+FWmovement = 0
+end
+
+if Dpressed then
+if Apressed then
+RTmovement = 0
+else
+RTmovement = 1
+end
+elseif Apressed then
+RTmovement = -1
+else
+RTmovement = 0
+end
+else
+isWalking = false
+FWmovement = 0
+RTmovement = 0
+end
 end
 
 
@@ -1029,21 +1029,21 @@ end
 end)
 Connect(insGet(uis,"TouchMoved"),function(inputObject)
 local touchPos=insGet(inputObject,"Position")
-    local touchX=v3Get(touchPos,"X")
-    local touchY=v3Get(touchPos,"Y")
-    if inputObject==thumbstickInputObject then
-        local direction=insGet(inputObject,"Position")-thumbstickTouchStart
-        local directionMag=v3Get(direction,"Magnitude")/thumbstickSizeMultiplier
-        if directionMag > 0.08 then
-            isWalking = true
-            direction = v3Get(direction,"Unit")*min(1,(directionMag-0.05)/0.95) 
-            FWmovement = -v3Get(direction,"Y")
-            RTmovement = v3Get(direction,"X")
-        else
-            isWalking = false
-            FWmovement = 0
-            RTmovement = 0
-        end
+local touchX=v3Get(touchPos,"X")
+local touchY=v3Get(touchPos,"Y")
+if inputObject==thumbstickInputObject then
+local direction=insGet(inputObject,"Position")-thumbstickTouchStart
+local directionMag=v3Get(direction,"Magnitude")/thumbstickSizeMultiplier
+if directionMag > 0.08 then
+isWalking = true
+direction = v3Get(direction,"Unit")*min(1,(directionMag-0.05)/0.95) 
+FWmovement = -v3Get(direction,"Y")
+RTmovement = v3Get(direction,"X")
+else
+isWalking = false
+FWmovement = 0
+RTmovement = 0
+end
 elseif inputObject==jumpInputObject then
 jumpingInput=touchY>jumpStartY and touchX>jumpStartX and touchX<jumpEndX and touchY<jumpEndY
 else
@@ -1067,10 +1067,10 @@ end
 end)
 Connect(insGet(uis,"TouchEnded"),function(inputObject)
 if inputObject == thumbstickInputObject then
-        thumbstickInputObject = nil
-        isWalking = false  -- Ensure walking is false when thumbstick is released
-        FWmovement = 0
-        RTmovement = 0
+thumbstickInputObject = nil
+isWalking = false
+FWmovement = 0
+RTmovement = 0
 elseif inputObject==jumpInputObject then
 jumpInputObject=nil
 jumpingInput=false
@@ -1208,7 +1208,7 @@ local noYvelTime=1
 local lastsine=sine
 local con=nil
 local lastPosition = pos
-     local movementThreshold = 0.1
+ local movementThreshold = 0.1
 local function mainFunction()
   if not c then 
   for i,v in next,cframes do
@@ -1233,7 +1233,7 @@ local function mainFunction()
   onnewcamera()
   local c=insGet(lp,"Character")
   if c then
-  insSet(cam,"CameraSubject",FindFirstChild(c,"Accessory (Black)"))
+  insSet(cam,"CameraSubject",FindFirstChild(c,"BestFittingBlack"))
   end
   return con and Disconnect(con) 
   end
@@ -1883,8 +1883,8 @@ local function isFirstPerson() --returns true if user is in first person camera 
 return firstperson
 end
 local function IsWalking()
-     return isWalking
-     end
+ return isWalking
+ end
 
 return {
 cframes=cframes,
@@ -1916,6 +1916,6 @@ IsWalking=IsWalking
 end
 
 return {
-     Reanim=Reanim,
-     stopreanimate=stopreanimate
+ Reanim=Reanim,
+ stopreanimate=stopreanimate
 }
