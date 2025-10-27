@@ -286,8 +286,7 @@ return false
 end
 local function emptyfunction() end
 function Reanim()
-print("15")
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+6game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 
 
 local allowshiftlock=true
@@ -1343,9 +1342,16 @@ xzvel=v3Get(v3Get(camcfLV*v3_101,"Unit")*FWmovement+v3Get(camcfRV*v3_101,"Unit")
 if onground then
 pos=pos+xzvel*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150)
 cframes[rootpart]=cfr
-insSet(cam,"CFrame",camcf)
+local headPart = getPart("Head")
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsWalk()
 --isWalking=true
 noYvelTime=min(noYvelTime+delta*0.3,1)
@@ -1368,9 +1374,16 @@ noYvelTime=0
 else 
 pos=pos+(xzvel+v3_010*Yvel)*delta
 cfr=cfl(pos,pos+camcfLV*v3_101)
-camcf=cfAdd(camrot,pos+v3_0150)
-insSet(cam, "CFrame", camcf)
 cframes[rootpart]=cfr
+local headPart = getPart("Head")
+if headPart and cframes[headPart] then
+local headPos = cfGet(cframes[headPart], "Position")
+camcf = cfAdd(camrot, headPos + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+else
+camcf = cfAdd(camrot, pos + v3_0150 + camcfLV * cammag)
+insSet(cam, "CFrame", camcf)
+end
 lerpsFall()
 noYvelTime=0
 end
