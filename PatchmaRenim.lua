@@ -287,7 +287,7 @@ return false
 end
 local function emptyfunction() end
 function Reanim()
-print("26")
+print("27")
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 
 
@@ -338,6 +338,8 @@ local camcon1=nil
 local camcon2=nil
 
 local function onnewcamera()
+local ws=game.Workspace
+local camera=ws.CurrentCamera.CameraSubject
 refcam()
 if camcon0 then 
 Disconnect(camcon0)
@@ -351,9 +353,10 @@ end
 return Disconnect(camcon2) 
 end
 camcon0=Connect(GetPropertyChangedSignal(cam,"CFrame"),function()
-if insGet(cam,"CFrame")~=camcf then
+--[[if insGet(cam,"CFrame")~=camcf then
 insSet(cam,"CFrame",camcf)
-end
+end]]
+camera=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("BestFittingBlack").Handle
 end)
 
 camcon1=Connect(GetPropertyChangedSignal(cam,"CameraType"),function()
@@ -364,9 +367,7 @@ end)
 if insGet(cam,"CameraType")~=enumCamS then
 insSet(cam,"CameraType",enumCamS)
 end
-if insGet(cam,"CFrame")~=camcf then
-insSet(cam,"CFrame",camcf)
-end
+ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("BestFittingBlack").Handle
 end
 
 camcon2=Connect(GetPropertyChangedSignal(ws,"CurrentCamera"),onnewcamera)
