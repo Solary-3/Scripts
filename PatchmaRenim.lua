@@ -1,3 +1,7 @@
+local RigHead=getgenv().RigHead 
+
+
+
 local osclock=os.clock
 local tspawn=task.spawn
 local twait=task.wait
@@ -287,8 +291,11 @@ return false
 end
 local function emptyfunction() end
 function Reanim()
-print("34")
+coroutine.resume(coroutine.create(function()
+  print("0")
+wait(1.5)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+end))
 
 
 local allowshiftlock=true
@@ -356,19 +363,19 @@ camcon0=Connect(GetPropertyChangedSignal(cam,"CFrame"),function()
 --[[if insGet(cam,"CFrame")~=camcf then
 insSet(cam,"CFrame",camcf)
 end]]
-FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("BestFittingBlack").Handle
+FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(RigHead).Handle
 end)
 
 camcon1=Connect(GetPropertyChangedSignal(cam,"CameraType"),function()
 if insGet(cam,"CameraType")~=enumCamS then
 insSet(cam,"CameraType",enumCamS)
-FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("BestFittingBlack").Handle
+FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(RigHead).Handle
 end
 end)
 if insGet(cam,"CameraType")~=enumCamS then
 insSet(cam,"CameraType",enumCamS)
 end
-FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("BestFittingBlack").Handle
+FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(RigHead).Handle
 end
 
 camcon2=Connect(GetPropertyChangedSignal(ws,"CurrentCamera"),onnewcamera)
