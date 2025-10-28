@@ -1,4 +1,4 @@
-local RigHead=getgenv().RigHead 
+ local Global=(getgenv and getgenv()) or shared
 
 
 
@@ -363,19 +363,19 @@ camcon0=Connect(GetPropertyChangedSignal(cam,"CFrame"),function()
 --[[if insGet(cam,"CFrame")~=camcf then
 insSet(cam,"CFrame",camcf)
 end]]
-FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(RigHead).Handle
+FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(Global.RigHead).Handle
 end)
 
 camcon1=Connect(GetPropertyChangedSignal(cam,"CameraType"),function()
 if insGet(cam,"CameraType")~=enumCamS then
 insSet(cam,"CameraType",enumCamS)
-FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(RigHead).Handle
+FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(Global.RigHead).Handle
 end
 end)
 if insGet(cam,"CameraType")~=enumCamS then
 insSet(cam,"CameraType",enumCamS)
 end
-FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(RigHead).Handle
+FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(Global.RigHead).Handle
 end
 
 camcon2=Connect(GetPropertyChangedSignal(ws,"CurrentCamera"),onnewcamera)
