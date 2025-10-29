@@ -315,7 +315,7 @@ Dance.TextColor3=Color3.new(255,255,255)
 Dance.Size=UDim2.new(0.2, 0, 0.33333, 0)
 Dance.Position=UDim2.new(0.310, 0, 0.55556, 0)
 
-Credits.Text=[[Love By Theo]]
+Credits.Text=[[Made By Theo]]
 Credits.Font=[[Fantasy]]
 Credits.TextColor3=Color3.new(255,255,255)
 Credits.BackgroundTransparency=1 
