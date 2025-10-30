@@ -13,7 +13,7 @@ Duration = dur or 3;
 end
 local Players = game:GetService("Players")
 local lp=Players.LocalPlayer
-local TARGET_USERNAMES = { "Username1", "None"}
+local TARGET_USERNAMES = { "Username1", "Chinmoy_Iskarbi"}
 
 local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
