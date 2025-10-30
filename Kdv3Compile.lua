@@ -2,6 +2,7 @@ print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
 print("Welcome")
 print[[Sorry for me didnt noticing the currentangle version :<]]
 print[[Final Adjustments]]
+print[[0]]
 local Occasions="Halloween"
 
 local Players = game:GetService("Players")
@@ -28,6 +29,7 @@ if isfile("Blacklist")  then
 local function Blacklist(player)
 if player.Character then
 notif("You Are Blacklisted by the owner! sorry! :( ")
+player:Kick("Get Out")
 end
 end
 
