@@ -291,6 +291,7 @@ return false
 end
 local function emptyfunction() end
 function Reanim()
+print(Global.RigHead)
 coroutine.resume(coroutine.create(function()
   print("0")
 wait(1.5)
