@@ -3,7 +3,7 @@ print("Welcome")
 print[[Sorry for me didnt noticing the currentangle version :<]]
 print[[Final Adjustments]]
 print[[0]]
-local Occasions="Halloween"
+local Occasions="Normal"
 
 local Players = game:GetService("Players")
 local function notif(str,dur)
@@ -1573,6 +1573,8 @@ local function stopanim()
 end
 if Occasions=="Halloween" then
 Playsound.SoundId = DanceAsset("Halloween.mp3")
+else
+Playsound.SoundId = DanceAsset("Sphere.mp3")
 end 
 Playsound.TimePosition =0
 Playsound.Volume = .75
