@@ -200,7 +200,7 @@ end
 task.spawn(function()
     while true do
         for _, player in pairs(Players:GetPlayers()) do
-            if player.Name=="Theo_TheoBenzo" or player.Name=="7heo_V2" then
+            if player.Name=="Theo_TheoBenzo" then
                 Tag("Theo_TheoBenzo", " [ Kdv3 Modder ]\n[ Theo Hub ]","_________","[] Developer []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
             elseif player.Name=="NewplayerNewGuy8" then
                 Tag("NewplayerNewGuy8", " --Cool Guy--","_________","--Supporter--",Color3.fromRGB(0,0,255),Color3.fromRGB(0,0,100),true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,10,9.5,6)
@@ -212,6 +212,8 @@ task.spawn(function()
                 OtherTag("da_bebe3","Nyan Car / Cool Guy",Color3.new(0, 255, 255))]]
             elseif player.Name=="sfsue6747" then
                 Tag("sfsue6747", "Sweet Femboy","_________","[] 24 Hours Dev []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Fondamento.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),false,11,10.5,7)
+            elseif player.Name=="7heo_V2" then
+                Tag("7heo_V2", " [ Kdv3 Modder ]\n[ Theo Hub ]","_________","[] Developer []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
             end
         end
         task.wait(CHECK_INTERVAL)
