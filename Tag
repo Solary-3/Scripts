@@ -1,4 +1,4 @@
-print("New FAAAAH")
+print("Ewal")
 
 local ws=game.Workspace
 local imageId = "rbxassetid://89287417287641"
@@ -13,14 +13,9 @@ for _, name in pairs(TARGET_USERNAMES) do
 end
 function Tag(target, txt, divider, type, col1, col2, usefontface, font, allowrgb, yoff1,yoff2,yoff3,idk, customglitch, colg1, colg2)
 local ws=game.Workspace
-if ws:FindFirstChild(target).Head:FindFirstChild("Main") then return end
-local head=ws:FindFirstChild(target).Head
+--if ws:FindFirstChild(target).Head:FindFirstChild("Main") then return end
+local head=ws:WaitForChild(target):WaitForChild("Head")
 local rus=game:GetService("RunService")
-for _,a in ipairs(head:GetChildren()) do
-if a:IsA("BillboardGui") then 
-a:Destroy()
-end
-end
 local bilguit = Instance.new("BillboardGui", head)
 bilguit.Adornee = nil
 bilguit.Name = "Main"
