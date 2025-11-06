@@ -4,7 +4,7 @@ local ws=game.Workspace
 local imageId = "rbxassetid://89287417287641"
 local Players = game:GetService("Players")
 local TAG_NAME = "ScriptOwnerTag"
-local TARGET_USERNAMES = { "Username10000","Theo_TheoBenzo", "NewplayerNewGuy8", "VI_lato","russki_krutoi","sfsue6747", "da_bebe3"} -- Add more here
+local TARGET_USERNAMES = { "Username10000","Theo_TheoBenzo", "NewplayerNewGuy8", "VI_lato","russki_krutoi","sfsue6747", "da_bebe3", "7heo_V2"} -- Add more here
 local CHECK_INTERVAL = 2
 
 local TargetLookup = {}
@@ -200,7 +200,7 @@ end
 task.spawn(function()
     while true do
         for _, player in pairs(Players:GetPlayers()) do
-            if player.Name=="Theo_TheoBenzo" then
+            if player.Name=="Theo_TheoBenzo" or player.Name=="7heo_V2" then
                 Tag("Theo_TheoBenzo", " [ Kdv3 Modder ]\n[ Theo Hub ]","_________","[] Developer []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
             elseif player.Name=="NewplayerNewGuy8" then
                 Tag("NewplayerNewGuy8", " --Cool Guy--","_________","--Supporter--",Color3.fromRGB(0,0,255),Color3.fromRGB(0,0,100),true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,10,9.5,6)
