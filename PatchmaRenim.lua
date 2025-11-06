@@ -403,6 +403,10 @@ local camcfLV=cfGet(camcf,"LookVector")
 local camrot=cfl(v3_0,camcfLV)
 local camcfRV=cfGet(camrot,"RightVector")
 local cammag=-v3Get((cfGet(camcf,"Position")-(pos+v3_0150)),"Magnitude")
+local velYdelta=insGet(ws,"Gravity")*0.025
+	Connect(GetPropertyChangedSignal(ws,"Gravity"),function()
+		velYdelta=insGet(ws,"Gravity")*0.025
+	end)
 
 local R6parts={ 
 head={Name="Head"},
