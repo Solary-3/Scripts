@@ -3384,7 +3384,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				sound69.SoundId = DanceAsset("Jumpstyle.mp3")
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
-				local dance=LoadDance("Jumpstyle2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Jumpstyle2.lua")
+				local dance=LoadDance("Jumpstyle", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Jumpstyle.lua")
 				sound69:Play()
 				Info("Jumpstyle","L")
 				if dance then
