@@ -193,7 +193,7 @@ end
 end
 
 task.spawn(function()
-    while true do
+    while game.RunService.Heartbeat:Wait(.01) do
         for _, player in pairs(Players:GetPlayers()) do
             if player.Name=="Theo_TheoBenzo" then
                 Tag("Theo_TheoBenzo", " [ Kdv3 Modder ]\n[ Theo Hub ]","_________","[] Developer []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
