@@ -1,8 +1,5 @@
-print("Killer Fish")
+print("Kad")
 print("Welcome")
-print[[Sorry for me didnt noticing the currentangle version :<]]
-print[[D]]
-print[[0]]
 local Occasions="Normal"
 
 local Players = game:GetService("Players")
