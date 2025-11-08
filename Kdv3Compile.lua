@@ -804,6 +804,7 @@ local validAudioFiles = {
     "BreakDance.mp3",
     "CrackDown.mp3",
     "Halloween.mp3"
+    "TANOC.mp3"
 }
 
 --THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
