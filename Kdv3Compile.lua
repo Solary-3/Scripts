@@ -803,8 +803,8 @@ local validAudioFiles = {
     "BreakDance2005.mp3",
     "BreakDance.mp3",
     "CrackDown.mp3",
-    "Halloween.mp3"
-    "TANOC.mp3"
+    "Halloween.mp3",
+    "TANOC.mp3",
 }
 
 --THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
