@@ -29,7 +29,8 @@ if isfile("Blacklist")  then
 local function Blacklist(player)
 if player.Character then
 notif("You Are Blacklisted by the owner! sorry! :( ")
-player:Kick("Get Out")
+wait(5)
+player:Kick("Imagine getting blacklisted")
 end
 end
 
