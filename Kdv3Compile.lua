@@ -543,7 +543,7 @@ if REANIMATION then return notify([[ALREADY REANIMATING]]) end
 if game:GetService("Players").LocalPlayer.Character.Name == "GelatekReanimate" then
 return notify("Already Reanimated") end
 if game:GetService("Players").LocalPlayer.Character.Name == Character1.Name.."_Fake" then
-return notify("ALREADY REANIMATED CUH") end
+return notify("Already Reanimated") end
 if ReanimateVer=="Gelatek" then
 Run1.Position = UDim2.new(100, 0, 0.629999971, 0)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
