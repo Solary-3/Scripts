@@ -211,7 +211,6 @@ coroutine.resume(coroutine.create(function()
                 Tag("7heo_V2", " [ Kdv3 Modder ]\n[ Theo Hub ]","_________","[] Developer []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
             end
         end
-        task.wait(CHECK_INTERVAL)
     end
 end))
 
