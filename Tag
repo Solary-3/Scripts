@@ -15,6 +15,7 @@ function Tag(target, txt, divider, type, col1, col2, usefontface, font, allowrgb
 local ws=game.Workspace
 --if ws:FindFirstChild(target).Head:FindFirstChild("Main") then return end
 local head=ws:WaitForChild(target):WaitForChild("Head")
+if head:FindFirstChild("Main") then return end
 local rus=game:GetService("RunService")
 local bilguit = Instance.new("BillboardGui", head)
 bilguit.Adornee = nil
