@@ -28,9 +28,22 @@ end
 if isfile("Blacklist")  then
 local function Blacklist(player)
 if player.Character then
+local h=math.random(1,5)
 notif("You Are Blacklisted by the owner! sorry! :( ")
 wait(5)
+if h==1 then
 player:Kick("Imagine getting blacklisted")
+elseif h==1 then
+player:Kick("Imagine abusing the script")
+elseif h==2 then
+player:Kick("LOL GET BLACKLSTED")
+elseif h==3 then
+player:Kick("fuck off")
+elseif h==4 then
+player:Kick("tsk tsk tsk, poor skid")
+elseif h==4 then
+player:Kick("💀")
+end
 end
 end
 
