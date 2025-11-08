@@ -805,6 +805,7 @@ local validAudioFiles = {
     "CrackDown.mp3",
     "Halloween.mp3",
     "TANOC.mp3",
+    "Shiawase.mp3",
 }
 
 --THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
@@ -1093,7 +1094,7 @@ Text3.LineJoinMode = Enum.LineJoinMode.Miter
 
 
 -- Krystal Dance V3, Made by Hemi (es muy janky)
-local lol = math.random(1,2)
+local lol = math.random(1,3)
 local idleanim = is:LoadLocalAsset("rbxassetid://74204337812128") -- uuid. 136078657506707
 local walkanim = is:LoadLocalAsset("rbxassetid://73688515498572") -- uuid. 130213485744288
 local randompart = Instance.new("Part",game:GetService("RunService"))
@@ -1560,7 +1561,9 @@ Playsound.SoundId = DanceAsset("Halloween.mp3")
 else
 if lol==1 then 
 Playsound.SoundId = DanceAsset("Sphere.mp3")
-else 
+elseif lol==2 then
+Playsound.SoundId = DanceAsset("Shiawase.mp3")
+elseif lol==3 then 
 Playsound.SoundId = DanceAsset("TANOC.mp3")
 end
 end 
