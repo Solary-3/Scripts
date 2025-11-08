@@ -563,6 +563,8 @@ wait(2)
 if ws:WaitForChild("GelatekReanimate") or ws:WaitForChild(game.Players.LocalPlayer.Name.."_Fake") then
 REANIMATION=false
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
+else 
+REANIMATION=false
 end
 end)
 
