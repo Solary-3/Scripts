@@ -552,10 +552,12 @@ REANIMATION=true
 elseif ReanimateVer=="Current" then
 Backup()
 REANIMATION=true
+Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 end
 else 
 Backup()
 REANIMATION=true
+Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 end 
 wait(2)
 if ws:FindFirstChild("GelatekReanimate") or ws:FindFirstChild(Character.Name.."_Fake") then
