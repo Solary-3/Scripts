@@ -14,7 +14,7 @@ Duration = dur or 3;
 end
 local Players = game:GetService("Players")
 local lp=Players.LocalPlayer
-local TARGET_USERNAMES = { "Username1", "Chinmoy_Iskarbi"}
+local TARGET_USERNAMES = { "Username1", "Chinmoy_Iskarbi","sfsue6747"}
 
 local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
@@ -35,25 +35,11 @@ end
 
 for _, player in pairs(Players:GetPlayers()) do
 if isfile("Blacklist") then
-if readfile("Blacklist")=="Godsupremesparta" then
+if readfile("Blacklist")=="sfsue6747" then
 wait(5)
-notif("Say sorry on what you did to me(Theo)",5)
-notif(5)
-notif("if you feel sorry or not, i wont let you use my kdv3",5)
-wait(5)
-notif("I know it hurts losing me, but this is your fault, not me",5)
-wait(5)
-notif("Hopefully youll feel the  pain that im having right now",5)
-wait(5)
-notif("So yeah... see you around and hope youll get around with this",5)
-wait(5)
-notif("And also, its not too late to find someone else that will make you happy.",5)
-wait(5)
-notif("As always, see you around!.",5)
-wait(5)
-notif("Now Exiting",5)
-wait(2.5)
-player:Kick('"The adventure isnt over yet, there still someone out there that will make you smile" -Love from Theo/Sage')
+notif("Your not tuff 'lil bro'")
+wait(2)
+player:Kick("'Your aint tuff' - Someone")
 else
 return Blacklist(player)
 end
