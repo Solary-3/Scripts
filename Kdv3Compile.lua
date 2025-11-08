@@ -1,4 +1,4 @@
-print("Gng what")
+print("Killer Fish")
 print("Welcome")
 print[[Sorry for me didnt noticing the currentangle version :<]]
 print[[D]]
