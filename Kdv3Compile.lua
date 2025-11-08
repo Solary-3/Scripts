@@ -541,7 +541,7 @@ REANIMATE.MouseButton1Click:Connect(function()
 if Place == 17574618959 or Place == 88308889239232 then
 if REANIMATION then return notify([[ALREADY REANIMATING]]) end
 if game:GetService("Players").LocalPlayer.Character.Name == "GelatekReanimate" then
-return notify("ALREADY REANIMATED CUH") end
+return notify("Already Reanimated") end
 if game:GetService("Players").LocalPlayer.Character.Name == Character1.Name.."_Fake" then
 return notify("ALREADY REANIMATED CUH") end
 if ReanimateVer=="Gelatek" then
