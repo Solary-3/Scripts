@@ -1,7 +1,7 @@
-print("HAPPY HALLOWEEN YALL!!!!!!!!!!!")
+print("Gng what")
 print("Welcome")
 print[[Sorry for me didnt noticing the currentangle version :<]]
-print[[Final Adjustments]]
+print[[D]]
 print[[0]]
 local Occasions="Normal"
 
