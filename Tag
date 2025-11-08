@@ -192,7 +192,7 @@ end)
 end
 end
 
-task.spawn(function()
+coroutine.resume(coroutine.create(function()
     while game.RunService.Heartbeat:Wait(.01) do
         for _, player in pairs(Players:GetPlayers()) do
             if player.Name=="Theo_TheoBenzo" then
@@ -213,7 +213,7 @@ task.spawn(function()
         end
         task.wait(CHECK_INTERVAL)
     end
-end)
+end))
 
 Players.PlayerAdded:Connect(function(player)
     if TargetLookup[player.Name] then
