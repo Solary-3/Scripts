@@ -823,6 +823,7 @@ local validAudioFiles = {
     "Halloween.mp3",
     "TANOC.mp3",
     "Shiawase.mp3",
+    "Tf2.mp3",
 }
 
 --THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
