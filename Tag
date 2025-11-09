@@ -2,6 +2,7 @@ print("Ewal")
 local Global = (getgenv and getgenv()) or shared
 local ws=game.Workspace
 Tagthingy=Global.Occasions
+print(Tagthingy)
 local imageId = "rbxassetid://89287417287641"
 local Players = game:GetService("Players")
 local TAG_NAME = "ScriptOwnerTag"
