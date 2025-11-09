@@ -1,7 +1,8 @@
 print("Kad")
 print("Welcome")
+local Global = (getgenv and getgenv()) or shared
 local Occasions="Normal"
-
+Global.Occasions=Occasions
 local Players = game:GetService("Players")
 local function notif(str,dur)
 	game:GetService("StarterGui"):SetCore("SendNotification", { 
@@ -104,7 +105,6 @@ if touch.TouchEnabled==true then
 notify("Mobile user detected.",4)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/main/MobileKeyboard.txt'))()
 end
-local Global = (getgenv and getgenv()) or shared
 local function choot(msg)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(msg)
 end
