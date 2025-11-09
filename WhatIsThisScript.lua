@@ -1,4 +1,4 @@
-print("C")
+print("Drop")
 print("Welcome")
 local Global = (getgenv and getgenv()) or shared
 local Occasions="Normal"
@@ -561,7 +561,7 @@ wait(2)
 if ReanimateVer=="Gelatek" and ws:WaitForChild("GelatekReanimate")  then
 REANIMATION=false
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
-elseif ReanimateVer=="Currwnt" and ws:FindFirstChild(game.Players.LocalPlayer.Name.."_Fake") then 
+elseif ReanimateVer=="Current" and ws:WaitForChild(game.Players.LocalPlayer.Name.."_Fake") then 
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 REANIMATION=false
 end
