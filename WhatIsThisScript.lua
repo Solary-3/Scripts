@@ -1,4 +1,4 @@
-print("Kad")
+print("C")
 print("Welcome")
 local Global = (getgenv and getgenv()) or shared
 local Occasions="Normal"
