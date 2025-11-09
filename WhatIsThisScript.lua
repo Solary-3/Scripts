@@ -24,7 +24,7 @@ end
 end
 end
 wait(1)
-if isfile("Blacklist")  then
+if isfile("Blacklist") then
 local function Blacklist(player)
 if player.Character then
 local h=math.random(1,5)
