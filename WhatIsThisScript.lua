@@ -23,6 +23,7 @@ writefile("Blacklist",name)
 end
 end
 end
+wait(1)
 if isfile("Blacklist")  then
 local function Blacklist(player)
 if player.Character then
