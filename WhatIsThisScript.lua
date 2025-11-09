@@ -17,7 +17,7 @@ local TARGET_USERNAMES = { "Username1", "Chinmoy_Iskarbi","sfsue6747"}
 local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
 	TargetLookup[name] = true
-if lp.Name==name then
+if lp.Name==name and Players:FindFirstChild(name) then
 if not isfile("Blacklist") then 
 writefile("Blacklist",name)
 end
