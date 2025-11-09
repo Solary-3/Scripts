@@ -1,6 +1,7 @@
 print("Ewal")
 local Global = (getgenv and getgenv()) or shared
 local ws=game.Workspace
+Tagthingy=Global.Occasions
 local imageId = "rbxassetid://89287417287641"
 local Players = game:GetService("Players")
 local TAG_NAME = "ScriptOwnerTag"
@@ -197,13 +198,13 @@ coroutine.resume(coroutine.create(function()
     while game.RunService.Heartbeat:Wait(.01) do
         for _, player in pairs(Players:GetPlayers()) do
             if player.Name=="Theo_TheoBenzo" then
-              if Global.Occasions=="April" then
+              if Tagthingy=="April" then
                 Tag("Theo_TheoBenzo", " --Cool Guy--","_________","--Supporter--",Color3.fromRGB(0,0,255),Color3.fromRGB(0,0,100),true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,10,9.5,6)
                 else
                 Tag("Theo_TheoBenzo", " [ Kdv3 Modder ]\n[ Theo Hub ]","_________","[] Developer []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
                 end
             elseif player.Name=="NewplayerNewGuy8" then
-              if Global.Occasions=="April" then
+              if Tagthingy=="April" then
                 Tag("NewplayerNewGuy8", " [ Kdv3 Modder ]\n[ Theo Hub ]","_________","[] Developer []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
                 else
                 Tag("NewplayerNewGuy8", " --Cool Guy--","_________","--Supporter--",Color3.fromRGB(0,0,255),Color3.fromRGB(0,0,100),true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,10,9.5,6)
