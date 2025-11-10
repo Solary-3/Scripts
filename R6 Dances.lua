@@ -2344,7 +2344,7 @@ local TableOfDances={
   {Name="Rat1",Music="rat.mp3",DanceName="Rat1",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rat1.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Boogie Down",Music="FunkedUp.mp3",DanceName="None",Url="None",Id=122471664395501,Offset=0,WalkSpeed=14},
   {Name="Assumptions",Music="Assumptions.mp3",DanceName="Assumptions",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Assumptions.lua",Id="None",Offset=0,WalkSpeed=14},
-  {Name="Egypt",Music="Egyp.mp3",DanceName="Egyp",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Egypt.lua",Id="None",Offset=0,WalkSpeed=14},
+  {Name="Egypt",Music="Egypt.mp3",DanceName="Egypt",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Egypt.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Flop",Music="DO THE FLOP.mp3",DanceName="Flop",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Flop.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="CaramellDansen",Music="caramell.mp3",DanceName="Nonw",Url="None",Id=114964447248296,Offset=0,WalkSpeed=14},
   {Name="Heel Toe Hop",Music="Heel.mp3",DanceName="Heel",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/HeelToeHop.lua",Id="None",Offset=0,WalkSpeed=14},
