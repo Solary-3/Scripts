@@ -2341,7 +2341,7 @@ local TableOfDances={
   {Name="Swag Walk",Music="dr.wav",DanceName="None",Url="None",Id=110403709064010,Offset=0,WalkSpeed=4},
   {Name="Griddy",Music="griddy.mp3",DanceName="None",Url="None",Id=110403709064010,Offset=0,WalkSpeed=4},
   {Name="Luxurios",Music="lux.ogg",DanceName="None",Url="None",Id=94534967284996,Offset=0,WalkSpeed=14},
-  {Name="Kazotsky",Music="kazot.mp3",DanceName="None",Url="None",Id=94534967284996,Offset=0,WalkSpeed=14},
+  {Name="Kazotsky",Music="kazot.mp3",DanceName="None",Url="None",Id=86634257330162,Offset=0,WalkSpeed=14},
   {Name="Domino",Music="Domino.mp3",DanceName="Domino",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Domino.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Liar Dancer",Music="Liar.mp3",DanceName="Liar",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Liar.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Mesmerizer",Music="Mesmerizer.mp3",DanceName="Mesmerizer",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Mesmerizer.lua",Id="None",Offset=0,WalkSpeed=14},
