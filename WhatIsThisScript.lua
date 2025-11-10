@@ -824,6 +824,8 @@ local validAudioFiles = {
     "TANOC.mp3",
     "Shiawase.mp3",
     "Tf2.mp3",
+    "Smug.mp3",
+    "Wait.mp3",
 }
 
 --THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
@@ -1611,7 +1613,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				local meh=mrandom(1,2)
 				if meh==2 then
-				sound69.SoundId = DanceAsset("matchmaker.mp3")
+				sound69.SoundId = DanceAsset("Matchmaker.mp3")
 				else
 				sound69.SoundId = DanceAsset("rat.mp3")
 				  end
@@ -2077,7 +2079,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				sound69.SoundId = DanceAsset("assum.mp3")
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
-				Info("Assumptions","T")
+				Info("Assumptions","t")
 				playanim(129275138998868) -- uuid. 15705077587
 			else
 				stopanim()
@@ -2513,7 +2515,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				local meh=mrandom(1,2)
 				if meh==2 then
-				sound69.SoundId = DanceAsset("matchmaker.mp3")
+				sound69.SoundId = DanceAsset("Matchmaker.mp3")
 				else
 				sound69.SoundId = DanceAsset("rat.mp3")
 				  end
@@ -3069,7 +3071,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				timeposcur = sound69.TimePosition 
 				local dance=LoadDance("Down", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Going Down.lua")
 				sound69:Play()
-				Info("Down","V")
+				Info("Going Down","V")
 				if dance then
 				playanim(dance) 
 				end-- uuid. 71723925114737
@@ -3152,7 +3154,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				sound69.SoundId = DanceAsset("Headlock.mp3")
 				timeposcur = sound69.TimePosition 
-				local dance=LoadDance("Headlock2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Headlock2.lua")
+				local dance=LoadDance("Headlock3", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Headlock3.lua")
 				Info("Headlock 2","[")
 				sound69:Play()
 				if dance then
@@ -3325,7 +3327,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				task.wait(.005)
 				local meh=mrandom(1,2)
 				if meh==2 then
-				sound69.SoundId = DanceAsset("matchmaker.mp3")
+				sound69.SoundId = DanceAsset("Matchmaker.mp3")
 				else
 				sound69.SoundId = DanceAsset("rat.mp3")
 				  end
@@ -3395,7 +3397,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				sound69.SoundId = DanceAsset("Jumpstyle.mp3")
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
-				local dance=LoadDance("Jumpstyle3", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Jumsptyle3.lua")
+				local dance=LoadDance("Jumpstyle", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Jumsptyle3.lua")
 				sound69:Play()
 				Info("Jumpstyle","L")
 				if dance then
@@ -3488,6 +3490,42 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				local dance=LoadDance("CrackDown", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/CrackDown.lua")
 				sound69:Play()
 				Info("Crack Down","B")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+	     elseif k == "n" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				Playsound.Volume=0
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Smug.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				local dance=LoadDance("Smug", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Smug.lua")
+				sound69:Play()
+				Info("Smug Dance","N")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+	     elseif k == "rightbracket" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				Playsound.Volume=0
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Wait.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				local dance=LoadDance("Wait", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Wait.lua")
+				sound69:Play()
+				Info("Wait","]")
 				if dance then
 				playanim(dance) 
 				end-- uuid. 71723925114737
