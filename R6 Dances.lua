@@ -880,9 +880,10 @@ local uis = game:GetService("UserInputService")
 
 
 
-
+local RUNNING = false
 function MainScript()
 if RUNNING==true then return end
+RUNNING=true
 local G2L={};
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["Name"] = [[Custom Inventory]];
@@ -2601,7 +2602,6 @@ end
 end
 end
 
-local RUNNING = false
 Run1.MouseButton1Click:Connect(function()
 if REANIMATION then return notify("Reanimating please wait") end
 if RUNNING==true then return notify("SCRIPT IS RUNNING!!") end
