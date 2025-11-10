@@ -2653,6 +2653,7 @@ Stop1.MouseButton1Click:Connect(function()
         local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
         local tween = game:GetService("TweenService"):Create(CurrentFrame, tweenInfo, {Position = UDim2.new(0.385, 0, 1.15, 0)})
     Playsound:Stop()
+    end
     Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 --[[    local player = game.Players.LocalPlayer
     if player.Character then
