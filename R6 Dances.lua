@@ -14,19 +14,21 @@ Duration = dur or 3;
 end
 local Players = game:GetService("Players")
 local lp=Players.LocalPlayer
-local TARGET_USERNAMES = { "Username1", "Chinmoy_Iskarbi",""}
+local TARGET_USERNAMES = { "Username1",
+  "Chinmoy_Iskarbi",
+}
 
 local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
 	TargetLookup[name] = true
 if lp.Name==name and Players:FindFirstChild(name) then
-if not isfile("Blacklist") then 
-writefile("Blacklist",name)
+if not isfile("Blacklist1") then 
+writefile("Blacklist1",name)
 end
 end
 end
 wait(1)
-if isfile("Blacklist") then
+if isfile("Blacklist1") then
 local function Blacklist(player)
 if player.Character then
 local h=math.random(1,5)
@@ -49,8 +51,8 @@ end
 end
 
 for _, player in pairs(Players:GetPlayers()) do
-if isfile("Blacklist") then
-if readfile("Blacklist")=="sfsue6747" then
+if isfile("Blacklist1") then
+if readfile("Blacklist1")=="sfsue6747" then
 wait(5)
 notif("Your not tuff 'lil bro'")
 wait(2)
@@ -89,25 +91,11 @@ if ws:FindFirstChild("full") then
 ws.full:Destroy()
 end
 coroutine.resume(coroutine.create(function()
-notify("KDV3 Made by Nitro-GT (Dont Support him)")
+notify("R6 Dance Script Made By Theo!")
 wait(.95)
-notify("Fixed By MrY7zz")
-wait(.95)
-notify("Modded By Theo")
-wait(.95)
-notify("Credits goes to them!!!!")
-wait(.75)
-notify('or reanimate directly', 10)
-wait(2)
-notify('Dont Use Mizus script, literally skidded off from mine', 2)
-wait(2)
+notify("Enjoy Using!")
 end))
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/packages/FunctionPack.lua"))()
-local touch=game.UserInputService
-if touch.TouchEnabled==true then
-notify("Mobile user detected.",4)
-loadstring(game:HttpGet('https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/main/MobileKeyboard.txt'))()
-end
 local function choot(msg)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(msg)
 end
@@ -542,9 +530,9 @@ ReanimateVer=getgenv().Reanimate
 REANIMATE.MouseButton1Click:Connect(function()
 if Place == 17574618959 or Place == 88308889239232 then
 if REANIMATION then return notify([[ALREADY REANIMATING]]) end
-if game:GetService("Players").LocalPlayer.Character.Name == "GelatekReanimate" then
+if game Workspace:FindFirstChild("GelatekReanimate") then
 return notify("Already Reanimated") end
-if game:GetService("Players").LocalPlayer.Character.Name == Character1.Name.."_Fake" then
+if game Workspace:FindFirstChild(Character1.Name.."_Fake")then
 return notify("Already Reanimated") end
 if ReanimateVer=="Gelatek" then
 Run1.Position = UDim2.new(100, 0, 0.629999971, 0)
