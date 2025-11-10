@@ -2,6 +2,8 @@ print("No gng")
 print("Welcome")
 local Global = (getgenv and getgenv()) or shared
 local Occasions="Normal"
+local player = game:GetService("Players").LocalPlayer
+local BackPack = player:WaitForChild("Backpack")
 Global.Occasions=Occasions
 local Players = game:GetService("Players")
 local function notif(str,dur)
@@ -1465,13 +1467,13 @@ function module:addTool(tool: Tool, parent: string, position: number)
 		end
 
 		if object:isEquipped() then -- if tool is equipped then unequip it
-		     M()
+
 			humanoid:UnequipTools()
 			frame.BackgroundColor3 = SETTINGS.DEFAULT_COLOR
 			frame.Image = SETTINGS.DEFAULT_IMAGEID
 			module.currentlyEquipped = nil
 		elseif tool.Enabled then -- if tool isnt equipped then equip it
-		     M()
+
 			humanoid:EquipTool(tool)
 			if module.currentlyEquipped and module.currentlyEquipped.Parent then
 				module.currentlyEquipped.BackgroundColor3 = SETTINGS.DEFAULT_COLOR
@@ -2454,7 +2456,7 @@ local TableOfDances={
 local ws=game.Workspace
 ws.CurrentCamera.CameraSubject=char:WaitForChild("Head")
 for _,v in ipairs(TableOfDances) do 
-local tool=Instance.new("Tool",backpack)
+local tool=Instance.new("Tool",BackPack)
 tool.Name=v.Name
 tool.RequiresHandle=false
 tool.Equipped:Connect(function()
@@ -2462,6 +2464,7 @@ if dancing==false then
 stopanim()
 dancing = true
 Playsound.Volume=0
+sound69.Volume=1
 wait(.005)
 char.Humanoid.WalkSpeed=v.WalkSpeed
 sound69.SoundId = DanceAsset(v.Music)
@@ -2570,9 +2573,6 @@ Playsound.Volume=0
 Playsound.TimePosition=0
 Playsound:Stop()
 sound69:Stop()
-wait(1)
-local ws=game.Workspace
-ws.CurrentCamera.CameraSubject=game.Players.LocalPlayer.Character:WaitForChild("HumanoidStateType")
 end
 --[[
 deltaTime+=.1
@@ -2653,8 +2653,8 @@ Stop1.MouseButton1Click:Connect(function()
         local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
         local tween = game:GetService("TweenService"):Create(CurrentFrame, tweenInfo, {Position = UDim2.new(0.385, 0, 1.15, 0)})
     Playsound:Stop()
-    end
     Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
+    end
 --[[    local player = game.Players.LocalPlayer
     if player.Character then
         local head = player.Character:FindFirstChild("Head")
