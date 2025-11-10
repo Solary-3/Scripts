@@ -1,23 +1,80 @@
-local Occasions="Normal"
+print("No gng")
+print("Welcome")
 local Global = (getgenv and getgenv()) or shared
-local player = game.Players.LocalPlayer
-local backpack = player:WaitForChild("Backpack")
+local Occasions="Normal"
+Global.Occasions=Occasions
+local Players = game:GetService("Players")
+local function notif(str,dur)
+	game:GetService("StarterGui"):SetCore("SendNotification", { 
+    Title = "From Theo";
+    Text = str;})
+Duration = dur or 3;
+end
+local Players = game:GetService("Players")
+local lp=Players.LocalPlayer
+local TARGET_USERNAMES = { "Username1", "Chinmoy_Iskarbi",""}
 
+local TargetLookup = {}
+for _, name in pairs(TARGET_USERNAMES) do
+	TargetLookup[name] = true
+if lp.Name==name and Players:FindFirstChild(name) then
+if not isfile("Blacklist") then 
+writefile("Blacklist",name)
+end
+end
+end
+wait(1)
+if isfile("Blacklist") then
+local function Blacklist(player)
+if player.Character then
+local h=math.random(1,5)
+notif("You Are Blacklisted by the owner! sorry! :( ")
+wait(5)
+if h==1 then
+player:Kick("Imagine getting blacklisted")
+elseif h==1 then
+player:Kick("Imagine abusing the script")
+elseif h==2 then
+player:Kick("LOL GET BLACKLSTED")
+elseif h==3 then
+player:Kick("fuck off")
+elseif h==4 then
+player:Kick("tsk tsk tsk, poor skid")
+elseif h==4 then
+player:Kick("💀")
+end
+end
+end
 
+for _, player in pairs(Players:GetPlayers()) do
+if isfile("Blacklist") then
+if readfile("Blacklist")=="sfsue6747" then
+wait(5)
+notif("Your not tuff 'lil bro'")
+wait(2)
+player:Kick("'Your aint tuff' - Someone")
+else
+return Blacklist(player)
+end
+else
+end
+end
+else
+notif("Not Banned! :)")
+end 
 if isfolder and not isfolder("KDV3") then 
 	makefolder("KDV3")
 end
-
+coroutine.resume(coroutine.create(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
+end))
 if not isfolder("KRYSTALDANCE") then
         makefolder("KRYSTALDANCE")
 end
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/packages/FunctionPack.lua"))()
 local KDV3 = game:GetService("CoreGui")
 if KDV3:FindFirstChild("KRYSTALDANCE") then
     KDV3.KRYSTALDANCE:Destroy()
 end
-
-
 local function notify(text,dur)
 local Notify=game:GetService("StarterGui")
 Notify:SetCore("SendNotification",{
@@ -28,6 +85,29 @@ end
 local ws=game.Workspace
 if ws:FindFirstChild("full") then
 ws.full:Destroy()
+end
+coroutine.resume(coroutine.create(function()
+notify("KDV3 Made by Nitro-GT (Dont Support him)")
+wait(.95)
+notify("Fixed By MrY7zz")
+wait(.95)
+notify("Modded By Theo")
+wait(.95)
+notify("Credits goes to them!!!!")
+wait(.75)
+notify('or reanimate directly', 10)
+wait(2)
+notify('Dont Use Mizus script, literally skidded off from mine', 2)
+wait(2)
+end))
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/packages/FunctionPack.lua"))()
+local touch=game.UserInputService
+if touch.TouchEnabled==true then
+notify("Mobile user detected.",4)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/main/MobileKeyboard.txt'))()
+end
+local function choot(msg)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(msg)
 end
 local ScreenGui = Instance.new("ScreenGui",KDV3)
 ScreenGui.Name ="KRYSTALDANCE"
@@ -41,13 +121,14 @@ local ced = Instance.new("TextLabel")
 local Show =Instance.new("TextButton")
 local corner=Instance.new("UICorner",ui)
 --local DANCEINFO=Instance.new("TextButton",ui)
-local Enable =Instance.new("TextButton",ui)
+--local Enable =Instance.new("TextButton",ui)
 local corner1=Instance.new("UICorner",Run1)
 corner2=Instance.new("UICorner",Stop1)
 corner3=Instance.new("UICorner",Show)
 corner4=Instance.new("UICorner",REANIMATE)
 corner5=Instance.new("UICorner",DANCEINFO)
 corner4=Instance.new("UICorner",Enable)
+--[[
 local CurrentFrame=Instance.new("Frame",ScreenGui)
 local Stroke=Instance.new("UIStroke",CurrentFrame)
 local Corner=Instance.new("UICorner",CurrentFrame)
@@ -60,7 +141,7 @@ local Key=Instance.new("TextLabel",CurrentFrame)
 local DanceInfo=Instance.new("TextLabel",CurrentFrame)
 local Dance=Instance.new("TextLabel",CurrentFrame)
 local Credits=Instance.new("TextLabel",CurrentFrame)
-
+]]
 ui.Name = "ui"
 ui.Active = true
 ui.BackgroundColor3 = Color3.new(0, 0, 0)
@@ -126,7 +207,7 @@ Run1.TextColor3 = Color3.new(1,1,1)
 Run1.TextScaled = true
 Run1.TextSize = 10
 Run1.TextWrapped = true
-
+--[[
 Enable.Name = "Stick"
 Enable.Parent = ui
 Enable.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
@@ -140,7 +221,7 @@ Enable.TextColor3 = Color3.new(1,1,1)
 Enable.TextScaled = true
 Enable.TextSize = 10
 Enable.TextWrapped = true
-
+]]
 Stop1.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
 Stop1.Position=UDim2.new(0.50, 0, 0.629999971, 0)
 Stop1.Size = UDim2.new(0.5, 0, 0, 45)
@@ -175,6 +256,76 @@ Show.TextSize=14
 Show.Size=UDim2.new(0, 50, 0, 50)
 Show.Position=UDim2.new(0, 0, 2, 0)
 Show.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
+--[=[
+CurrentFrame.Size=UDim2.new(0.26572, 0, 0.16564, 0);
+CurrentFrame.Name=[[Current]]
+CurrentFrame.Position=UDim2.new(0.385, 0, 1, 0);
+CurrentFrame.BackgroundColor3=Color3.fromRGB(50,50,50)
+CurrentFrame.BackgroundTransparency=.55
+
+CurrentPage.Text=[[Page:]]
+CurrentPage.Font=[[Arcade]]
+CurrentPage.TextColor3=Color3.new(255,255,255)
+CurrentPage.BackgroundTransparency=1
+CurrentPage.Size=UDim2.new(0.2, 0, 0.59259, 0)
+CurrentPage.Position=UDim2.new(0.01429, 0, 0, 0)
+CurrentPage.TextSize=11
+CurrentPage.Name=[[CurrentPage]]
+
+Page.Text=[[1]]
+Page.Font=[[Arcade]]
+Page.BackgroundTransparency=1 
+Page.TextSize=18 
+Page.TextColor3=Color3.new(255,255,255)
+Page.Size=UDim2.new(0.2, 0, 0.33333, 0)
+Page.Position=UDim2.new(0.22857, 0, 0.11111, 0)
+Page.Name=[[CurrentPage]]
+
+CurrentKey.Text=[[Key:]]
+CurrentKey.Font=[[Arcade]]
+CurrentKey.Size=UDim2.new(0.2, 0, 0.33333, 0)
+CurrentKey.TextColor3=Color3.new(255,255,255)
+CurrentKey.BackgroundTransparency=1 
+CurrentKey.Position=UDim2.new(0.53571, 0, 0.12963, 0)
+CurrentKey.TextSize=11 
+CurrentKey.Name=[[CurrentKey]]
+
+Key.Text=[[None]]
+Key.Font=[[Arcade]]
+Key.BackgroundTransparency=1 
+Key.TextColor3=Color3.new(255,255,255)
+Key.TextSize=18 
+Key.Size=UDim2.new(0.2, 0, 0.33333, 0)
+Key.Position=UDim2.new(0.75, 0, 0.11111, 0)
+Key.Name=[[Mode]]
+
+DanceInfo.Text=[[Dance:]]
+DanceInfo.Font=[[Arcade]]
+DanceInfo.BackgroundTransparency=1
+DanceInfo.TextColor3=Color3.new(255,255,255)
+DanceInfo.TextSize=11 
+DanceInfo.Size=UDim2.new(0.2, 0, 0.3, 0)
+DanceInfo.Position=UDim2.new(0, 0, 0.55556, 0)
+DanceInfo.Name=[[PressedKey]]
+
+Dance.Text=[[None]]
+Dance.Font=[[Arcade]]
+Dance.BackgroundTransparency=1 
+Dance.TextSize=10.5
+Dance.TextColor3=Color3.new(255,255,255)
+Dance.Size=UDim2.new(0.2, 0, 0.33333, 0)
+Dance.Position=UDim2.new(0.310, 0, 0.55556, 0)
+
+Credits.Text=[[Made By Theo]]
+Credits.Font=[[Fantasy]]
+Credits.TextColor3=Color3.new(255,255,255)
+Credits.BackgroundTransparency=1 
+Credits.TextSize=11
+Credits.Size=UDim2.new(0.4, 0, 0.37037, 0)
+Credits.Position=UDim2.new(0, 125, 0.55556, 0);
+Credits.Name=[[Credits]]
+ui.Visible=true 
+]=]
 local originalUIPosition = ui.Position
 local isTweening = false
 Show.MouseButton1Click:Connect(function()
@@ -205,10 +356,148 @@ Show.MouseButton1Click:Connect(function()
         end)
     end
 end)
+
 local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 local tween = game:GetService("TweenService"):Create(Show, tweenInfo, {Position = UDim2.new(0, 0, .50, 0)})
 tween:Play()
 
+local Players = game:GetService("Players")
+local localPlayer = Players.LocalPlayer
+local savedPosition = nil
+local lp=Players.LocalPlayer
+local function savePosition()
+    local character = lp.Character or lp.CharacterAdded:Wait()
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+    savedPosition = humanoidRootPart.Position
+end
+
+local function teleportToSavedSpot()
+    if savedPosition then
+        local character = lp.Character or lp.CharacterAdded:Wait()
+        local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+        humanoidRootPart.CFrame = CFrame.new(savedPosition)
+        savedPosition = nil
+    end
+end
+local function charespawn()
+    local character = localPlayer.Character
+    if character then
+         savePosition()
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+        if humanoid then
+            humanoid.Health = 0
+        else
+            character:BreakJoints()
+        end
+    end
+lp.CharacterAdded:Wait()
+wait(4)
+teleportToSavedSpot()
+wait(2)
+teleportToSavedSpot()
+wait(.1)
+teleportToSavedSpot()
+wait(.1)
+teleportToSavedSpot()
+wait(.1)
+teleportToSavedSpot()
+wait(.1)
+teleportToSavedSpot()
+wait(.1)
+teleportToSavedSpot()
+end
+
+
+--[[local CHECKF9=false
+DANCEINFO.MouseButton1Click:Connect(function()
+notify("Check Console!")
+Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
+if CHECKF9 then return end
+CHECKF9=true 
+DANCEINFO.Text="Check Console"
+print("------------------------------------------")
+print("Q - RAT DANCE, PAGE 2 - XO, PAGE 3 - C14, PAGE 4 - UNLOCKIT, PAGE 5 - RESULTS")
+print("------------------------------------------")
+print("E - BOOGIE, PAGE 2 - SODA POP, PAGE 3 - Slickback, PAGE 4 - SMOOTHMOVES, PAGE 5 - STATIC 2")
+print("------------------------------------------")
+print("R - ASSUMPTIONS, PAGE 2 - LOVE FOR YOU, PAGE 3 - DOODLE, PAGE 4 - LAGTRAIN, PAGE 5 - SILLY BILLY 2 ")
+print("------------------------------------------")
+print("T - EGYPT, PAGE 2 - ASSUMPTIONS SHUFFLE, PAGE 3 - GOAT, PAGE 4 - SUKI, PAGE 5 - SQUIDWARD YELL 2")
+print("------------------------------------------")
+print("Y - DO THR FLOP, PAGE 2 - PEASHOOTER, PAGE 3 - BUMBLEBEE, PAGE 4  CAFETERIA, PAGE 5 - YELL 3")
+print("------------------------------------------")
+print("U - CARAMELLDANSEN, PAGE 2 - BLOODPOP, PAGE 3 - STOCK SHUFFLE, PAGE 4 - DARE, PAGE 5 - YELL 1")
+print("------------------------------------------")
+print("P - BOMB MONKEY, PAGE 2 - INTERNET YAMERO, PAGE 3 - RAT DANCE 2, PAGE 4 - TENNA, PAGE 5 - OUT OF TOUCH")
+print("------------------------------------------")
+print("F - HEEL TOE HOP, PAGE 2 - CHRONOSHIFT, PAGE 3 - SHUBA DUCK, PAGE 4 - INSANITY, PAGE 5 - LONELY")
+print("------------------------------------------")
+print("G - GANGNAM, PAGE 2 - IT BURNS, PAGE 3 - LEMON MELON COOKIE, PAGE 4 - TENNA 2")
+print("------------------------------------------")
+print("H - DOMINO, PAGE 2 - DISTRACTION DANCE, PAGE 3 - BIRDBRAIN, PAGE 4 - RAMBUNCTIOUS")
+print("------------------------------------------")
+print("J - STARLIT, PAGE 2 - KEEP UP, PAGE 3 - FEIN, PAGE 4 - SIDE SHUFFLE")
+print("------------------------------------------")
+print("K - WALK, PAGE 2 - BOOMBOX, PAGE 3 - POPIPO, PAGE 4 - ELECTRO SWING")
+print("------------------------------------------")
+print("L - GRIDDY, PAGE 2 - FIREWORK, PAGE 3 - PICKUP THE PHONE, PAGE 4 STEP")
+print("------------------------------------------")
+print("Z - LUX, PAGE 2 - TWO, PAGE 3 - SILLY BILLY, PAGE 4 - APPLE PEN")
+print("------------------------------------------")
+print("X - KAZOTSKY KICK, PAGE 2 - HEAVY LOVE, PAGE 3 - ROTTEN, PAGE 4 - CRANK THAT")
+print("------------------------------------------")
+print("C - MESMERIZER, PAGE 2 - MILLION, PAGE 3 - SPOOKY MONTH, PAGE 4 - TAKEDOWN")
+print("------------------------------------------")
+print("V - LIAR DANCER, PAGE 2 - BILLIE JEAN, PAGE 3 - LIMITED FLEXWORKS, PAGE 4 - GOING DOWN")
+print("------------------------------------------")
+print("B - HAKARI, PAGE 2 - SAVOR THE W, PAGE 3 - UNLIMITED FLEXWORKS, PAGE 4 - SPAMTON")
+print("------------------------------------------")
+print("N - BOX SWING, PAGE 2 - LAY, PAGE 3 - CRISSCROSS, PAGE 4 - KEMUSAN")
+print("------------------------------------------")
+print("M - CHANGE PAGES")
+print("------------------------------------------")
+print("MINUS OR '-' - COMMERCIAL BREAK, PAGE 2 - CLUB PENGUIN, PAGE 3 - TORT, PAGE 4 -  IGAKU")
+print("------------------------------------------")
+print("COMMA OR ',' - STATIC, PAGE 2 - INTERNET YAMERO, PAGE 3 - BRAIN, PAGE 4 - IM OK")
+print("------------------------------------------")
+print("LEFTBRACKET OR '[' - EMOTIONAL PRISM, PAGE 2 - I WANNA RUNAWAY, PAGE 3 - ESPRESSO, PAGE 4 - HEADLOCK 2")
+print("------------------------------------------")
+print("RIGHTBRACKET OR ']' - HEADLOCK, PAGE 2 - MIO HONDA, PAGE 3 - RAKUTEN, PAGE 4 - LINGA GULI GULI")
+print("------------------------------------------")
+print("LEFTCONTROL OR 'LCTRL' - TOGGLE SPRINT")
+print("------------------------------------------")
+print("EQUALS OR '=' TOGGLE BACKGROUND MUSIC WHEN NOT DANCING")
+print("------------------------------------------")
+print("UPDATE:\n\t\t -- 1 New dance/s ")
+wait(1)
+DANCEINFO.Text="Click me!"
+CHECKF9=false
+end)
+]]
+
+
+
+
+local char=game:GetService("Players").LocalPlayer.Character
+local Character =char
+local Character1=game.Players.LocalPlayer
+local delfile = delfile or function(path)
+    if isfile and isfile(path) then
+        pcall(function()
+            if syn and syn.io then
+                syn.io.remove(path)
+            else
+                writefile(path, "")
+            end
+        end)
+    end
+end
+
+
+
+
+
+local Place = game.placeId
 local REANIMATION=false
 local function Backup()
 --// BY MrY7zz
@@ -268,9 +557,8 @@ end
 else 
 Backup()
 REANIMATION=true
+Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 end 
-
-
 wait(2)
 if ReanimateVer=="Gelatek" and ws:WaitForChild("GelatekReanimate")  then
 REANIMATION=false
@@ -280,6 +568,35 @@ Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 REANIMATION=false
 end
 end)
+
+function respawn()
+local ws=gam.Workspace
+local char=game.Players.LocalPlayer.Character
+local newChar = Instance.new("Model")
+newChar.Parent = workspace
+newChar.Name="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+if char:FindFirstChildOfClass("Humanoid") then char:FindFirstChildOfClass("Humanoid"):ChangeState(15) end
+char:ClearAllChildren()
+game.Players.LocalPlayer.Character = newChar
+if ws then
+dele=ws:WaitForChild(char.Name)
+if dele then
+dele:Destroy()
+end
+end
+game.Players.LocalPlayer.Character = char
+wait(.1)
+newChar:Destroy()
+end
+local function forceRespawn()
+    local player = game:GetService("Players").LocalPlayer
+    if player.Character then
+        player.Character:BreakJoints()
+    end
+    wait(0.5)
+    player:LoadCharacter()
+end
+
 
 local full = game:GetObjects("rbxassetid://107495486817639")[1]:Clone()
 full.Parent = game:GetService("Workspace")
@@ -300,6 +617,9 @@ end
 getmetatable(is).__namecall = function(_, id)
 	return loadlocalasset(id)
 end
+
+--THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
+-- VVVVVVVV
 local danceCache = {}
 local function AddDance(Name, ScriptUrl)
     local filePath = "KRYSTALDANCE/"..Name
@@ -369,6 +689,29 @@ sound69.Looped = true
 sound69.Name = "danc"
 sound69.Playing = true
 sound69.Volume = .75
+local exploit = "shitsploit"
+        pcall(function()
+            exploit = getexecutorname()
+        end)
+	local customasset = function(id)
+        if exploit ~= "CaetSploit" then
+        idwithoutthatbit= string.gsub(id,"KDV3/","")
+        if not isfile(id) then 
+         writefile(id,game:HttpGet("https://github.com/Solary-3/Scripts/tree/Audios-1"..idwithoutthatbit))
+        end
+       repeat task.wait() until isfile(id)
+    end
+        local s = Instance.new("Sound")
+        s.Parent =game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+        s.SoundId = getcustomasset(id)
+        task.spawn(function()
+            task.wait(1)
+            s:Destroy()
+        end)
+        return s.SoundId
+	end
+
+
 
 local validAudioFiles = {
     "Sphere.mp3",
@@ -484,6 +827,8 @@ local validAudioFiles = {
     "Shiawase.mp3",
     "Tf2.mp3",
 }
+
+--THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
 local function DanceAsset(file)
     if not table.find(validAudioFiles, file) then
         notify("Audio file not found: " .. file)
@@ -520,7 +865,7 @@ local function DanceAsset(file)
             fileSize = #readfile(filePath)
         end)
         if fileSize > 204800 then
-            return getcustomasset(filePath)  
+            return customasset(filePath)  
         else
             notify("Audio file is empty/corrupted: " .. file)
             return ""
@@ -530,6 +875,22 @@ local function DanceAsset(file)
         return ""
     end
 end
+local Humanoid = Character:WaitForChild("Humanoid")
+local mode = 1 
+local INPUTLOOP =nil
+local STATES =nil
+local SITTING=nil
+local UPDATE=nil
+local sprinting = false 
+local uis = game:GetService("UserInputService")
+
+
+
+
+
+
+
+
 
 
 function MainScript()
@@ -2250,6 +2611,7 @@ idle = false
 end
 end
 end
+
 local RUNNING = false
 Run1.MouseButton1Click:Connect(function()
 if REANIMATION then return notify("Reanimating please wait") end
@@ -2282,4 +2644,48 @@ else
 notify("Not Reanimated")
 end
 end
+end)
+
+
+Stop1.MouseButton1Click:Connect(function()
+    if RUNNING then
+        RUNNING = false
+        local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+        local tween = game:GetService("TweenService"):Create(CurrentFrame, tweenInfo, {Position = UDim2.new(0.385, 0, 1.15, 0)})
+    Playsound:Stop()
+    Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
+--[[    local player = game.Players.LocalPlayer
+    if player.Character then
+        local head = player.Character:FindFirstChild("Head")
+        if head then
+            local billboard = head:FindFirstChild("Test")
+            if billboard then
+                billboard:Destroy()
+            end
+        end
+    end]]
+    if STATES then 
+        STATES:Disconnect()
+        STATES = nil 
+    end
+    if Place == 17574618959 or Place == 88308889239232 then
+      if ReanimateVer=="Gelatek" then 
+        StopScript()
+        wait(1)
+        end
+        choot("-rs")
+        if ReanimateVer=="Current" then
+          wait(1)
+          for _,v in ipairs(ws:GetChildren()) do
+            if v.Name==Character1.Name.."_Fake" then 
+              v:Destroy()
+              end
+            end
+          end
+    else
+        wait(1)
+        respawn()
+        wait(1)
+        respawn()
+    end
 end)
