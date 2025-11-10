@@ -2417,7 +2417,7 @@ local TableOfDances={
   {Name="Insanity",Music="Insanity.mp3",DanceName="Insanity",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Insanity.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Tenna 2",Music="Tenna.mp3",DanceName="Tenna2",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tenna 2.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Rambunctious",Music="Rambunctious.mp3",DanceName="Rambunctious",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rambunctious.lua",Id="None",Offset=0,WalkSpeed=14},
-  {Name="Side Shuffle",Music="Side Shuffle.mp3",DanceName="Rambunctious",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Side Shuffle.lua",Id="None",Offset=0,WalkSpeed=14},
+  {Name="Side Shuffle",Music="Side Shuffle.mp3",DanceName="Sideshuffle",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Side Shuffle.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Electro Swing",Music="Electro Swing.mp3",DanceName="Electro",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Electro Swing.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="MioHonda Step",Music="MioHonda.mp3",DanceName="Step",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Step.lua",Id="None",Offset=0,WalkSpeed=4},
   {Name="Apple Pen",Music="Apple Pen.mp3",DanceName="Applepen",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Apple Pen.lua",Id="None",Offset=0,WalkSpeed=14},
