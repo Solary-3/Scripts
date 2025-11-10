@@ -322,7 +322,7 @@ if BulletEnabled == true then
 		local Extra 
 		Highlight.Adornee = Bullet
 		Highlight.Name = "Highlight"
-		Highlight.Color3 = Color3.fromRGB(0, 223, 37)
+		Highlight.Color3 = Color3.fromRGB(255, 0, 0)
 		Highlight.Parent = Bullet
 		Extra = PreSim:Connect(function()
 			if not Figure and Figure.Parent then Extra:Disconnect() end
