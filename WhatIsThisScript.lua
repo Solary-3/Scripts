@@ -658,7 +658,7 @@ local function AddDance(Name, ScriptUrl)
             return nil
         end
     else
-        notify("Failed to load dance: "..Name.." - "..tostring(danceData))
+        warn("Failed to Load: "..Name.." - "..tostring(danceData))
         return nil
     end
 end
