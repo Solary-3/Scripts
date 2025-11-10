@@ -2,8 +2,6 @@ print("No gng")
 print("Welcome")
 local Global = (getgenv and getgenv()) or shared
 local Occasions="Normal"
-local player = game:GetService("Players").LocalPlayer
-local BackPack = player:WaitForChild("Backpack")
 Global.Occasions=Occasions
 local Players = game:GetService("Players")
 local function notif(str,dur)
@@ -148,7 +146,7 @@ title.BorderSizePixel = 2
 title.Position = UDim2.new(0, 0, 0.0199999996, 0)
 title.Size = UDim2.new(1, 0, 0, 50)
 title.Font = Enum.Font.Arcade
-title.Text = "Modded By Theo"
+title.Text = "Made By Theo"
 title.TextColor3 = Color3.new(1, 1, 1)
 title.TextScaled = true
 title.TextSize = 7.5
@@ -231,7 +229,7 @@ ced.BorderSizePixel = 2
 ced.Position = UDim2.new(0, 0, 0.795, 0)
 ced.Size = UDim2.new(1, 0, 0, 50)
 ced.Font = "Fantasy"
-ced.Text = "Krystal Dance V3"
+ced.Text = "R6 Dances"
 ced.TextColor3 = Color3.new(1, 1, 1)
 ced.TextScaled = true
 ced.TextSize = 6
@@ -526,13 +524,13 @@ settings["Names to exclude from transparency"] = {
 loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV4/refs/heads/main/v4.lua"))()
 REANIMATION=false 
 end
-ReanimateVer=getgenv().Reanimate
+local ReanimateVer="Gelatek"
 REANIMATE.MouseButton1Click:Connect(function()
 if Place == 17574618959 or Place == 88308889239232 then
 if REANIMATION then return notify([[ALREADY REANIMATING]]) end
-if game Workspace:FindFirstChild("GelatekReanimate") then
+if game.Workspace:FindFirstChild("GelatekReanimate") then
 return notify("Already Reanimated") end
-if game Workspace:FindFirstChild(Character1.Name.."_Fake")then
+if game.Workspace:FindFirstChild(Character1.Name.."_Fake")then
 return notify("Already Reanimated") end
 if ReanimateVer=="Gelatek" then
 Run1.Position = UDim2.new(100, 0, 0.629999971, 0)
@@ -2444,6 +2442,8 @@ local TableOfDances={
 local ws=game.Workspace
 ws.CurrentCamera.CameraSubject=char:WaitForChild("Head")
 for _,v in ipairs(TableOfDances) do 
+local player = game:GetService("Players").LocalPlayer
+local BackPack = player:WaitForChild("Backpack")
 local tool=Instance.new("Tool",BackPack)
 tool.Name=v.Name
 tool.RequiresHandle=false
