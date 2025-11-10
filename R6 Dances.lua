@@ -2328,6 +2328,15 @@ Playsound.TimePosition =0
 Playsound.Volume = .75
 Playsound:Play()
 
+
+
+
+
+
+
+
+
+
 local TableOfDances={
   {Name="Rat1",Music="rat.mp3",DanceName="Rat1",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rat1.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Boogie Down",Music="FunkedUp.mp3",DanceName="None",Url="None",Id=122471664395501,Offset=0,WalkSpeed=14},
