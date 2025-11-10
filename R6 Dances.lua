@@ -229,7 +229,7 @@ ced.BorderSizePixel = 2
 ced.Position = UDim2.new(0, 0, 0.795, 0)
 ced.Size = UDim2.new(1, 0, 0, 50)
 ced.Font = "Fantasy"
-ced.Text = "R6 Dances"
+ced.Text = "R6 Dances (Tool)"
 ced.TextColor3 = Color3.new(1, 1, 1)
 ced.TextScaled = true
 ced.TextSize = 6
@@ -524,7 +524,7 @@ settings["Names to exclude from transparency"] = {
 loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV4/refs/heads/main/v4.lua"))()
 REANIMATION=false 
 end
-local ReanimateVer="Gelatek"
+local ReanimateVer=getgenv.Reanimate
 REANIMATE.MouseButton1Click:Connect(function()
 if Place == 17574618959 or Place == 88308889239232 then
 if REANIMATION then return notify([[ALREADY REANIMATING]]) end
