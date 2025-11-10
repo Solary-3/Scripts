@@ -2603,7 +2603,7 @@ end
 local RUNNING = false
 Run1.MouseButton1Click:Connect(function()
 if REANIMATION then return notify("Reanimating please wait") end
-if game.Workspace:FindFirstChild("GelatekReanimate") or game.Workspace(game.Players.LocalPlayer.Name.."_Fake") then return notify("SCRIPT IS RUNNING!!") end
+if RUNNING then return notify("SCRIPT IS RUNNING!!") end
 if ReanimateVer=="Gelatek" then
 if ws:FindFirstChild("GelatekReanimate") then
 if ReanimateVer=="Gelatek" then
