@@ -882,6 +882,7 @@ local uis = game:GetService("UserInputService")
 
 
 function MainScript()
+if RUNNING==true then return end
 local G2L={};
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["Name"] = [[Custom Inventory]];
