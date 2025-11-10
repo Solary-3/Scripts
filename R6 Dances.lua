@@ -524,7 +524,7 @@ settings["Names to exclude from transparency"] = {
 loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV4/refs/heads/main/v4.lua"))()
 REANIMATION=false 
 end
-local ReanimateVer=getgenv.Reanimate
+local ReanimateVer=getgenv().Reanimate
 REANIMATE.MouseButton1Click:Connect(function()
 if Place == 17574618959 or Place == 88308889239232 then
 if REANIMATION then return notify([[ALREADY REANIMATING]]) end
