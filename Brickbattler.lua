@@ -2,7 +2,7 @@
 -- Generated on 2025-10-17 15:18:51
 
 local KeyframeSequence = Instance.new("KeyframeSequence")
-KeyframeSequence.Name = "Brickbattler"
+KeyframeSequence.Name = "BrickBattler"
  cf=CFrame.new
 
 -- Keyframe 1 (Time: 0)
