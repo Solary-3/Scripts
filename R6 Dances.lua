@@ -2480,7 +2480,7 @@ stopanim()
 end)
 end
 
-
+local sprinting=false
 
 
 char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
