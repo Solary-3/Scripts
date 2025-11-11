@@ -3154,6 +3154,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				dancing = true
 				Playsound.Volume=0
 				task.wait(.005)
+				sound69.TimePosition =6.5
 				sound69.SoundId = DanceAsset("Headlock.mp3")
 				timeposcur = sound69.TimePosition 
 				local dance=LoadDance("Headlock3", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Headlock3.lua")
