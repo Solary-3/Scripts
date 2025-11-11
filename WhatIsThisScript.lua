@@ -825,7 +825,7 @@ local validAudioFiles = {
     "Shiawase.mp3",
     "Tf2.mp3",
     "Smug.mp3",
-    "Wait1.mp3",
+    "Wait2.mp3",
     "Livesey.mp3",
     "Pokedance.mp3",
 }
@@ -3522,7 +3522,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				dancing = true
 				Playsound.Volume=0
 				task.wait(.005)
-				sound69.SoundId = DanceAsset("Wait1.mp3")
+				sound69.SoundId = DanceAsset("Wait2.mp3")
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
 				local dance=LoadDance("Wait", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Wait.lua")
