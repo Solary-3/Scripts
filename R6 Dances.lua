@@ -2,7 +2,7 @@ local Occasions="Normal"
 local Global = (getgenv and getgenv()) or shared
 local player = game.Players.LocalPlayer
 local backpack = player:WaitForChild("Backpack")
-local ReanimateVer="Gelatek"
+local ReanimateVer=getgenv().Reanimate
 
 
 
