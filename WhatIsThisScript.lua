@@ -1833,7 +1833,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				sound69.SoundId = DanceAsset("lux.ogg")
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
-				Info("Lux","Z")
+				Info("Luxurious","Z")
 				playanim(94534967284996) -- uuid. 15092317950
 			else
 				stopanim()
