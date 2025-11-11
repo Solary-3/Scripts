@@ -1,82 +1,25 @@
-print("No gng")
-print("Welcome")
-local Global = (getgenv and getgenv()) or shared
 local Occasions="Normal"
-Global.Occasions=Occasions
-local Players = game:GetService("Players")
-local function notif(str,dur)
-	game:GetService("StarterGui"):SetCore("SendNotification", { 
-    Title = "From Theo";
-    Text = str;})
-Duration = dur or 3;
-end
-local Players = game:GetService("Players")
-local lp=Players.LocalPlayer
-local TARGET_USERNAMES = { "Username1",
-  "Chinmoy_Iskarbi",
-}
+local Global = (getgenv and getgenv()) or shared
+local player = game.Players.LocalPlayer
+local backpack = player:WaitForChild("Backpack")
+local ReanimateVer="Gelatek"
 
-local TargetLookup = {}
-for _, name in pairs(TARGET_USERNAMES) do
-	TargetLookup[name] = true
-if lp.Name==name and Players:FindFirstChild(name) then
-if not isfile("Blacklist1") then 
-writefile("Blacklist1",name)
-end
-end
-end
-wait(1)
-if isfile("Blacklist1") then
-local function Blacklist(player)
-if player.Character then
-local h=math.random(1,5)
-notif("You Are Blacklisted by the owner! sorry! :( ")
-wait(5)
-if h==1 then
-player:Kick("Imagine getting blacklisted")
-elseif h==1 then
-player:Kick("Imagine abusing the script")
-elseif h==2 then
-player:Kick("LOL GET BLACKLSTED")
-elseif h==3 then
-player:Kick("fuck off")
-elseif h==4 then
-player:Kick("tsk tsk tsk, poor skid")
-elseif h==4 then
-player:Kick("💀")
-end
-end
-end
-
-for _, player in pairs(Players:GetPlayers()) do
-if isfile("Blacklist1") then
-if readfile("Blacklist1")=="sfsue6747" then
-wait(5)
-notif("Your not tuff 'lil bro'")
-wait(2)
-player:Kick("'Your aint tuff' - Someone")
-else
-return Blacklist(player)
-end
-else
-end
-end
-else
-notif("Not Banned! :)")
-end 
 if isfolder and not isfolder("KDV3") then 
 	makefolder("KDV3")
 end
-coroutine.resume(coroutine.create(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
-end))
+
 if not isfolder("KRYSTALDANCE") then
         makefolder("KRYSTALDANCE")
 end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/packages/FunctionPack.lua"))()
 local KDV3 = game:GetService("CoreGui")
 if KDV3:FindFirstChild("KRYSTALDANCE") then
     KDV3.KRYSTALDANCE:Destroy()
 end
+local function choot(msg)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(msg)
+end
+
 local function notify(text,dur)
 local Notify=game:GetService("StarterGui")
 Notify:SetCore("SendNotification",{
@@ -87,15 +30,6 @@ end
 local ws=game.Workspace
 if ws:FindFirstChild("full") then
 ws.full:Destroy()
-end
-coroutine.resume(coroutine.create(function()
-notify("R6 Dance Script Made By Theo!")
-wait(.95)
-notify("Enjoy Using!")
-end))
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/packages/FunctionPack.lua"))()
-local function choot(msg)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(msg)
 end
 local ScreenGui = Instance.new("ScreenGui",KDV3)
 ScreenGui.Name ="KRYSTALDANCE"
@@ -115,8 +49,7 @@ corner2=Instance.new("UICorner",Stop1)
 corner3=Instance.new("UICorner",Show)
 corner4=Instance.new("UICorner",REANIMATE)
 corner5=Instance.new("UICorner",DANCEINFO)
-corner4=Instance.new("UICorner",Enable)
---[[
+--corner4=Instance.new("UICorner",Enable)
 local CurrentFrame=Instance.new("Frame",ScreenGui)
 local Stroke=Instance.new("UIStroke",CurrentFrame)
 local Corner=Instance.new("UICorner",CurrentFrame)
@@ -129,7 +62,7 @@ local Key=Instance.new("TextLabel",CurrentFrame)
 local DanceInfo=Instance.new("TextLabel",CurrentFrame)
 local Dance=Instance.new("TextLabel",CurrentFrame)
 local Credits=Instance.new("TextLabel",CurrentFrame)
-]]
+
 ui.Name = "ui"
 ui.Active = true
 ui.BackgroundColor3 = Color3.new(0, 0, 0)
@@ -146,7 +79,7 @@ title.BorderSizePixel = 2
 title.Position = UDim2.new(0, 0, 0.0199999996, 0)
 title.Size = UDim2.new(1, 0, 0, 50)
 title.Font = Enum.Font.Arcade
-title.Text = "Made By Theo"
+title.Text = "Modded By Theo"
 title.TextColor3 = Color3.new(1, 1, 1)
 title.TextScaled = true
 title.TextSize = 7.5
@@ -229,7 +162,7 @@ ced.BorderSizePixel = 2
 ced.Position = UDim2.new(0, 0, 0.795, 0)
 ced.Size = UDim2.new(1, 0, 0, 50)
 ced.Font = "Fantasy"
-ced.Text = "R6 Dances (Tool)"
+ced.Text = "Krystal Dance V3"
 ced.TextColor3 = Color3.new(1, 1, 1)
 ced.TextScaled = true
 ced.TextSize = 6
@@ -244,76 +177,6 @@ Show.TextSize=14
 Show.Size=UDim2.new(0, 50, 0, 50)
 Show.Position=UDim2.new(0, 0, 2, 0)
 Show.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
---[=[
-CurrentFrame.Size=UDim2.new(0.26572, 0, 0.16564, 0);
-CurrentFrame.Name=[[Current]]
-CurrentFrame.Position=UDim2.new(0.385, 0, 1, 0);
-CurrentFrame.BackgroundColor3=Color3.fromRGB(50,50,50)
-CurrentFrame.BackgroundTransparency=.55
-
-CurrentPage.Text=[[Page:]]
-CurrentPage.Font=[[Arcade]]
-CurrentPage.TextColor3=Color3.new(255,255,255)
-CurrentPage.BackgroundTransparency=1
-CurrentPage.Size=UDim2.new(0.2, 0, 0.59259, 0)
-CurrentPage.Position=UDim2.new(0.01429, 0, 0, 0)
-CurrentPage.TextSize=11
-CurrentPage.Name=[[CurrentPage]]
-
-Page.Text=[[1]]
-Page.Font=[[Arcade]]
-Page.BackgroundTransparency=1 
-Page.TextSize=18 
-Page.TextColor3=Color3.new(255,255,255)
-Page.Size=UDim2.new(0.2, 0, 0.33333, 0)
-Page.Position=UDim2.new(0.22857, 0, 0.11111, 0)
-Page.Name=[[CurrentPage]]
-
-CurrentKey.Text=[[Key:]]
-CurrentKey.Font=[[Arcade]]
-CurrentKey.Size=UDim2.new(0.2, 0, 0.33333, 0)
-CurrentKey.TextColor3=Color3.new(255,255,255)
-CurrentKey.BackgroundTransparency=1 
-CurrentKey.Position=UDim2.new(0.53571, 0, 0.12963, 0)
-CurrentKey.TextSize=11 
-CurrentKey.Name=[[CurrentKey]]
-
-Key.Text=[[None]]
-Key.Font=[[Arcade]]
-Key.BackgroundTransparency=1 
-Key.TextColor3=Color3.new(255,255,255)
-Key.TextSize=18 
-Key.Size=UDim2.new(0.2, 0, 0.33333, 0)
-Key.Position=UDim2.new(0.75, 0, 0.11111, 0)
-Key.Name=[[Mode]]
-
-DanceInfo.Text=[[Dance:]]
-DanceInfo.Font=[[Arcade]]
-DanceInfo.BackgroundTransparency=1
-DanceInfo.TextColor3=Color3.new(255,255,255)
-DanceInfo.TextSize=11 
-DanceInfo.Size=UDim2.new(0.2, 0, 0.3, 0)
-DanceInfo.Position=UDim2.new(0, 0, 0.55556, 0)
-DanceInfo.Name=[[PressedKey]]
-
-Dance.Text=[[None]]
-Dance.Font=[[Arcade]]
-Dance.BackgroundTransparency=1 
-Dance.TextSize=10.5
-Dance.TextColor3=Color3.new(255,255,255)
-Dance.Size=UDim2.new(0.2, 0, 0.33333, 0)
-Dance.Position=UDim2.new(0.310, 0, 0.55556, 0)
-
-Credits.Text=[[Made By Theo]]
-Credits.Font=[[Fantasy]]
-Credits.TextColor3=Color3.new(255,255,255)
-Credits.BackgroundTransparency=1 
-Credits.TextSize=11
-Credits.Size=UDim2.new(0.4, 0, 0.37037, 0)
-Credits.Position=UDim2.new(0, 125, 0.55556, 0);
-Credits.Name=[[Credits]]
-ui.Visible=true 
-]=]
 local originalUIPosition = ui.Position
 local isTweening = false
 Show.MouseButton1Click:Connect(function()
@@ -344,149 +207,32 @@ Show.MouseButton1Click:Connect(function()
         end)
     end
 end)
-
 local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 local tween = game:GetService("TweenService"):Create(Show, tweenInfo, {Position = UDim2.new(0, 0, .50, 0)})
 tween:Play()
 
-local Players = game:GetService("Players")
-local localPlayer = Players.LocalPlayer
-local savedPosition = nil
-local lp=Players.LocalPlayer
-local function savePosition()
-    local character = lp.Character or lp.CharacterAdded:Wait()
-    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-    savedPosition = humanoidRootPart.Position
+function respawn()
+local ws=gam.Workspace
+local char=game.Players.LocalPlayer.Character
+local newChar = Instance.new("Model")
+newChar.Parent = workspace
+newChar.Name="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+if char:FindFirstChildOfClass("Humanoid") then char:FindFirstChildOfClass("Humanoid"):ChangeState(15) end
+char:ClearAllChildren()
+game.Players.LocalPlayer.Character = newChar
+if ws then
+dele=ws:WaitForChild(char.Name)
+if dele then
+dele:Destroy()
+end
+end
+game.Players.LocalPlayer.Character = char
+wait(.1)
+newChar:Destroy()
 end
 
-local function teleportToSavedSpot()
-    if savedPosition then
-        local character = lp.Character or lp.CharacterAdded:Wait()
-        local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-        humanoidRootPart.CFrame = CFrame.new(savedPosition)
-        savedPosition = nil
-    end
-end
-local function charespawn()
-    local character = localPlayer.Character
-    if character then
-         savePosition()
-        local humanoid = character:FindFirstChildOfClass("Humanoid")
-        if humanoid then
-            humanoid.Health = 0
-        else
-            character:BreakJoints()
-        end
-    end
-lp.CharacterAdded:Wait()
-wait(4)
-teleportToSavedSpot()
-wait(2)
-teleportToSavedSpot()
-wait(.1)
-teleportToSavedSpot()
-wait(.1)
-teleportToSavedSpot()
-wait(.1)
-teleportToSavedSpot()
-wait(.1)
-teleportToSavedSpot()
-wait(.1)
-teleportToSavedSpot()
-end
-
-
---[[local CHECKF9=false
-DANCEINFO.MouseButton1Click:Connect(function()
-notify("Check Console!")
-Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
-if CHECKF9 then return end
-CHECKF9=true 
-DANCEINFO.Text="Check Console"
-print("------------------------------------------")
-print("Q - RAT DANCE, PAGE 2 - XO, PAGE 3 - C14, PAGE 4 - UNLOCKIT, PAGE 5 - RESULTS")
-print("------------------------------------------")
-print("E - BOOGIE, PAGE 2 - SODA POP, PAGE 3 - Slickback, PAGE 4 - SMOOTHMOVES, PAGE 5 - STATIC 2")
-print("------------------------------------------")
-print("R - ASSUMPTIONS, PAGE 2 - LOVE FOR YOU, PAGE 3 - DOODLE, PAGE 4 - LAGTRAIN, PAGE 5 - SILLY BILLY 2 ")
-print("------------------------------------------")
-print("T - EGYPT, PAGE 2 - ASSUMPTIONS SHUFFLE, PAGE 3 - GOAT, PAGE 4 - SUKI, PAGE 5 - SQUIDWARD YELL 2")
-print("------------------------------------------")
-print("Y - DO THR FLOP, PAGE 2 - PEASHOOTER, PAGE 3 - BUMBLEBEE, PAGE 4  CAFETERIA, PAGE 5 - YELL 3")
-print("------------------------------------------")
-print("U - CARAMELLDANSEN, PAGE 2 - BLOODPOP, PAGE 3 - STOCK SHUFFLE, PAGE 4 - DARE, PAGE 5 - YELL 1")
-print("------------------------------------------")
-print("P - BOMB MONKEY, PAGE 2 - INTERNET YAMERO, PAGE 3 - RAT DANCE 2, PAGE 4 - TENNA, PAGE 5 - OUT OF TOUCH")
-print("------------------------------------------")
-print("F - HEEL TOE HOP, PAGE 2 - CHRONOSHIFT, PAGE 3 - SHUBA DUCK, PAGE 4 - INSANITY, PAGE 5 - LONELY")
-print("------------------------------------------")
-print("G - GANGNAM, PAGE 2 - IT BURNS, PAGE 3 - LEMON MELON COOKIE, PAGE 4 - TENNA 2")
-print("------------------------------------------")
-print("H - DOMINO, PAGE 2 - DISTRACTION DANCE, PAGE 3 - BIRDBRAIN, PAGE 4 - RAMBUNCTIOUS")
-print("------------------------------------------")
-print("J - STARLIT, PAGE 2 - KEEP UP, PAGE 3 - FEIN, PAGE 4 - SIDE SHUFFLE")
-print("------------------------------------------")
-print("K - WALK, PAGE 2 - BOOMBOX, PAGE 3 - POPIPO, PAGE 4 - ELECTRO SWING")
-print("------------------------------------------")
-print("L - GRIDDY, PAGE 2 - FIREWORK, PAGE 3 - PICKUP THE PHONE, PAGE 4 STEP")
-print("------------------------------------------")
-print("Z - LUX, PAGE 2 - TWO, PAGE 3 - SILLY BILLY, PAGE 4 - APPLE PEN")
-print("------------------------------------------")
-print("X - KAZOTSKY KICK, PAGE 2 - HEAVY LOVE, PAGE 3 - ROTTEN, PAGE 4 - CRANK THAT")
-print("------------------------------------------")
-print("C - MESMERIZER, PAGE 2 - MILLION, PAGE 3 - SPOOKY MONTH, PAGE 4 - TAKEDOWN")
-print("------------------------------------------")
-print("V - LIAR DANCER, PAGE 2 - BILLIE JEAN, PAGE 3 - LIMITED FLEXWORKS, PAGE 4 - GOING DOWN")
-print("------------------------------------------")
-print("B - HAKARI, PAGE 2 - SAVOR THE W, PAGE 3 - UNLIMITED FLEXWORKS, PAGE 4 - SPAMTON")
-print("------------------------------------------")
-print("N - BOX SWING, PAGE 2 - LAY, PAGE 3 - CRISSCROSS, PAGE 4 - KEMUSAN")
-print("------------------------------------------")
-print("M - CHANGE PAGES")
-print("------------------------------------------")
-print("MINUS OR '-' - COMMERCIAL BREAK, PAGE 2 - CLUB PENGUIN, PAGE 3 - TORT, PAGE 4 -  IGAKU")
-print("------------------------------------------")
-print("COMMA OR ',' - STATIC, PAGE 2 - INTERNET YAMERO, PAGE 3 - BRAIN, PAGE 4 - IM OK")
-print("------------------------------------------")
-print("LEFTBRACKET OR '[' - EMOTIONAL PRISM, PAGE 2 - I WANNA RUNAWAY, PAGE 3 - ESPRESSO, PAGE 4 - HEADLOCK 2")
-print("------------------------------------------")
-print("RIGHTBRACKET OR ']' - HEADLOCK, PAGE 2 - MIO HONDA, PAGE 3 - RAKUTEN, PAGE 4 - LINGA GULI GULI")
-print("------------------------------------------")
-print("LEFTCONTROL OR 'LCTRL' - TOGGLE SPRINT")
-print("------------------------------------------")
-print("EQUALS OR '=' TOGGLE BACKGROUND MUSIC WHEN NOT DANCING")
-print("------------------------------------------")
-print("UPDATE:\n\t\t -- 1 New dance/s ")
-wait(1)
-DANCEINFO.Text="Click me!"
-CHECKF9=false
-end)
-]]
-
-
-
-
-local char=game:GetService("Players").LocalPlayer.Character
-local Character =char
-local Character1=game.Players.LocalPlayer
-local delfile = delfile or function(path)
-    if isfile and isfile(path) then
-        pcall(function()
-            if syn and syn.io then
-                syn.io.remove(path)
-            else
-                writefile(path, "")
-            end
-        end)
-    end
-end
-
-
-
-
-
-local Place = game.placeId
 local REANIMATION=false
+local Place = game.placeId
 local function Backup()
 --// BY MrY7zz
 REANIMATION=true
@@ -514,23 +260,22 @@ settings["Click Fling"] = false
 settings["Hide RootPart Distance"] = CFrame.new(255, 255, 0)
 
 settings["Names to exclude from transparency"] = {
-    --[[ example:
+    --[=[ example:
     ["HumanoidRootPart"] = true,
     ["Left Arm"] = true
-    ]]
+    ]=]
 }
 --// Settings end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV4/refs/heads/main/v4.lua"))()
 REANIMATION=false 
 end
-local ReanimateVer=getgenv().Reanimate
 REANIMATE.MouseButton1Click:Connect(function()
 if Place == 17574618959 or Place == 88308889239232 then
 if REANIMATION then return notify([[ALREADY REANIMATING]]) end
-if game.Workspace:FindFirstChild("GelatekReanimate") then
+if game.Workspace:FindFirstChild ("GelatekReanimate") then
 return notify("Already Reanimated") end
-if game.Workspace:FindFirstChild(Character1.Name.."_Fake")then
+if game.Workspace:FindFirstChild (game.Players.LocalPlayer.Name.."_Fake") then
 return notify("Already Reanimated") end
 if ReanimateVer=="Gelatek" then
 Run1.Position = UDim2.new(100, 0, 0.629999971, 0)
@@ -545,8 +290,8 @@ end
 else 
 Backup()
 REANIMATION=true
-Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
-end 
+end
+
 wait(2)
 if ReanimateVer=="Gelatek" and ws:WaitForChild("GelatekReanimate")  then
 REANIMATION=false
@@ -557,39 +302,20 @@ REANIMATION=false
 end
 end)
 
-function respawn()
-local ws=gam.Workspace
-local char=game.Players.LocalPlayer.Character
-local newChar = Instance.new("Model")
-newChar.Parent = workspace
-newChar.Name="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-if char:FindFirstChildOfClass("Humanoid") then char:FindFirstChildOfClass("Humanoid"):ChangeState(15) end
-char:ClearAllChildren()
-game.Players.LocalPlayer.Character = newChar
-if ws then
-dele=ws:WaitForChild(char.Name)
-if dele then
-dele:Destroy()
-end
-end
-game.Players.LocalPlayer.Character = char
-wait(.1)
-newChar:Destroy()
-end
-local function forceRespawn()
-    local player = game:GetService("Players").LocalPlayer
-    if player.Character then
-        player.Character:BreakJoints()
-    end
-    wait(0.5)
-    player:LoadCharacter()
-end
+
+
 
 
 local full = game:GetObjects("rbxassetid://107495486817639")[1]:Clone()
 full.Parent = game:GetService("Workspace")
 local fallback = game:GetObjects("rbxassetid://117971041844492")[1]:FindFirstChildOfClass("KeyframeSequence")
 fallback.Parent = full
+
+
+
+
+
+
 
 local is = newproxy(true)
 local function loadlocalasset(id)
@@ -605,9 +331,6 @@ end
 getmetatable(is).__namecall = function(_, id)
 	return loadlocalasset(id)
 end
-
---THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
--- VVVVVVVV
 local danceCache = {}
 local function AddDance(Name, ScriptUrl)
     local filePath = "KRYSTALDANCE/"..Name
@@ -653,6 +376,10 @@ local function AddDance(Name, ScriptUrl)
     end
 end
 
+
+
+
+
 local danceCache = {}
 local function LoadDance(danceName, scriptUrl)
     if danceCache[danceName] then
@@ -666,6 +393,11 @@ local function LoadDance(danceName, scriptUrl)
     return dance
 end
 
+
+
+
+
+
 local timeposcur = 0 
 local sound69 = Instance.new("Sound",game:GetService("RunService"))
 local Playsound = Instance.new("Sound",game:GetService("RunService"))
@@ -677,27 +409,9 @@ sound69.Looped = true
 sound69.Name = "danc"
 sound69.Playing = true
 sound69.Volume = .75
-local exploit = "shitsploit"
-        pcall(function()
-            exploit = getexecutorname()
-        end)
-	local customasset = function(id)
-        if exploit ~= "CaetSploit" then
-        idwithoutthatbit= string.gsub(id,"KDV3/","")
-        if not isfile(id) then 
-         writefile(id,game:HttpGet("https://github.com/Solary-3/Scripts/tree/Audios-1"..idwithoutthatbit))
-        end
-       repeat task.wait() until isfile(id)
-    end
-        local s = Instance.new("Sound")
-        s.Parent =game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-        s.SoundId = getcustomasset(id)
-        task.spawn(function()
-            task.wait(1)
-            s:Destroy()
-        end)
-        return s.SoundId
-	end
+
+
+
 
 
 
@@ -814,9 +528,11 @@ local validAudioFiles = {
     "TANOC.mp3",
     "Shiawase.mp3",
     "Tf2.mp3",
+    "Smug.mp3",
+    "Wait2.mp3",
+    "Livesey.mp3",
+    "Pokedance.mp3",
 }
-
---THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
 local function DanceAsset(file)
     if not table.find(validAudioFiles, file) then
         notify("Audio file not found: " .. file)
@@ -853,7 +569,7 @@ local function DanceAsset(file)
             fileSize = #readfile(filePath)
         end)
         if fileSize > 204800 then
-            return customasset(filePath)  
+            return getcustomasset(filePath)  
         else
             notify("Audio file is empty/corrupted: " .. file)
             return ""
@@ -863,27 +579,13 @@ local function DanceAsset(file)
         return ""
     end
 end
-local Humanoid = Character:WaitForChild("Humanoid")
-local mode = 1 
-local INPUTLOOP =nil
-local STATES =nil
-local SITTING=nil
-local UPDATE=nil
-local sprinting = false 
-local uis = game:GetService("UserInputService")
-
-
-
-
-
-
-
-
 
 local RUNNING = false
 function MainScript()
 if RUNNING==true then return end
 RUNNING=true
+
+--// Custom Tool/Inventory Gui
 local G2L={};
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["Name"] = [[Custom Inventory]];
@@ -1455,13 +1157,11 @@ function module:addTool(tool: Tool, parent: string, position: number)
 		end
 
 		if object:isEquipped() then -- if tool is equipped then unequip it
-
 			humanoid:UnequipTools()
 			frame.BackgroundColor3 = SETTINGS.DEFAULT_COLOR
 			frame.Image = SETTINGS.DEFAULT_IMAGEID
 			module.currentlyEquipped = nil
 		elseif tool.Enabled then -- if tool isnt equipped then equip it
-
 			humanoid:EquipTool(tool)
 			if module.currentlyEquipped and module.currentlyEquipped.Parent then
 				module.currentlyEquipped.BackgroundColor3 = SETTINGS.DEFAULT_COLOR
@@ -1850,6 +1550,18 @@ local script = G2L["e"];
 	end)
 end;
 task.spawn(C_e);
+
+
+
+
+
+
+
+
+
+
+
+
 local lol = math.random(1,4)
 local walkanim = is:LoadLocalAsset("rbxassetid://73688515498572") -- uuid. 130213485744288
 local idleanim = is:LoadLocalAsset("rbxassetid://74204337812128") -- uuid. 136078657506707
@@ -2335,10 +2047,8 @@ Playsound:Play()
 
 
 
-
-
 local TableOfDances={
-  {Name="Rat1",Music="rat.mp3",DanceName="Rat1",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rat1.lua",Id="None",Offset=0,WalkSpeed=14},
+  {Name="Rat 1",Music="rat.mp3",DanceName="Rat1",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rat1.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Boogie Down",Music="FunkedUp.mp3",DanceName="None",Url="None",Id=122471664395501,Offset=0,WalkSpeed=14},
   {Name="Assumptions",Music="Assumptions.mp3",DanceName="Assumptions",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Assumptions.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Egypt",Music="Egypt.mp3",DanceName="Egypt",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Egypt.lua",Id="None",Offset=0,WalkSpeed=14},
@@ -2350,7 +2060,7 @@ local TableOfDances={
   {Name="Starlit",Music="dancingin.mp3",DanceName="None",Url="None",Id=136139381223407,Offset=0,WalkSpeed=14},
   {Name="Swag Walk",Music="dr.wav",DanceName="None",Url="None",Id=110403709064010,Offset=0,WalkSpeed=4},
   {Name="Griddy",Music="griddy.mp3",DanceName="None",Url="None",Id=110403709064010,Offset=0,WalkSpeed=4},
-  {Name="Luxurios",Music="lux.ogg",DanceName="None",Url="None",Id=94534967284996,Offset=0,WalkSpeed=14},
+  {Name="Luxurious",Music="lux.ogg",DanceName="None",Url="None",Id=94534967284996,Offset=0,WalkSpeed=14},
   {Name="Kazotsky",Music="kazot.mp3",DanceName="None",Url="None",Id=86634257330162,Offset=0,WalkSpeed=14},
   {Name="Domino",Music="Domino.mp3",DanceName="Domino",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Domino.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Liar Dancer",Music="Liar.mp3",DanceName="Liar",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Liar.lua",Id="None",Offset=0,WalkSpeed=14},
@@ -2390,7 +2100,7 @@ local TableOfDances={
   {Name="Goated Dance",Music="Goat.mp3",DanceName="Goat",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Goat.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Bumblebee",Music="Bumblebee.mp3",DanceName="Bumblebee",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Bumblebee.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Stock Shuffle",Music="Stock.mp3",DanceName="Stock",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Stock.lua",Id="None",Offset=0,WalkSpeed=14},
-  {Name="Rat2",Music="rat.mp3",DanceName="Rat2",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rat2.lua",Id="None",Offset=0,WalkSpeed=14},
+  {Name="Rat 2",Music="rat.mp3",DanceName="Rat2",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rat2.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Shuba Duck",Music="Shuba Duck.mp3",DanceName="Shuba",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Shuba Duck.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Lemon Melon",Music="Lemon.mp3",DanceName="None",Url="None",Id=138510336377177,Offset=0,WalkSpeed=14},
   {Name="Birdbrain",Music="Birdbrain2.mp3",DanceName="Birdbrain",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Birdbrain.lua",Id="None",Offset=0,WalkSpeed=14},
@@ -2428,7 +2138,7 @@ local TableOfDances={
   {Name="Kemusan",Music="Kemusan.mp3",DanceName="Kemusan",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kemusan.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Im Ok",Music="ImOk.mp3",DanceName="ImOk",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/ImOk.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Igaku",Music="Igaku2.mp3",DanceName="Igaku",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Igaku.lua",Id="None",Offset=0,WalkSpeed=14},
-  {Name="Headlock 2",Music="Headlock.mp3",DanceName="Headlock2",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Headlock2.lua",Id="None",Offset=0,WalkSpeed=14},
+  {Name="Headlock 2",Music="Headlock.mp3",DanceName="Headlock3",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Headlock3.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Guli",Music="Guli.mp3",DanceName="Guli",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Guli.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Results",Music="Results.mp3",DanceName="Results",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Results.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Static 2",Music="Static.mp3",DanceName="Static2",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Static2.lua",Id="None",Offset=0,WalkSpeed=14},
@@ -2448,14 +2158,27 @@ local TableOfDances={
   {Name="Requiem",Music="faster.ogg",DanceName="Requiem",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Requiem.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Metro Man",Music="Metro.mp3",DanceName="Metro",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Metro.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="CrackDown",Music="CrackDown.mp3",DanceName="CrackDown",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/CrackDown.lua",Id="None",Offset=0,WalkSpeed=14},
+  {Name="Wait",Music="Wait2.mp3",DanceName="Wait",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Wait.lua",Id="None",Offset=0,WalkSpeed=14},
+  {Name="Smug Dance",Music="Smug.mp3",DanceName="Smug",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Smug.lua",Id="None",Offset=0,WalkSpeed=14},
+  {Name="Takino",Music="Takino.mp3",DanceName="Takino",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Takino.lua",Id="None",Offset=0,WalkSpeed=14},
+  {Name="Jumpstyle 1",Music="Jumpstyle.mp3",DanceName="Jumpstyle4",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Jumpstyle4.lua",Id="None",Offset=0,WalkSpeed=14},
+  {Name="Livesey Walk",Music="Livesey.mp3",DanceName="Livesey",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Livesey.lua",Id="None",Offset=0,WalkSpeed=4},
+  {Name="Mesmerizer 1",Music="Mesmerizer.mp3",DanceName="Mesmerizer1",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Mesmerizer1.lua",Id="None",Offset=0,WalkSpeed=14},
+  {Name="Pokedance",Music="Pokedance.mp3",DanceName="Pokedance",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pokedance.lua",Id="None",Offset=0,WalkSpeed=14},
+  {Name="Keep Up 1",Music="KeepUp.mp3",DanceName="KeepUp1",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Keep Up1.lua",Id="None",Offset=0,WalkSpeed=14},
 }
+
+
+
+
+
 
 local ws=game.Workspace
 ws.CurrentCamera.CameraSubject=char:WaitForChild("Head")
 for _,v in ipairs(TableOfDances) do 
-local player = game:GetService("Players").LocalPlayer
-local BackPack = player:WaitForChild("Backpack")
-local tool=Instance.new("Tool",BackPack)
+local player = game.Players.LocalPlayer
+local backpack = player:WaitForChild("Backpack")
+local tool=Instance.new("Tool",backpack)
 tool.Name=v.Name
 tool.RequiresHandle=false
 tool.Equipped:Connect(function()
@@ -2463,10 +2186,15 @@ if dancing==false then
 stopanim()
 dancing = true
 Playsound.Volume=0
-sound69.Volume=1
 wait(.005)
 char.Humanoid.WalkSpeed=v.WalkSpeed
-sound69.SoundId = DanceAsset(v.Music)
+if v.Name=="Takino" then 
+if isfile and not isfile("KDV3/Takino.mp3") then
+writefile("KDV3/Takino.mp3",game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Takino.mp3?raw=true"))
+end
+sound69.SoundId = getcustomasset("KDV3/"..v.Music)
+end
+sound69.SoundId = getcustomasset("KDV3/"..v.Music)
 if v.Offset==0 then
 sound69.TimePosition=0
 else 
@@ -2491,8 +2219,14 @@ stopanim()
 end)
 end
 
-local sprinting=false
 
+
+
+
+
+
+
+local sprinting=false
 
 char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
 	if char.Humanoid.Sit == false then 
@@ -2510,7 +2244,7 @@ char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
 			idle = false
 			stopanim()
 			fwait(1/500)
-			if sprinting == false then 
+			if sprinting == false then
 				char.Humanoid.WalkSpeed = 14*char:GetScale()
 				if walking == true and idle == false and  char.Humanoid.MoveDirection ~= Vector3.new(0,0,0) and dancing == false and playanother==true  then 
 					playanim(130213485744288,1,false,walkanim)
@@ -2572,35 +2306,12 @@ Playsound.Volume=0
 Playsound.TimePosition=0
 Playsound:Stop()
 sound69:Stop()
+wait(1)
+local ws=game.Workspace
+ws.CurrentCamera.CameraSubject=game.Players.LocalPlayer.Character:WaitForChild("Head")
+break
 end
---[[
-deltaTime+=.1
-local function Alpha(n)
-		return math.clamp(n*deltaTime*60,0,1)
-	end
-	hum.CameraOffset =  hum.CameraOffset:Lerp((hrp.CFrame*cf(0,1.5,0)):PointToObjectSpace(h.Position),Alpha(.15))
-	if IsAllowedState  and dancing == false then
-		local HeadPosition = Head.Position
-		if Neck then
-			local MousePos = PlayerMouse.Hit.Position
-			local TranslationVector = (HeadPosition - MousePos).Unit
-			local Pitch = atan(TranslationVector.Y)
-			local Yaw = TranslationVector:Cross(Torso.CFrame.LookVector).Y
-			local Roll = atan(Yaw)
 
-			local NeckCFrame
-			if IsR6 then
-				NeckCFrame = CFrame.Angles(Pitch, 0, Yaw)
-			else
-			   	NeckCFrame = CFrame.Angles(-Pitch * 0.5, Yaw, -Roll * 0.5)				
-			   	local waistCFrame = CFrame.Angles(-Pitch * 0.5, Yaw * 0.5, 0)
-			   	Waist.C0 = Waist.C0:Lerp(WaistOriginC0 * waistCFrame, updatesPerSecond * deltaTime)
-			end			
-			Neck.C0 = Neck.C0:Lerp(NeckOriginC0 * NeckCFrame, updatesPerSecond * deltaTime)
-		end
-	elseif dancing == true then 
-		Neck.C0 = oldC0N
-	end]]
 if dancing==false and char.Humanoid.MoveDirection == Vector3.new(0,0,0) then
 walking = false 
 idle = true 
@@ -2610,10 +2321,9 @@ idle = false
 end
 end
 end
-
 Run1.MouseButton1Click:Connect(function()
+if RUNNING then return notify("SCRIPT IS RUNNING!!") end
 if REANIMATION then return notify("Reanimating please wait") end
-if RUNNING==true then return notify("SCRIPT IS RUNNING!!") end
 if ReanimateVer=="Gelatek" then
 if ws:FindFirstChild("GelatekReanimate") then
 if ReanimateVer=="Gelatek" then
