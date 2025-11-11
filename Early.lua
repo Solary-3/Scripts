@@ -2131,7 +2131,7 @@ local TableOfDances={
   {Name="Electro Swing",Music="Electro Swing.mp3",DanceName="Electro",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Electro Swing.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="MioHonda Step",Music="MioHonda.mp3",DanceName="Step",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Step.lua",Id="None",Offset=0,WalkSpeed=4},
   {Name="Apple Pen",Music="Apple Pen.mp3",DanceName="Applepen",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Apple Pen.lua",Id="None",Offset=0,WalkSpeed=14},
-  {Name="Crank",Music="Crank.mp3",DanceName="Crankthat",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Crank That.lua",Id="None",Offset=0,WalkSpeed=14},
+  {Name="Crank That",Music="Crank.mp3",DanceName="Crankthat",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Crank That.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Take Down",Music="TakeDown.mp3",DanceName="TakeDown",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Takedown.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Going Down",Music="Down.mp3",DanceName="Down",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Going Down.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Spamton",Music="Spamton.mp3",DanceName="Spamton",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Spamton.lua",Id="None",Offset=0,WalkSpeed=14},
