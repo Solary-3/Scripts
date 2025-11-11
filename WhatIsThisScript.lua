@@ -826,6 +826,8 @@ local validAudioFiles = {
     "Tf2.mp3",
     "Smug.mp3",
     "Wait.mp3",
+    "Livesey.mp3",
+    "Pokedance.mp3",
 }
 
 --THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
@@ -3397,7 +3399,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				sound69.SoundId = DanceAsset("Jumpstyle.mp3")
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
-				local dance=LoadDance("Jumpstyle3", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Jumsptyle3.lua")
+				local dance=LoadDance("Jumpstyle", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Jumsptyle3.lua")
 				sound69:Play()
 				Info("Jumpstyle","L")
 				if dance then
@@ -3532,8 +3534,121 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			else
 				stopanim()
 			end
+	     elseif k == "leftbracket" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				Playsound.Volume=0
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Jumpstyle.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				local dance=LoadDance("Jumpstyle4", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Jumpstyle4.lua")
+				sound69:Play()
+				Info("Jumpstyle 1","[")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+	     elseif k == "minus" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				Playsound.Volume=0
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("KeepUp.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				local dance=LoadDance("KeepUp1", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Keep Up1.lua")
+				sound69:Play()
+				Info("Keep Up 1","-")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+			end
+	     elseif k == "comma" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				Playsound.Volume=0
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Livesey.mp3")
+				timeposcur = sound69.TimePosition 
+				sound69:Play()
+				char.Humanoid.WalkSpeed = 4*char:GetScale()
+				local dance=LoadDance("Livesey", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Livesey.lua")
+				sound69:Play()
+				Info("Livesey",",")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+			  char.Humanoid.WalkSpeed = 14*char:GetScale()
+				stopanim()
+			end
 	     end
 	end
+	if mode == 6 then 
+	  if k == "q" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				Playsound.Volume=0
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Mesmerizer.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Mesmerizer1", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Mesmerizer.lua")
+				sound69:Play()
+				Info("Mesmerizer 1","Q")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+		  	end
+	  elseif k == "e" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				Playsound.Volume=0
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("Pokedance.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Pokedance", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pokedance.lua")
+				sound69:Play()
+				Info("Pokedance","E")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+		  	end
+	  elseif k == "r" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				Playsound.Volume=0
+				task.wait(.005)
+				if isfile and not isfile("KDV3/Takino.mp3") then 
+				  writefile("KDV3/Takino.mp3",game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Takino.mp3?raw=true"))
+				  end 
+				sound69.SoundId = getcustomasset("KDV3/Takino.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("Takino", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Takino.lua")
+				sound69:Play()
+				Info("Takino","R")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+		  	end
+			end
+	  end
 	if k == "equals" then 
 		playbacktrack = not playbacktrack
 		if dancing == false then 
@@ -3559,14 +3674,22 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 		sprinting = not sprinting
 	end
 if k == "m" then
-if mode == 4 then 
+if mode== 5 then
+mode=6
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Krystal Dance V3";
+	Duration = 5;
+	Text = "Page 6"
+})
+Page.Text="6"
+elseif mode == 4 then 
 mode = 5 
+Page.Text="5"
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
 	Duration = 5;
 	Text = "Page 5"
 })
-Page.Text="5"
 elseif mode == 3 then 
 mode = 4
   game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -3592,7 +3715,7 @@ elseif mode == 1 then
 	Text = "Page 2"
 })
 Page.Text="2"
-elseif mode == 5  then 
+elseif mode == 6  then 
     mode = 1
     game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Krystal Dance V3";
