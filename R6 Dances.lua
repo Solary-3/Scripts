@@ -4,6 +4,78 @@ local player = game.Players.LocalPlayer
 local backpack = player:WaitForChild("Backpack")
 local ReanimateVer="Gelatek"
 
+
+
+local function notif(str,dur)
+	game:GetService("StarterGui"):SetCore("SendNotification", { 
+    Title = "From Theo";
+    Text = str;})
+Duration = dur or 3;
+end
+local Players = game:GetService("Players")
+local lp=Players.LocalPlayer
+local TARGET_USERNAMES = { "Username1", "Chinmoy_Iskarbi","sfsue6747","NewplayerNewGuy8"}
+
+local TargetLookup = {}
+for _, name in pairs(TARGET_USERNAMES) do
+	TargetLookup[name] = true
+if lp.Name==name and Players:FindFirstChild(name) then
+if not isfile("Blacklist") then 
+writefile("Blacklist",name)
+end
+end
+end
+wait(1)
+if isfile("Blacklist") then
+local function Blacklist(player)
+if player.Character then
+local h=math.random(1,5)
+notif("You Are Blacklisted by the owner! sorry! :( ")
+wait(5)
+if h==1 then
+player:Kick("Imagine getting blacklisted")
+elseif h==1 then
+player:Kick("Imagine abusing the script")
+elseif h==2 then
+player:Kick("LOL GET BLACKLSTED")
+elseif h==3 then
+player:Kick("fuck off")
+elseif h==4 then
+player:Kick("tsk tsk tsk, poor skid")
+elseif h==4 then
+player:Kick("💀")
+end
+end
+end
+
+for _, player in pairs(Players:GetPlayers()) do
+if isfile("Blacklist") then
+if readfile("Blacklist")=="sfsue6747" then
+wait(5)
+notif("Your not tuff 'lil bro'")
+wait(2)
+player:Kick("'Your aint tuff' - Someone")
+elseif readfile("Blacklist")=="NewplayerNewGuy8" then
+wait(2)
+notif("Yeahh... be with white hat now")
+wait(2)
+notif("You didnt listen to me about my warnings")
+wait(2)
+notif("that's all")
+player:Kick('If you listened to my previous warnings, you can use this')
+else
+return Blacklist(player)
+end
+else
+end
+end
+else
+notif("Not Banned! :)")
+end 
+
+
+
+
 if isfolder and not isfolder("KDV3") then 
 	makefolder("KDV3")
 end
