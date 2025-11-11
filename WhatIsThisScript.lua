@@ -3042,7 +3042,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				timeposcur = sound69.TimePosition 
 				local dance=LoadDance("Crankthat", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Crank That.lua")
 				sound69:Play()
-				Info("Crank","X")
+				Info("Crank That","X")
 				if dance then
 				playanim(dance) -- uuid. 71723925114737
 				end
