@@ -1763,7 +1763,10 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				dancing = true
 				Playsound.Volume=0
 				task.wait(.005)
-				sound69.SoundId = DanceAsset("Monkey.mp3")
+				if isfile and not isfile("KDV3/Monkey.mp3") then 
+				  writefile("KDV3/Takino.mp3",game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Monkey.mp3?raw=true"))
+				  end 
+				sound69.SoundId = getcustomasset("KDV3/Monkey.mp3")
 				timeposcur = sound69.TimePosition 
 				local dance=LoadDance("BombMonkey", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Bomb Monkey.lua")
 				Info("Bomb Monkey","P")
