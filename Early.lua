@@ -532,6 +532,7 @@ local validAudioFiles = {
     "Wait2.mp3",
     "Livesey.mp3",
     "Pokedance.mp3",
+    "Slash.mp3",
 }
 local function DanceAsset(file)
     if not table.find(validAudioFiles, file) then
@@ -1562,7 +1563,7 @@ task.spawn(C_e);
 
 
 
-local lol = math.random(1,4)
+local lol = math.random(1,5)
 local walkanim = is:LoadLocalAsset("rbxassetid://73688515498572") -- uuid. 130213485744288
 local idleanim = is:LoadLocalAsset("rbxassetid://74204337812128") -- uuid. 136078657506707
 local randompart = Instance.new("Part",game:GetService("RunService"))
@@ -2034,6 +2035,8 @@ elseif lol==3 then
 Playsound.SoundId = DanceAsset("TANOC.mp3")
 elseif lol==4 then 
 Playsound.SoundId = DanceAsset("Tf2.mp3")
+elseif lol==5 then 
+Playsound.SoundId = DanceAsset("Slash.mp3")
 end
 end 
 Playsound.TimePosition =0
