@@ -4,6 +4,10 @@ local player = game.Players.LocalPlayer
 local backpack = player:WaitForChild("Backpack")
 local ReanimateVer=getgenv().Reanimate
 
+if isfolder and not isfolder("KDV3") then 
+	makefolder("KDV3")
+end
+
 
 
 local function notif(str,dur)
@@ -14,7 +18,7 @@ Duration = dur or 3;
 end
 local Players = game:GetService("Players")
 local lp=Players.LocalPlayer
-local TARGET_USERNAMES = { "Username1", "Chinmoy_Iskarbi","sfsue6747","NewplayerNewGuy8"}
+local TARGET_USERNAMES = { "Username1", "Chinmoy_Iskarbi","sfsue6747"}
 
 local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
@@ -55,14 +59,6 @@ wait(5)
 notif("Your not tuff 'lil bro'")
 wait(2)
 player:Kick("'Your aint tuff' - Someone")
-elseif readfile("Blacklist")=="NewplayerNewGuy8" then
-wait(2)
-notif("Yeahh... be with white hat now")
-wait(2)
-notif("You didnt listen to me about my warnings")
-wait(2)
-notif("that's all")
-player:Kick('If you listened to my previous warnings, you can use this')
 else
 return Blacklist(player)
 end
@@ -72,13 +68,6 @@ end
 else
 notif("Not Banned! :)")
 end 
-
-
-
-
-if isfolder and not isfolder("KDV3") then 
-	makefolder("KDV3")
-end
 
 if not isfolder("KRYSTALDANCE") then
         makefolder("KRYSTALDANCE")
@@ -151,7 +140,7 @@ title.BorderSizePixel = 2
 title.Position = UDim2.new(0, 0, 0.0199999996, 0)
 title.Size = UDim2.new(1, 0, 0, 50)
 title.Font = Enum.Font.Arcade
-title.Text = "Modded By Theo"
+title.Text = "Made By Theo"
 title.TextColor3 = Color3.new(1, 1, 1)
 title.TextScaled = true
 title.TextSize = 7.5
@@ -234,7 +223,7 @@ ced.BorderSizePixel = 2
 ced.Position = UDim2.new(0, 0, 0.795, 0)
 ced.Size = UDim2.new(1, 0, 0, 50)
 ced.Font = "Fantasy"
-ced.Text = "Krystal Dance V3"
+ced.Text = "R6 Tool Dance"
 ced.TextColor3 = Color3.new(1, 1, 1)
 ced.TextScaled = true
 ced.TextSize = 6
@@ -2131,7 +2120,7 @@ local TableOfDances={
   {Name="Bomb Monkey",Music="Monkey.mp3",DanceName="BombMonkey",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Bomb Monkey.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Starlit",Music="dancingin.mp3",DanceName="None",Url="None",Id=136139381223407,Offset=0,WalkSpeed=14},
   {Name="Swag Walk",Music="dr.wav",DanceName="None",Url="None",Id=110403709064010,Offset=0,WalkSpeed=4},
-  {Name="Griddy",Music="griddy.mp3",DanceName="None",Url="None",Id=110403709064010,Offset=0,WalkSpeed=4},
+  {Name="Griddy",Music="griddy.mp3",DanceName="None",Url="None",Id=114928062507098,Offset=0,WalkSpeed=4},
   {Name="Luxurious",Music="lux.ogg",DanceName="None",Url="None",Id=94534967284996,Offset=0,WalkSpeed=14},
   {Name="Kazotsky",Music="kazot.mp3",DanceName="None",Url="None",Id=86634257330162,Offset=0,WalkSpeed=14},
   {Name="Domino",Music="Domino.mp3",DanceName="Domino",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Domino.lua",Id="None",Offset=0,WalkSpeed=14},
@@ -2203,14 +2192,14 @@ local TableOfDances={
   {Name="Electro Swing",Music="Electro Swing.mp3",DanceName="Electro",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Electro Swing.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="MioHonda Step",Music="MioHonda.mp3",DanceName="Step",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Step.lua",Id="None",Offset=0,WalkSpeed=4},
   {Name="Apple Pen",Music="Apple Pen.mp3",DanceName="Applepen",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Apple Pen.lua",Id="None",Offset=0,WalkSpeed=14},
-  {Name="Crank",Music="Crank.mp3",DanceName="Crankthat",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Crank That.lua",Id="None",Offset=0,WalkSpeed=14},
+  {Name="Crank That",Music="Crank.mp3",DanceName="Crankthat",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Crank That.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Take Down",Music="TakeDown.mp3",DanceName="TakeDown",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Takedown.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Going Down",Music="Down.mp3",DanceName="Down",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Going Down.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Spamton",Music="Spamton.mp3",DanceName="Spamton",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Spamton.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Kemusan",Music="Kemusan.mp3",DanceName="Kemusan",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Kemusan.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Im Ok",Music="ImOk.mp3",DanceName="ImOk",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/ImOk.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Igaku",Music="Igaku2.mp3",DanceName="Igaku",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Igaku.lua",Id="None",Offset=0,WalkSpeed=14},
-  {Name="Headlock 2",Music="Headlock.mp3",DanceName="Headlock3",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Headlock3.lua",Id="None",Offset=0,WalkSpeed=14},
+  {Name="Headlock 2",Music="Headlock.mp3",DanceName="Headlock3",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Headlock3.lua",Id="None",Offset=6.5,WalkSpeed=14},
   {Name="Guli",Music="Guli.mp3",DanceName="Guli",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Guli.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Results",Music="Results.mp3",DanceName="Results",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Results.lua",Id="None",Offset=0,WalkSpeed=14},
   {Name="Static 2",Music="Static.mp3",DanceName="Static2",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Static2.lua",Id="None",Offset=0,WalkSpeed=14},
@@ -2265,7 +2254,13 @@ if isfile and not isfile("KDV3/Takino.mp3") then
 writefile("KDV3/Takino.mp3",game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Takino.mp3?raw=true"))
 end
 sound69.SoundId = getcustomasset("KDV3/"..v.Music)
+elseif v.Name=="Bomb Monkey" then
+if isfile and not isfile("KDV3/Monkey.mp3") then
+writefile("KDV3/Takino.mp3",game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Monkey.mp3?raw=true"))
 end
+sound69.SoundId = getcustomasset("KDV3/"..v.Music)
+end
+
 sound69.SoundId = getcustomasset("KDV3/"..v.Music)
 if v.Offset==0 then
 sound69.TimePosition=0
@@ -2372,6 +2367,7 @@ local deltaTime=1
 
 while game.RunService.Heartbeat:Wait(.001) do
 if not ws:FindFirstChild("GelatekReanimate") or ws:FindFirstChild(game.Players.LocalPlayer.Name.."_Fake") then
+  RUNNING=false
 sound69.Volume=0 
 sound69.TimePosition=0 
 Playsound.Volume=0
