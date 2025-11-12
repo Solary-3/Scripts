@@ -828,6 +828,7 @@ local validAudioFiles = {
     "Wait2.mp3",
     "Livesey.mp3",
     "Pokedance.mp3",
+    "Slash.mp3",
 }
 
 --THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
@@ -899,117 +900,6 @@ local uis = game:GetService("UserInputService")
 
 
 
-
-local function AsyncPreloadDances()
-    local Preload = {
-        {"Rat1", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rat1.lua"},
-        {"Assumptions", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Assumptions.lua"},
-        {"Egypt", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Egypt.lua"},
-        {"Flop", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Flop.lua"},
-        {"HeelToeHop", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/HeelToeHop.lua"},
-        {"BombMonkey", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Bomb Monkey.lua"},
-        {"Domino", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Domino.lua"},
-        {"Liar", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Liar.lua"},
-        {"Mesmerizer", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Mesmerizer.lua"},
-        {"BoxSwing", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Box Swing.lua"},
-        {"Static", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Static.lua"},
-        {"Prism", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Prism Shuffle.lua"},
-        {"Headlock", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Headlock.lua"},
-        {"Hakari", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Hakari.lua"},
-        {"Commercial", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Commercial.lua"},
-        {"Soda", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Soda Pop.lua"},
-        {"L4U", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Love4U.lua"},
-        {"Distraction", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Distraction.lua"},
-        {"ItBurns", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/It Burns.lua"},
-        {"Chronoshift", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Chronoshift.lua"},
-        {"Keep", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Keep Up.lua"},
-        {"Sit", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Sit.lua"},
-        {"BillieJean", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/BillieJean.lua"},
-        {"Savor", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Savor.lua"},
-        {"Yamero", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Yamero.lua"},
-        {"Angel", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Angel.lua"},
-        {"ClubPenguin", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Club Penguin.lua"},
-        {"Runaway", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Runaway.lua"},
-        {"Miohonda", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Miohonda.lua"},
-        {"Firework", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Firework.lua"},
-        {"C14", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/C14.lua"},
-        {"Slickback", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Slickback.lua"},
-        {"Doodle", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Doodle.lua"},
-        {"Goat", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Goat.lua"},
-        {"Bumblebee", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Bumblebee.lua"},
-        {"Stock", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Stock Shuffle.lua"},
-        {"Rat2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rat2.lua"},
-        {"Shuba", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Shuba Duck.lua"},
-        {"Birdbrain", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Birdbrain.lua"},
-        {"Fein", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Fein.lua"},
-        {"Popipo", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Popipo.lua"},
-        {"Pickup", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pickup.lua"},
-        {"Billy", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Billy.lua"},
-        {"Spooky", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Spooky.lua"},
-        {"Limited", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Limited.lua"},
-        {"Flexworks", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Flexworks.lua"},
-        {"Unlockit", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Unlockit.lua"},
-        {"SmoothMoves", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/SmoothMoves.lua"},
-        {"Lagtrain", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Lagtrain.lua"},
-        {"Suki", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Suki.lua"},
-        {"Cafeteria", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Cafeteria.lua"},
-        {"Dare", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Dare.lua"},
-        {"Tenna", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tenna.lua"},
-        {"Insanity", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Insanity.lua"},
-        {"Tenna2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tenna 2.lua"},
-        {"Rambunctious", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rambunctious.lua"},
-        {"Sideshuffle", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Side Shuffle.lua"},
-        {"Electro", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Electro Swing.lua"},
-        {"Step", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Step.lua"},
-        {"Applepen", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Apple Pen.lua"},
-        {"Crankthat", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Crank That.lua"},
-        {"Takedown", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Takedown.lua"},
-        {"Down", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Going Down.lua"},
-        {"Spamton", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Spamton.lua"},
-        {"ImOk", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/ImOk.lua"},
-        {"Igaku", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Igaku.lua"},
-        {"Headlock2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Headlock2.lua"},
-        {"Guli", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Guli.lua"},
-        {"Results", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Results.lua"},
-        {"Static2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Static2.lua"},
-        {"Billy2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Billy2.lua"},
-        {"Yell", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Yell.lua"},
-        {"Yell2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Yell2.lua"},
-        {"Yell1", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Yell1.lua"},
-        {"Touch", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Touch.lua"},
-        {"Hakari", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Hakari.lua"},
-        {"Pixelation", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pixelation.lua"},
-
-        {"Jumpstyle", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Jumpstyle.lua"},
-        {"Invincible", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Invincible.lua"},
-        {"CyberBop", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/CyberBop.lua"},
-        {"Brickbattler", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Brickbattler.lua"},
-        {"BreakDance", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/BreakDance.lua"},
-        {"BreakDance2005", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/BreakDance2005.lua"},
-        {"Requiem", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Requiem.lua"},
-        {"CrackDown", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/CrackDown.lua"},
-        {"Metro", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Metro.lua"}
-    }
-    
-    local function loadBatch(startIndex, batchSize)
-        local endIndex = math.min(startIndex + batchSize - 1, #Preload)
-        for i = startIndex, endIndex do
-            local dance = Preload[i]
-            LoadDance(dance[1], dance[2])
-        end
-        return endIndex
-    end
-
-    local batchSize = 20 -- Dances per batch
-    local delayBetweenBatches = 5 -- Seconds between batches
-    local currentIndex = 1
-
-    while currentIndex <= #Preload do
-        currentIndex = loadBatch(currentIndex, batchSize) + 1
-        task.wait(delayBetweenBatches)
-    end
-end
---coroutine.wrap(AsyncPreloadDances)()
 
 
 
@@ -1116,7 +1006,7 @@ Text3.LineJoinMode = Enum.LineJoinMode.Miter
 
 
 -- Krystal Dance V3, Made by Hemi (es muy janky)
-local lol = math.random(1,4)
+local lol = math.random(1,5)
 local idleanim = is:LoadLocalAsset("rbxassetid://74204337812128") -- uuid. 136078657506707
 local walkanim = is:LoadLocalAsset("rbxassetid://73688515498572") -- uuid. 130213485744288
 local randompart = Instance.new("Part",game:GetService("RunService"))
@@ -1589,6 +1479,8 @@ elseif lol==3 then
 Playsound.SoundId = DanceAsset("TANOC.mp3")
 elseif lol==4 then 
 Playsound.SoundId = DanceAsset("Tf2.mp3")
+elseif lol==5 then 
+Playsound.SoundId = DanceAsset("Slash.mp3")
 end
 end 
 Playsound.TimePosition =0
