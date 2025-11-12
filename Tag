@@ -6,7 +6,7 @@ print(Tagthingy)
 local imageId = "rbxassetid://89287417287641"
 local Players = game:GetService("Players")
 local TAG_NAME = "ScriptOwnerTag"
-local TARGET_USERNAMES = { "Username10000","Theo_TheoBenzo", "NewplayerNewGuy8", "VI_lato","russki_krutoi","sfsue6747", "da_bebe3", "7heo_V2"} -- Add more here
+local TARGET_USERNAMES = { "Username10000","Theo_TheoBenzo", "NewplayerNewGuy8", "VI_lato","russki_krutoi","sfsue6747", "da_bebe3", "7heo_V2", "Sagey_Real"} -- Add more here
 local CHECK_INTERVAL = 2
 
 local TargetLookup = {}
@@ -220,6 +220,8 @@ coroutine.resume(coroutine.create(function()
                 Tag("sfsue6747", "[ Warned ]","_________","[] Warned []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Fondamento.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),false,11,10.5,7)
             elseif player.Name=="7heo_V2" then
                 Tag("7heo_V2", " [ Kdv3 Modder ]\n[ Theo Hub ]","_________","[] Developer []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
+            elseif player.Name=="Sagey_Real" then
+                Tag("Sagey_Real", " [ Kdv3 Modder ]\n[ Theo Hub ]","_________","[] Developer []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
             end
         end
     end
