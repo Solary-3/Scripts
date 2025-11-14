@@ -2383,6 +2383,8 @@ Stop1.MouseButton1Click:Connect(function()
             end
         end
     end]]
+    RUNNING = false
+    RUNNING = false
     if STATES then 
         STATES:Disconnect()
         STATES = nil 
@@ -2391,8 +2393,8 @@ Stop1.MouseButton1Click:Connect(function()
       if ReanimateVer=="Gelatek" then 
         StopScript()
         wait(1)
-        end
         choot("-rs")
+        end
         if ReanimateVer=="Current" then
           wait(1)
           for _,v in ipairs(ws:GetChildren()) do
