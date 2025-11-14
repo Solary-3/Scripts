@@ -88,7 +88,7 @@ end
 local function notify(text,dur)
 local Notify=game:GetService("StarterGui")
 Notify:SetCore("SendNotification",{
-Title="Krystal Dance V3";
+Title="R6 Tool Dance";
 Text=text;
 Duration=5 or dur})
 end
