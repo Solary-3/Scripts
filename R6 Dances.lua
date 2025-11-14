@@ -2375,6 +2375,8 @@ local deltaTime=1
 while game.RunService.Heartbeat:Wait(.001) do
 if not ws:FindFirstChild("GelatekReanimate") or ws:FindFirstChild(game.Players.LocalPlayer.Name.."_Fake") then
 RUNNING=false
+RUNNING=false
+RUNNING=false
 sound69.Volume=0 
 sound69.TimePosition=0 
 Playsound.Volume=0
