@@ -2396,6 +2396,10 @@ idle = false
 end
 end
 end
+
+
+
+
 Run1.MouseButton1Click:Connect(function()
 if RUNNING then return notify("SCRIPT IS RUNNING!!") end
 if REANIMATION then return notify("Reanimating please wait") end
