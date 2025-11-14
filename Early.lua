@@ -23,7 +23,7 @@ end
 local function notify(text,dur)
 local Notify=game:GetService("StarterGui")
 Notify:SetCore("SendNotification",{
-Title="Krystal Dance V3";
+Title="R6 Tool Dance";
 Text=text;
 Duration=5 or dur})
 end
@@ -170,7 +170,7 @@ ced.TextWrapped = true
 
 Show.Parent=ScreenGui
 Show.Font="Arcade"
-Show.Text="Disable"
+Show.Text="Hide"
 Show.TextColor3=Color3.new(1,1,1)
 Show.TextScaled=true
 Show.TextSize=14
@@ -189,7 +189,7 @@ Show.MouseButton1Click:Connect(function()
         local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
         local tween = game:GetService("TweenService"):Create(ui, tweenInfo, {Position = UDim2.new(1.5, 0, originalUIPosition.Y.Scale, originalUIPosition.Y.Offset)})
         tween:Play()
-        Show.Text = "Enable"
+        Show.Text = "Show"
         
         tween.Completed:Connect(function()
             ui.Visible = false
@@ -200,7 +200,7 @@ Show.MouseButton1Click:Connect(function()
         local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
         local tween = game:GetService("TweenService"):Create(ui, tweenInfo, {Position = originalUIPosition})
         tween:Play()
-        Show.Text = "Disable"
+        Show.Text = "Hide"
         
         tween.Completed:Connect(function()
             isTweening = false
@@ -1574,7 +1574,7 @@ local script = Instance.new("LocalScript")
 real = true
 pcall(function()
 	local OxideApi = loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/Utils/refs/heads/main/OxideApi"))()
-	OxideApi.Notification("R6 Tool Dancez by Theo<3",10)
+	OxideApi.Notification("R6 Tool Dance By Theo",10)
 end)
 local mrandom=math.random
 local playanother = false
@@ -2309,7 +2309,6 @@ local deltaTime=1
 
 while game.RunService.Heartbeat:Wait(.001) do
 if not ws:FindFirstChild("GelatekReanimate") or ws:FindFirstChild(game.Players.LocalPlayer.Name.."_Fake") then
-  RUNNING=false
 sound69.Volume=0 
 sound69.TimePosition=0 
 Playsound.Volume=0
@@ -2317,6 +2316,7 @@ Playsound.TimePosition=0
 Playsound:Stop()
 sound69:Stop()
 wait(1)
+RUNNING=false
 local ws=game.Workspace
 ws.CurrentCamera.CameraSubject=game.Players.LocalPlayer.Character:WaitForChild("Head")
 break
