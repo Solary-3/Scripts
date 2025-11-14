@@ -1639,7 +1639,7 @@ local script = Instance.new("LocalScript")
 real = true
 pcall(function()
 	local OxideApi = loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/Utils/refs/heads/main/OxideApi"))()
-	OxideApi.Notification("Krystal Dance V3, Made by Hemi, fixed by MrY7zz",10)
+	OxideApi.Notification("R6 Tool Dances by Theo",10)
 end)
 local mrandom=math.random
 local playanother = false
@@ -2374,6 +2374,7 @@ local deltaTime=1
 
 while game.RunService.Heartbeat:Wait(.001) do
 if not ws:FindFirstChild("GelatekReanimate") or ws:FindFirstChild(game.Players.LocalPlayer.Name.."_Fake") then
+RUNNING=false
 sound69.Volume=0 
 sound69.TimePosition=0 
 Playsound.Volume=0
@@ -2381,7 +2382,6 @@ Playsound.TimePosition=0
 Playsound:Stop()
 sound69:Stop()
 wait(1)
-RUNNING=false
 local ws=game.Workspace
 ws.CurrentCamera.CameraSubject=game.Players.LocalPlayer.Character:WaitForChild("Head")
 break
