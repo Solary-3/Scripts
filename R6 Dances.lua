@@ -11,6 +11,7 @@ end
 local TARGET_USERNAMES = { "Username1", 
   "Chinmoy_Iskarbi",
 }
+local lp=game.Players.LocalPlayer
 local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
 	TargetLookup[name] = true
