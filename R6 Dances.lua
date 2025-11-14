@@ -8,29 +8,20 @@ if isfolder and not isfolder("KDV3") then
 	makefolder("KDV3")
 end
 
-
-
-local function notif(str,dur)
-	game:GetService("StarterGui"):SetCore("SendNotification", { 
-    Title = "From Theo";
-    Text = str;})
-Duration = dur or 3;
-end
-local Players = game:GetService("Players")
-local lp=Players.LocalPlayer
-local TARGET_USERNAMES = { "Username1", "Chinmoy_Iskarbi","sfsue6747"}
-
+local TARGET_USERNAMES = { "Username1", 
+  "Chinmoy_Iskarbi",,
+}
 local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
 	TargetLookup[name] = true
 if lp.Name==name and Players:FindFirstChild(name) then
-if not isfile("Blacklist") then 
-writefile("Blacklist",name)
+if not isfile("Blacklist1") then 
+writefile("Blacklist1",name)
 end
 end
 end
 wait(1)
-if isfile("Blacklist") then
+if isfile("Blacklist1") then
 local function Blacklist(player)
 if player.Character then
 local h=math.random(1,5)
@@ -51,10 +42,10 @@ player:Kick("💀")
 end
 end
 end
-
+wait(1)
 for _, player in pairs(Players:GetPlayers()) do
-if isfile("Blacklist") then
-if readfile("Blacklist")=="sfsue6747" then
+if isfile("Blacklist1") then
+if readfile("Blacklist1")=="sfsue6747" then
 wait(5)
 notif("Your not tuff 'lil bro'")
 wait(2)
@@ -68,6 +59,10 @@ end
 else
 notif("Not Banned! :)")
 end 
+
+
+
+
 
 if not isfolder("KRYSTALDANCE") then
         makefolder("KRYSTALDANCE")
@@ -593,6 +588,7 @@ local validAudioFiles = {
     "Wait2.mp3",
     "Livesey.mp3",
     "Pokedance.mp3",
+    "Slash.mp3",
 }
 local function DanceAsset(file)
     if not table.find(validAudioFiles, file) then
@@ -1623,7 +1619,7 @@ task.spawn(C_e);
 
 
 
-local lol = math.random(1,4)
+local lol = math.random(1,5)
 local walkanim = is:LoadLocalAsset("rbxassetid://73688515498572") -- uuid. 130213485744288
 local idleanim = is:LoadLocalAsset("rbxassetid://74204337812128") -- uuid. 136078657506707
 local randompart = Instance.new("Part",game:GetService("RunService"))
@@ -1634,7 +1630,7 @@ local script = Instance.new("LocalScript")
 real = true
 pcall(function()
 	local OxideApi = loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/Utils/refs/heads/main/OxideApi"))()
-	OxideApi.Notification("R6 Tool Dancez by Theo <3",10)
+	OxideApi.Notification("Krystal Dance V3, Made by Hemi, fixed by MrY7zz",10)
 end)
 local mrandom=math.random
 local playanother = false
@@ -2095,6 +2091,8 @@ elseif lol==3 then
 Playsound.SoundId = DanceAsset("TANOC.mp3")
 elseif lol==4 then 
 Playsound.SoundId = DanceAsset("Tf2.mp3")
+elseif lol==5 then 
+Playsound.SoundId = DanceAsset("Slash.mp3")
 end
 end 
 Playsound.TimePosition =0
@@ -2367,7 +2365,6 @@ local deltaTime=1
 
 while game.RunService.Heartbeat:Wait(.001) do
 if not ws:FindFirstChild("GelatekReanimate") or ws:FindFirstChild(game.Players.LocalPlayer.Name.."_Fake") then
-  RUNNING=false
 sound69.Volume=0 
 sound69.TimePosition=0 
 Playsound.Volume=0
@@ -2375,6 +2372,7 @@ Playsound.TimePosition=0
 Playsound:Stop()
 sound69:Stop()
 wait(1)
+RUNNING=false
 local ws=game.Workspace
 ws.CurrentCamera.CameraSubject=game.Players.LocalPlayer.Character:WaitForChild("Head")
 break
