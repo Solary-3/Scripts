@@ -2463,8 +2463,8 @@ Stop1.MouseButton1Click:Connect(function()
       if ReanimateVer=="Gelatek" and ws:FindFirstChild("GelatekReanimate") then 
         StopScript()
         wait(1)
-        end
         choot("-rs")
+        end
         if ReanimateVer=="Current" then
           wait(1)
           for _,v in ipairs(ws:GetChildren()) do
