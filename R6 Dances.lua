@@ -9,7 +9,7 @@ if isfolder and not isfolder("KDV3") then
 end
 
 local TARGET_USERNAMES = { "Username1", 
-  "Chinmoy_Iskarbi",,
+  "Chinmoy_Iskarbi",
 }
 local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
