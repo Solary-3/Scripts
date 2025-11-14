@@ -2371,7 +2371,7 @@ local HEADLOOP
 local deltaTime=1
 
 
-
+coroutine.resume(coroutine.create(function()
 while game.RunService.Heartbeat:Wait(.001) do
 if not ws:FindFirstChild("GelatekReanimate") or ws:FindFirstChild(game.Players.LocalPlayer.Name.."_Fake") then
 RUNNING=false
@@ -2397,8 +2397,7 @@ walking = true
 idle = false 
 end
 end
-end
-
+end))
 
 
 
