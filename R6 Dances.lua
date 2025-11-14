@@ -235,7 +235,7 @@ ced.TextWrapped = true
 
 Show.Parent=ScreenGui
 Show.Font="Arcade"
-Show.Text="Disable"
+Show.Text="Hide"
 Show.TextColor3=Color3.new(1,1,1)
 Show.TextScaled=true
 Show.TextSize=14
@@ -254,7 +254,7 @@ Show.MouseButton1Click:Connect(function()
         local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
         local tween = game:GetService("TweenService"):Create(ui, tweenInfo, {Position = UDim2.new(1.5, 0, originalUIPosition.Y.Scale, originalUIPosition.Y.Offset)})
         tween:Play()
-        Show.Text = "Enable"
+        Show.Text = "Show"
         
         tween.Completed:Connect(function()
             ui.Visible = false
@@ -265,7 +265,7 @@ Show.MouseButton1Click:Connect(function()
         local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
         local tween = game:GetService("TweenService"):Create(ui, tweenInfo, {Position = originalUIPosition})
         tween:Play()
-        Show.Text = "Disable"
+        Show.Text = "Hide"
         
         tween.Completed:Connect(function()
             isTweening = false
