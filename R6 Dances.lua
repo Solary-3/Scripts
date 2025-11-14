@@ -2452,6 +2452,8 @@ Stop1.MouseButton1Click:Connect(function()
         STATES:Disconnect()
         STATES = nil 
     end
+    RUNNING = false
+    RUNNING = false
     if Place == 17574618959 or Place == 88308889239232 then
       if ReanimateVer=="Gelatek" then 
         StopScript()
