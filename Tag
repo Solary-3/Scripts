@@ -199,7 +199,17 @@ task.spawn(function()
 rus.RenderStepped:Connect(function()
   local rgb=Color3.fromRGB
     while game.RunService.Heartbeat:Wait(.01) do
-        for _, player in pairs(Players:GetPlayers()) do
+        
+    end
+  end)
+end)
+
+
+Players.PlayerAdded:Connect(function(player)
+    if TargetLookup[player.Name] then
+        player.CharacterAdded:Connect(function()
+            task.wait(1)
+            for _, player in pairs(Players:GetPlayers()) do
             if player.Name=="Theo_TheoBenzo" then
               if Tagthingy=="April" then
                 Tag("Theo_TheoBenzo", " --Cool Guy--","_________","--Supporter--",Color3.fromRGB(0,0,255),Color3.fromRGB(0,0,100),true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,10,9.5,6)
@@ -226,16 +236,6 @@ rus.RenderStepped:Connect(function()
                 Tag("Sagey_Real", " [ Kdv3 Modder ]\n[ Theo Hub ]","_________","[] Developer []",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
             end
         end
-    end
-  end)
-end)
-
-
-Players.PlayerAdded:Connect(function(player)
-    if TargetLookup[player.Name] then
-        player.CharacterAdded:Connect(function()
-            task.wait(1)
-            createTag(player)
         end)
     end
 end)
