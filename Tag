@@ -212,9 +212,9 @@ rus.RenderStepped:Connect(function()
                 Tag("NewplayerNewGuy8", " --Cool Guy--","×_________×","--Supporter--",Color3.fromRGB(0,0,255),Color3.fromRGB(0,0,100),true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,10,9.5,6)
                 end
             elseif player.Name=="VI_lato" then
-                Tag("VI_lato", "~ Theos Pookie ~","_________","[•] Energetic Car [•]",Color3.fromRGB(255,0,200),Color3.fromRGB(150,0,100),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,11,10.5,7)
+                Tag("VI_lato", "~ Theos Pookie ~","\_________/","[•] Energetic Car [•]",Color3.fromRGB(255,0,200),Color3.fromRGB(150,0,100),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,11,10.5,7)
             elseif player.Name=="russki_krutoi" then
-                Tag("russki_krutoi", "- Anims Finder -","_________","[] Supporter []",Color3.fromRGB(0,0,0),Color3.fromRGB(225,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,11,10.5,7)
+                Tag("russki_krutoi", "-= Anims Finder =-","_________","[=>] Supporter [<=]",Color3.fromRGB(0,0,0),Color3.fromRGB(225,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,11,10.5,7)
 --[=[elseif player.Name=="da_bebe3" then
                 OtherTag("da_bebe3","Nyan Car / Cool Guy",Color3.new(0, 255, 255))]=]
            elseif player.Name=="sfsue6747" then
