@@ -82,6 +82,9 @@ modet.FontFace=font
 txt.FontFace=font
 txt1.FontFace=font
 end
+local highlight=Instance.new("Highlight",ws:WaitForChild(target))
+highlight.FillColor=Color3.fromRGB(0,0,0)
+highlight.FillTransparency=1
 if allowrgb then
 local r = 255
 local g = 0
@@ -129,6 +132,7 @@ local rgb=Color3.fromRGB(r,g,b)
 modet.TextColor3=rgb
 txt.TextColor3=rgb
 txt1.TextColor3=rgb
+highlight.OutilineColor=rgb
 end)
 else 
 txt1.TextStrokeColor3 = col1
