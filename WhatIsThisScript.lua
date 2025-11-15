@@ -1,4 +1,4 @@
-print("Page 6")
+print("yes")
 print("Welcome")
 local Global = (getgenv and getgenv()) or shared
 local Occasions="Normal"
