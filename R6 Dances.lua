@@ -1,4 +1,5 @@
 local Occasions="Normal"
+print("Yes")
 local Global = (getgenv and getgenv()) or shared
 local player = game.Players.LocalPlayer
 local backpack = player:WaitForChild("Backpack")
