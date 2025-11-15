@@ -15,7 +15,8 @@ Title="Service";
 Text=text;
 Duration=5 or dur})
 end
-local TARGET_USERNAMES = { "Username1", 
+local TARGET_USERNAMES = { 
+  "Username1", 
   "Chinmoy_Iskarbi",
 }
 local lp=game.Players.LocalPlayer
