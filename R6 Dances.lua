@@ -2310,7 +2310,24 @@ char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
 			stopanim()
 			fwait(1/500)
 			if idle == true and walking == false and char.Humanoid.MoveDirection == Vector3.new(0,0,0) and dancing == false and playanother==true then
-				playanim(0,1,false,idleanim )
+			  if game.Players.LocalPlayer.Name=="Theo_TheoBenzo" then
+			   local dance=LoadDance("Idle2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Idle2.lua")
+				  if dance then
+					playanim(dance,2.2,false)
+					end
+				
+				elseif game.Players.LocalPlayer.Name=="7heo_V2" then local dance=LoadDance("Idle2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Idle2.lua")
+				  if dance then
+					playanim(dance,2.2,false)
+				  end 
+				elseif game.Players.LocalPlayer.Name=="NewplayerNewGuy8" then
+			    local dance=LoadDance("Idle2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Idle2.lua")
+				  if dance then
+					playanim(dance,2.2,false)
+				  end 
+				else 
+				  playanim(0,1,false,idleanim )
+				end
 			end
 		elseif char.Humanoid.MoveDirection ~= Vector3.new(0,0,0) and dancing == false and walking == false then 
 			char.Humanoid.WalkSpeed = 14*char:GetScale()
@@ -2318,7 +2335,7 @@ char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
 			idle = false
 			stopanim()
 			fwait(1/500)
-			if sprinting == false then
+			if sprinting == false then 
 				char.Humanoid.WalkSpeed = 14*char:GetScale()
 				if walking == true and idle == false and  char.Humanoid.MoveDirection ~= Vector3.new(0,0,0) and dancing == false and playanother==true  then 
 					playanim(130213485744288,1,false,walkanim)
