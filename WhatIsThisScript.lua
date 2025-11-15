@@ -3639,12 +3639,12 @@ STATES=char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function(
 			fwait(1/500)
 			if idle == true and walking == false and char.Humanoid.MoveDirection == Vector3.new(0,0,0) and dancing == false and playanother==true then
 			  if game.Players.LocalPlayer.Name=="Theo_TheoBenzo" then
-			   local dance=LoadDance("Pixelation", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pixelation.lua")
+			   local dance=LoadDance("Idle2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Idle2.lua")
 				  if dance then
 					playanim(dance,2.2,false)
 					end
 				
-				elseif game.Players.LocalPlayer.Name=="7heo_V2" then local dance=LoadDance("Pixelation", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pixelation.lua")
+				elseif game.Players.LocalPlayer.Name=="7heo_V2" then local dance=LoadDance("Idle2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Idle2.lua")
 				  if dance then
 					playanim(dance,2.2,false)
 				  end 
@@ -3666,24 +3666,7 @@ STATES=char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function(
 			if sprinting == false then 
 				char.Humanoid.WalkSpeed = 14*char:GetScale()
 				if walking == true and idle == false and  char.Humanoid.MoveDirection ~= Vector3.new(0,0,0) and dancing == false and playanother==true  then 
-				  if game.Players.LocalPlayer.Name=="Theo_TheoBenzo" then
-				  local dance=LoadDance("Pixelation", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pixelation.lua")
-				     if dance then
-					playanim(dance,2.2,false)
-				     end
-				elseif game.Players.LocalPlayer.Name=="7heo_V2" then
-				  local dance=LoadDance("Pixelation", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pixelation.lua")
-				     if dance then
-					playanim(dance,2.2,false)
-				     end
-				  elseif game.Players.LocalPlayer.Name=="NewplayerNewGuy8" then
-			    local dance=LoadDance("Walk2", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Walk2.lua")
-				  if dance then
-					playanim(dance,2.2,false)
-				  end 
-				     else
 					playanim(130213485744288,1,false,walkanim)
-					end
 				end
 			else
 				char.Humanoid.WalkSpeed = 24*char:GetScale()
