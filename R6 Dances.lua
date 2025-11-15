@@ -3,7 +3,7 @@ print("Yes")
 local Global = (getgenv and getgenv()) or shared
 local player = game.Players.LocalPlayer
 local backpack = player:WaitForChild("Backpack")
-local ReanimateVer=getgenv().Reanimate or "Gelatek"
+local ReanimateVer=getgenv().Reanimate
 
 if isfolder and not isfolder("KDV3") then 
 	makefolder("KDV3")
