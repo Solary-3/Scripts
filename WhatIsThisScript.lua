@@ -12,19 +12,22 @@ Duration = dur or 3;
 end
 local Players = game:GetService("Players")
 local lp=Players.LocalPlayer
-local TARGET_USERNAMES = { "Username1", "Chinmoy_Iskarbi","sfsue6747"}
+local TARGET_USERNAMES = {
+  "Username1", 
+  "Chinmoy_Iskarbi",
+}
 
 local TargetLookup = {}
 for _, name in pairs(TARGET_USERNAMES) do
 	TargetLookup[name] = true
 if lp.Name==name and Players:FindFirstChild(name) then
-if not isfile("Blacklist") then 
-writefile("Blacklist",name)
+if not isfile("Bl1") then 
+writefile("Bl1",name)
 end
 end
 end
 wait(1)
-if isfile("Blacklist") then
+if isfile("Bl1") then
 local function Blacklist(player)
 if player.Character then
 local h=math.random(1,5)
@@ -47,12 +50,9 @@ end
 end
 
 for _, player in pairs(Players:GetPlayers()) do
-if isfile("Blacklist") then
-if readfile("Blacklist")=="sfsue6747" then
-wait(5)
-notif("Your not tuff 'lil bro'")
-wait(2)
-player:Kick("'Your aint tuff' - Someone")
+if isfile("Bl1") then
+if readfile("Bl1")=="sfsue6747" then
+player:Kick("hi - Someone")
 else
 return Blacklist(player)
 end
