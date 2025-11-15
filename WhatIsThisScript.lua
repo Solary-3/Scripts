@@ -3680,6 +3680,8 @@ STATES=char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function(
 		end
 	end
 end)
+
+
 SITTING=char.Humanoid:GetPropertyChangedSignal("Sit"):Connect(function()
 	print("sit")
 	if char.Humanoid.Sit == true then 
