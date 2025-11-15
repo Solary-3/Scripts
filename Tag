@@ -1,6 +1,7 @@
 print("Ewal")
 local Global = (getgenv and getgenv()) or shared
 local ws=game.Workspace
+
 local rus=game.RunService
 Tagthingy=Global.Occasions
 print(Tagthingy)
@@ -228,7 +229,7 @@ while rus.Heartbeat:Wait(.001) do
   end
 end)
 end
-
+uh()
 Players.PlayerAdded:Connect(function(player)
     if TargetLookup[player.Name] then
         player.CharacterAdded:Connect(function()
