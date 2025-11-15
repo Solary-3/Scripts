@@ -2270,7 +2270,7 @@ end
 sound69.SoundId = getcustomasset("KDV3/"..v.Music)
 end
 
-sound69.SoundId = getcustomasset("KDV3/"..v.Music)
+sound69.SoundId = DanceAseet(v.Music)
 if v.Offset==0 then
 sound69.TimePosition=0
 else 
