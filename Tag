@@ -233,7 +233,7 @@ Players.PlayerAdded:Connect(function(player)
     if TargetLookup[player.Name] then
         player.CharacterAdded:Connect(function()
             task.wait(1)
-uh()
+           uh()
         end)
     end
 end)
