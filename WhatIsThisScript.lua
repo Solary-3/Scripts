@@ -3639,12 +3639,12 @@ STATES=char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function(
 			fwait(1/500)
 			if idle == true and walking == false and char.Humanoid.MoveDirection == Vector3.new(0,0,0) and dancing == false and playanother==true then
 			  if game.Players.LocalPlayer.Name=="Theo_TheoBenzo" then
-			   local dance=LoadDance("Idle1", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Idle1.lua")
+			   local dance=LoadDance("Pixelation", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pixelation.lua")
 				  if dance then
 					playanim(dance,2.2,false)
 					end
 				
-				elseif game.Players.LocalPlayer.Name=="7heo_V2" then local dance=LoadDance("Idle1", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Idle1.lua")
+				elseif game.Players.LocalPlayer.Name=="7heo_V2" then local dance=LoadDance("Pixelation", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pixelation.lua")
 				  if dance then
 					playanim(dance,2.2,false)
 				  end 
@@ -3667,12 +3667,12 @@ STATES=char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function(
 				char.Humanoid.WalkSpeed = 14*char:GetScale()
 				if walking == true and idle == false and  char.Humanoid.MoveDirection ~= Vector3.new(0,0,0) and dancing == false and playanother==true  then 
 				  if game.Players.LocalPlayer.Name=="Theo_TheoBenzo" then
-				  local dance=LoadDance("Walk1", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Walk1.lua")
+				  local dance=LoadDance("Pixelation", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pixelation.lua")
 				     if dance then
 					playanim(dance,2.2,false)
 				     end
 				elseif game.Players.LocalPlayer.Name=="7heo_V2" then
-				  local dance=LoadDance("Walk1", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Walk1.lua")
+				  local dance=LoadDance("Pixelation", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pixelation.lua")
 				     if dance then
 					playanim(dance,2.2,false)
 				     end
