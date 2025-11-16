@@ -1093,6 +1093,7 @@ Button8 = HatsTab:CreateButton({
 if game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name):WaitForChild("Accessory (LLeg)") then 
 wait(2)
 Chat("-sh")
+end
    end,
 })
 end
