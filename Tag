@@ -244,7 +244,7 @@ while rus.Heartbeat:Wait(.001) do
             elseif player.Name=="Selena_girlll7" then
                 Tag("Selena_girlll7", " [ Edd ]","<>_________<>","[>] Supporter [<]",Color3.fromRGB(0,200,0),Color3.fromRGB(0,100,0),true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,12,10.5,7,false)
             elseif player.Name=="fujvtuk0" then
-                Tag("fujvtuk0", " [ NetworkCrackee]","<>_________<>","[>] Supporter [<]",Color3.fromRGB(255,182,5),Color3.fromRGB(61,157,255),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,12,10.5,7,false)
+                Tag("fujvtuk0", " [ NetworkCrackee]","<|>_________<|>","[>] Supporter [<]",Color3.fromRGB(255,182,5),Color3.fromRGB(61,157,255),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,12,10.5,7,false)
             end
         end
   end
