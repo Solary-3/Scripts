@@ -237,7 +237,7 @@ while rus.Heartbeat:Wait(.001) do
            elseif player.Name=="sfsue6747" then
                 Tag("sfsue6747", "-[ White Hat ]-","_________","[+] 24HR Dev [+]",Color3.fromRGB(180,234,255),Color3.fromRGB(255,255,255),true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),false,11,10.5,7)
             elseif player.Name=="7heo_V2" then
-                Tag("7heo_V2", " [ Sageys Twin ]\n[ Theo Hub ]","<+>_________<+>","[>] Developer [<]",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
+                Tag("7heo_V2", " [ Sageys Twin ]","<+>_________<+>","[>] Developer [<]",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
             elseif player.Name=="Sagey_Real" then
                 Tag("Sagey_Real", " [ Sageys Other Twin ]","<>_________<>","[>] Developer [<]",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
             elseif player.Name=="Selena_girlll7" then
