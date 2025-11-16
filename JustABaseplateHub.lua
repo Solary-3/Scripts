@@ -1089,7 +1089,7 @@ local OthersSection = HatsTab:CreateSection("Renegade Glitcher Rigs")
 Button8 = HatsTab:CreateButton({
    Name = "Renegade Glitcher Rigs",
    Callback = function() 
-   Chat("-gh 122004947816154 5316479641,5316539421,5699795428,5268602207 131385506535381 85392395166623 129462518582032 138364679836274 12850150835 106249329428811")
+   Chat("-gh 5316479641,5316539421,5699795428,5268602207 131385506535381 85392395166623 129462518582032 138364679836274 12850150835 106249329428811")
 if game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name):WaitForChild("Accessory (LLeg)") then 
 wait(2)
 Chat("-sh")
