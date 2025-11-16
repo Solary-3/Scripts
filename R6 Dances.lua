@@ -2271,9 +2271,11 @@ sound69.SoundId = getcustomasset("KDV3/"..v.Music)
 end
 
 sound69.SoundId = DanceAsset(v.Music)
-
+if v.Offset==0 then
+sound69.TimePosition=0
+else 
 sound69.TimePosition=v.Offset
-
+end
 if v.DanceName~="None" and v.Url~="None" and v.Id=="None" then
 local dance=LoadDance(v.DanceName, v.Url)
 if dance then
