@@ -1087,7 +1087,7 @@ local Button8 = HatsTab:CreateButton({
 })
 local OthersSection = HatsTab:CreateSection("Renegade Glitcher Rigs")
 Button8 = HatsTab:CreateButton({
-   Name = "Sword Glitchers",
+   Name = "Renegade Glitcher Rigs",
    Callback = function() 
    Chat("-gh 122004947816154 5316479641,5316539421,5699795428,5268602207 131385506535381 85392395166623 129462518582032 138364679836274 12850150835 106249329428811")
 if game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name):WaitForChild("Accessory (LLeg)") then 
@@ -1162,9 +1162,9 @@ end,
 })
 end
 -----==============-----
-local OthersTab = Window:CreateTab("Others", nil) -- Title, Image
+ OthersTab = Window:CreateTab("Shaders", nil) -- Title, Image
 
-local Button = OthersTab:CreateButton({
+ Button = OthersTab:CreateButton({
    Name = "Pshade Ultimate",
    Callback = function() 
  loadstring(game:HttpGet('https://raw.githubusercontent.com/randomstring0/pshade-ultimate/refs/heads/main/src/cd.lua'))()
