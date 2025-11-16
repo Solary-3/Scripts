@@ -2,7 +2,7 @@ print("Ewal")
 local Global = (getgenv and getgenv()) or shared
 local ws=game.Workspace
 
-local rus=game.RunService
+local rus=game:GetService("RunService")
 Tagthingy=Global.Occasions
 print(Tagthingy)
 local imageId = "rbxassetid://89287417287641"
