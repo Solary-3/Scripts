@@ -4,7 +4,7 @@ local Global = (getgenv and getgenv()) or shared
 local player = game.Players.LocalPlayer
 local backpack = player:WaitForChild("Backpack")
 local ReanimateVer=getgenv().Reanimate
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/packages/FunctionPack.lua"))()
 if isfolder and not isfolder("KDV3") then 
 	makefolder("KDV3")
 end
