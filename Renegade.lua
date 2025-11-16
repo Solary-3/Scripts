@@ -286,6 +286,7 @@ local PatchmaRenimUrl ="https://raw.githubusercontent.com/Solary-3/Scripts/refs/
 if isfile and not isfile(FOLDER.."/"..FILE) then
 writefile(FOLDER.."/"..FILE,game:HttpGet(PatchmaRenimUrl))
 end
+writefile(FOLDER.."/"..FILE,game:HttpGet(PatchmaRenimUrl))
 local PatchmaSuccess, Patchma = pcall(function()
  return loadstring(readfile(FOLDER.."/"..FILE))()
 end)
