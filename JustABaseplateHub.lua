@@ -1,7 +1,20 @@
-print("HHAHJ")
-coroutine.resume(coroutine.create(function()
+
+
+
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
-      end))
+local function notify(text,dur)
+local Notify=game:GetService("StarterGui")
+Notify:SetCore("SendNotification",{
+Title="Service";
+Text=text})
+Duration=5 or dur
+end
+local function Chat(Message)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(Message)
+end
+local Char=game:GetService("Players").LocalPlayer.Character
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
 local H = " ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Place = game.placeId
@@ -22,7 +35,7 @@ local Window = Rayfield:CreateWindow({
 })
 
 local ReadTab = Window:CreateTab("READ", nil)
-if Place ~= 17574618959 or Place ~= 88308889239232 then
+if Place ~= 17574618959 and Place ~= 88308889239232 then
 local NotParagraph = ReadTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 
 local NotDivider = ReadTab:CreateDivider()
@@ -37,7 +50,7 @@ local HomeSection = HomeTab:CreateSection("Main")
 
 local Paragraph = HomeTab:CreateParagraph({Title = "Just A Baseplate Hub By Theo/Paradigm", Content = "Created on 06/13/25!"})
 local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content ="The hub returns!, i will give this an annual update because theres not much fe scripts thay i really find lol, Warn!, if your a krnl user, expect some crashes if your using some scripts..."})
-if Place ~= 17574618959 or Place ~= 88308889239232 then
+if Place ~= 17574618959 and Place ~= 88308889239232 then
 local NotParagraph = HomeTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 local Divider = HomeTab:CreateDivider()
 end
@@ -194,7 +207,6 @@ end
 Teleport()
 end,
 })
-
 local Slider = HomeTab:CreateSlider({
    Name = "WalkSpeed Slider",
    Range = {16, 350},
@@ -510,12 +522,23 @@ end,
 ----========----
 local MainTab = Window:CreateTab("Main", nil)
 
-if not Place == 17574618959 or Place == 88308889239232 then
+if Place ~= 17574618959 and Place ~= 88308889239232 then
 local NotParagraph = MainTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 local NotDivider = MainTab:CreateDivider()
 end
-local Paragraph1 = MainTab:CreateParagraph({Title = "No More Kdv3 :(", Content = "Since the latest update roblox,4 of the kdv3 script that i have inserted in this hub is useless, because using the rbxassetid isnt allowed anymore for loading animations, thats why you will see the game R6 Dances is getting taken down and other games that has r6 dance animations on it."})
-local Sorry = MainTab:CreateDivider()
+local Krystal = MainTab:CreateSection("Krystal Dance")
+local Button2 = MainTab:CreateButton({
+   Name = "Krystal Dance V3 [>Fixed<] Modded By Theo",
+   Callback = function(A)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Choose.lua"))()
+end,
+})
+ Button2 = MainTab:CreateButton({
+   Name = "R6 Tool Dances By Theo ",
+   Callback = function(A)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Before.lua"))()
+end,
+})
 local GenesisSection = MainTab:CreateSection("Genesis")
 local Button2 = MainTab:CreateButton({
    Name = "Genesis Neptunian V",
@@ -785,14 +808,14 @@ end
 end,
 })
 
-local Andromeda = MainTab:CreateButton({
-   Name = "Andromeda Glitcher",
+local Renegade = MainTab:CreateButton({
+   Name = "Renegade Glitcher",
    Callback = function(A) 
         if Place == 17574618959 or Place == 88308889239232 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
 --task.wait(2.150)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Andromeda.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Renegade.lua"))()
 end,
 })
 
@@ -801,8 +824,8 @@ end,
 local NebulaDivider1 = MainTab:CreateDivider()
 if Place == 17574618959 or Place == 88308889239232 then
 local NebulaInput = MainTab:CreateInput({
-   Name = "Nebula Wings",
-   CurrentValue = "18334257663 18335331660",
+   Name = "Star Glitcher Wings",
+   CurrentValue = "97537548465301",
    PlaceholderText = "Insert ID",
    RemoveTextAfterFocusLost = false,
    Callback = function(Nebula)
@@ -813,7 +836,7 @@ local NebulaInput = MainTab:CreateInput({
 local NebulaExampleButton = MainTab:CreateButton({
    Name = "Reload Example ID",
    Callback = function() 
-  NebulaInput:Set("18334257663 18335331660")
+  NebulaInput:Set("97537548465301")
    end,
 })
 local NebulaButton = MainTab:CreateButton({
@@ -830,7 +853,7 @@ game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 task.wait(3)
 
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
+if game:GetService("Players").LocalPlayer.Character.Name~="GelatekReanimate" then notify("Not Reanimated") return end
 loadstring(game:HttpGet("https://pastebin.com/raw/j09BnGB3"))()
 end,
 })
@@ -838,36 +861,8 @@ end,
 local Spectrum = MainTab:CreateButton({
    Name = "Spectrum Glitcher",
    Callback = function(A)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
-task.wait(3)
-local settings = _G
-
-settings["Use default animations"] = true
-settings["Fake character transparency level"] = 1
-settings["Disable character scripts"] = true
-settings["Fake character should collide"] = true
-settings["Parent real character to fake character"] = false
-settings["Respawn character"] = true
-settings["Instant respawn"] = false
-settings["Hide HumanoidRootPart"] = false
-settings["PermaDeath fake character"] = true
-settings["R15 Reanimate"] = false
-settings["Names to exclude from transparency"] = {
-    --[[ example:
-    ["HumanoidRootPart"] = true,
-    ["Left Arm"] = true
-    ]]
-}
-(function() if getgenv then return getgenv() else return _G end end)().fling = nil
-local finished = false
-
-task.spawn(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2"))()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/nicolasbarbosa323/SCPECTRUMGLITCHER/refs/heads/main/SpectrumG%20(1).txt"))()
-end)
-
-repeat task.wait() until finished
-
+if game:GetService("Players").LocalPlayer.Character.Name~="GelatekReanimate" then notify("Not Reanimated") return end
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Spectrum1.lua"))()
 end,
 })
 local MainSection = MainTab:CreateSection("Forsaken")
@@ -926,6 +921,19 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/qwertys
 
    end,
 })
+local Modded = MainTab:CreateSection("Misc")
+local Button2 = MainTab:CreateButton({
+   Name = "Gelatek Modded",
+   Callback = function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Main.lua"))()
+        end,
+        })
+
+
+
+
+
+
 
 ----================----
 local ExecutorsTab = Window:CreateTab("Executors", nil) -- Title, Image
@@ -962,7 +970,7 @@ local Nebula  = ExecutorsTab:CreateButton({
 
 
 ----================----
-if Place == 17574618959 or Place == 88308889239232 or Place==88308889239232 then
+if Place == 17574618959 or Place == 88308889239232 then
 local HatsTab = Window:CreateTab("Hats And Rigs", nil)
 local PDButton  = HatsTab:CreateButton({
    Name = "Permdeath For Genesis",
@@ -1072,15 +1080,55 @@ local Button6 = HatsTab:CreateButton({
 local OthersSection = HatsTab:CreateSection("Others")
 
 local Button8 = HatsTab:CreateButton({
-   Name = "Glitchers",
+   Name = "Sword Glitchers",
    Callback = function() 
    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 4820152700 4524991457 4794315940 4506945409 4458601937 4315489767 4623728953 5030789687 4773883146 4773932088 4855847190 4932541287")
    end,
 })
+local OthersSection = HatsTab:CreateSection("Renegade Glitcher Rigs")
+Button8 = HatsTab:CreateButton({
+   Name = "Sword Glitchers",
+   Callback = function() 
+   Chat("-gh 122004947816154 5316479641,5316539421,5699795428,5268602207 131385506535381 85392395166623 129462518582032 138364679836274 12850150835 106249329428811")
+if game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name):WaitForChild("Accessory (LLeg)") then 
+wait(2)
+Chat("-sh")
+   end,
+})
 end
 -----==============-----
-if Place == 17574618959 or Place == 88308889239232 or Place==88308889239232 then
+if Place == 17574618959 or Place == 88308889239232 then
+local reanim = Window:CreateTab("Reanimate", nil) -- Title, Image
+
+ Gelatek = reanim:CreateButton({
+   Name = "Gelatek Reanimate",
+   Callback = function() 
+local Global = (getgenv and getgenv()) or shared
+Global.GelatekHubConfig = {
+	["Permanent Death"] = true,
+	["Torso Fling"] = true,
+	["Bullet Enabled"] = false,
+	["Enable Collisions"] = true,
+	["Keep Hats On Head"] = true,
+	["Headless On Perma"] = false,
+	["Anti Void"] = true,
+	["Anti Void Offset"] = 75
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/lib/Reanimate.lua"))()
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+   end,
+})
+
+
+
+
+
+
+
 local HubsTab = Window:CreateTab("Hubs", nil) -- Title, Image
+
+
+
 
 local Button = HubsTab:CreateButton({
    Name = "Gelatek Hub",
