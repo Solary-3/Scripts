@@ -742,6 +742,12 @@ return getcustomasset("Renegade Audios/"..filename)
 else
 warn("Downloading Audio File "..filename)
 writefile("Renegade Audios/"..filename, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..filename.."?raw=true"))
+MusicPlayer.TimePosition=0 
+MusicPlayer.Asset=Asset(filename)
+MusicPlayer:Play()
+sound.SoundId=Asset(filename)
+sound.TimePosition=0 
+sound:Play()
   return ""
 end
 end
