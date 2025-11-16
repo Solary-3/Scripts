@@ -364,19 +364,31 @@ camcon0=Connect(GetPropertyChangedSignal(cam,"CFrame"),function()
 --[[if insGet(cam,"CFrame")~=camcf then
 insSet(cam,"CFrame",camcf)
 end]]
+if ws:FindFirstChild(game.Players.LocalPlayer.Name)[Global.RigHead] then
 FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(Global.RigHead).Handle
+else 
+FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChildOfClass("Accessory").Handle
+end
 end)
 
 camcon1=Connect(GetPropertyChangedSignal(cam,"CameraType"),function()
 if insGet(cam,"CameraType")~=enumCamS then
 insSet(cam,"CameraType",enumCamS)
+if ws:FindFirstChild(game.Players.LocalPlayer.Name)[Global.RigHead] then
 FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(Global.RigHead).Handle
+else 
+FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChildOfClass("Accessory").Handle
+end
 end
 end)
 if insGet(cam,"CameraType")~=enumCamS then
 insSet(cam,"CameraType",enumCamS)
 end
+if ws:FindFirstChild(game.Players.LocalPlayer.Name)[Global.RigHead] then
 FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(Global.RigHead).Handle
+else 
+FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChildOfClass("Accessory").Handle
+end
 end
 
 camcon2=Connect(GetPropertyChangedSignal(ws,"CurrentCamera"),onnewcamera)
@@ -1791,7 +1803,8 @@ setCfr=setCfr,
 getVel=getVel,
 getCamCF=getCamCF,
 isFirstPerson=isFirstPerson,
-IsWalking=IsWalking
+IsWalking=IsWalking,
+onnewcamera=onnewcamera
 }
 end
 
