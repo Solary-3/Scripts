@@ -936,7 +936,7 @@ local Button2 = MainTab:CreateButton({
 
 
 ----================----
-local ExecutorsTab = Window:CreateTab("Executors", nil) -- Title, Image
+local ExecutorsTab = Window:CreateTab("Executor Guis", nil) -- Title, Image
 local Button1 = ExecutorsTab:CreateButton({
    Name = "Codex",
    Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Codex.lua"))()
