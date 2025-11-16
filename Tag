@@ -8,7 +8,18 @@ print(Tagthingy)
 local imageId = "rbxassetid://89287417287641"
 local Players = game:GetService("Players")
 local TAG_NAME = "ScriptOwnerTag"
-local TARGET_USERNAMES = { "Username10000","Theo_TheoBenzo", "NewplayerNewGuy8", "VI_lato","russki_krutoi","sfsue6747", "da_bebe3", "7heo_V2", "Sagey_Real"} -- Add more here
+local TARGET_USERNAMES = { 
+  "Username10000",
+  "Theo_TheoBenzo",
+  "NewplayerNewGuy8",
+  "VI_lato",
+  "russki_krutoi",
+  "sfsue6747", 
+  "da_bebe3",
+  "7heo_V2",
+  "Sagey_Real",
+  "Selena_girlll7",
+} -- Add more here
 local CHECK_INTERVAL = 2
 
 local TargetLookup = {}
@@ -229,6 +240,8 @@ while rus.Heartbeat:Wait(.001) do
                 Tag("7heo_V2", " [ Sageys Twin ]\n[ Theo Hub ]","<+>_________<+>","[>] Developer [<]",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
             elseif player.Name=="Sagey_Real" then
                 Tag("Sagey_Real", " [ Sageys Other Twin ]","<>_________<>","[>] Developer [<]",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
+            elseif player.Name=="Selena_girlll7" then
+                Tag("Selena_girlll7", " [ Edd ]","<>_________<>","[>] Supporter [<]",Color3.fromRGB(0,200,0),Color3.fromRGB(0,100,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
             end
         end
   end
