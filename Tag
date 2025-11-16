@@ -226,7 +226,7 @@ while rus.Heartbeat:Wait(.001) do
               if Tagthingy=="April" then
                 Tag("NewplayerNewGuy8", " [ Kdv3 Modder ]\n[ Theo Hub ]","+_________+","[>] Developer [<]",Color3.fromRGB(255,0,0),Color3.fromRGB(64,0,0),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),true,12,10.5,7,true)
                 else
-                Tag("NewplayerNewGuy8", " --Cool Guy--","×_________×","--Supporter--",Color3.fromRGB(0,0,255),Color3.fromRGB(0,0,100),true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,10,9.5,6)
+                Tag("NewplayerNewGuy8", " --Cool Guy--","×_________×","--Supporter--",Color3.fromRGB(100,100,100),Color3.fromRGB(150,150,150),true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,10,9.5,6)
                 end
             elseif player.Name=="VI_lato" then
                 Tag("VI_lato", "~ Theos Pookie ~","∆_________∆","[•] Energetic Car [•]",Color3.fromRGB(255,0,200),Color3.fromRGB(150,0,100),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,11,10.5,7)
