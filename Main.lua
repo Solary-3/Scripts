@@ -234,7 +234,7 @@ do -- [[ Hats ]] --
 		setclipboard("5134896593,5410674378")
 	end)
 	Hats:MakeButton("Copy Neptunian V Hat", function()
-		setclipboard("4506945409")
+		setclipboard("112934510372081")
 	end)
 	Hats:MakeButton("Copy Zenith Rifle Hats", function()
 		setclipboard("4962510729,4962455546")
