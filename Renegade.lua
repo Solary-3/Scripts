@@ -868,7 +868,7 @@ local Modes={
   {Name="Subsequent",WingAnim="Subsequent",MusicTitle="Derpcat - Throwback",Music="Throwback"},
   {Name="Fracture",WingAnim="Fracture",MusicTitle="「Hard NRG」[Yooh] Backwards - cold kiss sound",Music="Hard NRG"},
   {Name="Kronos",WingAnim="Kronos",MusicTitle="Camellia - Body F10ating in the Zero Gravity Space",Music="Zero Grav"},
-  {Name="Sub-Sonic",WingAnim="Subsonic",MusicTitle="The Quick Brown Fox - Electrohell - Lucas Mota",Music="The Quick Brown Fox"},
+  {Name="Equinox",WingAnim="Equinox",MusicTitle="Sols rng - Equinox",Music="EQUINOX"},
   {Name="Mayhem - No Hope",WingAnim="Mayhem2",MusicTitle="Team Grimoire - Kathastrophe",Music="Kathastrophe"},
   {Name="Shard Surfer",WingAnim="Shard",MusicTitle="Tidal Wave - Shiawase (VIP Remix)",Music="Shiawase"},
   {Name="Luminosity",WingAnim="Luminosity",MusicTitle="t+pazolite & Getty - Twisted Drop Party - HARDCORE TANOC",Music="TANOC"},
@@ -1501,9 +1501,9 @@ changeMode("Kronos")
 ChangeAndRecolor("Kronos",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Regular, Enum.FontStyle.Italic),rgb(255,247,138),rgb(254,251,209))
 
 
-elseif io.KeyCode==Enum.KeyCode.Eight and Mode~="Sub-Sonic" then
-changeMode("Sub-Sonic")
-ChangeAndRecolor("Sub-Sonic",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(42,0,88),rgb(0,39,88))
+elseif io.KeyCode==Enum.KeyCode.Eight and Mode~="Equinox" then
+changeMode("Equinox")
+ChangeAndRecolor("Equinox",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(255,255,255),rgb(0,0,0))
 
 
 elseif io.KeyCode==Enum.KeyCode.Nine and Mode~="Shard Surfer" then
@@ -1629,12 +1629,12 @@ end
 end
 
 
-WingAnimations.Subsonic=function()
+WingAnimations.Equinox=function()
 if s1_1 and s1_2 and s1_3 and s1_4 then
-s1_1.C0=Lerp(s1_1.C0,cfMul(cf(-3,3.1,-3.55),angles(0,1.5707963267948966,3.141592653589793-0.17453292519943295*sin(sine*1.5))),deltaTime) 
-s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-3,2.85,-3.55),angles(0,1.5707963267948966,1.3089969389957472+0.17453292519943295*sin(sine*1.5))),deltaTime)  
-s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-3,3,-3.45),angles(0,1.5707963267948966,4.537856055185257+0.17453292519943295*sin(sine*1.5))),deltaTime)  
-s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-3,2.85,-3.55),angles(0,1.5707963267948966,-0.17453292519943295*sin(sine*1.5))),deltaTime)  
+s1_1.C0=Lerp(s1_1.C0,cfMul(cf(1,0-sound.PlaybackLoudness/100,0-sound.PlaybackLoudness/100),angles(0.6981317007977318,-1.5707963267948966,0-sp/15+Boost/20)),deltaTime)  
+s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-1,0+sound.PlaybackLoudness/100,0+sound.PlaybackLoudness/100),angles(0.6981317007977318,1.5707963267948966,0-sp/15+Boost/20)),deltaTime)  
+s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-10-sound.PlaybackLoudness/100,0,0),angles(4.014257279586958+sp/10,0+sp/15+Boost/75,0)),deltaTime)  
+s1_4.C0=Lerp(s1_4.C0,cfMul(cf(10+sound.PlaybackLoudness/100,0,0),angles(0.8726646259971648+sp/10,0+sp/15+Boost/75,0)),deltaTime)  
 end
 end
 
@@ -1813,7 +1813,7 @@ local Jump=velY<-20
 --[[if IsOnGround then
 end]]
 if Fall then
-if Mode=="Renegades" or Mode=="Mayhem" or Mode=="Chaos" or Mode=="Sub-Sonic" or Mode=="Mayhem - No Hope" then
+if Mode=="Renegades" or Mode=="Mayhem" or Mode=="Chaos" or Mode=="Mayhem - No Hope" then
 Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.6580627893946132,0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,0.5,-0.5),angles(0,0,-0.6108652381980153)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.75,-0.55),angles(0,-1.5707963267948966,0)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,-0.5),angles(0,1.5707963267948966,-0.4363323129985824)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,angles(-1.7453292519943295,0,3.141592653589793),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.5,0.5,-0.5),angles(0,0,0.6108652381980153)),deltaTime)
 if s1_1 and s1_2 and s1_3 and s1_4 then
 s1_1.C0=Lerp(s1_1.C0,cfMul(cf(-1,0,0),angles(0,1.5707963267948966,-0.8726646259971648)),deltaTime) 
@@ -1826,7 +1826,7 @@ end
 
 elseif Jump then
 if (velY==0 or velY>0)then return end
-if Mode=="Renegades" or Mode=="Mayhem" or Mode=="Chaos" or Mode=="Sub-Sonic" or Mode=="Mayhem - No Hope" then
+if Mode=="Renegades" or Mode=="Mayhem" or Mode=="Chaos" or Mode=="Mayhem - No Hope" then
 Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.4835298641951802,0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,0.5,-0.5),angles(0,0,-0.4363323129985824)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.75,-0.75),angles(0,-1.5707963267948966,0.5235987755982988)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,-0.5),angles(0,1.5707963267948966,-0.4363323129985824)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,angles(-1.4835298641951802,0,3.141592653589793),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.5,0.5,-0.5),angles(0,0,0.4363323129985824)),deltaTime)  
 if s1_1 and s1_2 and s1_3 and s1_4 then
 s1_1.C0=Lerp(s1_1.C0,cfMul(cf(-1,0,0),angles(0,1.5707963267948966,-0.8726646259971648)),deltaTime) 
@@ -1925,8 +1925,8 @@ LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.75+0.25*sin((sine+0.5)*2.5),-1.015),an
 elseif Mode=="Kronos" then
 LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,0.35+0.25*sin((sine+0.45)*2.5),-0.5),angles(0,0,-0.3490658503988659-0.09599310885968812*sin((sine+0.75)*2.5))),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1+0.055*sin((sine+0.15)*2.5),0),angles(-1.9198621771937625-0.09599310885968812*sin((sine+0.5)*2.5),0,2.6179938779914944)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,7.5+1.25*sin(sine*2.5),0),angles(-1.3962634015954636+0.17453292519943295*sin((sine+0.25)*2.5),0,3.141592653589793)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.5-0.15*sin((sine+0.25)*2.5),-1),angles(-0.4363323129985824+0.17453292519943295*sin((sine+0.75)*2.5),-1.5707963267948966,0)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.35+0.25*sin((sine+0.5)*2.5),-1.25),angles(0,0,-2.0943951023931953)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-0.95+0.25*sin((sine+0.15)*2.5),-0.25),angles(-0.4363323129985824+0.2617993877991494*sin((sine+0.35)*2.5),1.5707963267948966,0)),deltaTime)  
 
-elseif Mode=="Sub-Sonic" then
-RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-0.5+0.15*sin(sine*2),-0.5+0.15*sin(sine*2)),angles(0.3490658503988659,1.5707963267948966,0)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1.15+0.15*sin(sine*2),0.25+0.15*sin(sine*2)),angles(-0.5235987755982988+0.09599310885968812*sin(sine*2),-1.5707963267948966,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.5-0.15*sin(sine*2),0),angles(-1.9198621771937625,0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,-0.15+0.15*sin((sine+0.5)*2),1),angles(-1.6580627893946132,0,-0.5235987755982988)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,1.25+0.15*sin((sine+0.5)*2),-1),angles(1.7453292519943295,-0.3490658503988659,-1.5707963267948966)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.3962634015954636,0,3.141592653589793)),deltaTime)  
+elseif Mode=="Equinox" then
+LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.3+0.1*sin((sine+0.75)*2.5),-0.5+0.25*sin((sine+0.75)*2.5),-0.25-0.1*sin((sine+0.45)*2.5)),angles(-0.6981317007977318,0,-2.356194490192345-0.17453292519943295*sin((sine+0.35)*2.5))),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1-0.075*sin((sine+0.35)*2.5),0),angles(-2.007128639793479+0.09599310885968812*sin((sine+0.5)*2.5),-0.09599310885968812*sin((sine+0.2)*2.5),4.1887902047863905)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.35,0.15 * sin((sine+0.85)*2.5),-0.25),angles(-0.5235987755982988-0.09599310885968812*sin((sine+0.5)*2.5),0,2.530727415391778-0.1832595714594046*sin((sine+0.25)*2.5))),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.35,-0.15+0.2*sin((sine+0.5)*2.5),-0.5),angles(-0.5235987755982988-0.17453292519943295*sin((sine+0.55)*2.5),0.3490658503988659,0)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.6,-0.75+0.25*sin((sine+0.75)*2.5),0.25-0.1*sin((sine+0.25)*2.5)),angles(-0.3490658503988659+0.1832595714594046*sin((sine+0.25)*2.5),0.3490658503988659,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(1.5 * sin((sine+0.15)*2.5),7+0.75*sin((sine+0.75)*2.5),1 * sin((sine+0.85)*2.5)),angles(-1.4835298641951802+0.2617993877991494*sin((sine+0.2)*2.5),-0.17453292519943295,2.443460952792061)),deltaTime)  
 
 elseif Mode=="Mayhem - No Hope" then
 RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.5+0.15*sin(sine*2.5),0),angles(-2.0943951023931953-0.09599310885968812*sin((sine+0.75)*2.5),0,3.7524578917878086+0.17453292519943295*sin((sine+0.5)*2.5))),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.5,0.75+0.15*sin((sine+0.5)*2.5),-0.5),angles(0.3490658503988659+0.3490658503988659*sin((sine+0.5)*2.5),0,0.5235987755982988+0.17453292519943295*sin((sine+0.75)*2.5))),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-2-0.15*sin((sine+0.5)*2.5),1+0.15*sin((sine+0.5)*2.5),-0.5-0.25*sin((sine+0.15)*2.5)),angles(1.2217304763960306,0,-0.8726646259971648-0.09599310885968812*sin((sine+0.15)*2.5))),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.65,-1.5-0.1*sin(sine*2.5),0.5-0.25*sin((sine+0.5)*2.5)),angles(-0.4363323129985824+0.17453292519943295*sin((sine+0.75)*2.5),0,-0.3490658503988659+0.17453292519943295*sin((sine+0.75)*2.5))),deltaTime) RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.5,-0.25-0.15*sin((sine+0.25)*2.5),-0.5+0.15*sin((sine+0.5)*2.5)),angles(0,0,0.3490658503988659+0.17453292519943295*sin((sine+0.5)*2.5))),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.2217304763960306-0.1308996938995747*sin((sine+0.25)*2.5),0,2.443460952792061-0.1308996938995747*sin((sine+0.5)*2.5))),deltaTime) 
