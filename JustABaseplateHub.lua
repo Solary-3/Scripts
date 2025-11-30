@@ -35,7 +35,7 @@ local Window = Rayfield:CreateWindow({
 })
 
 local ReadTab = Window:CreateTab("READ", nil)
-if Place ~= 17574618959 and Place ~= 88308889239232 or Place==123974602339071 then
+if Place ~= 17574618959 and Place ~= 88308889239232 or Place~=123974602339071 then
 local NotParagraph = ReadTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 
 local NotDivider = ReadTab:CreateDivider()
@@ -50,7 +50,7 @@ local HomeSection = HomeTab:CreateSection("Main")
 
 local Paragraph = HomeTab:CreateParagraph({Title = "Just A Baseplate Hub By Theo/Paradigm", Content = "Created on 06/13/25!"})
 local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content ="The hub returns!, i will give this an annual update because theres not much fe scripts thay i really find lol, Warn!, if your a krnl user, expect some crashes if your using some scripts..."})
-if Place ~= 17574618959 and Place ~= 88308889239232 or Place==123974602339071 then
+if Place ~= 17574618959 and Place ~= 88308889239232 or Place~=123974602339071 then
 local NotParagraph = HomeTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 local Divider = HomeTab:CreateDivider()
 end
@@ -522,7 +522,7 @@ end,
 ----========----
 local MainTab = Window:CreateTab("Main", nil)
 
-if Place ~= 17574618959 and Place ~= 88308889239232 or Place==123974602339071 then
+if Place ~= 17574618959 and Place ~= 88308889239232 or Place~=123974602339071 then
 local NotParagraph = MainTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 local NotDivider = MainTab:CreateDivider()
 end
