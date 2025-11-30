@@ -338,7 +338,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/Curre
 REANIMATION=false 
 end
 REANIMATE.MouseButton1Click:Connect(function()
-if Place == 17574618959 or Place == 88308889239232 then
+if Place == 17574618959 or Place == 88308889239232 and Place==123974602339071 then
 if REANIMATION then return notify([[ALREADY REANIMATING]]) end
 if game.Workspace:FindFirstChild ("GelatekReanimate") then
 return notify("Already Reanimated") end
