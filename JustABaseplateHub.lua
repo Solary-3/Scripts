@@ -35,7 +35,7 @@ local Window = Rayfield:CreateWindow({
 })
 
 local ReadTab = Window:CreateTab("READ", nil)
-if Place ~= 17574618959 and Place ~= 88308889239232 then
+if Place ~= 17574618959 and Place ~= 88308889239232 and Place~=123974602339071 then
 local NotParagraph = ReadTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 
 local NotDivider = ReadTab:CreateDivider()
@@ -50,11 +50,11 @@ local HomeSection = HomeTab:CreateSection("Main")
 
 local Paragraph = HomeTab:CreateParagraph({Title = "Just A Baseplate Hub By Theo/Paradigm", Content = "Created on 06/13/25!"})
 local Paragraph1 = HomeTab:CreateParagraph({Title = "CHANGELOGS:", Content ="The hub returns!, i will give this an annual update because theres not much fe scripts thay i really find lol, Warn!, if your a krnl user, expect some crashes if your using some scripts..."})
-if Place ~= 17574618959 and Place ~= 88308889239232 then
+if Place ~= 17574618959 and Place ~= 88308889239232 and Place~=123974602339071 then
 local NotParagraph = HomeTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 local Divider = HomeTab:CreateDivider()
 end
-if Place == 17574618959 or Place == 88308889239232 then
+if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 local Button = HomeTab:CreateButton({
    Name = "Sit",
    Callback = function()
@@ -522,7 +522,7 @@ end,
 ----========----
 local MainTab = Window:CreateTab("Main", nil)
 
-if Place ~= 17574618959 and Place ~= 88308889239232 then
+if Place ~= 17574618959 and Place ~= 88308889239232 and Place~=123974602339071 then
 local NotParagraph = MainTab:CreateParagraph({Title = "Game Not Supported", Content ="Game is not Supported, Some Features from this hub is removed"})
 local NotDivider = MainTab:CreateDivider()
 end
@@ -543,7 +543,7 @@ local GenesisSection = MainTab:CreateSection("Genesis")
 local Button2 = MainTab:CreateButton({
    Name = "Genesis Neptunian V",
    Callback = function(A)
-        if Place == 17574618959 or Place == 88308889239232 then
+        if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Neptunian%20V"))()  
@@ -553,7 +553,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 local Button3 = MainTab:CreateButton({
    Name = "Genesis Sniper",
    Callback = function(A)
-        if Place == 17574618959 or Place == 88308889239232 then
+        if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
 permadeath = true --adds permanent death (no respawning), see #supported-executors channel for executors that work with this
@@ -589,7 +589,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 local Button4 = MainTab:CreateButton({
    Name = "Genesis Sin Dragon",
    Callback = function(A)
-        if Place == 17574618959 or Place == 88308889239232 then
+        if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
 transparent = true --toggle clientsided parts (dragon head, claws, etc)
@@ -625,7 +625,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 local Button5 = MainTab:CreateButton({
    Name = "Genesis Goner",
    Callback = function(A)
-        if Place == 17574618959 or Place == 88308889239232 then
+        if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
 
@@ -660,7 +660,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 local Button6 = MainTab:CreateButton({
    Name = "Genesis Ban Hammer",
    Callback = function(A) 
-        if Place == 17574618959 or Place == 88308889239232 then
+        if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
 permadeath = true --adds permanent death (no respawning), see #supported-executors channel for executors that work with this
@@ -694,7 +694,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 local LC = MainTab:CreateButton({
    Name = "Genesis Lightning Cannon",
    Callback = function() 
-        if Place == 17574618959 or Place == 88308889239232 then
+        if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
 
@@ -746,7 +746,7 @@ local MainSection = MainTab:CreateSection("Other")
 local Button8 = MainTab:CreateButton({
    Name = "Achromoonic",
    Callback = function(A) 
-        if Place == 17574618959 or Place == 88308889239232 then
+        if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/achromoonic edit.luau"))()
@@ -756,7 +756,7 @@ end,
 local Button9 = MainTab:CreateButton({
    Name = "Achromatix",
    Callback = function(A) 
-if Place == 17574618959 or Place == 88308889239232 then
+if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071  then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
   loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Achromatix_V6-1.lua"))()
@@ -767,7 +767,7 @@ end,
 local Achromaticv5 = MainTab:CreateButton({
    Name = "Achromatic V5",
    Callback = function(A) 
-        if Place == 17574618959 or Place == 88308889239232 then
+        if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
 --task.wait(2.150)
@@ -778,7 +778,7 @@ end,
 local Achromaticv2 = MainTab:CreateButton({
    Name = "Achromatic V2",
    Callback = function(A) 
-        if Place == 17574618959 or Place == 88308889239232 then
+        if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
 --task.wait(2.150)
@@ -789,7 +789,7 @@ end,
 local Button10= MainTab:CreateButton({
    Name = "Encription Glitcher",
    Callback = function(A) 
-        if Place == 17574618959 or Place == 88308889239232 then
+        if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 local NotDivider = MainTab:CreateDivider()
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
@@ -800,7 +800,7 @@ end
 local Zeon = MainTab:CreateButton({
    Name = "Zeon Glitcher",
    Callback = function(A) 
-        if Place == 17574618959 or Place == 88308889239232 then
+        if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
 --task.wait(2.150)
@@ -811,7 +811,7 @@ end,
 local Renegade = MainTab:CreateButton({
    Name = "Renegade Glitcher",
    Callback = function(A) 
-        if Place == 17574618959 or Place == 88308889239232 then
+        if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-pd")
 end
 --task.wait(2.150)
@@ -822,7 +822,7 @@ end,
 
 
 local NebulaDivider1 = MainTab:CreateDivider()
-if Place == 17574618959 or Place == 88308889239232 then
+if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 local NebulaInput = MainTab:CreateInput({
    Name = "Star Glitcher Wings",
    CurrentValue = "97537548465301",
@@ -870,7 +870,9 @@ local Forsaken = MainTab:CreateParagraph({Title = "Note:", Content = "This secti
 local Button2 = MainTab:CreateButton({
    Name = "Noli",
    Callback = function()
-   if Place == 17574618959 or Place == 88308889239232 then
+   if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
+
+ 
         game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 83033503825226 98099894849025 74013526892143 131385506535381 85392395166623 129462518582032 106249329428811 138364679836274 12850150835 ")
 wait(6)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
@@ -896,7 +898,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/qwertys
 local Button2 = MainTab:CreateButton({
    Name = "c00lkidd",
    Callback = function() 
-if Place == 17574618959 or Place == 88308889239232 then
+if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh  98099894849025  12383790958   131385506535381 85392395166623 129462518582032 106249329428811 138364679836274 12850150835 ")
 wait(6)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
@@ -970,7 +972,7 @@ local Nebula  = ExecutorsTab:CreateButton({
 
 
 ----================----
-if Place == 17574618959 or Place == 88308889239232 then
+if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 local HatsTab = Window:CreateTab("Hats And Rigs", nil)
 local PDButton  = HatsTab:CreateButton({
    Name = "Permdeath For Genesis",
@@ -1098,7 +1100,7 @@ end
 })
 end
 -----==============-----
-if Place == 17574618959 or Place == 88308889239232 then
+if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
 local reanim = Window:CreateTab("Reanimate", nil) -- Title, Image
 
  Gelatek = reanim:CreateButton({
