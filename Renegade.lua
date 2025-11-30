@@ -855,7 +855,26 @@ p.Color = col
 p.Material = material
 return p
 end
+local function Hmm()
+local char = game.Players.LocalPlayer.Character
+local humroot=char:WaitForChild("HumanoidRootPart")
+coroutine.resume(coroutine.create(function()
+while game:GetService("RunService").Heartbeat:Wait(.001) do
+if Running==true then
+fine(humroot,1.5,"pos",Vector3.new(ws:FindFirstChild(lp.Name):WaitForChild("Accessory (Black)").Handle.Position.X,3,ws:FindFirstChild(lp.Name):WaitForChild("Accessory (Black)").Handle.Position.Z)):Play()
+humroot.Rotation=v3(0,0,0)
+humroot.Anchored=false
+humroot.CanCollide=false
+humroot.Transparency=.5
+else
+break
+end
+end
+end))
 
+return humroot
+end
+local HumanoidRoot=Hmm()
 
 
 
@@ -865,7 +884,7 @@ local Modes={
   {Name="Overseer",WingAnim="Overseer",MusicTitle="Frums - of Ambrosia",Music="Ambrosia"},
   {Name="Mayhem",WingAnim="Mayhem",MusicTitle="D-Mode-D - Shriek",Music="Shriek"},
   {Name="Chaos",WingAnim="Chaos",MusicTitle="Frums - HALL",Music="HALL"},
-  {Name="Subsequent",WingAnim="Subsequent",MusicTitle="Derpcat - Throwback",Music="Throwback"},
+  {Name="Chromatic",WingAnim="Chromatic",MusicTitle="Derpcat - Throwback",Music="Throwback"},
   {Name="Fracture",WingAnim="Fracture",MusicTitle="「Hard NRG」[Yooh] Backwards - cold kiss sound",Music="Hard NRG"},
   {Name="Kronos",WingAnim="Kronos",MusicTitle="Camellia - Body F10ating in the Zero Gravity Space",Music="Zero Grav"},
   {Name="Equinox",WingAnim="Equinox",MusicTitle="Sols rng - Equinox",Music="EQUINOX"},
@@ -876,7 +895,22 @@ local Modes={
   {Name="Fragmentation",WingAnim="Fragmentation",MusicTitle="Camellia - Dance With Silence",Music="Dance With Silence"},
   {Name="Panorama",WingAnim="Panorama",MusicTitle="Arctcore - Panorama",Music="Panorama"},
 }
-
+local Modes={
+  {Name="Renegades",WingAnim="Renegades",MusicTitle="Team Grimoire - Grimoire of Blue",Music="Grimoire of Blue"},
+  {Name="Overseer",WingAnim="Overseer",MusicTitle="Frums - of Ambrosia",Music="Ambrosia"},
+  {Name="Mayhem",WingAnim="Mayhem",MusicTitle="D-Mode-D - Shriek",Music="Shriek"},
+  {Name="Chaos",WingAnim="Chaos",MusicTitle="Frums - HALL",Music="HALL"},
+  {Name="Chromatic",WingAnim="Chromatic",MusicTitle="t+pazolite - Cheatreal",Music="Cheatreal"},
+  {Name="Fracture",WingAnim="Fracture",MusicTitle="「Hard NRG」[Yooh] Backwards - cold kiss sound",Music="Hard NRG"},
+  {Name="Kronos",WingAnim="Kronos",MusicTitle="Camellia - Body F10ating in the Zero Gravity Space",Music="Zero Grav"},
+  {Name="Equinox",WingAnim="Equinox",MusicTitle="Sols rng - Equinox",Music="EQUINOX"},
+  {Name="Mayhem - No Hope",WingAnim="Mayhem2",MusicTitle="Team Grimoire - Kathastrophe",Music="Kathastrophe"},
+  {Name="Shard Surfer",WingAnim="Shard",MusicTitle="Tidal Wave - Shiawase (VIP Remix)",Music="Shiawase"},
+  {Name="Luminosity",WingAnim="Luminosity",MusicTitle="t+pazolite & Getty - Twisted Drop Party - HARDCORE TANOC",Music="TANOC"},
+  {Name="Censored",WingAnim="Censored",MusicTitle="t+pazolite - CENSORED!!!",Music="Censored"},
+  {Name="Fragmentation",WingAnim="Fragmentation",MusicTitle="Camellia - Dance With Silence",Music="Dance With Silence"},
+  {Name="Panorama",WingAnim="Panorama",MusicTitle="Arctcore - Panorama",Music="Panorama"},
+}
 
 
 --[[
@@ -1337,6 +1371,143 @@ end
 end
 end
 
+function Chromatic()
+wait(1)
+function Tween(obj, speed, whattype, anim)
+local Tinfo=TweenInfo.new
+local TweenService=game.TweenService
+local hii = Tinfo(speed, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+if whattype =="pos" then
+return TweenService:Create(obj, hii,{Position = anim})
+elseif whattype =="size" then
+return TweenService:Create(obj, hii,{Size = anim})
+elseif whattype =="bt" then
+return TweenService:Create(obj, hii,{BackgroundTransparency = anim})
+elseif whattype =="trans" then
+return TweenService:Create(obj, hii,{Transparency = anim})
+elseif whattype=="rot" then
+return TweenService:Create(obj, hii,{Rotation = anim})
+end
+end
+local fx = Instance.new("Folder", ws)
+fx.Name = "Effects"
+local folder=Instance.new("Folder",fx)
+folder.Name="Idk"
+local mpart=Instance.new("MeshPart",folder)
+mpart.Size=Vector3.new(1,1,1)
+mpart.MeshId="rbxassetid://2570899763"
+mpart.CanCollide=true
+mpart.Massless=true 
+mpart.Name="Mpart"
+
+local DDD=Instance.new("Part",fx)
+DDD.CanCollide=false
+DDD.Massless=true
+DDD.CanQuery=false
+DDD.Material="Neon"
+DDD.Transparency=1
+DDD.Anchored=true 
+DDD.Size=v3(1,1,1) 
+DDD.Position=v3(HumanoidRoot.Position.X,100,HumanoidRoot.Position.Z)
+local v10 = folder:WaitForChild("Mpart")
+local marker = 76
+local startfreq = 0
+local endfreq = 760
+
+local RingParts = {}
+local Table1 = {}
+local initialCFrames = {}
+count=1
+-- Pre-calculate positions to avoid repeated calculations
+for i = 1, marker do
+local v = v10:Clone()
+
+count+=1
+v.Name = count
+v.Size = Vector3.new(1, 1, 1)
+v.Material = Enum.Material.Neon
+v.Color = Color3.new(0, 0, 0)
+v.CanCollide = false 
+v.Massless = true
+v.CanQuery = false
+v.Anchored = false
+v.CastShadow = false
+v.Reflectance = 0.5
+v.Parent=fx
+
+local wel = Instance.new("Weld", v)
+wel.Part0 = DDD
+wel.Part1 = v
+
+local angle = 4.8 * count 
+local initialCF = CFrame.Angles(0, math.rad(angle), 0) * CFrame.new(0, 2, 15)
+wel.C0 = initialCF
+
+initialCFrames[i] = initialCF
+table.insert(RingParts, v)
+table.insert(Table1, wel)
+end
+wait(1)
+--[[
+for _,v in ipairs(fx:GetChildren()) do
+if v:IsA("MeshPart") then 
+v.CanCollide=true
+end
+end]]
+local wel1 = Instance.new("Weld", DDD)
+wel1.Part0=DDD 
+wel1.Part1=HumanoidRoot
+function This11(dt, lol)
+local currentTime = tick()
+local spectrum=MusicPlayer.Analyzer:GetSpectrum()
+local spectrumCount = #spectrum
+local Theme=lol
+for i, v in ipairs(fx:GetChildren()) do
+if v:IsA("MeshPart") then
+local spectrumIndex = math.floor((tonumber(v.Name) / marker) * #spectrum) + 1
+spectrumIndex = math.clamp(spectrumIndex, 1, #spectrum)
+local magnitude = spectrum[spectrumIndex] or 0
+local scale = math.min(magnitude / 0.0010 * 2, 550)
+local i_pos = tonumber(v.Name) / marker 
+if Theme=="Monochrome" then
+v.Color=Color3.fromHSV(1, 0,(-tick() * .15 + i_pos)%1)
+elseif Theme=="Rainbow" then
+v.Color=Color3.fromHSV((-tick() * .15 + i_pos)%1,1,1)
+elseif Theme=="Ice" then
+v.Color=Color3.fromHSV(.55,(-tick() * .15 + i_pos)%1,1)
+elseif Theme=="Crimson" then
+v.Color=Color3.fromHSV(1,1,(-tick() * .15 + i_pos)%1)
+elseif Theme=="Spooky" then
+v.Color=Color3.fromHSV(.1,1,(-tick() * .15 + i_pos)%1)
+elseif Theme=="Rainbow2" then
+v.Color=Color3.fromHSV(tick()*.55%1,1,1)
+elseif Theme=="Matrix" then
+v.Color=Color3.fromRGB(0,(tick()*.55+i_pos%150+100*sin(upd/20)),(-tick()*.55+i_pos%255+100*sin(upd/50)))
+end
+local targetSize = Vector3.new(1,1, math.min(10 * scale,10.5 ))
+v.Size = v.Size:Lerp(targetSize,.25,.125)
+Tween(DDD,.001,"pos",v3(HumanoidRoot.Position.X,-1.5,HumanoidRoot.Position.Z)):Play()
+Tween(DDD,.001,"rot",v3(0,0,0)):Play()
+local wel = Table1[i]
+if wel and initialCFrames[i] then
+wel.C0 = initialCFrames[i] * CFrame.Angles(0, 0, math.rad(scale * 0.1))
+end
+end
+end
+
+end
+coroutine.resume(coroutine.create(function()
+while game:GetService("RunService").Heartbeat:Wait(.00001) do
+if Mode ~= "Chromatic" then 
+if fx then
+fx:Destroy()
+end
+return 
+end
+This11(0.033, "Rainbow2")
+end
+end))
+end
 
 --// Intro Animation 
 function Introduction()
@@ -1486,10 +1657,10 @@ elseif io.KeyCode==Enum.KeyCode.Four and Mode~="Chaos" then
 changeMode("Chaos")
 
 
-elseif io.KeyCode==Enum.KeyCode.Five and Mode~="Subsequent" then
-changeMode("Subsequent")
-ChangeAndRecolor("Subsequent",true,Font.new([[rbxasset://fonts/families/PermanentMarker.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,151,89),rgb(171,255,220))
-
+elseif io.KeyCode==Enum.KeyCode.Five and Mode~="Chromatic" then
+changeMode("Chromatic")
+ChangeAndRecolor("Chromatic",true,Font.new([[rbxasset://fonts/families/PermanentMarker.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(255,255,255),rgb(0,0,0),true)
+Chromatic()
 
 elseif io.KeyCode==Enum.KeyCode.Six and Mode~="Fracture" then
 changeMode("Fracture")
@@ -1519,7 +1690,7 @@ elseif io.KeyCode==Enum.KeyCode.M and Mode=="Overseer" then
 changeMode("Luminosity")
 ChangeAndRecolor("Luminosity",true,Font.new([[rbxasset://fonts/families/Fondamento.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(213,246,255),rgb(175,238,255))
 
-elseif io.KeyCode==Enum.KeyCode.M and Mode=="Subsequent" then
+elseif io.KeyCode==Enum.KeyCode.M and Mode=="Chromatic" then
 changeMode("Censored")
 ChangeAndRecolor("Censored",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,0,0),rgb(61,255,77))
 
@@ -1595,12 +1766,12 @@ end
 
 
 
-WingAnimations.Subsequent=function()
+WingAnimations.Chromatic=function()
 if s1_1 and s1_2 and s1_3 and s1_4 then
-s1_1.C0=Lerp(s1_1.C0,cfMul(cf(-1,3.75-2.5*sin(sine*1.5),-3.35+2.5*sin((sine+0.5)*1.5)),angles(0,1.5707963267948966,-2.443460952792061)),deltaTime)  
-s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-1,3.415-2.5*sin(sine*1.5),-4.5+2.5*sin((sine+0.5)*1.5)),angles(0,1.5707963267948966,2.2689280275926285)),deltaTime)  
-s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-1,2.55-2.5*sin(sine*1.5),-2.85+2.5*sin((sine+0.5)*1.5)),angles(0,1.5707963267948966,-0.8726646259971648)),deltaTime)  
-s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-1,2.25-2.5*sin(sine*1.5),-4+2.5*sin((sine+0.5)*1.5)),angles(0,1.5707963267948966,0.6981317007977318)),deltaTime)  
+s1_1.C0=Lerp(s1_1.C0,cfMul(cf(-1,3,1),angles(0+Boost/10,1.5707963267948966,-1.5707963267948966)),deltaTime)  
+s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-2.75-0.15*sin((sine+0.2)*2),3+sound.PlaybackLoudness/100,-3.35-sound.PlaybackLoudness/100),angles(-2.443460952792061+Boost/20,0.12217304763960307,1.5882496193148399)),deltaTime)  
+s1_3.C0=Lerp(s1_3.C0,cfMul(cf(1,3,1),angles(0+Boost/10,-1.5707963267948966,1.5707963267948966)),deltaTime) 
+s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-2.75-0.15*sin((sine+0.2)*2),1+sound.PlaybackLoudness/50,-1.45-sound.PlaybackLoudness/50),angles(0.6981317007977318+Boost/20,0.12217304763960307,1.5882496193148399)),deltaTime)  
 end
 end
 
@@ -1813,7 +1984,7 @@ local Jump=velY<-20
 --[[if IsOnGround then
 end]]
 if Fall then
-if Mode=="Renegades" or Mode=="Mayhem" or Mode=="Chaos" or Mode=="Mayhem - No Hope" then
+if Mode=="Renegades" or Mode=="Mayhem" or Mode=="Chaos" or Mode=="Mayhem - No Hope" or Mode=="Chromatic" then
 Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.6580627893946132,0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,0.5,-0.5),angles(0,0,-0.6108652381980153)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.75,-0.55),angles(0,-1.5707963267948966,0)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,-0.5),angles(0,1.5707963267948966,-0.4363323129985824)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,angles(-1.7453292519943295,0,3.141592653589793),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.5,0.5,-0.5),angles(0,0,0.6108652381980153)),deltaTime)
 if s1_1 and s1_2 and s1_3 and s1_4 then
 s1_1.C0=Lerp(s1_1.C0,cfMul(cf(-1,0,0),angles(0,1.5707963267948966,-0.8726646259971648)),deltaTime) 
@@ -1826,7 +1997,7 @@ end
 
 elseif Jump then
 if (velY==0 or velY>0)then return end
-if Mode=="Renegades" or Mode=="Mayhem" or Mode=="Chaos" or Mode=="Mayhem - No Hope" then
+if Mode=="Renegades" or Mode=="Mayhem" or Mode=="Chaos" or Mode=="Mayhem - No Hope" or Mode=="Chromatic" then
 Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.4835298641951802,0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,0.5,-0.5),angles(0,0,-0.4363323129985824)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.75,-0.75),angles(0,-1.5707963267948966,0.5235987755982988)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,-0.5),angles(0,1.5707963267948966,-0.4363323129985824)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,angles(-1.4835298641951802,0,3.141592653589793),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.5,0.5,-0.5),angles(0,0,0.4363323129985824)),deltaTime)  
 if s1_1 and s1_2 and s1_3 and s1_4 then
 s1_1.C0=Lerp(s1_1.C0,cfMul(cf(-1,0,0),angles(0,1.5707963267948966,-0.8726646259971648)),deltaTime) 
@@ -1838,7 +2009,7 @@ end
 
 
 elseif walking then 
-if Mode=="Renegades" or Mode=="Mayhem" or Mode=="Chaos" or Mode=="Sub-Sonic" or Mode=="Mayhem - No Hope" then
+if Mode=="Renegades" or Mode=="Mayhem" or Mode=="Chaos" or Mode=="Mayhem - No Hope" or Mode=="Chromatic" then
 setWalkSpeed(12)
 RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0),angles(-0.8726646259971648*sin(sine*5.5),1.5707963267948966,0)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0),angles(0.8726646259971648*sin(sine*5.5),-1.5707963267948966,0)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1+0.15*sin((sine+1.5)*5.5),-0.25+0.75*sin((sine+0.75)*5.5)),angles(0,1.5707963267948966,-0.2617993877991494-0.6981317007977318*sin((sine+0.5)*5.5))),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,angles(-1.8325957145940461,0,3.141592653589793+0.1832595714594046*sin(sine*5.5)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.3962634015954636,-0.04363323129985824*sin(sine*5.5),3.141592653589793-0.09599310885968812*sin(sine*5.5))),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1-0.15*sin((sine+1.5)*5.5),-0.25-0.75*sin((sine+0.75)*5.5)),angles(0,-1.5707963267948966,0.2617993877991494-0.6981317007977318*sin((sine+0.5)*5.5))),deltaTime) 
 if Mode=="Renegades" then
@@ -1916,8 +2087,8 @@ end
 elseif Mode=="Chaos" then
 RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5+0.15*sin((sine+1)*3.5),-1-0.095*sin((sine+0.5)*3.5)),angles(0,0,-2.0943951023931953)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,0.25-0.15*sin(sine*3.5),-0.75-0.15*sin(sine*3.5)),angles(0.8726646259971648,1.5707963267948966,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-1+0.25*sin(sine*3.5),0),angles(-2.2689280275926285,0,3.141592653589793)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1+0.055*sin((sine+1)*3.5),0),angles(-2.0943951023931953+mrandom(-1.5,1.5),0,3.141592653589793+mrandom(-1.5,1.5))),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,-0.25-0.15*sin(sine*3.5)),angles(0,-1.5707963267948966,0.4363323129985824)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5+0.15*sin((sine+1)*3.5),-1.5-0.095*sin((sine+0.5)*3.5)),angles(0,0,2.2689280275926285)),deltaTime) 
 
-elseif Mode=="Subsequent" then
-Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.2217304763960306-0.17453292519943295*sin((sine+0.5)*1.5),0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,0.25+0.15*sin(sine*1.5),-0.25-0.15*sin(sine*1.5)),angles(-0.6108652381980153,0,-0.2617993877991494+0.17453292519943295*sin((sine+0.5)*1.5))),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.5,0.15 * sin(sine*1.5),-0.5-0.15*sin(sine*1.5)),angles(-0.8726646259971648,0,0.3490658503988659-0.17453292519943295*sin((sine+0.5)*1.5))),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1+0.15*sin((sine+0.25)*1.5),-0.5),angles(0,-1.5707963267948966,0.6108652381980153+0.2617993877991494*sin((sine+0.75)*1.5))),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1+0.15*sin((sine+0.5)*1.5),-0.25),angles(0,1.5707963267948966,-1.1344640137963142-0.2617993877991494*sin((sine+0.5)*1.5))),deltaTime)   RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,10+0.75*sin(sine*1.5),0),angles(-0.8726646259971648+0.09599310885968812*sin((sine+0.5)*1.5),0,3.141592653589793)),deltaTime)  
+elseif Mode=="Chromatic" then
+LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.5,-0.85-0.15*sin(sine*2),0.1 * sin(sine*2)),angles(-0.17453292519943295,0,-0.17453292519943295)),deltaTime) Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1+0.055*sin((sine+0.15)*2),0),angles(-1.6580627893946132,0,3.6651914291880923)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.5,-0.75-0.15*sin(sine*2),0.5+0.1*sin(sine*2)),angles(-0.3490658503988659-0.03490658503988659*sin((sine+0.2)*2),0,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,-0.25+0.15*sin((sine+0.25)*2),0),angles(-1.4835298641951802,-0.08726646259971647,2.6179938779914944)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.5,0.4+0.15*sin((sine+0.075)*2),-0.45),angles(-0.3490658503988659,0,0.3490658503988659-0.1832595714594046*sin((sine+0.5)*2))),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,0.5+0.15*sin((sine+0.075)*2),-0.35-0.1*sin((sine+0.2)*2)),angles(-0.17453292519943295,0,-0.17453292519943295+0.1832595714594046*sin((sine+0.5)*2))),deltaTime)  
 
 elseif Mode=="Fracture" then
 LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.75+0.25*sin((sine+0.5)*2.5),-1.015),angles(0,-1.5707963267948966,0.5235987755982988+0.3490658503988659*sin((sine+1)*2.5))),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.5,1.25+0.25*sin((sine+1)*2.5),0.25),angles(2.530727415391778,0,-0.5235987755982988)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,0.5+0.25*sin((sine+0.5)*2.5),-0.5),angles(0.17453292519943295,0,-0.3490658503988659+0.2617993877991494*sin((sine+0.5)*2.5))),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,12.5+1.5*sin(sine*2.5),0),angles(-1.4835298641951802+0.17453292519943295*sin((sine+0.5)*2.5),0,3.490658503988659)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1+0.055*sin((sine+0.5)*2.5),0),angles(-1.9198621771937625-0.09599310885968812*sin((sine+0.25)*2.5),0,2.6179938779914944)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1+0.15*sin((sine+0.5)*2.5),-0.25),angles(0,1.5707963267948966,-0.3490658503988659-0.17453292519943295*sin((sine+1)*2.5))),deltaTime)  
