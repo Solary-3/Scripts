@@ -1472,7 +1472,7 @@ v.Color=Color3.fromRGB(0,(tick()*.55+i_pos%150+100*sin(upd/20)),(-tick()*.55+i_p
 end
 local targetSize = Vector3.new(1,1, math.min(10 * scale,10.5 ))
 v.Size = v.Size:Lerp(targetSize,.25,.125)
-Tween(DDD,.001,"pos",v3(HumanoidRoot.Position.X,-1.5,HumanoidRoot.Position.Z)):Play()
+Tween(DDD,1.5,"pos",v3(ws:FindFirstChild(lp.Name):WaitForChild("Accessory (Black)").Handle.Position.X,ws:FindFirstChild(lp.Name):WaitForChild("Accessory (Black)").Handle.Position.Y,ws:FindFirstChild(lp.Name):WaitForChild("Accessory (Black)").Handle.Position.Z)):Play()
 Tween(DDD,.001,"rot",v3(0,0,0)):Play()
 local wel = Table1[i]
 if wel and initialCFrames[i] then
