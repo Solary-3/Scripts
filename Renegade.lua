@@ -1410,9 +1410,9 @@ DDD.Anchored=true
 DDD.Size=v3(1,1,1) 
 DDD.Position=v3(HumanoidRoot.Position.X,100,HumanoidRoot.Position.Z)
 local v10 = folder:WaitForChild("Mpart")
-local marker = 76
+local marker = 77
 local startfreq = 0
-local endfreq = 760
+local endfreq = 770
 
 local RingParts = {}
 local Table1 = {}
