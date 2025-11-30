@@ -972,7 +972,7 @@ local Nebula  = ExecutorsTab:CreateButton({
 
 
 ----================----
-if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
+if Place == 17574618959 or Place == 88308889239232 and Place==123974602339071 then
 local HatsTab = Window:CreateTab("Hats And Rigs", nil)
 local PDButton  = HatsTab:CreateButton({
    Name = "Permdeath For Genesis",
@@ -1100,7 +1100,7 @@ end
 })
 end
 -----==============-----
-if Place == 17574618959 or Place == 88308889239232 and Place~=123974602339071 then
+if Place == 17574618959 or Place == 88308889239232 and Place==123974602339071 then
 local reanim = Window:CreateTab("Reanimate", nil) -- Title, Image
 
  Gelatek = reanim:CreateButton({
