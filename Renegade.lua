@@ -1396,7 +1396,8 @@ folder.Name="Idk"
 local mpart=Instance.new("MeshPart",folder)
 mpart.Size=Vector3.new(1,1,1)
 mpart.MeshId="rbxassetid://2570899763"
-mpart.CanCollide=true
+mpart.CanCollide=false
+mpart.Transparency=1
 mpart.Massless=true 
 mpart.Name="Mpart"
 
