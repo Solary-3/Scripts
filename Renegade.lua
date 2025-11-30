@@ -1802,10 +1802,10 @@ end
 
 WingAnimations.Equinox=function()
 if s1_1 and s1_2 and s1_3 and s1_4 then
-s1_1.C0=Lerp(s1_1.C0,cfMul(cf(1,0-sound.PlaybackLoudness/100,0-sound.PlaybackLoudness/100),angles(0.6981317007977318,-1.5707963267948966,0-sp/15+Boost/20)),deltaTime)  
-s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-1,0+sound.PlaybackLoudness/100,0+sound.PlaybackLoudness/100),angles(0.6981317007977318,1.5707963267948966,0-sp/15+Boost/20)),deltaTime)  
-s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-10-sound.PlaybackLoudness/100,0,0),angles(4.014257279586958+sp/10,0+sp/15+Boost/75,0)),deltaTime)  
-s1_4.C0=Lerp(s1_4.C0,cfMul(cf(10+sound.PlaybackLoudness/100,0,0),angles(0.8726646259971648+sp/10,0+sp/15+Boost/75,0)),deltaTime)  
+s1_1.C0=Lerp(s1_1.C0,cfMul(cf(-2.5-sound.PlaybackLoudness/100,0,0),angles(4.014257279586958,0+Boost/25,0+Boost/75)),deltaTime)  
+s1_2.C0=Lerp(s1_2.C0,cfMul(cf(2.5+sound.PlaybackLoudness/100,0,0),angles(0.8726646259971648,0+Boost/25,0+Boost/75)),deltaTime)  
+s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-10-sound.PlaybackLoudness/75,0,0),angles(4.014257279586958+sp/10,0+sp/15+Boost/75,0)),deltaTime)  
+s1_4.C0=Lerp(s1_4.C0,cfMul(cf(10+sound.PlaybackLoudness/75,0,0),angles(0.8726646259971648+sp/10,0+sp/15+Boost/75,0)),deltaTime)  
 end
 end
 
