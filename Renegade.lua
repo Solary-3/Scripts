@@ -108,7 +108,7 @@ RENEGADES["About_9"]["TextColor3"]= Color3.fromRGB(255, 255, 255);
 RENEGADES["About_9"]["BackgroundTransparency"]= 0.5;
 RENEGADES["About_9"]["Size"]= UDim2.new(0, 214, 0, 100);
 RENEGADES["About_9"]["BorderColor3"]= Color3.fromRGB(13, 20, 25);
-RENEGADES["About_9"]["Text"]=[[Update: Replaced Subsequent with Chromatic]];
+RENEGADES["About_9"]["Text"]=[[Hello There! this script is made by Theo! I got bored and decided to make  this script. The script is in early development, and there will be modes in the future!]];
 RENEGADES["About_9"]["Name"]=[[About]];
 RENEGADES["About_9"]["Position"]= UDim2.new(0, 118, 0, 4);
 
@@ -159,8 +159,8 @@ local uis=game.UserInputService
 mainframe.Draggable=true
 Global.RigHead=CAMERAFOCUS
 
-if isfolder and not isfolder("Renegade Audios") then 
-makefolder("Renegade Audios")
+if isfolder and not isfolder("Renegade Assets") then 
+makefolder("Renegade Assets")
 end
 
 
@@ -286,7 +286,6 @@ local PatchmaRenimUrl ="https://raw.githubusercontent.com/Solary-3/Scripts/refs/
 if isfile and not isfile(FOLDER.."/"..FILE) then
 writefile(FOLDER.."/"..FILE,game:HttpGet(PatchmaRenimUrl))
 end
-writefile(FOLDER.."/"..FILE,game:HttpGet(PatchmaRenimUrl))
 local PatchmaSuccess, Patchma = pcall(function()
  return loadstring(readfile(FOLDER.."/"..FILE))()
 end)
@@ -339,6 +338,7 @@ local Mode="None"
 local ClockTicky=0
 local Constant=1
 local Boost=1
+local BBGVisibilty=true
 Weld = nil
 Animate1 = nil
 Weld1=nil
@@ -383,8 +383,7 @@ end
 
 
 --// Spinny thing and interface
-local basgui = Instance.new("GuiMain")
-basgui.Parent = plr.PlayerGui
+local basgui = Instance.new("GuiMain",plrgui)
 basgui.Name = "VISgui"
 local FSCREEN = Instance.new("Frame")
 FSCREEN.Parent = basgui
@@ -428,8 +427,10 @@ imag4.Image = "rbxassetid://2076519836"
 --// Interface 
 local GLITCHERAUDIO = {};
 GLITCHERAUDIO["MainGui_1"] = Instance.new("ScreenGui", FSCREEN);
+
 GLITCHERAUDIO["MainGui_1"]["Name"] = [[MainGui]];
 GLITCHERAUDIO["MainGui_1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+GLITCHERAUDIO["MainGui_1"]["ResetOnSpawn"] = false;
 
 CollectionService:AddTag(GLITCHERAUDIO["MainGui_1"], [[main]]);
 
@@ -696,7 +697,7 @@ fr1.Size=UDim2.new(0,50,.25,0)
 
 
 local sin=math.sin
-function This(dt)
+function This1(dt)
 if MusicPlayer.TimePosition==0 then return end
 local spectrum=MusicPlayer.Analyzer:GetSpectrum()
 for i, bar in ipairs(container:GetChildren()) do
@@ -737,17 +738,11 @@ imgl2b.ImageColor3 = Color3.new(0,0,0)
 
 
 function Asset(filename)
-if isfile("Renegade Audios/"..filename) then
-return getcustomasset("Renegade Audios/"..filename)
+if isfile("Renegade Assets/"..filename) then
+return Asset("Renegade Assets/"..filename)
 else
 warn("Downloading Audio File "..filename)
-writefile("Renegade Audios/"..filename, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..filename.."?raw=true"))
-MusicPlayer.TimePosition=0 
-MusicPlayer.Asset=Asset(filename)
-MusicPlayer:Play()
-sound.SoundId=Asset(filename)
-sound.TimePosition=0 
-sound:Play()
+writefile("Renegade Assets/"..filename, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..filename.."?raw=true"))
   return ""
 end
 end
@@ -775,27 +770,123 @@ v.Name="RainbowGodSword_"..count
 end
 end
 
+function CreatePart(parent,transparency,reflectance,material,col,size,name)
+local p = Instance.new("Part")
+p.TopSurface = 0
+p.Name=name
+p.BottomSurface = 0
+p.Parent = parent
+p.Size = size
+p.Transparency = transparency
+p.Reflectance = reflectance
+p.CanCollide = false
+p.Locked = false 
+p.Massless = true 
+p.Anchored=true 
+p.Color = col 
+p.Material = material
+return p
+end
+
+
+--CreatePart(ws,1,0,"Neon",rgb(0,0,0),v3(.1,.1,.1),"CamFocus")
+coroutine.resume(coroutine.create(function()
+local up
+local obj=game.Players.LocalPlayer.Character:FindFirstChild(CAMERAFOCUS)
+up=game:GetService("RunService").RenderStepped:Connect(function()
+if Running==false then  
+for _, v in ipairs(ws:GetChildren()) do 
+if v.Name=="CamFocus" or v.Name=="BBG" then 
+v:Destroy()
+end
+end
+up:Disconnect()
+end
+if ws:FindFirstChild("CamFocus") then
+if game.Players.LocalPlayer.Character:FindFirstChild(CAMERAFOCUS) then
+ws:WaitForChild("CamFocus").Position=game.Players.LocalPlayer.Character:FindFirstChild(CAMERAFOCUS):FindFirstChild("Handle").Position
+ws.CurrentCamera.CameraSubject=game.Players.LocalPlayer.Character:FindFirstChild(CAMERAFOCUS).Handle 
+else 
+ws.CurrentCamera.CameraSubject=ws:FindFirstChild("CamFocus")
+end 
+pcall(function()
+for _,v in ipairs(ws:FindFirstChild("CamFocus"):GetChildren()) do 
+if v:IsA("Attachment") then 
+v:Destroy()
+end
+end
+end)
+else
+CreatePart(ws,1,0,"Neon",rgb(0,0,0),v3(.1,.1,.1),"CamFocus")
+end
+end)
+end))
+
+function SafePart(Find)
+local char = game.Players.LocalPlayer.Character
+
+if char:FindFirstChild(Find) then 
+return char:FindFirstChild(Find).Handle
+else 
+return ws:WaitForChild("CamFocus")
+end
+end
 --// Parts 
-local Rarm=ws:FindFirstChild(lp.Name):WaitForChild("Accessory (RArm)").Handle
-local Larm=ws:FindFirstChild(lp.Name):WaitForChild("Accessory (LArm)").Handle
-local Torso=ws:FindFirstChild(lp.Name):WaitForChild("Accessory (Black)").Handle
-local Head=ws:FindFirstChild(lp.Name):WaitForChild(CAMERAFOCUS).Handle
-local sword1_1=ws:FindFirstChild(lp.Name):FindFirstChild("DemonGodSword").Handle
-local sword1_2=ws:FindFirstChild(lp.Name):WaitForChild("RainbowGodSword_2").Handle
-sword1_1.Massless=true
-sword1_2.Massless=true
-sword1_1.CanCollide=false
-sword1_2.CanCollide=false
-local m=Instance.new("Model",Torso)
-local m1=Instance.new("Model", Torso)
+local Rarm=SafePart("Accessory (RArm)")
+local Larm=SafePart("Accessory (LArm)")
+local Torso=SafePart("Accessory (Black)")
+local Head=SafePart(CAMERAFOCUS)
+print(Head)
+local jj=nil
+function Hmm(Change)
+local char = game.Players.LocalPlayer.Character
+local humroot=char:WaitForChild("HumanoidRootPart")
+if jj then 
+jj:Disconnect()
+jj=nil
+end
+coroutine.resume(coroutine.create(function()
+jj=game:GetService("RunService").RenderStepped:Connect(function()
+local char = game.Players.LocalPlayer.Character
+local humroot=char:WaitForChild("HumanoidRootPart")
+if Torso then
+game.Players.LocalPlayer.Character.HumanoidRootPart.Position=v3(Torso.Position.X,Torso.Position.Y - Change,Torso.Position.Z)
+end
+if Running==true then
+humroot.Rotation=v3(0,0,0)
+humroot.Anchored=true
+humroot.Massless=true
+humroot.CanCollide=false
+humroot.Transparency=1
+pcall(function()
+for _,v in ipairs(game.Players.LocalPlayer.Character:GetDescendants()) do 
+if v:IsA("Accessory") then
+v.Handle.CanCollide=true
+end
+end
+end)
+else
+jj:Disconnect()
+jj=nil
+wait(1)
+humroot.Rotation=v3(0,0,0)
+humroot.Anchored=false
+humroot.Massless=true
+humroot.CanCollide=false
+humroot.Transparency=1
+end
+end)
+end))
 
-
+end
+local HumanoidRoot=game.Players.LocalPlayer.Character.HumanoidRootPart
+Hmm(5)
 
 
 
 local righead=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(CAMERAFOCUS).Handle
 --// Focus The Camera On The Rigs heads
-ws.CurrentCamera.CameraSubject=righead
+--ws.CurrentCamera.CameraSubject=righead
 
 
 
@@ -839,42 +930,7 @@ weld.C0 = cf(C0X,C0Y,C0Z)*angles(C0Xa,C0Ya,C0Za)
 return weld
 end
 
-function CreatePart(parent,transparency,reflectance,material,col,size)
-local p = Instance.new("Part")
-p.TopSurface = 0
-p.BottomSurface = 0
-p.Parent = parent
-p.Size = size
-p.Transparency = transparency
-p.Reflectance = reflectance
-p.CanCollide = false
-p.Locked = true 
-p.Massless = true 
-p.Anchored=false
-p.Color = col 
-p.Material = material
-return p
-end
-local function Hmm()
-local char = game.Players.LocalPlayer.Character
-local humroot=char:WaitForChild("HumanoidRootPart")
-coroutine.resume(coroutine.create(function()
-while game:GetService("RunService").Heartbeat:Wait(.001) do
-if Running==true then
-fine(humroot,1.5,"pos",Vector3.new(ws:FindFirstChild(lp.Name):WaitForChild("Accessory (Black)").Handle.Position.X,3,ws:FindFirstChild(lp.Name):WaitForChild("Accessory (Black)").Handle.Position.Z)):Play()
-humroot.Rotation=v3(0,0,0)
-humroot.Anchored=false
-humroot.CanCollide=false
-humroot.Transparency=.5
-else
-break
-end
-end
-end))
 
-return humroot
-end
-local HumanoidRoot=Hmm()
 
 
 
@@ -887,7 +943,7 @@ local Modes={
   {Name="Chromatic",WingAnim="Chromatic",MusicTitle="t+pazolite - Cheatreal",Music="Cheatreal"},
   {Name="Fracture",WingAnim="Fracture",MusicTitle="「Hard NRG」[Yooh] Backwards - cold kiss sound",Music="Hard NRG"},
   {Name="Kronos",WingAnim="Kronos",MusicTitle="Camellia - Body F10ating in the Zero Gravity Space",Music="Zero Grav"},
-  {Name="Equinox",WingAnim="Equinox",MusicTitle="Sols rng - Equinox",Music="EQUINOX"},
+  {Name="E q u i n o x",WingAnim="Equinox",MusicTitle="Sols rng - Equinox",Music="EQUINOX"},
   {Name="Mayhem - No Hope",WingAnim="Mayhem2",MusicTitle="Team Grimoire - Kathastrophe",Music="Kathastrophe"},
   {Name="Shard Surfer",WingAnim="Shard",MusicTitle="Tidal Wave - Shiawase (VIP Remix)",Music="Shiawase"},
   {Name="Luminosity",WingAnim="Luminosity",MusicTitle="t+pazolite & Getty - Twisted Drop Party - HARDCORE TANOC",Music="TANOC"},
@@ -895,6 +951,7 @@ local Modes={
   {Name="Fragmentation",WingAnim="Fragmentation",MusicTitle="Camellia - Dance With Silence",Music="Dance With Silence"},
   {Name="Panorama",WingAnim="Panorama",MusicTitle="Arctcore - Panorama",Music="Panorama"},
 }
+
 
 
 --[[
@@ -921,11 +978,13 @@ end))
 
 
 
---// BillboardGui 
-local bilguit = Instance.new("BillboardGui", ws:FindFirstChild(lp.Name):FindFirstChild(CAMERAFOCUS))
+--// BillboardGui
+local fldr=Instance.new("Folder",ws)
+fldr.Name="BBG"
+local bilguit = Instance.new("BillboardGui", ws:WaitForChild("CamFocus"))
 bilguit.Adornee = nil
-bilguit.Name = "ModeName"
-bilguit.Size = UDim2.new(4, 0, 1.2, 0)
+bilguit.Name = "Overhead"
+bilguit.Size = UDim2.new(4.25, 0, 1.75, 0)
 bilguit.StudsOffset = Vector3.new(-8, 8/1.5, 0)
 local modet = Instance.new("TextLabel", bilguit)
 modet.Size = UDim2.new(10/2, 0, 7/2, 0)
@@ -938,9 +997,12 @@ modet.TextStrokeTransparency = 0
 modet.FontFace=Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic)
 modet.TextStrokeColor3 = Color3.new(0,1,1)
 modet.TextColor3 = Color3.new(1,1,1)
-modet.Text = ""
+modet.Text = "Test"
+modet.Name="Title"
+modet.Visible=BBGVisibilty
 
 
+--local modet=ws:FindFirstChild("CamFocus"):FindFirstChild("Overhead"):FindFirstChild("Title")
 --// Get the PlaybackLoudness 
 local Loudness=sound.PlaybackLoudness
 
@@ -1355,145 +1417,6 @@ end
 end
 end
 
-function Chromatic()
-wait(1)
-function Tween(obj, speed, whattype, anim)
-local Tinfo=TweenInfo.new
-local TweenService=game.TweenService
-local hii = Tinfo(speed, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-if whattype =="pos" then
-return TweenService:Create(obj, hii,{Position = anim})
-elseif whattype =="size" then
-return TweenService:Create(obj, hii,{Size = anim})
-elseif whattype =="bt" then
-return TweenService:Create(obj, hii,{BackgroundTransparency = anim})
-elseif whattype =="trans" then
-return TweenService:Create(obj, hii,{Transparency = anim})
-elseif whattype=="rot" then
-return TweenService:Create(obj, hii,{Rotation = anim})
-end
-end
-local fx = Instance.new("Folder", ws)
-fx.Name = "Effects"
-local folder=Instance.new("Folder",fx)
-folder.Name="Idk"
-local mpart=Instance.new("MeshPart",folder)
-mpart.Size=Vector3.new(1,1,1)
-mpart.MeshId="rbxassetid://2570899763"
-mpart.CanCollide=true 
-mpart.Position=v3(1000,1000,1000)
-mpart.Transparency=1
-mpart.Massless=true 
-mpart.Name="Mpart"
-
-local DDD=Instance.new("Part",fx)
-DDD.CanCollide=false
-DDD.Massless=true
-DDD.CanQuery=false
-DDD.Material="Neon"
-DDD.Transparency=1
-DDD.Anchored=true 
-DDD.Size=v3(1,1,1) 
-DDD.Position=v3(HumanoidRoot.Position.X,1000,HumanoidRoot.Position.Z)
-local v10 = folder:WaitForChild("Mpart")
-local marker = 77
-local startfreq = 0
-local endfreq = 770
-
-local RingParts = {}
-local Table1 = {}
-local initialCFrames = {}
-count=1
--- Pre-calculate positions to avoid repeated calculations
-for i = 1, marker do
-local v = v10:Clone()
-
-count+=1
-v.Name = count
-v.Size = Vector3.new(1, 1, 1)
-v.Material = Enum.Material.Neon
-v.Color = Color3.new(0, 0, 0)
-v.CanCollide = false 
-v.Massless = true
-v.CanQuery = false
-v.Anchored = false
-v.CastShadow = false
-v.Reflectance = 0.5
-v.Parent=fx
-
-local wel = Instance.new("Weld", v)
-wel.Part0 = DDD
-wel.Part1 = v
-
-local angle = 4.8 * count 
-local initialCF = CFrame.Angles(0, math.rad(angle), 0) * CFrame.new(0, 2, 15)
-wel.C0 = initialCF
-
-initialCFrames[i] = initialCF
-table.insert(RingParts, v)
-table.insert(Table1, wel)
-end
-wait(1)
---[[
-for _,v in ipairs(fx:GetChildren()) do
-if v:IsA("MeshPart") then 
-v.CanCollide=true
-end
-end]]
-local wel1 = Instance.new("Weld", DDD)
-wel1.Part0=DDD 
-wel1.Part1=HumanoidRoot
-function This11(dt, lol)
-local currentTime = tick()
-local spectrum=MusicPlayer.Analyzer:GetSpectrum()
-local spectrumCount = #spectrum
-local Theme=lol
-for i, v in ipairs(fx:GetChildren()) do
-if v:IsA("MeshPart") then
-local spectrumIndex = math.floor((tonumber(v.Name) / marker) * #spectrum) + 1
-spectrumIndex = math.clamp(spectrumIndex, 1, #spectrum)
-local magnitude = spectrum[spectrumIndex] or 0
-local scale = math.min(magnitude / 0.0010 * 2, 550)
-local i_pos = tonumber(v.Name) / marker 
-if Theme=="Monochrome" then
-v.Color=Color3.fromHSV(1, 0,(-tick() * .15 + i_pos)%1)
-elseif Theme=="Rainbow" then
-v.Color=Color3.fromHSV((-tick() * .15 + i_pos)%1,1,1)
-elseif Theme=="Ice" then
-v.Color=Color3.fromHSV(.55,(-tick() * .15 + i_pos)%1,1)
-elseif Theme=="Crimson" then
-v.Color=Color3.fromHSV(1,1,(-tick() * .15 + i_pos)%1)
-elseif Theme=="Spooky" then
-v.Color=Color3.fromHSV(.1,1,(-tick() * .15 + i_pos)%1)
-elseif Theme=="Rainbow2" then
-v.Color=Color3.fromHSV(tick()*.55%1,1,1)
-elseif Theme=="Matrix" then
-v.Color=Color3.fromRGB(0,(tick()*.55+i_pos%150+100*sin(upd/20)),(-tick()*.55+i_pos%255+100*sin(upd/50)))
-end
-local targetSize = Vector3.new(1,1, math.min(10 * scale,10.5 ))
-v.Size = v.Size:Lerp(targetSize,.25,.125)
-Tween(DDD,1.5,"pos",v3(ws:FindFirstChild(lp.Name):WaitForChild("Accessory (Black)").Handle.Position.X,ws:FindFirstChild(lp.Name):WaitForChild("Accessory (Black)").Handle.Position.Y,ws:FindFirstChild(lp.Name):WaitForChild("Accessory (Black)").Handle.Position.Z)):Play()
-Tween(DDD,.001,"rot",v3(0,0,0)):Play()
-local wel = Table1[i]
-if wel and initialCFrames[i] then
-wel.C0 = initialCFrames[i] * CFrame.Angles(0, 0, math.rad(scale * 0.1))
-end
-end
-end
-
-end
-coroutine.resume(coroutine.create(function()
-while game:GetService("RunService").Heartbeat:Wait(.00001) do
-if Mode ~= "Chromatic" then 
-if fx then
-fx:Destroy()
-end
-return 
-end
-This11(0.033, "Rainbow2")
-end
-end))
-end
 
 --// Intro Animation 
 function Introduction()
@@ -1575,6 +1498,20 @@ changeMode("Fracture")
 ChangeAndRecolor("Fracture",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,69,95),rgb(182,235,255))
 end
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 --// Special Anims
 
 function SpecialAnim(start,dur,change,ret,current,color1)
@@ -1591,8 +1528,1080 @@ end
 end
 end
 
+local Debounce=false
+ function notify(text,dur)
+local Notify=game:GetService("StarterGui")
+Notify:SetCore("SendNotification",{
+Title="Service";
+Text=text})
+Duration=.5 or dur
+end
+
+local Txts={
+  "『H A R M O N I O U S』",
+  "『E V E R S T I L L』", 
+  "『A B S O L U T E』", 
+  "『I M M U T A B L E』", 
+  "『U L T I M A T E』", 
+  "『E T E R N A L』", 
+  "『I N F I N I T E』", 
+  "『B A L A N C E D』"
+}
+function EquinoxTexts()
+local TweenService=game.TweenService
+local Tinfo=TweenInfo.new
+function Tween(obj, speed, whattype, anim,type)
+local Tinfo=TweenInfo.new
+local TweenService=game.TweenService
+local hii = Tinfo(speed, type, Enum.EasingDirection.Out)
+if whattype =="pos" then
+return TweenService:Create(obj, hii,{Position = anim}):Play()
+elseif whattype =="size" then
+return TweenService:Create(obj, hii,{Size = anim})
+elseif whattype =="bt" then
+return TweenService:Create(obj, hii,{BackgroundTransparency = anim}):Play()
+elseif whattype =="trans" then
+return TweenService:Create(obj, hii,{Transparency = anim}):Play()
+elseif whattype=="rot" then
+return TweenService:Create(obj, hii,{Rotation = anim}):Play()
+end
+end
+local Deb = game:GetService("Debris")
+local mrandom=math.random
+
+ function func(arg1) 
+		return Vector3.new(math.random(-arg1 * 10, arg1 * 10) / 10, math.random(-arg1 * 10, arg1 * 10) / 10, math.random(-arg1 * 10, arg1 * 10) / 10)
+	end
+local clone=ws:WaitForChild("EquinoxAssets"):Clone()
+local bbg=clone:WaitForChild("Bill")
+local txtclone=bbg:WaitForChild("Splash")
+local randomv3=bbg.StudsOffset+v3(mrandom(-20,5),mrandom(5,10),mrandom(-15,-10))
+local clonestk=txtclone:WaitForChild("TxtStroke")
+bbg.Parent=game.Players.LocalPlayer.Character.HumanoidRootPart
+bbg.Adornee=game.Players.LocalPlayer.Character.HumanoidRootPart
+bbg.StudsOffset=randomv3
+local gj
+clonestk.Thickness=0
+local rancol=math.random(1,2)
+local val = Instance.new("NumberValue")
+val.Value=1
+if rancol==1 then
+txtclone.TextColor3=rgb(255,255,255)
+clonestk.Color=rgb(0,0,0)
+gj=1
+elseif rancol==2 then
+gj=-1
+txtclone.TextColor3=rgb(0,0,0)
+clonestk.Color=rgb(255,255,255)
+end
+txtclone.Rotation=mrandom(-45,45)
+txtclone.Position=UDim2.fromScale(-5,10)
+txtclone.Text=Txts[math.random(1,#Txts)]
+--txtclone.AutomaticSize="X"
+local txtran=mrandom(1,8)
+
+coroutine.resume(coroutine.create(function()
+TweenService:Create(txtclone, Tinfo(0.5,Enum.EasingStyle.Quart),{
+  Position=UDim2.fromScale(math.random(-5.5,-1.5),math.random(-1.75,-1));
+  Size=UDim2.fromScale(7.5,1.5);
+  Rotation=mrandom(-20,20);
+}):Play()
+TweenService:Create(val, Tinfo(0.5,Enum.EasingStyle.Quart),{
+  Value=0;
+}):Play()
+local lol
+local res=time()
+
+lol=game:GetService("RunService").Heartbeat:Connect(function()
+if bbg and bbg.Parent then 
+bbg.StudsOffsetWorldSpace=randomv3+v3(sin((time() - res)*6*gj),HumanoidRoot.Position.Y*sin((time()-res)*8*gj),sin((time()-gj)*4*gj))+func(val.Value)
+else
+lol:Disconnect()
+end
+end)
+wait(1)
+Deb:AddItem(bbg,1)
+TweenService:Create(txtclone, Tinfo(0.5,Enum.EasingStyle.Quart,Enum.EasingDirection.In),{
+  Size=UDim2.fromScale(1,.5);
+  Transparency=1
+}):Play()
+TweenService:Create(clonestk, Tinfo(0.5,Enum.EasingStyle.Quart,Enum.EasingDirection.In),{
+  Thickness=2.5
+}):Play()
+txtclone.TextScaled=false
+TweenService:Create(txtclone, Tinfo(0.5,Enum.EasingStyle.Quart,Enum.EasingDirection.In),{
+  Transparency=1
+}):Play()
+
+end))
+end
 
 
+function EquinoxAssets()
+--//Stroke 
+wait(.5)
+local nr=NumberRange.new
+
+local particlefolder=Instance.new("Folder",ws)
+particlefolder.Name="EquinoxAssets"
+local stk=Instance.new("UIStroke",modet)
+stk.Color=rgb(255,255,255)
+stk.Thickness=1
+local gr1=Instance.new("UIGradient",modet)
+gr1.Offset=v2(-.1,0)
+gr1.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(.225,rgb(100,100,100)),
+  csk(.322,rgb(255,255,255)),
+  csk(.403,rgb(0,0,0)),
+  csk(.465,rgb(255,255,255)),
+  csk(.488,rgb(0,0,0)),
+  csk(.501,rgb(0,0,0)),
+  csk(.64,rgb(0,0,0)),
+  csk(.694,rgb(0,0,0)),
+  csk(.747,rgb(0,0,0)),
+  csk(.784,rgb(0,0,0)),
+  csk(.941,rgb(100,100,100)),
+  csk(1,rgb(0,0,0))
+})
+gr1.Rotation=87
+gr1.Name="Grad1"
+gr1.Enabled=true
+local gr2=Instance.new("UIGradient",stk)
+gr2.Offset=v2(.25,0)
+gr2.Color=cs({
+  csk(0,rgb(0,0,0)),
+  csk(.289,rgb(100,100,100)),
+  csk(.374,rgb(0,0,0)),
+  csk(.431,rgb(150,150,150)),
+  csk(.497,rgb(0,0,0)),
+  csk(.514,rgb(0,0,0)),
+  csk(.668,rgb(100,100,100)),
+  csk(.765,rgb(255,255,255)),
+  csk(.784,rgb(100,100,100)),
+  csk(.941,rgb(0,0,0)),
+  csk(1,rgb(255,255,255)),
+})
+gr2.Rotation=87 
+gr2.Name="Grad2"
+gr2.Enabled=true
+
+--//Assets 
+local bbg2=Instance.new("BillboardGui",particlefolder)
+bbg2.Size=u2(20,0,20,0)
+bbg2.Adornee=nil
+bbg2.Name="Bill"
+bbg2.StudsOffsetWorldSpace=v3(0,0,0)
+bbg2.StudsOffset = Vector3.new(7.5, -10, 8.5)
+bbg2.StudsOffsetWorldSpace = Vector3.new(0, 0, -15)
+local lbl=Instance.new("TextLabel",bbg2)
+lbl.Name="Splash"
+lbl.Text=" "
+lbl.TextColor3=rgb(255,255,255)
+lbl.Size=u2(7,0,1.5,0)
+lbl.Position=u2(0,0,0,0)
+lbl.BackgroundTransparency=1
+lbl.FontFace=Font.new([[rbxassetid://12187376739]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+lbl.TextSize=15
+lbl.TextScaled=false
+local stk0=Instance.new("UIStroke",lbl)
+stk0.Name="TxtStroke"
+stk0.Color=rgb(255,255,255)
+stk0.Thickness=1
+
+Asset("star.png")
+
+
+--// Effects 
+local nums=NumberSequence.new 
+local numk=NumberSequenceKeypoint.new
+local att1=Instance.new("Attachment",particlefolder)
+att1.Name="Black Pulse"
+att1.CFrame=cf(0,1.2,0)
+local sq1=Instance.new("ParticleEmitter",att1)
+sq1.Name="Square"
+sq1.Color=cs({
+  csk(0,rgb(0,0,0)),
+  csk(1,rgb(0,0,0)),
+})
+
+sq1.Brightness=8 
+sq1.Size=nums({
+  numk(0,0),
+  numk(0.055,26.763),
+  numk(0.120,40),
+  numk(0.234,48),
+  numk(0.39,52),
+  numk(0.612,54),
+  numk(1,56),
+})
+sq1.Texture="rbxassetid://108130357346045"
+sq1.Orientation="VelocityPerpendicular"
+sq1.Transparency=nums({
+  numk(0,0),
+  numk(.2,0),
+  numk(.59,.238),
+  numk(1,1),
+})
+sq1.Enabled=false
+sq1.Lifetime=nr(.44,.44)
+sq1.Rate=7
+sq1.Rotation=nr(45,45)
+sq1.Speed=nr(.001,.001)
+sq1.SpreadAngle=Vector2.new(0,0)
+sq1.EmissionDirection="Top"
+sq1.FlipbookFramerate=nr(1,1)
+sq1.FlipbookLayout="Grid4x4"
+sq1.FlipbookMode="OneShot"
+local att2=Instance.new("Attachment",particlefolder)
+att2.Name="White Pulse"
+att2.CFrame=cf(0,4,0)
+local sq2=Instance.new("ParticleEmitter",att2)
+sq2.Name="Square"
+sq2.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255)),
+})
+
+sq2.Brightness=8 
+sq2.Size=nums({
+  numk(0,0),
+  numk(0.055,26.763),
+  numk(0.120,40),
+  numk(0.234,48),
+  numk(0.39,52),
+  numk(0.612,54),
+  numk(1,56),
+})
+sq2.Texture="rbxassetid://108130357346045"
+sq2.Orientation="FacingCamera"
+sq2.Transparency=nums({
+  numk(0,0),
+  numk(.2,0),
+  numk(.59,.238),
+  numk(1,1),
+})
+sq2.Enabled=false
+sq2.Lifetime=nr(.44,.44)
+sq2.Rate=7
+sq2.Rotation=nr(45,45)
+sq2.Speed=nr(.001,.001)
+sq2.SpreadAngle=Vector2.new(0,0)
+sq2.EmissionDirection="Top"
+sq2.FlipbookFramerate=nr(1,1)
+sq2.FlipbookLayout="Grid4x4"
+sq2.FlipbookMode="OneShot"
+
+local charge1att=Instance.new("Attachment",particlefolder)
+charge1att.Name="ParticleAttachmets"
+charge1att.CFrame=cf()
+local e0=Instance.new("ParticleEmitter",charge1att)
+e0.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+e0.Orientation="VelocityPerpendicular"
+e0.Size=nums({
+  numk(0,0),
+  numk(.226,24),
+  numk(.5,33),
+  numk(1,42),
+})
+e0.Transparency=nums({
+  numk(0,1),
+  numk(1,.7),
+  numk(1,1),
+})
+e0.Texture="rbxassetid://130341645640774"
+e0.Name="Shock1"
+e0.EmissionDirection="Top"
+e0.Enabled=false
+e0.Lifetime=nr(.25,.25)
+e0.Rate=7
+e0.Rotation=nr(0,0)
+e0.RotSpeed=nr(0,0)
+e0.Speed=nr(.002,.002)
+e0.SpreadAngle=v2(360,360)
+e0.VelocitySpread=360
+e0.FlipbookFramerate=nr(1,1)
+e0.FlipbookMode="OneShot"
+e0.FlipbookLayout="Grid4x4"
+
+local e1=Instance.new("ParticleEmitter",charge1att)
+e1.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+e1.Orientation="VelocityPerpendicular"
+e1.Size=nums({
+  numk(0,0),
+  numk(.226,24),
+  numk(.5,33),
+  numk(1,42),
+})
+e1.Transparency=nums({
+  numk(0,1),
+  numk(1,.7),
+  numk(1,1),
+})
+e1.Texture="rbxassetid://130341645640774"
+e1.Name="Shock2"
+e1.EmissionDirection="Top"
+e1.Enabled=false
+e1.Lifetime=nr(.25,.25)
+e1.Rate=7
+e1.Rotation=nr(0,0)
+e1.RotSpeed=nr(0,0)
+e1.Speed=nr(.002,.002)
+e1.SpreadAngle=v2(360,360)
+e1.VelocitySpread=360
+e1.FlipbookFramerate=nr(1,1)
+e1.FlipbookMode="OneShot"
+e1.FlipbookLayout="Grid4x4"
+
+local e2=Instance.new("ParticleEmitter",charge1att)
+e2.Name="Impact1"
+e2.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+e2.Brightness=20
+e2.Orientation="VelocityPerpendicular"
+e2.Size=nums({
+  numk(0,0),
+  numk(.14,11.5),
+  numk(.42,18),
+  numk(1,21,.01),
+})
+e2.Texture="rbxassetid://18140248952"
+e2.Transparency=nums({
+  numk(0,0),
+  numk(1,0),
+})
+e2.ZOffset=-.1
+e2.Enabled=false 
+e2.EmissionDirection="Top"
+e2.Lifetime=nr(.4,.4)
+e2.Rate=7
+e2.Rotation=nr(0,0)
+e2.RotSpeed=nr(0,0)
+e2.Speed=nr(.002,.002)
+e2.SpreadAngle=v2(360,360)
+e2.VelocitySpread=360 
+e2.FlipbookFramerate=nr(1,1)
+e2.FlipbookLayout="Grid4x4"
+e2.FlipbookMode="OneShot"
+
+local e3=Instance.new("ParticleEmitter",charge1att)
+e3.Name="Impact2"
+e3.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+e3.Brightness=20
+e3.Orientation="VelocityPerpendicular"
+e3.Size=nums({
+  numk(0,0),
+  numk(.14,11.5),
+  numk(.42,18),
+  numk(1,21,.01),
+})
+e3.Texture="rbxassetid://18140248952"
+e3.Transparency=nums({
+  numk(0,0),
+  numk(1,0),
+})
+e3.ZOffset=-.1
+e3.Enabled=false 
+e3.EmissionDirection="Top"
+e3.Lifetime=nr(.4,.4)
+e3.Rate=7
+e3.Rotation=nr(0,0)
+e3.RotSpeed=nr(0,0)
+e3.Speed=nr(.002,.002)
+e3.SpreadAngle=v2(360,360)
+e3.VelocitySpread=360 
+e3.FlipbookFramerate=nr(1,1)
+e3.FlipbookLayout="Grid4x4"
+e3.FlipbookMode="OneShot"
+
+local e4=Instance.new("ParticleEmitter",charge1att)
+e4.Name="Impact3"
+e4.Brightness=20
+e4.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+e4.Orientation="VelocityPerpendicular"
+e4.Size=nums({
+  numk(0,0),
+  numk(.4,18),
+  numk(1,21,.1),
+})
+e4.Texture="rbxassetid://13800461961"
+e4.Transparency=nums({
+  numk(0,.8),
+  numk(1,1),
+})
+e4.ZOffset=-.1 
+e4.Enabled=false 
+e4.Rate=7
+e4.Lifetime=nr(.3,.3)
+e4.EmissionDirection="Top"
+e4.Rotation=nr(0,0)
+e4.RotSpeed=nr(0,0)
+e4.Speed=nr(.002,.002)
+e4.SpreadAngle=v2(360,360)
+e4.VelocitySpread=360 
+e4.FlipbookFramerate=nr(1,1)
+e4.FlipbookLayout="Grid4x4"
+e4.FlipbookMode="OneShot"
+
+local e5=Instance.new("ParticleEmitter",charge1att)
+e5.Name="Impact4"
+e5.Brightness=20
+e5.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+e5.Orientation="VelocityPerpendicular"
+
+e5.Size=nums({
+  numk(0,0),
+  numk(.4,18),
+  numk(1,21,.1),
+})
+e5.Texture="rbxassetid://13800461961"
+e5.Transparency=nums({
+  numk(0,.8),
+  numk(1,1),
+})
+e5.ZOffset=-.1 
+e5.Rate=7
+e5.Enabled=false 
+e5.Lifetime=nr(.3,.3)
+e5.EmissionDirection="Top"
+e5.Rotation=nr(0,0)
+e5.RotSpeed=nr(0,0)
+e5.Speed=nr(.002,.002)
+e5.SpreadAngle=v2(360,360)
+e5.VelocitySpread=360 
+e5.FlipbookFramerate=nr(1,1)
+e5.FlipbookLayout="Grid4x4"
+e5.FlipbookMode="OneShot"
+
+local e6=Instance.new("ParticleEmitter",charge1att)
+e6.Name="Pulse1"
+e6.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+e6.Brightness=15 
+e6.Orientation="FacingCamera"
+e6.Size=nums({
+  numk(0,0),
+  numk(.15,7),
+  numk(.3,11),
+  numk(.6,13),
+  numk(1,14),
+})
+e6.Texture="rbxassetid://119057920510209"
+e6.Transparency=nums({
+  numk(0,0),
+  numk(1,1),
+})
+e6.EmissionDirection="Top"
+e6.Enabled=false 
+e6.Rate=7
+e6.Lifetime=nr(.6,.6)
+e6.Rotation=nr(0,360)
+e6.RotSpeed=nr(0,0)
+e6.SpreadAngle=v2(0,0)
+e6.VelocitySpread=0 
+e6.FlipbookFramerate=nr(1,1)
+e6.FlipbookLayout="Grid4x4"
+e6.FlipbookMode="OneShot"
+
+local e7=Instance.new("ParticleEmitter",charge1att)
+e7.Name="Pulse2"
+e7.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+e7.Brightness=15 
+e7.Orientation="FacingCamera"
+e7.Size=nums({
+  numk(0,0),
+  numk(.15,7),
+  numk(.3,11),
+  numk(.6,13),
+  numk(1,14),
+})
+e7.Texture="rbxassetid://119057920510209"
+e7.Transparency=nums({
+  numk(0,0),
+  numk(1,1),
+})
+e7.EmissionDirection="Top"
+e7.Enabled=false 
+e7.Rate=7
+e7.Lifetime=nr(.6,.6)
+e7.Rotation=nr(0,360)
+e7.RotSpeed=nr(0,0)
+e7.SpreadAngle=v2(0,0)
+e7.VelocitySpread=0 
+e7.FlipbookFramerate=nr(1,1)
+e7.FlipbookLayout="Grid4x4"
+e7.FlipbookMode="OneShot"
+
+local e8=Instance.new("ParticleEmitter",charge1att)
+e8.Name="Pulse3"
+e8.Brightness=15
+e8.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+e8.Orientation="VelocityPerpendicular"
+--0 0 0 0.156376 9.1546 0 0.394376 15.4639 0 0.606376 17.4659 0 1 18.2 0 
+e8.Size=nums({
+  numk(0,0),
+  numk(.15,9),
+  numk(.39,15),
+  numk(1,18.2),
+})
+e8.Texture="rbxassetid://98161445784635"
+e8.Transparency=nums({
+  numk(0,.5),
+  numk(1,1),
+})
+e8.EmissionDirection="Top"
+e8.Enabled=false
+e8.Rate=7
+e8.Lifetime=nr(.3,.3)
+e8.Speed=nr(.001,.001)
+e8.SpreadAngle=v2(180,180)
+e8.VelocitySpread=180 
+e8.FlipbookFramerate=nr(1,2)
+e8.FlipbookLayout="Grid4x4"
+e8.FlipbookMode="OneShot"
+
+local e9=Instance.new("ParticleEmitter",charge1att)
+e9.Name="Pulse4"
+e9.Brightness=15
+e9.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+e9.Orientation="VelocityPerpendicular"
+--0 0 0 0.156376 9.1546 0 0.394376 15.4639 0 0.606376 17.4659 0 1 18.2 0 
+e9.Size=nums({
+  numk(0,0),
+  numk(.15,9),
+  numk(.39,15),
+  numk(1,18.2),
+})
+e9.Texture="rbxassetid://98161445784635"
+e9.Transparency=nums({
+  numk(0,.5),
+  numk(1,1),
+})
+e9.EmissionDirection="Top"
+e9.Enabled=false
+e9.Rate=7
+e9.Lifetime=nr(.3,.3)
+e9.Speed=nr(.001,.001)
+e9.SpreadAngle=v2(180,180)
+e9.VelocitySpread=180 
+e9.FlipbookFramerate=nr(1,2)
+e9.FlipbookLayout="Grid4x4"
+e9.FlipbookMode="OneShot"
+
+local e10=Instance.new("ParticleEmitter",charge1att)
+e10.Name="WhiteStarPulse"
+e10.Orientation="FacingCamera"
+e10.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+--0 0 0 0.156376 7.042 0 0.394376 11.8953 0 0.606376 13.4353 0 1 14 0 
+e10.Size=nums({
+  numk(0,0),
+  numk(.15,7),
+  numk(.39,11),
+  numk(.6,13),
+  numk(1,14),
+})
+e10.Transparency=nums({
+  numk(0,0),
+  numk(1,1),
+})
+e10.ZOffset=1
+e10.Texture=Asset("star.png")
+e10.EmissionDirection="Top"
+e10.Enabled=false 
+e10.Lifetime=nr(.6,.6)
+e10.Rate=3.5
+e10.Rotation=nr(0,360)
+e10.RotSpeed=nr(0,0)
+e10.Speed=nr(0,0)
+e10.SpreadAngle=v2(0,0)
+e10.VelocitySpread=0 
+e10.FlipbookFramerate=nr(1,1)
+e10.FlipbookLayout="None"
+e10.FlipbookMode="OneShot"
+
+local e11=Instance.new("ParticleEmitter",charge1att)
+e11.Name="BlackStarPulse"
+e11.Texture=Asset("Renegade Assets/star.png")
+e11.Orientation="FacingCamera"
+e11.Color=cs({
+  csk(0,rgb(0,0,0)),
+  csk(1,rgb(0,0,0)),
+})
+--0 0 0 0.156376 7.042 0 0.394376 11.8953 0 0.606376 13.4353 0 1 14 0 
+e11.Size=nums({
+  numk(0,0),
+  numk(.15,7),
+  numk(.39,11),
+  numk(.6,13),
+  numk(1,14),
+})
+e11.Transparency=nums({
+  numk(0,0),
+  numk(1,1),
+})
+e11.ZOffset=1
+e11.EmissionDirection="Top"
+e11.Enabled=false 
+e11.Lifetime=nr(.6,.6)
+e11.Rate=3.5
+e11.Rotation=nr(0,360)
+e11.RotSpeed=nr(0,0)
+e11.Speed=nr(0,0)
+e11.SpreadAngle=v2(0,0)
+e11.VelocitySpread=0 
+e11.FlipbookFramerate=nr(1,1)
+e11.FlipbookLayout="None"
+e11.FlipbookMode="OneShot"
+
+local e12=Instance.new("ParticleEmitter",charge1att)
+e12.Name="Star1"
+e12.Brightness=15 
+e12.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+--0 0 0 0.1 17.5 0 1 0 0 
+e12.Orientation="FacingCamera"
+e12.Size=nums({
+  numk(0,0),
+  numk(.1,17),
+  numk(1,0),
+})
+e12.Texture=Asset("star.png")
+e12.Transparency=nums({
+  numk(0,0),
+  numk(1,0),
+})
+e12.ZOffset=15 
+e12.EmissionDirection="Top"
+e12.Enabled=false 
+e12.Lifetime=nr(.3,.3)
+e12.Rate=7
+e12.Rotation=nr(0,0)
+e12.RotSpeed=nr(0,0)
+e12.Speed=nr(0,0)
+e12.SpreadAngle=v2(0,0)
+e12.VelocitySpread=0
+e12.FlipbookFramerate=nr(1,1)
+e12.FlipbookLayout="None"
+e12.FlipbookMode="OneShot"
+
+local e13=Instance.new("ParticleEmitter",charge1att)
+e13.Name="Star2"
+e13.Brightness=15 
+e13.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+--0 0 0 0.1 17.5 0 1 0 0 
+e13.Orientation="FacingCamera"
+e13.Size=nums({
+  numk(0,0),
+  numk(.1,17),
+  numk(1,0),
+})
+e13.Texture=Asset("star.png")
+e13.Transparency=nums({
+  numk(0,0),
+  numk(1,0),
+})
+e13.ZOffset=15 
+e13.EmissionDirection="Top"
+e13.Enabled=false 
+e13.Lifetime=nr(.3,.3)
+e13.Rate=7
+e13.Rotation=nr(0,0)
+e13.RotSpeed=nr(0,0)
+e13.Speed=nr(0,0)
+e13.SpreadAngle=v2(0,0)
+e13.VelocitySpread=0
+e13.FlipbookFramerate=nr(1,1)
+e13.FlipbookLayout="None"
+e13.FlipbookMode="OneShot"
+
+local e14=Instance.new("ParticleEmitter",charge1att)
+e14.Color=cs({
+  csk(0,rgb(0,0,0)),
+  csk(1,rgb(0,0,0)),
+})
+e14.Name="Stardark1"
+e14.Orientation="FacingCamera"
+--0 0 0 0.1 22.75 0 1 0 0 
+e14.Size=nums({
+  numk(0,0),
+  numk(.1,22.75),
+  numk(1,0),
+})
+e14.Texture=Asset("star.png")
+e14.Transparency=nums({
+  numk(0,0),
+  numk(1,0)
+})
+e14.ZOffset=14 
+e14.EmissionDirection="Top"
+e14.Enabled=false 
+e14.Lifetime=nr(.3,.3)
+e14.Rate=7
+e14.Rotation=nr(0,0)
+e14.RotSpeed=nr(0,0)
+e14.Speed=nr(0,0)
+e14.SpreadAngle=v2(0,0)
+e14.VelocitySpread=0 
+e14.FlipbookFramerate=nr(1,1)
+e14.FlipbookLayout="None"
+e14.FlipbookMode="OneShot"
+
+local e15=Instance.new("ParticleEmitter",charge1att)
+e15.Name="Stardark2"
+e15.Color=cs({
+  csk(0,rgb(0,0,0)),
+  csk(1,rgb(0,0,0)),
+})
+e15.Orientation="FacingCamera"
+--0 0 0 0.1 22.75 0 1 0 0 
+e15.Size=nums({
+  numk(0,0),
+  numk(.1,22.75),
+  numk(1,0),
+})
+e15.Texture=Asset("star.png")
+e15.Transparency=nums({
+  numk(0,0),
+  numk(1,0)
+})
+e15.ZOffset=14 
+e15.EmissionDirection="Top"
+e15.Enabled=false 
+e15.Lifetime=nr(.3,.3)
+e15.Rate=7
+e15.Rotation=nr(0,0)
+e15.RotSpeed=nr(0,0)
+e15.Speed=nr(0,0)
+e15.SpreadAngle=v2(0,0)
+e15.VelocitySpread=0 
+e15.FlipbookFramerate=nr(1,1)
+e15.FlipbookLayout="None"
+e15.FlipbookMode="OneShot"
+
+local particlefolderclone=ws:FindFirstChild("EquinoxAssets"):Clone()
+particlefolderclone.Parent=HumanoidRoot
+
+
+
+
+Hmm(10)
+coroutine.resume(coroutine.create(function()
+local ff 
+ff=game:GetService("RunService").RenderStepped:Connect(function()
+if Mode~="E q u i n o x" then
+gr1:Destroy()
+gr2:Destroy()
+stk:Destroy()
+att1:Destroy()
+att2:Destroy()
+bbg2:Destroy()
+charge1att:Destroy()
+ws:FindFirstChild("EquinoxAssets"):Destroy()
+particlefolderclone:Destroy()
+ff:Disconnect()
+Hmm(0)
+end
+
+if game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("EquinoxAssets") then 
+local Effects=game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("EquinoxAssets"):FindFirstChild("ParticleAttachmets")
+if Effects then 
+if Torso:FindFirstChild("ParticleAttachmets") then 
+Effects:Destroy() 
+else
+Effects.Parent=Torso
+print("Parented")
+end
+end
+else
+ws:FindFirstChild("EquinoxAssets"):Clone().Parent=game.Players.LocalPlayer.Character.HumanoidRootPart
+end
+local Torso=SafePart("Accessory (Black)")
+if not Torso:FindFirstChild("ParticleAttachmets") then 
+ws:FindFirstChild("EquinoxAssets"):FindFirstChild("ParticleAttachmets"):Clone().Parent=Torso
+end
+end)
+end))
+coroutine.resume(coroutine.create(function()
+while wait() do
+if Mode~="E q u i n o x" then
+break
+end
+for i=1,255,25 do 
+gr1.Color=cs({
+  csk(0,rgb(i,i,i)),
+  csk(.45,rgb(i,i,i)),
+  csk(.55,rgb(255-i,255-i,255-i)),
+  csk(1,rgb(255-i,255-i,255-i))
+})
+swait()
+end
+wait()
+for i=1,255,25 do 
+gr1.Color=cs({
+  csk(0,rgb(255-i,255-i,255-i)),
+  csk(.45,rgb(255-i,255-i,255-i)),
+  csk(.55,rgb(i,i,i)),
+  csk(1,rgb(i,i,i))
+})
+swait()
+end
+end
+end))
+end
+
+function EquinoxBeats(start,dur,current)
+if current >= start and current <= dur and Mode=="E q u i n o x" then
+if not Debounce then
+Debounce= true
+
+coroutine.resume(coroutine.create(function() 
+local beatCount = 0
+local beatInterval = 0.3
+while current <= dur and Mode=="E q u i n o x" do
+pcall(function()
+local Particles=game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("EquinoxAssets")
+local Particle1=Particles:FindFirstChild("ParticleAttachmets")
+local Torso=SafePart("Accessory (Black)")
+if Particle1 and Particle1.Parent ~=Torso then 
+Particle1.Parent=Torso
+end
+for _,v in ipairs(Particles:GetDescendants()) do
+if v:IsA("ParticleEmitter") then
+v.Enabled=true
+end
+end
+for _,v in ipairs(Torso:GetChildren()) do
+if v.Name=="ParticleAttachmets" and v.Parent~="CamFocus" then
+for _,c in ipairs(v:GetChildren()) do
+if c:IsA("ParticleEmitter") then 
+c.Enabled=true
+end
+end
+end
+end
+end)
+
+--print("Beat at " .. current .. " seconds")
+pcall(function()
+EquinoxTexts()
+end)
+beatCount = beatCount + 1
+local waitTime = math.min(beatInterval, dur - current)
+if waitTime > 0 then
+wait(waitTime)
+pcall(function()
+for _,v in ipairs(game.Players.LocalPlayer.Character.HumanoidRootPart:GetDescendants()) do
+if v:IsA("ParticleEmitter") then
+v.Enabled=false
+end
+end
+for _,v in ipairs(Torso:GetDescendants()) do
+if v:IsA("ParticleEmitter") then
+v.Enabled=false
+end
+end
+end)
+current = MusicPlayer.TimePosition
+else
+break
+end
+end
+Debounce = false
+end))
+ end
+end
+end
+
+
+function Chromatic(UHH)
+wait(1)
+function Tween(obj, speed, whattype, anim)
+local Tinfo=TweenInfo.new
+local TweenService=game.TweenService
+local hii = Tinfo(speed, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+if whattype =="pos" then
+return TweenService:Create(obj, hii,{Position = anim})
+elseif whattype =="size" then
+return TweenService:Create(obj, hii,{Size = anim})
+elseif whattype =="bt" then
+return TweenService:Create(obj, hii,{BackgroundTransparency = anim})
+elseif whattype =="trans" then
+return TweenService:Create(obj, hii,{Transparency = anim})
+elseif whattype=="rot" then
+return TweenService:Create(obj, hii,{Rotation = anim})
+end
+end
+local fx = Instance.new("Folder", ws)
+fx.Name = "Effects"
+local folder=Instance.new("Folder",fx)
+folder.Name="Idk"
+local mpart=Instance.new("MeshPart",folder)
+mpart.Size=Vector3.new(1,1,1)
+mpart.MeshId="rbxassetid://2570899763"
+mpart.CanCollide=true 
+mpart.Position=v3(0,-10,0)
+mpart.Transparency=1
+mpart.Massless=true 
+mpart.Name="Mpart"
+wait(.1)
+local DDD=Instance.new("Part",fx)
+DDD.CanCollide=false
+DDD.Massless=true
+DDD.CanQuery=false
+DDD.Material="Neon"
+DDD.Transparency=1
+DDD.Anchored=true 
+DDD.Size=v3(1,1,1) 
+DDD.Position=v3(HumanoidRoot.Position.X,1000,HumanoidRoot.Position.Z)
+local v10 = folder:WaitForChild("Mpart")
+local marker = 77
+local startfreq = 0
+local endfreq = 770
+
+local RingParts = {}
+local Table1 = {}
+local initialCFrames = {}
+count=1
+-- Pre-calculate positions to avoid repeated calculations
+for i = 1, marker do
+local v = v10:Clone()
+
+count+=1
+v.Name = count
+v.Size = Vector3.new(1, 1, 1)
+v.Material = Enum.Material.Neon
+v.Color = Color3.new(0, 0, 0)
+v.CanCollide = false 
+v.Massless = true
+v.CanQuery = false
+v.Anchored = false
+v.CastShadow = false
+v.Reflectance = 0.5
+v.Transparency = 0
+v.Parent=fx
+
+local wel = Instance.new("Weld", v)
+wel.Part0 = DDD
+wel.Part1 = v
+
+local angle = 4.8 * count 
+local initialCF = CFrame.Angles(0, math.rad(angle), 0) * CFrame.new(0, -3.1, 15)
+wel.C0 = initialCF
+
+initialCFrames[i] = initialCF
+table.insert(RingParts, v)
+table.insert(Table1, wel)
+end
+wait(1)
+--[[
+for _,v in ipairs(fx:GetChildren()) do
+if v:IsA("MeshPart") then 
+v.CanCollide=true
+end
+end]]
+local wel1 = Instance.new("Weld", DDD)
+wel1.Part0=DDD 
+wel1.Part1=HumanoidRoot
+function This11(dt, lol)
+local currentTime = tick()
+local spectrum=MusicPlayer.Analyzer:GetSpectrum()
+local spectrumCount = #spectrum
+local Theme=lol
+for i, v in ipairs(fx:GetChildren()) do
+if v:IsA("MeshPart") then
+local spectrumIndex = math.floor((tonumber(v.Name) / marker) * #spectrum) + 1
+spectrumIndex = math.clamp(spectrumIndex, 1, #spectrum)
+local magnitude = spectrum[spectrumIndex] or 0
+local scale = math.min(magnitude / 0.0010 * 2, 550)
+local i_pos = tonumber(v.Name) / marker 
+if Theme=="Monochrome" then
+v.Color=Color3.fromHSV(1, 0,(-tick() * .15 + i_pos)%1)
+elseif Theme=="Rainbow" then
+v.Color=Color3.fromHSV((-tick() * .15 + i_pos)%1,1,1)
+elseif Theme=="Ice" then
+v.Color=Color3.fromHSV(.55,(-tick() * .15 + i_pos)%1,1)
+elseif Theme=="Crimson" then
+v.Color=Color3.fromHSV(1,1,(-tick() * .15 + i_pos)%1)
+elseif Theme=="Spooky" then
+v.Color=Color3.fromHSV(.1,1,(-tick() * .15 + i_pos)%1)
+elseif Theme=="Rainbow2" then
+v.Color=Color3.fromHSV(tick()*.55%1,1,1)
+--v.Color=Color3.fromRGB(0,(tick()*.55+i_pos%150+100*sin(upd/20)),(-tick()*.55+i_pos%255+100*sin(upd/50)))
+elseif Theme=="Matrix" then
+end
+local Torso=SafePart("Accessory (Black)")
+local targetSize = Vector3.new(1,1, math.min(10 * scale,10.5 ))
+v.Size = v.Size:Lerp(targetSize,.25,.125)
+Tween(DDD,1.5,"pos",v3(Torso.Position.X,Torso.Position.Y+2,Torso.Position.Z)):Play()
+Tween(DDD,.001,"rot",v3(0,0,0)):Play()
+local wel = Table1[i]
+if wel and initialCFrames[i] then
+wel.C0 = initialCFrames[i] * CFrame.Angles(0, 0, math.rad(scale * 0.1))
+end
+end
+end
+
+end
+coroutine.resume(coroutine.create(function()
+while game:GetService("RunService").Heartbeat:Wait(.00001) do
+if Mode ~= "Chromatic" then 
+fx:Destroy()
+return 
+end
+This11(0.033, "Rainbow2")
+end
+end))
+coroutine.resume(coroutine.create(function()
+while wait(5) do
+if Mode~="Chromatic" then 
+--[[for _,v in ipairs(ws:GetChildren()) do 
+if v.Name=="Effects" then 
+v:Destroy()
+end
+end]]
+Hmm(0)
+break
+end
+--fine(HumanoidRoot,.005,"pos",Vector3.new(Torso.Position.X,Torso.Position.Y,Torso.Position.Z)):Play()
+end
+end))
+end
 
 
 
@@ -1601,9 +2610,10 @@ if INTROANIM then
 wait(1) -- Wait for the reanimation to load properly
 Introduction()
 else
-wait(.5) -- Wait for the reanimation to load properly
-changeMode("Fracture")
-ChangeAndRecolor("Fracture",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,69,95),rgb(182,235,255))
+wait(.075) -- Wait for the reanimation to load properly
+changeMode("E q u i n o x")
+ChangeAndRecolor("E q u i n o x",true,Font.new([[rbxassetid://12187376739]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(255,255,255),rgb(0,0,0))
+EquinoxAssets()
 end
 
 
@@ -1646,7 +2656,8 @@ changeMode("Chaos")
 elseif io.KeyCode==Enum.KeyCode.Five and Mode~="Chromatic" then
 changeMode("Chromatic")
 ChangeAndRecolor("Chromatic",true,Font.new([[rbxasset://fonts/families/PermanentMarker.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(255,255,255),rgb(0,0,0),true)
-Chromatic()
+Chromatic(Torso.Position.Y)
+
 
 elseif io.KeyCode==Enum.KeyCode.Six and Mode~="Fracture" then
 changeMode("Fracture")
@@ -1658,15 +2669,20 @@ changeMode("Kronos")
 ChangeAndRecolor("Kronos",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Regular, Enum.FontStyle.Italic),rgb(255,247,138),rgb(254,251,209))
 
 
-elseif io.KeyCode==Enum.KeyCode.Eight and Mode~="Equinox" then
-changeMode("Equinox")
-ChangeAndRecolor("Equinox",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(255,255,255),rgb(0,0,0))
+elseif io.KeyCode==Enum.KeyCode.Eight and Mode~="E q u i n o x" then
+changeMode("E q u i n o x")
+ChangeAndRecolor("E q u i n o x",true,Font.new([[rbxassetid://12187376739]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(255,255,255),rgb(0,0,0))
+EquinoxAssets()
 
 
 elseif io.KeyCode==Enum.KeyCode.Nine and Mode~="Shard Surfer" then
 changeMode("Shard Surfer")
 ChangeAndRecolor("Shard | Surfer",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(93,228,255),rgb(255,233,93))
 
+
+elseif io.KeyCode==Enum.KeyCode.F then
+BBGVisibilty=not BBGVisibilty
+modet.Visible=BBGVisibilty
 
 elseif io.KeyCode==Enum.KeyCode.M and Mode=="Mayhem" then
 changeMode("Mayhem - No Hope")
@@ -1696,6 +2712,9 @@ end)
 game.Players.LocalPlayer.Chatted:Connect(function(m)
 if m:sub(1,6)==".mode/"then
 changeMode(m:sub(7))
+elseif m:sub(1,6)==".skip/" then 
+MusicPlayer.TimePosition=m:sub(7)
+sound.TimePosition=m:sub(7)
 end
 end)
 
@@ -1869,6 +2888,14 @@ end
 function MainAnimations()
 if not Running then return end
 if MusicPlayer.Volume==0 then return end
+--[[pcall(function()
+local char=game.Players.LocalPlayer.Character 
+for _,v in ipairs(char:GetChildren()) do 
+if v:IsA("Accessory") then 
+v.Handle.CanCollide=true
+end 
+end
+end)]]
 if Mode=="Chaos"then
 ChangeAndRecolor("Chaos",true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,0,0),BrickColor.random().Color)
 end
@@ -1881,8 +2908,8 @@ ClockTicky+=6.25
 end
 end
 Boost+=1*sound.PlaybackLoudness/50
-onnewcamera()
-ws.CurrentCamera.CameraSubject=righead
+--onnewcamera()
+--ws.CurrentCamera.CameraSubject=righead
 --sound.TimePosition=MusicPlayer.TimePosition
 --// Music Length Visualizer 
 local current = MusicPlayer.TimePosition
@@ -1901,7 +2928,16 @@ end
 if Mode=="Censored" or Mode=="Censored2" then
 SpecialAnim(187,212,"Censored2","Censored",current)
 end
+--59
+--78
+--101.5 
+--111 --121 --132
 
+EquinoxBeats(58.75,78,current)
+EquinoxBeats(101.35,110.5,current)
+EquinoxBeats(112,121.150,current)
+EquinoxBeats(122.5,132,current)
+EquinoxBeats(133.5,142.5,current)
 
 
 
@@ -1925,11 +2961,19 @@ end
 if Mode=="Chaos" then
 GLITCHERAUDIO["TextLabel_f"].Position=UDim2.new(0,math.random(-1,1),0,math.random(-1,1))
 modet.Position = UDim2.new(0,math.random(-1,1),0,math.random(-1,1))
-modet.Rotation = -2 * math.cos(sine / 1) + math.random(-3,3)
+modet.Rotation = -2 * math.cos(sp / 1) + math.random(-3,3)
 imag1.Rotation+=-1 + math.random(-5,5)
 imag2.Rotation+=1+sound.PlaybackLoudness/50 + math.random(-5,5)
 imag3.Rotation+=1+sound.PlaybackLoudness/25 + math.random(-5,5)
 imag4.Rotation+=-1-sound.PlaybackLoudness/10 + math.random(-5,5)
+elseif Mode=="E q u i n o x" then
+modet.Position = UDim2.new(0,0 + 4 * math.cos(sp / 17.5),0,0 - 5.5 * math.cos(sp / 22.5))
+modet.Rotation = 0 - 2 * math.cos(sp / 20)
+imag1.Rotation+=-1
+imag2.Rotation+=1+sound.PlaybackLoudness/75
+imag3.Rotation+=1+sound.PlaybackLoudness/50
+imag4.Rotation+=-1-sound.PlaybackLoudness/25
+GLITCHERAUDIO["TextLabel_f"].Position=UDim2.new(0,0,0,0)
 else
 modet.Position = UDim2.new(0,0,0,0)
 modet.Rotation = -5 * math.cos(sp / 32)
@@ -1940,11 +2984,16 @@ imag3.Rotation+=1+sound.PlaybackLoudness/50
 imag4.Rotation+=-1-sound.PlaybackLoudness/25
 end
 
-
+if Mode~="Chromatic" then
+if char:FindFirstChild("Effects") then 
+char.Effects:Destroy()
+end
+end
 
 
 game.Players.LocalPlayer.PlayerGui.TouchGui.TouchControlFrame.DynamicThumbstickFrame.Active=false
-ws.CurrentCamera.CameraSubject=righead
+--ws.CurrentCamera.CameraSubject=game.Players.LocalPlayer.Character:WaitForChild("CamFocus")
+--fine(game.Players.LocalPlayer.Character:WaitForChild("CamFocus"),1.5,"pos",game.Players.LocalPlayer.Character:WaitForChild(CAMERAFOCUS).Handle.Position)
 
 
 
@@ -1997,7 +3046,7 @@ end
 elseif walking then 
 if Mode=="Renegades" or Mode=="Mayhem" or Mode=="Chaos" or Mode=="Mayhem - No Hope" or Mode=="Chromatic" then
 setWalkSpeed(12)
-RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0),angles(-0.8726646259971648*sin(sine*5.5),1.5707963267948966,0)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0),angles(0.8726646259971648*sin(sine*5.5),-1.5707963267948966,0)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1+0.15*sin((sine+1.5)*5.5),-0.25+0.75*sin((sine+0.75)*5.5)),angles(0,1.5707963267948966,-0.2617993877991494-0.6981317007977318*sin((sine+0.5)*5.5))),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,angles(-1.8325957145940461,0,3.141592653589793+0.1832595714594046*sin(sine*5.5)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.3962634015954636,-0.04363323129985824*sin(sine*5.5),3.141592653589793-0.09599310885968812*sin(sine*5.5))),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1-0.15*sin((sine+1.5)*5.5),-0.25-0.75*sin((sine+0.75)*5.5)),angles(0,-1.5707963267948966,0.2617993877991494-0.6981317007977318*sin((sine+0.5)*5.5))),deltaTime) 
+RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0),angles(-0.8726646259971648*sin(sine*5.5),1.5707963267948966,0)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0),angles(0.8726646259971648*sin(sine*5.5),-1.5707963267948966,0)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1+0.15*sin((sine+1.5)*5.5),-0.25+0.75*sin((sine+0.75)*5.5)),angles(0,1.5707963267948966,-0.2617993877991494-0.6981317007977318*sin((sine+0.5)*5.5))),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,angles(-1.8325957145940461,0,3.141592653589793),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.3962634015954636,-0.04363323129985824*sin(sine*5.5),3.141592653589793-0.09599310885968812*sin(sine*5.5))),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1-0.15*sin((sine+1.5)*5.5),-0.25-0.75*sin((sine+0.75)*5.5)),angles(0,-1.5707963267948966,0.2617993877991494-0.6981317007977318*sin((sine+0.5)*5.5))),deltaTime) 
 if Mode=="Renegades" then
 if s1_1 and s1_2 and s1_3 and s1_4 then 
 if LEGACY then 
@@ -2082,7 +3131,7 @@ LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.75+0.25*sin((sine+0.5)*2.5),-1.015),an
 elseif Mode=="Kronos" then
 LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,0.35+0.25*sin((sine+0.45)*2.5),-0.5),angles(0,0,-0.3490658503988659-0.09599310885968812*sin((sine+0.75)*2.5))),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1+0.055*sin((sine+0.15)*2.5),0),angles(-1.9198621771937625-0.09599310885968812*sin((sine+0.5)*2.5),0,2.6179938779914944)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,7.5+1.25*sin(sine*2.5),0),angles(-1.3962634015954636+0.17453292519943295*sin((sine+0.25)*2.5),0,3.141592653589793)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.5-0.15*sin((sine+0.25)*2.5),-1),angles(-0.4363323129985824+0.17453292519943295*sin((sine+0.75)*2.5),-1.5707963267948966,0)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.35+0.25*sin((sine+0.5)*2.5),-1.25),angles(0,0,-2.0943951023931953)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-0.95+0.25*sin((sine+0.15)*2.5),-0.25),angles(-0.4363323129985824+0.2617993877991494*sin((sine+0.35)*2.5),1.5707963267948966,0)),deltaTime)  
 
-elseif Mode=="Equinox" then
+elseif Mode=="E q u i n o x" then
 LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.3+0.1*sin((sine+0.75)*2.5),-0.5+0.25*sin((sine+0.75)*2.5),-0.25-0.1*sin((sine+0.45)*2.5)),angles(-0.6981317007977318,0,-2.356194490192345-0.17453292519943295*sin((sine+0.35)*2.5))),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1-0.075*sin((sine+0.35)*2.5),0),angles(-2.007128639793479+0.09599310885968812*sin((sine+0.5)*2.5),-0.09599310885968812*sin((sine+0.2)*2.5),4.1887902047863905)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.35,0.15 * sin((sine+0.85)*2.5),-0.25),angles(-0.5235987755982988-0.09599310885968812*sin((sine+0.5)*2.5),0,2.530727415391778-0.1832595714594046*sin((sine+0.25)*2.5))),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.35,-0.15+0.2*sin((sine+0.5)*2.5),-0.5),angles(-0.5235987755982988-0.17453292519943295*sin((sine+0.55)*2.5),0.3490658503988659,0)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.6,-0.75+0.25*sin((sine+0.75)*2.5),0.25-0.1*sin((sine+0.25)*2.5)),angles(-0.3490658503988659+0.1832595714594046*sin((sine+0.25)*2.5),0.3490658503988659,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(1.5 * sin((sine+0.15)*2.5),7+0.75*sin((sine+0.75)*2.5),1 * sin((sine+0.85)*2.5)),angles(-1.4835298641951802+0.2617993877991494*sin((sine+0.2)*2.5),-0.17453292519943295,2.443460952792061)),deltaTime)  
 
 elseif Mode=="Mayhem - No Hope" then
@@ -2184,9 +3233,9 @@ end
 end
 
 --// Render the animations
-IsRendering = rus.RenderStepped:Connect(function(dt)
+IsRendering = rus.Heartbeat:Connect(function(dt)
 MainAnimations()
-This(dt)
+This1(dt)
 end)
 end
 
@@ -2215,6 +3264,9 @@ end
 if IsKeys then
 IsKeys=nil
 end
+if BBGVisibilty==false then 
+BBGVisibilty=true
+end
 game.SoundService:FindFirstChild("GlitcherAudioPlayer").TimePosition=0
 game.SoundService:FindFirstChild("GlitcherAudioPlayer"):Stop()
 game.SoundService:FindFirstChild("GlitcherAudioPlayer"):FindFirstChild("Sound2").TimePosition=0
@@ -2226,7 +3278,7 @@ if IsRendering1 then
 IsRendering1:Disconnect()
 IsRendering1=nil
 end
-if MainWeld1  then
+if MainWeld1 then
 MainWeld1:Destroy()
 MainWeld1=nil
 end
@@ -2234,12 +3286,15 @@ if MainWeld then
 MainWeld:Destroy()
 MainWeld=nil
 end
+if plrgui:FindFirstChild("VISgui") then 
+plrgui.VISgui:Destroy()
+end
 if stopreanimate then
 stopreanimate()
 wait(1)
-Chat("-rs")
+Chat("-rs ")
 wait(2)
-Chat("-pd")
+Chat("-pd ")
 end
 end
 
