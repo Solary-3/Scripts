@@ -2152,7 +2152,7 @@ e10.FlipbookMode="OneShot"
 
 local e11=Instance.new("ParticleEmitter",charge1att)
 e11.Name="BlackStarPulse"
-e11.Texture=Asset("Renegade Assets/star.png")
+e11.Texture=Asset("star.png")
 e11.Orientation="FacingCamera"
 e11.Color=cs({
   csk(0,rgb(0,0,0)),
