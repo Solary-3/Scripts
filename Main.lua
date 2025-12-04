@@ -63,9 +63,12 @@ local function BetterStopScript()
 	task.wait(0.25)
 	StopScript()
 end
-
+local function Chat(Message)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(Message)
+end
 Reanimate:MakeButton("Reanimate", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/lib/Reanimate.lua"))()
+    Chat("-net")
 end)
 if Global.OldGui ~= true then Reanimate:MakeLine() end
 Reanimate:MakeToggle("Permanent Death", function(Bool)
