@@ -739,7 +739,7 @@ imgl2b.ImageColor3 = Color3.new(0,0,0)
 
 function Asset(filename)
 if isfile("Renegade Assets/"..filename) then
-return Asset("Renegade Assets/"..filename)
+return getcustomasset("Renegade Assets/"..filename)
 else
 warn("Downloading Audio File "..filename)
 writefile("Renegade Assets/"..filename, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..filename.."?raw=true"))
