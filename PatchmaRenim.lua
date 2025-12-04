@@ -304,7 +304,7 @@ local ctrltp=false
 local placeholders=true
 local clickfling=false
 local highlightflingtargets=false
-local discharscripts=true 
+local discharscripts=false 
 local flingchangestate=3
 local respawntp=2
 local breakjointsmethod=3 
@@ -348,6 +348,7 @@ local ws=game.Workspace
 local FocusCam=ws.CurrentCamera.CameraSubject
 
 local function onnewcamera()
+coroutine.resume(coroutine.create(function()
 refcam()
 if camcon0 then 
 Disconnect(camcon0)
@@ -364,35 +365,36 @@ camcon0=Connect(GetPropertyChangedSignal(cam,"CFrame"),function()
 --[[if insGet(cam,"CFrame")~=camcf then
 insSet(cam,"CFrame",camcf)
 end]]
-if ws:FindFirstChild(game.Players.LocalPlayer.Name)[Global.RigHead] then
-FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(Global.RigHead).Handle
+if ws:WaitForChild("CamFocus") then
+FocusCam=ws:WaitForChild("CamFocus")
 else 
-FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChildOfClass("Accessory").Handle
+FocusCam=ws:WaitForChild("CamFocus")
 end
 end)
 
 camcon1=Connect(GetPropertyChangedSignal(cam,"CameraType"),function()
 if insGet(cam,"CameraType")~=enumCamS then
 insSet(cam,"CameraType",enumCamS)
-if ws:FindFirstChild(game.Players.LocalPlayer.Name)[Global.RigHead] then
-FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(Global.RigHead).Handle
+if ws:WaitForChild("CamFocus") then
+FocusCam=ws:WaitForChild("CamFocus")
 else 
-FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChildOfClass("Accessory").Handle
+FocusCam=ws:WaitForChild("CamFocus")
 end
 end
 end)
 if insGet(cam,"CameraType")~=enumCamS then
 insSet(cam,"CameraType",enumCamS)
 end
-if ws:FindFirstChild(game.Players.LocalPlayer.Name)[Global.RigHead] then
-FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(Global.RigHead).Handle
+if ws:WaitForChild("CamFocus") then
+FocusCam=ws:WaitForChild("CamFocus")
 else 
-FocusCam=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChildOfClass("Accessory").Handle
+FocusCam=ws:WaitForChild("CamFocus")
 end
+end))
 end
 
 camcon2=Connect(GetPropertyChangedSignal(ws,"CurrentCamera"),onnewcamera)
-onnewcamera()
+--onnewcamera()
 
 local rGravity=insGet(ws,"Gravity")
 Connect(GetPropertyChangedSignal(ws,"Gravity"),function()
@@ -1262,7 +1264,7 @@ Disconnect(clickConnection)
 end
 mouseBehavior=nil
 insSet(uis,"MouseBehavior",enumMD)
-onnewcamera()
+--onnewcamera()
 local c=insGet(lp,"Character")
 if c then
 insSet(cam,"CameraSubject",FindFirstChildOfClass(c,"Humanoid"))
