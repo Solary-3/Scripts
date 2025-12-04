@@ -2320,7 +2320,7 @@ particlefolderclone.Parent=HumanoidRoot
 
 
 
-Hmm(10)
+
 coroutine.resume(coroutine.create(function()
 local ff 
 ff=game:GetService("RunService").RenderStepped:Connect(function()
@@ -2431,6 +2431,7 @@ if v:IsA("ParticleEmitter") then
 v.Enabled=false
 end
 end
+Hmm(10)
 for _,v in ipairs(Torso:GetDescendants()) do
 if v:IsA("ParticleEmitter") then
 v.Enabled=false
