@@ -741,7 +741,7 @@ function Asset(filename)
 if isfile("Renegade Assets/"..filename) then
 return getcustomasset("Renegade Assets/"..filename)
 else
-warn("Downloading Audio File "..filename)
+warn("Downloading File "..filename)
 writefile("Renegade Assets/"..filename, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..filename.."?raw=true"))
  
 end
