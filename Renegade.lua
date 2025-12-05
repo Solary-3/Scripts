@@ -1614,7 +1614,7 @@ local res=time()
 
 lol=game:GetService("RunService").Heartbeat:Connect(function()
 if bbg and bbg.Parent then 
-bbg.StudsOffsetWorldSpace=randomv3+v3(sin((time() - res)*6*gj),HumanoidRoot.Position.Y*sin((time()-res)*8*gj),sin((time()-gj)*4*gj))+func(val.Value)
+bbg.StudsOffsetWorldSpace=randomv3+v3(sin((time() - res)*6*gj),*sin((time()-res)*8*gj),sin((time()-gj)*4*gj))+func(val.Value)
 else
 lol:Disconnect()
 end
