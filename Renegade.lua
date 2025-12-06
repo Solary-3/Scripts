@@ -26,6 +26,14 @@ local LEGACY=false -- set this to true if you the old anims on some modes
 
 
 
+function notify(text,dur)
+local Notify=game:GetService("StarterGui")
+Notify:SetCore("SendNotification",{
+Title="Renegades";
+Text=text})
+Duration=.5 or dur
+end
+
 local CollectionService = game:GetService("CollectionService");
 local RENEGADES ={};
 local plrgui=game.CoreGui
@@ -439,13 +447,13 @@ GLITCHERAUDIO["TopFrame_2"]["BorderSizePixel"] = 0;
 GLITCHERAUDIO["TopFrame_2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 GLITCHERAUDIO["TopFrame_2"]["Size"] = UDim2.new(0, 212, 0, 98);
 GLITCHERAUDIO["TopFrame_2"]["Position"] = UDim2.new(0, 650, 0, -70);
-GLITCHERAUDIO["TopFrame_2"]["Name"] = [[TopFrame]];
+GLITCHERAUDIO["TopFrame_2"]["Name"] = [[TopFrameBars]];
 GLITCHERAUDIO["TopFrame_2"]["Rotation"] = 45;
 
 
 GLITCHERAUDIO["TopFrame_3"] = Instance.new("UIStroke", GLITCHERAUDIO["TopFrame_2"]);
 GLITCHERAUDIO["TopFrame_3"]["Transparency"] = 0.5;
-GLITCHERAUDIO["TopFrame_3"]["Name"] = [[TopFrame]];
+GLITCHERAUDIO["TopFrame_3"]["Name"] = [[TopFrameBars]];
 GLITCHERAUDIO["TopFrame_3"]["Thickness"] = 5;
 
 
@@ -627,7 +635,7 @@ listlay.VerticalAlignment="Center"
 
 local analyzer=Instance.new("AudioAnalyzer")
 analyzer.Name="Analyzer"
-analyzer.WindowSize="Medium"
+analyzer.WindowSize="Large"
 
 local AudioPlayer=Instance.new("AudioPlayer",SoundService)
 AudioPlayer.Looping=true
@@ -683,8 +691,8 @@ local startfreq=25
 local endfreq=100
 for i = 1, marker do
 local bar=Bar:Clone()
-local freq = startfreq + (i-1) * (endfreq - startfreq) / (marker - 1)
-bar.LayoutOrder=i 
+local freq = startfreq + (i-1) * (endfreq - startfreq) / (marker - 1) *.1
+bar.LayoutOrder=i
 bar.Name="Bar_"..i
 bar.Parent=container
 bar.Transparency=.75
@@ -811,7 +819,7 @@ ws.CurrentCamera.CameraSubject=ws:FindFirstChild("CamFocus")
 end 
 pcall(function()
 for _,v in ipairs(ws:FindFirstChild("CamFocus"):GetChildren()) do 
-if v:IsA("Attachment") then 
+if v:IsA("Attachment") and v.Name~="TitleAttachment" then 
 v:Destroy()
 end
 end
@@ -852,7 +860,7 @@ local humroot=char:WaitForChild("HumanoidRootPart")
 if Torso then
 game.Players.LocalPlayer.Character.HumanoidRootPart.Position=v3(Torso.Position.X,Torso.Position.Y - Change,Torso.Position.Z)
 end
-if Running==true then
+if Running then
 humroot.Rotation=v3(0,0,0)
 humroot.Anchored=true
 humroot.Massless=true
@@ -868,12 +876,7 @@ end)
 else
 jj:Disconnect()
 jj=nil
-wait(1)
-humroot.Rotation=v3(0,0,0)
-humroot.Anchored=false
-humroot.Massless=true
-humroot.CanCollide=false
-humroot.Transparency=1
+
 end
 end)
 end))
@@ -954,41 +957,21 @@ local Modes={
 
 
 
---[[
-local LarmPart=CreatePart(m,.5,0,"Neon",Color3.new(1,1,1),v3(1,1,1))
-local RarmPart=CreatePart(m1,.5,0,"Neon",Color3.new(1,1,1),v3(1,1,1))
-local when=CreateWeld(RarmPart,Rarm,RarmPart,0,0,0,rad(0),rad(0),rad(0),0,0,0,rad(0),rad(0),rad(0))
-local when1=CreateWeld(LarmPart,Larm,LarmPart,0,0,0,rad(0),rad(0),rad(0),0,0,0,rad(0),rad(0),rad(0))
-
-coroutine.resume(coroutine.create(function()
-if RarmPart and LarmPart then
-while game.RunService.Heartbeat:Wait(.01) do 
-if not RarmPart and LarmPart then
-when:Destroy()
-when1:Destroy()
-break 
-end
-when.C1=cf(0,0,0)*angles(0,0,0)
-when1.C1=cf(0,0,0)*angles(0,0,0)
-end
-end
-end))
-]]
-
-
-
 
 --// BillboardGui
-local fldr=Instance.new("Folder",ws)
-fldr.Name="BBG"
-local bilguit = Instance.new("BillboardGui", ws:WaitForChild("CamFocus"))
+local BBGAttachment=Instance.new("Attachment")
+BBGAttachment.CFrame=cf()
+BBGAttachment.Name="TitleAttachment"
+local bilguit = Instance.new("BillboardGui", BBGAttachment)
 bilguit.Adornee = nil
 bilguit.Name = "Overhead"
-bilguit.Size = UDim2.new(4.25, 0, 1.75, 0)
-bilguit.StudsOffset = Vector3.new(-8, 8/1.5, 0)
+bilguit.Size = UDim2.new(20, 0, 4,0)
+bilguit.StudsOffset = Vector3.new(0, 2, 0)
+bilguit.StudsOffsetWorldSpace=v3(0,8,0)
 local modet = Instance.new("TextLabel", bilguit)
-modet.Size = UDim2.new(10/2, 0, 7/2, 0)
-modet.FontSize = "Size8"
+modet.Size = UDim2.new(2, 0, 1.3, 0)
+modet.Position = UDim2.new(-.5, 0, -.15, 0)
+modet.TextSize = 25
 modet.TextScaled = true
 modet.TextTransparency = 0
 modet.BackgroundTransparency = 1 
@@ -1000,6 +983,7 @@ modet.TextColor3 = Color3.new(1,1,1)
 modet.Text = "Test"
 modet.Name="Title"
 modet.Visible=BBGVisibilty
+BBGAttachment.Parent=ws:WaitForChild("CamFocus")
 
 
 --local modet=ws:FindFirstChild("CamFocus"):FindFirstChild("Overhead"):FindFirstChild("Title")
@@ -1008,10 +992,10 @@ local Loudness=sound.PlaybackLoudness
 
 
 --// Recolor And Rename Function 
-function ChangeAndRecolor(txt, usefontface, font, col1, col2, usergb)
+function ChangeAndRecolor(txt, usefontface, font, col1, col2, usergb,dontaffecttxtcol)
   
 --// Important Things For Changing Colors
-local TopFrame=GLITCHERAUDIO["TopFrame_2"]
+local TopFrameBars=GLITCHERAUDIO["TopFrame_2"]
 local TopFrameStroke=GLITCHERAUDIO["TopFrame_3"]
 local MusicFrame=GLITCHERAUDIO["MusicFrame_4"]
 local MusicFrameStroke=GLITCHERAUDIO["AudioDur_5"]
@@ -1108,7 +1092,7 @@ end
 
 --// Apply Color
 local currentrgb=rgb(r,g,b)
-TopFrame.BackgroundColor3=col1
+TopFrameBars.BackgroundColor3=col1
 TopFrameStroke.Color=currentrgb
 MusicFrameStroke.Color=currentrgb
 MusicImag2.ImageColor3=currentrgb
@@ -1160,8 +1144,12 @@ end
 
 MusicNameLabel.TextColor3=col2
 modet.TextStrokeColor3 = col2
+if dontaffecttxtcol==false then
 modet.TextColor3 = col1
-TopFrame.BackgroundColor3=col1
+else 
+modet.TextColor3=rgb(255,255,255)
+end
+TopFrameBars.BackgroundColor3=col1
 TopFrameStroke.Color=col2
 MusicFrame.BackgroundColor3=col2
 MusicFrameStroke.Color=col1
@@ -1197,186 +1185,6 @@ end
 end
 
 
-
---// Custom Color Glitch 
---[[if usecustomcolglitch then
-if RGB then
-RGB:Disconnect()
-RHB=nil
-end
-if COLGLITCH then
-COLGLITCH:Disconnect()
-COLGLITCH=nil
-end
-COLGLITCH=game:GetService("RunService").RenderStepped:Connect(function()
-
-local colorglitchtype=math.random(1,3)
-if colorglitchtype==1 then 
-modet.TextStrokeColor3 = c1
-modet.TextColor3 = c2
-MusicNameLabel.TextColor3=c2
-TopFrame.BackgroundColor3=c1
-TopFrameStroke.Color=c2
-MusicFrame.BackgroundColor3=c2
-MusicFrameStroke.Color=c1
-MusicLengthFrame.BackgroundColor3=c2
-MusicImag2.ImageColor3=c2
-MusicImag1.ImageColor3=c1
-ModeInfoFrame.BackgroundColor3=c1
-MusicTimeLabel.TextColor3=c1
-ModeInfoGrad.Color=ColorSequence.new{ColorSequenceKeypoint.new(0.000, c2),ColorSequenceKeypoint.new(0.698, c1),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 0))}
-ModeInfoStroke.Color=c2
-ModeInfoLabel.TextColor3=c1
-GlitcherTitleFrame.BackgroundColor3=c2
-GlitcherTitleLabel.TextColor3=c1
-GlitcherTitleGrad.Color=ColorSequence.new{ColorSequenceKeypoint.new(0.000, c1),ColorSequenceKeypoint.new(0.698, c2),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 0))}
-GlitcherTitleStroke.Color=c1
-spin1.ImageColor3=c2
-spin2.ImageColor3=c2
-spin3.ImageColor3=c1
-spin4.ImageColor3=c1
-
-for _,v in ipairs(FSCREEN:FindFirstChild("Container"):GetDescendants()) do
-if v:IsA("UIGradient") then
-v.Color=ColorSequence.new{ColorSequenceKeypoint.new(0.000, c1),ColorSequenceKeypoint.new(0.698, c2),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 0))}
-end
-end
-
-for _,v in ipairs(FSCREEN:FindFirstChild("Container"):GetDescendants()) do
-if v:IsA("UIStroke") then
-v.Color=col2
-end
-end
-
-
-elseif colorglitchtype==2 then
-modet.TextStrokeColor3 = c2
-MusicNameLabel.TextColor3=c1
-modet.TextColor3 = c1
-TopFrame.BackgroundColor3=c2
-TopFrameStroke.Color=c1
-MusicFrame.BackgroundColor3=c1
-MusicFrameStroke.Color=c2
-MusicLengthFrame.BackgroundColor3=c1
-MusicImag2.ImageColor3=c1
-MusicImag1.ImageColor3=c2
-MusicTimeLabel.TextColor3=c2
-ModeInfoFrame.BackgroundColor3=c2
-ModeInfoGrad.Color=ColorSequence.new{ColorSequenceKeypoint.new(0.000, c1),ColorSequenceKeypoint.new(0.698, c2),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 0))}
-ModeInfoStroke.Color=c1
-ModeInfoLabel.TextColor3=c2
-GlitcherTitleFrame.BackgroundColor3=c1
-GlitcherTitleLabel.TextColor3=c2
-GlitcherTitleGrad.Color=ColorSequence.new{ColorSequenceKeypoint.new(0.000, c2),ColorSequenceKeypoint.new(0.698, c1),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 0))}
-GlitcherTitleStroke.Color=c2
-spin1.ImageColor3=c1
-spin2.ImageColor3=c2
-spin3.ImageColor3=c1
-spin4.ImageColor3=c2
-
-for _,v in ipairs(FSCREEN:FindFirstChild("Container"):GetDescendants()) do
-if v:IsA("UIGradient") then
-v.Color=ColorSequence.new{ColorSequenceKeypoint.new(0.000, c1),ColorSequenceKeypoint.new(0.698, c2),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 0))}
-end
-end
-
-for _,v in ipairs(FSCREEN:FindFirstChild("Container"):GetDescendants()) do
-if v:IsA("UIStroke") then
-v.Color=col2
-end
-end
-
-
-elseif colorglitchtype == 3 then 
-  MusicNameLabel.TextColor3=c2
-modet.TextStrokeColor3 = c1
-modet.TextColor3 = c2
-TopFrame.BackgroundColor3=c1
-TopFrameStroke.Color=c2
-MusicFrame.BackgroundColor3=c2
-MusicFrameStroke.Color=c1
-MusicLengthFrame.BackgroundColor3=c2
-MusicImag2.ImageColor3=c2
-MusicImag1.ImageColor3=c1
-MusicTimeLabel.TextColor3=c1
-ModeInfoFrame.BackgroundColor3=c1
-ModeInfoGrad.Color=ColorSequence.new{ColorSequenceKeypoint.new(0.000, c2),ColorSequenceKeypoint.new(0.698, c1),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 0))}
-ModeInfoStroke.Color=c2
-ModeInfoLabel.TextColor3=c1
-GlitcherTitleFrame.BackgroundColor3=c2
-GlitcherTitleLabel.TextColor3=c1
-GlitcherTitleGrad.Color=ColorSequence.new{ColorSequenceKeypoint.new(0.000, c1),ColorSequenceKeypoint.new(0.698, c2),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 0))}
-GlitcherTitleStroke.Color=c1
-spin1.ImageColor3=c2
-spin2.ImageColor3=c1
-spin3.ImageColor3=c2
-spin4.ImageColor3=c1
-
-for _,v in ipairs(FSCREEN:FindFirstChild("Container"):GetDescendants()) do
-if v:IsA("UIGradient") then
-v.Color=ColorSequence.new{ColorSequenceKeypoint.new(0.000, c2),ColorSequenceKeypoint.new(0.698, c1),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 0))}
-end
-end
-
-for _,v in ipairs(FSCREEN:FindFirstChild("Container"):GetDescendants()) do
-if v:IsA("UIStroke") then
-v.Color=col2
-end
-end
-
-
-end
-end)
-
-
-else
-
-
--- // Apply Normal color if set to false 
-if RGB then
-RGB:Disconnect()
-RHB=nil
-end
-if COLGLITCH then
-COLGLITCH:Disconnect()
-COLGLITCH=nil
-end
-MusicNameLabel.TextColor3=col2
-modet.TextStrokeColor3 = col2
-modet.TextColor3 = col1
-TopFrame.BackgroundColor3=col1
-TopFrameStroke.Color=col2
-MusicFrame.BackgroundColor3=col2
-MusicFrameStroke.Color=col1
-MusicLengthFrame.BackgroundColor3=col1
-MusicImag2.ImageColor3=col1
-MusicImag1.ImageColor3=col1
-ModeInfoFrame.BackgroundColor3=col1
-ModeInfoGrad.Color=ColorSequence.new{ColorSequenceKeypoint.new(0.000, col1),ColorSequenceKeypoint.new(0.698, col2),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 0))}
-ModeInfoStroke.Color=col2
-ModeInfoLabel.TextColor3=col1
-GlitcherTitleFrame.BackgroundColor3=col2
-GlitcherTitleLabel.TextColor3=col1
-GlitcherTitleGrad.Color=ColorSequence.new{ColorSequenceKeypoint.new(0.000, col1),ColorSequenceKeypoint.new(0.698, col2),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 0))}
-GlitcherTitleStroke.Color=col1
-spin1.ImageColor3=col2
-spin2.ImageColor3=col2
-spin3.ImageColor3=col1
-spin4.ImageColor3=col1
-
-for _,v in ipairs(FSCREEN:FindFirstChild("Container"):GetDescendants()) do
-if v:IsA("UIGradient") then
-v.Color=ColorSequence.new{ColorSequenceKeypoint.new(0.000, col1),ColorSequenceKeypoint.new(0.698, col2),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 0, 0))}
-end
-end
-
-for _,v in ipairs(FSCREEN:FindFirstChild("Container"):GetDescendants()) do
-if v:IsA("UIStroke") then
-v.Color=col2
-end
-end
-
-end]]
 
 end
 
@@ -1495,7 +1303,7 @@ end
 LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,0.5,-0.5),angles(0,0,-0.3490658503988659)),alpha)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,-0.15),angles(0,1.5707963267948966,-0.2617993877991494)),alpha)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,12,0),angles(-1.5707963267948966,-0.08726646259971647,3.6651914291880923)),alpha)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.5,1,0.15),angles(2.775073510670984,0,-0.5235987755982988)),alpha)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.75,-0.5),angles(0,-1.5707963267948966,0.3490658503988659)),alpha)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.7453292519943295,0,2.530727415391778)),alpha)  
 end
 changeMode("Fracture")
-ChangeAndRecolor("Fracture",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,69,95),rgb(182,235,255))
+ChangeAndRecolor("Fracture",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,69,95),rgb(182,235,255),false,false)
 end
 
 
@@ -1521,21 +1329,15 @@ end
 if current >= dur then
 Mode=ret
 if Mode=="Overseer" then
-ChangeAndRecolor("Overseer",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(39,252,69),rgb(255,255,255))
+ChangeAndRecolor("Overseer",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(39,252,69),rgb(255,255,255),false,false)
 elseif Mode=="Censored" then
-ChangeAndRecolor("Censored",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,0,0),rgb(rgb(61,255,77)))
+ChangeAndRecolor("Censored",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,0,0),rgb(rgb(61,255,77)),false,false)
 end
 end
 end
 
 local Debounce=false
- function notify(text,dur)
-local Notify=game:GetService("StarterGui")
-Notify:SetCore("SendNotification",{
-Title="Service";
-Text=text})
-Duration=.5 or dur
-end
+
 
 local Txts={
   "『H A R M O N I O U S』",
@@ -1606,7 +1408,7 @@ TweenService:Create(txtclone, Tinfo(0.5,Enum.EasingStyle.Quart),{
   Size=UDim2.fromScale(7.5,1.5);
   Rotation=mrandom(-20,20);
 }):Play()
-TweenService:Create(val, Tinfo(0.5,Enum.EasingStyle.Quart),{
+TweenService:Create(val, Tinfo(1.5,Enum.EasingStyle.Quart),{
   Value=0;
 }):Play()
 local lol
@@ -1614,36 +1416,105 @@ local res=time()
 
 lol=game:GetService("RunService").Heartbeat:Connect(function()
 if bbg and bbg.Parent then 
-bbg.StudsOffsetWorldSpace=randomv3+v3(sin((time() - res)*6*gj),*sin((time()-res)*8*gj),sin((time()-gj)*4*gj))+func(val.Value)
+bbg.StudsOffsetWorldSpace=randomv3+v3(sin((time() - res)*6*gj),sin((time()-res)*8*gj),sin((time()-gj)*4*gj))+func(val.Value)
 else
 lol:Disconnect()
 end
 end)
 wait(1)
-Deb:AddItem(bbg,1)
+Deb:AddItem(bbg,1.5)
 TweenService:Create(txtclone, Tinfo(0.5,Enum.EasingStyle.Quart,Enum.EasingDirection.In),{
   Size=UDim2.fromScale(1,.5);
+  Position=UDim2.fromScale(math.random(-1,1),math.random(-1,1));
   Transparency=1
 }):Play()
-TweenService:Create(clonestk, Tinfo(0.5,Enum.EasingStyle.Quart,Enum.EasingDirection.In),{
+TweenService:Create(clonestk, Tinfo(2.5,Enum.EasingStyle.Quart,Enum.EasingDirection.In),{
   Thickness=2.5
 }):Play()
 txtclone.TextScaled=false
-TweenService:Create(txtclone, Tinfo(0.5,Enum.EasingStyle.Quart,Enum.EasingDirection.In),{
+TweenService:Create(txtclone, Tinfo(1.25,Enum.EasingStyle.Quart,Enum.EasingDirection.In),{
   Transparency=1
 }):Play()
 
 end))
 end
 
+function EquinoxCloneBars()
+local FrameFolders=Instance.new("Folder",ws:FindFirstChild("EquinoxAssets"))
+FrameFolders.Name="Frames"
+local TopFrameBars=ws:FindFirstChild("EquinoxAssets"):WaitForChild("TopFrame"):FindFirstChild("Frame")
+local TopFrame=ws:FindFirstChild("EquinoxAssets"):WaitForChild("TopFrame")
+local BottomFrameBars=ws:FindFirstChild("EquinoxAssets"):WaitForChild("BottomFrame"):FindFirstChild("Frame")
+local BottomFrame=ws:FindFirstChild("EquinoxAssets"):WaitForChild("BottomFrame")
+
+TopFrame.Position=UDim2.fromScale(-.01,-.3)
+BottomFrame.Position=UDim2.fromScale(.07,.8)
+BottomFrame.Rotation=180
+coroutine.resume(coroutine.create(function()
+for i=1,20 do
+local Barclone=TopFrameBars:Clone()
+Barclone.Size=u2(.05,0,1,0)
+Barclone.BackgroundTransparency=1 
+Barclone.Parent=TopFrame
+Barclone.Name=i
+wait(.1)
+end
+end))
+coroutine.resume(coroutine.create(function()
+for i=1,20 do 
+local Barclone1=BottomFrameBars:Clone()
+Barclone1.Size=u2(.05,0,1,0)
+Barclone1.BackgroundTransparency=1 
+Barclone1.Parent=BottomFrame 
+Barclone1.Name=i
+wait(.01)
+end
+BottomFrame.Parent=FrameFolders
+TopFrame.Parent=FrameFolders
+end))
+end
+
+local EquinoxBarsFolder=Instance.new("Folder",game.CoreGui:FindFirstChild("VISgui"))
+function EquinoxMainBars()
+EquinoxBarsFolder.Name="BarFrames"
+local Deb = game:GetService("Debris")
+local FrameFolder=ws:FindFirstChild("EquinoxAssets"):FindFirstChild("Frames")
+local GUIMain=game.CoreGui:FindFirstChild("VISgui"):WaitForChild("BarFrames")
+local FolClone=FrameFolder:Clone()
+FolClone.Parent=GUIMain
+
+for _, v in GUIMain:GetDescendants() do
+if v:IsA("ImageLabel") then
+local variable
+variable = UDim2.fromScale(1, math.random(50, 200) / 100)
+v.Size = variable
+
+if math.random(1, 2) == 1 then 
+variable = Color3.fromRGB(0, 0, 0)
+else 
+variable = Color3.fromRGB(255, 255, 255)
+end
+v.ImageColor3 = variable
+variable = game:GetService("TweenService")
+local _ = {
+Size = UDim2.fromScale(1, 0);
+ImageTransparency = 1;
+}
+variable = variable:Create(v, TweenInfo.new(1, Enum.EasingStyle.Quart), _)
+variable:Play()
+end
+Deb:AddItem(FolClone,1)
+end
+
+end
 
 function EquinoxAssets()
 --//Stroke 
-wait(.5)
+wait(.2)
+print("Loading Equinox Assets")
 local nr=NumberRange.new
-
-local particlefolder=Instance.new("Folder",ws)
-particlefolder.Name="EquinoxAssets"
+local EquinoxFolder=Instance.new("Folder",ws)
+EquinoxFolder.Name="EquinoxAssets"
 local stk=Instance.new("UIStroke",modet)
 stk.Color=rgb(255,255,255)
 stk.Thickness=1
@@ -1687,7 +1558,7 @@ gr2.Name="Grad2"
 gr2.Enabled=true
 
 --//Assets 
-local bbg2=Instance.new("BillboardGui",particlefolder)
+local bbg2=Instance.new("BillboardGui",EquinoxFolder)
 bbg2.Size=u2(20,0,20,0)
 bbg2.Adornee=nil
 bbg2.Name="Bill"
@@ -1715,7 +1586,7 @@ Asset("star.png")
 --// Effects 
 local nums=NumberSequence.new 
 local numk=NumberSequenceKeypoint.new
-local att1=Instance.new("Attachment",particlefolder)
+local att1=Instance.new("Attachment",EquinoxFolder)
 att1.Name="Black Pulse"
 att1.CFrame=cf(0,1.2,0)
 local sq1=Instance.new("ParticleEmitter",att1)
@@ -1753,7 +1624,8 @@ sq1.EmissionDirection="Top"
 sq1.FlipbookFramerate=nr(1,1)
 sq1.FlipbookLayout="Grid4x4"
 sq1.FlipbookMode="OneShot"
-local att2=Instance.new("Attachment",particlefolder)
+sq1:SetAttribute("EmitCount",1)
+local att2=Instance.new("Attachment",EquinoxFolder)
 att2.Name="White Pulse"
 att2.CFrame=cf(0,4,0)
 local sq2=Instance.new("ParticleEmitter",att2)
@@ -1791,8 +1663,9 @@ sq2.EmissionDirection="Top"
 sq2.FlipbookFramerate=nr(1,1)
 sq2.FlipbookLayout="Grid4x4"
 sq2.FlipbookMode="OneShot"
+sq2:SetAttribute("EmitCount",1)
 
-local charge1att=Instance.new("Attachment",particlefolder)
+local charge1att=Instance.new("Attachment",EquinoxFolder)
 charge1att.Name="ParticleAttachmets"
 charge1att.CFrame=cf()
 local e0=Instance.new("ParticleEmitter",charge1att)
@@ -1826,6 +1699,7 @@ e0.VelocitySpread=360
 e0.FlipbookFramerate=nr(1,1)
 e0.FlipbookMode="OneShot"
 e0.FlipbookLayout="Grid4x4"
+e0:SetAttribute("EmitCount",1)
 
 local e1=Instance.new("ParticleEmitter",charge1att)
 e1.Color=cs({
@@ -1858,6 +1732,7 @@ e1.VelocitySpread=360
 e1.FlipbookFramerate=nr(1,1)
 e1.FlipbookMode="OneShot"
 e1.FlipbookLayout="Grid4x4"
+e1:SetAttribute("EmitCount",1)
 
 local e2=Instance.new("ParticleEmitter",charge1att)
 e2.Name="Impact1"
@@ -1891,6 +1766,7 @@ e2.VelocitySpread=360
 e2.FlipbookFramerate=nr(1,1)
 e2.FlipbookLayout="Grid4x4"
 e2.FlipbookMode="OneShot"
+e2:SetAttribute("EmitCount",1)
 
 local e3=Instance.new("ParticleEmitter",charge1att)
 e3.Name="Impact2"
@@ -1924,6 +1800,7 @@ e3.VelocitySpread=360
 e3.FlipbookFramerate=nr(1,1)
 e3.FlipbookLayout="Grid4x4"
 e3.FlipbookMode="OneShot"
+e3:SetAttribute("EmitCount",1)
 
 local e4=Instance.new("ParticleEmitter",charge1att)
 e4.Name="Impact3"
@@ -1956,6 +1833,7 @@ e4.VelocitySpread=360
 e4.FlipbookFramerate=nr(1,1)
 e4.FlipbookLayout="Grid4x4"
 e4.FlipbookMode="OneShot"
+e4:SetAttribute("EmitCount",1)
 
 local e5=Instance.new("ParticleEmitter",charge1att)
 e5.Name="Impact4"
@@ -1989,6 +1867,7 @@ e5.VelocitySpread=360
 e5.FlipbookFramerate=nr(1,1)
 e5.FlipbookLayout="Grid4x4"
 e5.FlipbookMode="OneShot"
+e5:SetAttribute("EmitCount",1)
 
 local e6=Instance.new("ParticleEmitter",charge1att)
 e6.Name="Pulse1"
@@ -2021,6 +1900,7 @@ e6.VelocitySpread=0
 e6.FlipbookFramerate=nr(1,1)
 e6.FlipbookLayout="Grid4x4"
 e6.FlipbookMode="OneShot"
+e6:SetAttribute("EmitCount",1)
 
 local e7=Instance.new("ParticleEmitter",charge1att)
 e7.Name="Pulse2"
@@ -2053,6 +1933,7 @@ e7.VelocitySpread=0
 e7.FlipbookFramerate=nr(1,1)
 e7.FlipbookLayout="Grid4x4"
 e7.FlipbookMode="OneShot"
+e7:SetAttribute("EmitCount",1)
 
 local e8=Instance.new("ParticleEmitter",charge1att)
 e8.Name="Pulse3"
@@ -2084,6 +1965,7 @@ e8.VelocitySpread=180
 e8.FlipbookFramerate=nr(1,2)
 e8.FlipbookLayout="Grid4x4"
 e8.FlipbookMode="OneShot"
+e8:SetAttribute("EmitCount",1)
 
 local e9=Instance.new("ParticleEmitter",charge1att)
 e9.Name="Pulse4"
@@ -2115,6 +1997,7 @@ e9.VelocitySpread=180
 e9.FlipbookFramerate=nr(1,2)
 e9.FlipbookLayout="Grid4x4"
 e9.FlipbookMode="OneShot"
+e9:SetAttribute("EmitCount",1)
 
 local e10=Instance.new("ParticleEmitter",charge1att)
 e10.Name="WhiteStarPulse"
@@ -2135,7 +2018,7 @@ e10.Transparency=nums({
   numk(0,0),
   numk(1,1),
 })
-e10.ZOffset=1
+e10.ZOffset=3
 e10.Texture=Asset("star.png")
 e10.EmissionDirection="Top"
 e10.Enabled=false 
@@ -2149,6 +2032,7 @@ e10.VelocitySpread=0
 e10.FlipbookFramerate=nr(1,1)
 e10.FlipbookLayout="None"
 e10.FlipbookMode="OneShot"
+e10:SetAttribute("EmitCount",1)
 
 local e11=Instance.new("ParticleEmitter",charge1att)
 e11.Name="BlackStarPulse"
@@ -2170,7 +2054,7 @@ e11.Transparency=nums({
   numk(0,0),
   numk(1,1),
 })
-e11.ZOffset=1
+e11.ZOffset=4
 e11.EmissionDirection="Top"
 e11.Enabled=false 
 e11.Lifetime=nr(.6,.6)
@@ -2183,6 +2067,7 @@ e11.VelocitySpread=0
 e11.FlipbookFramerate=nr(1,1)
 e11.FlipbookLayout="None"
 e11.FlipbookMode="OneShot"
+e11:SetAttribute("EmitCount",1)
 
 local e12=Instance.new("ParticleEmitter",charge1att)
 e12.Name="Star1"
@@ -2203,12 +2088,12 @@ e12.Transparency=nums({
   numk(0,0),
   numk(1,0),
 })
-e12.ZOffset=15 
+e12.ZOffset=5
 e12.EmissionDirection="Top"
 e12.Enabled=false 
 e12.Lifetime=nr(.3,.3)
 e12.Rate=7
-e12.Rotation=nr(0,0)
+e12.Rotation=nr(0,360)
 e12.RotSpeed=nr(0,0)
 e12.Speed=nr(0,0)
 e12.SpreadAngle=v2(0,0)
@@ -2216,6 +2101,7 @@ e12.VelocitySpread=0
 e12.FlipbookFramerate=nr(1,1)
 e12.FlipbookLayout="None"
 e12.FlipbookMode="OneShot"
+e12:SetAttribute("EmitCount",1)
 
 local e13=Instance.new("ParticleEmitter",charge1att)
 e13.Name="Star2"
@@ -2236,12 +2122,12 @@ e13.Transparency=nums({
   numk(0,0),
   numk(1,0),
 })
-e13.ZOffset=15 
+e13.ZOffset=4
 e13.EmissionDirection="Top"
 e13.Enabled=false 
 e13.Lifetime=nr(.3,.3)
 e13.Rate=7
-e13.Rotation=nr(0,0)
+e13.Rotation=nr(0,360)
 e13.RotSpeed=nr(0,0)
 e13.Speed=nr(0,0)
 e13.SpreadAngle=v2(0,0)
@@ -2249,6 +2135,7 @@ e13.VelocitySpread=0
 e13.FlipbookFramerate=nr(1,1)
 e13.FlipbookLayout="None"
 e13.FlipbookMode="OneShot"
+e13:SetAttribute("EmitCount",1)
 
 local e14=Instance.new("ParticleEmitter",charge1att)
 e14.Color=cs({
@@ -2268,12 +2155,12 @@ e14.Transparency=nums({
   numk(0,0),
   numk(1,0)
 })
-e14.ZOffset=14 
+e14.ZOffset=4 
 e14.EmissionDirection="Top"
 e14.Enabled=false 
 e14.Lifetime=nr(.3,.3)
 e14.Rate=7
-e14.Rotation=nr(0,0)
+e14.Rotation=nr(0,360)
 e14.RotSpeed=nr(0,0)
 e14.Speed=nr(0,0)
 e14.SpreadAngle=v2(0,0)
@@ -2281,6 +2168,7 @@ e14.VelocitySpread=0
 e14.FlipbookFramerate=nr(1,1)
 e14.FlipbookLayout="None"
 e14.FlipbookMode="OneShot"
+e14:SetAttribute("EmitCount",1)
 
 local e15=Instance.new("ParticleEmitter",charge1att)
 e15.Name="Stardark2"
@@ -2300,12 +2188,12 @@ e15.Transparency=nums({
   numk(0,0),
   numk(1,0)
 })
-e15.ZOffset=14 
+e15.ZOffset=224 
 e15.EmissionDirection="Top"
 e15.Enabled=false 
 e15.Lifetime=nr(.3,.3)
 e15.Rate=7
-e15.Rotation=nr(0,0)
+e15.Rotation=nr(0,360)
 e15.RotSpeed=nr(0,0)
 e15.Speed=nr(0,0)
 e15.SpreadAngle=v2(0,0)
@@ -2313,14 +2201,810 @@ e15.VelocitySpread=0
 e15.FlipbookFramerate=nr(1,1)
 e15.FlipbookLayout="None"
 e15.FlipbookMode="OneShot"
+e15:SetAttribute("EmitCount",1)
+
+local e16=Instance.new("ParticleEmitter",charge1att)
+e16.Name="Wind1"
+e16.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+}) 
+e16.Orientation="VelocityPerpendicular"
+--0 0 0 0.10339 14.7875 0 0.342373 28.4375 0 0.535593 32.76 0 1 36.4 0 
+e16.Size=nums({
+  numk(0,0),
+  numk(.1,14.8),
+  numk(.3,28.8),
+  numk(.5,32.7),
+  numk(1,36.4),
+})
+e16.Texture="rbxassetid://14850595833"
+e16.Transparency=nums({
+  numk(0,.2),
+  numk(1,1),
+})
+e16.EmissionDirection="Top"
+e16.Enabled=false 
+e16.Lifetime=nr(.3,.3)
+e16.Rate=14 
+e16.Rotation=nr(0,0)
+e16.RotSpeed=nr(0,0)
+e16.Speed=nr(.002,.002)
+e16.SpreadAngle=v2(15,15)
+e16.VelocitySpread=15 
+e16.FlipbookFramerate=nr(1,1)
+e16.FlipbookLayout="None"
+e16.FlipbookMode="OneShot"
+e16:SetAttribute("EmitCount",1)
+
+local e17=Instance.new("ParticleEmitter",charge1att)
+e17.Name="Wind2"
+e17.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+}) 
+e17.Orientation="VelocityPerpendicular"
+--0 0 0 0.10339 14.7875 0 0.342373 28.4375 0 0.535593 32.76 0 1 36.4 0 
+e17.Size=nums({
+  numk(0,0),
+  numk(.1,14.8),
+  numk(.3,28.8),
+  numk(.5,32.7),
+  numk(1,36.4),
+})
+e17.Texture="rbxassetid://16434901408"
+e17.Transparency=nums({
+  numk(0,.5),
+  numk(1,1),
+})
+e17.EmissionDirection="Top"
+e17.Enabled=false 
+e17.Lifetime=nr(.3,.3)
+e17.Rate=14
+e17.Rotation=nr(0,0)
+e17.RotSpeed=nr(0,0)
+e17.Speed=nr(.002,.002)
+e17.SpreadAngle=v2(15,15)
+e17.VelocitySpread=15 
+e17.FlipbookFramerate=nr(1,1)
+e17.FlipbookLayout="None"
+e17.FlipbookMode="OneShot"
+e17:SetAttribute("EmitCount",1)
+
+local e18=Instance.new("ParticleEmitter",charge1att)
+e18.Name="Lightning"
+e18.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+}) 
+e18.Orientation="VelocityParallel"
+e18.Size=nums({
+  numk(0,12.6),
+  numk(1,12.6),
+})
+e18.Squash=nums({
+  numk(0,0),
+  numk(1,.213,.1),
+})
+e18.Texture="rbxassetid://132060681192414"
+e18.Transparency=nums({
+  numk(0,0),
+  numk(1,.18),
+})
+e18.ZOffset=3.3 
+e18.EmissionDirection="Top"
+e18.Enabled=false 
+e18.Lifetime=nr(.11,.13)
+e18.Rate=7 
+e18.Rotation=nr(-996,1004)
+e18.RotSpeed=nr(0,0)
+e18.Speed=nr(0,0)
+e18.SpreadAngle=v2(-1000,1000)
+e18.VelocitySpread=-1000 
+e18.FlipbookFramerate=nr(2.34,2.34)
+e18.FlipbookLayout="Grid4x4"
+e18.FlipbookMode="OneShot"
+e18:SetAttribute("EmitCount",1)
+
+local e19=Instance.new("ParticleEmitter",charge1att)
+e19.Name="EyeShine"
+e19.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+e19.Brightness=15 
+--0 -0.5 0 1 -0.5 0 
+e19.Orientation="FacingCamera"
+e19.Squash=nums({
+  numk(0,-.5),
+  numk(1,-.5)
+})
+e19.Size=nums({
+  numk(0,0),
+  numk(.1,21),
+  numk(1,0),
+})
+e19.Transparency=nums({
+  numk(0,1),
+  numk(.5,.3),
+  numk(1,1),
+})
+e19.ZOffset=20
+e19.Texture="rbxassetid://82921243876307"
+e19.EmissionDirection="Top"
+e19.Enabled=false 
+e19.Lifetime=nr(.3,.3)
+e19.Rate=7 
+e19.Rotation=nr(0,0)
+e19.Rotation=nr(0,0)
+e19.RotSpeed=nr(0,0)
+e19.Speed=nr(0,0)
+e19.SpreadAngle=v2(0,0)
+e19.VelocitySpread=0 
+e19.FlipbookFramerate=nr(1,1)
+e19.FlipbookLayout="None"
+e19.FlipbookMode="OneShot"
+e19:SetAttribute("EmitCount",1)
+
+local e20=Instance.new("ParticleEmitter",charge1att)
+e20.Name="WhiteStarBurst"
+e20.Brightness=20 
+e20.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+e20.Orientation="FacingCamera"
+--0 0 0 0.1 36 0 0.230376 14.988 0 0.428376 4.788 0 1 0 0 
+e20.Size=nums({
+  numk(0,0),
+  numk(.1,36),
+  numk(.23,15),
+  numk(.4,4),
+  numk(1,0),
+})
+e20.ZOffset=13
+e20.Texture="rbxassetid://8905832887"
+e20.EmissionDirection="Top"
+e20.Enabled=false 
+e20.Lifetime=nr(.2,.2)
+e20.Rate=7 
+e20.Rotation=nr(0,360)
+e20.RotSpeed=nr(0,0)
+e20.Speed=nr(300,500)
+e20.SpreadAngle=v2(180,180)
+e20.VelocitySpread=180 
+e20.FlipbookFramerate=nr(1,1)
+e20.FlipbookLayout="None"
+e20.FlipbookMode="OneShot"
+e20:SetAttribute("EmitCount",1)
+
+local e21=Instance.new("ParticleEmitter",charge1att)
+e21.Name="DarkStarBurst"
+e21.Brightness=0 
+e21.Color=cs({
+  csk(0,rgb(0,0,0)),
+  csk(1,rgb(0,0,0))
+})
+e21.Orientation="FacingCamera"
+--0 0 0 0.1 36 0 0.230376 14.988 0 0.428376 4.788 0 1 0 0 
+e21.Size=nums({
+  numk(0,0),
+  numk(.1,36),
+  numk(.23,15),
+  numk(.4,4),
+  numk(1,0),
+})
+e21.ZOffset=13
+e21.Texture="rbxassetid://8905832887"
+e21.EmissionDirection="Top"
+e21.Enabled=false 
+e21.Lifetime=nr(.2,.2)
+e21.Rate=7 
+e21.Rotation=nr(0,360)
+e21.RotSpeed=nr(0,0)
+e21.Speed=nr(300,500)
+e21.SpreadAngle=v2(180,180)
+e21.VelocitySpread=180 
+e21.FlipbookFramerate=nr(1,1)
+e21.FlipbookLayout="None"
+e21.FlipbookMode="OneShot"
+e21:SetAttribute("EmitCount",1)
+
+local e22=Instance.new("ParticleEmitter",charge1att)
+e22.Name="Lightning1"
+e22.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+}) 
+e22.Orientation="VelocityParallel"
+e22.Size=nums({
+  numk(0,12.6),
+  numk(1,12.6),
+})
+e22.Squash=nums({
+  numk(0,0),
+  numk(1,.213,.1),
+})
+e22.Texture="rbxassetid://132060681192414"
+e22.Transparency=nums({
+  numk(0,0),
+  numk(1,.18),
+})
+e22.ZOffset=3.3 
+e22.EmissionDirection="Top"
+e22.Enabled=false 
+e22.Lifetime=nr(.11,.13)
+e22.Rate=7 
+e22.Rotation=nr(-996,1004)
+e22.RotSpeed=nr(0,0)
+e22.Speed=nr(0,0)
+e22.SpreadAngle=v2(-1000,1000)
+e22.VelocitySpread=-1000 
+e22.FlipbookFramerate=nr(2.34,2.34)
+e22.FlipbookLayout="Grid4x4"
+e22.FlipbookMode="OneShot"
+e22:SetAttribute("EmitCount",1)
+
+local e23=Instance.new("ParticleEmitter",charge1att)
+e23.Name="Lightning2"
+e23.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+}) 
+e23.Orientation="VelocityParallel"
+e23.Size=nums({
+  numk(0,12.6),
+  numk(1,12.6),
+})
+e23.Squash=nums({
+  numk(0,0),
+  numk(1,.213,.1),
+})
+e23.Texture="rbxassetid://132060681192414"
+e23.Transparency=nums({
+  numk(0,0),
+  numk(1,.18),
+})
+e23.ZOffset=3.3 
+e23.EmissionDirection="Top"
+e23.Enabled=false 
+e23.Lifetime=nr(.11,.13)
+e23.Rate=7 
+e23.Rotation=nr(-996,1004)
+e23.RotSpeed=nr(0,0)
+e23.Speed=nr(0,0)
+e23.SpreadAngle=v2(-1000,1000)
+e23.VelocitySpread=-1000 
+e23.FlipbookFramerate=nr(2.34,2.34)
+e23.FlipbookLayout="Grid4x4"
+e23.FlipbookMode="OneShot"
+e23:SetAttribute("EmitCount",1)
+
+local e24=Instance.new("ParticleEmitter",charge1att)
+e24.Name="GlareWhite"
+e24.Brightness=10
+e24.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+}) 
+e24.Orientation="FacingCamera"
+--0 5 0 0.1 65.5894 0 0.2 96.0972 0 0.3 110.692 0 0.4 117.975 0 0.5 121.705 0 0.6 123.593 0 0.7 124.494 0 0.8 124.87 0 0.9 124.986 0 1 125 0 1 125 0 
+e24.Size=nums({
+  numk(0,5),
+  numk(.1,65),
+  numk(.2,96),
+  numk(.3,110),
+  numk(.4,117),
+  numk(.5,212),
+  numk(.6,123),
+  numk(.7,124),
+  numk(.8,124),
+  numk(.9,125),
+  numk(1,125),
+})
+e24.Texture="rbxassetid://74633209088223"
+--0 1 0 0.1 0 0 0.211864 0.5125 0 0.383051 0.79375 0 0.566102 0.925 0 1 1 0 
+e24.Transparency=nums({
+  numk(0,2),
+  numk(.1,.21),
+  numk(.5,.38),
+  numk(.8,.56),
+  numk(1,1),
+})
+e24.ZOffset=0
+e24.EmissionDirection="Top"
+e24.Enabled=false 
+e24.Lifetime=nr(.1,.3)
+e24.Rate=7 
+e24.Rotation=nr(0,360)
+e24.RotSpeed=nr(0,0)
+e24.Speed=nr(.001,.001)
+e24.SpreadAngle=v2(180,180)
+e24.VelocitySpread=180 
+e24.FlipbookFramerate=nr(1,1)
+e24.FlipbookLayout="None"
+e24.FlipbookMode="OneShot"
+e24:SetAttribute("EmitCount",1)
+
+local e25=Instance.new("ParticleEmitter",charge1att)
+e25.Name="Impact"
+e25.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+}) 
+e25.Orientation="VelocityPerpendicular"
+--0 12 0 0.0762712 35.625 0 0.225424 50.625 0 0.5 57.375 0 1 60 0 
+e25.Size=nums({
+  numk(0,12),
+  numk(.07,35),
+  numk(.22,50),
+  numk(.5,57.37),
+  numk(1,70),
+})
+e25.Texture="rbxassetid://18453327840"
+--0 1 0 0.1 0 0 0.211864 0.5125 0 0.383051 0.79375 0 0.566102 0.925 0 1 1 0 
+e25.Transparency=nums({
+  numk(0,1),
+  numk(.1,0),
+  numk(.21,.512),
+  numk(.38,.79),
+  numk(.56,.925),
+  numk(1,1),
+})
+e25.ZOffset=0
+e25.EmissionDirection="Top"
+e25.Enabled=false 
+e25.Lifetime=nr(.2,.5)
+e25.Rate=7 
+e25.Rotation=nr(0,360)
+e25.RotSpeed=nr(0,0)
+e25.Speed=nr(.001,.001)
+e25.SpreadAngle=v2(180,180)
+e25.VelocitySpread=180 
+e25.FlipbookFramerate=nr(1,1)
+e25.FlipbookLayout="None"
+e25.FlipbookMode="OneShot"
+e25:SetAttribute("EmitCount",1)
+
+local e26=Instance.new("ParticleEmitter",charge1att)
+e26.Name="Impact1"
+e26.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+}) 
+e26.Orientation="VelocityPerpendicular"
+--0 12 0 0.0762712 35.625 0 0.225424 50.625 0 0.5 57.375 0 1 60 0 
+e26.Size=nums({
+  numk(0,12),
+  numk(.07,35),
+  numk(.22,50),
+  numk(.5,57.37),
+  numk(1,70),
+})
+e26.Texture="rbxassetid://15536021290"
+--0 1 0 0.1 0 0 0.211864 0.5125 0 0.383051 0.79375 0 0.566102 0.925 0 1 1 0 
+e26.Transparency=nums({
+  numk(0,1),
+  numk(.1,0),
+  numk(.21,.512),
+  numk(.38,.79),
+  numk(.56,.925),
+  numk(1,1),
+})
+e26.ZOffset=0
+e26.EmissionDirection="Top"
+e26.Enabled=false 
+e26.Lifetime=nr(.2,.5)
+e26.Rate=7 
+e26.Rotation=nr(0,360)
+e26.RotSpeed=nr(0,0)
+e26.Speed=nr(.001,.001)
+e26.SpreadAngle=v2(180,180)
+e26.VelocitySpread=180 
+e26.FlipbookFramerate=nr(1,1)
+e26.FlipbookLayout="Grid4x4"
+e26.FlipbookMode="OneShot"
+e26:SetAttribute("EmitCount",1)
+
+local e27=Instance.new("ParticleEmitter",charge1att)
+e27.Name="Impacts2"
+e25.Brightness=45
+e27.Color=cs({
+  csk(0,rgb(0,0,0)),
+  csk(1,rgb(0,0,0))
+}) 
+e27.Orientation="VelocityPerpendicular"
+--0 40 0 1 40 0 
+e27.Size=nums({
+  numk(0,40),
+  numk(1,40),
+})
+e27.Texture="rbxassetid://18140248952"
+--0 1 0 0.1 0 0 0.211864 0.5125 0 0.383051 0.79375 0 0.566102 0.925 0 1 1 0 
+e27.Transparency=nums({
+  numk(0,1),
+  numk(.1,0),
+  numk(1,1),
+})
+e27.ZOffset=0
+e27.EmissionDirection="Top"
+e27.Enabled=false 
+e27.Lifetime=nr(.3,.3)
+e27.Rate=7 
+e27.Rotation=nr(0,360)
+e27.RotSpeed=nr(0,0)
+e27.Speed=nr(.001,.001)
+e27.SpreadAngle=v2(35,35)
+e27.VelocitySpread=35 
+e27.FlipbookFramerate=nr(1,1)
+e27.FlipbookLayout="Grid4x4"
+e27.FlipbookMode="OneShot"
+e27:SetAttribute("EmitCount",1)
+
+local e28=Instance.new("ParticleEmitter",charge1att)
+e28.Name="Impacts3"
+e25.Brightness=45
+e28.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+}) 
+e28.Orientation="VelocityPerpendicular"
+--0 40 0 0.0830508 52.5 0 0.211864 59 0 0.472881 60.5 0 1 64 0 
+e28.Size=nums({
+  numk(0,40),
+  numk(.08,52.5),
+  numk(.21,59),
+  numk(.47,60.5),
+  numk(1,64),
+})
+e28.Texture="rbxassetid://13280251453"
+--0 1 0 0.1 0 0 0.211864 0.5125 0 0.383051 0.79375 0 0.566102 0.925 0 1 1 0 
+e28.Transparency=nums({
+  numk(0,1),
+  numk(.1,.8),
+  numk(1,1),
+})
+e28.ZOffset=0
+e28.EmissionDirection="Top"
+e28.Enabled=false 
+e28.Lifetime=nr(.3,.5)
+e28.Rate=7 
+e28.Rotation=nr(0,360)
+e28.RotSpeed=nr(0,0)
+e28.Speed=nr(.001,.001)
+e28.SpreadAngle=v2(3,3)
+e28.VelocitySpread=3
+e28.FlipbookFramerate=nr(1,1)
+e28.FlipbookLayout="None"
+e28.FlipbookMode="OneShot"
+e28:SetAttribute("EmitCount",1)
+
+local e29=Instance.new("ParticleEmitter",charge1att)
+e29.Name="Impacts4"
+e25.Brightness=45
+e29.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+}) 
+e29.Orientation="VelocityPerpendicular"
+--0 40 0 0.0830508 52.5 0 0.211864 59 0 0.472881 60.5 0 1 64 0 
+e29.Size=nums({
+  numk(0,40),
+  numk(.08,52.5),
+  numk(.21,59),
+  numk(.47,60.5),
+  numk(1,64),
+})
+e29.Texture="rbxassetid://10529371971"
+--0 1 0 0.1 0 0 0.211864 0.5125 0 0.383051 0.79375 0 0.566102 0.925 0 1 1 0 
+e29.Transparency=nums({
+  numk(0,1),
+  numk(.1,.9),
+  numk(1,1),
+})
+e29.ZOffset=0
+e29.EmissionDirection="Top"
+e29.Enabled=false 
+e29.Lifetime=nr(.3,.5)
+e29.Rate=7 
+e29.Rotation=nr(0,360)
+e29.RotSpeed=nr(0,0)
+e29.Speed=nr(.001,.001)
+e29.SpreadAngle=v2(3,3)
+e29.VelocitySpread=3
+e29.FlipbookFramerate=nr(1,1)
+e29.FlipbookLayout="None"
+e29.FlipbookMode="OneShot"
+e29:SetAttribute("EmitCount",1)
+
+local e30=Instance.new("ParticleEmitter",charge1att)
+e30.Name="Impacts5"
+e25.Brightness=45
+e30.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+}) 
+e30.Orientation="VelocityPerpendicular"
+--0 40 0 0.0830508 52.5 0 0.211864 59 0 0.472881 60.5 0 1 64 0 
+e30.Size=nums({
+  numk(0,40),
+  numk(.08,52.5),
+  numk(.21,59),
+  numk(.47,60.5),
+  numk(1,64),
+})
+e30.Texture="rbxassetid://18356099314"
+--0 1 0 0.1 0 0 0.211864 0.5125 0 0.383051 0.79375 0 0.566102 0.925 0 1 1 0 
+e30.Transparency=nums({
+  numk(0,1),
+  numk(.1,.9),
+  numk(1,1),
+})
+e30.ZOffset=0
+e30.EmissionDirection="Top"
+e30.Enabled=false 
+e30.Lifetime=nr(.3,.5)
+e30.Rate=7 
+e30.Rotation=nr(0,360)
+e30.RotSpeed=nr(0,0)
+e30.Speed=nr(.001,.001)
+e30.SpreadAngle=v2(3,3)
+e30.VelocitySpread=3
+e30.FlipbookFramerate=nr(1,1)
+e30.FlipbookLayout="None"
+e30.FlipbookMode="OneShot"
+e30:SetAttribute("EmitCount",1)
+
+local e31=Instance.new("ParticleEmitter",charge1att)
+e31.Name="HorizonImpact"
+e25.Brightness=15
+e31.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+}) 
+e31.Orientation="VelocityPerpendicular"
+--0 12 0 0.0762712 35.625 0 0.225424 50.625 0 0.5 57.375 0 1 60 0 
+e31.Size=nums({
+  numk(0,12),
+  numk(.07,35.625),
+  numk(.22,50.625),
+  numk(.5,57.5),
+  numk(1,60),
+})
+e31.Texture="rbxassetid://16924410706"
+--0 1 0 0.1 0 0 0.211864 0.5125 0 0.383051 0.79375 0 0.566102 0.925 0 1 1 0 
+e31.Transparency=nums({
+  numk(0,1),
+  numk(.1,0),
+  numk(.21,.51),
+  numk(.38,.79),
+  numk(.56,.925),
+  numk(1,1),
+})
+e31.ZOffset=0
+e31.EmissionDirection="Top"
+e31.Enabled=false 
+e31.Lifetime=nr(.2,.5)
+e31.Rate=14
+e31.Rotation=nr(0,360)
+e31.RotSpeed=nr(0,0)
+e31.Speed=nr(.001,.001)
+e31.SpreadAngle=v2(6,6)
+e31.VelocitySpread=6
+e31.FlipbookFramerate=nr(1,1)
+e31.FlipbookLayout="Grid4x4"
+e31.FlipbookMode="OneShot"
+e31:SetAttribute("EmitCount",1)
+
+local e32=Instance.new("ParticleEmitter",charge1att)
+e32.Name="Wind3"
+e32.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+}) 
+e32.Orientation="VelocityPerpendicular"
+--0 0 0 0.10339 14.7875 0 0.342373 28.4375 0 0.535593 32.76 0 1 36.4 0 
+e32.Size=nums({
+  numk(0,0),
+  numk(.1,14.8),
+  numk(.3,28.8),
+  numk(.5,32.7),
+  numk(1,36.4),
+})
+e32.Texture="rbxassetid://16434901408"
+e32.Transparency=nums({
+  numk(0,.5),
+  numk(1,1),
+})
+e32.EmissionDirection="Top"
+e32.Enabled=false 
+e32.Lifetime=nr(.3,.3)
+e32.Rate=14
+e32.Rotation=nr(0,0)
+e32.RotSpeed=nr(0,0)
+e32.Speed=nr(.002,.002)
+e32.SpreadAngle=v2(15,15)
+e32.VelocitySpread=15 
+e32.FlipbookFramerate=nr(1,1)
+e32.FlipbookLayout="None"
+e32.FlipbookMode="OneShot"
+e32:SetAttribute("EmitCount",1)
+
+local e33=Instance.new("ParticleEmitter",charge1att)
+e33.Name="Wind4"
+e33.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+}) 
+e33.Orientation="VelocityPerpendicular"
+--0 0 0 0.10339 14.7875 0 0.342373 28.4375 0 0.535593 32.76 0 1 36.4 0 
+e33.Size=nums({
+  numk(0,0),
+  numk(.1,14.8),
+  numk(.3,28.8),
+  numk(.5,32.7),
+  numk(1,36.4),
+})
+e33.Texture="rbxassetid://16434901408"
+e33.Transparency=nums({
+  numk(0,.5),
+  numk(1,1),
+})
+e33.EmissionDirection="Top"
+e33.Enabled=false 
+e33.Lifetime=nr(.3,.3)
+e33.Rate=14
+e33.Rotation=nr(0,0)
+e33.RotSpeed=nr(0,0)
+e33.Speed=nr(.002,.002)
+e33.SpreadAngle=v2(15,15)
+e33.VelocitySpread=15 
+e33.FlipbookFramerate=nr(1,1)
+e33.FlipbookLayout="None"
+e33.FlipbookMode="OneShot"
+e33:SetAttribute("EmitCount",1)
+
+local e34=Instance.new("ParticleEmitter",charge1att)
+e34.Name="Wind5"
+e34.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+}) 
+e34.Orientation="VelocityPerpendicular"
+--0 0 0 0.10339 14.7875 0 0.342373 28.4375 0 0.535593 32.76 0 1 36.4 0 
+e34.Size=nums({
+  numk(0,0),
+  numk(.1,14.8),
+  numk(.3,28.8),
+  numk(.5,32.7),
+  numk(1,36.4),
+})
+e34.Texture="rbxassetid://16434901408"
+e34.Transparency=nums({
+  numk(0,.5),
+  numk(1,1),
+})
+e34.EmissionDirection="Top"
+e34.Enabled=false 
+e34.Lifetime=nr(.3,.3)
+e34.Rate=14
+e34.Rotation=nr(0,0)
+e34.RotSpeed=nr(0,0)
+e34.Speed=nr(.002,.002)
+e34.SpreadAngle=v2(15,15)
+e34.VelocitySpread=15 
+e34.FlipbookFramerate=nr(1,1)
+e34.FlipbookLayout="None"
+e34.FlipbookMode="OneShot"
+e34:SetAttribute("EmitCount",1)
+
+local e35=Instance.new("ParticleEmitter",charge1att)
+e35.Name="GlareDark"
+e35.Brightness=50
+e35.Color=cs({
+  csk(0,rgb(0,0,0)),
+  csk(1,rgb(0,0,0))
+}) 
+e35.Orientation="FacingCamera"
+--0 5 0 0.1 65.5894 0 0.2 96.0972 0 0.3 110.692 0 0.4 117.975 0 0.5 121.705 0 0.6 123.593 0 0.7 124.494 0 0.8 124.87 0 0.9 124.986 0 1 125 0 1 125 0 
+e35.Size=nums({
+  numk(0,5),
+  numk(.1,65),
+  numk(.2,96),
+  numk(.3,110),
+  numk(.4,117),
+  numk(.5,212),
+  numk(.6,123),
+  numk(.7,124),
+  numk(.8,124),
+  numk(.9,125),
+  numk(1,125),
+})
+e35.Texture="rbxassetid://74633209088223"
+--0 1 0 0.1 0 0 0.211864 0.5125 0 0.383051 0.79375 0 0.566102 0.925 0 1 1 0 
+e35.Transparency=nums({
+  numk(0,2),
+  numk(.1,.21),
+  numk(.5,.38),
+  numk(.8,.56),
+  numk(1,1),
+})
+e35.ZOffset=0
+e35.EmissionDirection="Top"
+e35.Enabled=false 
+e35.Lifetime=nr(.1,.3)
+e35.Rate=7 
+e35.Rotation=nr(0,360)
+e35.RotSpeed=nr(0,0)
+e35.Speed=nr(.001,.001)
+e35.SpreadAngle=v2(180,180)
+e35.VelocitySpread=180 
+e35.FlipbookFramerate=nr(1,1)
+e35.FlipbookLayout="None"
+e35.FlipbookMode="OneShot"
+e35:SetAttribute("EmitCount",1)
+
+
+
+
+local TopFrameBars=Instance.new("Frame",EquinoxFolder)
+TopFrameBars.Size=u2(1,0,.3,0)
+TopFrameBars.BackgroundTransparency=1 
+TopFrameBars.Name="TopFrame"
+TopFrameBars.Position=UDim2.fromScale(.05,-.5)
+
+local TopframeBar=Instance.new("Frame",TopFrameBars)
+TopframeBar.Size=u2(.05,0,1,0)
+TopframeBar.BackgroundTransparency=1 
+
+
+local TopframeBarImage=Instance.new("ImageLabel",TopframeBar)
+TopframeBarImage.Image="rbxassetid://13271935089"
+TopframeBarImage.ImageColor3=rgb(255,255,255)
+TopframeBarImage.ScaleType="Stretch"
+TopframeBarImage.Position=u2(.5,0,0,0)
+TopframeBarImage.Size=u2(1,0,2,0)
+TopframeBarImage.BackgroundTransparency=1
+
+local topbarlayout=Instance.new("UIListLayout",TopFrameBars)
+topbarlayout.FillDirection="Horizontal"
+topbarlayout.SortOrder="Name"
+
+
+
+
+
+local BottomFrame=Instance.new("Frame",EquinoxFolder)
+BottomFrame.Size=u2(1,0,.3,0)
+BottomFrame.Position=u2(0,0,.7,0)
+BottomFrame.BackgroundTransparency=1 
+BottomFrame.Name="BottomFrame"
+
+local BottomFrameBar=Instance.new("Frame",BottomFrame)
+BottomFrameBar.Size=u2(.05,0,1,0)
+BottomFrameBar.BackgroundTransparency=1 
+
+
+local BottomFrameBarImage=Instance.new("ImageLabel",BottomFrameBar)
+BottomFrameBarImage.Image="rbxassetid://13271935089"
+BottomFrameBarImage.ImageColor3=rgb(255,255,255)
+BottomFrameBarImage.ScaleType="Stretch"
+BottomFrameBarImage.Position=u2(.5,0,0,0)
+BottomFrameBarImage.Size=u2(1,0,2,0)
+BottomFrameBarImage.BackgroundTransparency=1
+
+local BottomFrameLayout=Instance.new("UIListLayout",BottomFrame)
+BottomFrameLayout.FillDirection="Horizontal"
+BottomFrameLayout.SortOrder="Name"
+wait(1)
+
+
 
 local particlefolderclone=ws:FindFirstChild("EquinoxAssets"):Clone()
+EquinoxCloneBars()
+print("Loaded.")
 particlefolderclone.Parent=HumanoidRoot
-
-
-
-
-
+Hmm(10)
 coroutine.resume(coroutine.create(function()
 local ff 
 ff=game:GetService("RunService").RenderStepped:Connect(function()
@@ -2332,8 +3016,11 @@ att1:Destroy()
 att2:Destroy()
 bbg2:Destroy()
 charge1att:Destroy()
-ws:FindFirstChild("EquinoxAssets"):Destroy()
+if ws:FindFirstChild("EquinoxAssets") then
+ws.EquinoxAssets:Destroy()
+end
 particlefolderclone:Destroy()
+
 ff:Disconnect()
 Hmm(0)
 end
@@ -2357,43 +3044,18 @@ ws:FindFirstChild("EquinoxAssets"):FindFirstChild("ParticleAttachmets"):Clone().
 end
 end)
 end))
-coroutine.resume(coroutine.create(function()
-while wait() do
-if Mode~="E q u i n o x" then
-break
-end
-for i=1,255,25 do 
-gr1.Color=cs({
-  csk(0,rgb(i,i,i)),
-  csk(.45,rgb(i,i,i)),
-  csk(.55,rgb(255-i,255-i,255-i)),
-  csk(1,rgb(255-i,255-i,255-i))
-})
-swait()
-end
-wait()
-for i=1,255,25 do 
-gr1.Color=cs({
-  csk(0,rgb(255-i,255-i,255-i)),
-  csk(.45,rgb(255-i,255-i,255-i)),
-  csk(.55,rgb(i,i,i)),
-  csk(1,rgb(i,i,i))
-})
-swait()
-end
-end
-end))
+
 end
 
 function EquinoxBeats(start,dur,current)
 if current >= start and current <= dur and Mode=="E q u i n o x" then
 if not Debounce then
 Debounce= true
-
 coroutine.resume(coroutine.create(function() 
-local beatCount = 0
-local beatInterval = 0.3
+local Count = 0
+local BeatInterval = 0.3
 while current <= dur and Mode=="E q u i n o x" do
+
 pcall(function()
 local Particles=game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("EquinoxAssets")
 local Particle1=Particles:FindFirstChild("ParticleAttachmets")
@@ -2403,14 +3065,14 @@ Particle1.Parent=Torso
 end
 for _,v in ipairs(Particles:GetDescendants()) do
 if v:IsA("ParticleEmitter") then
-v.Enabled=true
+v:Emit(v:GetAttribute("EmitCount"))
 end
 end
 for _,v in ipairs(Torso:GetChildren()) do
 if v.Name=="ParticleAttachmets" and v.Parent~="CamFocus" then
 for _,c in ipairs(v:GetChildren()) do
 if c:IsA("ParticleEmitter") then 
-c.Enabled=true
+c:Emit(c:GetAttribute("EmitCount"))
 end
 end
 end
@@ -2420,9 +3082,10 @@ end)
 --print("Beat at " .. current .. " seconds")
 pcall(function()
 EquinoxTexts()
+EquinoxMainBars()
 end)
-beatCount = beatCount + 1
-local waitTime = math.min(beatInterval, dur - current)
+Count = Count + 1
+local waitTime = math.min(BeatInterval, dur - current)
 if waitTime > 0 then
 wait(waitTime)
 pcall(function()
@@ -2431,7 +3094,6 @@ if v:IsA("ParticleEmitter") then
 v.Enabled=false
 end
 end
-Hmm(10)
 for _,v in ipairs(Torso:GetDescendants()) do
 if v:IsA("ParticleEmitter") then
 v.Enabled=false
@@ -2445,7 +3107,121 @@ end
 end
 Debounce = false
 end))
- end
+coroutine.resume(coroutine.create(function() 
+while current >=start and Mode=="E q u i n o x" do
+if current>=dur and Mode=="E q u i n o x" then 
+for _,v in ipairs(game.CoreGui:FindFirstChild("VISgui").Frame:GetChildren()) do
+if v:IsA("Frame") or v:IsA("ImageLabel") then
+v.Visible=true
+end
+swait(.01)
+end
+for _,v in ipairs(game.CoreGui:FindFirstChild("VISgui").Frame:GetChildren()) do
+if v:IsA("ScreenGui") then
+v.Enabled=true
+end
+swait(.01)
+end
+break
+end
+if Mode~="E q u i n o x" then 
+for _,v in ipairs(game.CoreGui:FindFirstChild("VISgui").Frame:GetChildren()) do
+if v:IsA("Frame") or v:IsA("ImageLabel") then
+v.Visible=true
+end
+swait(.01)
+end
+for _,v in ipairs(game.CoreGui:FindFirstChild("VISgui").Frame:GetChildren()) do
+if v:IsA("ScreenGui") then
+v.Enabled=true
+end
+swait(.01)
+end
+break
+end 
+for _,v in ipairs(game.CoreGui:FindFirstChild("VISgui").Frame:GetChildren()) do
+if v:IsA("Frame") or v:IsA("ImageLabel") then
+v.Visible=false
+end
+swait(.01)
+end
+for _,v in ipairs(game.CoreGui:FindFirstChild("VISgui").Frame:GetChildren()) do
+if v:IsA("ScreenGui") then
+v.Enabled=false
+end
+swait(.01)
+end
+end
+end))
+end
+end
+end
+
+local Debounce1=false
+local ColorFlick=false
+function EquinoxBobbing()
+if not Debounce1 then
+if Mode=="E q u i n o x" then
+coroutine.resume(coroutine.create(function()
+while wait() do
+bilguit.StudsOffset=v3(0,2,0)
+bilguit.StudsOffsetWorldSpace=v3(0,5,0)
+if Debounce1 then return end
+Debounce1=true
+bilguit.Size=u2(20.5,0,4.5,0)
+ColorFlick=not ColorFlick 
+coroutine.resume(coroutine.create(function()
+if ColorFlick then
+for _,v in modet:GetChildren() do 
+if v:IsA("UIGradient") and Mode=="E q u i n o x" then 
+for i=1,255,25.5 do
+v.Color=cs({
+  csk(0,rgb(i,i,i)),
+  csk(.45,rgb(i,i,i)),
+  csk(.55,rgb(255-i,255-i,255-i)),
+  csk(1,rgb(255-i,255-i,255-i))
+})
+ChangeAndRecolor("E q u i n o x",true,Font.new([[rbxassetid://12187376739]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(255-i,255-i,255-i),rgb(i,i,i),false,true)
+swait()
+end
+end
+end 
+else
+for _,v in modet:GetChildren() do 
+if v:IsA("UIGradient") and Mode=="E q u i n o x" then 
+for i=1,255,25.5 do
+v.Color=cs({
+  csk(0,rgb(255-i,255-i,255-i)),
+  csk(.45,rgb(255-i,255-i,255-i)),
+  csk(.55,rgb(i,i,i)),
+  csk(1,rgb(i,i,i))
+})
+ChangeAndRecolor("E q u i n o x",true,Font.new([[rbxassetid://12187376739]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(i,i,i),rgb(255-i,255-i,255-i),false,true)
+swait()
+end
+end
+end
+end
+end))
+if Debounce1 then
+if Debounce then
+local Tween=fine(bilguit,.3,"size",u2(20,0,4,0))
+Tween:Play()
+Tween.Completed:Connect(function()
+Debounce1=false
+end)
+else
+local Tween=fine(bilguit,.5,"size",u2(20,0,4,0))
+Tween:Play()
+Tween.Completed:Connect(function()
+Debounce1=false
+end)
+end
+break
+end
+end
+end))
+end
 end
 end
 
@@ -2502,9 +3278,9 @@ count=1
 -- Pre-calculate positions to avoid repeated calculations
 for i = 1, marker do
 local v = v10:Clone()
-
+local freq = startfreq + (i-1) * (endfreq - startfreq) / (marker - 1) *.1
 count+=1
-v.Name = count
+v.Name = freq
 v.Size = Vector3.new(1, 1, 1)
 v.Material = Enum.Material.Neon
 v.Color = Color3.new(0, 0, 0)
@@ -2539,46 +3315,55 @@ end]]
 local wel1 = Instance.new("Weld", DDD)
 wel1.Part0=DDD 
 wel1.Part1=HumanoidRoot
-function This11(dt, lol)
-local currentTime = tick()
-local spectrum=MusicPlayer.Analyzer:GetSpectrum()
+function This11(dt, Theme)
+local spectrum = MusicPlayer.Analyzer:GetSpectrum()
 local spectrumCount = #spectrum
-local Theme=lol
+local SafeTreshold = 0.001
+local currentTime = tick()
 for i, v in ipairs(fx:GetChildren()) do
 if v:IsA("MeshPart") then
-local spectrumIndex = math.floor((tonumber(v.Name) / marker) * #spectrum) + 1
-spectrumIndex = math.clamp(spectrumIndex, 1, #spectrum)
+local spectrumIndex = math.floor((tonumber(v.Name) / marker) * spectrumCount) + 1
+spectrumIndex = math.clamp(spectrumIndex, 1, spectrumCount)
 local magnitude = spectrum[spectrumIndex] or 0
 local scale = math.min(magnitude / 0.0010 * 2, 550)
-local i_pos = tonumber(v.Name) / marker 
-if Theme=="Monochrome" then
-v.Color=Color3.fromHSV(1, 0,(-tick() * .15 + i_pos)%1)
-elseif Theme=="Rainbow" then
-v.Color=Color3.fromHSV((-tick() * .15 + i_pos)%1,1,1)
-elseif Theme=="Ice" then
-v.Color=Color3.fromHSV(.55,(-tick() * .15 + i_pos)%1,1)
-elseif Theme=="Crimson" then
-v.Color=Color3.fromHSV(1,1,(-tick() * .15 + i_pos)%1)
-elseif Theme=="Spooky" then
-v.Color=Color3.fromHSV(.1,1,(-tick() * .15 + i_pos)%1)
-elseif Theme=="Rainbow2" then
-v.Color=Color3.fromHSV(tick()*.55%1,1,1)
---v.Color=Color3.fromRGB(0,(tick()*.55+i_pos%150+100*sin(upd/20)),(-tick()*.55+i_pos%255+100*sin(upd/50)))
-elseif Theme=="Matrix" then
+local i_pos = tonumber(v.Name) / marker
+if magnitude <= SafeTreshold then
+v.Color = Color3.new(1, 1, 1)
+else
+if Theme == "Monochrome" then
+v.Color = Color3.fromHSV(1, 0, ( -currentTime * 0.15 + i_pos ) % 1)
+elseif Theme == "Rainbow" then
+v.Color = Color3.fromHSV(( -currentTime * 0.15 + i_pos ) % 1, 1, 1)
+elseif Theme == "Ice" then
+v.Color = Color3.fromHSV(.55, ( -currentTime * 0.15 + i_pos ) % 1, 1)
+elseif Theme == "Crimson" then
+v.Color = Color3.fromHSV(1, 1, ( -currentTime * 0.15 + i_pos ) % 1)
+elseif Theme == "Spooky" then
+v.Color = Color3.fromHSV(.1, 1, ( -currentTime * 0.15 + i_pos ) % 1)
+elseif Theme == "Rainbow2" then
+v.Color = Color3.fromHSV((currentTime * .55) % 1, 1, 1)
 end
-local Torso=SafePart("Accessory (Black)")
-local targetSize = Vector3.new(1,1, math.min(10 * scale,10.5 ))
-v.Size = v.Size:Lerp(targetSize,.25,.125)
-Tween(DDD,1.5,"pos",v3(Torso.Position.X,Torso.Position.Y+2,Torso.Position.Z)):Play()
-Tween(DDD,.001,"rot",v3(0,0,0)):Play()
+end
+if magnitude > SafeTreshold then
+local targetSize = Vector3.new(1, 1, math.min(10 * scale, 10.5))
+v.Size = v.Size:Lerp(targetSize, 0.25)
+else
+v.Size = v.Size:Lerp(Vector3.new(1, 1, 1), 0.25)
+end
+Tween(DDD,1.5,"pos",
+Vector3.new(Torso.Position.X, Torso.Position.Y+2, Torso.Position.Z)
+):Play()
+
+Tween(DDD,.001,"rot",Vector3.new(0,0,0)):Play()
 local wel = Table1[i]
 if wel and initialCFrames[i] then
-wel.C0 = initialCFrames[i] * CFrame.Angles(0, 0, math.rad(scale * 0.1))
+wel.C0 = initialCFrames[i] *
+CFrame.Angles(0, 0, math.rad(scale * 0.1))
+end
 end
 end
 end
 
-end
 coroutine.resume(coroutine.create(function()
 while game:GetService("RunService").Heartbeat:Wait(.00001) do
 if Mode ~= "Chromatic" then 
@@ -2613,7 +3398,7 @@ Introduction()
 else
 wait(.075) -- Wait for the reanimation to load properly
 changeMode("E q u i n o x")
-ChangeAndRecolor("E q u i n o x",true,Font.new([[rbxassetid://12187376739]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(255,255,255),rgb(0,0,0))
+ChangeAndRecolor("E q u i n o x",true,Font.new([[rbxassetid://12187376739]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(255,255,255),rgb(0,0,0),false,true)
 EquinoxAssets()
 end
 
@@ -2639,15 +3424,15 @@ if gpe then return end
 
 if io.KeyCode==Enum.KeyCode.One and Mode~="Renegades"then
 changeMode("Renegades")
-ChangeAndRecolor("Renegades",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(255,255,255),rgb(0,160,200))
+ChangeAndRecolor("Renegades",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(255,255,255),rgb(0,160,200),false,false)
 
 elseif io.KeyCode==Enum.KeyCode.Two and Mode~="Overseer" then
 changeMode("Overseer")
-ChangeAndRecolor("Overseer",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(39,252,69),rgb(255,255,255))
+ChangeAndRecolor("Overseer",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(39,252,69),rgb(255,255,255),false,false)
 
 elseif io.KeyCode==Enum.KeyCode.Three and Mode~="Mayhem" then
 changeMode("Mayhem")
-ChangeAndRecolor("Mayhem",false,"Antique",rgb(0,0,0),rgb(224,0,0))
+ChangeAndRecolor("Mayhem",false,"Antique",rgb(0,0,0),rgb(224,0,0),false,false)
 
 
 elseif io.KeyCode==Enum.KeyCode.Four and Mode~="Chaos" then
@@ -2662,48 +3447,53 @@ Chromatic(Torso.Position.Y)
 
 elseif io.KeyCode==Enum.KeyCode.Six and Mode~="Fracture" then
 changeMode("Fracture")
-ChangeAndRecolor("Fracture",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,69,95),rgb(182,235,255))
+ChangeAndRecolor("Fracture",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,69,95),rgb(182,235,255),false,false)
 
 
 elseif io.KeyCode==Enum.KeyCode.Seven and Mode~="Kronos" then
 changeMode("Kronos")
-ChangeAndRecolor("Kronos",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Regular, Enum.FontStyle.Italic),rgb(255,247,138),rgb(254,251,209))
+ChangeAndRecolor("Kronos",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Regular, Enum.FontStyle.Italic),rgb(255,247,138),rgb(254,251,209),false,false)
 
 
 elseif io.KeyCode==Enum.KeyCode.Eight and Mode~="E q u i n o x" then
 changeMode("E q u i n o x")
-ChangeAndRecolor("E q u i n o x",true,Font.new([[rbxassetid://12187376739]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(255,255,255),rgb(0,0,0))
+ChangeAndRecolor("E q u i n o x",true,Font.new([[rbxassetid://12187376739]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(255,255,255),rgb(0,0,0),false,true)
 EquinoxAssets()
+
 
 
 elseif io.KeyCode==Enum.KeyCode.Nine and Mode~="Shard Surfer" then
 changeMode("Shard Surfer")
-ChangeAndRecolor("Shard | Surfer",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(93,228,255),rgb(255,233,93))
+ChangeAndRecolor("Shard | Surfer",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(93,228,255),rgb(255,233,93),false,false)
 
 
 elseif io.KeyCode==Enum.KeyCode.F then
 BBGVisibilty=not BBGVisibilty
+if BBGVisibilty then
 modet.Visible=BBGVisibilty
+else
+modet.Visible=BBGVisibilty
+end
 
 elseif io.KeyCode==Enum.KeyCode.M and Mode=="Mayhem" then
 changeMode("Mayhem - No Hope")
-ChangeAndRecolor("Mayhem - No Hope",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(255,0,0),rgb(0,0,0))
+ChangeAndRecolor("Mayhem - No Hope",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(255,0,0),rgb(0,0,0),false,false)
 
 elseif io.KeyCode==Enum.KeyCode.M and Mode=="Overseer" then
 changeMode("Luminosity")
-ChangeAndRecolor("Luminosity",true,Font.new([[rbxasset://fonts/families/Fondamento.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(213,246,255),rgb(175,238,255))
+ChangeAndRecolor("Luminosity",true,Font.new([[rbxasset://fonts/families/Fondamento.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(213,246,255),rgb(175,238,255),false,false)
 
 elseif io.KeyCode==Enum.KeyCode.M and Mode=="Chromatic" then
 changeMode("Censored")
-ChangeAndRecolor("Censored",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,0,0),rgb(61,255,77))
+ChangeAndRecolor("Censored",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,0,0),rgb(61,255,77),false,false)
 
 elseif io.KeyCode==Enum.KeyCode.M and Mode=="Renegades" then
 changeMode("Fragmentation")
-ChangeAndRecolor("Fragmentation",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(71,71,71),rgb(223,90,0))
+ChangeAndRecolor("Fragmentation",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(71,71,71),rgb(223,90,0),false,false)
 
 elseif io.KeyCode==Enum.KeyCode.M and Mode=="Fracture" then
 changeMode("Panorama")
-ChangeAndRecolor("Panorama",true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,0,0),rgb(255,0,0), true)
+ChangeAndRecolor("Panorama",true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,0,0),rgb(255,0,0), true,false)
 
 
 end
@@ -2908,6 +3698,20 @@ Constant=1
 ClockTicky+=6.25
 end
 end
+if Mode~="E q u i n o x" then 
+for _,v in ipairs(game.CoreGui:FindFirstChild("VISgui").Frame:GetChildren()) do
+if v:IsA("Frame") or v:IsA("ImageLabel") then
+v.Visible=true
+end
+swait(.01)
+end
+for _,v in ipairs(game.CoreGui:FindFirstChild("VISgui").Frame:GetChildren()) do
+if v:IsA("ScreenGui") then
+v.Enabled=true
+end
+swait(.01)
+end
+end 
 Boost+=1*sound.PlaybackLoudness/50
 --onnewcamera()
 --ws.CurrentCamera.CameraSubject=righead
@@ -2957,9 +3761,10 @@ end
 
 
 
-
-
 if Mode=="Chaos" then
+BBGAttachment.CFrame=cf(0,0,0) 
+bilguit.StudsOffsetWorldSpace=v3(0,0,0)
+bilguit.StudsOffset=v3(-9.5,4,-1)
 GLITCHERAUDIO["TextLabel_f"].Position=UDim2.new(0,math.random(-1,1),0,math.random(-1,1))
 modet.Position = UDim2.new(0,math.random(-1,1),0,math.random(-1,1))
 modet.Rotation = -2 * math.cos(sp / 1) + math.random(-3,3)
@@ -2968,14 +3773,21 @@ imag2.Rotation+=1+sound.PlaybackLoudness/50 + math.random(-5,5)
 imag3.Rotation+=1+sound.PlaybackLoudness/25 + math.random(-5,5)
 imag4.Rotation+=-1-sound.PlaybackLoudness/10 + math.random(-5,5)
 elseif Mode=="E q u i n o x" then
-modet.Position = UDim2.new(0,0 + 4 * math.cos(sp / 17.5),0,0 - 5.5 * math.cos(sp / 22.5))
-modet.Rotation = 0 - 2 * math.cos(sp / 20)
+EquinoxBobbing()
+bilguit.Brightness=10
+BBGAttachment.CFrame=cf(0 + 2 * math.cos(sp / 30.5),0 - 1.5 * math.cos(sp / 30.5),0 + 1.5 * math.cos(sp / 30.5))
+modet.Position = UDim2.new(-.5,0 + 4 * math.cos(sp / 17.5),-.15,0 - 2.5 * math.cos(sp / 22.5))
+modet.Rotation = 0 - 5.5 * math.cos(sp / 20)
 imag1.Rotation+=-1
 imag2.Rotation+=1+sound.PlaybackLoudness/75
 imag3.Rotation+=1+sound.PlaybackLoudness/50
 imag4.Rotation+=-1-sound.PlaybackLoudness/25
 GLITCHERAUDIO["TextLabel_f"].Position=UDim2.new(0,0,0,0)
 else
+BBGAttachment.CFrame=cf(0,0,0) 
+bilguit.StudsOffsetWorldSpace=v3(0,0,0)
+bilguit.StudsOffset=v3(-9.5,4,-1)
+bilguit.Brightness=1
 modet.Position = UDim2.new(0,0,0,0)
 modet.Rotation = -5 * math.cos(sp / 32)
 GLITCHERAUDIO["TextLabel_f"].Position=UDim2.new(0,0,0,0)
@@ -2986,8 +3798,8 @@ imag4.Rotation+=-1-sound.PlaybackLoudness/25
 end
 
 if Mode~="Chromatic" then
-if char:FindFirstChild("Effects") then 
-char.Effects:Destroy()
+if ws:FindFirstChild("Effects") then 
+ws.Effects:Destroy()
 end
 end
 
@@ -3147,15 +3959,15 @@ RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,15+1*sin(sine*2.5),0),angles(-1.570796
 elseif Mode=="Censored" then
 local colg=mrandom(1,5)
 if colg==1 then
-ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,255,6),rgb(rgb(0,0,0)))
+ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,255,6),rgb(rgb(0,0,0)),false,false)
 elseif colg==2 then
-ChangeAndRecolor("#E##ORE#",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(rgb(0,190,0)))
+ChangeAndRecolor("#E##ORE#",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(rgb(0,190,0)),false)
 elseif colg==3 then
-ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,100,0),rgb(rgb(0,50,0)))
+ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,100,0),rgb(rgb(0,50,0)),false)
 elseif colg==4 then
-ChangeAndRecolor("###SO#ED",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,125,0),rgb(rgb(0,255,0)))
+ChangeAndRecolor("###SO#ED",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,125,0),rgb(rgb(0,255,0)),false)
 elseif colg==5 then
-ChangeAndRecolor("##NS#R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(rgb(0,50,0)))
+ChangeAndRecolor("##NS#R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(rgb(0,50,0)),false)
 end
 
 
@@ -3170,11 +3982,11 @@ s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-1+mrandom(-45,45),0+mrandom(-45,45),0+mrandom(-45
 end
 local colg=mrandom(1,3)
 if colg==1 then
-ChangeAndRecolor("Overseer",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(4,70,1),rgb(43,255,33))
+ChangeAndRecolor("Overseer",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(4,70,1),rgb(43,255,33),false,false)
 elseif colg==2 then
-ChangeAndRecolor("Overseer",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,255,0),rgb(0,0,0))
+ChangeAndRecolor("Overseer",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,255,0),rgb(0,0,0),false,false)
 elseif colg==3 then
-ChangeAndRecolor("Overseer",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,100,0),rgb(255,255,255))
+ChangeAndRecolor("Overseer",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,100,0),rgb(255,255,255),false,false)
 end
 RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-0.5,-0.75),angles(0,1.5707963267948966,-0.3490658503988659)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.75,-1),angles(-0.3490658503988659,0,-1.9198621771937625)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0+mrandom(-25,25),15+mrandom(-2.5,2.5),0+mrandom(-2.5,2.5)),angles(-1.2217304763960306+mrandom(-25,25),0+mrandom(-25,25),3.141592653589793+mrandom(-25,25))),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,-1),angles(-0.6981317007977318,0,2.0943951023931953)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-2.0943951023931953,0,3.141592653589793)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.5,-1.15),angles(0,-1.5707963267948966,0.5235987755982988)),deltaTime)  
 
@@ -3187,15 +3999,15 @@ s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-1,0 -sound.PlaybackLoudness/50,0 +sound.PlaybackL
 end
 local colg=mrandom(1,5)
 if colg==1 then
-ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,255,6),rgb(rgb(0,0,0)))
+ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,255,6),rgb(rgb(0,0,0)),false,false)
 elseif colg==2 then
-ChangeAndRecolor("#E##ORE#",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(rgb(0,190,0)))
+ChangeAndRecolor("#E##ORE#",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(rgb(0,190,0)),false, false)
 elseif colg==3 then
-ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,100,0),rgb(rgb(0,50,0)))
+ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,100,0),rgb(rgb(0,50,0)),false,false)
 elseif colg==4 then
-ChangeAndRecolor("###SO#ED",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,125,0),rgb(rgb(0,255,0)))
+ChangeAndRecolor("###SO#ED",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,125,0),rgb(rgb(0,255,0)),false,false)
 elseif colg==5 then
-ChangeAndRecolor("##NS#R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(rgb(0,50,0)))
+ChangeAndRecolor("##NS#R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(rgb(0,50,0)),false,false)
 end
 LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,0.5,-0.25),angles(0.6981317007977318-0.17453292519943295*sin((sine+0.25)*2.5),0,-0.5235987755982988+0.1832595714594046*sin((sine+0.25)*2.5))),.1)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1-0.055*sin((sine+0.75)*2.5),0),angles(-1.3089969389957472+0.09599310885968812*sin((sine+0.5)*2.5),0,3.141592653589793)),.1)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.5,0.5,-0.25),angles(0.6981317007977318-0.1832595714594046*sin((sine+0.5)*2.5),0,0.3490658503988659-0.17453292519943295*sin((sine+0.25)*2.5))),.1)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1+0.15*sin((sine+0.5)*2.5),-0.5),angles(0,1.5707963267948966,-0.5235987755982988-0.1832595714594046*sin((sine+0.25)*2.5))),.1)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.75+0.25*sin((sine+0.25)*2.5),-1),angles(0,-1.5707963267948966,0.4363323129985824+0.1832595714594046*sin((sine+0.5)*2.5))),.1)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,10+1*sin(sine*2.5),0),angles(-1.2217304763960306-0.09599310885968812*sin((sine+0.5)*2.5),0,3.141592653589793)),.1) 
 
@@ -3208,15 +4020,15 @@ s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-1,0 -sound.PlaybackLoudness/50,0 +sound.PlaybackL
 end
 local colg=mrandom(1,5)
 if colg==1 then
-ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(100,0,0),rgb(rgb(10,0,0)))
+ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(100,0,0),rgb(rgb(10,0,0)),false,false)
 elseif colg==2 then
-ChangeAndRecolor("#E##ORE#",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(100,0,0),rgb(rgb(150,0,0)))
+ChangeAndRecolor("#E##ORE#",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(100,0,0),rgb(rgb(150,0,0)),false,false)
 elseif colg==3 then
-ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(50,0,0),rgb(rgb(240,0,0)))
+ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(50,0,0),rgb(rgb(240,0,0)),false)
 elseif colg==4 then
-ChangeAndRecolor("###SO#ED",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(255,0,0),rgb(rgb(190,0,0)))
+ChangeAndRecolor("###SO#ED",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(255,0,0),rgb(rgb(190,0,0)),false,false)
 elseif colg==5 then
-ChangeAndRecolor("##NS#R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(100,0,0),rgb(rgb(50,0,0)))
+ChangeAndRecolor("##NS#R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(100,0,0),rgb(rgb(50,0,0)),false,false)
 end
 LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,0.5,-0.35-0.15*sin((sine+0.35)*2.5)),angles(-0.4363323129985824-0.1832595714594046*sin((sine+0.5)*2.5),0,-0.6108652381980153+0.1832595714594046*sin((sine+0.25)*2.5))),.1)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.5,0.5,-0.35-0.15*sin((sine+0.35)*2.5)),angles(-0.4363323129985824-0.1832595714594046*sin((sine+0.5)*2.5),0,0.6108652381980153-0.1832595714594046*sin((sine+0.25)*2.5))),.1)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,10+0.75*sin(sine*2.5),0),angles(-0.3490658503988659-0.17453292519943295*sin((sine+0.5)*2.5),0,3.141592653589793)),.1)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.3962634015954636+0.09599310885968812*sin((sine+0.25)*2.5),0,3.141592653589793)),.1)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1.16,-0.65+0.35*sin((sine+0.5)*2.5)),angles(0,-1.5707963267948966,0.7853981633974483-0.3490658503988659*sin((sine+0.75)*2.5))),.1)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1-0.25*sin((sine+0.25)*2.5),-0.5+0.25*sin((sine+0.5)*2.5)),angles(0,1.5707963267948966,-0.8726646259971648-0.2617993877991494*sin((sine+0.5)*2.5))),.1)  
 
@@ -3255,6 +4067,7 @@ end
 if Running then
 Running=false
 end
+wait(.4)
 if Mode~="None" then
 Mode="None"
 end
@@ -3292,9 +4105,10 @@ plrgui.VISgui:Destroy()
 end
 if stopreanimate then
 stopreanimate()
-wait(1)
+notify("Stopping script")
+wait(3)
 Chat("-rs ")
-wait(2)
+wait(2.5)
 Chat("-pd ")
 end
 end
