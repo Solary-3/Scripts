@@ -4060,15 +4060,15 @@ s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-1,0 -sound.PlaybackLoudness/50,0 +sound.PlaybackL
 end
 local colg=mrandom(1,5)
 if colg==1 then
-ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,255,6),rgb(rgb(0,0,0)),false,false)
+ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,255,6),rgb(0,0,0),false,false)
 elseif colg==2 then
-ChangeAndRecolor("#E##ORE#",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(rgb(0,190,0)),false, false)
+ChangeAndRecolor("#E##ORE#",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(0,190,0),false, false)
 elseif colg==3 then
-ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,100,0),rgb(rgb(0,50,0)),false,false)
+ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,100,0),rgb(0,50,0),false,false)
 elseif colg==4 then
-ChangeAndRecolor("###SO#ED",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,125,0),rgb(rgb(0,255,0)),false,false)
+ChangeAndRecolor("###SO#ED",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,125,0),rgb(0,255,0),false,false)
 elseif colg==5 then
-ChangeAndRecolor("##NS#R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(rgb(0,50,0)),false,false)
+ChangeAndRecolor("##NS#R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(0,50,0),false,false)
 end
 LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,0.5,-0.25),angles(0.6981317007977318-0.17453292519943295*sin((sine+0.25)*2.5),0,-0.5235987755982988+0.1832595714594046*sin((sine+0.25)*2.5))),.1)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1-0.055*sin((sine+0.75)*2.5),0),angles(-1.3089969389957472+0.09599310885968812*sin((sine+0.5)*2.5),0,3.141592653589793)),.1)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.5,0.5,-0.25),angles(0.6981317007977318-0.1832595714594046*sin((sine+0.5)*2.5),0,0.3490658503988659-0.17453292519943295*sin((sine+0.25)*2.5))),.1)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1+0.15*sin((sine+0.5)*2.5),-0.5),angles(0,1.5707963267948966,-0.5235987755982988-0.1832595714594046*sin((sine+0.25)*2.5))),.1)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-0.75+0.25*sin((sine+0.25)*2.5),-1),angles(0,-1.5707963267948966,0.4363323129985824+0.1832595714594046*sin((sine+0.5)*2.5))),.1)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,10+1*sin(sine*2.5),0),angles(-1.2217304763960306-0.09599310885968812*sin((sine+0.5)*2.5),0,3.141592653589793)),.1) 
 
@@ -4081,13 +4081,13 @@ s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-1,0 -sound.PlaybackLoudness/50,0 +sound.PlaybackL
 end
 local colg=mrandom(1,5)
 if colg==1 then
-ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(100,0,0),rgb(rgb(10,0,0)),false,false)
+ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(100,0,0),rgb(10,0,0),false,false)
 elseif colg==2 then
-ChangeAndRecolor("#E##ORE#",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(100,0,0),rgb(rgb(150,0,0)),false,false)
+ChangeAndRecolor("#E##ORE#",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(100,0,0),rgb(150,0,0),false,false)
 elseif colg==3 then
-ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(50,0,0),rgb(rgb(240,0,0)),false)
+ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(50,0,0),rgb(240,0,0),false)
 elseif colg==4 then
-ChangeAndRecolor("###SO#ED",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(255,0,0),rgb(rgb(190,0,0)),false,false)
+ChangeAndRecolor("###SO#ED",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(255,0,0),rgb(190,0,0),false,false)
 elseif colg==5 then
 ChangeAndRecolor("##NS#R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(100,0,0),rgb(rgb(50,0,0)),false,false)
 end
