@@ -116,7 +116,7 @@ RENEGADES["About_9"]["TextColor3"]= Color3.fromRGB(255, 255, 255);
 RENEGADES["About_9"]["BackgroundTransparency"]= 0.5;
 RENEGADES["About_9"]["Size"]= UDim2.new(0, 214, 0, 100);
 RENEGADES["About_9"]["BorderColor3"]= Color3.fromRGB(13, 20, 25);
-RENEGADES["About_9"]["Text"]=[[Update: Equinox Visuals And Other bug fixes]];
+RENEGADES["About_9"]["Text"]=[[Update: Censored Coloring fix]];
 RENEGADES["About_9"]["Name"]=[[About]];
 RENEGADES["About_9"]["Position"]= UDim2.new(0, 118, 0, 4);
 
@@ -662,7 +662,7 @@ wire2.Name="WireAnalyzer"
 
 
 --// Tween function 
-function fine(obj, speed, whattype, anim)
+function TweenFunction(obj, speed, whattype, anim)
 local Tinfo=TweenInfo.new
 local TweenService=game.TweenService
 local hii = Tinfo(speed, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
@@ -676,6 +676,8 @@ elseif whattype =="trans" then
 return TweenService:Create(obj, hii,{Transparency = anim})
 elseif whattype=="rot" then
 return TweenService:Create(obj, hii,{Rotation = anim})
+elseif whattype=="brightness" then
+return TweenService:Create(obj, hii,{Brightness = anim})
 end
 end
 
@@ -696,7 +698,7 @@ bar.LayoutOrder=i
 bar.Name="Bar_"..i
 bar.Parent=container
 bar.Transparency=.75
-fine(bar,1.5,"size",UDim2.new(0,50,.25,0)):Play()
+TweenFunction(bar,1.5,"size",UDim2.new(0,50,.25,0)):Play()
 wait(.01)
 end 
 fr1.Size=UDim2.new(0,50,.25,0)
@@ -1019,7 +1021,9 @@ local spin4=imag4
 
 modet.Text = string.upper(txt)
 ModeInfoLabel.Text = string.upper(txt)
-
+if dontaffecttxtcol== nil then
+dontaffecttxtcol=false
+end
 
 if usefontface then
 modet.FontFace=font
@@ -1382,6 +1386,7 @@ local clonestk=txtclone:WaitForChild("TxtStroke")
 bbg.Parent=game.Players.LocalPlayer.Character.HumanoidRootPart
 bbg.Adornee=game.Players.LocalPlayer.Character.HumanoidRootPart
 bbg.StudsOffset=randomv3
+bbg.Brightness=10
 local gj
 clonestk.Thickness=0
 local rancol=math.random(1,2)
@@ -1427,6 +1432,9 @@ TweenService:Create(txtclone, Tinfo(0.5,Enum.EasingStyle.Quart,Enum.EasingDirect
   Size=UDim2.fromScale(1,.5);
   Position=UDim2.fromScale(math.random(-1,1),math.random(-1,1));
   Transparency=1
+}):Play()
+TweenService:Create(bbg, Tinfo(1.5,Enum.EasingStyle.Quart,Enum.EasingDirection.In),{
+  Brightness=1
 }):Play()
 TweenService:Create(clonestk, Tinfo(2.5,Enum.EasingStyle.Quart,Enum.EasingDirection.In),{
   Thickness=2.5
@@ -3100,6 +3108,7 @@ v.Enabled=false
 end
 end
 end)
+Hmm(10)
 current = MusicPlayer.TimePosition
 else
 break
@@ -3169,6 +3178,7 @@ bilguit.StudsOffsetWorldSpace=v3(0,5,0)
 if Debounce1 then return end
 Debounce1=true
 bilguit.Size=u2(20.5,0,4.5,0)
+bilguit.Brightness=100
 ColorFlick=not ColorFlick 
 coroutine.resume(coroutine.create(function()
 if ColorFlick then
@@ -3211,14 +3221,18 @@ end
 end))
 if Debounce1 then
 if Debounce then
-local Tween=fine(bilguit,.3,"size",u2(20,0,4,0))
+local Tween=TweenFunction(bilguit,.275,"size",u2(20,0,4,0))
+local Tween1=TweenFunction(bilguit,.275,"brightness",5)
 Tween:Play()
+Tween1:Play()
 Tween.Completed:Connect(function()
 Debounce1=false
 end)
 else
-local Tween=fine(bilguit,.5,"size",u2(20,0,4,0))
+local Tween=TweenFunction(bilguit,.5,"size",u2(20,0,4,0))
+local Tween1=TweenFunction(bilguit,.5,"brightness",5)
 Tween:Play()
+Tween1:Play()
 Tween.Completed:Connect(function()
 Debounce1=false
 end)
@@ -3298,6 +3312,9 @@ v.CastShadow = false
 v.Reflectance = 0.5
 v.Transparency = 0
 v.Parent=fx
+local light=Instance.new("PointLight",v)
+light.Range=5
+light.Name=v.Name
 
 local wel = Instance.new("Weld", v)
 wel.Part0 = DDD
@@ -3327,7 +3344,7 @@ local spectrumCount = #spectrum
 local SafeTreshold = 0.001
 local currentTime = tick()
 for i, v in ipairs(fx:GetChildren()) do
-if v:IsA("MeshPart") then
+if v:IsA("MeshPart")  then
 local spectrumIndex = math.floor((tonumber(v.Name) / marker) * spectrumCount) + 1
 spectrumIndex = math.clamp(spectrumIndex, 1, spectrumCount)
 local magnitude = spectrum[spectrumIndex] or 0
@@ -3369,7 +3386,45 @@ end
 end
 end
 end
-
+function Light(Theme) 
+local spectrum = MusicPlayer.Analyzer:GetSpectrum()
+local spectrumCount = #spectrum
+local SafeTreshold = 0.001 
+local currentTime = tick()
+for _,v in fx:GetDescendants() do 
+if v:IsA("PointLight")  then
+local spectrumIndex = math.floor((tonumber(v.Name) / marker) * spectrumCount) + 1
+spectrumIndex = math.clamp(spectrumIndex, 1, spectrumCount)
+local magnitude = spectrum[spectrumIndex] or 0
+local scale = math.min(magnitude / 0.0010 * 2, 550)
+local i_pos = tonumber(v.Name) / marker
+if magnitude <= SafeTreshold then
+v.Color = Color3.new(1, 1, 1)
+else
+if Theme == "Monochrome" then
+v.Color = Color3.fromHSV(1, 0, ( -currentTime * 0.15 + i_pos ) % 1)
+elseif Theme == "Rainbow" then
+v.Color = Color3.fromHSV(( -currentTime * 0.15 + i_pos ) % 1, 1, 1)
+elseif Theme == "Ice" then
+v.Color = Color3.fromHSV(.55, ( -currentTime * 0.15 + i_pos ) % 1, 1)
+elseif Theme == "Crimson" then
+v.Color = Color3.fromHSV(1, 1, ( -currentTime * 0.15 + i_pos ) % 1)
+elseif Theme == "Spooky" then
+v.Color = Color3.fromHSV(.1, 1, ( -currentTime * 0.15 + i_pos ) % 1)
+elseif Theme == "Rainbow2" then
+v.Color = Color3.fromHSV((currentTime * .55) % 1, 1, 1)
+if magnitude > SafeTreshold then
+v.Brightness=math.min(1*scale,4)
+v.Range=math.min(1*scale,5)
+else 
+v.Brightness=1
+v.Range=5
+end
+end
+end
+end
+end
+end
 coroutine.resume(coroutine.create(function()
 while game:GetService("RunService").Heartbeat:Wait(.00001) do
 if Mode ~= "Chromatic" then 
@@ -3377,6 +3432,7 @@ fx:Destroy()
 return 
 end
 This11(0.033, "Rainbow2")
+Light("Rainbow2")
 end
 end))
 coroutine.resume(coroutine.create(function()
@@ -3390,7 +3446,7 @@ end]]
 Hmm(0)
 break
 end
---fine(HumanoidRoot,.005,"pos",Vector3.new(Torso.Position.X,Torso.Position.Y,Torso.Position.Z)):Play()
+--TweenFunction(HumanoidRoot,.005,"pos",Vector3.new(Torso.Position.X,Torso.Position.Y,Torso.Position.Z)):Play()
 end
 end))
 end
@@ -3780,7 +3836,6 @@ imag3.Rotation+=1+sound.PlaybackLoudness/25 + math.random(-5,5)
 imag4.Rotation+=-1-sound.PlaybackLoudness/10 + math.random(-5,5)
 elseif Mode=="E q u i n o x" then
 EquinoxBobbing()
-bilguit.Brightness=10
 BBGAttachment.CFrame=cf(0 + 2 * math.cos(sp / 30.5),0 - 1.5 * math.cos(sp / 30.5),0 + 1.5 * math.cos(sp / 30.5))
 modet.Position = UDim2.new(-.5,0 + 4 * math.cos(sp / 17.5),-.15,0 - 2.5 * math.cos(sp / 22.5))
 modet.Rotation = 0 - 5.5 * math.cos(sp / 20)
@@ -3812,7 +3867,7 @@ end
 
 game.Players.LocalPlayer.PlayerGui.TouchGui.TouchControlFrame.DynamicThumbstickFrame.Active=false
 --ws.CurrentCamera.CameraSubject=game.Players.LocalPlayer.Character:WaitForChild("CamFocus")
---fine(game.Players.LocalPlayer.Character:WaitForChild("CamFocus"),1.5,"pos",game.Players.LocalPlayer.Character:WaitForChild(CAMERAFOCUS).Handle.Position)
+--TweenFunction(game.Players.LocalPlayer.Character:WaitForChild("CamFocus"),1.5,"pos",game.Players.LocalPlayer.Character:WaitForChild(CAMERAFOCUS).Handle.Position)
 
 
 
@@ -3965,15 +4020,15 @@ RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,15+1*sin(sine*2.5),0),angles(-1.570796
 elseif Mode=="Censored" then
 local colg=mrandom(1,5)
 if colg==1 then
-ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,255,6),rgb(rgb(0,0,0)),false,false)
+ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,255,6),rgb(0,0,0),false,false)
 elseif colg==2 then
-ChangeAndRecolor("#E##ORE#",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(rgb(0,190,0)),false)
+ChangeAndRecolor("#E##ORE#",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(0,190,0),false,false)
 elseif colg==3 then
-ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,100,0),rgb(rgb(0,50,0)),false)
+ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,100,0),rgb(0,50,0),false,false)
 elseif colg==4 then
-ChangeAndRecolor("###SO#ED",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,125,0),rgb(rgb(0,255,0)),false)
+ChangeAndRecolor("###SO#ED",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,125,0),rgb(0,255,0),false,false)
 elseif colg==5 then
-ChangeAndRecolor("##NS#R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(rgb(0,50,0)),false)
+ChangeAndRecolor("##NS#R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,10,0),rgb(0,50,0),false,false)
 end
 
 
