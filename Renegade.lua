@@ -116,7 +116,7 @@ RENEGADES["About_9"]["TextColor3"]= Color3.fromRGB(255, 255, 255);
 RENEGADES["About_9"]["BackgroundTransparency"]= 0.5;
 RENEGADES["About_9"]["Size"]= UDim2.new(0, 214, 0, 100);
 RENEGADES["About_9"]["BorderColor3"]= Color3.fromRGB(13, 20, 25);
-RENEGADES["About_9"]["Text"]=[[Hello There! this script is made by Theo! I got bored and decided to make  this script. The script is in early development, and there will be modes in the future!]];
+RENEGADES["About_9"]["Text"]=[[Update: Equinox Visuals And Other bug fixes]];
 RENEGADES["About_9"]["Name"]=[[About]];
 RENEGADES["About_9"]["Position"]= UDim2.new(0, 118, 0, 4);
 
