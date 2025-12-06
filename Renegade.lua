@@ -4089,7 +4089,7 @@ ChangeAndRecolor("C#N##R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.j
 elseif colg==4 then
 ChangeAndRecolor("###SO#ED",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(255,0,0),rgb(190,0,0),false,false)
 elseif colg==5 then
-ChangeAndRecolor("##NS#R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(100,0,0),rgb(rgb(50,0,0)),false,false)
+ChangeAndRecolor("##NS#R#D",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(100,0,0),rgb(50,0,0),false,false)
 end
 LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.5,0.5,-0.35-0.15*sin((sine+0.35)*2.5)),angles(-0.4363323129985824-0.1832595714594046*sin((sine+0.5)*2.5),0,-0.6108652381980153+0.1832595714594046*sin((sine+0.25)*2.5))),.1)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.5,0.5,-0.35-0.15*sin((sine+0.35)*2.5)),angles(-0.4363323129985824-0.1832595714594046*sin((sine+0.5)*2.5),0,0.6108652381980153-0.1832595714594046*sin((sine+0.25)*2.5))),.1)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,10+0.75*sin(sine*2.5),0),angles(-0.3490658503988659-0.17453292519943295*sin((sine+0.5)*2.5),0,3.141592653589793)),.1)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.3962634015954636+0.09599310885968812*sin((sine+0.25)*2.5),0,3.141592653589793)),.1)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1.16,-0.65+0.35*sin((sine+0.5)*2.5)),angles(0,-1.5707963267948966,0.7853981633974483-0.3490658503988659*sin((sine+0.75)*2.5))),.1)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1-0.25*sin((sine+0.25)*2.5),-0.5+0.25*sin((sine+0.5)*2.5)),angles(0,1.5707963267948966,-0.8726646259971648-0.2617993877991494*sin((sine+0.5)*2.5))),.1)  
 
