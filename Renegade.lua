@@ -3175,6 +3175,9 @@ if ColorFlick then
 for _,v in modet:GetChildren() do 
 if v:IsA("UIGradient") and Mode=="E q u i n o x" then 
 for i=1,255,25.5 do
+if Mode~="E q u i n o x" then 
+break 
+end
 v.Color=cs({
   csk(0,rgb(i,i,i)),
   csk(.45,rgb(i,i,i)),
@@ -3190,6 +3193,9 @@ else
 for _,v in modet:GetChildren() do 
 if v:IsA("UIGradient") and Mode=="E q u i n o x" then 
 for i=1,255,25.5 do
+if Mode~="E q u i n o x" then 
+break 
+end
 v.Color=cs({
   csk(0,rgb(255-i,255-i,255-i)),
   csk(.45,rgb(255-i,255-i,255-i)),
