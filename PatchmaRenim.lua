@@ -294,8 +294,8 @@ function Reanim()
 print(Global.RigHead)
 coroutine.resume(coroutine.create(function()
   print("0")
-wait(1.5)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+wait(.5)
+--game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
 end))
 
 
