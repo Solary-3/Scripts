@@ -974,6 +974,7 @@ local Nebula  = ExecutorsTab:CreateButton({
 ----================----
 if Place == 17574618959 or Place == 88308889239232 or Place==123974602339071 then
 local HatsTab = Window:CreateTab("Hats And Rigs", nil)
+
 local PDButton  = HatsTab:CreateButton({
    Name = "Permdeath For Genesis",
    Callback = function() 
@@ -999,7 +1000,17 @@ local save= HatsTab:CreateButton({
   game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-sh")
    end,
 })
-
+local OthersSection = HatsTab:CreateSection("Renegade Glitcher Rigs")
+Button8 = HatsTab:CreateButton({
+   Name = "Renegade Glitcher Rigs",
+   Callback = function() 
+   Chat("-gh 5316479641,5316539421,5699795428,5268602207 131385506535381 85392395166623 129462518582032 138364679836274 12850150835 106249329428811")
+if game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name):WaitForChild("Accessory (LLeg)") then 
+wait(2)
+Chat("-sh")
+end
+   end,
+})
 local RemoveHatsDivider1 = HatsTab:CreateDivider()
 local HatsParagraph = HatsTab:CreateParagraph({Title = "IMPORTANT!", Content = "It is important that you should always load the rigs for genesis so everyone can see you"})
 local Button  = HatsTab:CreateButton({
@@ -1085,17 +1096,6 @@ local Button8 = HatsTab:CreateButton({
    Name = "Sword Glitchers",
    Callback = function() 
    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-gh 4820152700 4524991457 4794315940 4506945409 4458601937 4315489767 4623728953 5030789687 4773883146 4773932088 4855847190 4932541287")
-   end,
-})
-local OthersSection = HatsTab:CreateSection("Renegade Glitcher Rigs")
-Button8 = HatsTab:CreateButton({
-   Name = "Renegade Glitcher Rigs",
-   Callback = function() 
-   Chat("-gh 5316479641,5316539421,5699795428,5268602207 131385506535381 85392395166623 129462518582032 138364679836274 12850150835 106249329428811")
-if game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name):WaitForChild("Accessory (LLeg)") then 
-wait(2)
-Chat("-sh")
-end
    end,
 })
 end
