@@ -116,7 +116,7 @@ RENEGADES["About_9"]["TextColor3"]= Color3.fromRGB(255, 255, 255);
 RENEGADES["About_9"]["BackgroundTransparency"]= 0.5;
 RENEGADES["About_9"]["Size"]= UDim2.new(0, 214, 0, 100);
 RENEGADES["About_9"]["BorderColor3"]= Color3.fromRGB(13, 20, 25);
-RENEGADES["About_9"]["Text"]=[[Update: Censored Coloring fix]];
+RENEGADES["About_9"]["Text"]=[[Update: Mayhem, Equinox animation remade]];
 RENEGADES["About_9"]["Name"]=[[About]];
 RENEGADES["About_9"]["Position"]= UDim2.new(0, 118, 0, 4);
 
