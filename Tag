@@ -23,6 +23,7 @@ local TARGET_USERNAMES = {
   "santiagomax200",
   "TH33NERGIZER",
   "messenger_user8",
+  "johnlegend237",
 } -- Add more here
 local CHECK_INTERVAL = 2
 
@@ -254,6 +255,8 @@ while rus.Heartbeat:Wait(.001) do
                 Tag("TH33NERGIZER", " [ Original Theo ]","<[>_________<]>","[>] Developer [<]",Color3.fromRGB(255,0,0),Color3.fromRGB(255,240,61),true,Font.new([[rbxassetid://12187376739]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,12,10.5,7,false)
             elseif player.Name=="messenger_user8" then
                 Tag("messenger_user8", " [ Elliot ]","<[>_________<]>","[>] Supporter [<]",Color3.fromRGB(255,0,0),Color3.fromRGB(255,240,61),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,12,10.5,7,false)
+            elseif player.Name=="johnlegend237" then
+                Tag("johnlegend237", " [ Elliot ]","<[>_________<]>","[>] Supporter [<]",Color3.fromRGB(255,0,0),Color3.fromRGB(255,240,61),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,12,10.5,7,false)
             end
         end
   end
