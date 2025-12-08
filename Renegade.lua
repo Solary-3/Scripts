@@ -912,7 +912,7 @@ local getPartFromMesh=t.getPartFromMesh
 local getPartJoint=t.getPartJoint
 local sword = getPartFromMesh(5254583415, 5268538095)
 local s1_1 = sword and getPartJoint(sword) or {C0 = cf_0} -- VoidLord Sword
-local sword2 = getPartFromMesh(5278721954, 5692006383)
+local sword2 = getPartFromMesh(5278721954, 5316471565)
 local s1_2 = sword2 and getPartJoint(sword2) or {C0 = cf_0} -- Halloween Sword
 local sword3 = getPartFromMesh(5278721954, 5316510551)
 local s1_3 = sword3 and getPartJoint(sword3) or {C0 = cf_0} -- Rainbow Sword
@@ -3756,10 +3756,10 @@ s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-1 * sin((sine+0.75)*2),3+1*sin((sine+0.65)*2),-6.
 s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-1 * sin((sine+0.75)*2),3+1*sin((sine+0.45)*2),-5.55-1*sin((sine+0.5)*2)),angles(0,-1.5707963267948966-0.5235987755982988*sin((sine+0.45)*2),-0.7853981633974483-0.17453292519943295*sin((sine+0.55)*2))),deltaTime)  
 s1_4.C0=Lerp(s1_4.C0,cfMul(cf(1 * sin((sine+0.75)*2),3+1*sin((sine+0.65)*2),-6.55-1*sin((sine+0.5)*2)),angles(0,1.5707963267948966+0.5235987755982988*sin((sine+0.15)*2),0.08726646259971647+0.3490658503988659*sin((sine+0.35)*2))),deltaTime) 
 else
-s1_1.C0=Lerp(s1_1.C0,cfMul(cf(-1,4.25+1.5*sin((sine+0.75)*1.5),-7-1.5*sin((sine+0.5)*1.5)),angles(0,1.5707963267948966+0.6981317007977318*sin((sine+0.6)*1.5),0.8726646259971648+0.17453292519943295*sin((sine+0.65)*1.5))),deltaTime)  
-s1_2.C0=Lerp(s1_2.C0,cfMul(cf(1,4.25+1.5*sin((sine+0.65)*1.5),-7-1.5*sin((sine+0.5)*1.5)),angles(0,-1.5707963267948966-0.6981317007977318*sin((sine+0.35)*1.5),-0.17453292519943295*sin((sine+0.85)*1.5))),deltaTime)  
-s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-1,4.25+1.5*sin((sine+0.75)*1.5),-7-1.5*sin((sine+0.5)*1.5)),angles(0,1.5707963267948966+0.6981317007977318*sin(sine*1.5),-2.443460952792061+0.17453292519943295*sin((sine+0.65)*1.5))),deltaTime) 
-s1_4.C0=Lerp(s1_4.C0,cfMul(cf(1,4.25+1.5*sin((sine+0.65)*1.5),-7-1.5*sin((sine+0.5)*1.5)),angles(0,-1.5707963267948966-0.6981317007977318*sin((sine+0.35)*1.5),3.141592653589793-0.17453292519943295*sin((sine+0.85)*1.5))),deltaTime)  
+s1_1.C0=Lerp(s1_1.C0,cfMul(cf(-1,4.25+1.5*sin((sine+0.75)*1.5),-7-1.5*sin((sine+0.5)*1.5)),angles(0,1.5707963267948966+0.6981317007977318*sin(sine*1.5),-2.443460952792061+0.17453292519943295*sin((sine+0.65)*1.5))),deltaTime)  
+s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-1,4.25+1.5*sin((sine+0.75)*1.5),-7-1.5*sin((sine+0.5)*1.5)),angles(0,1.5707963267948966+0.6981317007977318*sin((sine+0.6)*1.5),0.8726646259971648+0.17453292519943295*sin((sine+0.65)*1.5))),deltaTime)  
+s1_3.C0=Lerp(s1_3.C0,cfMul(cf(1,4.25+1.5*sin((sine+0.65)*1.5),-7-1.5*sin((sine+0.5)*1.5)),angles(0,-1.5707963267948966-0.6981317007977318*sin((sine+0.35)*1.5),3.3161255787892263-0.17453292519943295*sin((sine+0.85)*1.5))),deltaTime)  
+s1_4.C0=Lerp(s1_4.C0,cfMul(cf(1,4.25+1.5*sin((sine+0.65)*1.5),-7-1.5*sin((sine+0.5)*1.5)),angles(0,-1.5707963267948966-0.6981317007977318*sin((sine+0.35)*1.5),-0.17453292519943295*sin((sine+0.85)*1.5))),deltaTime) 
 end
 end
 end
