@@ -359,6 +359,15 @@ if game.SoundService:FindFirstChild("GlitcherAudioPlayer") then
 game.SoundService.GlitcherAudioPlayer:Destroy()
 end
 
+
+
+
+
+
+
+
+
+
 --// Main Script
 function MainScript()
 if Running then print("Already Running.") return end 
@@ -913,7 +922,7 @@ local getPartJoint=t.getPartJoint
 local sword = getPartFromMesh(5254583415, 5268538095)
 local s1_1 = sword and getPartJoint(sword) or {C0 = cf_0} -- VoidLord Sword
 local sword2 = getPartFromMesh(5278721954, 5316471565)
-local s1_2 = sword2 and getPartJoint(sword2) or {C0 = cf_0} -- Halloween Sword
+local s1_2 = sword2 and getPartJoint(sword2) or {C0 = cf_0} -- Aurora Sword
 local sword3 = getPartFromMesh(5278721954, 5316510551)
 local s1_3 = sword3 and getPartJoint(sword3) or {C0 = cf_0} -- Rainbow Sword
 local sword4 = getPartFromMesh(5278721954, 5278777022)
