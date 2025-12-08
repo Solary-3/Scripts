@@ -256,7 +256,7 @@ while rus.Heartbeat:Wait(.001) do
             elseif player.Name=="messenger_user8" then
                 Tag("messenger_user8", " [ Elliot ]","<[>_________<]>","[>] Supporter [<]",Color3.fromRGB(255,0,0),Color3.fromRGB(255,240,61),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,12,10.5,7,false)
             elseif player.Name=="johnlegend237" then
-                Tag("johnlegend237", " [ Elliot ]","<[>_________<]>","[>] Supporter [<]",Color3.fromRGB(0,0,200),Color3.fromRGB(0,0,150),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,12,10.5,7,false)
+                Tag("johnlegend237", " [ Blue Guest ]","<[>_________<]>","[>] Supporter [<]",Color3.fromRGB(0,0,200),Color3.fromRGB(0,0,150),true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),false,12,10.5,7,false)
             end
         end
   end
