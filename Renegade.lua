@@ -1511,7 +1511,7 @@ local FolClone=FrameFolder:Clone()
 FolClone.Parent=GUIMain
 
 for _, v in GUIMain:GetDescendants() do
-if v:IsA("ImageLabel") then
+if v:IsA("ImageLabel") and v.ImageTransparency==0 then
 local variable
 variable = UDim2.fromScale(1, math.random(50, 200) / 100)
 v.Size = variable
@@ -1527,7 +1527,7 @@ local _ = {
 Size = UDim2.fromScale(1, 0);
 ImageTransparency = 1;
 }
-variable = variable:Create(v, TweenInfo.new(1, Enum.EasingStyle.Quart), _)
+variable = variable:Create(v, TweenInfo.new(1.5, Enum.EasingStyle.Quart), _)
 variable:Play()
 end
 Deb:AddItem(FolClone,1)
