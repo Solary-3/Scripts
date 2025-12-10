@@ -1,3 +1,49 @@
+local stop=true 
+local function notify(text,dur)
+local Notify=game:GetService("StarterGui")
+Notify:SetCore("SendNotification",{
+Title="Service";
+Text=text})
+Duration=5 or dur
+end
+
+notify("Check Console.")
+print("Hey there! Its me Theo, now your probably wondering, why did my script stopped entirely? the reason is that im not on the mood into doing scripting and maintaining my script, i know your probably upset or sad that i stopped the script youve used the most and thats why i have to put it into an end. Its fun while it lasted, its been a wonderful journey weve had went through and hope that, thank you spending your time with me and using my script \n\n\n - Love from Theo")
+
+
+
+
+
+
+
+
+
+
+
+
+if stop then return end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 --//Options
 local Global=(getgenv and getgenv()) or shared
