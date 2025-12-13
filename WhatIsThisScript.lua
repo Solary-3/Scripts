@@ -469,13 +469,36 @@ end
 local Reanimate=getgenv().Reanimate
 REANIMATE.MouseButton1Click:Connect(function()
 if REANIMATION then return notify([[Reanimating]]) end
-if game.Workspace:FindFirstChild("GelatekReanimate") or game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name.."_Fake")
+if game.Workspace:FindFirstChild("GelatekReanimate") or game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name.."_Fake") then return notify("Reanimated.") end
+
+
+if Place == 17574618959 or Place == 88308889239232 or Place==123974602339071 then
 REANIMATION=true
 if Reanimate=="Gelatek" then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+elseif Reanimate=="Current" then
+Backup()
+end
+wait(1)
+if Reanimate=="Gelatek" then
+if ws:FindFirstChild("GelatekReanimate") then 
+REANIMATION=false
+Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
+end
 
-
+elseif Reanimate=="Current" then 
+if game.Workspace:WaitForChild(game.Players.LocalPlayer.Name.."_Fake") then
+REANIMATION=false
+Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
+end
+end
+else 
+Backup()
+wait(5) 
+REANIMATION=false
+Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
+end
 
 
 
