@@ -750,7 +750,7 @@ local validAudioFiles = {
 "Touch.mp3",
 "Lonely.mp3",
 "whateverlike.mp3",
-"matchmaker.mp3",
+"Matchmaker.mp3",
 "faster.ogg",
 "Metro.mp3",
 "Jumpstyle.mp3",
