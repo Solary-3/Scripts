@@ -21,6 +21,7 @@ Title="Krystal Dance V3";
 Text=text;
 Duration=5 or dur})
 end
+
 local ws=game.Workspace
 if ws:FindFirstChild("full") then
 ws.full:Destroy()
@@ -771,6 +772,8 @@ local validAudioFiles = {
 "Pokedance.mp3",
 "Slash.mp3",
 "God only knows.mp3",
+"GetDown.mp3",
+"SpokenFor.mp3",
 }
 
 --THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
@@ -842,7 +845,7 @@ local UPDATE=nil
 local sprinting = false 
 local uis = game:GetService("UserInputService")
 
-
+notify("Added 2 new dances ")
 
 --coroutine.wrap(AsyncPreloadDances)()
 
@@ -901,6 +904,7 @@ fullscreenz.Size = UDim2.new(1, 0, 1, 0)
 fullscreenz.Position = UDim2.new(0, 0, 0, 0)
 local imgl2 = Instance.new("ImageLabel",fullscreenz)
 imgl2.BackgroundTransparency = 1
+imgl2.Visible = false
 imgl2.BorderSizePixel = 0
 imgl2.ImageTransparency = 0.5
 imgl2.ImageColor3 = Color3.new(0,0,0)
@@ -909,6 +913,7 @@ imgl2.Size = UDim2.new(0,600,0,600)
 imgl2.Image = "rbxassetid://320731120"
 local techc = imgl2:Clone()
 techc.Parent = fullscreenz
+techc.Visible = false
 techc.ImageTransparency = 0.5
 techc.Size = UDim2.new(0,700,0,700)
 techc.Position = UDim2.new(0.75,-50,0.55,-50)
@@ -916,6 +921,7 @@ techc.ImageColor3 = Color3.new(0,0,0)
 techc.Image = "rbxassetid://521073910"
 local circl = imgl2:Clone()
 circl.Parent = fullscreenz
+circl.Visible = false
 circl.ImageTransparency = 0
 circl.Size = UDim2.new(0,500,0,500)
 circl.Position = UDim2.new(0.75,50,0.55,50)
@@ -923,16 +929,19 @@ circl.ImageColor3 = Color3.new(0,0,0)
 circl.Image = "rbxassetid://997291547"
 local circl2 = imgl2:Clone()
 circl2.Parent = fullscreenz
+circl2.Visible = false
 circl2.ImageTransparency = 0
 circl2.ImageColor3 = Color3.new(0,0,0)
 circl2.Image = "rbxassetid://997291547"
 local imgl2b = imgl2:Clone()
 imgl2b.Parent = fullscreenz
+imgl2b.Visible = false
 imgl2b.ImageTransparency = 0
 imgl2b.Size = UDim2.new(0,500,0,500)
 imgl2b.Position = UDim2.new(0.75,50,0.55,50)
 local ned = Instance.new("TextLabel",fullscreenz)
 ned.ZIndex = 2
+ned.Visible = false
 ned.FontFace = Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic)
 ned.BackgroundTransparency = 1
 ned.BorderSizePixel = 0.65
@@ -3494,6 +3503,40 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				local dance=LoadDance("Takino", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Takino.lua")
 				sound69:Play()
 				Info("Takino","R")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+		  	end
+	  elseif k == "t" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				Playsound.Volume=0
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("SpokenFor.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("SpokenFor", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Spoken For.lua")
+				sound69:Play()
+				Info("Spoken For","T")
+				if dance then
+				playanim(dance) 
+				end-- uuid. 71723925114737
+			else
+				stopanim()
+		  	end
+	  elseif k == "y" then
+			if dancing == false then
+				stopanim()
+				dancing = true
+				Playsound.Volume=0
+				task.wait(.005)
+				sound69.SoundId = DanceAsset("GetDown.mp3")
+				timeposcur = sound69.TimePosition 
+				local dance=LoadDance("GetDown", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Get Down.lua")
+				sound69:Play()
+				Info("Get Down","Y")
 				if dance then
 				playanim(dance) 
 				end-- uuid. 71723925114737
