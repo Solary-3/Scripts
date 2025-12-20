@@ -11,10 +11,8 @@ local TAG_NAME = "ScriptOwnerTag"
 local TARGET_USERNAMES = { 
   "Username10000",
   "Theo_TheoBenzo",
-  "NewplayerNewGuy8",
   "VI_lato",
   "russki_krutoi",
-  "sfsue6747", 
   "da_bebe3",
   "7heo_V2",
   "Sagey_Real",
