@@ -984,7 +984,7 @@ local script = Instance.new("LocalScript")
 real = true
 pcall(function()
 	local OxideApi = loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/Utils/refs/heads/main/OxideApi"))()
-	OxideApi.Notification("Krystal Dance V3, Made by Hemi, fixed by MrY7zz",10)
+	OxideApi.Notification("Krystal Dance V3, Fixed by MrY7zz, Modded by Theo",10)
 end)
 local mrandom=math.random
 local playanother = false
