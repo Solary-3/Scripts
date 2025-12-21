@@ -925,7 +925,7 @@ do
 	local signalCache = {};
 	local settingsCache = {
 		executor = {
-			openingMode = "Floating Icon", -- SPDM Team | Floating Icon
+			openingMode = "Small Icon", -- SPDM Team | Floating Icon
 			showParticles = true, -- SPDM Team | Show Particles Setting
 			autoExecute = true,
 			autoSaveTabs = false,
