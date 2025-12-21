@@ -928,11 +928,11 @@ do
 			openingMode = "Small Icon", -- SPDM Team | Floating Icon
 			showParticles = true, -- SPDM Team | Show Particles Setting
 			autoExecute = true,
-			autoSaveTabs = false,
+			autoSaveTabs = true,
 			fps = {
-				unlocked = false,
+				unlocked = trur,
 				vSync = false,
-				value = 60
+				value = 144
 			}
 		},
 		player = {
