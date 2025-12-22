@@ -930,7 +930,7 @@ do
 			autoExecute = true,
 			autoSaveTabs = true,
 			fps = {
-				unlocked = trur,
+				unlocked = true,
 				vSync = false,
 				value = 144
 			}
