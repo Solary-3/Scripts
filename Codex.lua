@@ -944,7 +944,7 @@ do
 				enabled = false,
 				value = 50
 			},
-			antiAfk = false
+			antiAfk = true
 		},
 		serverHop = {
 			priority = "Most Players",
