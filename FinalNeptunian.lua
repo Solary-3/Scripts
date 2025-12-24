@@ -5174,7 +5174,7 @@ function MusicAsset(filename)
     end
 wait(1)
 end
-local BanishMode=68
+local BanishMode=1
 local muter = false
 local ORGID = 1873219898
 local ORVOL = 1.15
