@@ -1035,7 +1035,52 @@ do
 		cache = {
 			{
 				title = "Script 1",
-				content = "print('Hello World!');",
+				content = [[function FindPartByMesh(meshId, textureId)
+    local char = game.Players.LocalPlayer.Character
+
+    meshId = tostring(meshId)
+    textureId = tostring(textureId)
+
+    for _, obj in ipairs(char:GetDescendants()) do
+        if obj:IsA("SpecialMesh") then
+            
+            local meshMatch = string.find(obj.MeshId, meshId)
+            local textureMatch = string.find(obj.TextureId, textureId)
+
+            if meshMatch and textureMatch then
+                local accessory = obj:FindFirstAncestorWhichIsA("Accessory")
+                if accessory then
+                    return accessory.Name
+                    end
+              end
+         end
+    end
+return char:FindFirstChildOfClass("Accessory").Name or nil
+end
+print(FindPartByMesh(11153527295,12146063200))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local Global=(getgenv and getgenv()) or shared
+Global.RenegadeConfig={
+["Legacy"]=false, --  Enable this if u wanna use the old anims on some modes 
+["CameraFocus"]=FindPartByMesh(11153527295,12146063200), -- This is required or else the script will break, 
+["Intro"]=false, -- Set this to true if u want an intro animation
+}
+
+loadstring(readfile("Renegade.lua"))()]],
 				index = 1
 			}
 		},
