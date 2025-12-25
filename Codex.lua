@@ -1035,7 +1035,7 @@ do
 		cache = {
 			{
 				title = "Script 1",
-				content = [[function FindPartByMesh(meshId, textureId)
+				content = [=[function FindPartByMesh(meshId, textureId)
     local char = game.Players.LocalPlayer.Character
 
     meshId = tostring(meshId)
@@ -1080,7 +1080,7 @@ Global.RenegadeConfig={
 ["Intro"]=false, -- Set this to true if u want an intro animation
 }
 
-loadstring(readfile("Renegade.lua"))()]],
+loadstring(readfile("Renegade.lua"))()]=],
 				index = 1
 			}
 		},
