@@ -703,7 +703,7 @@ end
 local simradv=0
 local charcons={}
 local function onplayer(v)
-simradv=simradv+1000
+simradv=simradv+10000
 local lastc=nil
 local function oncharacter()
 local newc=insGet(v,"Character")
@@ -766,6 +766,13 @@ insSet(hrp,"AssemblyAngularVelocity",v3_0)
 insSet(hrp,"CFrame",cfr)
 twait(0.2501)
 end
+
+
+local function ensureFDless()
+end
+
+
+
 if respawntp then
 local startpos=pos+v3(mrandom(-32,32),0,mrandom(-32,32))
 local dir=nil
@@ -1243,6 +1250,95 @@ local lastsine=sine
 local con=nil
 local lastPosition = pos
  local movementThreshold = 0.1
+local lllll
+
+if simrad then
+setsimrad()
+end
+pcall(function()
+for _=1,20 do
+pcall(function() 
+for _,v in game.Players.LocalPlayer.Character:GetChildren() do
+if v:IsA("Accessory") then
+local hatPart = v
+if v then
+v.Handle.Anchored=false
+v.Handle.CanCollide=false
+insSet(v.Handle, "CFrame", cframes[v.Handle] or cf_0)
+v.Handle.Position=v3(ws:FindFirstChild("CamFocus").Position.X,ws:FindFirstChild("CamFocus").Position.Y+3,ws:FindFirstChild("CamFocus").Position.Z)
+end
+end
+end
+end)
+twait(.0010)
+end
+end)
+pcall(function()
+for _=1,15 do
+pcall(function() 
+for _,v in game.Players.LocalPlayer.Character:GetChildren() do
+if v:IsA("Accessory") then
+local hatPart = v
+if v then
+v.Handle.Anchored=false
+v.Handle.CanCollide=false 
+v.Handle.Position=v3(ws:FindFirstChild("CamFocus").Position.X,ws:FindFirstChild("CamFocus").Position.Y+3,ws:FindFirstChild("CamFocus").Position.Z)
+end
+end
+end
+end)
+twait(.010)
+end
+end)
+lllll=game.Players.LocalPlayer.CharacterAdded:Connect(function()
+if not c then 
+lllll:Disconnect()
+end
+if simrad then
+setsimrad()
+end
+tspawn(function()
+pcall(function()
+for _=1,2 do
+pcall(function() 
+for _,v in game.Players.LocalPlayer.Character:GetChildren() do
+if v:IsA("Accessory") then
+local hatPart = v
+if v then
+v.Handle.Anchored=true 
+v.Handle.CanCollide=false
+insSet(v.Handle, "CFrame", cframes[v.Handle] or cf_0)
+v.Handle.Position=v3(ws:FindFirstChild("CamFocus").Position.X,ws:FindFirstChild("CamFocus").Position.Y+3,ws:FindFirstChild("CamFocus").Position.Z)
+end
+end
+end
+end)
+twait(.0010)
+end
+end)
+pcall(function()
+for _=1,2 do
+pcall(function() 
+for _,v in game.Players.LocalPlayer.Character:GetChildren() do
+if v:IsA("Accessory") then
+local hatPart = v
+if v then
+v.Handle.Anchored=false
+v.Handle.CanCollide=false 
+v.Handle.Position=v3(ws:FindFirstChild("CamFocus").Position.X,ws:FindFirstChild("CamFocus").Position.Y+3,ws:FindFirstChild("CamFocus").Position.Z)
+end
+end
+end
+end)
+twait(.010)
+end
+end)
+end)
+end)
+
+
+
+
 local function mainFunction()
 if not c then 
 for i,v in next,cframes do
@@ -1276,7 +1372,6 @@ sine=osclock()
 local delta=sine-lastsine
 deltaTime=min(delta*10,1)
 lastsine=sine
-
 if shiftlock then
 if allowshiftlock then
 mouseBehavior=enumMLC
