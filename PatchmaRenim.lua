@@ -1262,7 +1262,7 @@ for _,v in game.Players.LocalPlayer.Character:GetChildren() do
 if v:IsA("Accessory") then
 local hatPart = v
 if v then
-v.Handle.Anchored=false
+v.Handle.Anchored=true 
 v.Handle.CanCollide=false
 insSet(v.Handle, "CFrame", cframes[v.Handle] or cf_0)
 v.Handle.Position=v3(ws:FindFirstChild("CamFocus").Position.X,ws:FindFirstChild("CamFocus").Position.Y+3,ws:FindFirstChild("CamFocus").Position.Z)
