@@ -1080,6 +1080,7 @@ Global.RenegadeConfig={
 ["Legacy"]=false, --  Enable this if u wanna use the old anims on some modes 
 ["CameraFocus"]=FindPartByMesh(11153527295,12146063200,"BestFittingBlack"), -- This is required or else the script will break, 
 ["Intro"]=false, -- Set this to true if u want an intro animation
+["Torso"]=FindPartByMesh(110684113028749,70661572547971,"Accessory (Black)")
 }
 
 loadstring(readfile("Renegade.lua"))()]=],
