@@ -1081,6 +1081,17 @@ Global.RenegadeConfig={
 ["CameraFocus"]=FindPartByMesh(11153527295,12146063200,"BestFittingBlack"), -- This is required or else the script will break, 
 ["Intro"]=false, -- Set this to true if u want an intro animation
 ["Torso"]=FindPartByMesh(110684113028749,70661572547971,"Accessory (Black)")
+["PreloadAnimation"]=true, -- set this to true if your executor supports replicatesignal(most support)
+["Breakjoints"]=3, -- set this to true if your executor supports replicatesignal(most support)
+--1 - Breakjoint+Health(most support)
+--2 - Health Or Breakjoint
+--3 - Breakjoints
+--4 - ServerBreakJoints
+["RespawnTp"]=2, 
+--0 stay at spawn
+--1 - random tp close
+--2 - behind char
+--3 - hidebody(no need to set to 3, script automatically hides it)
 }
 
 loadstring(readfile("Renegade.lua"))()]=],
