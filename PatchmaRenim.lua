@@ -26,6 +26,7 @@ local pcall=pcall
 local xpcall=xpcall
 local type=type
 local typeof=typeof
+local vnormalize=vector.normalize 
 local game=game
 local i=Instance.new 
 local v2=Vector2.new 
@@ -49,6 +50,7 @@ local cf_0=cf(0,0,0)
 local v3_xz=v3_101*10
 local v3_xzL=v3_101*250.1
 local v3_net=v3_010*25.01
+local vmagnitude=vector.magnitude
 local function rs(l) 
 l=l or mrandom(8,15) 
 local s="" 
@@ -82,24 +84,30 @@ local ClearAllChildren=insGet(game,"ClearAllChildren")
 local Destroy=insGet(game,"Destroy")
 local IsA=insGet(game,"IsA")
 local FindFirstChildOfClass=insGet(game,"FindFirstChildOfClass")
-local FindFirstChild=insGet(game,"FindFirstChild")
 local FindFirstChildWhichIsA=insGet(game,"FindFirstChildWhichIsA")
 local GetChildren=insGet(game,"GetChildren")
 local GetDescendants=insGet(game,"GetDescendants")
 local IsDescendantOf=insGet(game,"IsDescendantOf")
 local GetPropertyChangedSignal=insGet(game,"GetPropertyChangedSignal")
+
+--findfirstchildofclass faster than getservice
 local plrs=FindFirstChildOfClass(game,"Players")
 local rus=FindFirstChildOfClass(game,"RunService")
 local ws=FindFirstChildOfClass(game,"Workspace")
 local uis=FindFirstChildOfClass(game,"UserInputService")
 local gs=FindFirstChildOfClass(game,"GuiService")
+local sg=FindFirstChildOfClass(game,"StarterGui")
 local lp=insGet(plrs,"LocalPlayer")
 local pg=FindFirstChildOfClass(lp,"PlayerGui")
 local mouse=insGet(lp,"GetMouse")(lp)
-local stepped=insGet(rus,"Stepped")
+local cdsb=insGet(lp,"ConnectDiedSignalBackend")
+local rst=insGet(plrs,"RespawnTime")+0.07 --1/15
+local preanimation=insGet(rus,"PreAnimation")
 local heartbeat=insGet(rus,"Heartbeat")
 local renderstepped=insGet(rus,"RenderStepped")
 local GetPlayers=insGet(plrs,"GetPlayers")
+local SetCoreGuiEnabled=insGet(sg,"SetCoreGuiEnabled")
+local GetCoreGuiEnabled=insGet(sg,"GetCoreGuiEnabled")
 local Raycast=insGet(ws,"Raycast")
 local Connect=heartbeat.Connect
 local Disconnect=Connect(GetPropertyChangedSignal(game,"CreatorId"),type).Disconnect
@@ -125,12 +133,27 @@ local accessorylimbs={
 
 { meshid="96333112188696",textureid="18807356481",C0=angles(0,0,0),Name="Left Arm" },
 
-{ meshid="96130316788066",textureid="18807356481",C0=angles(0
-,0,0),Name="Right Arm" },
+{ meshid="96130316788066",textureid="18807356481",C0=angles(0,0,0),Name="Right Arm" },
 
 {meshid="11263221350",textureid="11263219250",C0=angles(0,0,0),Name="Left Arm"},
 
 {meshid="11159370334",textureid="11159284657",C0=angles(0,0,0),Name="Right Arm"},
+
+
+--// Noob Rigs 
+
+{meshid="137702817952968",textureid="135650240593878",C0=angles(0,0,80.05),Name="Left Arm"},
+{meshid="137702817952968",textureid="135650240593878",C0=angles(0,0,80.05),Name="Right Arm"},
+{meshid="137702817952968",textureid="73798034827573",C0=angles(0,0,80.09),Name="Left Leg"},
+{meshid="137702817952968",textureid="73798034827573",C0=angles(0,0,80.09),Name="Right Leg"},
+{meshid="126825022897778",textureid="125975972015302",C0=angles(0,0,0),Name="Torso"},
+
+
+
+
+
+
+
 
 
 
@@ -174,14 +197,15 @@ end
 end
 return nil
 end
-local function timegp(p,n,c,t)
+local timegp=function(p,n,c,t)
 t=osclock()+t
 while t>osclock() do
-local r=gp(p,n,c)
-if r then
-return r
+for i,v in next,GetChildren(p) do
+if IsA(v,c) and (insGet(v,"Name")==n) then
+return v
 end
-Wait(stepped)
+end
+Wait(preanimation)
 end
 return nil
 end
@@ -214,10 +238,7 @@ end
 end
 return nil, nil
 end
-local function makeplaceholder(v)
-if typeof(v)~="Instance" then
-return nil
-end
+local makeplaceholder=function(v)
 if not insGet(v,"Archivable") then
 insSet(v,"Archivable",true)
 end
@@ -234,10 +255,9 @@ insSet(v,"Name",rs())
 insSet(v,"Anchored",true)
 insSet(v,"CanCollide",false)
 insSet(v,"Transparency",0.25)
-insSet(v,"Parent",ws)
 return v
 end
-local function ondes(d)
+local ondes=function(d)
 if IsA(d,"GuiObject") then
 local thisEntered = false
 local thisAdded = false
@@ -269,7 +289,7 @@ end)
 local con3 = nil
 con3 = Connect(insGet(d,"AncestryChanged"),function()
 if not IsDescendantOf(d,window) then
-if thisEntered then
+if thisAdded then
 activeEntered = activeEntered - 1
 end
 Disconnect(con0)
@@ -301,14 +321,15 @@ end))
 
 local allowshiftlock=true
 local ctrltp=false
-local placeholders=true
+local placeholders=false
 local clickfling=false
 local highlightflingtargets=false
-local discharscripts=false 
-local flingchangestate=3
-local respawntp=2
+local discharscripts=false
+local flingchangestate=1
+local respawntp=1
 local breakjointsmethod=1
 local simrad=true 
+local hidedeatheffect=true
 local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
 local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
 local retVelTime = 0.51 --time that claimed parts have velocity to reclaim in case u lose them
@@ -405,6 +426,7 @@ local fpdh=insGet(ws,"FallenPartsDestroyHeight")
 novoid=novoid and (fpdh+1)
 
 local Yvel=0
+local enumH=e.CoreGuiType.Health
 local cfr=insGet(rootpart,"CFrame")
 local pos=cfGet(cfr,"Position")
 cfr=cfl(pos,pos+cfGet(cfr,"LookVector")*v3_101)
@@ -418,9 +440,9 @@ local camrot=cfl(v3_0,camcfLV)
 local camcfRV=cfGet(camrot,"RightVector")
 local cammag=-v3Get((cfGet(camcf,"Position")-(pos+v3_0150)),"Magnitude")
 local velYdelta=insGet(ws,"Gravity")*0.025
-	Connect(GetPropertyChangedSignal(ws,"Gravity"),function()
-		velYdelta=insGet(ws,"Gravity")*0.025
-	end)
+Connect(GetPropertyChangedSignal(ws,"Gravity"),function()
+velYdelta=insGet(ws,"Gravity")*0.025
+end)
 
 local R6parts={ 
 head={Name="Head"},
@@ -600,6 +622,50 @@ local flingtable={}
 local rootparts={}
 for i,v in next,accessorylimbs do
 v.p=getPart(v.Name)
+local RunService = game:GetService("RunService")
+
+local function FDWeld(handle, target)
+if not handle or not target then return end
+if handle:FindFirstChild("FDWeld") then return end
+handle.CanCollide = false
+handle.Massless = true
+local weld = Instance.new("WeldConstraint")
+weld.Name = "FDWeld"
+weld.Part0 = handle
+weld.Part1 = target
+weld.Parent = handle
+pcall(function()
+handle.AssemblyLinearVelocity = Vector3.zero
+handle.AssemblyAngularVelocity = Vector3.zero
+end)
+end
+
+task.spawn(function()
+while c do
+
+pcall(function()
+for _, acc in ipairs(c:GetChildren()) do
+if acc:IsA("Accessory") then
+local handle = acc:FindFirstChild("Handle")
+if handle and not handle:FindFirstChild("FDWeld") then
+pcall(function()
+for _, limb in ipairs(accessorylimbs) do
+if limb.p and limb.p.Parent then
+if acc.Name == limb.Name then
+FDWeld(handle, limb.p)
+break
+end
+end
+end
+end)
+end
+end
+end
+end)
+RunService.Heartbeat:Wait()
+end
+end)
+
 end
 local function makePartCons(p,t)
 if (t.p==p) and insGet(p,"Anchored") then
@@ -633,22 +699,33 @@ local v1=attachments[insGet(v,"Name")]
 if v1 then
 local p=insGet(v,"Parent")
 if insGet(p,"Parent")~=c then
-local meshid,textureid=getMeshOfPart(p)
-if meshid then
-local found=false
+local meshid=nil
+local textureid=nil
+if IsA(p,"MeshPart") then
+meshid=insGet(p,"MeshId")
+textureid=insGet(p,"TextureID")
+elseif IsA(p,"BasePart") then
+local sm=FindFirstChildOfClass(p,"SpecialMesh")
+if sm then
+meshid=insGet(sm,"MeshId")
+textureid=insGet(sm,"TextureId")
+else
+return
+end
+else
+return
+end
 for i,_ in next,cframes do
 if (meshid==i.m) and (textureid==i.t) then
 local p1=i.p
 if p1 and IsDescendantOf(p1,c) then
 if p1==p then
-found=true
-break
+return
 end
 else
-found=true
 i.p=p
 makePartCons(p,i)
-break
+return
 end
 else
 local j=i.j
@@ -664,31 +741,29 @@ j.C0=insGet(v,"CFrame")
 j.C1=v1[2]
 j.Part1=v1[1]
 tinsert(joints,j)
-found=true
-break
+return
 end
 end
 end
-if not found then
 for i,l in next,accessorylimbs do
 if l.p and sfind(meshid,l.meshid) and sfind(textureid,l.textureid) then
 local t={Name=insGet(p,"Name"),l=insGet(p,"Position"),m=meshid,t=textureid,p=p}
 makePartCons(p,t)
 if placeholders then
 t.v=makeplaceholder(p)
+t.b=false
 end
 cframes[t]=insGet(p,"CFrame")
 tinsert(joints,{Part0=t,Part1=l.p,C0=l.C0,C1=cf_0})
 l.p=nil
-found=true
-break
+return
 end
 end
-if not found then
 local t={Name=insGet(p,"Name"),l=insGet(p,"Position"),m=meshid,t=textureid,p=p}
 makePartCons(p,t)
 if placeholders then
 t.v=makeplaceholder(p)
+t.b=false
 end
 cframes[t]=insGet(p,"CFrame")
 tinsert(joints,{Part0=t,Part1=v1[1],C0=insGet(v,"CFrame"),C1=v1[2]})
@@ -696,22 +771,20 @@ end
 end
 end
 end
-end
-end
-end
 
 local simradv=0
 local charcons={}
-local function onplayer(v)
-simradv=simradv+10000
+local onplayer=function(v)
+simradv=simradv+1000
+local islp=v==lp
 local lastc=nil
-local function oncharacter()
+local oncharacter=function()
 local newc=insGet(v,"Character")
 if c and newc and (newc~=lastc) then
 lastc=newc
 characters[v]=newc
 refreshrayfilter()
-if v==lp then
+if islp then
 if discharscripts then
 Connect(insGet(newc,"DescendantAdded"),discharscripts)
 for i,v in next,GetDescendants(newc) do
@@ -725,10 +798,25 @@ if not (hrp and c and IsDescendantOf(newc,ws)) then return end
 c=newc
 local fi,fv=next(flingtable)
 if fi then
-if flingchangestate then
+if permadeath and not pdloadedtime then
+replicatesignal(cdsb)
+pdloadedtime=osclock()+rst
+end
+if flingchangestate==3 then
 local hum=FindFirstChildOfClass(c,"Humanoid")
 if hum then
 insGet(hum,"ChangeState")(hum,e.HumanoidStateType.Physics)
+insGet(hum,"SetStateEnabled")(hum,e.HumanoidStateType.Seated,false)
+end
+elseif flingchangestate==1 then
+local hum=FindFirstChildOfClass(c,"Humanoid")
+if hum then
+insGet(hum,"ChangeState")(hum,e.HumanoidStateType.Physics)
+end
+elseif flingchangestate==2 then
+local hum=FindFirstChildOfClass(c,"Humanoid")
+if hum then
+insGet(hum,"SetStateEnabled")(hum,e.HumanoidStateType.Seated,false)
 end
 end
 for i,v in next,tclone(flingtable) do
@@ -745,7 +833,7 @@ end
 if insGet(i,"Anchored") or not IsDescendantOf(i,ws) then
 break
 end
-if v3Get((startpos-insGet(i,"Position")),"Magnitude")>200 then
+if vmagnitude(startpos-insGet(i,"Position"))>200 then
 break
 end
 local tcf=cfAdd(insGet(i,"CFrame"),insGet(i,"AssemblyLinearVelocity")*(sin(sine*15)+1))
@@ -764,16 +852,11 @@ end
 insSet(hrp,"AssemblyLinearVelocity",v3_0)
 insSet(hrp,"AssemblyAngularVelocity",v3_0)
 insSet(hrp,"CFrame",cfr)
-twait(0.2501)
+twait(0.25)
 end
-
-
-local function ensureFDless()
-end
-
-
-
-if respawntp then
+if respawntp==0 then
+twait()
+elseif respawntp==1 then
 local startpos=pos+v3(mrandom(-32,32),0,mrandom(-32,32))
 local dir=nil
 local poscheck=true
@@ -781,16 +864,16 @@ while poscheck do
 poscheck=false
 for i,v in next,rootparts do
 local diff=(startpos-insGet(v,"Position"))*v3_101
-if v3Get(diff,"Magnitude")<10 then
+if vmagnitude(diff)<10 then
 poscheck=true
-dir=dir or (v3Get(diff,"Unit") * 3)
+dir=dir or (vnormalize(diff)*3)
 startpos=startpos+dir
 end
 end
 local diff=(startpos-pos)*v3_101
-if v3Get(diff,"Magnitude")<10 then
+if vmagnitude(diff)<10 then
 poscheck=true
-dir=dir or (v3Get(diff,"Unit") * 3)
+dir=dir or (vnormalize(diff)*3)
 startpos=startpos+dir
 end
 end
@@ -798,13 +881,48 @@ startpos=cfAdd(cfGet(cfr,"Rotation"),startpos)
 insSet(hrp,"CFrame",startpos)
 insSet(hrp,"AssemblyLinearVelocity",v3_0)
 insSet(hrp,"AssemblyAngularVelocity",v3_0)
-twait(0.2501)
+twait(0.25)
+elseif respawntp==2 then
+insSet(hrp,"CFrame",cfAdd(cfr,cfGet(cfr,"RightVector")*3.5-cfGet(cfr,"LookVector")*3.5))
+insSet(hrp,"AssemblyLinearVelocity",v3_0)
+insSet(hrp,"AssemblyAngularVelocity",v3_0)
+twait(0.25)
+elseif respawntp==3 then
+local t=osclock()+0.25
+if pdloadedtime and pdloadedtime>t then
+t=pdloadedtime
+end
+local startcf=cfAdd(cfMul(cfGet(cfr,"Rotation"),angles(1.5707963267948966,0,0)),pos*v3_101+v3_010*min(fpdh+30,v3Get(pos,"Y")-5))
+while twait() do
+insSet(hrp,"CFrame",startcf)
+insSet(hrp,"AssemblyLinearVelocity",v3_0)
+insSet(hrp,"AssemblyAngularVelocity",v3_0)
+if osclock()>t then
+break
+end
+end
 end
 if newc~=c then
 return
 end
 primarypart=insGet(newc,"PrimaryPart") or hrp
-if breakjointsmethod==1 then
+if hidedeatheffect and GetCoreGuiEnabled(sg,enumH) then
+SetCoreGuiEnabled(sg,enumH,false)
+end
+if pdloadedtime then
+if (osclock()<pdloadedtime) then
+twait(pdloadedtime-osclock())
+end
+pdloadedtime=nil
+end
+if breakjointsmethod==4 then
+local h=FindFirstChildOfClass(newc,"Humanoid")
+if h then
+replicatesignal(insGet(h,"ServerBreakJoints"))
+else
+insGet(newc,"BreakJoints")(newc)
+end
+elseif breakjointsmethod==1 then
 insGet(newc,"BreakJoints")(newc)
 local h=FindFirstChildOfClass(newc,"Humanoid")
 if h then
@@ -835,7 +953,6 @@ end
 charcons[v]=Connect(GetPropertyChangedSignal(v,"Character"),oncharacter)
 oncharacter()
 end
-
 for i,v in next,GetPlayers(plrs) do simradv=simradv+1000 if v~=lp then tspawn(onplayer,v) end end
 Connect(insGet(plrs,"PlayerAdded"),onplayer)
 onplayer(lp)
@@ -1249,92 +1366,199 @@ local noYvelTime=1
 local lastsine=sine
 local con=nil
 local lastPosition = pos
- local movementThreshold = 0.1
+local movementThreshold = 0.1
 local lllll
 
-if simrad then
-setsimrad()
-end
-pcall(function()
-for _=1,20 do
-pcall(function() 
-for _,v in game.Players.LocalPlayer.Character:GetChildren() do
-if v:IsA("Accessory") then
-local hatPart = v
-if v then
-v.Handle.Anchored=true 
-v.Handle.CanCollide=false
-insSet(v.Handle, "CFrame", cframes[v.Handle] or cf_0)
-v.Handle.Position=v3(ws:FindFirstChild("CamFocus").Position.X,ws:FindFirstChild("CamFocus").Position.Y+3,ws:FindFirstChild("CamFocus").Position.Z)
+
+function swait(num)
+if num==0 or num==nil then
+game:service'RunService'.Stepped:wait(0)
+else
+for i=0,num do
+game:service'RunService'.Stepped:wait(0)
 end
 end
 end
-end)
-twait(.0010)
-end
-end)
-pcall(function()
-for _=1,15 do
-pcall(function() 
-for _,v in game.Players.LocalPlayer.Character:GetChildren() do
-if v:IsA("Accessory") then
-local hatPart = v
-if v then
-v.Handle.Anchored=false
-v.Handle.CanCollide=false 
-v.Handle.Position=v3(ws:FindFirstChild("CamFocus").Position.X,ws:FindFirstChild("CamFocus").Position.Y+3,ws:FindFirstChild("CamFocus").Position.Z)
-end
-end
-end
-end)
-twait(.010)
-end
-end)
+
 lllll=game.Players.LocalPlayer.CharacterAdded:Connect(function()
 if not c then 
 lllll:Disconnect()
+print("Disconnected")
 end
 if simrad then
 setsimrad()
 end
+if c then
+pcall(function()
+for _,v in game.Players.LocalPlayer.Character:GetDescendants() do 
+if v:FindFirstChildOfClass("Sound") and v:FindFirstChild("Died")then
+v:Destroy()
+end
+end
+end)
+twait()
+pcall(function()
+for _,v in game.Players.LocalPlayer.Character:GetChildren() do 
+if not v: FindFirstChildOfClass("Accessory")then
+v.Position=v3(ws:FindFirstChild("CamFocus").Position.X,ws:FindFirstChild("CamFocus").Position.Y-5,ws:FindFirstChild("CamFocus").Position.Z)
+v.Anchored=false
+end
+end
+end)
 tspawn(function()
+twait(1.25)
 pcall(function()
-for _=1,2 do
-pcall(function() 
-for _,v in game.Players.LocalPlayer.Character:GetChildren() do
-if v:IsA("Accessory") then
-local hatPart = v
-if v then
-v.Handle.Anchored=true 
-v.Handle.CanCollide=false
-insSet(v.Handle, "CFrame", cframes[v.Handle] or cf_0)
-v.Handle.Position=v3(ws:FindFirstChild("CamFocus").Position.X,ws:FindFirstChild("CamFocus").Position.Y+3,ws:FindFirstChild("CamFocus").Position.Z)
-end
+for _,v in game.Players.LocalPlayer.Character:GetChildren() do 
+v.Position=v3(ws:FindFirstChild("CamFocus").Position.X+math.random(-5,5),ws:FindFirstChild("CamFocus").Position.Y-5+math.random(-5,-1),ws:FindFirstChild("CamFocus").Position.Z+math.random(-5,5))
+if not v: FindFirstChildOfClass("Accessory")then
+v.Anchored=false
 end
 end
 end)
-twait(.0010)
+end)
+
+
+
+
+
+local count=0
+local assem
+tspawn(function()
+twait()
+assem=game:GetService("RunService").Heartbeat:Connect(function()
+if c then
+if count==350 then
+assem:Disconnect()
+count=0
+else
+count+=1
+--print(count)
+pcall(function()
+for _, acc in game.Players.LocalPlayer.Character:GetChildren() do
+if acc:IsA("Accessory") and c then
+local h = acc.Handle
+h.AssemblyLinearVelocity=v3(0,25.01,0)
+h.AssemblyAngularVelocity=v3(0,0,0)
+end
 end
 end)
+end
+else 
+assem:Disconnect()
+count=0
+end
+end)
+end)
+
+
+
+
+
+tspawn(function()
+coroutine.resume(coroutine.create(function()
+for _=0,5 do
+if not c then break end 
 pcall(function()
-for _=1,2 do
-pcall(function() 
+for _, acc in game.Players.LocalPlayer.Character:GetChildren() do
+if acc:IsA("Accessory") and c then
+local h = acc.Handle
+h.CanCollide = false
+h.CanTouch = false
+h.CanQuery = false
+h.Massless = true
+h.Anchored = true
+twait()
+h.AssemblyLinearVelocity = v3(0,0,0)
+h.AssemblyAngularVelocity=v3(0,0,0)
+h.Anchored = false
+twait()
+end
+end
+end)
+tspawn(function()
+twait(2)
+pcall(function()
+for _,v in game.Players.LocalPlayer.Character:GetChildren() do 
+if not v:FindFirstChildOfClass("Accessory") or v:IsA("MeshPart") and not v:FindFirstChildOfClass("Humanoid") and c then
+local obj=ws:FindFirstChild("CamFocus")
+v.Anchored=true
+v.Position=v3(obj.Position.X,obj.Position.Y+10000,obj.Position.Z)
+end
+end
+end)
+end)
+end
+end))
+end)
+end
+end)
+
+
+
+
+
+tspawn(function()
+coroutine.wrap(function()
+twait(.2)
+pcall(function()
+for _,v in game.Players.LocalPlayer.Character:GetChildren() do 
+if not v: FindFirstChildOfClass("Accessory")then
+v.Position=v3(ws:FindFirstChild("CamFocus").Position.X,ws:FindFirstChild("CamFocus").Position.Y-7,ws:FindFirstChild("CamFocus").Position.Z+5)
+end
+end
+end)
+for _=0,10 do
+wait()
+coroutine.resume(coroutine.wrap(function() 
+for _=0,20 do
+if not c then break end
+pcall(function()
 for _,v in game.Players.LocalPlayer.Character:GetChildren() do
-if v:IsA("Accessory") then
-local hatPart = v
+if v:IsA("Accessory") and c then
 if v then
+v.Handle.Anchored=true
+twait()
 v.Handle.Anchored=false
-v.Handle.CanCollide=false 
-v.Handle.Position=v3(ws:FindFirstChild("CamFocus").Position.X,ws:FindFirstChild("CamFocus").Position.Y+3,ws:FindFirstChild("CamFocus").Position.Z)
+local h = v.Handle
+h.AssemblyLinearVelocity = v3(0,25.01,0)
+h.AssemblyAngularVelocity=v3(0,0,0)
 end
 end
 end
 end)
-twait(.010)
+end
+end))
 end
 end)
+twait(3)
+pcall(function()
+for _,v in game.Players.LocalPlayer.Character:GetChildren() do 
+if not v:FindFirstChildOfClass("Accessory") or v:FindFirstChildOfClass("MeshPart") and not v:FindFirstChildOfClass("Humanoid") and c then
+v.Position=v3(0,math.random(1000,10000),0)
+v.Anchored=true
+--print(v.Position)
+end
+end
 end)
+for _=0,50 do
+if not c then break end
+pcall(function()
+for _, acc in game.Players.LocalPlayer.Character:GetChildren() do
+if acc:IsA("Accessory") and c then
+local h = acc.Handle
+h.AssemblyLinearVelocity = v3(0,35,0)
+h.AssemblyAngularVelocity=v3(0,0,0)
+end
+end
 end)
+swait()
+end
+end)
+
+
+
+
+
 
 
 
