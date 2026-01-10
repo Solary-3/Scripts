@@ -7,12 +7,14 @@ Title="Service";
 Text=text})
 Duration=5 or dur
 end
+local function choot(msg)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(msg)
+end
+choot("/console")
 
-notify("Check Console.")
-print("\n\n\n--Hey there! Its me Theo, now your probably wondering, why did my script stopped entirely? the reason is that im not on the mood into doing scripting and maintaining my script and im getting tired, im not feeling well and im not the same guy youve used to know. I wanna be a different person, even though i still exploit, i had enough fromm those bans that i went through, my account has been put at risk and one of my account got terminated just from exploiting, now  i only have account left that has robux and a good progress waiting for its return. now your probably upset or sad that i stopped the script youve used the most and thats why i have to put it into an end. Its fun while it lasted, its been a wonderful journey weve had went through and hope that someday you and I wont forget the memories weve made throughout this wonderful journey , thank you spending your time with me and using my acripts\n\n Pro Tip: The original creator was hemi(Nitro-GT) is a zoophile so i had to stop modding it. \n\n\n - Love from Theo")
-print("\n\n-- Last message from me, all of my scripts will never go back, never will, so yeah, its was fun while it lasted.")
-
-
+--notify("Check Console.")
+print("\n-- Do yall really need this script back, but in exchange is that less updates than usual, since i have a good reason why i have to stop this temporarily, and the reason is that im currently working on my own star glitcher which is going good, plus it'll be released somewhere this year, no announcements just posted out of thin air, i know some of y'all are gonna steal the code, heh, goodluck, since im gonna obfuscate it, i know some of y'all have those intentions on taking a look inside the loadstring and downloading the script and calling it 'Yours' and saying that you made them, yeah, i understand all of your logics, never mess around with me")
+print("\n-- Since i have no exact date on where i will make this script return, and you, as my fellow user of it dont know it either, its gonna be back i promise, i just dont know what day or month i will put it back, so yeah, keep an eye out 👀 ")
 
 
 
