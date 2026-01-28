@@ -1510,7 +1510,7 @@ local modeInfo={
 	{Name="Legendary",Walkspeed=25,moveVal=6,Font=Enum.Font.Gotham,StrokeColor=C3.RGB(0,0,0);Music=5113252741,LeftWing={0,BrickColor.new'Gold'.Color,Enum.Material.Glass};RightWing={0,BrickColor.new'Gold'.Color,Enum.Material.Glass};WingAnim='Sussy'};
 	{Name="Awakened",Walkspeed=115,moveVal=13,Font=Enum.Font.DenkOne,StrokeColor=C3.N(.5,.5,.5);Music=313175694,LeftWing={0,BrickColor.new'Tr. Flu. Blue'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Tr. Flu. Blue'.Color,Enum.Material.Neon};WingAnim='Awake'};
 	{Name="Unholy",Walkspeed=115,moveVal=13,Font=Enum.Font.Creepster,StrokeColor=C3.N(.5,.5,.5);Music=1280010741,LeftWing={0,BrickColor.new'Fire Yellow'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Fire Yellow'.Color,Enum.Material.Neon};WingAnim='pop'};
-	{Name="pp",Walkspeed=40,moveVal=9,Font=Enum.Font.SourceSansSemibold,StrokeColor=C3.N(.5,.5,.5);Music=6027922332,LeftWing={0,BrickColor.new'Eggplant'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Eggplant'.Color,Enum.Material.Neon};WingAnim='pepe'};
+--[[	{Name="pp",Walkspeed=40,moveVal=9,Font=Enum.Font.SourceSansSemibold,StrokeColor=C3.N(.5,.5,.5);Music=6027922332,LeftWing={0,BrickColor.new'Eggplant'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Eggplant'.Color,Enum.Material.Neon};WingAnim='pepe'};]]
 	{Name="Hardbass",Walkspeed=20,moveVal=10,Font=Enum.Font.Bangers,StrokeColor=C3.N(0,0,0);Music=4468189089,LeftWing={0,BrickColor.new'White'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'White'.Color,Enum.Material.Neon};WingAnim='RushB'};
 	{Name="Clarity",Walkspeed=120,moveVal=10,Font=Enum.Font.SourceSansSemibold,StrokeColor=C3.N(0,0,0);Music=568982684,LeftWing={0,BrickColor.new'Bright bluish violet'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Bright reddish lilac'.Color,Enum.Material.Neon};WingAnim='Kik'};
 	{Name="Determination",Walkspeed=200,moveVal=10,Font=Enum.Font.Oswald,StrokeColor=C3.N(255,255,255);Music=380890492,LeftWing={0,BrickColor.new'Black'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Black'.Color,Enum.Material.Neon};WingAnim='Dem'};
@@ -1525,7 +1525,7 @@ local modeInfo={
 	{Name="Destroyer-of-Worlds",Walkspeed=64,moveVal=10,Font=Enum.Font.Gotham,StrokeColor=C3.N(.4,.4,0);Music=5128935327,LeftWing={0,BrickColor.new'Gold'.Color,Enum.Material.Glass};RightWing={0,BrickColor.new'Gold'.Color,Enum.Material.Glass};WingAnim={'Swirl',10}};
 	{Name="::Chill::",Walkspeed=16,moveVal=4,Font=Enum.Font.Fantasy,StrokeColor=C3.N(1,0,1);Music=5934648877,LeftWing={0,BrickColor.new'Hot pink'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Hot pink'.Color,Enum.Material.Neon};WingAnim='Empty'};
 	{Name="Godly",Walkspeed=40,moveVal=10,Font=Enum.Font.Kalam,StrokeColor=C3.N(.7,.7,.7);Music=6689161680,LeftWing={0,BrickColor.new'White'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'White'.Color,Enum.Material.Glass};WingAnim={'God',10}};
-    {Name="[HIDDEN] pp",Walkspeed=40,moveVal=1,Font=Enum.Font.SourceSansSemibold,StrokeColor=C3.N(.5,.5,.5);Music=6027922332,LeftWing={0,BrickColor.new'Eggplant'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Eggplant'.Color,Enum.Material.Neon};WingAnim='pepe'};
+   --[[ {Name="[HIDDEN] pp",Walkspeed=40,moveVal=1,Font=Enum.Font.SourceSansSemibold,StrokeColor=C3.N(.5,.5,.5);Music=6027922332,LeftWing={0,BrickColor.new'Eggplant'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Eggplant'.Color,Enum.Material.Neon};WingAnim='pepe'};]]
     {Name="Pain",Walkspeed=40,moveVal=10,Font=Enum.Font.Bodoni,StrokeColor=C3.N(.109, .110, .108);Music=4565857495,Pitch=.75,LeftWing={0,BrickColor.new'Maroon'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Really black'.Color,Enum.Material.Glass};WingAnim={'Ow',10}};
     {Name="Murderous",Walkspeed=20,moveVal=10,Font=Enum.Font.Bodoni,StrokeColor=C3.N(.109, .110, .108);Music=407749940,LeftWing={0,BrickColor.new'Really black'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Really black'.Color,Enum.Material.Glass};WingAnim={'Blood',10}};
     {Name="Supercharged",Walkspeed=110,moveVal=10,Font=Enum.Font.Bodoni,StrokeColor=C3.N(2, 2, 0);Music=7015006077,LeftWing={0,BrickColor.new'Teal'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Fire Yellow'.Color,Enum.Material.Glass};WingAnim={'Charge',10}};
@@ -2223,7 +2223,7 @@ function changeMudo(modeName)
 	text.TextColor3 = info.LeftWing[2]
 	text.TextStrokeColor3 = info.StrokeColor
 	text.Font=info.Font;
-	if(Mode=='Happy ;)' or Mode=='pp')then
+	if(Mode=='Happy ;)' )then
 		blush.Transparency=0
 		blush.Texture='rbxassetid://0'
 	else
@@ -2507,7 +2507,7 @@ local search = "just look up the word search to find the voicelines"
 	elseif Mode == "Awakened" then Chat"I Feel... ALIVE!"
 	elseif Mode == "Unholy" then Chat"LET THE DEMONS RISE!!"
 	elseif Mode == "Godly" then Chat"Transcendence Is Key"
-	elseif Mode == "pp" then Chat";)"
+--	elseif Mode == "pp" then Chat";)"
 	elseif Mode == "Hardbass" then Chat"GET ME MY VODKA!"
 	elseif Mode == "Determination" then Chat "I Will Keep On Trying No Matter What..."
 	elseif Mode == "Unmerciful" then Chat "I Won't Leave This To Rest"
@@ -2576,8 +2576,8 @@ UIS.InputBegan:connect(function(io,gpe)
 	    changeMode'Unholy' VaporTaunt()
 	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='The Chosen One')then 
 		changeMode'Godly' VaporTaunt()
-    elseif(io.KeyCode == Enum.KeyCode.V and Mode~='pp')then
-	    changeMode'pp' VaporTaunt()
+ --[[   elseif(io.KeyCode == Enum.KeyCode.V and Mode~='pp')then
+	    changeMode'pp' VaporTaunt()]]
     elseif(io.KeyCode == Enum.KeyCode.Y and Mode~='Clarity')then 
 		changeMode'Clarity' 
     elseif(io.KeyCode == Enum.KeyCode.B and Mode~='Hardbass')then
@@ -2600,8 +2600,8 @@ UIS.InputBegan:connect(function(io,gpe)
 		changeMode'Destroyer-of-Worlds'
 	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Happy :)')then 
 		changeMode'::Chill::'
-    elseif(io.KeyCode == Enum.KeyCode.T and Mode=='pp')then 
-		changeMode'[HIDDEN] pp'
+  --[[  elseif(io.KeyCode == Enum.KeyCode.T and Mode=='pp')then 
+		changeMode'[HIDDEN] pp']]
 	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Rage')then 
 		changeMode'Pain' VaporTaunt()
 	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Awakened')then 
@@ -3498,7 +3498,7 @@ while true do
 		local modifier = dist < DropDist and 1 or dist < IneffectiveDist and (0 - 1) / (IneffectiveDist - DropDist) * (dist - DropDist) + 1 or 0
 	end
 		if(State == 'Jump')then
-	local Alpha = .1
+	local Alpha=.45
 	local idk = math.min(math.max(Root.Velocity.Y/50,-M.R(90)),M.R(90))
 	if(NeutralAnims)then
 		LS.C0 = LS.C0:lerp(LSC0*CF.A(M.R(-5),0,M.R(-90)),Alpha)
@@ -3511,7 +3511,7 @@ while true do
 		RH.C0 = RH.C0:lerp(RHC0*CF.N(0,1,-1)*CF.A(M.R(-5),0,M.R(5)),Alpha)
 	end
 elseif(State == 'Fall')then
-	local Alpha = .1
+	local Alpha=.45
 	local idk = math.min(math.max(Root.Velocity.Y/50,-M.R(90)),M.R(90))
 	if(NeutralAnims)then
 		LS.C0 = LS.C0:lerp(LSC0*CF.A(M.R(-5),0,M.R(-90)+idk),Alpha)
@@ -3524,7 +3524,7 @@ elseif(State == 'Fall')then
 		RH.C0 = RH.C0:lerp(RHC0*CF.N(0,1,-1)*CF.A(M.R(-5),0,M.R(5)),Alpha)
 	end
 elseif(State == 'Paralyzed')then
-	local Alpha = .1
+	local Alpha=.45
 	if(NeutralAnims)then
 		LS.C0 = LS.C0:lerp(LSC0,Alpha)
 		RS.C0 = RS.C0:lerp(RSC0,Alpha)
@@ -3541,7 +3541,7 @@ end
 	if(State == 'Idle')then
 		if(Mode=='V I B E R' and NeutralAnims and not vaporwaveMode)then Change = 0.1+music.PlaybackLoudness/200 else Change = 1 end
 		if(Mode=='Achromatix')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+0.05*M.C(Sine/32),0)*CF.A(M.R(0+2*M.S(Sine/64)),M.R(5),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -3558,7 +3558,7 @@ end
 				end
 			end 
 			elseif(Mode=='Hacker')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+0.1*M.C(Sine/32),0)*CF.A(M.R(0+2*M.S(Sine/64)),M.R(87),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -3575,7 +3575,7 @@ end
 				end
 			end 
 			elseif(Mode=='Ancient')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,4+0.5*M.C(Sine/32),0)*CF.A(M.R(11+2*M.S(Sine/64)),M.R(5),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -3592,7 +3592,7 @@ end
 				end
 			end 
 			elseif(Mode=='YES')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,-.5+.1*M.C(Sine/13),0)*CF.A(M.R(-36+0*M.S(Sine/64)),M.R(.01),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -3609,7 +3609,7 @@ end
 				end
 			end 
 			elseif(Mode=='C a r')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,-1.5+0.2*M.C(Sine/6),0)*CF.A(M.R(0+5*M.S(Sine/6)),M.R(5),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -3626,7 +3626,7 @@ end
 				end
 			end 
 			elseif(Mode=='Murderous')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.2+.7*M.C(Sine/39),8+1*M.C(Sine/32),0)*CF.A(M.R(-20+5*M.S(Sine/58)),M.R(-5+5*M.C(Sine/42)),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -3643,7 +3643,7 @@ end
 				end
 			end
 			elseif(Mode=='Pain')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,4+0.3*M.C(Sine/32),0)*CF.A(M.R(-45+2*M.S(Sine/64)),M.R(0),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-90),0),Alpha)
@@ -3660,7 +3660,7 @@ end
 				end
 			end
 			elseif(Mode=='Supercharged')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,5+3*M.C(Sine/20),0)*CF.A(M.R(0+6*M.S(Sine/64)),M.R(.01),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -3677,7 +3677,7 @@ end
 				end
 			end
 			elseif(Mode=='Elysian')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,3+1*M.C(Sine/32),0)*CF.A(M.R(0+2*M.S(Sine/64)),M.R(5),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -3694,7 +3694,7 @@ end
 				end
 			end 
 		elseif(Mode=='Overlord')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,7+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
@@ -3715,7 +3715,7 @@ end
 				end
 			end
 		elseif(Mode=='Jack of All Trades')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				GotEffect{
 					Lifetime=.5;
@@ -3745,7 +3745,7 @@ end
 				end
 			end
 		elseif(Mode=='Darkness')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(-5+1*M.S(Sine/64)),M.R(-25),0),Alpha)
 				if(M.RNG(1,25)==1)then
@@ -3766,7 +3766,7 @@ end
 				end
 			end
 		elseif(Mode=='The Chosen One')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 			    	GotEffect{
 					Lifetime=.2;
@@ -3803,7 +3803,7 @@ end
 				end
 			end
 			elseif(Mode=='Troublesome')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,1.5+1.5*M.C(Sine/25),0)*CF.A(0,M.R(28),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-7-2.5*M.S(Sine/32)),M.R(-28),0),Alpha)
@@ -3821,7 +3821,7 @@ end
 			end
 		elseif(Mode=='V I B E R')then
 			if(vaporwaveMode)then
-			  	local Alpha = .1
+			  	local Alpha=.45
 				if(NeutralAnims)then
 					RJ.C0 = RJ.C0:lerp(CF.N(0,-0.2-.1*M.S(Sine/36),0.6)*CF.A(M.R(74.3+2.5*M.C(Sine/36)),M.R(0),M.R(0)),Alpha)
 					LS.C0 = LS.C0:lerp(CF.N(-1,0.8,0)*CF.A(M.R(11.4-5*M.C(Sine/42)),M.R(-3.3),M.R(137.5)),Alpha)
@@ -3854,7 +3854,7 @@ end
 				end
 			end
 		elseif(Mode=='+Nuclear+')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				GotEffect{
 					Lifetime=.2;
@@ -3891,7 +3891,7 @@ end
 				end
 			end
 		elseif(Mode=='Happy :)')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(CF.N(0,0,0)*CF.A(0,0,M.R(0+5*M.C(Sine/16))),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(2,0,-M.R(0+5*M.C(Sine/16))),Alpha)
@@ -3908,7 +3908,7 @@ end
 				end
 			end
 		elseif(Mode=='Rage')then
-		local Alpha = .1
+		local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,-1+.05*M.C(Sine/25),0)*CF.A(0,M.R(0),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-7-2.5*M.S(Sine/1)),M.R(-1),0),Alpha)
@@ -3925,7 +3925,7 @@ end
 				end
 			end
 		elseif(Mode=='---V a p o r w a v e---')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+.05*M.C(Sine/32),0)*CF.A(M.R(-5+1*M.S(Sine/64)),M.R(-0),0),Alpha)
 				if(M.RNG(1,25)==1)then
@@ -3947,7 +3947,7 @@ end
 			end
             
 			elseif(Mode=='Interstellar')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-0+8*M.C(Sine/39),30+6*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-15+5*M.C(Sine/42)),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-7-2.5*M.S(Sine/32)),M.R(15),0),Alpha)
@@ -3966,7 +3966,7 @@ end
 		
 			
 			     elseif(Mode=='Legendary')then
-	        local Alpha = .1
+	        local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,15+0.5*M.C(Sine/60),0)*CF.A(0,M.R(15),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-7-2.5*M.S(Sine/32)),M.R(-28),0),Alpha)
@@ -3983,7 +3983,7 @@ end
 				end
 			end
 			elseif(Mode=='Awakened')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,10+0.05*M.C(Sine/32),0)*CF.A(M.R(60+7*M.S(Sine/64)),M.R(5),.01),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4000,7 +4000,7 @@ end
 				end
 			end
 			elseif(Mode=='Unholy')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+0.1*M.C(Sine/32),0)*CF.A(M.R(0+2*M.S(Sine/64)),M.R(5),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4017,7 +4017,7 @@ end
 				end
 			end
 			elseif(Mode=='Holy')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+0.1*M.C(Sine/32),0)*CF.A(M.R(0+2*M.S(Sine/64)),M.R(5),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4034,7 +4034,7 @@ end
 				end
 			end
 			elseif(Mode=='Godly')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then
 			    GotEffect{
 					Lifetime=.2;
@@ -4075,7 +4075,7 @@ end
 				end
 			end
 		    elseif(Mode=='pp')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+0.05*M.C(Sine/32),0)*CF.A(M.R(0+2*M.S(Sine/64)),M.R(5),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4092,7 +4092,7 @@ end
 				end
 			end
         elseif(Mode=='[HIDDEN] pp')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,400+0.05*M.C(Sine/32),0)*CF.A(M.R(0+2*M.S(Sine/64)),M.R(5),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4109,7 +4109,7 @@ end
 				end
 			end
 			elseif(Mode=='Clarity')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then
 			  GotEffect{
 					Lifetime=.1;
@@ -4146,7 +4146,7 @@ end
 				end
 			end
 			elseif(Mode=='Hardbass')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,0+0.05*M.C(Sine/32),0)*CF.A(M.R(0+2*M.S(Sine/64)),M.R(5),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4163,7 +4163,7 @@ end
 				end
 			end
 			elseif(Mode=='Determination')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,20+4*M.C(Sine/32),0)*CF.A(M.R(0+20*M.S(Sine/64)),M.R(5),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4180,7 +4180,7 @@ end
 				end
 			end
 				elseif(Mode=='Unmerciful')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then
 			   
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-0+6*M.C(Sine/39),20+12*M.C(Sine/32),0)*CF.A(M.R(-2+5*M.S(Sine/58)),M.R(-0+5*M.C(Sine/42)),0),Alpha)
@@ -4198,7 +4198,7 @@ end
 				end
 			end
 			elseif(Mode=='The True Ending')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,7+.3*M.C(Sine/5),0)*CF.A(M.R(0+2*M.S(Sine/64)),M.R(5),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4215,7 +4215,7 @@ end
 				end
 			end
 				elseif(Mode=='The Big Black')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,30+0.05*M.C(Sine/32),0)*CF.A(M.R(0-90*M.S(Sine/100)),M.R(5),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4232,7 +4232,7 @@ end
 				end
 			end
 			elseif(Mode=='~Funky~')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 			    RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-0+3*M.C(Sine/10),4+5*M.C(Sine/10),0)*CF.A(M.R(-2+200*M.S(Sine/58)),M.R(-0+200*M.C(Sine/42)),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-7-2.5*M.S(Sine/32)),M.R(15),0),Alpha)
@@ -4249,7 +4249,7 @@ end
 				end
 			end
 				elseif(Mode=='Eternal Demise')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,4+1.5*M.C(Sine/32),0)*CF.A(M.R(25+2*M.S(Sine/64)),M.R(0),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4266,7 +4266,7 @@ end
 				end
 			end
 		elseif(Mode=='Lost Soul')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then
 				GotEffect{
 					Lifetime=.5;
@@ -4295,7 +4295,7 @@ end
 				RH.C0 = RH.C0:lerp(RHC0,Alpha)
 			end
 		elseif(Mode=='Destroyer-of-Worlds')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then
 				RJ.C0 = RJ.C0:lerp(CF.N(0,20+.2*M.C(Sine/24),0)*CF.A(M.R(30+5*M.S(Sine/24)),M.R(16.7),M.R(-9.4)),Alpha)
 				LS.C0 = LS.C0:lerp(CF.N(-1.1,1,0.2)*CF.A(M.R(173.3+1*M.S(Sine/28)),M.R(19.9+2*M.S(Sine/28)),M.R(38.7)),Alpha)
@@ -4310,7 +4310,7 @@ end
 				RH.C0 = RH.C0:lerp(RHC0,Alpha)
 			end
 			elseif(Mode=='::Chill::')then
-				local Alpha = .1
+				local Alpha=.45
 				if(NeutralAnims)then
 					RJ.C0 = RJ.C0:lerp(CF.N(0,0.7+.1*M.C(Sine/36),0)*CF.A(M.R(0),M.R(0),M.R(-90-2.5*M.S(Sine/36))),Alpha)
 					LS.C0 = LS.C0:lerp(CF.N(-1.2,0.1,0.1)*CF.A(M.R(23),M.R(16.5),M.R(20.6)),Alpha)
@@ -4330,7 +4330,7 @@ end
 	elseif(State == 'Walk')then
     
 	 if(Mode=='[HIDDEN] pp')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,800+0.05*M.C(Sine/32),0)*CF.A(M.R(0+2*M.S(Sine/64)),M.R(5),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4348,7 +4348,7 @@ end
 			end
 			elseif(State == 'Walk')then
 			if(Mode=='Ancient')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,4+0.05*M.C(Sine/32),0)*CF.A(M.R(-25+2*M.S(Sine/64)),M.R(5),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4366,7 +4366,7 @@ end
 			end 
 	elseif(State == 'Walk')then
 			if(Mode=='Overlord')then
-					local Alpha = .1
+					local Alpha=.45
 					if(NeutralAnims)then
 						RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0.5,7.5+.05*M.C(Sine/32),0)*CF.A(M.R(-75+8*M.S(Sine/64)),0,0),Alpha)
 						NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4379,7 +4379,7 @@ end
 					end
 				elseif(State == 'Walk')then
 			if(Mode=='The Big Black')then
-					local Alpha = .1
+					local Alpha=.45
 					if(NeutralAnims)then
 						RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0.5,28+.05*M.C(Sine/32),0)*CF.A(M.R(-75+8*M.S(Sine/64)),0,0),Alpha)
 						NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4392,7 +4392,7 @@ end
 					end
 			elseif(State == 'Walk')then
 	    if(Mode=='Unmerciful')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,20+12*M.C(Sine/32),0)*CF.A(M.R(-30+6*M.S(Sine/64)),M.R(0),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4410,7 +4410,7 @@ end
 			end
 			elseif(State == 'Walk')then
 	    if(Mode=='The True Ending')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,10+0*M.C(Sine/32),0)*CF.A(M.R(-45+6*M.S(Sine/64)),M.R(0),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4428,7 +4428,7 @@ end
 			end
 			elseif(State == 'Walk')then
 			if(Mode=='C a r')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 			RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,-1.5+0.2*M.C(Sine/6),0)*CF.A(M.R(0+3*M.S(Sine/6)),M.R(5),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4446,7 +4446,7 @@ end
 			end 
 			elseif(State == 'Walk')then
 	    if(Mode=='Supercharged')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,7+2*M.C(Sine/21),0)*CF.A(M.R(-45+6*M.S(Sine/64)),M.R(0),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4464,7 +4464,7 @@ end
 			end
 		elseif(State == 'Walk')then
 		if(Mode=='+Nuclear+')then
-					local Alpha = .1
+					local Alpha=.45
 					if(NeutralAnims)then
 						RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0.5,4+.05*M.C(Sine/60),0)*CF.A(M.R(-75+8*M.S(Sine/64)),0,0),Alpha)
 						NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4477,7 +4477,7 @@ end
 					end
 				elseif(State == 'Walk')then
 		        if(Mode=='Interstellar')then
-			local Alpha = .1
+			local Alpha=.45
   			if(NeutralAnims)then
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.3+.4*M.C(Sine/39),28+.2*M.C(Sine/32),0)*CF.A(M.R(-15+5*M.S(Sine/58)),M.R(0+5*M.C(Sine/42)),0),Alpha)
  				LS.C0 = LS.C0:lerp(CFrame.new(-1.50198829, 0.580981374, 0.000380858371, 0.963434994, 0.267942399, 1.75953949e-06, -0.267942399, 0.963434994, 5.1856041e-06, -3.05473804e-07, -5.48362732e-06, 3)*CF.A(-1,0,M.R(40+2*M.S(Sine/32))),Alpha)
@@ -4491,7 +4491,7 @@ end
 		
     elseif(State == 'Walk')then
 		if(Mode=='Legendary')then
-	local Alpha = .1
+	local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,15+1*M.C(Sine/25),0)*CF.A(0,M.R(4),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-7-2.5*M.S(Sine/32)),M.R(-28),0),Alpha)
@@ -4510,7 +4510,7 @@ end
 	           		
     elseif(State == 'Walk')then
 		if(Mode=='Godly')then
-	local Alpha = .1
+	local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,11+1*M.C(Sine/25),0)*CF.A(0,M.R(4),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-7-2.5*M.S(Sine/32)),M.R(-28),0),Alpha)
@@ -4528,7 +4528,7 @@ end
 			end
 			elseif(State == 'Walk')then
 		if(Mode=='Awakened')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,10+0.05*M.C(Sine/32),0)*CF.A(M.R(-5+7*M.S(Sine/64)),M.R(0),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4543,7 +4543,7 @@ end
 			end
 			elseif(State == 'Walk')then
 			if(Mode=='Determination')then
-					local Alpha = .1
+					local Alpha=.45
 					if(NeutralAnims)then
 						RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0.5,17.5+3*M.C(Sine/32),0)*CF.A(M.R(-75+8*M.S(Sine/64)),0,0),Alpha)
 						NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4556,7 +4556,7 @@ end
 					end
 			 elseif(State == 'Walk')then
 		if(Mode=='Clarity')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then
 			     GotEffect{
 					Lifetime=.1;
@@ -4591,7 +4591,7 @@ end
 			end
 		elseif(State == 'Walk')then
 		if(Mode=='Pain')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,1.5+0.05*M.C(Sine/32),0)*CF.A(M.R(-80+10*M.S(Sine/64)),M.R(0),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4609,7 +4609,7 @@ end
 			end
 	   elseif(State == 'Walk')then
 		   	if(Mode=='The Chosen One')then
-			local Alpha = .1
+			local Alpha=.45
   			if(NeutralAnims)then
   			    GotEffect{
 					Lifetime=.2;
@@ -4641,7 +4641,7 @@ end
 				RH.C0 = RH.C0:lerp(CFrame.new(0.498336792, -0.303280592, -0.883536756, 1, 0, 0, 0, 0.886996508, 0.461776346, 0, -0.461776316, 0.886996448),Alpha)
 			end
 			elseif(Mode=='Murderous')then
-			local Alpha = .1
+			local Alpha=.45
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(-.2+.7*M.C(Sine/39),8+1*M.C(Sine/32),0)*CF.A(M.R(-80+0*M.S(Sine/58)),M.R(-5+5*M.C(Sine/42)),0),Alpha)
 				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-10-2.5*M.S(Sine/32)),M.R(-5),0),Alpha)
@@ -4720,7 +4720,7 @@ end
 		end
     --end       
 	if(State == 'Jump')then
-				local Alpha = .1
+				local Alpha=.45
 				local idk = math.min(math.max(Root.Velocity.Y/50,-M.R(90)),M.R(90))
 				if(NeutralAnims)then
 					LS.C0 = LS.C0:lerp(LSC0*CF.A(M.R(-5),0,M.R(-90)),Alpha)
@@ -4733,7 +4733,7 @@ end
 					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,1,-1)*CF.A(M.R(-5),0,M.R(5)),Alpha)
 				end
 			elseif(State == 'Fall')then
-				local Alpha = .1
+				local Alpha=.45
 				local idk = math.min(math.max(Root.Velocity.Y/50,-M.R(90)),M.R(90))
 				if(NeutralAnims)then
 					LS.C0 = LS.C0:lerp(LSC0*CF.A(M.R(-5),0,M.R(-90)+idk),Alpha)
@@ -4746,7 +4746,7 @@ end
 					RH.C0 = RH.C0:lerp(RHC0*CF.N(0,1,-1)*CF.A(M.R(-5),0,M.R(5)),Alpha)
 				end
 			elseif(State == 'Paralyzed')then
-				local Alpha = .1
+				local Alpha=.45
 				if(NeutralAnims)then
 					LS.C0 = LS.C0:lerp(LSC0,Alpha)
 					RS.C0 = RS.C0:lerp(RSC0,Alpha)
