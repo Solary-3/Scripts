@@ -484,8 +484,7 @@ Dark4.FlipbookFramerate=NumberRange.new(1.000000,1.000000)
 Dark4.FlipbookStartRandom=false
 
 
-local SwordPart1=CreatePart(fx,1,0,"Neon",c3(),v3(.5,.5,.5),"SwordPart1")
-local SwordPart2=CreatePart(fx,1,0,"Neon",c3(),v3(.5,.5,.5),"SwordPart2")
+
 
 
 local CubeModel=i("Model", fx)
@@ -8191,10 +8190,6 @@ local Offset=CFrame.new(-5-1.5*sin(gp/40),5-1.5*sin(gp/30), 5-1.75*sin(gp/28.5))
 local Offset1=CFrame.new(5+1.5*sin(gp/40),5-1.5*sin(gp/30), 5-1.75*sin(gp/28.5))
 local tilt=CFrame.Angles(0,0,0)
 local rotation=CFrame.Angles(0, rad(gp/2.5+sound.PlaybackLoudness/100), 0)
-SwordPart2.CFrame=SwordPart2.CFrame:Lerp(front*Offset1*tilt*rotation,.1)
-TweenService:Create(SwordPart1, Tinfo(0.5,Enum.EasingStyle.Quart),{
-  CFrame=front*Offset*tilt*rotation;
-}):Play()
 DDD.Rotation=v3(0,gp*-1/5,0)
 
 
