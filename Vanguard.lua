@@ -3696,7 +3696,7 @@ pop=true
 Explode(shockwave_18615)
 Explode(plosoirion_18638)
 Explode(plosoirion_18706)
-twait(.2)
+task.wait(.2)
 pop=false
 end
 local forward=root.CFrame.LookVector
@@ -3709,7 +3709,7 @@ local tilt1=angles(rad(-10.5*cos(sine*.5)),0,0)
 BetterTween(Floor,.1,{Position=v3(root.Position.X,root.Position.Y,root.Position.Z)}):Play()
 ring.CFrame=ring.CFrame:Lerp(front*Offset1*tilt,.15)
 ring1.CFrame=ring1.CFrame:Lerp(front*Offset*tilt,.15)
-for _,h in scriptfolder1:GetDescendants() do 
+for _,h in scriptfolder:GetDescendants() do 
 if h:IsA("PointLight") and h.Name=="VLight" then
 h.Brightness=5+sound.PlaybackLoudness/50
 h.Range=3+sound.PlaybackLoudness/60
@@ -3725,6 +3725,7 @@ end
 
 LoadVFX()
 task.wait(.2)
+pcall(function()
 for _,a in scriptfolder1:GetDescendants() do 
 if a:IsA("Beam") and a.Color~=cs({csk(0.000000,c3(1.000000,0.286275,0.286275)),csk(1.000000,c3(1.000000,0.286275,0.286275))}) then
 a.Color=cs({
@@ -3796,7 +3797,7 @@ h.Color=cs({
 })
 end
 end
-
+end)
 
 end
 VanguardAssets()

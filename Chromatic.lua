@@ -40,7 +40,7 @@ local tinsert=table.insert
 
 
 function ChromaticAssets()
-
+if scriptfolder:FindFirstChild("ChromaticAssets") then return end
 function Tween(obj, speed, whattype, anim)
 local Tinfo=TweenInfo.new
 local TweenService=game.TweenService
@@ -61,7 +61,6 @@ local TweenService=game:GetService("TweenService")
 local Tinfo=TweenInfo.new
 local TweenService=game.TweenService
 local RunService=game:GetService("RunService")
-if scriptfolder:FindFirstChild("ChromaticAssets") then return end
 local fx=Instance.new("Folder")
 fx.Name="ChromaticAssets"
 fx:SetAttribute("VFX", true)
@@ -89,10 +88,9 @@ local plight=Instance.new("MeshPart",fx)
 plight.Size=Vector3.new(1,1,1)
 plight.MeshId="rbxassetid://2570899763"
 plight.CanCollide=true 
-plight.Position=v3(0,-30,0)
+plight.Position=v3(0,-1000,0)
 plight.Transparency=1
 plight.Massless=true 
-local Light=i("PointLight",plight)
 local wed=i("Weld",fx)
 
 
@@ -107,13 +105,12 @@ Floor.Reflectance=0
 Floor.Color=Color3.new(0,0,0)
 Floor.Material=Enum.Material.Plastic
 Floor.Size=Vector3.new(60,1,60)
-plight.Parent=Floor
 --Floor.CFrame=CFrame.new(211.32192993164062,88.14154815673828,-367.06134033203125,0.6427632570266724,0,0.7660648822784424,0,1,0,-0.7660648822784424,0,0.6427632570266724)
 --Floor.Orientation=Vector3.new(0.000000,50.001999,0.000000)
 --Floor.Position=Vector3.new(211.321930,88.141548,-367.061340)
 Floor.CastShadow=true
 Floor.Massless=true
-
+local Light=i("PointLight",Floor)
 local Up=Instance.new("Attachment", Floor)
 Up.Name="up1"
 Up.Position=Vector3.new(0.000000,-3.15,0.000000)
@@ -5856,7 +5853,7 @@ IceSpawnSFX_18913.Playing = false
 starstart_18914.Name="starstart"
 starstart_18914:SetAttribute("EmitDuration", 0)
 starstart_18914:SetAttribute("AuraInstance", true)
-starstart_18914:SetAttribute("EmitCount", 10)
+starstart_18914:SetAttribute("EmitCount", 5)
 starstart_18914.Enabled = false
 starstart_18914.Rate = 0
 starstart_18914.Lifetime = nr(0.20000000298023224,0.25)
@@ -5886,7 +5883,7 @@ starstart_18914.Squash = ns({nsk(0.000000,0.000000,0.000000),nsk(0.155452,-1.650
 starstart_18915.Name="starstart"
 starstart_18915:SetAttribute("EmitDuration", 0)
 starstart_18915:SetAttribute("AuraInstance", true)
-starstart_18915:SetAttribute("EmitCount", 10)
+starstart_18915:SetAttribute("EmitCount", 2)
 starstart_18915.Enabled = false
 starstart_18915.Rate = 0
 starstart_18915.Lifetime = nr(0.20000000298023224,0.25)
@@ -5916,7 +5913,7 @@ starstart_18915.Squash = ns({nsk(0.000000,0.000000,0.000000),nsk(0.155452,-1.650
 debri1_18916.Name="debri1"
 debri1_18916:SetAttribute("EmitDuration", 0)
 debri1_18916:SetAttribute("AuraInstance", true)
-debri1_18916:SetAttribute("EmitCount", 40)
+debri1_18916:SetAttribute("EmitCount", 20)
 debri1_18916.Enabled = false
 debri1_18916.Rate = 0
 debri1_18916.Lifetime = nr(0.75,1)
@@ -5946,7 +5943,7 @@ debri1_18916.Squash = ns({nsk(0.000000,-0.900000,0.262500),nsk(0.083510,-0.33750
 debri2_18917.Name="debri2"
 debri2_18917:SetAttribute("EmitDuration", 0)
 debri2_18917:SetAttribute("AuraInstance", true)
-debri2_18917:SetAttribute("EmitCount", 50)
+debri2_18917:SetAttribute("EmitCount", 25)
 debri2_18917.Enabled = false
 debri2_18917.Rate = 0
 debri2_18917.Lifetime = nr(0.75,1)
@@ -6007,7 +6004,7 @@ glow_18918.Squash = ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.
 debri3_18919.Name="debri3"
 debri3_18919:SetAttribute("EmitDuration", 0)
 debri3_18919:SetAttribute("AuraInstance", true)
-debri3_18919:SetAttribute("EmitCount", 40)
+debri3_18919:SetAttribute("EmitCount", 25)
 debri3_18919.Enabled = false
 debri3_18919.Rate = 0
 debri3_18919.Lifetime = nr(0.75,1)
@@ -6037,8 +6034,8 @@ debri3_18919.Squash = ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,
 squares_18920.Name="squares"
 squares_18920:SetAttribute("EmitDuration", 0)
 squares_18920:SetAttribute("AuraInstance", true)
-squares_18920:SetAttribute("EmitCount", 10.5)
-squares_18920.Enabled = true
+squares_18920:SetAttribute("EmitCount", 1.5)
+squares_18920.Enabled = false
 squares_18920.Rate = 0
 squares_18920.Lifetime = nr(1.5,3.5)
 squares_18920.Speed = nr(0.002400000113993883,0.002400000113993883)
@@ -8055,7 +8052,11 @@ end
 
 
 
-
+for _, d in EMIT_18907:GetChildren() do 
+if d:IsA("ParticleEmitter") and d.Enabled==true then 
+d.Enabled=false
+end
+end
 
 local conn
 local gp=1
@@ -8075,9 +8076,6 @@ return
 end
 gp+=1
 pcall(function()
-local spectrum=MusicPlayer.Analyzer:GetSpectrum()
-local count=#spectrum
-local t=tick()
 local Torso=rootpart1
 spin+=1
 
@@ -8109,8 +8107,8 @@ end
 
 
 
-local root=rootpart
-pcall(function()
+local root=rootpart1
+
 top_18645.Parent=root
 
 for _,a in root:GetDescendants() do
@@ -8156,7 +8154,10 @@ end
 end
 
 root.top.Position=v3(0,root.Position.Y+30-5*cos(spin/15),0)
-end)
+
+
+
+
 BetterTween(CUBE2_18642,.1,{Position=v3(root.Position.X,root.Position.Y+25-5*cos(spin/15),root.Position.Z)}):Play()
 BetterTween(CUBE_18549,.1,{Position=v3(root.Position.X,root.Position.Y+25-5*cos(spin/15),root.Position.Z)}):Play()
 CUBE2_18642.Rotation=v3(spin*5,spin*5,spin*5)
@@ -8195,12 +8196,16 @@ DDD.Rotation=v3(0,gp*-1/5,0)
 
 
 Light.Color=im2.ImageColor3
-Light.Brightness=5+sound.PlaybackLoudness/235
-Light.Range=2+sound.PlaybackLoudness/50
+Light.Brightness=5+sound.PlaybackLoudness/150
+Light.Range=2+sound.PlaybackLoudness/25
 
 Tween(DDD,.5,"pos",Vector3.new(root.Position.X, root.Position.Y-1, root.Position.Z)):Play()
 Tween(Floor,.5,"pos",v3(root.Position.X, root.Position.Y+2.25, root.Position.Z)):Play()
 Floor.Rotation=v3(0,gp,0)
+pcall(function()
+local spectrum=MusicPlayer:FindFirstChild("Analyzer"):GetSpectrum()
+local count=#spectrum
+local t=tick()
 local spectrumCount=#spectrum
 local SafeTreshold=0.00025
 for i, v in ipairs(BeamsFolder:GetChildren()) do
@@ -8243,6 +8248,8 @@ end
 end
 
 
+
+end)
 end)
 end)
 
