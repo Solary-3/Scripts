@@ -73,25 +73,10 @@ DDD.Anchored=true
 DDD.CanCollide=false
 DDD.CanQuery=false
 DDD.Transparency=1
-DDD.Size=Vector3.new(1,1,1)
+DDD.Size=v3(1,1,1)
 DDD.Parent=fx
-local mpart=Instance.new("MeshPart",fx)
-mpart.Size=Vector3.new(1,1,1)
-mpart.MeshId="rbxassetid://2570899763"
-mpart.CanCollide=true 
-mpart.Position=v3(0,-30,0)
-mpart.Transparency=1
-mpart.Massless=true 
-mpart.Name="Mpart"
-local v10=mpart
-local plight=Instance.new("MeshPart",fx)
-plight.Size=Vector3.new(1,1,1)
-plight.MeshId="rbxassetid://2570899763"
-plight.CanCollide=true 
-plight.Position=v3(0,-1000,0)
-plight.Transparency=1
-plight.Massless=true 
-local wed=i("Weld",fx)
+
+
 
 
 local Floor=Instance.new("Part", fx)
@@ -113,7 +98,7 @@ Floor.Massless=true
 local Light=i("PointLight",Floor)
 local Up=Instance.new("Attachment", Floor)
 Up.Name="up1"
-Up.Position=Vector3.new(0.000000,-3.15,0.000000)
+Up.Position=Vector3.new(0.000000,0,0.000000)
 Up.Visible=false
 
 local MiddleShine=Instance.new("ParticleEmitter", Up)
@@ -8075,7 +8060,8 @@ end
 return
 end
 gp+=1
-pcall(function()
+task.spawn(function()
+
 local Torso=rootpart1
 spin+=1
 
@@ -8108,9 +8094,9 @@ end
 
 
 local root=rootpart1
-
+pcall(function()
 top_18645.Parent=root
-
+end)
 for _,a in root:GetDescendants() do
 if a:IsA("Beam") then 
 a.Color=cs({
@@ -8153,7 +8139,7 @@ v.TimeScale=.1+sound.PlaybackLoudness/850
 end
 end
 
-root.top.Position=v3(0,root.Position.Y+30-5*cos(spin/15),0)
+top_18645Position=v3(0,root.Position.Y+30-5*cos(spin/15),0)
 
 
 
@@ -8200,8 +8186,9 @@ Light.Brightness=5+sound.PlaybackLoudness/150
 Light.Range=2+sound.PlaybackLoudness/25
 
 Tween(DDD,.5,"pos",Vector3.new(root.Position.X, root.Position.Y-1, root.Position.Z)):Play()
-Tween(Floor,.5,"pos",v3(root.Position.X, root.Position.Y+2.25, root.Position.Z)):Play()
+Tween(Floor,.5,"pos",v3(root.Position.X, root.Position.Y-1, root.Position.Z)):Play()
 Floor.Rotation=v3(0,gp,0)
+task.spawn(function()
 pcall(function()
 local spectrum=MusicPlayer:FindFirstChild("Analyzer"):GetSpectrum()
 local count=#spectrum
@@ -8217,8 +8204,6 @@ local i_pos=tonumber(v.Name) / marker
 local scale=math.min(magnitude / 0.0005 * .5, 25+1.25*sin((tick()*i_pos)+gp/10.5))
 local width=math.clamp(magnitude * 50, 0.15, 10.5)
 --local Torso=SafePart(incf)
---wed.Part0=rootpart1 
---wed.Part1=plight 
 if magnitude>SafeTreshold then
 v.Width0=scale
 v.Width1=scale
@@ -8250,6 +8235,8 @@ end
 
 
 end)
+end)
+
 end)
 end)
 

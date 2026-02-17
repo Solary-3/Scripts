@@ -2790,7 +2790,7 @@ sine=os.clock()
 --PosRoot(1,true)
 local root=rootpart1
 local color1,color2=rgb(197+50*cos(sine*1.5),135+100*sin(sine*2),243+12*sin(sine*2.5)),rgb(237+10*cos(sine*1.5),212+35*sin(sine*2),255)
-BetterTween(Floor,.1,{Position=v3(root.Position.X,root.Position.Y,root.Position.Z)}):Play()
+BetterTween(Floor,.1,{Position=v3(root.Position.X,root.Position.Y+1,root.Position.Z)}):Play()
 BetterTween(floor_100277,.1,{Position=v3(root.Position.X,root.Position.Y,root.Position.Z)}):Play()
 for _,x in Floor:GetDescendants() do 
 if x:IsA("ParticleEmitter") then 

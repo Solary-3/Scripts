@@ -767,7 +767,7 @@ e19.FlipbookLayout="None"
 e19.FlipbookMode="OneShot"
 local li=i("PointLight",att)
 local sgui=i("SurfaceGui",part)
-sgui.Name="CensoreSgui"
+sgui.Name="EyeCensor"
 sgui.CanvasSize=v2(800,200)
 sgui.Face="Back"
 sgui.PixelsPerStud=250
@@ -792,6 +792,13 @@ local th={
   "CENSORED!!!",
   "CE###RED",
   "#E###RED",
+  "#E###RE#",
+  "#E#S#RED",
+  "CE#S#RE#",
+  "C##SORED",
+  "Pazolite",
+  "!!derosneC",
+  "!!!DEROSNEC",
 }
 local cv
 local cb=1
