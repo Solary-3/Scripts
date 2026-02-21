@@ -2798,4 +2798,4 @@ end)
 
  
 end
-KatastropheAssets()
+repeat KatastropheAssets() task.wait() until not scriptfolder:FindFirstChild("KatastropheAssets") 
