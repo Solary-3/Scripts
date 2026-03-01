@@ -8097,8 +8097,9 @@ end
 
 local root=rootpart1
 pcall(function()
+if not root:FindFirstChild("top") then
 top_18645.Parent=root
-
+end
 for _,a in root:GetDescendants() do
 if a:IsA("Beam") then 
 a.Color=cs({
