@@ -8142,7 +8142,7 @@ v.TimeScale=.1+sound.PlaybackLoudness/850
 end
 end
 
-top_18645Position=v3(0,root.Position.Y+30-5*cos(spin/15),0)
+top_18645.Position=v3(0,root.Position.Y+30-5*cos(spin/15),0)
 
 
 
