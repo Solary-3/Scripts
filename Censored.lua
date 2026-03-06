@@ -2,15 +2,15 @@
 --print("This is where you put your file for modes that requires some VFX")
 --// Base Variables, Already Optimized
 local Global=(getgenv and getgenv()) or shared
-local Flooring=Global.Flooring
-local scriptfolder=Global.Cont
-local sound=Global.Loud
-local im2=Global.im2
-local MusicPlayer=Global.MusicPlayer
-local rootpart1=Global.rootpart1
-local rootpart=Global.rootpart
-local insSet=Global.insSet
-local head=Global.head
+local scriptfolder=Global.Cont or workspace
+local sound=Global.Loud or nil
+local im2=Global.im2 or nil
+local MusicPlayer=Global.MusicPlayer or nil
+local rootpart1=Global.rootpart1 or nil
+local rootpart=Global.rootpart or nil
+local insSet=Global.insSet or nil
+local head=Global.head or nil
+local torso=Global.torso or nil
 function BetterTween(obj, speed, prop)
 local Tinfo=TweenInfo.new
 local TweenService=game.TweenService
@@ -126,57 +126,6 @@ Black2.FlipbookFramerate=NumberRange.new(1.000000,1.000000)
 Black2.FlipbookStartRandom=false
 
 
-local Sigil=Instance.new("ParticleEmitter", Floor)
-Sigil.Name="staticsigil"
-Sigil.Enabled=false
-Sigil.Rate=4
-Sigil.Lifetime=NumberRange.new(1.000000,1.000000)
-Sigil.Speed=NumberRange.new(0.010000,0.010000)
-Sigil.Rotation=NumberRange.new(45.000000,45.000000)
-Sigil.RotSpeed=NumberRange.new(0.000000,0.000000)
-Sigil.Size=NumberSequence.new({NumberSequenceKeypoint.new(0.000000,25.000000,0.000000),NumberSequenceKeypoint.new(1.000000,25.000000,0.000000)})
-Sigil.Transparency=NumberSequence.new({NumberSequenceKeypoint.new(0.000000,1.000000,0.000000),NumberSequenceKeypoint.new(0.500736,0.000000,0.000000),NumberSequenceKeypoint.new(1.000000,1.000000,0.000000)})
-Sigil.Color=ColorSequence.new({ColorSequenceKeypoint.new(0.000000,Color3.new(0.365664,0.489958,1.000000)),ColorSequenceKeypoint.new(1.000000,Color3.new(0.365664,0.489958,1.000000))})
-Sigil.LightEmission=1
-Sigil.LightInfluence=0
-Sigil.Acceleration=Vector3.new(0.000000,0.000000,0.000001)
-Sigil.Drag=0
-Sigil.EmissionDirection=Enum.NormalId.Top
-Sigil.SpreadAngle=Vector2.new(0.010000,0.010000)
-Sigil.ZOffset=0.800000011920929
-Sigil.Texture="rbxassetid://102367309102388"
-Sigil.LockedToPart=true
-Sigil.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
-Sigil.FlipbookLayout=Enum.ParticleFlipbookLayout.None
-Sigil.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
-Sigil.FlipbookFramerate=NumberRange.new(15.000000,15.000000)
-Sigil.FlipbookStartRandom=false
-
-local MovingSigil=Instance.new("ParticleEmitter", Floor)
-MovingSigil.Name="movingsigil"
-MovingSigil.Enabled=false
-MovingSigil.Rate=9
-MovingSigil.Lifetime=NumberRange.new(3.000000,3.000000)
-MovingSigil.Speed=NumberRange.new(0.700000,0.700000)
-MovingSigil.Rotation=NumberRange.new(45.000000,45.000000)
-MovingSigil.RotSpeed=NumberRange.new(0.000000,0.000000)
-MovingSigil.Size=NumberSequence.new({NumberSequenceKeypoint.new(0.000000,25.000000,0.000000),NumberSequenceKeypoint.new(1.000000,25.000000,0.000000)})
-MovingSigil.Transparency=NumberSequence.new({NumberSequenceKeypoint.new(0.000000,1.000000,0.000000),NumberSequenceKeypoint.new(0.017722,0.918750,0.000000),NumberSequenceKeypoint.new(1.000000,1.000000,0.000000)})
-MovingSigil.Color=ColorSequence.new({ColorSequenceKeypoint.new(0.000000,Color3.new(0.365664,0.489958,1.000000)),ColorSequenceKeypoint.new(1.000000,Color3.new(0.365664,0.489958,1.000000))})
-MovingSigil.LightEmission=1
-MovingSigil.LightInfluence=0
-MovingSigil.Acceleration=Vector3.new(0.000000,0.000000,0.000001)
-MovingSigil.Drag=0
-MovingSigil.EmissionDirection=Enum.NormalId.Top
-MovingSigil.SpreadAngle=Vector2.new(0.010000,0.010000)
-MovingSigil.ZOffset=0.800000011920929
-MovingSigil.Texture="rbxassetid://102367309102388"
-MovingSigil.LockedToPart=true
-MovingSigil.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
-MovingSigil.FlipbookLayout=Enum.ParticleFlipbookLayout.None
-MovingSigil.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
-MovingSigil.FlipbookFramerate=NumberRange.new(15.000000,15.000000)
-MovingSigil.FlipbookStartRandom=false
 
 local Galaxy=Instance.new("ParticleEmitter", Floor)
 Galaxy.Name="galax"
@@ -856,7 +805,15 @@ local lol=random(10,255)
 if CensoreIt then
 tlabel.Text="CENSORED!!!"
 for _,g in Folder:GetDescendants() do 
-if g:IsA("ParticleEmitter") and g.Name~=FogBlack.Name and g.Name~=FogBlack2.Name and g.Name~=Debri4.Name then 
+if g:IsA("ParticleEmitter") and g.Name~=FogBlack.Name and g.Name~=FogBlack2.Name and g.Name~=Debri4.Name and g.Name~="fog1" then 
+g.Color=cs({
+  csk(0,rgb(lol,lol,lol)),
+  csk(1,rgb(lol,0,0)),
+})
+g.Brightness=5+sound.PlaybackLoudness/50 
+g.Enabled=false
+g:Clear()
+elseif g:IsA("ParticleEmitter") and g.Name=="fog1" then
 g.Color=cs({
   csk(0,rgb(lol,lol,lol)),
   csk(1,rgb(lol,0,0)),
@@ -866,9 +823,15 @@ end
 end
 for _,g in Folder:GetDescendants() do 
 if g:IsA("PointLight") then 
+local h=random(1,2)
+if h>1 then
 g.Color=rgb(lol,0,0)
-g.Range=5+sound.PlaybackLoudness/50 
-g.Brightness=7.5+sound.PlaybackLoudness/35
+else
+--g.Color=rgb(lol,lol,lol)
+g.Color=rgb(lol,lol,lol)
+end
+g.Range=5+sound.PlaybackLoudness/50+random(10,12)
+g.Brightness=7.5+sound.PlaybackLoudness/35+random(15,20)
 end 
 end
 tlabel.TextColor3=rgb(lol,lol,lol)
@@ -885,6 +848,7 @@ g.Color=cs({
   csk(0,rgb(0,mrandom(100,200),0)),
   csk(1,rgb(0,mrandom(100,200),0)),
 })
+g.Enabled=true
 g.Brightness=5+sound.PlaybackLoudness/50 
 end 
 end
@@ -908,6 +872,7 @@ g.Color=cs({
   csk(0,rgb(0,0,0)),
   csk(1,rgb(0,0,0)),
 })
+g.Enabled=true
 g.Brightness=1+sound.PlaybackLoudness/100 
 for _,g in Folder:GetDescendants() do 
 if g:IsA("PointLight") then 
