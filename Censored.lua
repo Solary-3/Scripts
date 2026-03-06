@@ -871,7 +871,7 @@ g.Range=5+sound.PlaybackLoudness/50
 g.Brightness=7.5+sound.PlaybackLoudness/35
 end 
 end
-tlabel.TextColor3=rgb(lol,0,0)
+tlabel.TextColor3=rgb(lol,lol,lol)
 
 
 
