@@ -35,6 +35,7 @@ local cos=math.cos
 local rad=math.rad
 local abs=math.abs
 local min=math.min
+local random=function(a,b) return mrandom(a*1000,b*1000)/1000 end
 local mrandom=math.random
 local clamp=math.clamp
 local cf=CFrame.new
@@ -801,6 +802,7 @@ local th={
   "!!!DEROSNEC",
 }
 local cv
+local CensoreIt=false
 local cb=1
 cv=rus.PostSimulation:Connect(function()
 if not scriptfolder:FindFirstChild("CensoredAssets") then 
@@ -817,7 +819,6 @@ end)
 Floor1.Rotation=v3(0,cb*1.5+sound.PlaybackLoudness/450 ,0)
 local root=rootpart1
 TweenFunction(Floor1,.075,"pos",v3(root.Position.X, root.Position.Y, root.Position.Z)):Play()
-tlabel.Text=th[mrandom(1,#th)]
 if sound.PlaybackLoudness>mrandom(300,375) then 
 e19.ZOffset=1
 e19.LightEmission=1+1*cos(cb/10)
@@ -845,6 +846,37 @@ end
 e19.Enabled=false
 end
 sgui.Brightness=1000+sound.PlaybackLoudness/5
+if (y>48.929 and y<49.57) or (y>54.081 and y<54.737) or (y>56.85 and y<57.5) or (y>58.85 and y<59.15) or (y>60.1 and y<60.5) or (y>60.75 and y<61.1) or (y>61.35 and y<61.65) or (y>61.765 and y<61.9) or (y>62.15 and y<62.35) or (y>62.5 and y<62.9) or (y>64.1 and y<64.25) or (y>64.35 and y<64.65) or (y>64.85 and y<65) or (y>65.25 and y<65.45) or (y>65.55 and y<65.75) or (y>65.85 and y<66) or (y>66.75 and y<67) or (y>67.85 and y<69.1) or (y>127.929 and y<128.57) or (y>132.85 and y<133.35) or (y>135.5 and y<136) or (y>137.5 and y<138) or (y>139 and y<139.4) or (y>139.25 and y<139.85) or (y>140.15 and y<140.4) or (y>140.65 and y<140.8) or (y>141 and y<141.25) or (y>141.5 and y<141.75) or (y>142.55+.25 and y<142.7+.25) or (y>142.95+.25 and y<143+.25) or (y>143.15+.25 and y<143.4+.25) or (y>143.6+.25 and y<143.75+.25) or (y>144+.25 and y<144.2+.25) or (y>144.3+.25 and y<144.5+.25) or (y>144.6+.25 and y<144.75+.25) or (y>145.5+.25 and y<145.75+.25) or (y>146.6 and y<147.8) or (y>207.152 and y<207.685) or (y>208.069 and y<208.411) or (y>210.437 and y<210.853) or (y>211 and y<212.133) then
+CensoreIt=true
+else
+CensoreIt=false
+end
+local lol=random(10,255)
+if CensoreIt then
+tlabel.Text="CENSORED!!!"
+for _,g in Folder:GetDescendants() do 
+if g:IsA("ParticleEmitter") and g.Name~=FogBlack.Name and g.Name~=FogBlack2.Name and g.Name~=Debri4.Name then 
+g.Color=cs({
+  csk(0,rgb(lol,lol,lol)),
+  csk(1,rgb(lol,0,0)),
+})
+g.Brightness=5+sound.PlaybackLoudness/50 
+end 
+end
+for _,g in Folder:GetDescendants() do 
+if g:IsA("PointLight") then 
+g.Color=rgb(lol,0,0)
+g.Range=5+sound.PlaybackLoudness/50 
+g.Brightness=7.5+sound.PlaybackLoudness/35
+end 
+end
+
+
+
+
+
+else
+tlabel.Text=th[mrandom(1,#th)]
 if sound.PlaybackLoudness>mrandom(200,300) then
 for _,g in Folder:GetDescendants() do 
 if g:IsA("ParticleEmitter") and g.Name~=FogBlack.Name and g.Name~=FogBlack2.Name and g.Name~=Debri4.Name then 
@@ -884,6 +916,7 @@ g.Brightness=3.5+sound.PlaybackLoudness/100
 end 
 end
 end 
+end
 end
 end
 end)
