@@ -872,7 +872,7 @@ g.Color=cs({
   csk(0,rgb(0,0,0)),
   csk(1,rgb(0,0,0)),
 })
-g.Enabled=true
+--g.Enabled=true
 g.Brightness=1+sound.PlaybackLoudness/100 
 for _,g in Folder:GetDescendants() do 
 if g:IsA("PointLight") then 
