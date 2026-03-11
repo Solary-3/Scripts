@@ -72,13 +72,19 @@ local Name="Cheatreal"
 
 
 
+
+
+
+
+
+
 function Cheatreal()
 if scriptfolder:FindFirstChild(Name.."Assets") then return end
 local foldah=i("Folder",scriptfolder)
 foldah.Name=Name.."Assets"
 foldah:SetAttribute("VFX",true)
 
-
+--// Init Default Instances
 local Floor=Instance.new("Part", foldah)
 Floor.Name="Floor"
 Floor.Anchored=true
@@ -90,12 +96,762 @@ Floor.Reflectance=0
 Floor.Color=Color3.new(0,0,0)
 Floor.Material=Enum.Material.Plastic
 Floor.Size=Vector3.new(60,1,60)
---Floor.CFrame=CFrame.new(211.32192993164062,88.14154815673828,-367.06134033203125,0.6427632570266724,0,0.7660648822784424,0,1,0,-0.7660648822784424,0,0.6427632570266724)
---Floor.Orientation=Vector3.new(0.000000,50.001999,0.000000)
---Floor.Position=Vector3.new(211.321930,88.141548,-367.061340)
 Floor.CastShadow=true
 Floor.Massless=true
 local li=i("PointLight",Floor)
+
+
+local PartFXFloor=Instance.new("Part", foldah)
+PartFXFloor.Name="PartFXFloor"
+PartFXFloor.Anchored=true
+PartFXFloor.CanCollide=false
+PartFXFloor.CanQuery=false
+PartFXFloor.CanTouch=false
+PartFXFloor.Transparency=1
+PartFXFloor.Reflectance=0
+PartFXFloor.Color=Color3.new(0,0,0)
+PartFXFloor.Material=Enum.Material.Plastic
+PartFXFloor.Size=Vector3.new(10,1,10)
+PartFXFloor.CastShadow=true
+PartFXFloor.Massless=true
+
+
+local tspawn=task.spawn
+function sphereMK(bonuspeed,FastSpeed,type,pos,x1,y1,z1,value,color,outerpos)
+local type = type
+local char=Floor
+local rng = Instance.new("Part", char)
+rng.Anchored = true
+rng.Color=color
+rng.CanCollide = false
+rng.FormFactor = 3
+rng.Name = "Ring"
+rng.Material = "Neon"
+rng.Size = Vector3.new(1, 1, 1)
+rng.Transparency = 0
+rng.TopSurface = 0
+rng.BottomSurface = 0
+rng.CFrame = pos
+local li=i("PointLight",rng)
+li.Range=sound.PlaybackLoudness/75
+li.Color=color
+li.Brightness=sound.PlaybackLoudness/30
+rng.CFrame = rng.CFrame + rng.CFrame.lookVector*outerpos
+local rngm = Instance.new("SpecialMesh", rng)
+rngm.MeshType = "Sphere"
+rngm.Scale = Vector3.new(x1,y1,z1)
+
+local scaler2 = 1
+local speeder = FastSpeed
+if type == "Add" then
+scaler2 = 1*value
+elseif type == "Divide" then
+scaler2 = 1/value
+end
+task.spawn(function()
+for i = 0,10/bonuspeed,0.1 do
+swait()
+
+if type == "Add" then
+scaler2 = scaler2 - 0.01*value/bonuspeed
+elseif type == "Divide" then
+scaler2 = scaler2 - 0.01/value*bonuspeed
+end
+
+speeder = speeder - 0.01*FastSpeed*bonuspeed
+rng.CFrame = rng.CFrame + rng.CFrame.lookVector*speeder*bonuspeed
+rng.Transparency = rng.Transparency + 0.01*bonuspeed
+rngm.Scale = rngm.Scale + Vector3.new(scaler2*bonuspeed, scaler2*bonuspeed, 0)
+end
+rng:Destroy()
+end)
+end
+
+
+
+function slash(bonuspeed,rotspeed,rotatingop,typeofshape,type,typeoftrans,pos,scale,value,color)
+local type = type
+local char=Floor
+local rotenable = rotatingop
+local rng = Instance.new("Part", char)
+rng.Anchored = true
+rng.Color = color
+rng.CanCollide = false
+rng.FormFactor = 3
+rng.Name = "Ring"
+rng.Material = "Neon"
+rng.Size = Vector3.new(.1, .1, .1)
+rng.Transparency = 0
+if typeoftrans == "In" then
+rng.Transparency = 1
+end
+rng.TopSurface = 0
+rng.BottomSurface = 0
+rng.CFrame = pos
+local rngm = Instance.new("SpecialMesh", rng)
+rngm.MeshType = "FileMesh"
+if typeofshape == "Normal" then
+rngm.MeshId = "rbxassetid://662586858"
+elseif typeofshape == "Round" then
+rngm.MeshId = "rbxassetid://662585058"
+end
+rngm.Scale = scale
+local scaler2 = 1/10
+if type == "Add" then
+scaler2 = 1*value/10
+elseif type == "Divide" then
+scaler2 = 1/value/10
+end
+local randomrot = math.random(1,2)
+task.spawn(function()
+for i = 0,10/bonuspeed,0.1 do
+swait()
+if type == "Add" then
+scaler2 = scaler2 - 0.01*value/bonuspeed/10
+elseif type == "Divide" then
+scaler2 = scaler2 - 0.01/value*bonuspeed/10
+end
+if rotenable == true then
+if randomrot == 1 then
+rng.CFrame = rng.CFrame*CFrame.Angles(0,math.rad(rotspeed*bonuspeed/2),0)
+elseif randomrot == 2 then
+rng.CFrame = rng.CFrame*CFrame.Angles(0,math.rad(-rotspeed*bonuspeed/2),0)
+end
+end
+if typeoftrans == "Out" then
+rng.Transparency = rng.Transparency + 0.01*bonuspeed
+elseif typeoftrans == "In" then
+rng.Transparency = rng.Transparency - 0.01*bonuspeed
+end
+rngm.Scale = rngm.Scale + Vector3.new(scaler2*bonuspeed/10, 0, scaler2*bonuspeed/10)
+end
+rng:Destroy()
+end)
+end
+
+
+function sphere2(bonuspeed,type,pos,scale,value,value2,value3,color)
+local type = type
+local char=Floor
+local rng = Instance.new("Part", char)
+rng.Anchored = true
+rng.CanCollide = false
+rng.FormFactor = 3
+rng.Name = "Ring"
+rng.Material = "Neon"
+rng.Size = Vector3.new(1, 1, 1)
+rng.Transparency = 0
+rng.TopSurface = 0
+rng.BottomSurface = 0
+rng.CFrame = pos
+local rngm = Instance.new("SpecialMesh", rng)
+rngm.MeshType = "Sphere"
+rngm.Scale = scale
+local scaler2 = 1
+local scaler2b = 1
+local scaler2c = 1
+if type == "Add" then
+scaler2 = 1*value
+scaler2b = 1*value2
+scaler2c = 1*value3
+elseif type == "Divide" then
+scaler2 = 1/value
+scaler2b = 1/value2
+scaler2c = 1/value3
+end
+
+tspawn(function()
+for i = 0,10/bonuspeed,0.1 do
+swait()
+if type == "Add" then
+scaler2 = scaler2 - 0.01*value/bonuspeed
+scaler2b = scaler2b - 0.01*value/bonuspeed
+scaler2c = scaler2c - 0.01*value/bonuspeed
+elseif type == "Divide" then
+scaler2 = scaler2 - 0.01/value*bonuspeed
+scaler2b = scaler2b - 0.01/value*bonuspeed
+scaler2c = scaler2c - 0.01/value*bonuspeed
+end
+rng.Transparency = rng.Transparency + 0.01*bonuspeed
+rngm.Scale = rngm.Scale + Vector3.new(scaler2*bonuspeed, scaler2b*bonuspeed, scaler2c*bonuspeed)
+end
+rng:Destroy()
+end)
+end
+
+
+function wave1(type,speed,scaleto,position,color)
+tspawn(function()
+local type = type
+local char=Floor
+local function oswait(seconds)
+if seconds==nil then seconds=0 end
+local start = os.clock()
+repeat
+wait()
+until os.clock() >= start + seconds
+end
+local i=Instance.new 
+local nr=NumberRange.new
+local ns=NumberSequence.new
+local nsk=NumberSequenceKeypoint.new
+local cs=ColorSequence.new 
+local csk=ColorSequenceKeypoint.new 
+local v3=Vector3.new
+local rgb=Color3.fromRGB
+local c3=Color3.new
+local w1=i("MeshPart", char)
+w1.Name="Wave1"
+w1.MeshId="rbxassetid://863344136"
+w1.Anchored=true
+w1.CanCollide=false
+w1.CanQuery=false
+w1.CanTouch=false
+w1.Reflectance=0
+w1.Color=color
+w1.CFrame=position
+w1.Material=Enum.Material.Neon
+w1.CastShadow=false
+w1.Massless=true
+w1.Material=Enum.Material.Neon
+w1.TextureID=""
+local scaler2 = 1
+local scaler2b = 1
+local scaler2c = 1
+task.spawn(function()
+function BetterTween(obj, speed, prop,AnimType)
+if AnimType==nil then AnimType="Quad" end
+local Tinfo=TweenInfo.new
+local TweenService=game.TweenService
+local hii=Tinfo(speed, Enum.EasingStyle[AnimType], Enum.EasingDirection.In)
+return TweenService:Create(obj, hii,prop)
+
+end
+local speed=1.5/speed
+if type=="Out" then
+w1.Size=v3(0,0,0)
+w1.Transparency=0
+local r=BetterTween(w1,speed,{Size=v3(scaleto,scaleto,scaleto)})
+local t=BetterTween(w1,speed,{Transparency=1})
+r:Play()
+t:Play()
+r.Completed:Wait()
+w1:Destroy()
+elseif type=="In" then
+w1.Size=v3(scaleto,scaleto,scaleto)
+local s=BetterTween(w1,speed,{Size=v3(0,0,0)})
+local y=BetterTween(w1,speed,{Transparency=0})
+w1.Transparency=.5
+s:Play()
+y:Play()
+s.Completed:Wait()
+w1:Destroy()
+end
+end)
+end) end
+
+function wave2(type,speed,scaleto,position,color)
+tspawn(function()
+local type = type
+local char=Floor
+local function oswait(seconds)
+if seconds==nil then seconds=0 end
+local start = os.clock()
+repeat
+wait()
+until os.clock() >= start + seconds
+end
+local i=Instance.new 
+local nr=NumberRange.new
+local ns=NumberSequence.new
+local nsk=NumberSequenceKeypoint.new
+local cs=ColorSequence.new 
+local csk=ColorSequenceKeypoint.new 
+local v3=Vector3.new
+local rgb=Color3.fromRGB
+local c3=Color3.new
+local w2=i("MeshPart", char)
+w2.Name="Wave2"
+w2.MeshId="rbxassetid://6862105399"
+w2.Anchored=true
+w2.CanCollide=false
+w2.CanQuery=false
+w2.CanTouch=false
+w2.Reflectance=0
+w2.Color=color
+w2.CFrame=position
+w2.Material=Enum.Material.Neon
+w2.CastShadow=false
+w2.Massless=true
+w2.Material=Enum.Material.Neon
+w2.TextureID=""
+local scaler2 = 1
+local scaler2b = 1
+local scaler2c = 1
+task.spawn(function()
+function BetterTween(obj, speed, prop,AnimType)
+if AnimType==nil then AnimType="Quad" end
+local Tinfo=TweenInfo.new
+local TweenService=game.TweenService
+local hii=Tinfo(speed, Enum.EasingStyle[AnimType], Enum.EasingDirection.In)
+return TweenService:Create(obj, hii,prop)
+
+end
+local speed=1.5/speed
+if type=="Out" then
+w2.Size=v3(0,0,0)
+w2.Transparency=0
+local r=BetterTween(w2,speed,{Size=v3(scaleto,scaleto,scaleto)})
+local t=BetterTween(w2,speed,{Transparency=1})
+r:Play()
+t:Play()
+r.Completed:Wait()
+w2:Destroy()
+elseif type=="In" then
+w2.Size=v3(scaleto,scaleto,scaleto)
+local s=BetterTween(w2,speed,{Size=v3(0,0,0)})
+local y=BetterTween(w2,speed,{Transparency=0})
+w2.Transparency=.5
+s:Play()
+y:Play()
+s.Completed:Wait()
+w2:Destroy()
+end
+end)
+end) end
+
+function wave3(type,speed,scaleto,position,color)
+tspawn(function()
+local type = type
+local char=Floor
+local function oswait(seconds)
+if seconds==nil then seconds=0 end
+local start = os.clock()
+repeat
+wait()
+until os.clock() >= start + seconds
+end
+local i=Instance.new 
+local nr=NumberRange.new
+local ns=NumberSequence.new
+local nsk=NumberSequenceKeypoint.new
+local cs=ColorSequence.new 
+local csk=ColorSequenceKeypoint.new 
+local v3=Vector3.new
+local rgb=Color3.fromRGB
+local c3=Color3.new
+local w3=i("MeshPart", char)
+w3.Name="Wave3"
+w3.MeshId="rbxassetid://17388414697"
+w3.Anchored=true
+w3.CanCollide=false
+w3.CanQuery=false
+w3.CanTouch=false
+w3.Reflectance=0
+w3.Color=color
+w3.CFrame=position
+w3.Material=Enum.Material.Neon
+w3.CastShadow=false
+w3.Massless=true
+w3.Material=Enum.Material.Neon
+w3.TextureID=""
+task.spawn(function()
+function BetterTween(obj, speed, prop,AnimType)
+if AnimType==nil then AnimType="Quad" end
+local Tinfo=TweenInfo.new
+local TweenService=game.TweenService
+local hii=Tinfo(speed, Enum.EasingStyle[AnimType], Enum.EasingDirection.In)
+return TweenService:Create(obj, hii,prop)
+
+end
+local speed=1.5/speed
+if type=="Out" then
+w3.Size=v3(0,0,0)
+w3.Transparency=0
+local r=BetterTween(w3,speed,{Size=v3(scaleto,scaleto,scaleto)})
+local t=BetterTween(w3,speed,{Transparency=1})
+r:Play()
+t:Play()
+r.Completed:Wait()
+w3:Destroy()
+elseif type=="In" then
+w3.Size=v3(scaleto,scaleto,scaleto)
+local s=BetterTween(w3,speed,{Size=v3(0,0,0)})
+local y=BetterTween(w3,speed,{Transparency=0})
+w3.Transparency=.5
+s:Play()
+y:Play()
+s.Completed:Wait()
+w3:Destroy()
+end
+end)
+end) end
+
+function wave4(type,speed,scaleto,position,color)
+tspawn(function()
+local type = type
+local char=Floor
+local function oswait(seconds)
+if seconds==nil then seconds=0 end
+local start = os.clock()
+repeat
+wait()
+until os.clock() >= start + seconds
+end
+local i=Instance.new 
+local nr=NumberRange.new
+local ns=NumberSequence.new
+local nsk=NumberSequenceKeypoint.new
+local cs=ColorSequence.new 
+local csk=ColorSequenceKeypoint.new 
+local v3=Vector3.new
+local rgb=Color3.fromRGB
+local c3=Color3.new
+local w4=i("MeshPart", char)
+w4.Name="Wave4"
+w4.MeshId="rbxassetid://20329976"
+w4.Anchored=true
+w4.CanCollide=false
+w4.CanQuery=false
+w4.CanTouch=false
+w4.Reflectance=0
+w4.Color=color
+w4.CFrame=position
+w4.Material=Enum.Material.Neon
+--w4.Size=v3(0,0,0)
+w4.CastShadow=false
+w4.Massless=true
+w4.Material=Enum.Material.Neon
+w4.TextureID=""
+local scaler2 = 1
+local scaler2b = 1
+local scaler2c = 1
+task.spawn(function()
+function BetterTween(obj, speed, prop,AnimType)
+if AnimType==nil then AnimType="Quad" end
+local Tinfo=TweenInfo.new
+local TweenService=game.TweenService
+local hii=Tinfo(speed, Enum.EasingStyle[AnimType], Enum.EasingDirection.In)
+return TweenService:Create(obj, hii,prop)
+
+end
+local speed=1.5/speed
+if type=="Out" then
+w4.Size=v3(0,0,0)
+local r=BetterTween(w4,speed,{Size=v3(scaleto,scaleto,scaleto)})
+local t=BetterTween(w4,speed,{Transparency=1})
+r:Play()
+t:Play()
+w4.Transparency=0
+r.Completed:Wait()
+w4:Destroy()
+elseif type=="In" then
+w4.Size=v3(scaleto,scaleto,scaleto)
+local s=BetterTween(w4,speed,{Size=v3(0,0,0)})
+local y=BetterTween(w4,speed,{Transparency=0})
+w4.Transparency=.5
+s:Play()
+y:Play()
+s.Completed:Wait()
+w4:Destroy()
+end
+end)
+end) end
+
+function block(type,speed,startsize,endsize,pos,col,starttransparency,outline,ocol,donttransparent)
+if donttransparent==nil then donttransparent=false end
+local type = type
+local char=Floor
+local i=Instance.new 
+local nr=NumberRange.new
+local ns=NumberSequence.new
+local nsk=NumberSequenceKeypoint.new
+local cs=ColorSequence.new 
+local csk=ColorSequenceKeypoint.new 
+local v3=Vector3.new
+local rgb=Color3.fromRGB
+local c3=Color3.new
+local Block_1=i("Part", char)
+Block_1.Name="Block"
+Block_1.Anchored=true
+Block_1.CanCollide=false
+Block_1.CanQuery=false
+Block_1.CanTouch=false
+Block_1.Reflectance=0
+Block_1.Color=col
+Block_1.Material=Enum.Material.Neon
+Block_1.Size=startsize
+Block_1.CastShadow=false
+Block_1.CFrame=pos
+Block_1.Massless=true
+if outline then 
+local h=i("Highlight",Block_1)
+h.FillTransparency=1
+h.DepthMode="Occluded"
+h.OutlineColor=ocol
+end
+function BetterTween(obj, speed, prop,AnimType)
+if AnimType==nil then AnimType="Quad" end
+local Tinfo=TweenInfo.new
+local TweenService=game.TweenService
+local hii=Tinfo(speed, Enum.EasingStyle[AnimType], Enum.EasingDirection.In)
+return TweenService:Create(obj, hii,prop)
+end
+local speed=1.5/speed
+tspawn(function()
+if type=="Out" then 
+Block_1.Transparency=starttransparency
+Block_1.Size=startsize
+local t=BetterTween(Block_1,speed,{Size=endsize})
+if donttransparent then
+local t1=BetterTween(Block_1,speed,{Transparency=1})
+t1:Play()
+end
+t:Play()
+t.Completed:Wait()
+Block_1:Destroy()
+elseif type=="In" then
+Block_1.Transparency=starttransparency
+Block_1.Size=endsize
+local t=BetterTween(Block_1,speed,{Size=startsize})
+if donttransparent then
+local t1=BetterTween(Block_1,speed,{Transparency=0})
+t1:Play()
+end
+t:Play()
+t.Completed:Wait()
+Block_1:Destroy()
+end
+end)
+
+
+end
+
+function block1(type,speed,startsize,endsize,pos,col,starttransparency,endpos,outline,ocol,donttransparent)
+if donttransparent==nil then donttransparent=false end
+local type = type
+local char=Floor
+local i=Instance.new 
+local nr=NumberRange.new
+local ns=NumberSequence.new
+local nsk=NumberSequenceKeypoint.new
+local cs=ColorSequence.new 
+local csk=ColorSequenceKeypoint.new 
+local v3=Vector3.new
+local rgb=Color3.fromRGB
+local c3=Color3.new
+local Block_1=i("Part", char)
+Block_1.Name="Block"
+Block_1.Anchored=true
+Block_1.CanCollide=false
+Block_1.CanQuery=false
+Block_1.CanTouch=false
+Block_1.Reflectance=0
+Block_1.Color=col
+Block_1.Material=Enum.Material.Neon
+Block_1.Size=startsize
+Block_1.CastShadow=false
+Block_1.CFrame=pos
+Block_1.Massless=true
+if outline then 
+local h=i("Highlight",Block_1)
+h.FillTransparency=1
+h.DepthMode="Occluded"
+h.OutlineColor=ocol
+end
+function BetterTween(obj, speed, prop,AnimType)
+if AnimType==nil then AnimType="Quad" end
+local Tinfo=TweenInfo.new
+local TweenService=game.TweenService
+local hii=Tinfo(speed, Enum.EasingStyle[AnimType], Enum.EasingDirection.In)
+return TweenService:Create(obj, hii,prop)
+end
+local speed=1.5/speed
+tspawn(function()
+if type=="Out" then 
+Block_1.Transparency=starttransparency
+Block_1.Size=startsize
+local t=BetterTween(Block_1,speed,{Size=endsize})
+local t2=BetterTween(Block_1,speed,{CFrame=endpos})
+if donttransparent then
+local t1=BetterTween(Block_1,speed,{Transparency=1})
+t1:Play()
+end
+t:Play()
+t2:Play()
+t.Completed:Wait()
+Block_1:Destroy()
+elseif type=="In" then
+Block_1.Transparency=starttransparency
+Block_1.Size=endsize
+local t=BetterTween(Block_1,speed,{Size=startsize})
+local t2=BetterTween(Block_1,speed,{CFrame=endpos})
+if donttransparent then
+local t1=BetterTween(Block_1,speed,{Transparency=0})
+t1:Play()
+end
+t2:Play()
+t:Play()
+t.Completed:Wait()
+Block_1:Destroy()
+end
+end)
+
+
+end
+
+function blockmoveup(type,speed,startsize,endsize,pos,col,starttransparency,endpos,outline,ocol,donttransparent)
+if donttransparent==nil then donttransparent=false end
+if outline==nil then outline=false end
+local type = type
+local char=Floor
+local i=Instance.new 
+local nr=NumberRange.new
+local ns=NumberSequence.new
+local nsk=NumberSequenceKeypoint.new
+local cs=ColorSequence.new 
+local csk=ColorSequenceKeypoint.new 
+local v3=Vector3.new
+local rgb=Color3.fromRGB
+local c3=Color3.new
+local Block_1=i("Part", char)
+Block_1.Name="Block"
+Block_1.Anchored=true
+Block_1.CanCollide=false
+Block_1.CanQuery=false
+Block_1.CanTouch=false
+Block_1.Reflectance=0
+Block_1.Color=col
+Block_1.Material=Enum.Material.Neon
+Block_1.Size=startsize
+Block_1.CastShadow=false
+Block_1.CFrame=pos
+Block_1.Massless=true
+if outline then 
+local h=i("Highlight",Block_1)
+h.FillTransparency=1
+h.DepthMode="Occluded"
+h.OutlineColor=ocol
+end
+function BetterTween(obj, speed, prop,AnimType)
+if AnimType==nil then AnimType="Quad" end
+local Tinfo=TweenInfo.new
+local TweenService=game.TweenService
+local hii=Tinfo(speed, Enum.EasingStyle[AnimType], Enum.EasingDirection.In)
+return TweenService:Create(obj, hii,prop)
+end
+local speed=1.5/speed
+tspawn(function()
+if type=="Out" then 
+Block_1.Transparency=starttransparency
+Block_1.Size=startsize
+local t=BetterTween(Block_1,speed,{Size=endsize})
+local t2=BetterTween(Block_1,speed,{Position=v3(Block_1.Position.X,Block_1.Position.Y*endpos,Block_1.Position.Z)})
+if donttransparent then
+local t1=BetterTween(Block_1,speed,{Transparency=1})
+t1:Play()
+end
+t:Play()
+t2:Play()
+t.Completed:Wait()
+Block_1:Destroy()
+elseif type=="In" then
+Block_1.Transparency=starttransparency
+Block_1.Size=endsize
+local t=BetterTween(Block_1,speed,{Size=startsize})
+local t2=BetterTween(Block_1,speed,{Position=v3(Block_1.Position.X,Block_1.Position.Y*endpos,Block_1.Position.Z)})
+if donttransparent then
+local t1=BetterTween(Block_1,speed,{Transparency=0})
+t1:Play()
+end
+t:Play()
+t2:Play()
+t.Completed:Wait()
+Block_1:Destroy()
+end
+end)
+
+
+end
+
+function sphere(type,speed,startsize,endsize,pos,col,starttransparency,donttransparent)
+if donttransparent==nil then donttransparent=false end
+local type = type
+local char=Floor
+local i=Instance.new 
+local nr=NumberRange.new
+local ns=NumberSequence.new
+local nsk=NumberSequenceKeypoint.new
+local cs=ColorSequence.new 
+local csk=ColorSequenceKeypoint.new 
+local v3=Vector3.new
+local rgb=Color3.fromRGB
+local c3=Color3.new
+local Sphere_23=i("MeshPart", char)
+Sphere_23.Name="Sphere"
+Sphere_23.MeshId="rbxassetid://482906818"
+Sphere_23.Anchored=true
+Sphere_23.CanCollide=false
+Sphere_23.CanQuery=false
+Sphere_23.CanTouch=false
+Sphere_23.Transparency=1
+Sphere_23.Reflectance=0
+Sphere_23.Color=col
+Sphere_23.Material=Enum.Material.Neon
+Sphere_23.CFrame=pos
+Sphere_23.CastShadow=false
+Sphere_23.Massless=true
+Sphere_23.Material=Enum.Material.Neon
+Sphere_23.TextureID=""
+Sphere_23.DoubleSided=false
+function BetterTween(obj, speed, prop,AnimType)
+if AnimType==nil then AnimType="Quad" end
+local Tinfo=TweenInfo.new
+local TweenService=game.TweenService
+local hii=Tinfo(speed, Enum.EasingStyle[AnimType], Enum.EasingDirection.In)
+return TweenService:Create(obj, hii,prop)
+end
+local speed=1.5/speed
+tspawn(function()
+if type=="Out" then 
+Sphere_23.Transparency=starttransparency
+Sphere_23.Size=startsize
+local t=BetterTween(Sphere_23,speed,{Size=endsize})
+if donttransparent then
+local t1=BetterTween(Sphere_23,speed,{Transparency=1})
+t1:Play()
+end
+t:Play()
+t.Completed:Wait()
+Sphere_23:Destroy()
+elseif type=="In" then 
+Sphere_23.Transparency=starttransparency
+Sphere_23.Size=endsize
+local t=BetterTween(Sphere_23,speed,{Size=startsize})
+if donttransparent then
+local t1=BetterTween(Sphere_23,speed,{Transparency=0})
+t1:Play()
+end
+t:Play()
+t.Completed:Wait()
+Sphere_23:Destroy()
+end
+
+end)
+
+
+end
+
+
+
+
+
+
+
+
+
+
+
 
 local Attachment_571=i("Attachment", Floor)
 Attachment_571.Name="Attachment"
@@ -2215,10 +2971,17 @@ ParticleEmitter2_560.FlipbookStartRandom=false
 ParticleEmitter2_560.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
 ParticleEmitter2_560.Brightness=1
 
+
+
+local l=1
 rr=PostSimulation:Connect(function(dt)
 if not scriptfolder:FindFirstChild(Name.."Assets") then
 rr:Disconnect()
 end
+l+=1
+
+
+
 
 for _,v in foldah:GetDescendants() do 
 if v:IsA("ParticleEmitter") then
@@ -2247,8 +3010,20 @@ end
 li.Color=im2.ImageColor3
 local root=rootpart1
 TweenFunction(Floor,.01,"pos",v3(root.Position.X,root.Position.Y+1,root.Position.Z)):Play()
+TweenFunction(PartFXFloor,.01,"pos",v3(root.Position.X,root.Position.Y-1,root.Position.Z)):Play()
+PartFXFloor.Rotation=v3(0,l*20,0)
 li.Brightness=5+sound.PlaybackLoudness/50.5
 li.Range=2+sound.PlaybackLoudness/100.5
+local f=PartFXFloor
+local s=clamp(sound.PlaybackLoudness/25,0,math.random(5,10))
+local s1=s/2
+--Floor.Rotation=v3(0,l*10,0)
+block1("In",3,v3(0,1,1),v3(s,1,1),f.CFrame*cf(9.5,s1,0)*angles(0,rad(0),rad(45)),c3(1,1,1),0,f.CFrame*cf(9.5,0,0)*angles(0,rad(0),rad(45)),true,im2.ImageColor3,true)
+block1("In",3,v3(0,1,1),v3(s,1,1),f.CFrame*cf(-9.5,s1,0)*angles(0,rad(0),rad(-45)),c3(1,1,1),0,f.CFrame*cf(-9.5,0,0)*angles(0,rad(0),rad(-45)),true,im2.ImageColor3,true)
+
+
+
+
 end)
 
 end

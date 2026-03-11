@@ -68,7 +68,7 @@ Floor1.Size=Vector3.new(60,1,60)
 
 
 
-local Floor=Instance.new("Attachment", Floor1)
+--[[local Floor=Instance.new("Attachment", Floor1)
 Floor.Name="Floor Aura"
 Floor.Position=Vector3.new(0.000000,-1,0.000000)
 Floor.Visible=false
@@ -204,9 +204,7 @@ Star.FlipbookLayout=Enum.ParticleFlipbookLayout.None
 Star.FlipbookMode=Enum.ParticleFlipbookMode.Loop
 Star.FlipbookFramerate=NumberRange.new(1.000000,1.000000)
 Star.FlipbookStartRandom=false
-
-local Light=Instance.new("PointLight", Floor)
-Light.Name="PointLight"
+"
 
 local BG=Instance.new("ParticleEmitter", Floor)
 BG.Name="bg2"
@@ -389,7 +387,7 @@ FloorShine.FlipbookLayout=Enum.ParticleFlipbookLayout.None
 FloorShine.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
 FloorShine.FlipbookFramerate=NumberRange.new(1.000000,1.000000)
 FloorShine.FlipbookStartRandom=false
-
+]]
 
 
 
@@ -750,6 +748,8 @@ local th={
   "!!derosneC",
   "!!!DEROSNEC",
 }
+local Light=Instance.new("PointLight", Floor1)
+Light.Name="PointLight"
 local cv
 local CensoreIt=false
 local cb=1
@@ -796,8 +796,9 @@ e19.Enabled=false
 end
 local y=sound.TimePosition
 sgui.Brightness=1000+sound.PlaybackLoudness/5
-if (y>48.929 and y<49.57) or (y>54.081 and y<54.737) or (y>56.85 and y<57.5) or (y>58.85 and y<59.15) or (y>60.1 and y<60.5) or (y>60.75 and y<61.1) or (y>61.35 and y<61.65) or (y>61.765 and y<61.9) or (y>62.15 and y<62.35) or (y>62.5 and y<62.9) or (y>64.1 and y<64.25) or (y>64.35 and y<64.65) or (y>64.85 and y<65) or (y>65.25 and y<65.45) or (y>65.55 and y<65.75) or (y>65.85 and y<66) or (y>66.75 and y<67) or (y>67.85 and y<69.1) or (y>127.75 and y<128.2) or (y>132.85 and y<133.35) or (y>135.5 and y<136) or (y>137.5 and y<138) or (y>139 and y<139.4) or (y>139.25 and y<139.85) or (y>140.15 and y<140.4) or (y>140.65 and y<140.8) or (y>141 and y<141.25) or (y>141.5 and y<141.75) or (y>142.55+.25 and y<142.7+.25) or (y>142.95+.25 and y<143+.25) or (y>143.15+.25 and y<143.4+.25) or (y>143.6+.25 and y<143.75+.25) or (y>144+.25 and y<144.2+.25) or (y>144.3+.25 and y<144.5+.25) or (y>144.6+.25 and y<144.75+.25) or (y>145.5+.25 and y<145.75+.25) or (y>146.6 and y<147.8) or (y>207.152 and y<207.685) or (y>208.069 and y<208.411) or (y>210.437 and y<210.853) or (y>211 and y<212.133) then
+if (y>39.1 and y<39.45) or (y>49 and y<49.3) or (y>53.9 and y<54.2) or (y>56.65 and y<57.2) or (y>58.8 and y<58.85) or (y>58.9 and y<58.95) or (y>59 and y<59.05) or (y>59.1 and y<59.15) or (y>60 and y<60.35) or (y>60.8 and y<61) or (y>61.25 and y<61.6) or (y>61.7 and y<61.85) or (y>62.2 and y<62.35) or (y>62.4 and y<62.55) or (y>62.7 and y<62.75) or (y>62.8 and y<62.85) or (y>62.9 and y<62.95) or (y>64 and y<64.1) or (y>64.15 and y<64.25) or (y>64.35 and y<64.45) or (y>64.55 and y<64.65) or (y>64.75 and y<64.85) or (y>64.95 and y<65) or (y>65.05 and y<65.1) or (y>65.15 and y<65.2) or (y>65.4 and y<65.5) or (y>65.55 and y<65.65) or (y>65.7 and y<65.8) or (y>65.85 and y<65.95) or (y>66 and y<66.05) or (y>66.1 and y<66.15) or (y>66.2 and y<66.25) or (y>66.8 and y<66.9) or (y>66.95 and y<67.05) or (y>67.15 and y<67.25) or (y>67.6 and y<67.65) or (y>67.7 and y<67.75) or (y>67.8 and y<67.85) or (y>67.9 and y<67.95) or (y>68 and y<68.05) or (y>68.1 and y<68.15) or (y>68.2 and y<68.25) or (y>68.3 and y<68.35) or (y>68.4 and y<68.45) or (y>68.5 and y<68.55) or (y>68.6 and y<68.65) or (y>68.7 and y<68.75) or (y>68.8 and y<68.85) or (y>68.9 and y<68.95) or (y>69 and y<69.05) or (y>90.95 and y<91.3) or (y>95.9 and y<96.2) or (y>105.7 and y<105.9) or (y>127.75 and y<128.05) or (y>132.65 and y<132.95) or (y>135.4 and y<135.95) or (y>137.55 and y<137.6) or(y>137.65 and y<137.7) or (y>137.75 and y<137.8) or (y>137.85 and y<137.9) or (y>138.75 and y<139.1) or (y>139.55 and y<139.75) or (y>140 and y<140.35) or (y>140.45 and y<140.6) or (y>140.95 and y<141.2) or (y>141.25 and y<141.4) or (y>141.55 and y<141.6) or (y>141.65 and y<141.7) or (y>141.75 and y<141.8) or (y>143 and y<143.1) or (y>143.15 and y<143.25) or (y>143.3 and y<143.4) or (y>143.45 and y<143.55) or (y>143.6 and y<143.7) or (y>143.75 and y<143.8) or (y>143.85 and y<143.9) or (y>143.95 and y<144) or (y>144.3 and y<144.4) or (y>144.45 and y<144.55) or (y>144.6 and y<144.7) or (y>144.75 and y<144.85) or (y>144.95 and y<145) or (y>145.05 and y<145.1) or (y>145.15 and y<145.2) or (y>145.5 and y<145.55) or (y>145.6 and y<145.65) or (y>145.75 and y<145.85) or (y>145.9 and y<146) or (y>146.4 and y<146.45) or (y>146.5 and y<146.55) or (y>146.6 and y<146.65) or (y>146.7 and y<146.75) or (y>146.8 and y<146.85) or (y>146.9 and y<146.95) or (y>147 and y<147.05) or (y>147.1 and y<147.15) or (y>147.2 and y<147.25) or (y>147.3 and y<147.35) or (y>147.4 and y<147.45) or (y>147.5 and y<147.55) or (y>147.6 and y<147.65) or (y>147.7 and y<147.75) or (y>147.8 and y<147.85) or (y>147.9 and y<147.95) or (y>159.8 and y<160.1) or (y>164.8 and y<165.1) or (y>174.6 and y<174.9) or (y>177.3 and y<179.1) or (y>181.1 and y<182.2) or (y>196.6 and y<197) or (y>206.5 and y<206.8) or (y>207 and y<207.1) or (y>207.2 and y<207.3) or (y>207.4 and y<207.5) or (y>207.6 and y<207.7) or (y>208.2 and y<208.3) or (y>208.4 and y<208.5) or (y>208.6 and y<208.7) or (y>208.8 and y<208.9) or (y>209.3 and y<209.4) or (y>209.5 and y<209.6) or (y>209.3 and y<209.4) or (y>209.5 and y<209.6) or (y>209.7 and y<209.8) or (y>209.9 and y<210) or(y>210.5 and y<212) then
 CensoreIt=true
+--Boost=Boost+random(100,150)
 else
 CensoreIt=false
 end

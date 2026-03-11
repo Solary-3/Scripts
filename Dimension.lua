@@ -10,6 +10,7 @@ end
 end
 end
 local scriptfolder=Global.Cont or workspace
+local tspawn=task.spawn
 local sound=Global.Loud or nil
 local im2=Global.im2 or nil
 local MusicPlayer=Global.MusicPlayer or nil
@@ -18,6 +19,17 @@ local rootpart=Global.rootpart or nil
 local insSet=Global.insSet or nil
 local head=Global.head or nil
 local torso=Global.torso or nil
+local wave1=Global.wave1 or nil
+local wave2=Global.wave2 or nil
+local wave3=Global.wave3 or nil
+local wave4=Global.wave4 or nil
+local block=Global.block or nil
+local block1=Global.block1 or nil
+local blockmoveup=Global.blockmoveup or nil
+local sphere=Global.sphere or nil 
+local scriptfolder1=scriptfolder.Parent or workspace
+
+
 function TweenFunction(obj, speed,whattype, anim)
 local Tinfo=TweenInfo.new
 local TweenService=game.TweenService
@@ -62,9 +74,11 @@ local rad=math.rad
 local abs=math.abs
 local min=math.min
 local mrandom=math.random
+local random=function(a,b) return mrandom(a*1000,b*1000)/1000 end
 local clamp=math.clamp
 local cf=CFrame.new
 local angles=CFrame.Angles
+
 local tinsert=table.insert
 local u2scale=UDim2.fromScale
 local Name="Dimension"
@@ -72,6 +86,7 @@ local Name="Dimension"
 
 
 function Dimension()
+--// Init
 if scriptfolder:FindFirstChild(Name.."Assets") then return end
 local foldah=i("Folder",scriptfolder)
 foldah.Name=Name.."Assets"
@@ -89,12 +104,30 @@ Floor.Reflectance=0
 Floor.Color=Color3.new(0,0,0)
 Floor.Material=Enum.Material.Plastic
 Floor.Size=Vector3.new(60,1,60)
---Floor.CFrame=CFrame.new(211.32192993164062,88.14154815673828,-367.06134033203125,0.6427632570266724,0,0.7660648822784424,0,1,0,-0.7660648822784424,0,0.6427632570266724)
---Floor.Orientation=Vector3.new(0.000000,50.001999,0.000000)
---Floor.Position=Vector3.new(211.321930,88.141548,-367.061340)
 Floor.CastShadow=true
 Floor.Massless=true
 local li=i("PointLight",Floor)
+
+
+local PartFXFloor=Instance.new("Part", foldah)
+PartFXFloor.Name="PartFXFloor"
+PartFXFloor.Anchored=true
+PartFXFloor.CanCollide=false
+PartFXFloor.CanQuery=false
+PartFXFloor.CanTouch=false
+PartFXFloor.Transparency=1
+PartFXFloor.Reflectance=0
+PartFXFloor.Color=Color3.new(0,0,0)
+PartFXFloor.Material=Enum.Material.Plastic
+PartFXFloor.Size=Vector3.new(10,1,10)
+PartFXFloor.CastShadow=true
+PartFXFloor.Massless=true
+
+
+
+
+
+
 local Ground_583=i("Attachment", Floor)
 Ground_583.Name="Ground"
 Ground_583:SetAttribute("AuraInstance", true)
@@ -912,6 +945,7 @@ e19.VelocitySpread=0
 e19.FlipbookFramerate=nr(1,1)
 e19.FlipbookLayout="None"
 e19.FlipbookMode="OneShot"
+local o=1
 hhi=PostSimulation:Connect(function()
 if not scriptfolder:FindFirstChild(Name.."Assets") then 
 hhi:Disconnect()
@@ -920,15 +954,23 @@ end
 if not head:FindFirstChild("EyeShine") then 
 att.Parent=head
 end
+o+=1
 att.Position=v3(0,0,-.5)
 local root=rootpart1
 TweenFunction(Floor,.01,"pos",v3(root.Position.X,root.Position.Y+1,root.Position.Z)):Play()
-local g=clamp(sound.PlaybackLoudness/5.5,0,15)
+local g=clamp(sound.PlaybackLoudness/5.5,0,30)
+TweenFunction(PartFXFloor,.01,"pos",v3(root.Position.X,root.Position.Y-1,root.Position.Z)):Play()
+PartFXFloor.Rotation=v3(0,o*20,0)
 local t=sound.TimePosition
 local d=sound.TimeLength
-
-
-
+local pcolor=scriptfolder1["Misc"]["PrimaryColor"]
+local scolor=scriptfolder1["Misc"]["SecondaryColor"]
+local s=clamp(sound.PlaybackLoudness/10,0,15)
+local s1=s/2
+if sound.PlaybackLoudness>random(350,400) then
+block1("In",5,v3(0,2,2),v3(s,2,2),PartFXFloor.CFrame*cf(20.5,s1,0)*angles(0,rad(0),rad(90)),scolor.Value,0,PartFXFloor.CFrame*cf(20.5,0,0)*angles(0,rad(0),rad(90)),false,pcolor.Value,true,50)
+block1("In",5,v3(0,2,2),v3(s,2,2),PartFXFloor.CFrame*cf(-20.5,s1,0)*angles(0,rad(0),rad(-90)),scolor.Value,0,PartFXFloor.CFrame*cf(-20.5,0,0)*angles(0,rad(0),rad(-90)),false,pcolor.Value,true,50)
+end
 
 
 

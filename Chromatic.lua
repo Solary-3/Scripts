@@ -564,14 +564,14 @@ local spectrum=MusicPlayer:FindFirstChild("Analyzer"):GetSpectrum()
 local count=#spectrum
 local t=tick()
 local spectrumCount=#spectrum
-local SafeTreshold=0.00025
+local SafeTreshold=0.00001
 for i, v in ipairs(BeamsFolder:GetChildren()) do
 if v:IsA("Beam") then
-local spectrumIndex=math.floor((tonumber(v.Name) / marker) * spectrumCount+.85) + 1
+local spectrumIndex=math.floor((tonumber(v.Name) / marker) * spectrumCount+1) + 1
 spectrumIndex=math.clamp(spectrumIndex, 1, spectrumCount)
 local magnitude=spectrum[spectrumIndex] or 0
 local i_pos=tonumber(v.Name) / marker
-local scale=math.min(magnitude / 0.0005 * .5, 25+1.25*sin((tick()*i_pos)+gp/10.5))
+local scale=math.min(magnitude / 0.0001 * .25, 25+1.25*sin((tick()*i_pos)+gp/10.5))
 local width=math.clamp(magnitude * 50, 0.15, 10.5)
 --local Torso=SafePart(incf)
 if magnitude>SafeTreshold then
