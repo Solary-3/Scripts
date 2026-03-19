@@ -3382,7 +3382,7 @@ while true do
 		--print('reset')
 		Combo=1
 	end
-	Sine=os.clock()*50
+	Sine=os.clock()*25
 	hue=hue+1
 	if(hue>360)then hue=1 end
 	local hitfloor,posfloor = workspace:FindPartOnRayWithIgnoreList(Ray.new(Root.CFrame.p,((CFrame.new(Root.Position,Root.Position - Vector3.new(0,1,0))).lookVector).unit * (4)), {Effects,Char,workspace[Player.Name]})
