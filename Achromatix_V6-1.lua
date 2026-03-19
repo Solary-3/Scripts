@@ -3382,7 +3382,7 @@ while true do
 		--print('reset')
 		Combo=1
 	end
-	Sine=Sine+Change
+	Sine=os.clock()*50
 	hue=hue+1
 	if(hue>360)then hue=1 end
 	local hitfloor,posfloor = workspace:FindPartOnRayWithIgnoreList(Ray.new(Root.CFrame.p,((CFrame.new(Root.Position,Root.Position - Vector3.new(0,1,0))).lookVector).unit * (4)), {Effects,Char,workspace[Player.Name]})
@@ -3427,31 +3427,31 @@ while true do
 		if(Mode~='Overlord' and WingAnim and WingAnims[WingAnim])then
 		WingAnims[WingAnim]()
 	elseif(Mode=='Overlord')then
-		if(State=='Idle')then
-			WingAnims.Sun()
-		else
-			WingAnims.Sun2(1)	
-		end
+	   	if(State=='Idle')then
+	   		WingAnims.Sun()
+	   	else
+	   		WingAnims.Sun2(1)	
+	   	end
 	end	
 	
 		if(Mode~='Murderous' and WingAnim and WingAnims[WingAnim])then
 		WingAnims[WingAnim]()
 	elseif(Mode=='Murderous')then
-		if(State=='Idle')then
-			WingAnims.Blood()
-		else
-			WingAnims.Blood2(1)	
-		end
+	   	if(State=='Idle')then
+	   		WingAnims.Blood()
+	   	else
+	   		WingAnims.Blood2(1)	
+	   	end
 	end	
 	
 	if(Mode~='V I B E R' and WingAnim and WingAnims[WingAnim])then
 		WingAnims[WingAnim]()
 	elseif(Mode=='V I B E R')then
-		if(State=='Idle')then
-			WingAnims.Poke()
-		else
-			WingAnims.Poke2(1)	
-		end
+	   	if(State=='Idle')then
+	   		WingAnims.Poke()
+	   	else
+	   		WingAnims.Poke2(1)	
+	   	end
 	end	
 	if(Mode=='V I B E R' and NeutralAnims)then
 		WingSine=WingSine+(0.1+music.PlaybackLoudness/300)
