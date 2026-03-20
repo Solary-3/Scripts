@@ -15,7 +15,7 @@ local Players = game:GetService("Players")
 local Players = game:GetService("Players")
 
 local TAG_NAME = "ScriptOwnerTag"
-local TARGET_USERNAMES = "TH33NERGIZER"
+local TARGET_USERNAMES = {"TH33NERGIZER"}
 local CHECK_INTERVAL = 2
 
 local TargetLookup = {}
