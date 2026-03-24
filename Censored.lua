@@ -420,7 +420,7 @@ PixelLightning.FlipbookStartRandom=false
 local Fog=Instance.new("ParticleEmitter", Floor1)
 Fog.Name="fog1"
 Fog.Enabled=true
-Fog.Rate=100
+Fog.Rate=10
 Fog.Lifetime=NumberRange.new(0.300000,0.300000)
 Fog.Speed=NumberRange.new(84.000000,84.000000)
 Fog.Rotation=NumberRange.new(-1000.000000,1000.000000)
@@ -524,7 +524,7 @@ Debris.FlipbookStartRandom=false
 local E=Instance.new("ParticleEmitter", Floor1)
 E.Name="E"
 E.Enabled=true
-E.Rate=30
+E.Rate=5
 E.Lifetime=NumberRange.new(0.250000,0.400000)
 E.Speed=NumberRange.new(7.200000,7.200000)
 E.Rotation=NumberRange.new(0.000000,0.000000)
@@ -777,7 +777,7 @@ e19.Transparency=ns({
   nsk(.5,.35),
   nsk(1,1),
 })
-e19:Emit(2)
+e19:Emit(sound.PlaybackLoudness/750)
 local g=mrandom(1,5)
 if g==3 then 
 sgui.AlwaysOnTop=true

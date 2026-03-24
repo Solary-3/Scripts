@@ -25,6 +25,7 @@ local wave3=Global.wave3 or nil
 local wave4=Global.wave4 or nil
 local block=Global.block or nil
 local block1=Global.block1 or nil
+local sphere1=Global.sphere1 or nil
 local blockmoveup=Global.blockmoveup or nil
 local sphere=Global.sphere or nil 
 local square=Global.square or nil 
@@ -67,6 +68,9 @@ local rgb=Color3.fromRGB
 local c3=Color3.new
 local v2=Vector2.new
 local nr=NumberRange.new
+local cf=CFrame.new
+local angles=CFrame.Angles
+local u2=UDim2.new
 local rus=game:service'RunService'
 local PostSimulation=rus.PostSimulation
 local sin=math.sin
@@ -77,8 +81,6 @@ local min=math.min
 local mrandom=math.random
 local random=function(a,b) return mrandom(a*1000,b*1000)/1000 end
 local clamp=math.clamp
-local cf=CFrame.new
-local angles=CFrame.Angles
 
 local tinsert=table.insert
 local u2scale=UDim2.fromScale
@@ -123,35 +125,112 @@ PartFXFloor.Material=Enum.Material.Plastic
 PartFXFloor.Size=Vector3.new(10,1,10)
 PartFXFloor.CastShadow=true
 PartFXFloor.Massless=true
+local att=i("Attachment",foldah)
+att.Position=v3(0,0,.1)
+att.Name="EyeShine"
+local e19=Instance.new("ParticleEmitter",att)
+e19.Name="EyeShine"
+e19.Color=cs({
+  csk(0,rgb(255,255,255)),
+  csk(1,rgb(255,255,255))
+})
+e19.Brightness=10
+e19.LightInfluence=0
+e19.LightEmission=0
+--0 -0.5 0 1 -0.5 0 
+e19.Orientation="FacingCamera"
+e19.Squash=ns({
+  nsk(0,-1.5),
+  nsk(1,-1.5)
+})
+e19.Size=ns({
+  nsk(0,0),
+  nsk(.1,5),
+  nsk(1,0),
+})
+e19.Transparency=ns({
+  nsk(0,1),
+  nsk(.5,.35),
+  nsk(1,1),
+})
+e19.ZOffset=1
+e19.Texture="rbxassetid://82921243876307"
+e19.EmissionDirection="Top"
+e19.Enabled=false 
+e19.LockedToPart=true 
+e19.Lifetime=nr(.3,.3)
+e19.Rate=350
+e19.Rotation=nr(0,0)
+e19.Rotation=nr(0,0)
+e19.RotSpeed=nr(0,0)
+e19.Speed=nr(0,0)
+e19.SpreadAngle=v2(0,0)
+e19.VelocitySpread=0 
+e19.FlipbookFramerate=nr(1,1)
+e19.FlipbookLayout="None"
+e19.FlipbookMode="OneShot"
+
+
+
 local l=1
 local hhh=nil
 i9=PostSimulation:Connect(function()
-if not scriptfolder:FindFirstChild(Name.."Assets") then i9:Disconnect() end
+if not scriptfolder:FindFirstChild(Name.."Assets") then i9:Disconnect() att:Destroy() end
 local t=sound.TimePosition
+if not head:FindFirstChild("EyeShine") then 
+att.Parent=head
+end
 local d=sound.TimeLength
 local pcolor=scriptfolder1["Misc"]["PrimaryColor"]
 local scolor=scriptfolder1["Misc"]["SecondaryColor"]
 local p0=sound.PlaybackLoudness
+e19:Emit(p0/950)
+e19.Color=cs({
+  csk(0,pcolor.Value),
+  csk(1,scolor.Value)
+})
 l+=1
-if t>29.707 then
-if sound.PlaybackLoudness>random(400,450) then
-hhh=clamp(sound.PlaybackLoudness/25,0,math.random(10,15))
-else
-hhh=clamp(sound.PlaybackLoudness/50,0,math.random(5,15))
-end
-else
-hhh=clamp(sound.PlaybackLoudness/50,0,math.random(10,30))
-end
-local f=PartFXFloor
-local g=hhh/2.5
-block1("In",1,v3(0,1,5),v3(hhh,1,5),f.CFrame*cf(30.5,g,0)*angles(0,rad(0),rad(45)),scolor.Value,0,f.CFrame*cf(30.5,0,0)*angles(0,rad(0),rad(45)),true,pcolor.Value,true,0,"Neon")
-block1("In",1,v3(0,1,5),v3(hhh,1,5),f.CFrame*cf(-30.5,g,0)*angles(0,rad(0),rad(-45)),scolor.Value,0,f.CFrame*cf(-30.5,0,0)*angles(0,rad(0),rad(-45)),true,pcolor.Value,true,0,"Neon")
-
 local lol=random(-50,50)
 local lol1=random(50,75)
 local lol2=random(10,50)
-block1("Out",1.5,v3(10,10,10),v3(30,75,30),Floor.CFrame*cf(random(-50,50),g,random(-50,50))*angles(random(-50,50),rad(random(-50,50)),rad(random(-50,50))),scolor.Value,0,Floor.CFrame*cf(random(-50,50),lol1,random(-50,50))*angles(random(-50,50),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,15,"ForceField")
-block1("Out",1.5,v3(10,10,10),v3(30,75,30),Floor.CFrame*cf(random(-50,50),g,random(-50,50))*angles(random(-50,50),rad(random(-50,50)),rad(random(-50,50))),pcolor.Value,0,Floor.CFrame*cf(random(-50,50),lol1,random(-50,50))*angles(random(-50,50),rad(random(-50,50)),rad(random(-50,50))),true,scolor.Value,true,15,"ForceField")
+local ypos=random(10,30)
+local rpos=random(-50,50)
+local rpos1=random(-50,50)
+if t>29.707 and t<=384.316 then
+block1("Out",1.5,v3(10,10,10),v3(30,75,30),Floor.CFrame*cf(random(-50,50),1,random(-50,50))*angles(random(-50,50),rad(random(-50,50)),rad(random(-50,50))),scolor.Value,0,Floor.CFrame*cf(random(-50,50),lol1,random(-50,50))*angles(random(-50,50),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,15,"ForceField")
+block1("Out",1.5,v3(10,10,10),v3(30,75,30),Floor.CFrame*cf(random(-50,50),1,random(-50,50))*angles(random(-50,50),rad(random(-50,50)),rad(random(-50,50))),pcolor.Value,0,Floor.CFrame*cf(random(-50,50),lol1,random(-50,50))*angles(random(-50,50),rad(random(-50,50)),rad(random(-50,50))),true,scolor.Value,true,15,"ForceField")
+block1("In",1,v3(1,1,1),v3(1,1,1),Floor.CFrame*cf(random(-50,50),1,random(-50,50))*angles(0,rad(0),rad(0)),scolor.Value,0,Floor.CFrame*cf(random(-50,50),ypos,random(-50,50))*angles(0,rad(0),rad(0)),true,pcolor.Value,true,1,"Neon")
+block1("In",1,v3(1,1,1),v3(1,1,1),Floor.CFrame*cf(random(-50,50),1,random(-50,50))*angles(0,rad(0),rad(0)),scolor.Value,0,Floor.CFrame*cf(random(-50,50),ypos,random(-50,50))*angles(0,rad(0),rad(0)),true,pcolor.Value,true,1,"Neon")
+sphere1("Out",1,v3(.1,.1,.1),v3(20,.1,.1),Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),scolor.Value,.25,Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,15,"Neon")
+sphere1("Out",1,v3(.1,.1,.1),v3(20,.1,.1),Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),pcolor.Value,.25,Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,scolor.Value,true,15,"Neon")
+
+sphere1("Out",1,v3(0,0,0),v3(1,1,1),Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),scolor.Value,.25,Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,15,"Neon")
+sphere1("Out",.65,v3(0,0,0),v3(1.5,1.5,1.5),Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),pcolor.Value,.3,Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,scolor.Value,true,15,"Neon")
+
+if sound.PlaybackLoudness>random(400,450) then
+hhh=clamp(sound.PlaybackLoudness/25,0,math.random(5,25))
+else
+hhh=clamp(sound.PlaybackLoudness/50,0,math.random(1,15))
+end
+else
+hhh=clamp(sound.PlaybackLoudness/50,0,math.random(10,30))
+block1("Out",1.5,v3(10,10,10),v3(30,75,30),Floor.CFrame*cf(random(-50,50),1,random(-50,50))*angles(random(-50,50),rad(random(-50,50)),rad(random(-50,50))),pcolor.Value,0,Floor.CFrame*cf(random(-50,50),lol1,random(-50,50))*angles(random(-50,50),rad(random(-50,50)),rad(random(-50,50))),true,scolor.Value,true,15,"ForceField")
+block1("In",1,v3(1,1,1),v3(1,1,1),Floor.CFrame*cf(random(-50,50),1,random(-50,50))*angles(0,rad(0),rad(0)),scolor.Value,0,Floor.CFrame*cf(random(-50,50),ypos,random(-50,50))*angles(0,rad(0),rad(0)),true,pcolor.Value,true,1,"Neon")
+sphere1("Out",1,v3(.1,.1,.1),v3(20,.1,.1),Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),scolor.Value,.5,Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,0,"Neon")
+end
+
+--random(-50,50)
+local f=PartFXFloor
+local g=hhh/4
+block1("In",1.5,v3(0,0,2.5),v3(hhh,1,2.5),f.CFrame*cf(30.5+g,g,0)*angles(0,rad(0),rad(45)),scolor.Value,0,f.CFrame*cf(30.5,0,0)*angles(0,rad(0),rad(45)),true,pcolor.Value,true,0,"Neon")
+block1("In",1.5,v3(0,0,2.5),v3(hhh,1,2.5),f.CFrame*cf(-30.5-g,g,0)*angles(0,rad(0),rad(-45)),scolor.Value,0,f.CFrame*cf(-30.5,0,0)*angles(0,rad(0),rad(-45)),true,pcolor.Value,true,0,"Neon")
+
+block1("In",2,v3(0,1,0),v3(2.5,1,hhh*1.5),f.CFrame*cf(-g/2,0,20.5)*angles(0,rad(0),rad(0)),scolor.Value,0,f.CFrame*cf(0,0,20.5)*angles(0,rad(0),rad(0)),true,pcolor.Value,true,0,"Neon")
+block1("In",2,v3(0,1,0),v3(1.5,1,hhh*1.5),f.CFrame*cf(-g/2,0,-20.5)*angles(0,rad(0),rad(-0)),scolor.Value,0,f.CFrame*cf(0,0,-20.5)*angles(0,rad(0),rad(-0)),true,pcolor.Value,true,0,"Neon")
+
+
+
+
 li.Color=scolor.Value
 li.Range=hhh
 li.Brightness=hhh/5
@@ -162,7 +241,7 @@ wave1("Out",1,.5,rootpart1.CFrame*cf(0,-.5,0)*angles(0,l,0),scolor.Value,.5)
 local root=rootpart1
 TweenFunction(Floor,.01,"pos",v3(root.Position.X,root.Position.Y+1,root.Position.Z)):Play()
 TweenFunction(PartFXFloor,.01,"pos",v3(root.Position.X,root.Position.Y-1,root.Position.Z)):Play()
-PartFXFloor.Rotation=v3(0,l*10,0)
+PartFXFloor.Rotation=v3(0,l*5,0)
 end)
 end
 repeat Rayleigh() task.wait() until not scriptfolder:FindFirstChild(Name.."Assets")
