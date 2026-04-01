@@ -169,8 +169,10 @@ hhh=clamp(sound.PlaybackLoudness/50,0,math.random(1,20))
 end
 local f=PartFXFloor
 local spcf=rootpart1.CFrame*cf(10*cos(sine*1),10+5*sin(sine*3.5),-10*cos(sine*5))
+local spcf1=rootpart1.CFrame*cf(-10*cos(sine*1),10-5*sin(sine*3.5),10*cos(sine*5))
 sphere1("Out",5,v3(.1,.1,.1),v3(hhh/2,hhh/2,hhh/2),spcf,scolor.Value,0,spcf,true,pcolor.Value,true,50)
-local g=hhh
+sphere1("Out",5,v3(.1,.1,.1),v3(hhh/2,hhh/2,hhh/2),spcf1,scolor.Value,0,spcf1,true,pcolor.Value,true,50)
+local g=hhh*1.5
 local s1=s/2
 local lol=random(-50,50)
 local lol1=random(50,75)
@@ -211,6 +213,12 @@ local x=random(-25,25)
 sphere1("Out",2.5,v3(.5,.5,.5),v3(ypos,.5,.5),rootpart1.CFrame*cf(z,0,x)*angles(0,0,rad(90)),scolor.Value,0,rootpart1.CFrame*cf(z,0,x)*angles(0,0,rad(90)),true,pcolor.Value,true,15)
 sphere1("Out",2.5,v3(.5,.5,.5),v3(ypos,.5,.5),rootpart1.CFrame*cf(x,0,z)*angles(0,0,rad(90)),scolor.Value,0,rootpart1.CFrame*cf(x,0,z)*angles(0,0,rad(90)),true,pcolor.Value,true,15)
 
+sphere1("Out",2.5,v3(.5,.5,.5),v3(10,10,10),rootpart1.CFrame*cf(z,0,x)*angles(0,0,rad(90)),scolor.Value,0,rootpart1.CFrame*cf(z,0,x)*angles(0,0,rad(90)),true,pcolor.Value,true,15)
+sphere1("Out",1.25,v3(.5,.5,.5),v3(5,5,5),rootpart1.CFrame*cf(x,0,z)*angles(0,0,rad(90)),scolor.Value,0,rootpart1.CFrame*cf(x,0,z)*angles(0,0,rad(90)),true,pcolor.Value,true,15)
+
+block1("Out",2.5,v3(.5,.5,.5),v3(10,10,10),rootpart1.CFrame*cf(z,0,x)*angles(0,0,rad(90)),scolor.Value,0,rootpart1.CFrame*cf(z,0,x)*angles(0,0,rad(90)),true,pcolor.Value,true,15)
+block1("Out",1.25,v3(.5,.5,.5),v3(5,5,5),rootpart1.CFrame*cf(x,0,z)*angles(0,0,rad(90)),scolor.Value,0,rootpart1.CFrame*cf(x,0,z)*angles(0,0,rad(90)),true,pcolor.Value,true,15)
+
 square("Out",1.5,v3(.5,.1,.5),v3(lol2,.1,lol2),rootpart1.CFrame*cf(z,0,x)*angles(0,rad(rpos1),rad(0)),scolor.Value,0,rootpart1.CFrame*cf(z,0,x)*angles(0,rad(rpos1),rad(0)),true,pcolor.Value,true,15)
 square("Out",2.5,v3(.5,.1,.5),v3(lol2,.1,lol2),rootpart1.CFrame*cf(x,0,z)*angles(0,rad(rpos1),rad(0)),scolor.Value,0,rootpart1.CFrame*cf(x,0,z)*angles(0,rad(rpos1),rad(0)),true,pcolor.Value,true,15)
 
@@ -221,8 +229,8 @@ local rspeed=random(1,1.5)
 sphere1("Out",rspeed,v3(.1,.1,.1),v3(rsize,.1,rsize),f.CFrame*cf(0,0,0),scolor.Value,0,f.CFrame*cf(0,0,0),true,pcolor.Value,true,50)
 
 
-sphere1("Out",2.5,v3(.5,.5,.5),v3(0,.5,hhh),f.CFrame*cf(0,0,0),scolor.Value,0,f.CFrame*cf(0,0,0),true,pcolor.Value,false,50)
-sphere1("Out",2.5,v3(.5,.5,.5),v3(hhh,.5,.5),f.CFrame*cf(0,0,0),scolor.Value,0,f.CFrame*cf(0,0,0),true,pcolor.Value,false,50)
+sphere1("Out",2.5,v3(.5,.5,.5),v3(0,.5,hhh*5),f.CFrame*cf(0,0,0),scolor.Value,0,f.CFrame*cf(0,0,0),true,pcolor.Value,false,50)
+sphere1("Out",2.5,v3(.5,.5,.5),v3(hhh*5,.5,.5),f.CFrame*cf(0,0,0),scolor.Value,0,f.CFrame*cf(0,0,0),true,pcolor.Value,false,50)
 else
 sphere1("Out",2.5,v3(.1,.1,.1),v3(15,.1,15),f.CFrame*cf(0,0,0),pcolor.Value,0,f.CFrame*cf(0,0,0),true,pcolor.Value,true,50)
 end
