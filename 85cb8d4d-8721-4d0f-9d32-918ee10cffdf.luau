@@ -1430,8 +1430,10 @@ local uis=game.UserInputService
 if isfolder and not isfolder(Name.." Assets") then 
 makefolder(Name.." Assets")
 end
-
-
+local Images=Name.." Assets/Images"
+if isfolder and not isfolder(Images) then
+  makefolder(Images)
+end
 --// Variables
 local osclock=os.clock
 local tspawn=task.spawn
@@ -19955,25 +19957,30 @@ return TweenService:Create(obj, hii,{Brightness=anim})
 end
 end
 tspawn(function()
-local Images={
-  "Preview",
-  "Preview2",
-  "Preview3",
-}
+local ImageTable={}
 
 while Interface["Main_Interface_1"] do 
+tclear(ImageTable)
+local files = listfiles(Images)
+for _, path in pairs(files) do
+local fileName = path:match("([^/]+)$")
+--repeat writefile(Images,HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..fileName.."?raw=true")) until path
+
+--print(fileName)
+table.insert(ImageTable,path)
+end
 local s=BetterTween(Interface["PreviewImage_21"],1.35,{ImageTransparency=1})
 s:Play()
 s.Completed:Wait()
-Interface["PreviewImage_21"]["Image"]=getcustomasset(Images[mrandom(1,#Images)]..".jpg")
-
+pcall(function()
+Interface["PreviewImage_21"]["Image"]=getcustomasset(ImageTable[math.random(1,#ImageTable)])
+end)
 local s=BetterTween(Interface["PreviewImage_21"],1.35,{ImageTransparency=0})
 s:Play()
 s.Completed:Wait()
 twait(1)
 end
 end)
-
 fr3.Parent=nil
 local marker=200
 local startfreq=0
