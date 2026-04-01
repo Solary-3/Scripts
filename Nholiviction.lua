@@ -379,8 +379,8 @@ local smoke_11804=i("ParticleEmitter", Attachment_11796)
 smoke_11804.Name="smoke"
 smoke_11804.Enabled = true
 smoke_11804.Rate = 43
-smoke_11804.Lifetime = nr(0.75,0.75)
-smoke_11804.Speed = nr(32,32)
+smoke_11804.Lifetime = nr(0.5,0.5)
+smoke_11804.Speed = nr(0,0)
 smoke_11804.Rotation = nr(-360,360)
 smoke_11804.RotSpeed = nr(-10,10)
 smoke_11804.Size = ns({nsk(0.000000,8.000000,0.000000),nsk(1.000000,8.000000,0.000000)})
@@ -665,8 +665,8 @@ Crack2_11770.Squash = ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,
 local slash_11771=i("ParticleEmitter", floor_11767)
 slash_11771.Name="slash"
 slash_11771.Enabled = true
-slash_11771.Rate = 20
-slash_11771.Lifetime = nr(0.5,0.5)
+slash_11771.Rate = 50
+slash_11771.Lifetime = nr(1,2.5)
 slash_11771.Speed = nr(10,40)
 slash_11771.Rotation = nr(-360,360)
 slash_11771.RotSpeed = nr(0,0)
@@ -832,7 +832,8 @@ end
 end
 
 
-
+Main_11785.Parent=Attachment_11792
+smoke_11804.Parent=Attachment_11792
 h=rus.PostSimulation:Connect(function()
 if not scriptfolder:FindFirstChild("NholivictionAssets") then 
 h:Disconnect()
