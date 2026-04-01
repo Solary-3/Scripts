@@ -12,19 +12,11 @@
 --[[
 No skidding, haha
 ]]
-
-local Bindable = Instance.new("BindableFunction")
-	local function Copy(e)
-		setclipboard("https://discord.gg/Ejvxa3Ru7x")
-		Bindable:Destroy()
-	end
-	Bindable.OnInvoke = Copy
+setclipboard("https://discord.gg/Ejvxa3Ru7x")
 	game.StarterGui:SetCore("SendNotification",{
 		Title = "From Theo";
-		Text = "Join Our Discord!";
+		Text = "Discord Invite Copied!";
 		Duration = 10;
-		Callback = Bindable,
-		Button1 = "Copy Invite";
 	})
 
 
