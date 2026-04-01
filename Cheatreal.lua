@@ -157,9 +157,15 @@ block1("Out",2.5,v3(50,.1,.1),v3(50,.1,.1),f.CFrame*cf(30*sin(sine*1.5),0,0)*ang
 block1("Out",2.5,v3(50,.1,.1),v3(50,.1,.1),f.CFrame*cf(-30*sin(sine*1.5),0,0)*angles(0,rad(90),0),scolor.Value,0,f.CFrame*cf(-30,0,0)*angles(0,rad(45),0),true,pcolor.Value,false,50)
 block1("Out",2.5,v3(50,.1,.1),v3(50,.1,.1),f.CFrame*cf(0,0,30*sin(sine*1.5))*angles(0,rad(0),0),scolor.Value,0,f.CFrame*cf(0,0,30)*angles(0,rad(-45),0),true,pcolor.Value,false,50)
 block1("Out",2.5,v3(50,.1,.1),v3(50,.1,.1),f.CFrame*cf(0,0,-30*sin(sine*1.5))*angles(0,rad(0),0),scolor.Value,0,f.CFrame*cf(0,0,-30)*angles(0,rad(-45),0),true,pcolor.Value,false,50)
-
+local hhh=nil
 local s=clamp(sound.PlaybackLoudness/10,0,random(1,20))
 local s1=s/2
+if sound.PlaybackLoudness>random(300,400) then
+hhh=clamp(sound.PlaybackLoudness/25,0,math.random(20,50))
+else
+hhh=clamp(sound.PlaybackLoudness/50,0,math.random(1,20))
+end
+local g=hhh*1.5
 local lol=random(-50,50)
 local lol1=random(50,75)
 local lol2=random(10,50)
@@ -171,6 +177,13 @@ block1("In",2,v3(0,2,2),v3(s,2,2),PartFXFloor.CFrame*cf(-30.5-s1,s1,0)*angles(0,
 
 block1("In",2,v3(0,2,2),v3(s,2,2),PartFXFloor.CFrame*cf(0,s1,30.5+s1)*angles(0,rad(0),rad(90)),scolor.Value,0,PartFXFloor.CFrame*cf(0,0,30.5)*angles(0,rad(0),rad(90)),false,pcolor.Value,true,50)
 block1("In",2,v3(0,2,2),v3(s,2,2),PartFXFloor.CFrame*cf(0,s1,-30.5-s1)*angles(0,rad(0),rad(-90)),scolor.Value,0,PartFXFloor.CFrame*cf(0,0,-30.5)*angles(0,rad(0),rad(-90)),false,pcolor.Value,true,50)
+
+
+block1("In",5,v3(0,1,0),v3(2.5,1,hhh*1.5),f.CFrame*cf(0,0,20.5+g)*angles(0,rad(0),rad(0)),scolor.Value,0,f.CFrame*cf(0,0,20.5)*angles(0,rad(0),rad(0)),true,pcolor.Value,true,100,"Neon")
+block1("In",5,v3(0,1,0),v3(1.5,1,hhh*1.5),f.CFrame*cf(0,0,-20.5-g)*angles(0,rad(0),rad(-0)),scolor.Value,0,f.CFrame*cf(0,0,-20.5)*angles(0,rad(0),rad(-0)),true,pcolor.Value,true,100,"Neon")
+
+block1("In",5,v3(0,1,0),v3(hhh*1.5,1,2.5),f.CFrame*cf(20.5+g,0,0)*angles(0,rad(0),rad(0)),scolor.Value,0,f.CFrame*cf(20.5,0,0)*angles(0,rad(0),rad(0)),true,pcolor.Value,true,100,"Neon")
+block1("In",5,v3(0,1,0),v3(hhh*1.5,1,2.5),f.CFrame*cf(-20.5-g,0,0)*angles(0,rad(0),rad(0)),scolor.Value,0,f.CFrame*cf(-20.5,0,0)*angles(0,rad(0),rad(0)),true,pcolor.Value,true,100,"Neon")
 
 
 
