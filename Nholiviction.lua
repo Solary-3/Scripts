@@ -242,7 +242,7 @@ Debris2_11798.Squash = ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000
 
 local Fire_11799=i("ParticleEmitter", Attachment_11796)
 Fire_11799.Name="Fire"
-Fire_11799.Enabled = true
+Fire_11799.Enabled = false
 Fire_11799.Rate = 26
 Fire_11799.Lifetime = nr(0.6000000238418579,1.2000000476837158)
 Fire_11799.Speed = nr(1,10)
@@ -350,7 +350,7 @@ Lines2_11802.Squash = ns({nsk(0.000000,-2.838784,0.000000),nsk(1.000000,1.665702
 
 local Stars_11803=i("ParticleEmitter", Attachment_11796)
 Stars_11803.Name="Stars"
-Stars_11803.Enabled = true
+Stars_11803.Enabled = false
 Stars_11803.Rate = 26
 Stars_11803.Lifetime = nr(0.6000000238418579,1.2000000476837158)
 Stars_11803.Speed = nr(1,35)
@@ -584,7 +584,7 @@ floor_11767.Visible = false
 local Crack_11768=i("ParticleEmitter", floor_11767)
 Crack_11768.Name="Crack"
 Crack_11768.Enabled = true
-Crack_11768.Rate = 3
+Crack_11768.Rate = 25
 Crack_11768.Lifetime = nr(1.2000000476837158,1.2000000476837158)
 Crack_11768.Speed = nr(0.0010000000474974513,0.0010000000474974513)
 Crack_11768.Rotation = nr(-360,360)
@@ -610,7 +610,7 @@ Crack_11768.Squash = ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0
 
 local star_11769=i("ParticleEmitter", floor_11767)
 star_11769.Name="star"
-star_11769.Enabled = true
+star_11769.Enabled = false
 star_11769.Rate = 10
 star_11769.Lifetime = nr(0.6000000238418579,0.6000000238418579)
 star_11769.Speed = nr(0.0010000000474974513,0.0010000000474974513)
@@ -638,7 +638,7 @@ star_11769.Squash = ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.
 local Crack2_11770=i("ParticleEmitter", floor_11767)
 Crack2_11770.Name="Crack2"
 Crack2_11770.Enabled = true
-Crack2_11770.Rate = 11
+Crack2_11770.Rate = 50
 Crack2_11770.Lifetime = nr(0.75,0.75)
 Crack2_11770.Speed = nr(0.0010000000474974513,0.0010000000474974513)
 Crack2_11770.Rotation = nr(-360,360)
@@ -834,6 +834,11 @@ end
 
 Main_11785.Parent=Attachment_11792
 smoke_11804.Parent=Attachment_11792
+lightning1_11776.Parent=Attachment_11792
+lightning2_11775.Parent=Attachment_11792
+Lightning_11800.Parent=Attachment_11792
+Attachment_11792:Clone().Parent=head
+--Attachment_11792:Clone().Parent=head
 h=rus.PostSimulation:Connect(function()
 if not scriptfolder:FindFirstChild("NholivictionAssets") then 
 h:Disconnect()

@@ -163,7 +163,7 @@ block1("Out",2.5,v3(50,.1,.1),v3(50,.1,.1),f.CFrame*cf(30*sin(sine*1.5),0,-30*si
 
 local s=clamp(sound.PlaybackLoudness/10,0,random(1,20))
 if sound.PlaybackLoudness>random(300,400) then
-hhh=clamp(sound.PlaybackLoudness/25,0,math.random(20,50))
+hhh=clamp(sound.PlaybackLoudness/25,0,math.random(pbl/200,50))
 else
 hhh=clamp(sound.PlaybackLoudness/50,0,math.random(1,20))
 end
