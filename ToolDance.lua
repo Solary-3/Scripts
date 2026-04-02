@@ -18,6 +18,11 @@ setclipboard("https://discord.gg/Ejvxa3Ru7x")
 		Text = "Discord Invite Copied!";
 		Duration = 10;
 	})
+	game.StarterGui:SetCore("SendNotification",{
+		Title = "From Theo";
+		Text = "Join the discord to report bugs or uh for more support!";
+		Duration = 10;
+	})
 
 
 
