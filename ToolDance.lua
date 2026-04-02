@@ -12,7 +12,7 @@
 --[[
 No skidding, haha
 ]]
-setclipboard("https://discord.gg/Ejvxa3Ru7x")
+setclipboard("https://discord.gg/gR6Pk5pMK")
 	game.StarterGui:SetCore("SendNotification",{
 		Title = "From Theo";
 		Text = "Discord Invite Copied!";
