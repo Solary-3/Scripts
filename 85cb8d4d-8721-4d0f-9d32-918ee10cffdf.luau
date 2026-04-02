@@ -107,7 +107,7 @@ local Modes={
   {Name="Pandemonium",WingAnim="Pandemonium",MusicTitle="Pandemonium",Music="Pandemonium",HHeight=0,Author="t+pazolite & Laur",ActualName="Avarthus"},
   {Name="Lexapriatic",WingAnim="Lexapriatic",MusicTitle="Lexapro Doesn't Work",Music="Lexapro Doesn't Work",HHeight=12,Author="Cythoni",ActualName="Lexarion"},
   {Name="Restless",WingAnim="Restless",MusicTitle="Restless",Music="Restless",HHeight=0,Author="Creo",ActualName="Restless"},
-  {Name="HYPERINTERVENTIC",WingAnim="HYPERINTERVENTIC",MusicTitle="Cheatreal #TPZREMAKE",Music="Cheatreal1",HHeight=10,Author="t+pazolite",ActualName="Hypwerwork"},
+  {Name="HYPERINTERVENTIC",WingAnim="HYPERINTERVENTIC",MusicTitle="Cheatreal #TPZREMAKE",Music="Cheatreal1",HHeight=10,Author="t+pazolite",ActualName="Hyperwork"},
 }
 
 
@@ -5598,7 +5598,7 @@ c.Handle.AssemblyLinearVelocity=v3(0,25.01,0)
 --c.Handle.CFrame=c.Handle.CFrame*cf(0,5,0)
 oswait(.5)
 ostj+=.1
-until IsHatDropped
+until ostj>=.5
 end)
 end)
 end
@@ -6994,7 +6994,7 @@ game:HttpGet(
 )
 end)
 end
-tspawn(function()
+ tspawn(function()
 pcall(function()
 writefile(path,
 game:HttpGet(
@@ -7586,8 +7586,8 @@ local info=getMode(modeName)
 Mode=info.Name;
 AnimType=info.WingAnim or "Iviriza"
 if not SmoothCamera then 
-end
 setHipHeight(info.HHeight)
+end
 Interface["Current Music_12"]["Text"] = "Music Playing: "..info.Author.." - "..info.MusicTitle
 AnarchyMainUI["PC_MusicName_13"]["Text"]=info.MusicTitle
 AnarchyMainUI["PC_Author_12"]["Text"]=info.Author
@@ -15859,7 +15859,7 @@ else
 BasicAnimChange=1
 end
 local spinnn=Spinny/15+Boost/45
-local randomness=clamp(sound.PlaybackLoudness/50,0,random(1,5))
+local randomness=clamp(sound.PlaybackLoudness/100,0,random(1,10))
 if BasicAnimChange==1 then
 AttachSword(SWAtt2,wingPart1,function() s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-1,4+randomness,0),angles(0,1.5707963267948966+0,1.5707963267948966+spinnn)),deltaTime)  end)
 Extra_Part1.C0=cfMul(cf(0,0.5+0,-2+0),angles(0,0,0))
@@ -17245,7 +17245,7 @@ elseif (current>=23.4 and current<45) or (current>=67 and current<110.9) or (cur
 local model=scriptfolder["NholivictionAssets"]
 local Letters=head["Letters"]
 local h=math.random(1,255)
-local f=math.clamp(255*cos(sine*1000),0,255)
+local f=math.clamp(255*tan(sine*50),0,255)
 ChangeAndRecolor("Nholiviction",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
 for _,v in Letters:GetDescendants() do 
 if v:IsA("ParticleEmitter") then 
@@ -17280,7 +17280,7 @@ elseif (current>=45 and current<67) or (current>=121.6 and current<130.9) then
 local model=scriptfolder["NholivictionAssets"]
 local Letters=head["Letters"]
 local h=math.random(1,255)
-local f=math.clamp(255*cos(sine*1000),0,255)
+local f=math.clamp(255*tan(sine*50),0,255)
 local r=math.random(1,3)
 if r==2 then
 ChangeAndRecolor("Nholiviction",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,f,f),false,false)
@@ -17340,7 +17340,7 @@ elseif current>=132.6 and current<154.3 then
 local model=scriptfolder["NholivictionAssets"]
 local Letters=head["Letters"]
 local h=math.random(1,255)
-local f=math.clamp(255*cos(sine*1500),0,255)
+local f=math.clamp(255*tan(sine*50),0,255)
 local r=math.random(1,3)
 if r==2 then
 ChangeAndRecolor("Nholiviction",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,f,f),false,false)
@@ -17561,6 +17561,24 @@ else
 RootJoint.C0=Lerp(RootJoint.C0,cfMul(cfMul(cf((random(-0.025,0.025))+0,10+(random(-0.025,0.025))+5+0.25*sin((sine*3)),(random(-0.025,0.025))+0),angles((random(-0.017453292519943295,0.017453292519943295))+0+-0.08726646259971647*cos((sine*3)),(random(-0.017453292519943295,0.017453292519943295))+0,(random(-0.017453292519943295,0.017453292519943295))+3.141592653589793)),angles(-1.5707963705062866,0,-3.141592502593994)),deltaTime)RightHip.C0=Lerp(RightHip.C0,cfMul(cfMul(cf(1,0.2,-1),angles(-0.4363323129985824+-0.17453292519943295*cos((sine*3)),-0.4363323129985824,0)),angles(0,1.5707963705062866,0)),deltaTime)LeftHip.C0=Lerp(LeftHip.C0,cfMul(cfMul(cf(-1,-0.9,-0.3),angles(0.2617993877991494+-0.2617993877991494*sin((sine*3)),0.3490658503988659,0)),angles(-0,-1.5707963705062866,0)),deltaTime)LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cfMul(cf(-0.8,0.5,-0.25+0.2*sin((sine*3))),angles((random(-0.017453292519943295,0.017453292519943295))+2.8797932657906435+0.17453292519943295*sin((sine*3)),(random(-0.017453292519943295,0.017453292519943295))+-0.2617993877991494,(random(-0.017453292519943295,0.017453292519943295))+0.3490658503988659)),angles(-0,-1.5707963705062866,0)),deltaTime)RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cfMul(cf(0.8,0.5,-0.25+0.2*sin((sine*3))),angles((random(-0.017453292519943295,0.017453292519943295))+2.8797932657906435+-0.17453292519943295*sin((sine*3)),(random(-0.017453292519943295,0.017453292519943295))+0.2617993877991494,(random(-0.017453292519943295,0.017453292519943295))+-0.3490658503988659)),angles(0,1.5707963705062866,0)),deltaTime)Neck.C0=Lerp(Neck.C0,cfMul(cfMul(cf(0,1,0),angles((random(-0.017453292519943295,0.017453292519943295))+-0.6981317007977318+-0.2617993877991494*cos((sine*3)),(random(-0.017453292519943295,0.017453292519943295))+0,(random(-0.017453292519943295,0.017453292519943295))+0)),angles(-1.5707963705062866,0,-3.141592502593994)),min(deltaTime*2,1))
 end 
 OverrideAnimation=true
+elseif current>=198 and current<329 then 
+OverrideAnimation=true
+AttachSword(SWAtt2,wingPart1,function() s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-1+0,9+5*sin(sine*1+0)+0,-2+0),angles(0,1.5707963267948966+0,1.5707963267948966+Spinny/10+Boost/30.5)),deltaTime)  end)
+Extra_Part1.C0=cfMul(cf(0,0.5+0,-2+0),angles(0,0,0))
+Extra_Part1.C1=cf_0
+Extra_Part1.Part1=Torso
+
+AttachSword(SWAtt3,wingPart1,function() s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-1+0,9+5*sin(sine*1+0)+0,-2+0),angles(0,1.5707963267948966+0,4.71238898038469+Spinny/10+Boost/30.5)),deltaTime)  end)
+AttachSword(SWAtt1,wingPart1,function() s1_1.C0=Lerp(s1_1.C0,cfMul(cf(-1+0,9+5*sin(sine*1+0)+0,-2+0),angles(0,1.5707963267948966+0,Spinny/10+Boost/30.5)),deltaTime)  end)
+AttachSword(SWAtt4,wingPart1,function() s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-1+0,9+5*sin(sine*1+0)+0,-2+0),angles(0,1.5707963267948966+0,3.141592653589793+Spinny/10+Boost/30.5)),deltaTime)  end)
+Extra_Part2.C0=cfMul(cf(0,0.5+0,-2+0),angles(0,0,0))
+Extra_Part2.Part1=Torso
+Extra_Part2.C1=cf_0
+if not SmoothCamera then
+LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.25+0+0,-0.25+0+0.15*cos(sine*3+0),0+0+0),angles(0.8726646259971648+0+0,-2.6179938779914944+0+rad(-1.5)*cos(sine*1000+0),0.17453292519943295+rad(2.5)*sin(sine*1000+0)+0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0+0+0,1+0+0,0+0+0),angles(-2.0943951023931953+0+rad(-5.5)*cos(sine*3+0),0+rad(-1.5)*sin(sine*1000+0)+0,3.141592653589793+0+rad(1.5)*cos(sine*1000+0))),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.75+0+0,-0.09999999999999998+0.15*sin(sine*3+0)+0,-0.5+0+0),angles(0.3490658503988659+0+rad(-5.5)*cos(sine*3+0),0.3490658503988659+0+rad(1.5)*cos(sine*1000+0),0+rad(-1.5)*sin(sine*1000+0)+0)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.2+0+0,0+0+0.25*cos(sine*3+0),0+0+0),angles(0.8726646259971648+0+0,2.6179938779914944+0+rad(-1.5)*cos(sine*1000+0),-0.17453292519943295+rad(-1.5)*sin(sine*1000+0)+0)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.75+0+0,-0.8+0.15*sin(sine*3+0)+0,-0.5+0+0),angles(0+0+rad(-5.5)*cos(sine*3+0),-0.3490658503988659+rad(-1.5)*sin(sine*1000+0)+0,0+0+rad(2)*cos(sine*1000+0))),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0+0+0,1+0.5*sin(sine*3+0)+0,0+0+0),angles(-2.2689280275926285+0+rad(-5.5)*cos(sine*3+0.5),0+rad(1)*sin(sine*1000+0)+0,3.141592653589793+0+rad(-1)*cos(sine*1000+0))),deltaTime)  
+else 
+LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.25+0+0,-0.25+0+0.15*cos(sine*3+0),0+0+0),angles(0.8726646259971648+0+0,-2.6179938779914944+0+rad(-1.5)*cos(sine*1000+0),0.17453292519943295+rad(2.5)*sin(sine*1000+0)+0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0+0+0,1+0+0,0+0+0),angles(-2.0943951023931953+0+rad(-5.5)*cos(sine*3+0),0+rad(-1.5)*sin(sine*1000+0)+0,3.141592653589793+0+rad(1.5)*cos(sine*1000+0))),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.75+0+0,-0.09999999999999998+0.15*sin(sine*3+0)+0,-0.5+0+0),angles(0.3490658503988659+0+rad(-5.5)*cos(sine*3+0),0.3490658503988659+0+rad(1.5)*cos(sine*1000+0),0+rad(-1.5)*sin(sine*1000+0)+0)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.2+0+0,0+0+0.25*cos(sine*3+0),0+0+0),angles(0.8726646259971648+0+0,2.6179938779914944+0+rad(-1.5)*cos(sine*1000+0),-0.17453292519943295+rad(-1.5)*sin(sine*1000+0)+0)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.75+0+0,-0.8+0.15*sin(sine*3+0)+0,-0.5+0+0),angles(0+0+rad(-5.5)*cos(sine*3+0),-0.3490658503988659+rad(-1.5)*sin(sine*1000+0)+0,0+0+rad(2)*cos(sine*1000+0))),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0+0+0,10+0.5*sin(sine*3+0)+0,0+0+0),angles(-2.2689280275926285+0+rad(-5.5)*cos(sine*3+0.5),0+rad(1)*sin(sine*1000+0)+0,3.141592653589793+0+rad(-1)*cos(sine*1000+0))),deltaTime) 
+end
 elseif current>=329 and current<369.85 and not walking then 
 OverrideAnimation=true
 SpecialAnimRThingy=1
