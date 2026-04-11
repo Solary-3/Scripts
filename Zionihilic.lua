@@ -361,8 +361,20 @@ block1("In",1,v3(1,1,1),v3(1,1,1),Floor.CFrame*cf(random(-50,50),1,random(-50,50
 block1("In",1,v3(1,1,1),v3(1,1,1),Floor.CFrame*cf(random(-50,50),1,random(-50,50))*angles(0,rad(0),rad(0)),scolor.Value,0,Floor.CFrame*cf(random(-50,50),ypos,random(-50,50))*angles(0,rad(0),rad(0)),true,pcolor.Value,true,1,"Neon")
 
 local torso=Extras.Torso
-block1("Out",5,v3(.1,.1,.1),v3(random(10,20),.1,.1),torso.CFrame,scolor.Value,0,torso.CFrame*cf(random(-5,5),random(-5,5),random(-5,5))*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,15,"Neon")
-block1("Out",5,v3(.1,.1,.1),v3(random(10,20),.1,.1),torso.CFrame,scolor.Value,0,torso.CFrame*cf(random(-5,5),random(-5,5),random(-5,5))*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,15,"Neon")
+block1("Out",5,v3(.1,.1,.1),v3(random(10,20),5,.1),torso.CFrame,scolor.Value,0,torso.CFrame*cf(random(-5,5),random(-5,5),random(-5,5))*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,15,"Neon")
+block1("Out",5,v3(.1,.1,.1),v3(random(10,20),5,.1),torso.CFrame,scolor.Value,0,torso.CFrame*cf(random(-5,5),random(-5,5),random(-5,5))*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,15,"Neon")
+sphere1("Out",1,v3(.1,.1,.1),v3(20,.1,.1),Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),scolor.Value,.25,Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,15,"Neon")
+sphere1("Out",1,v3(.1,.1,.1),v3(20,.1,.1),Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),pcolor.Value,.25,Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,scolor.Value,true,15,"Neon")
+
+sphere1("Out",1,v3(0,0,0),v3(1,1,1),Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),scolor.Value,.25,Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,15,"Neon")
+sphere1("Out",.65,v3(0,0,0),v3(1.5,1.5,1.5),Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),pcolor.Value,.3,Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,scolor.Value,true,15,"Neon")
+
+square("Out",1,v3(0,0,0),v3(5,.1,5),Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),scolor.Value,.25,Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,15,"Neon")
+square("Out",.65,v3(0,0,0),v3(10,.1,.10),Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),pcolor.Value,.3,Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,scolor.Value,true,15,"Neon")
+
+
+block1("In",1,v3(1,1,1),v3(1,1,1),Floor.CFrame*cf(random(-50,50),1,random(-50,50))*angles(0,rad(0),rad(0)),scolor.Value,0,Floor.CFrame*cf(random(-50,50),ypos,random(-50,50))*angles(0,rad(0),rad(0)),true,pcolor.Value,true,1,"Neon")
+block1("In",1,v3(1,1,1),v3(1,1,1),Floor.CFrame*cf(random(-50,50),1,random(-50,50))*angles(0,rad(0),rad(0)),scolor.Value,0,Floor.CFrame*cf(random(-50,50),ypos,random(-50,50))*angles(0,rad(0),rad(0)),true,pcolor.Value,true,1,"Neon")
 elseif t>=79.7 then 
 local f=PartFXFloor
 local g=hhh/4
