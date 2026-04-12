@@ -105,7 +105,7 @@ local Modes={
   {Name="Serenity",WingAnim="Serenity",MusicTitle="Scarlet Night",Music="Scarlet Night",HHeight=0,Author="Fractal Dreamers",ActualName="Serenity"},
   {Name="Torment",WingAnim="Torment",MusicTitle="explicit massacre over the body of a dead god",Music="massacre",HHeight=0,Author="End Of The World",ActualName="Afrodebiator"},
   {Name="Pandemonium",WingAnim="Pandemonium",MusicTitle="Pandemonium",Music="Pandemonium",HHeight=0,Author="t+pazolite & Laur",ActualName="Avarthus"},
-  {Name="Lexapriatic",WingAnim="Lexapriatic",MusicTitle="Lexapro Doesn't Work",Music="Lexapro Doesn't Work",HHeight=12,Author="Cythoni",ActualName="Lexarion"},
+  {Name="Lexapriatic",WingAnim="Lexapriatic",MusicTitle="Lexapro Doesn't Work",Music="Lexapro Doesn't Work",HHeight=12,Author="Cythoni",ActualName="Arius"},
   {Name="Restless",WingAnim="Restless",MusicTitle="Restless",Music="Restless",HHeight=0,Author="Creo",ActualName="Restless"},
   {Name="HYPERINTERVENTIC",WingAnim="HYPERINTERVENTIC",MusicTitle="Cheatreal #TPZREMAKE",Music="Cheatreal1",HHeight=10,Author="t+pazolite",ActualName="Hyperwork"},
   {Name="Parallax",WingAnim="Parallax",MusicTitle="Panorama",Music="Panorama",HHeight=0,Author="Artcore",ActualName="Parallax"},
@@ -7002,6 +7002,7 @@ Global.Extras={
   Rleg=rightleg,
   pcolor=pcolor,
   scolor=scolor,
+  AssstName=Asset,
 }
 
 local VFXFolder = Name.." Assets/VFX"
@@ -17925,10 +17926,10 @@ elseif t>236.766 and t<251.947 then
 local h=clamp(o/50,0,50)
 local h1=clamp(o/25,0,200)
 local rainb=Color3.fromHSV((tick()*.075)%1,1,1)
-local sin1=clamp(200*sin(sine),0,200)
+local sin1=clamp(200*sin(sine*2),0,200)
 --local sin2=clamp(-25*cos(sine*5),0,10+h1*50)
 local sin2=clamp(-25*tan(sine*7.5),0,10+h1)
-is(sc,"Value",rgb(0,sin2*5.5,0))
+is(sc,"Value",rgb(sin2*5.5,sin2*5.5,0))
 is(pc,"Value",rgb(0,0,sin1))
 elseif t>266 and t<291.55 then 
 local h=clamp(o/50,0,50)
@@ -17981,6 +17982,8 @@ is(pc,"Value",rgb(0,sin2*5.5,sin2*5.5))
 end
 local f={
   [[rbxasset://fonts/families/Sarpanch.json]],
+  [[rbxasset://fonts/families/Michroma.json]],
+  [[rbxasset://fonts/families/Fondamento.json]],
   [[rbxassetid://12187368843]],
   [[rbxassetid://12187368625]],
 }
