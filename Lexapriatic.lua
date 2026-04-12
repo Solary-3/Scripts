@@ -192,7 +192,7 @@ e19.Color=cs({
 l+=1
 local lol=random(-50,50)
 local lol1=random(50,75)
-local lol2=random(10,50)
+local lol2=random(10,20)
 local ypos=random(10,30)
 local rpos=random(-50,50)
 local rpos1=random(-50,50)
@@ -234,7 +234,27 @@ block1("In",2,v3(0,1,0),v3(1.5,1,hhh*1.5),f.CFrame*cf(-g/2,0,-20.5)*angles(0,rad
 li.Color=scolor.Value
 li.Range=hhh
 li.Brightness=hhh/5
+if sound.PlaybackLoudness>=random(350,425) then 
+tspawn(function()
+local t=sound.TimePosition
+local z=random(-50,50)
+local x=random(-50,50)
+local size=hhh*3
+local hmm=size/7.5
+block1("Out",2.5,v3(.5,.5,.5),v3(size,2.5,2.5),rootpart1.CFrame*cf(z,hmm,x)*angles(0,0,rad(90)),scolor.Value,0,rootpart1.CFrame*cf(z,0,x)*angles(0,0,rad(90)),true,pcolor.Value,true,15)
+block1("Out",2.5,v3(.5,.5,.5),v3(size,2.5,2.5),rootpart1.CFrame*cf(x,0,z)*angles(0,0,rad(90)),scolor.Value,0,rootpart1.CFrame*cf(x,hmm,z)*angles(0,0,rad(90)),true,pcolor.Value,true,15)
 
+--[[sphere1("Out",2.5,v3(.5,.5,.5),v3(10,10,10),rootpart1.CFrame*cf(z,0,x)*angles(0,0,rad(90)),scolor.Value,0,rootpart1.CFrame*cf(z,0,x)*angles(0,0,rad(90)),true,pcolor.Value,true,15)
+sphere1("Out",1.25,v3(.5,.5,.5),v3(5,5,5),rootpart1.CFrame*cf(x,0,z)*angles(0,0,rad(90)),scolor.Value,0,rootpart1.CFrame*cf(x,0,z)*angles(0,0,rad(90)),true,pcolor.Value,true,15)]]
+
+block1("Out",2.5,v3(.5,.5,.5),v3(10,10,10),rootpart1.CFrame*cf(z,0,x)*angles(0,rad(rpos1),0),scolor.Value,0,rootpart1.CFrame*cf(z,0,x)*angles(0,rad(rpos1),0),true,pcolor.Value,true,15)
+block1("Out",1.25,v3(.5,.5,.5),v3(5,5,5),rootpart1.CFrame*cf(x,0,z)*angles(0,rad(rpos1),0),scolor.Value,0,rootpart1.CFrame*cf(x,0,z)*angles(0,rad(rpos1),0),true,pcolor.Value,true,15)
+
+square("Out",1.5,v3(.5,.1,.5),v3(lol2,.1,lol2),rootpart1.CFrame*cf(z,0,x)*angles(0,rad(rpos1),rad(0)),scolor.Value,0,rootpart1.CFrame*cf(z,0,x)*angles(0,rad(rpos1),rad(0)),true,pcolor.Value,false,15)
+square("Out",2.5,v3(.5,.1,.5),v3(lol2,.1,lol2),rootpart1.CFrame*cf(x,0,z)*angles(0,rad(rpos1),rad(0)),scolor.Value,0,rootpart1.CFrame*cf(x,0,z)*angles(0,rad(rpos1),rad(0)),true,pcolor.Value,false,15)
+
+end)
+end
 
 wave2("Out",1,25,rootpart1.CFrame*cf(0,-.5,0)*angles(0,l,0),pcolor.Value,.5)
 wave1("Out",1,.5,rootpart1.CFrame*cf(0,-.5,0)*angles(0,l,0),scolor.Value,.5)
