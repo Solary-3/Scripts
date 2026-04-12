@@ -16,6 +16,7 @@ local im2=Global.im2 or nil
 local MusicPlayer=Global.MusicPlayer or nil
 local rootpart1=Global.rootpart1 or nil
 local rootpart=Global.rootpart or nil
+local Extras=Global.Extras or {}
 local insSet=Global.insSet or nil
 local head=Global.head or nil
 local torso=Global.torso or nil
@@ -190,6 +191,7 @@ e19.Color=cs({
   csk(1,scolor.Value)
 })
 l+=1
+sine=os.clock()
 local lol=random(-50,50)
 local lol1=random(50,75)
 local lol2=random(10,20)
@@ -242,22 +244,30 @@ local x=random(-50,50)
 local size=hhh*3
 local hmm=size/7.5
 block1("Out",2.5,v3(.5,.5,.5),v3(size,2.5,2.5),rootpart1.CFrame*cf(z,hmm,x)*angles(0,0,rad(90)),scolor.Value,0,rootpart1.CFrame*cf(z,0,x)*angles(0,0,rad(90)),true,pcolor.Value,true,15)
-block1("Out",2.5,v3(.5,.5,.5),v3(size,2.5,2.5),rootpart1.CFrame*cf(x,0,z)*angles(0,0,rad(90)),scolor.Value,0,rootpart1.CFrame*cf(x,hmm,z)*angles(0,0,rad(90)),true,pcolor.Value,true,15)
+block1("Out",2,v3(.5,.5,.5),v3(size*1.5,2.5,2.5),rootpart1.CFrame*cf(x,0,z)*angles(0,0,rad(90)),pcolor.Value,0,rootpart1.CFrame*cf(x,hmm*1.5,z)*angles(0,0,rad(90)),true,pcolor.Value,true,15)
 
 --[[sphere1("Out",2.5,v3(.5,.5,.5),v3(10,10,10),rootpart1.CFrame*cf(z,0,x)*angles(0,0,rad(90)),scolor.Value,0,rootpart1.CFrame*cf(z,0,x)*angles(0,0,rad(90)),true,pcolor.Value,true,15)
 sphere1("Out",1.25,v3(.5,.5,.5),v3(5,5,5),rootpart1.CFrame*cf(x,0,z)*angles(0,0,rad(90)),scolor.Value,0,rootpart1.CFrame*cf(x,0,z)*angles(0,0,rad(90)),true,pcolor.Value,true,15)]]
 
 block1("Out",2.5,v3(.5,.5,.5),v3(10,10,10),rootpart1.CFrame*cf(z,0,x)*angles(0,rad(rpos1),0),scolor.Value,0,rootpart1.CFrame*cf(z,0,x)*angles(0,rad(rpos1),0),true,pcolor.Value,true,15)
+block1("Out",2.5,v3(.5,.5,.5),v3(7.5,7.5,7.5),rootpart1.CFrame*cf(z,0,x)*angles(0,rad(rpos1),0),pcolor.Value,0,rootpart1.CFrame*cf(z,0,x)*angles(0,rad(rpos1),0),true,scolor.Value,true,15)
 block1("Out",1.25,v3(.5,.5,.5),v3(5,5,5),rootpart1.CFrame*cf(x,0,z)*angles(0,rad(rpos1),0),scolor.Value,0,rootpart1.CFrame*cf(x,0,z)*angles(0,rad(rpos1),0),true,pcolor.Value,true,15)
 
 square("Out",1.5,v3(.5,.1,.5),v3(lol2,.1,lol2),rootpart1.CFrame*cf(z,0,x)*angles(0,rad(rpos1),rad(0)),scolor.Value,0,rootpart1.CFrame*cf(z,0,x)*angles(0,rad(rpos1),rad(0)),true,pcolor.Value,false,15)
 square("Out",2.5,v3(.5,.1,.5),v3(lol2,.1,lol2),rootpart1.CFrame*cf(x,0,z)*angles(0,rad(rpos1),rad(0)),scolor.Value,0,rootpart1.CFrame*cf(x,0,z)*angles(0,rad(rpos1),rad(0)),true,pcolor.Value,false,15)
 
 end)
+local torso=Extras.Torso
+block1("Out",random(1,5),v3(.1,.1,.1),v3(random(10,20),5,.1),torso.CFrame,scolor.Value,0,torso.CFrame*cf(random(-5,5),random(-5,5),random(-5,5))*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,15,"Neon")
+block1("Out",random(1,5),v3(.1,.1,.1),v3(random(10,20),5,.1),torso.CFrame,scolor.Value,0,torso.CFrame*cf(random(-5,5),random(-5,5),random(-5,5))*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,15,"Neon")
 end
 
 wave2("Out",1,25,rootpart1.CFrame*cf(0,-.5,0)*angles(0,l,0),pcolor.Value,.5)
-wave1("Out",1,.5,rootpart1.CFrame*cf(0,-.5,0)*angles(0,l,0),scolor.Value,.5)
+local f=PartFXFloor
+block1("Out",2.5,v3(50,.1,.1),v3(50,.1,.1),f.CFrame*cf(30*sin(sine*1.5),0,0)*angles(0,rad(90),0),scolor.Value,0,f.CFrame*cf(30,0,0)*angles(0,rad(45),0),true,pcolor.Value,false,50)
+block1("Out",2.5,v3(50,.1,.1),v3(50,.1,.1),f.CFrame*cf(-30*sin(sine*1.5),0,0)*angles(0,rad(90),0),scolor.Value,0,f.CFrame*cf(-30,0,0)*angles(0,rad(45),0),true,pcolor.Value,false,50)
+block1("Out",2.5,v3(50,.1,.1),v3(50,.1,.1),f.CFrame*cf(0,0,30*sin(sine*1.5))*angles(0,rad(0),0),scolor.Value,0,f.CFrame*cf(0,0,30)*angles(0,rad(-45),0),true,pcolor.Value,false,50)
+block1("Out",2.5,v3(50,.1,.1),v3(50,.1,.1),f.CFrame*cf(0,0,-30*sin(sine*1.5))*angles(0,rad(0),0),scolor.Value,0,f.CFrame*cf(0,0,-30)*angles(0,rad(-45),0),true,pcolor.Value,false,50)
 local root=rootpart1
 TweenFunction(Floor,.01,"pos",v3(root.Position.X,root.Position.Y+1,root.Position.Z)):Play()
 TweenFunction(PartFXFloor,.01,"pos",v3(root.Position.X,root.Position.Y-1,root.Position.Z)):Play()
