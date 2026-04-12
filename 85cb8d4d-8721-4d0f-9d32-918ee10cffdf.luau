@@ -111,6 +111,7 @@ local Modes={
   {Name="Parallax",WingAnim="Parallax",MusicTitle="Panorama",Music="Panorama",HHeight=0,Author="Artcore",ActualName="Parallax"},
   {Name="Horion",WingAnim="Horion",MusicTitle="Hyper Hexed Hero",Music="Hyper Hexed Hero",HHeight=7,Author="Kobaryo",ActualName="Horiozin"},
   {Name="Zionihilic",WingAnim="Zionihilic",MusicTitle="MAKE A SCENE!",Music="MAKE A SCENE!",HHeight=10,Author="Z∅MB",ActualName="Zion"},
+  {Name="Axius",WingAnim="Axius",MusicTitle="Jvnko Still Loves You",Music="Jvnko Still Loves You",HHeight=7,Author="Sewerslvt",ActualName="Axirian"},
 }
 
 
@@ -2291,12 +2292,12 @@ v.p=getPart(v.Name)
 end
 local makePartCons=function(p,t)
 if (t.p==p) and insGet(p,"Anchored") then
-t.p=nil
+--t.p=nil
 end
 local con0=Connect(GetPropertyChangedSignal(p,"Anchored"),function()
 if insGet(p,"Anchored") then
 if t.p==p then
-t.c=nil
+--t.c=nil
 --t.p=nil
 end
 elseif not t.p then
@@ -2420,7 +2421,12 @@ end
 end
 end
 end
-
+local hhOff=3
+local hhOff1=3.01
+local setHipHeight=function(n)
+hhOff=n+3
+hhOff1=n+3.01
+end
 local simradv=0
 local enumH=e.CoreGuiType.Health
 local onplayer=function(v)
@@ -2476,8 +2482,7 @@ end
 local startpos=insGet(i,"Position")
 local stoptime=sine+3
 while true do
-oswait(math.round(game.Players.LocalPlayer:GetNetworkPing() * 2)+.1) 
-
+oswait(.1) 
 if sine>stoptime then
 break
 end
@@ -2489,7 +2494,7 @@ break
 end
 local tcf=cfAdd(insGet(i,"CFrame"),insGet(i,"AssemblyLinearVelocity")*(sin(sine*15)+1))
 if novoid and (cfGet(tcf,"Y")<novoid) then
-tcf=cfAdd(tcf,v3_010*(novoid-cfGet(tcf,"Y")))
+tcf=cfAdd(tcf,v3(0,-150,0)*(novoid-cfGet(tcf,"Y")))
 end
 insSet(hrp,"CFrame",tcf)
 insSet(hrp,"AssemblyLinearVelocity",insGet(i,"AssemblyLinearVelocity")*v3_101*75)
@@ -2508,13 +2513,13 @@ if not Hatdrop then
 if respawntp==0 then
 --swait()
 elseif respawntp==1 then
-local startpos=pos+v3(mrandom(-10,10),0,mrandom(-10,10))
+local startpos=pos+v3(mrandom(-10,10),-200+hhOff1,mrandom(-10,10))
 local dir=nil
 local poscheck=true
 while poscheck do
 poscheck=false
 for i,v in next,rootparts do
-local diff=(startpos-insGet(v,"Position"))*v3_101
+local diff=(startpos-insGet(v,"Position"))*v3(1,-30+hhOff1,1)
 if vmagnitude(diff)<10 then
 poscheck=true
 dir=dir or (vnormalize(diff)*3)
@@ -2529,27 +2534,23 @@ startpos=startpos+dir
 end
 end
 startpos=cfAdd(cfGet(cfr,"Rotation"),startpos)
-insSet(hrp,"CFrame",startpos)
 insSet(hrp,"AssemblyLinearVelocity",v3_net)
 insSet(hrp,"AssemblyAngularVelocity",v3_0)
-oswait(.1)
 insSet(hrp,"CFrame",startpos)
-insSet(hrp,"AssemblyLinearVelocity",v3_net)
-insSet(hrp,"AssemblyAngularVelocity",v3_0)
-oswait(.1)
+oswait(.01)
 elseif respawntp==2 then
-insSet(hrp,"CFrame",cfAdd(cfr,cfGet(cfr,"RightVector")*3.5-cfGet(cfr,"LookVector")*3.5))
+insSet(hrp,"CFrame",cfr*cf(random(-50,50),-30+hhOff1,random(-50,50)))
 insSet(hrp,"AssemblyLinearVelocity",v3_0)
 insSet(hrp,"AssemblyAngularVelocity",v3_0)
-oswait(.2)
+oswait(.01)
 elseif respawntp==3 then
 local t=osclock()+0.25
 if pdloadedtime and pdloadedtime>t then
 t=pdloadedtime
 end
-local startcf=cfAdd(cfMul(cfGet(cfr,"Rotation"),angles(1.5707963267948966,0,0)),pos*v3_101+v3_010*min(fpdh+30,v3Get(pos,"Y")-5))
+local startcf=cfr*cf(random(-50,50),-30+hhOff1,random(-50,50))
 while true do
-oswait(math.round(game.Players.LocalPlayer:GetNetworkPing() * 2)+.1) 
+oswait(.01)
 insSet(hrp,"CFrame",startcf)
 insSet(hrp,"AssemblyLinearVelocity",v3_0)
 insSet(hrp,"AssemblyAngularVelocity",v3_0)
@@ -2576,7 +2577,6 @@ end
 if Hatdrop then
 HatDrop(newc)
 else
-oswait(.1)
 if breakjointsmethod==4 then
 local h=FindFirstChildOfClass(newc,"Humanoid")
 if h then
@@ -3034,12 +3034,7 @@ Preload=false
 end
 --replicatesignal(cdsb)
 end
-local hhOff=3
-local hhOff1=3.01
-local setHipHeight=function(n)
-hhOff=n+3
-hhOff1=n+3.01
-end
+
 
 
 
@@ -3500,7 +3495,7 @@ end
 velY=velY-velYdelta
 Ydiff=Ydiff+(velY*0.025)
 end
-insSet(part,"AssemblyLinearVelocity",(claimpos-cfGet(v,"Position"))*v3_101/fallingTime+v3_net)
+insSet(part,"AssemblyLinearVelocity",(claimpos-cfGet(v,"Position"))*v3_101/fallingTime+v3_net+v3(0,fallingTime/5,0))
 else
 local vel1=vel*noYvelTime+xzvel
 if vmagnitude(vel1)>25.01 then
@@ -3733,6 +3728,7 @@ local GuiOpened=true
 local Mode="None"
 local ClockTicky=0
 local Constant=1
+local Constant2=1
 local Boost=1
 
 local SpecialAnimRThingy=0
@@ -7024,7 +7020,7 @@ game:HttpGet(
 )
 end)
 end
- tspawn(function()
+--[[ tspawn(function()
 pcall(function()
 writefile(path,
 game:HttpGet(
@@ -7032,7 +7028,7 @@ game:HttpGet(
 )
 )
 end)
-end)
+end)]]
 
 
 
@@ -7578,11 +7574,14 @@ ActiveSpecial=nil
 end
 
 local BasicAnimChange=0
+local lastclock=osclock()
 function changeMode(modeName)
 Reset()
 ReturnOldUIPos()
 RotatedUI=false
 OverrideAnimation=false
+lastclock=osclock()
+
 IsSitting=false
 BasicAnimChange=0
 deltaTime=olddt
@@ -14909,6 +14908,10 @@ elseif k=="nine" and Mode~="Anarchus" then
 changeMode("Anarchus")
 ChangeAndRecolor("Anarchus",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,100),rgb(0,0,200),false,false)
 VFXApi("Anarchus",1)
+elseif k=="zero" and Mode~="Axius" then
+changeMode("Axius")
+ChangeAndRecolor("Axius",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,100),rgb(0,0,200),false,false)
+VFXApi("Axius")
 
 elseif k=="f" then
 BBGVisibilty=not BBGVisibilty
@@ -15808,12 +15811,29 @@ AttachSword(SWAtt4,wingPart2,function() s1_4.C0=Lerp(s1_4.C0,cfMul(cfMul(cf(-1+0
 end
 
 
+WingAnimations.Axius=function()
+AttachSword(SWAtt2,wingPart1,function() s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-1+0,3.25+2*sin(sine*2+0)+0,-3.85+-2*sin(sine*1+0)+0),angles(0,1.5707963267948966+0,-0.8726646259971648+rad(1000)*cos(sine*0.5+0)+0)),deltaTime)  end)
+Extra_Part1.C0=Lerp(Extra_Part1.C0,cfMul(cf(0,0.5+0,-1+0),angles(0,0,0)),deltaTime)  
+AttachSword(SWAtt3,wingPart1,function() s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-1+0,3.25+2*sin(sine*2+0)+0,-3.85+-2*sin(sine*1+0)+0),angles(0,1.5707963267948966+0,0.6981317007977318+rad(-1000)*cos(sine*0.5+0)+0)),deltaTime)  end)
+AttachSword(SWAtt1,wingPart1,function() s1_1.C0=Lerp(s1_1.C0,cfMul(cf(-1+0,3.25+2*sin(sine*2+0)+0,-3.85+-2*sin(sine*1+0)+0),angles(0,1.5707963267948966+0,2.2689280275926285+rad(1000)*cos(sine*0.5+0)+0)),deltaTime)  end)
+Extra_Part2.C0=Lerp(Extra_Part2.C0,cfMul(cf(0,-0.25*cos(sine*1.5+0)+0,1.5+0),angles(0,0,0)),deltaTime)  
+AttachSword(SWAtt4,wingPart1,function() s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-1+0,3.25+2*sin(sine*2+0)+0,-3.85+-2*sin(sine*1+0)+0),angles(0,1.5707963267948966+0,3.839724354387525+rad(-1000)*cos(sine*0.5+0)+0)),deltaTime)  end)
+end
 
 
 
 
 
 
+
+tspawn(function()
+while oswait(.001) do 
+if not Running then break end 
+Retro+=1
+Constant+=1
+Constant2+=10
+end
+end)
 
 local xd1=0
 local CensoreIt=false
@@ -15904,15 +15924,13 @@ local Fall=Falling
 
 
 
-Spinny=Spinny+1
-numvalconstant.Value+=1
+Spinny=osclock()*25
+numvalconstant.Value=osclock()*15
 sp=tonumber(numvalconstant.Value)
-Boost+=1*sound.PlaybackLoudness/15
+Boost+=1*(sound.PlaybackLoudness/15)
 numval.Value=Boost
 --print(Boost)
 setCamOffset(camoff.Value)
-Retro+=1
-Constant+=1 
 local l=tick()
 local lt=LastTick
 if Mode=="Lexapriatic" then 
@@ -18404,6 +18422,31 @@ end
 end
 end)
 
+tspawn(function()
+if Mode=="Axius" then 
+local is=insSet
+local ig=insGet
+local p=pcolor
+local s=scolor
+local t=current
+local ld=sound.PlaybackLoudness
+local clp=CLerp
+
+local color1,color2=rgb(197+50*cos(sine*1.5),135+100*sin(sine*2),243+12*sin(sine*2.5)),rgb(237+10*cos(sine*1.5),212+35*sin(sine*2),255)
+ChangeAndRecolor("Axius",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color1,color2,false,false)
+
+--[[
+7 
+20.3
+22 
+34.9 
+36.1 
+79.7
+
+]]
+end
+end)
+
 
 
 --[=[RetroAnimation("Cheatreal",function()
@@ -18489,28 +18532,28 @@ end)]=]
 
 if Mode=="Layers" then
 EquinoxBobbing()
-BBGAttachment.CFrame=cf(0 + 2 * math.cos(sp / 30.5),0 - 1.5 * math.cos(sp / 30.5),0 + 1.5 * math.cos(sp / 30.5))
-modet.Position=UDim2.new(-.5,0 + 4 * math.cos(sp / 17.5),-.15,0 - 2.5 * math.cos(sp / 22.5))
-modet.Rotation=0 - 5.5 * math.cos(sp / 20)
+BBGAttachment.CFrame=cf(0 + 2 * math.cos(osclock()*50 / 30.5),0 - 1.5 * math.cos(osclock()*50 / 30.5),0 + 1.5 * math.cos(osclock()*50 / 30.5))
+modet.Position=UDim2.new(-.5,0 + 4 * math.cos(osclock()*50 / 17.5),-.15,0 - 2.5 * math.cos(osclock()*50 / 22.5))
+modet.Rotation=0 - 5.5 * math.cos(osclock()*50 / 20)
 for _,v in AnarchyMainUI["Main Interface_1"]:GetDescendants() do
 if v:isA("ImageLabel") and v.Name=="PC_Circle" or v.Name=="SC_Circle" then
-v.Rotation=tonumber(Spinny)+Boost/20
+v.Rotation=Constant2+Boost/20
 end
 end
-AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(sp/22.5),0.66667,-17+2.5*sin(sp/15))
-AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(sp/20)
+AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(osclock()*50/22.5),0.66667,-17+2.5*sin(osclock()*50/15))
+AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(osclock()*50/20)
 elseif Mode=="Chromatic" then
 bilguit.Brightness=1+sound.PlaybackLoudness/100
 BBGAttachment.CFrame=cf(0,0,0) 
 bilguit.StudsOffsetWorldSpace=v3(0,0,0)
 bilguit.StudsOffset=v3(-9.5,4,-1)
 modet.Position=UDim2.new(0,0,0,0)
-modet.Rotation=-5 * math.cos(sp / 32)
-AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(sp/22.5),0.66667,-17+2.5*sin(sp/15))
-AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(sp/20)
+modet.Rotation=-5 * math.cos(osclock()*50 / 32)
+AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(osclock()*50/22.5),0.66667,-17+2.5*sin(osclock()*50/15))
+AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(osclock()*50/20)
 for _,v in AnarchyMainUI["Main Interface_1"]:GetDescendants() do
 if v:isA("ImageLabel") and v.Name=="PC_Circle" or v.Name=="SC_Circle" then
-v.Rotation=tonumber(Spinny)+Boost/20
+v.Rotation=Constant2+Boost/20
 end
 end
 elseif Mode=="Vibrance" then
@@ -18519,12 +18562,12 @@ BBGAttachment.CFrame=cf(0,0,0)
 bilguit.StudsOffsetWorldSpace=v3(0,0,0)
 bilguit.StudsOffset=v3(-9.5,4,-1)
 modet.Position=UDim2.new(0,0,0,0)
-modet.Rotation=-5 * math.cos(sp / 32)
-AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(sp/22.5),0.66667,-17+2.5*sin(sp/15))
-AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(sp/20)
+modet.Rotation=-5 * math.cos(osclock()*50 / 32)
+AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(osclock()*50/22.5),0.66667,-17+2.5*sin(osclock()*50/15))
+AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(osclock()*50/20)
 for _,v in AnarchyMainUI["Main Interface_1"]:GetDescendants() do
 if v:isA("ImageLabel") and v.Name=="PC_Circle" or v.Name=="SC_Circle" then
-v.Rotation=tonumber(Spinny)+Boost/20
+v.Rotation=Constant2+Boost/20
 end
 end
 elseif Mode=="Aegleseeker" then
@@ -18533,12 +18576,12 @@ BBGAttachment.CFrame=cf(0,0,0)
 bilguit.StudsOffsetWorldSpace=v3(0,0,0)
 bilguit.StudsOffset=v3(-9.5,4,-1)
 modet.Position=UDim2.new(0,0,0,0)
-modet.Rotation=-5 * math.cos(sp / 32)
-AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(sp/22.5),0.66667,-17+2.5*sin(sp/15))
-AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(sp/20)
+modet.Rotation=-5 * math.cos(osclock()*50 / 32)
+AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(osclock()*50/22.5),0.66667,-17+2.5*sin(osclock()*50/15))
+AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(osclock()*50/20)
 for _,v in AnarchyMainUI["Main Interface_1"]:GetDescendants() do
 if v:isA("ImageLabel") and v.Name=="PC_Circle" or v.Name=="SC_Circle" then
-v.Rotation=tonumber(Spinny)+Boost/20
+v.Rotation=Constant2+Boost/20
 end
 end
 elseif Mode=="Anarchus" then
@@ -18547,12 +18590,12 @@ BBGAttachment.CFrame=cf(0,0,0)
 bilguit.StudsOffsetWorldSpace=v3(0,0,0)
 bilguit.StudsOffset=v3(-9.5,4,-1)
 modet.Position=UDim2.new(0,0,0,0)
-modet.Rotation=-5 * math.cos(sp / 32)
-AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(sp/22.5),0.66667,-17+2.5*sin(sp/15))
-AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(sp/20)
+modet.Rotation=-5 * math.cos(osclock()*50 / 32)
+AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(osclock()*50/22.5),0.66667,-17+2.5*sin(osclock()*50/15))
+AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(osclock()*50/20)
 for _,v in AnarchyMainUI["Main Interface_1"]:GetDescendants() do
 if v:isA("ImageLabel") and v.Name=="PC_Circle" or v.Name=="SC_Circle" then
-v.Rotation=tonumber(Spinny)+Boost/20
+v.Rotation=Constant2+Boost/20
 end
 end
 elseif Mode=="Vanguard" then
@@ -18561,12 +18604,12 @@ BBGAttachment.CFrame=cf(0,0,0)
 bilguit.StudsOffsetWorldSpace=v3(0,0,0)
 bilguit.StudsOffset=v3(-9.5,4,-1)
 modet.Position=UDim2.new(0,0,0,0)
-modet.Rotation=-5 * math.cos(sp / 32)
-AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(sp/22.5),0.66667,-17+2.5*sin(sp/15))
-AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(sp/20)
+modet.Rotation=-5 * math.cos(osclock()*50 / 32)
+AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(osclock()*50/22.5),0.66667,-17+2.5*sin(osclock()*50/15))
+AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(osclock()*50/20)
 for _,v in AnarchyMainUI["Main Interface_1"]:GetDescendants() do
 if v:isA("ImageLabel") and v.Name=="PC_Circle" or v.Name=="SC_Circle" then
-v.Rotation=tonumber(Spinny)+Boost/20
+v.Rotation=Constant2+Boost/20
 end
 end
 elseif Mode=="Overseer" then
@@ -18575,12 +18618,12 @@ BBGAttachment.CFrame=cf(0,0,0)
 bilguit.StudsOffsetWorldSpace=v3(0,0,0)
 bilguit.StudsOffset=v3(-9.5,4,-1)
 modet.Position=UDim2.new(0,0,0,0)
-modet.Rotation=-5 * math.cos(sp / 32)
-AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(sp/22.5),0.66667,-17+2.5*sin(sp/15))
-AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(sp/20)
+modet.Rotation=-5 * math.cos(osclock()*50 / 32)
+AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(osclock()*50/22.5),0.66667,-17+2.5*sin(osclock()*50/15))
+AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(osclock()*50/20)
 for _,v in AnarchyMainUI["Main Interface_1"]:GetDescendants() do
 if v:isA("ImageLabel") and v.Name=="PC_Circle" or v.Name=="SC_Circle" then
-v.Rotation=tonumber(Spinny)+Boost/20
+v.Rotation=Constant2+Boost/20
 end
 end
 elseif Mode=="Scourge" then
@@ -18589,12 +18632,12 @@ BBGAttachment.CFrame=cf(0,0,0)
 bilguit.StudsOffsetWorldSpace=v3(0,0,0)
 bilguit.StudsOffset=v3(-9.5,4,-1)
 modet.Position=UDim2.new(0,0,0,0)
-modet.Rotation=-5 * math.cos(sp / 32)
-AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(sp/22.5),0.66667,-17+2.5*sin(sp/15))
-AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(sp/20)
+modet.Rotation=-5 * math.cos(osclock()*50 / 32)
+AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(osclock()*50/22.5),0.66667,-17+2.5*sin(osclock()*50/15))
+AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(osclock()*50/20)
 for _,v in AnarchyMainUI["Main Interface_1"]:GetDescendants() do
 if v:isA("ImageLabel") and v.Name=="PC_Circle" or v.Name=="SC_Circle" then
-v.Rotation=tonumber(Spinny)+Boost/20
+v.Rotation=Constant2+Boost/20
 end
 end
 elseif Mode=="Censored" then 
@@ -18604,11 +18647,11 @@ bilguit.StudsOffsetWorldSpace=v3(0,0,0)
 bilguit.StudsOffset=v3(-9.5,4,-1)
 AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+mrandom(-1,1),0.66667,-17+mrandom(-1,1))
 modet.Position=UDim2.new(0,mrandom(-1,1),0,mrandom(-1,1))
-AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(sp/20)+mrandom(-1,1)
-modet.Rotation=-2 * math.cos(sp / 1) + mrandom(-3,3)
+AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(osclock()*50/20)+mrandom(-1,1)
+modet.Rotation=-2 * math.cos(osclock()*50 / 1) + mrandom(-3,3)
 for _,v in AnarchyMainUI["Main Interface_1"]:GetDescendants() do
 if v:isA("ImageLabel") and v.Name=="PC_Circle" or v.Name=="SC_Circle" then
-v.Rotation=tonumber(Spinny)+Boost/20
+v.Rotation=Constant2+Boost/20
 end
 end
 elseif Mode=="Fatal" then 
@@ -18618,11 +18661,11 @@ bilguit.StudsOffsetWorldSpace=v3(0,0,0)
 bilguit.StudsOffset=v3(-9.5,4,-1)
 AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+mrandom(-1,1),0.66667,-17+mrandom(-1,1))
 modet.Position=UDim2.new(0,mrandom(-1,1),0,mrandom(-1,1))
-AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(sp/20)+mrandom(-1,1)
-modet.Rotation=-2 * math.cos(sp / 1) + mrandom(-3,3)
+AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(osclock()*50/20)+mrandom(-1,1)
+modet.Rotation=-2 * math.cos(osclock()*50 / 1) + mrandom(-3,3)
 for _,v in AnarchyMainUI["Main Interface_1"]:GetDescendants() do
 if v:isA("ImageLabel") and v.Name=="PC_Circle" or v.Name=="SC_Circle" then
-v.Rotation=tonumber(Spinny)+Boost/20
+v.Rotation=Constant2+Boost/20
 end
 end
 elseif Mode=="Iviriza" then
@@ -18631,12 +18674,12 @@ BBGAttachment.CFrame=cf(0,0,0)
 bilguit.StudsOffsetWorldSpace=v3(0,0,0)
 bilguit.StudsOffset=v3(-9.5,4,-1)
 modet.Position=UDim2.new(0,0,0,0)
-modet.Rotation=-5 * math.cos(sp / 32)
-AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(sp/22.5),0.66667,-17+2.5*sin(sp/15))
-AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(sp/20)
+modet.Rotation=-5 * math.cos(osclock()*50 / 32)
+AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(osclock()*50/22.5),0.66667,-17+2.5*sin(osclock()*50/15))
+AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(osclock()*50/20)
 for _,v in AnarchyMainUI["Main Interface_1"]:GetDescendants() do
 if v:isA("ImageLabel") and v.Name=="PC_Circle" or v.Name=="SC_Circle" then
-v.Rotation=tonumber(Spinny)+Boost/20
+v.Rotation=Constant2+Boost/20
 end
 end
 elseif Mode=="Overseer" then
@@ -18645,12 +18688,12 @@ BBGAttachment.CFrame=cf(0,0,0)
 bilguit.StudsOffsetWorldSpace=v3(0,0,0)
 bilguit.StudsOffset=v3(-9.5,4,-1)
 modet.Position=UDim2.new(0,0,0,0)
-modet.Rotation=-5 * math.cos(sp / 32)
-AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(sp/22.5),0.66667,-17+2.5*sin(sp/15))
-AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(sp/20)
+modet.Rotation=-5 * math.cos(osclock()*50 / 32)
+AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(osclock()*50/22.5),0.66667,-17+2.5*sin(osclock()*50/15))
+AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(osclock()*50/20)
 for _,v in AnarchyMainUI["Main Interface_1"]:GetDescendants() do
 if v:isA("ImageLabel") and v.Name=="PC_Circle" or v.Name=="SC_Circle" then
-v.Rotation=tonumber(Spinny)+Boost/20
+v.Rotation=Constant2+Boost/20
 end
 end
 elseif Mode=="NULLVOID" then
@@ -18659,12 +18702,12 @@ BBGAttachment.CFrame=cf(0,0,0)
 bilguit.StudsOffsetWorldSpace=v3(0,0,0)
 bilguit.StudsOffset=v3(-9.5,4,-1)
 modet.Position=UDim2.new(0,mrandom(-1,1),0,mrandom(-1,1))
-AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(sp/20)+mrandom(-1,1)
+AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(osclock()*50/20)+mrandom(-1,1)
 AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+mrandom(-1,1),0.66667,-17+mrandom(-1,1))
-modet.Rotation=-2 * math.cos(sp / 1) + mrandom(-3,3)
+modet.Rotation=-2 * math.cos(osclock()*50 / 1) + mrandom(-3,3)
 for _,v in AnarchyMainUI["Main Interface_1"]:GetDescendants() do
 if v:isA("ImageLabel") and v.Name=="PC_Circle" or v.Name=="SC_Circle" then
-v.Rotation=tonumber(Spinny)+Boost/20
+v.Rotation=Constant2+Boost/20
 end
 end
 else
@@ -18673,12 +18716,12 @@ BBGAttachment.CFrame=cf(0,0,0)
 bilguit.StudsOffsetWorldSpace=v3(0,0,0)
 bilguit.StudsOffset=v3(-9.5,4,-1)
 modet.Position=UDim2.new(0,0,0,0)
-modet.Rotation=-5 * math.cos(sp / 32)
-AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(sp/22.5),0.66667,-17+2.5*sin(sp/15))
-AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(sp/20)
+modet.Rotation=-5 * math.cos(osclock()*50 / 32)
+AnarchyMainUI["SC_ModeText_1c"].Position=UDim2.new(0.355,-97.5+5*sin(osclock()*50/22.5),0.66667,-17+2.5*sin(osclock()*50/15))
+AnarchyMainUI["SC_ModeText_1c"].Rotation=0-5.5*sin(osclock()*50/20)
 for _,v in AnarchyMainUI["Main Interface_1"]:GetDescendants() do
 if v:isA("ImageLabel") and v.Name=="PC_Circle" or v.Name=="SC_Circle" then
-v.Rotation=tonumber(Spinny)+Boost/20
+v.Rotation=Constant2+Boost/20
 end
 end
 end
@@ -18705,7 +18748,12 @@ end
 end
 
 end
-
+pcall(function()
+for _,a in next,TotalOfBaseParts do 
+a.AssemblyLinearVelocity=v3_net
+a.AssemblyAngularVelocity=v3_0
+end
+end)
 
 
 
@@ -18995,7 +19043,7 @@ RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.25,-0.25,0),angles(-0.87266462
 end
 setWalkSpeed(90)
 
-elseif (current>=329 and current<369.85 or current>=134.55 and current<154.3 or current>=132.6 and current<134.55 or current>=130.9 and current<132.6) then
+elseif (current>=198 and current<329 or current>=329 and current<369.85 or current>=134.55 and current<154.3 or current>=132.6 and current<134.55 or current>=130.9 and current<132.6) then
 if current>=329 and current<369.85 then 
 s1_1.C0=Lerp(s1_1.C0,cfMul(cf(3+0+0,5+-1*sin(sine*3+0.5)+0,-5+0+0.5*cos(sine*3+0.5)),angles(0+0+0,-1.5707963705062866+rad(20)*sin(sine*3+0)+0,-1.5707963267948966+0+0)),deltaTime)  
 s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-3+0+0,3+-1*sin(sine*3+0.5)+0,-5.75+0+0.5*cos(sine*3+0.5)),angles(0+0+0,1.5707963705062866+rad(-20)*sin(sine*3+0.85)+0,0.5235987755982988+0+0)),deltaTime)  
@@ -19027,7 +19075,7 @@ s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-1,0,0),angles(0,1.5707963267948966,-0.87266462599
 setWalkSpeed(12)
 
 end
-elseif Mode=="NULLVOID" or Mode=="Censored" or Mode=="Gaia" or Mode=="Overseer" or Mode=="Vanguard" or Mode=="Aegleseeker" or Mode=="Fatal" or Mode=="Cascade" or Mode=="Nebulabrasque" or Mode=="Imperial" or Mode=="Tachyon" or Mode=="Dimension" or Mode=="Lexapriatic" or Mode=="Cheatreal" or Mode=="HYPERINTERVENTIC" or Mode=="Horion" or Mode=="Zionihilic" then 
+elseif Mode=="NULLVOID" or Mode=="Censored" or Mode=="Gaia" or Mode=="Overseer" or Mode=="Vanguard" or Mode=="Aegleseeker" or Mode=="Fatal" or Mode=="Cascade" or Mode=="Nebulabrasque" or Mode=="Imperial" or Mode=="Tachyon" or Mode=="Dimension" or Mode=="Lexapriatic" or Mode=="Cheatreal" or Mode=="HYPERINTERVENTIC" or Mode=="Horion" or Mode=="Zionihilic" or Mode=="Axius" then 
 if Mode=="Nebulabrasque" then 
 setWalkSpeed(20)
 else
@@ -19050,6 +19098,12 @@ if not SmoothCamera then
 RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.25,-0.25,0),angles(-0.8726646259971648,0.3490658503988659,0.17453292519943295)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.75,-0.1,-0.5),angles(-0.5235987755982988,0.3490658503988659,0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.0471975511965976,0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.25,-0.2,0),angles(-0.8726646259971648,-0.3490658503988659,-0.3490658503988659)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.75,-1.25,0.35),angles(-0.6981317007977318,-0.3490658503988659,-0.17453292519943295)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,1,0),angles(-2.443460952792061,0,3.141592653589793)),deltaTime)
 else
 RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.25,-0.25,0),angles(-0.8726646259971648,0.3490658503988659,0.17453292519943295)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.75,-0.1,-0.5),angles(-0.5235987755982988,0.3490658503988659,0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.0471975511965976,0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.25,-0.2,0),angles(-0.8726646259971648,-0.3490658503988659,-0.3490658503988659)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.75,-1.25,0.35),angles(-0.6981317007977318,-0.3490658503988659,-0.17453292519943295)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,9,0),angles(-2.443460952792061,0,3.141592653589793)),deltaTime)
+end
+elseif Mode=="Axius" then
+if not SmoothCamera then 
+RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.25,-0.25,0),angles(-0.8726646259971648,0.3490658503988659,0.17453292519943295)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.75,-0.1,-0.5),angles(-0.5235987755982988,0.3490658503988659,0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.0471975511965976,0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.25,-0.2,0),angles(-0.8726646259971648,-0.3490658503988659,-0.3490658503988659)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.75,-1.25,0.35),angles(-0.6981317007977318,-0.3490658503988659,-0.17453292519943295)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,1,0),angles(-2.443460952792061,0,3.141592653589793)),deltaTime)
+else
+RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1.25,-0.25,0),angles(-0.8726646259971648,0.3490658503988659,0.17453292519943295)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(0.75,-0.1,-0.5),angles(-0.5235987755982988,0.3490658503988659,0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,0),angles(-1.0471975511965976,0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1.25,-0.2,0),angles(-0.8726646259971648,-0.3490658503988659,-0.3490658503988659)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-0.75,-1.25,0.35),angles(-0.6981317007977318,-0.3490658503988659,-0.17453292519943295)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,7,0),angles(-2.443460952792061,0,3.141592653589793)),deltaTime)
 end
 elseif Mode=="Zionihilic" then
 if not SmoothCamera then 
@@ -19812,6 +19866,13 @@ if not SmoothCamera then
 LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cfMul(cf(-0.8500000238418579,0+0.2*sin(sine*2),0.25),angles(0.3490658503988659+-0.17453292519943295*sin(sine*2),0.3490658503988659,-0.6108652381980153+0.17453292519943295*sin(sine*2))),angles(0,-1.5707963267948966,0)),deltaTime)RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cfMul(cf(0.8500000238418579,0+0.2*sin(sine*2),0.25),angles(0.3490658503988659+-0.17453292519943295*sin(sine*2),-0.3490658503988659,0.6108652381980153+-0.17453292519943295*sin(sine*2))),angles(0,1.5707963267948966,0)),deltaTime)Neck.C0=Lerp(Neck.C0,cfMul(cfMul(cf(0,1,0),angles(-0.2617993877991494+-0.17453292519943295*sin(sine*2),0,0)),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime)RightHip.C0=Lerp(RightHip.C0,cfMul(cfMul(cf(1,-0.8999999761581421+0.1*sin(sine*2),-0.25),angles(-0.3490658503988659+-0.13962634015954636*sin(sine*2),-0.2617993877991494,-0.05235987755982989)),angles(0,1.5707963267948966,0)),deltaTime)LeftHip.C0=Lerp(LeftHip.C0,cfMul(cfMul(cf(-1.100000023841858,-0.25+0.1*sin(sine*2),-0.8999999761581421),angles(-0.5235987755982988+-0.17453292519943295*sin(sine*2),0.3490658503988659,0.03490658503988659)),angles(0,-1.5707963267948966,0)),deltaTime)RootJoint.C0=Lerp(RootJoint.C0,cfMul(cfMul(cf(0,1*sin(sine*2),0),angles(-0.2181661564992912+-0.17453292519943295*cos(sine*2),0,0)),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime)
 else
 LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cfMul(cf(-0.8500000238418579,0+0.2*sin(sine*2),0.25),angles(0.3490658503988659+-0.17453292519943295*sin(sine*2),0.3490658503988659,-0.6108652381980153+0.17453292519943295*sin(sine*2))),angles(0,-1.5707963267948966,0)),deltaTime)RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cfMul(cf(0.8500000238418579,0+0.2*sin(sine*2),0.25),angles(0.3490658503988659+-0.17453292519943295*sin(sine*2),-0.3490658503988659,0.6108652381980153+-0.17453292519943295*sin(sine*2))),angles(0,1.5707963267948966,0)),deltaTime)Neck.C0=Lerp(Neck.C0,cfMul(cfMul(cf(0,1,0),angles(-0.2617993877991494+-0.17453292519943295*sin(sine*2),0,0)),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime)RightHip.C0=Lerp(RightHip.C0,cfMul(cfMul(cf(1,-0.8999999761581421+0.1*sin(sine*2),-0.25),angles(-0.3490658503988659+-0.13962634015954636*sin(sine*2),-0.2617993877991494,-0.05235987755982989)),angles(0,1.5707963267948966,0)),deltaTime)LeftHip.C0=Lerp(LeftHip.C0,cfMul(cfMul(cf(-1.100000023841858,-0.25+0.1*sin(sine*2),-0.8999999761581421),angles(-0.5235987755982988+-0.17453292519943295*sin(sine*2),0.3490658503988659,0.03490658503988659)),angles(0,-1.5707963267948966,0)),deltaTime)RootJoint.C0=Lerp(RootJoint.C0,cfMul(cfMul(cf(0,10+1*sin(sine*2),0),angles(-0.2181661564992912+-0.17453292519943295*cos(sine*2),0,0)),angles(-1.5707963267948966,0,3.141592653589793)),deltaTime)
+end
+
+elseif Mode=="Axius" then
+if not SmoothCamera then
+RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(1,0.75*sin(sine*1.5+0)+0,0),angles(-1.3962634015954636+rad(-10)*cos(sine*1.5+0)+0,0.08726646259971647+0,3.6651914291880923+rad(-10)*sin(sine*0.75+0)+0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1+0,0),angles(-1.9198621771937625+rad(-10)*sin(sine*1.5+0)+0,0.08726646259971647+0,3.141592653589793+rad(5)*cos(sine*1.5+0)+0)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1+0,-0.19999999999999996+0.25*cos(sine*1.5+0)+0,0),angles(0,-2.2689280275926285+0,-2.0943951023931953+rad(-10)*sin(sine*1.5+0)+0)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1+0,-0.19999999999999996+0.25*cos(sine*1.5+0)+0,0),angles(0,2.2689280275926285+0,2.0943951023931953+rad(10)*cos(sine*1.5+0)+0)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1+0,-1+0.2*sin(sine*1.5+0)+0,0),angles(rad(-20)*cos(sine*1.5+0)+0,-1.0471975511965976+0,-0.08726646259971647+0)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1+0,-0.25+-0.25*cos(sine*1.5+0)+0,-0.5+0),angles(-0.17453292519943295+rad(-10)*sin(sine*1.5+0)+0,0.8726646259971648+0,0.08726646259971647+0)),deltaTime)  
+else
+RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,7+0.75*sin(sine*1.5+0)+0,0),angles(-1.3962634015954636+rad(-10)*cos(sine*1.5+0)+0,0.08726646259971647+0,3.6651914291880923+rad(-10)*sin(sine*0.75+0)+0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1+0,0),angles(-1.9198621771937625+rad(-10)*sin(sine*1.5+0)+0,0.08726646259971647+0,3.141592653589793+rad(5)*cos(sine*1.5+0)+0)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1+0,-0.19999999999999996+0.25*cos(sine*1.5+0)+0,0),angles(0,-2.2689280275926285+0,-2.0943951023931953+rad(-10)*sin(sine*1.5+0)+0)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1+0,-0.19999999999999996+0.25*cos(sine*1.5+0)+0,0),angles(0,2.2689280275926285+0,2.0943951023931953+rad(10)*cos(sine*1.5+0)+0)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1+0,-1+0.2*sin(sine*1.5+0)+0,0),angles(rad(-20)*cos(sine*1.5+0)+0,-1.0471975511965976+0,-0.08726646259971647+0)),deltaTime)  RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1+0,-0.25+-0.25*cos(sine*1.5+0)+0,-0.5+0),angles(-0.17453292519943295+rad(-10)*sin(sine*1.5+0)+0,0.8726646259971648+0,0.08726646259971647+0)),deltaTime)  
 end
 
 
