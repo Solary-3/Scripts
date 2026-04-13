@@ -15827,14 +15827,7 @@ end
 
 
 
-tspawn(function()
-while oswait(.001) do 
-if not Running then break end 
-Retro+=1
-Constant+=1
-Constant2+=10
-end
-end)
+
 
 local xd1=0
 local CensoreIt=false
@@ -15930,6 +15923,9 @@ numvalconstant.Value=osclock()*15
 sp=tonumber(numvalconstant.Value)
 Boost+=1*(sound.PlaybackLoudness/15)
 numval.Value=Boost
+Retro+=1
+Constant+=1
+Constant2+=1
 --print(Boost)
 setCamOffset(camoff.Value)
 local l=tick()
