@@ -12,7 +12,7 @@ Visual Effects made by me ofc some of them aee like rework but my own version
 
 
 ]=]
-
+print("SFAWTDE")
 
 
 
