@@ -2016,8 +2016,8 @@ optimize the optimized
 ]]
 
 local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
-local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
-local retVelTime = 0.51 --time that claimed parts have velocity to reclaim in case u lose them
+local speedlimit = 7500 --makes your parts move slower if the magnitude of their velocity is higher than this
+local retVelTime = 0.71 --time that claimed parts have velocity to reclaim in case u lose them
 local walkSpeed = 16 --your walkspeed (can be changed at runtime)
 local jumpPower = 50 --your jump power (can be changed at runtime)
 local gravity = 196.2 --how fast the characters velocity decreases while falling (can be changed at runtime)
@@ -2558,6 +2558,9 @@ if osclock()>t then
 break
 end
 end
+insSet(hrp,"CFrame",startcf)
+insSet(hrp,"AssemblyLinearVelocity",v3_0)
+insSet(hrp,"AssemblyAngularVelocity",v3_0)
 end
 end
 if newc~=c then
@@ -3495,7 +3498,7 @@ end
 velY=velY-velYdelta
 Ydiff=Ydiff+(velY*0.025)
 end
-insSet(part,"AssemblyLinearVelocity",(claimpos-cfGet(v,"Position"))*v3_101/fallingTime+v3_net+v3(0,fallingTime/5,0))
+insSet(part,"AssemblyLinearVelocity",(claimpos-cfGet(v,"Position"))*v3_101/fallingTime+v3_net)
 else
 local vel1=vel*noYvelTime+xzvel
 if vmagnitude(vel1)>25.01 then
