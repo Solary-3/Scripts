@@ -12,7 +12,7 @@ Visual Effects made by me ofc some of them aee like rework but my own version
 
 
 ]=]
-print("SFAWTDE")
+
 
 
 
@@ -82,7 +82,7 @@ local Modes={
   {Name="NULLVOID",WingAnim="NULLVOID",MusicTitle=" Aegleseeker | Over The Horizon",Music="Aegleseeker",HHeight=5,Author="Silentroom & Frums",ActualName="Cosmioplex"},
   {Name="Mayhem",WingAnim="Mayhem",MusicTitle="Shriek",Music="Shriek",HHeight=0,Author="D-Mode-D",ActualName="Mayhem"},
   {Name="Gaia",WingAnim="Gaia",MusicTitle="Gaia",Music="Gaia",HHeight=10,Author="Cepheid",ActualName="Geoplex"},
-  {Name="Chromatic",WingAnim="Chromatic",MusicTitle="Synthesis",Music="Synthesis",HHeight=0,Author="tn-sh",ActualName="Synthesizer"},
+  {Name="Chromatic",WingAnim="Chromatic",MusicTitle="Synthesis",Music="Synthesis",HHeight=0,Author="tn-sh",ActualName="Synth"},
 --  {Name="Overseer",WingAnim="Overseer",MusicTitle="Dutonic - Vani, The Blood Cleric ",Music="Blood Cleric",HHeight=4},
   {Name="Layers",WingAnim="Layers",MusicTitle="LAYERS",Music="EQUINOX",HHeight=0,Author="KORAII",ActualName="Equilibriatic"},
   {Name="Scourge",WingAnim="Scourge",MusicTitle=" Am Unbreakable",Music="I Am Unbreakable",HHeight=0,Author="Niklas Johansson",ActualName="Glorywrath"},
@@ -2537,20 +2537,20 @@ startpos=cfAdd(cfGet(cfr,"Rotation"),startpos)
 insSet(hrp,"AssemblyLinearVelocity",v3_net)
 insSet(hrp,"AssemblyAngularVelocity",v3_0)
 insSet(hrp,"CFrame",startpos)
-oswait(.01)
+oswait(.1)
 elseif respawntp==2 then
-insSet(hrp,"CFrame",cfr*cf(random(-50,50),-30+hhOff1,random(-50,50)))
+insSet(hrp,"CFrame",cfr*cf(random(-10,10),-30+hhOff1,random(-10,10)))
 insSet(hrp,"AssemblyLinearVelocity",v3_0)
 insSet(hrp,"AssemblyAngularVelocity",v3_0)
-oswait(.01)
+oswait(.1)
 elseif respawntp==3 then
 local t=osclock()+0.25
 if pdloadedtime and pdloadedtime>t then
 t=pdloadedtime
 end
-local startcf=cfr*cf(random(-50,50),-30+hhOff1,random(-50,50))
+local startcf=cfr*cf(random(-10,10),-30+hhOff1,random(-10,10))
 while true do
-oswait(.01)
+oswait(.1)
 insSet(hrp,"CFrame",startcf)
 insSet(hrp,"AssemblyLinearVelocity",v3_0)
 insSet(hrp,"AssemblyAngularVelocity",v3_0)
@@ -6926,7 +6926,7 @@ modet.TextScaled=true
 modet.TextTransparency=0
 modet.BackgroundTransparency=1 
 modet.TextStrokeTransparency=0
-modet.FontFace=Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic)
+modet.FontFace=Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 modet.TextStrokeColor3=Color3.new(0,1,1)
 modet.TextColor3=Color3.new(1,1,1)
 modet.Text=" "
@@ -7021,7 +7021,7 @@ game:HttpGet(
 )
 end)
 end
---[[ tspawn(function()
+ tspawn(function()
 pcall(function()
 writefile(path,
 game:HttpGet(
@@ -7029,7 +7029,7 @@ game:HttpGet(
 )
 )
 end)
-end)]]
+end)
 
 
 
@@ -14857,7 +14857,7 @@ end
 
 
 changeMode("Noxesium")
-ChangeAndRecolor("Noxesium",true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(94,24,0),rgb(204,166,154),false,false)
+ChangeAndRecolor("Noxesium",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(94,24,0),rgb(204,166,154),false,false)
 
 
 local IsKeys=nil
@@ -14867,15 +14867,15 @@ if gpe then return end
 local k = string.lower(string.gsub(tostring(io.KeyCode),"Enum.KeyCode.",""))
 if k=="one" and Mode~="Iviriza"then
 changeMode("Iviriza")
-ChangeAndRecolor("Iviriza",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(145,203,253),rgb(1,58,107),false,false)
+ChangeAndRecolor("Iviriza",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(145,203,253),rgb(1,58,107),false,false)
 AuxnoAssets()
 elseif k=="two" and Mode~="NULLVOID" then
 changeMode("NULLVOID")
-ChangeAndRecolor("NULLVOID",true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(0,0,0),false,false)
+ChangeAndRecolor("NULLVOID",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(0,0,0),false,false)
 NULLVOIDAssets()
 elseif k=="three" and Mode~="Mayhem" then
 changeMode("Mayhem")
-ChangeAndRecolor("Mayhem",false,"Antique",rgb(0,0,0),rgb(224,0,0),false,false)
+ChangeAndRecolor("Mayhem",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(224,0,0),false,false)
 VFXApi("Mayhem")
 
 elseif k=="four" and Mode~="Gaia" then
@@ -14884,13 +14884,13 @@ ChangeAndRecolor("Gaia",true,Font.fromId(12187376545,e.FontWeight.Heavy,e.FontSt
 VFXApi("Gaia")
 elseif k=="five" and Mode~="Chromatic" then
 changeMode("Chromatic")
-ChangeAndRecolor("Chromatic",true,Font.new([[rbxassetid://12187371840]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,0,0),rgb(0,0,0),true)
+ChangeAndRecolor("Chromatic",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(0,0,0),true)
 VFXApi("Chromatic",1)
 
 
 elseif k=="six" and Mode~="Pandemonium" then
 changeMode("Pandemonium")
-ChangeAndRecolor("Pandemonium",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Regular, Enum.FontStyle.Italic),rgb(0,0,0),rgb(0,0,0),false,false)
+ChangeAndRecolor("Pandemonium",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal),rgb(0,0,0),rgb(0,0,0),false,false)
 --VFXApi("Overseer",1)
 Pandemonium()
 --[[elseif k=="seven" and Mode~="Aegleseeker" then
@@ -14907,11 +14907,11 @@ EulogyAssets()
 
 elseif k=="nine" and Mode~="Anarchus" then
 changeMode("Anarchus")
-ChangeAndRecolor("Anarchus",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,100),rgb(0,0,200),false,false)
+ChangeAndRecolor("Anarchus",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,100),rgb(0,0,200),false,false)
 VFXApi("Anarchus",1)
 elseif k=="zero" and Mode~="Axius" then
 changeMode("Axius")
-ChangeAndRecolor("Axius",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,100),rgb(0,0,200),false,false)
+ChangeAndRecolor("Axius",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,100),rgb(0,0,200),false,false)
 VFXApi("Axius")
 
 elseif k=="f" then
@@ -14972,7 +14972,7 @@ end
 
 elseif k=="m" and Mode=="Mayhem" then
 changeMode("Scourge")
-ChangeAndRecolor("Scourge",true,Font.new([[rbxassetid://12187376739]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(220,0,0),rgb(100,0,0),false,false)
+ChangeAndRecolor("Scourge",true,Font.new([[rbxassetid://12187376739]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(220,0,0),rgb(100,0,0),false,false)
 VFXApi("Scourge")
 elseif k=="m" and Mode=="NULLVOID" then
 changeMode("Vibrance")
@@ -14980,15 +14980,15 @@ ChangeAndRecolor("Vibrance",true,Font.new([[rbxasset://fonts/families/Michroma.j
 VFXApi("Vibrance",1,true)
 elseif k=="m" and Mode=="Chromatic" then
 changeMode("Censored")
-ChangeAndRecolor("Censored",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,0,0),rgb(61,255,77),false,false)
+ChangeAndRecolor("Censored",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(61,255,77),false,false)
 VFXApi("Censored",1)
 elseif k=="m" and Mode=="Iviriza" then
 changeMode("Noxesium")
-ChangeAndRecolor("Noxesium",true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(94,24,0),rgb(204,166,154),false,false)
+ChangeAndRecolor("Noxesium",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(94,24,0),rgb(204,166,154),false,false)
 
 elseif k=="m" and Mode=="Overseer" then
 changeMode("Vanguard")
-ChangeAndRecolor("Vanguard",true,Font.new([[rbxasset://fonts/families/Fondamento.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(254,255,184),rgb(255,255,254), false,false)
+ChangeAndRecolor("Vanguard",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(254,255,184),rgb(255,255,254), false,false)
 VFXApi("Vanguard",1,true)
 elseif k=="seven" and Mode~="Nholiviction" then
 changeMode("Nholiviction")
@@ -14997,15 +14997,15 @@ VFXApi("Nholiviction")
 
 elseif k=="n" and Mode=="Mayhem" then
 changeMode("Pyroplex")
-ChangeAndRecolor("Pyroplex",true,Font.new([[rbxasset://fonts/families/Fondamento.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),c3(),rgb(193,83,0),false,false)
+ChangeAndRecolor("Pyroplex",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),c3(),rgb(193,83,0),false,false)
 VFXApi("Pyroplex")
 elseif k=="m" and Mode=="Layers" then
 changeMode("Fatal")
-ChangeAndRecolor("Fatal",true,Font.fromId(12187360881, e.FontWeight.Bold, Enum.FontStyle.Normal),c3(),c3(),false,false)
+ChangeAndRecolor("Fatal",true,Font.new("rbxasset://fonts/families/Michroma.json", e.FontWeight.Bold, Enum.FontStyle.Normal),c3(),c3(),false,false)
 VFXApi("Fatal")
 elseif k=="m" and Mode=="Nholiviction" then
 changeMode("Cascade")
-ChangeAndRecolor("Cascade",true,Font.new([[rbxassetid://12187371840]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(255,255,255),rgb(255,0,0),false)
+ChangeAndRecolor("Cascade",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(255,255,255),rgb(255,0,0),false)
 --VFXApi("Fatal")
 elseif k=="m" and Mode=="Anarchus" then
 changeMode("Sentinel")
@@ -15018,7 +15018,7 @@ VFXApi("Cheatreal")
 elseif k=="n" and Mode=="Cheatreal" then
 changeMode("HYPERINTERVENTIC")
 TypeWrite("i Cant Handle This Anymore...",.055,true,Font.new([[rbxasset://fonts/families/HighwayGothic.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal),c3(1,1,1),nil,nil,false,.055,15,19)
-ChangeAndRecolor("HYPERINTERVENTIC",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal),c3(1,1,1),c3(1,1,1),true,true,1,.25)
+ChangeAndRecolor("HYPERINTERVENTIC",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal),c3(1,1,1),c3(1,1,1),true,true,1,.25)
 VFXApi("HYPERINTERVENTIC")
 elseif k=="n" and Mode=="Nebulabrasque" then
 changeMode("Dimension")
@@ -15046,22 +15046,22 @@ ChangeAndRecolor("Torment",true,Font.new([[rbxasset://fonts/families/Michroma.js
 VFXApi("Torment")
 elseif k=="b" and Mode=="Chromatic" then
 changeMode("Lexapriatic")
-ChangeAndRecolor("Lexapriatic",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),c3(),rgb(0,0,0),false,false)
+ChangeAndRecolor("Lexapriatic",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),c3(),rgb(0,0,0),false,false)
 VFXApi("Lexapriatic")
 elseif k=="r" and Mode=="Chromatic" then
 changeMode("Parallax")
-ChangeAndRecolor("Parallax",true,Font.new([[rbxassetid://12187371840]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,0,0),rgb(0,0,0),true)
+ChangeAndRecolor("Parallax",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(0,0,0),true)
 VFXApi("Parallax")
 elseif k=="m" and Mode=="Censored" then
 changeMode("Restless")
-ChangeAndRecolor("Restless",true,Font.fromId(12187368843, Enum.FontWeight.Regular, Enum.FontStyle.Italic),rgb(0,139,25),rgb(90,248,3),false,false)
+ChangeAndRecolor("Restless",true,Font.fromId(12187368843, Enum.FontWeight.Regular, Enum.FontStyle.Normal),rgb(0,139,25),rgb(90,248,3),false,false)
 elseif k=="m" and Mode=="Lexapriatic" then
 changeMode("Horion")
-ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),c3(),rgb(0,0,0),false,false)
+ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),c3(),rgb(0,0,0),false,false)
 VFXApi("Horion")
 elseif k=="n" and Mode=="Nholiviction" then
 changeMode("Zionihilic")
-ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),c3(),rgb(0,0,0),false,false)
+ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),c3(),rgb(0,0,0),false,false)
 VFXApi("Zionihilic")
 
 elseif k=="r" and Mode=="Anarchus" then
@@ -15109,10 +15109,10 @@ elseif m:sub(7)=="Layers" then
 EulogyAssets()
 elseif m:sub(7)=="Chromatic" then 
 VFXApi("Chromatic",1)
-ChangeAndRecolor("Chromatic",true,Font.new([[rbxassetid://12187371840]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(255,255,255),rgb(0,0,0),true)
+ChangeAndRecolor("Chromatic",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(255,255,255),rgb(0,0,0),true)
 elseif m:sub(7)=="Anarchus" then 
 VFXApi("Anarchus",1)
-ChangeAndRecolor("Anarchus",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,100),rgb(0,0,200),false,false)
+ChangeAndRecolor("Anarchus",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,100),rgb(0,0,200),false,false)
 elseif m:sub(7)=="Overseer" then 
 ChangeAndRecolor("Overseer",true,Font.new([[rbxassetid://12187369639]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(202,202,202),rgb(255,246,199),false,false)
 VFXApi("Overseer",1)
@@ -15125,7 +15125,7 @@ VFXApi("Aegleseeker")
 elseif m:sub(7)=="Gaia" then 
 ChangeAndRecolor("Gaia",true,Font.fromId(12187376545,e.FontWeight.Heavy,e.FontStyle.Italic),rgb(72,255,106),rgb(36,183,255),false,false)
 elseif m:sub(7)=="Scourge" then 
-ChangeAndRecolor("Scourge",true,Font.new([[rbxassetid://12187376739]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(220,0,0),rgb(100,0,0),false,false)
+ChangeAndRecolor("Scourge",true,Font.new([[rbxassetid://12187376739]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(220,0,0),rgb(100,0,0),false,false)
 VFXApi("Scourge",1,true)
 end
 elseif m:sub(1,6)==".skip/" then 
@@ -15828,7 +15828,6 @@ end
 
 
 
-
 local xd1=0
 local CensoreIt=false
 --// Every Amimations Function 
@@ -15923,11 +15922,11 @@ numvalconstant.Value=osclock()*15
 sp=tonumber(numvalconstant.Value)
 Boost+=1*(sound.PlaybackLoudness/15)
 numval.Value=Boost
+--print(Boost)
+setCamOffset(camoff.Value)
 Retro+=1
 Constant+=1
 Constant2+=1
---print(Boost)
-setCamOffset(camoff.Value)
 local l=tick()
 local lt=LastTick
 if Mode=="Lexapriatic" then 
@@ -16042,7 +16041,7 @@ camoff.Value=camoff.Value:Lerp(cfMul(cf(1+random(-2,2),0+random(-2,2),1+random(-
 local g=clamp(sound.PlaybackLoudness/10,0,2)
 local yes=clamp(sound.PlaybackLoudness/10,1,75)
 local g1=clamp(sound.PlaybackLoudness/50,15,75)
-ChangeAndRecolor("CENSORED!!!",true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(lol,lol,lol),rgb(255,0,0),false,false)
+ChangeAndRecolor("CENSORED!!!",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(lol,lol,lol),rgb(255,0,0),false,false)
 wave1("Out",5,.5,rootpart1.CFrame*cf(0,-.5,0),scolor.Value)
 wave1("In",5,.25,rootpart1.CFrame*cf(0,-.5,0)*angles(0,rad(Spinny),0),pcolor.Value,1)
 local g2=clamp(sound.PlaybackLoudness/900.5,0,1)/random(5,7.5)
@@ -16116,9 +16115,9 @@ block("Out",5,v3(2.5,.1,30),v3(1,.1,30),f.CFrame*cf(-10*cos(sine*5.5),-.5,0)*ang
 --block("Out",5,v3(2.5,.1,0),v3(1,.1,50),f.CFrame*cf(0,-.5,-30*cos(sine*.75))*angles(0,270+rad(-Spinny*10),0),pcolor.Value,s)
 --block("Out",5,v3(2.5,.1,0),v3(1,.1,50),f.CFrame*cf(0,-.5,30*cos(sine*.75))*angles(0,270+rad(-Spinny*10),0),pcolor.Value,s)
 if sound.PlaybackLoudness<random(200,300) then
-ChangeAndRecolor(th[mrandom(1,#th)],true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,random(10,255),0),rgb(0,0,0),false,false)
+ChangeAndRecolor(th[mrandom(1,#th)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,random(10,255),0),rgb(0,0,0),false,false)
 else 
-ChangeAndRecolor(th[mrandom(1,#th)],true,Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0,0,0),rgb(0,random(50,200),0),false,false)
+ChangeAndRecolor(th[mrandom(1,#th)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(0,random(50,200),0),false,false)
 end
 end
 end
@@ -16162,7 +16161,7 @@ local secondary=rgb(255-sound.PlaybackLoudness/3.5,255-sound.PlaybackLoudness/3.
 
 
 if current>135.08 and current<=155.65 then 
-ChangeAndRecolor("Temptation",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(200,200,200),rgb(mrandom(75,255),0,0),false,false)
+ChangeAndRecolor("Temptation",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(200,200,200),rgb(mrandom(75,255),0,0),false,false)
 camoff.Value=camoff.Value:Lerp(cfMul(cf(1+random(-1,1),0+random(-1,1),1+random(-1,1)), angles(rad(1+random(-1,1)),rad(1+random(-1,1)),rad(1+random(-1,1)))),.35)
 wave1("Out",5,.3,rootpart1.CFrame*cf(0,-.5,0),scolor.Value)
 wave1("In",5,.15,rootpart1.CFrame*cf(0,-.5,0)*angles(0,rad(Spinny),0),pcolor.Value,1)
@@ -16190,7 +16189,7 @@ else
 ReturnOldUIPos()
 camoff.Value=cf_0
 deltaTime=.5
-ChangeAndRecolor("Iviriza",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,secondary,false,false)
+ChangeAndRecolor("Iviriza",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,secondary,false,false)
 end
 
 
@@ -16315,7 +16314,7 @@ local color1=rgb(rdmwhite1,rdmwhite1,rdmwhite1)
 
 --if current>155.35 and current<155.4 then 
 --fulltext,typespeed,usefontface,font,color,timehappen,timedur,prevent,trans,sizebeggin,sizeout
-TypeWrite("And in that light i find deliverance...",.045,true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),c3(1,1,1),155.35,157.9,true,.1,15,20)
+TypeWrite("And in that light i find deliverance...",.045,true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),c3(1,1,1),155.35,157.9,true,.1,15,20)
 --end
 local funnyflick2=clamp(100*tan(sine*500),random(10,50),random(170,255))
 local funnyflick3=clamp(-100*tan(sine*500),random(10,50),random(170,255))
@@ -16982,98 +16981,98 @@ SpecialAnimations(current,293.3,309.97,"NULLVOID",0,false)
 end)
 
 if current<=61.5 then
-ChangeAndRecolor(text1[mrandom(1,#text1)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
+ChangeAndRecolor(text1[mrandom(1,#text1)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
 camoff.Value=cf_0
 
 elseif current>=61.5 and current<=78 then 
-ChangeAndRecolor(text1[mrandom(1,#text1)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(0,0,0),false,false)
+ChangeAndRecolor(text1[mrandom(1,#text1)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(0,0,0),false,false)
 camoff.Value=cf_0
 
 elseif current>=78 and current<=141.5 then
-ChangeAndRecolor(text1[mrandom(1,#text1)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70),false,false)
+ChangeAndRecolor(text1[mrandom(1,#text1)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70),false,false)
 camoff.Value=cf_0
 
 elseif current>=141.5 and current<=149.9 then 
-ChangeAndRecolor(text1[mrandom(1,#text1)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(0,0,0),false,false)
+ChangeAndRecolor(text1[mrandom(1,#text1)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(0,0,0),false,false)
 camoff.Value=cf_0
 
 elseif current>=149.9 and current<=157.8 then
-ChangeAndRecolor(text1[mrandom(1,#text1)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
+ChangeAndRecolor(text1[mrandom(1,#text1)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
 camoff.Value=cf_0
 
 elseif current>=157.8 and current<=191  then 
-ChangeAndRecolor(text1[mrandom(1,#text1)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70),false,false)
+ChangeAndRecolor(text1[mrandom(1,#text1)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70),false,false)
 camoff.Value=cf_0
 
 elseif current>=191 and current<=191.35  then 
-ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(0,0,0),false,false)
+ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(0,0,0),false,false)
 camoff.Value=cf_0
 
 elseif current>=191.35 and current<=205.8  then
 if sound.PlaybackLoudness>mrandom(200,300) then
-ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
+ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
 else
-ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70),false,false)
+ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70),false,false)
 end
 camoff.Value=cf_0
 
 elseif current>=205.35 and current<=206.25  then
-ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),funnyflick,funnyflick1,false,false)
+ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),funnyflick,funnyflick1,false,false)
 numvalconstant.Value+=random(10,1000)
 camoff.Value=camoff.Value:Lerp(cfMul(cf(1+random(-1,1),0+random(-1,1),1+random(-1,1)), angles(rad(1+random(-1,1)),rad(1+random(-1,1)),rad(1+random(-1,1)))),.35)
 
 elseif current>=206.25 and current<=221.75  then
 if sound.PlaybackLoudness>mrandom(200,300) then
-ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
+ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
 else
-ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70),false,false)
+ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70),false,false)
 end
 camoff.Value=cf_0
 
 elseif current>=221.75 and current<=229.25 then
-ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),funnyflick,funnyflick1,false,false)
+ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),funnyflick,funnyflick1,false,false)
 camoff.Value=camoff.Value:Lerp(cfMul(cf(1+random(-.5,.5),0+random(-.5,.5),1+random(-.5,.5)), angles(rad(1+random(-.5,.5)),rad(1+random(-.5,.5)),rad(1+random(-.5,.5)))),.15)
 
 elseif current>=229.25 and current<=229.637 then
-ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70),false,false)
+ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70),false,false)
 camoff.Value=cf_0
 
 elseif current>=229.637 and current<=229.754 then
-ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
+ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
 camoff.Value=cf_0
 
 elseif current>=230 and current<=237.65 then
-ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),funnyflick,funnyflick1,false,false)
+ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),funnyflick,funnyflick1,false,false)
 camoff.Value=camoff.Value:Lerp(cfMul(cf(1+random(-.75,.75),0+random(-.75,.75),1+random(-.75,.75)), angles(rad(1+random(-.75,.75)),rad(1+random(-.75,.75)),rad(1+random(-.75,.75)))),.35)
 
 elseif current>=237.65 and current<=238 then
-ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
+ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
 camoff.Value=cf_0
 
 elseif current>=238.2 and current<=257.1 then
-ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),funnyflick,funnyflick1,false,false)
+ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),funnyflick,funnyflick1,false,false)
 camoff.Value=camoff.Value:Lerp(cfMul(cf(1+random(-1,1),0+random(-1,1),1+random(-1,1)), angles(rad(1+random(-1,1)),rad(1+random(-1,1)),rad(1+random(-1,1)))),.35)
 
 
 
 elseif current>=260.47 and current<=293.3 then
-ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),funnyflick,funnyflick1,false,false)
+ChangeAndRecolor(text[mrandom(1,#text)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),funnyflick,funnyflick1,false,false)
 camoff.Value=camoff.Value:Lerp(cfMul(cf(1+random(-1,1),0+random(-1,1),1+random(-1,1)), angles(rad(1+random(-1,1)),rad(1+random(-1,1)),rad(1+random(-1,1)))),.35)
 
 elseif current>=293.3 and current<=309.9  then
 if sound.PlaybackLoudness>mrandom(200,300) then
-ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
+ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
 else
-ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70),false,false)
+ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70),false,false)
 end
 camoff.Value=cf_0
 
 elseif current>=309.97 and current<=318 then 
-ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70),false,false)
+ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70),false,false)
 camoff.Value=cf_0
 
 elseif current>=318 then 
-ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxassetid://12187368843]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
+ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
 camoff.Value=cf_0
 
 end
@@ -17164,7 +17163,7 @@ v.Brightness=12.5+5*cos(sine*1000)
 v.Color=rgb(f,0,0)
 end
 end
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
+ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
 
 
 
@@ -17173,7 +17172,7 @@ local model=scriptfolder["NholivictionAssets"]
 local Letters=head["Letters"]
 local h=math.random(1,255)
 local f=math.clamp(255*tan(sine*50),0,255)
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
+ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
 for _,v in Letters:GetDescendants() do 
 if v:IsA("ParticleEmitter") then 
 v.LightEmission=1*cos(sine*1000)  
@@ -17210,9 +17209,9 @@ local h=math.random(1,255)
 local f=math.clamp(255*tan(sine*50),0,255)
 local r=math.random(1,3)
 if r==2 then
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,f,f),false,false)
+ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,f,f),false,false)
 else
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
+ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
 end
 for _,v in Letters:GetDescendants() do 
 if v:IsA("ParticleEmitter") then 
@@ -17270,9 +17269,9 @@ local h=math.random(1,255)
 local f=math.clamp(255*tan(sine*50),0,255)
 local r=math.random(1,3)
 if r==2 then
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,f,f),false,false)
+ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,f,f),false,false)
 else
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
+ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
 end
 for _,v in Letters:GetDescendants() do 
 if v:IsA("ParticleEmitter") then 
@@ -17356,7 +17355,7 @@ v.Brightness=12.5+5*cos(sine*1000)
 v.Color=rgb(f,0,0)
 end
 end
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
+ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
 
 elseif current>=329 and current<369.85 then 
 local model=scriptfolder["NholivictionAssets"]
@@ -17391,7 +17390,7 @@ v.Brightness=12.5+5*cos(sine*1000)
 v.Color=rgb(f,f,f)
 end
 end
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,f,f),false,false)
+ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,f,f),false,false)
 
 else 
 local model=scriptfolder["NholivictionAssets"]
@@ -17430,7 +17429,7 @@ v.Color=rgb(f,0,0)
 end
 end
 end
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxassetid://12187368625]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
+ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
 
 
 
@@ -17616,7 +17615,7 @@ pcall(function()
 tspawn(function()
 if Mode=="Pyroplex" then
 
-ChangeAndRecolor("Pyroplex",true,Font.new([[rbxasset://fonts/families/Fondamento.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic),rgb(0+sound.PlaybackLoudness/10,0+sound.PlaybackLoudness/10,0+sound.PlaybackLoudness/10),rgb(193+sound.PlaybackLoudness/50,83+sound.PlaybackLoudness/10,0),false,false)
+ChangeAndRecolor("Pyroplex",true,Font.new([[rbxasset://fonts/families/Fondamento.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0+sound.PlaybackLoudness/10,0+sound.PlaybackLoudness/10,0+sound.PlaybackLoudness/10),rgb(193+sound.PlaybackLoudness/50,83+sound.PlaybackLoudness/10,0),false,false)
 
 
 
@@ -17835,7 +17834,7 @@ if Mode=="Pandemonium" then
 local s=clamp(100*sin(sine),0,100)
 scolor.Value=rgb(255-s,1,153-s)
 pcolor.Value=rgb(34+s,34+s,34+s)
-ChangeAndRecolor("Pandemonium",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Regular, Enum.FontStyle.Italic),scolor.Value,pcolor.Value,false,false)
+ChangeAndRecolor("Pandemonium",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal),scolor.Value,pcolor.Value,false,false)
 --blockmoveup("In",1,v3(.1,.1,.1),v3(1.5,1.5,1.5),rootpart1.CFrame*cf(random(-10,10),random(-5.5,-2),random(-10,10)),scolor.Value,0,10,true,pcolor.Value,true)
 local f=scriptfolder["PandemoniumAssets"]["Floor"]
 local s=clamp(sound.PlaybackLoudness/50,0,5)
@@ -17977,8 +17976,8 @@ is(sc,"Value",rgb(sin2*5.5,0,sin2*5.5))
 is(pc,"Value",rgb(0,sin2*5.5,sin2*5.5))
 end
 local f={
-  [[rbxasset://fonts/families/Sarpanch.json]],
   [[rbxasset://fonts/families/Michroma.json]],
+  [[rbxasset://fonts/families/Sarpanch.json]],
   [[rbxasset://fonts/families/Fondamento.json]],
   [[rbxassetid://12187368843]],
   [[rbxassetid://12187368625]],
@@ -18119,7 +18118,7 @@ else
 is(s,"Value",clp(ig(s,"Value"),rgb(v1,0,0),.75))
 is(p,"Value",clp(ig(p,"Value"),rgb(0,v1,v1),.75))
 end
-ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=9.521 and t<=16.9 then 
 local h1=clamp(ld,0,random(30,100))
 local sin2=clamp(-25*tan(sine*15.5),0,random(random(30,150),255))
@@ -18130,7 +18129,7 @@ else
 is(s,"Value",clp(ig(s,"Value"),rgb(0,0,0),.75))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),1)) 
 end
-ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=16.9 and t<=22 then 
 local h1=clamp(ld,0,random(30,100))
 local sin2=clamp(-25*tan(sine*15.5),0,random(h1,255))
@@ -18141,7 +18140,7 @@ else
 is(s,"Value",Color3.fromHSV((tick()*.075)%1,1,random(.1,1)))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),1)) 
 end
-ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=22 and t<=32.2 then 
 local h1=clamp(ld,0,random(30,100))
 local sin2=clamp(-25*tan(sine*50.5),0,random(h1,255))
@@ -18152,7 +18151,7 @@ else
 is(s,"Value",Color3.fromHSV((tick())%1,1,random(.1,1)))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),1)) 
 end
-ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=32 and t<=39.7 then 
 local h1=clamp(ld,0,random(30,100))
 local sin2=clamp(-25*tan(sine*7.5),0,random(h1,255))
@@ -18164,7 +18163,7 @@ else
 is(p,"Value",clp(ig(p,"Value"),rgb(v2,0,0),.75))
 is(s,"Value",clp(ig(s,"Value"),rgb(sin2,sin2,sin2),1)) 
 end
-ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=39.7 and t<=45.7 then 
 local h1=clamp(ld,0,random(30,100))
 local sin2=clamp(-25*tan(sine*7.5),0,random(h1,255))
@@ -18176,7 +18175,7 @@ else
 is(s,"Value",clp(ig(s,"Value"),rgb(v2,0,0),.35))
 is(p,"Value",clp(ig(p,"Value"),rgb(0,sin2,sin2),.35))
 end
-ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=45.7 and t<=64.7 then 
 local h1=clamp(ld,0,random(30,100))
 local sin2=clamp(-25*tan(sine*7.5),0,random(h1,255))
@@ -18188,7 +18187,7 @@ else
 is(s,"Value",clp(ig(s,"Value"),rgb(v2,v2,v2),1))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),1))
 end
-ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=64.7 and t<=65.8 then 
 local h1=clamp(ld,0,random(30,100))
 local sin2=clamp(-25*tan(sine*50.5),0,random(h1,255))
@@ -18200,7 +18199,7 @@ else
 is(s,"Value",clp(ig(s,"Value"),rgb(0,0,v2),1))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,0,0),1))
 end
-ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=65.8 and t<=66.5 then 
 local h1=clamp(ld,0,random(30,100))
 local sin2=clamp(-25*tan(sine*50.5),0,random(h1,255))
@@ -18208,7 +18207,7 @@ local v2=clamp(-25*tan(sine*100),0,random(h1,255))
 is(p,"Value",Color3.fromHSV((tick()*h1)%1,1,random(.1,1)))
 is(s,"Value",clp(ig(s,"Value"),rgb(sin2,sin2,sin2),1))
 
-ChangeAndRecolor("HEXED",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("HEXED",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=66.5 and t<=83.1 then 
 local h1=clamp(ld,0,random(100,150))
 local sin2=clamp(-25*tan(sine*30.5),0,random(h1,255))
@@ -18221,7 +18220,7 @@ is(s,"Value",clp(ig(s,"Value"),rgb(sin2,v2,sin2),1))
 is(p,"Value",clp(ig(p,"Value"),rgb(v2,sin2,v2),1))
 end
 
-ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=83.5 and t<=94 then 
 local h1=clamp(ld,0,random(100,150))
 local sin2=clamp(-25*tan(sine*30.5),0,random(h1,255))
@@ -18234,7 +18233,7 @@ is(s,"Value",clp(ig(s,"Value"),rgb(sin2,sin2,sin2),random(.1,1)))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),random(.1,1)))
 end
 
-ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=94 and t<=110.45 then 
 local h1=clamp(ld,0,random(100,150))
 local v3=clamp(ld,0,random(.1,10))
@@ -18247,7 +18246,7 @@ else
 is(s,"Value",Color3.fromHSV((-tick()*v3)%1,1,random(.1,1)))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),random(.1,.5))) 
 end
-ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 
 elseif t>=110.45 and t<=122.3 then 
 local h1=clamp(ld,0,random(100,150))
@@ -18261,7 +18260,7 @@ else
 is(s,"Value",Color3.fromHSV((-tick()*v3)%1,1,random(.1,1)))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),random(.1,1))) 
 end
-ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 
 elseif t>=122.3 and t<=154.1 then 
 local h1=clamp(ld,0,random(100,150))
@@ -18276,7 +18275,7 @@ else
 is(s,"Value",clp(ig(s,"Value"),rgb(v1,v2,v2),.75))
 is(p,"Value",clp(ig(p,"Value"),rgb(v2,v1,v1),.75))
 end
-ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Horion",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 
 
 --[[
@@ -18335,7 +18334,7 @@ else
 is(s,"Value",clp(ig(s,"Value"),rgb(0,h1,h1),.75))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),1)) 
 end
-ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=7 and t<=20.3 then 
 local h1=clamp(ld,0,random(30,100))
 local h2=clamp(ld,0,random(30,100))
@@ -18347,7 +18346,7 @@ else
 is(s,"Value",clp(ig(s,"Value"),rgb(random(30,255),random(30,255),random(30,255)),.75))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),1)) 
 end
-ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=20.3 and t<=22 then 
 local h1=clamp(ld,0,random(30,100))
 local h2=clamp(ld,0,random(30,100))
@@ -18359,7 +18358,7 @@ else
 is(s,"Value",clp(ig(s,"Value"),rgb(random(30,255),random(30,255),random(30,255)),.15))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),1)) 
 end
-ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=22 and t<=35 then 
 local h1=clamp(ld,0,random(30,100))
 local h2=clamp(ld,0,random(30,100))
@@ -18371,7 +18370,7 @@ else
 is(s,"Value",clp(ig(s,"Value"),rgb(random(30,255),random(30,255),random(30,255)),random(.1,1)))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),1)) 
 end
-ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=35 and t<=36.1 then 
 local h1=clamp(ld,0,random(30,100))
 local h2=clamp(ld,0,random(30,100))
@@ -18383,7 +18382,7 @@ else
 is(s,"Value",clp(ig(s,"Value"),rgb(random(30,255),random(30,255),random(30,255)),.050))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),.1)) 
 end
-ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=36.1 and t<= 79.7 then 
 local h1=clamp(ld,0,random(30,100))
 local h2=clamp(ld,0,random(30,100))
@@ -18395,7 +18394,7 @@ else
 is(s,"Value",clp(ig(s,"Value"),rgb(random(0,255),random(0,255),random(0,255)),random(.1,1)))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),1)) 
 end
-ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>= 79.7 then 
 local h1=clamp(ld,0,random(30,100))
 local sin2=clamp(-25*tan(sine*20.5),0,random(random(30,150),255))
@@ -18406,7 +18405,7 @@ else
 is(s,"Value",clp(ig(s,"Value"),rgb(0,h1,h1),.75))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),1)) 
 end
-ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
+ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 end
 
 --[[
@@ -18432,7 +18431,7 @@ local ld=sound.PlaybackLoudness
 local clp=CLerp
 
 local color1,color2=rgb(197+50*cos(sine*1.5),135+100*sin(sine*2),243+12*sin(sine*2.5)),rgb(237+10*cos(sine*1.5),212+35*sin(sine*2),255)
-ChangeAndRecolor("Axius",true,Font.new([[rbxasset://fonts/families/Sarpanch.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color1,color2,false,false)
+ChangeAndRecolor("Axius",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color1,color2,false,false)
 
 --[[
 7 
@@ -18747,12 +18746,7 @@ end
 end
 
 end
-pcall(function()
-for _,a in next,TotalOfBaseParts do 
-a.AssemblyLinearVelocity=v3_net
-a.AssemblyAngularVelocity=v3_0
-end
-end)
+
 
 
 
