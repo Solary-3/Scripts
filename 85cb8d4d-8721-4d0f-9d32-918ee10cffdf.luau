@@ -1576,6 +1576,7 @@ local GetFocusedTextBox=insGet(uis,"GetFocusedTextBox")
 local GetMouseDelta=insGet(uis,"GetMouseDelta")
 local IsMouseButtonPressed=insGet(uis,"IsMouseButtonPressed")
 local IsKeyDown=insGet(uis,"IsKeyDown")
+local GetDescendants=insGet(game,"GetDescendants")
 
 local Inverse=cfGet(cf_0,"Inverse")
 local Lerp=cfGet(cf_0,"Lerp")
@@ -2016,8 +2017,8 @@ optimize the optimized
 ]]
 
 local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
-local speedlimit = 7500 --makes your parts move slower if the magnitude of their velocity is higher than this
-local retVelTime = 0.71 --time that claimed parts have velocity to reclaim in case u lose them
+local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
+local retVelTime = .71 --time that claimed parts have velocity to reclaim in case u lose them
 local walkSpeed = 16 --your walkspeed (can be changed at runtime)
 local jumpPower = 50 --your jump power (can be changed at runtime)
 local gravity = 196.2 --how fast the characters velocity decreases while falling (can be changed at runtime)
@@ -2313,8 +2314,8 @@ if t.p==p then
 t.p=nil
 end
 if refit and c then
---[[tspawn(function()
-local char=lp.Character
+--[[  tspawn(function()
+local char=ws[lp.Name]
 for _,t in char:GetChildren() do 
 if t:IsA("Accessory") then 
 --accessoriesthataretracked[t]=true
@@ -2323,17 +2324,19 @@ pcall(function()
 local f=t.Handle
 local hd=f
 local sine=os.clock()
+local g=.1
 repeat
 local sine15=sine*15
 local sin=math.sin 
 local v3=Vector3.new
 local idlerv=v3(sin(sine15),sin(sine15+1.0471975511965976),sin(sine15+2.0943951023931953))
+local idleoff=idlerv*0.0015 
 hd.AssemblyAngularVelocity=idlerv
---hd.AssemblyLinearVelocity=v3(0,0,0)
+hd.CFrame=hd.CFrame*cf(idleoff,idleoff,idleoff)
 hd.CFrame=hd.CFrame+cf(0,.1,0)
-Respawn()
+g+=.1
 oswait(.1)
-until IsHatDropped
+until g>=1.5
 end)
 end)
 end
@@ -2423,6 +2426,7 @@ end
 end
 local hhOff=3
 local hhOff1=3.01
+local lastsine=sine
 local setHipHeight=function(n)
 hhOff=n+3
 hhOff1=n+3.01
@@ -2434,28 +2438,28 @@ simradv=simradv+1000
 local islp=v==lp
 local lastc=nil
 local oncharacter=function()
-
+lastsine=sine
 local newc=insGet(v,"Character")
-if newc and (newc~=lastc) then
+if c and newc and (newc~=lastc) then
 lastc=newc
 characters[v]=newc
 refreshrayfilter()
 if islp then
 if discharscripts then
 Connect(insGet(newc,"DescendantAdded"),discharscripts)
-for i,v in next,QueryDescendants(newc,"Script") do
+for i,v in next,GetDescendants(newc) do
+if IsA(v,"Script") then
 insSet(v,"Disabled",true)
 end
 end
-
-local hrp=timeQueryDescendants(newc,">BasePart#HumanoidRootPart",10)[1]
-
+end
+local hrp=FindFirstChild(newc,"HumanoidRootPart") or timegp(newc,"HumanoidRootPart","BasePart",10)
 if not (hrp and c and IsDescendantOf(newc,ws)) then return end
 c=newc
 local fi,fv=next(flingtable)
 if fi then
-if permadeath and not pdloadedtime then
---IdkPD()
+if replicatesignal and not pdloadedtime then
+replicatesignal(cdsb)
 pdloadedtime=osclock()+rst
 end
 if flingchangestate==3 then
@@ -2482,19 +2486,19 @@ end
 local startpos=insGet(i,"Position")
 local stoptime=sine+3
 while true do
-oswait(.1) 
+Wait(heartbeat)
 if sine>stoptime then
 break
 end
 if insGet(i,"Anchored") or not IsDescendantOf(i,ws) then
 break
 end
-if vmagnitude(startpos-insGet(i,"Position"))>200 then
+if vmagnitude((startpos-insGet(i,"Position")))>200 then
 break
 end
 local tcf=cfAdd(insGet(i,"CFrame"),insGet(i,"AssemblyLinearVelocity")*(sin(sine*15)+1))
 if novoid and (cfGet(tcf,"Y")<novoid) then
-tcf=cfAdd(tcf,v3(0,-150,0)*(novoid-cfGet(tcf,"Y")))
+tcf=cfAdd(tcf,v3_010*(novoid-cfGet(tcf,"Y")))
 end
 insSet(hrp,"CFrame",tcf)
 insSet(hrp,"AssemblyLinearVelocity",insGet(i,"AssemblyLinearVelocity")*v3_101*75)
@@ -2505,21 +2509,25 @@ Destroy(v)
 end
 flingtable[i]=nil
 end
+local t=osclock()+0.17
+while Wait(heartbeat) do
 insSet(hrp,"AssemblyLinearVelocity",v3_0)
 insSet(hrp,"AssemblyAngularVelocity",v3_0)
 insSet(hrp,"CFrame",cfr)
+if osclock()>t then
+break
 end
-if not Hatdrop then
-if respawntp==0 then
---swait()
-elseif respawntp==1 then
-local startpos=pos+v3(mrandom(-10,10),-200+hhOff1,mrandom(-10,10))
+end
+end
+if not Hatddrop then
+if respawntp==1 then
+local startpos=pos+v3(random(-10,10),-200+hhOff1,random(-10,10))
 local dir=nil
 local poscheck=true
 while poscheck do
 poscheck=false
 for i,v in next,rootparts do
-local diff=(startpos-insGet(v,"Position"))*v3(1,-30+hhOff1,1)
+local diff=(startpos-insGet(v,"Position"))*v3_101
 if vmagnitude(diff)<10 then
 poscheck=true
 dir=dir or (vnormalize(diff)*3)
@@ -2533,34 +2541,46 @@ dir=dir or (vnormalize(diff)*3)
 startpos=startpos+dir
 end
 end
+local t=osclock()+0.17
 startpos=cfAdd(cfGet(cfr,"Rotation"),startpos)
-insSet(hrp,"AssemblyLinearVelocity",v3_net)
-insSet(hrp,"AssemblyAngularVelocity",v3_0)
+while Wait(heartbeat) do
 insSet(hrp,"CFrame",startpos)
-oswait(.1)
-elseif respawntp==2 then
-insSet(hrp,"CFrame",cfr*cf(random(-10,10),-30+hhOff1,random(-10,10)))
 insSet(hrp,"AssemblyLinearVelocity",v3_0)
 insSet(hrp,"AssemblyAngularVelocity",v3_0)
 oswait(.1)
-elseif respawntp==3 then
-local t=osclock()+0.25
-if pdloadedtime and pdloadedtime>t then
-t=pdloadedtime
+if osclock()>t then
+break
 end
-local startcf=cfr*cf(random(-10,10),-30+hhOff1,random(-10,10))
-while true do
-oswait(.1)
-insSet(hrp,"CFrame",startcf)
+end
+elseif respawntp==2 then
+local t=osclock()+0.17
+while Wait(heartbeat) do
+insSet(hrp,"CFrame",cfAdd(cfr-v3(0,hhOff,0),cfGet(cfr,"RightVector")*3.5-cfGet(cfr,"LookVector")*3.5))
 insSet(hrp,"AssemblyLinearVelocity",v3_0)
 insSet(hrp,"AssemblyAngularVelocity",v3_0)
 if osclock()>t then
 break
 end
 end
+elseif respawntp==3 then
+local t=osclock()+0.17
+if pdloadedtime and pdloadedtime>t then
+t=pdloadedtime
+end
+insSet(hrp,"CFrame",cfr)
+oswait(.2)
+insSet(hrp,"AssemblyLinearVelocity",v3_0)
+insSet(hrp,"AssemblyAngularVelocity",v3_0)
+while Wait(heartbeat) do
+local startcf=cfAdd(cfMul(cfGet(cfr-v3(0,hhOff,0),"Rotation"),angles(1.5707963267948966,0,0)),pos*v3_101+v3_010*min(fpdh+30,v3Get(pos,"Y")-50))
 insSet(hrp,"CFrame",startcf)
 insSet(hrp,"AssemblyLinearVelocity",v3_0)
 insSet(hrp,"AssemblyAngularVelocity",v3_0)
+oswait(.1)
+if osclock()>t then
+break
+end
+end
 end
 end
 if newc~=c then
@@ -2572,24 +2592,22 @@ SetCoreGuiEnabled(sg,enumH,false)
 end
 if pdloadedtime then
 if (osclock()<pdloadedtime) then
-twait(pdloadedtime-osclock())
+while osclock()<=pdloadedtime do
+Wait(heartbeat)
+end
 end
 pdloadedtime=nil
-end 
---if FakePerma and not Hatdrop then IdkPD() end
-if Hatdrop then
-HatDrop(newc)
-else
-if breakjointsmethod==4 then
-local h=FindFirstChildOfClass(newc,"Humanoid")
-if h then
-replicatesignal(insGet(h,"ServerBreakJoints"))
-else
-insGet(newc,"BreakJoints")(newc)
 end
-elseif breakjointsmethod==1 then
+if Hatdrop then
+HatDrop()
+else
+if breakjointsmethod==1 then
+insGet(newc,"BreakJoints")(newc)
 local h=FindFirstChildOfClass(newc,"Humanoid")
 if h then
+if replicatesignal then
+replicatesignal(insGet(h,"ServerBreakJoints"))
+end
 insSet(h,"Health",0)
 end
 elseif breakjointsmethod==2 then
@@ -2603,13 +2621,13 @@ else
 insGet(newc,"BreakJoints")(newc)
 end
 end
-cons.ondes=Connect(insGet(newc,"DescendantAdded"),ondes)
-for i,v in next,QueryDescendants(newc,"Attachment") do
+Connect(insGet(newc,"DescendantAdded"),ondes)
+for i,v in next,GetDescendants(newc) do
 ondes(v)
 end
 else
 local hrp=FindFirstChild(newc,"HumanoidRootPart") or timegp(newc,"HumanoidRootPart","BasePart",10)
-if hrp and IsDescendantOf(newc,ws) then
+if hrp and c and IsDescendantOf(newc,ws) then
 rootparts[v]=hrp
 end
 end
@@ -2999,7 +3017,7 @@ pdloadedtime=osclock()+rst
 end
 end
 Connect(GetPropertyChangedSignal(lp,"Character"),function()
-local c=lp.Character
+local c=ws[lp.Name]
 if c and c~=lastc then
 lastc=c
 --replicatesignal(cdsb)
@@ -3008,7 +3026,7 @@ while lastc==c do
 local h=FindFirstChildOfClass(c,"Humanoid")
 if h then
 Connect(insGet(h,"Died"),hdied)
-for _,x in lp.Character:GetChildren() do 
+for _,x in ws[lp.Name]:GetChildren() do 
 if x:IsA("Accessory") then 
 local h=x.Handle 
 if h:FindFirstChild("AccessoryWeld") then 
@@ -3016,7 +3034,7 @@ h.AccessoryWeld:Destroy()
 end
 end
 end
-for _,x in lp.Character:GetChildren() do 
+for _,x in ws[lp.Name]:GetChildren() do 
 if x:IsA("BasePart") then 
 local h=x 
 if h:FindFirstChild("HeadWeld") then 
@@ -3047,7 +3065,6 @@ end
 
 
 local noYvelTime=1
-local lastsine=sine
 local mainFunction=function()
 
 if not c then 
@@ -3070,7 +3087,9 @@ Disconnect(clickConnection)
 end
 mouseBehavior=nil
 insSet(uis,"MouseBehavior",enumMD)
+if not SmoothCamera then
 onnewcamera()
+end
 local c=insGet(lp,"Character")
 if c then
 insSet(cam,"CameraSubject",FindFirstChildOfClass(c,"Humanoid"))
@@ -3079,7 +3098,7 @@ return con and Disconnect(con)
 end
 sine=osclock()
 local delta=sine-lastsine
-deltaTime=min(delta*10,1)
+deltaTime=min(delta*15,1)
 lastsine=sine
 if shiftlock then
 if allowshiftlock then
@@ -3448,7 +3467,7 @@ local claimposY=v3Get(claimpos,"Y")
 
 for i,v in next,cframes do
 local part=i.p
-if part and not IsHatDropped then
+if part then
 if insGet(part,"ReceiveAge")==0 then
 local placeholder=i.v
 local vpos=cfGet(v,"Position")
@@ -3516,7 +3535,6 @@ else
 insSet(part,"AssemblyLinearVelocity",vel1*v3_xz+v3_net)
 end
 end
---if IsHatDropped then return end
 insSet(part,"CFrame",v)
 insSet(part,"AssemblyAngularVelocity",idlerv)
 else
@@ -3547,7 +3565,7 @@ end
 
 sine=osclock()
 lastsine=sine
-tinsert(cons,Connect(heartbeat,mainFunction))
+tinsert(cons,Connect(PostSimulation,mainFunction))
 mainFunction()
 
 local refreshjoints=function() --use this on the main part if u have parts that
@@ -3780,7 +3798,7 @@ local BBGVisibilty=false
 local OverrideAnimation=false
 local AnimStyles=0
 
---lp.Character["Torso"].Position=v3(0,-50,0)
+--ws[lp.Name]["Torso"].Position=v3(0,-50,0)
 if Running then print("Already Running.") return end 
 Running=true
 
@@ -4216,7 +4234,7 @@ local SWAtt4=getAccWeldFromMesh("5278721954", "5278777022") -- DemonGodSword
 local setclientparts=function()
 pcall(function()
 workspace.CurrentCamera.CameraSubject=humanoid
---lp.Character.Humanoid.Parent=humanoid
+lp.Character=fakecharmodel
 end)
 local rootcf=cframes[R6parts.root]
 local torsocf=cframes[R6parts.torso]
@@ -4225,7 +4243,7 @@ local rightarmcf=cframes[R6parts.rightArm]
 local leftarmcf=cframes[R6parts.leftArm]
 local rightlegcf=cframes[R6parts.rightLeg]
 local leftlegcf=cframes[R6parts.leftLeg]
-local char=lp.Character
+local char=ws[lp.Name]
 --[[task.spawn(function()
 if not char:FindFirstChild("AuroraSword") or not char:FindFirstChild("DemonGodSword") or not char:FindFirstChild("RainbowGodSword") or not char:FindFirstChild("VoidLordSword") then 
 pcall(function()
@@ -4480,7 +4498,7 @@ insSet(leftleg,"CFrame",leftlegcf)
 
 if UsePlayerBody then
 pcall(function()
-local char=lp.Character
+local char=ws[lp.Name]
 local LeftLeg=char["Left Leg"]
 local LeftArm=char["Left Arm"]
 local Head=char["Head"]
@@ -5484,7 +5502,7 @@ end
 ForRaycast()
 rotate=rotate == true
 local char=nil
-local char1=lp.Character
+local char1=ws[lp.Name]
 for _,c in next,exclude do 
 pcall(function()
 if not game.Players:FindFirstChild(c) then 
@@ -5528,21 +5546,21 @@ PosRoot(0)
 function WhatIsThis()
 tspawn(function()
 pcall(function()
-for _,c in lp.Character:GetChildren() do 
+for _,c in ws[lp.Name]:GetChildren() do 
 if c:IsA("Accessory") then
 local ostj=.1
 repeat
---c.Handle.Position=rootpart1.Position+Vector3.new(0,0,-5)
-local sine15=sine*15
+local sine15=osclock()*15
 local sin=math.sin 
 local v3=Vector3.new
 local idlerv=v3(sin(sine15),sin(sine15+1.0471975511965976),sin(sine15+2.0943951023931953))
 c.Handle.AssemblyAngularVelocity=idlerv
 c.Handle.AssemblyLinearVelocity=v3(0,25.01,0)
---c.Handle.CFrame=rootpart.CFrame*CFrame.new(Vector3.new(0,1,0))*CFrame.new(Vector3.new(0,Workspace.FallenPartsDestroyHeight-c.Handle.Position.Y+1,0))
+local idleoff=idlerv*0.0015 
+c.Handle.CFrame=c.Handle.CFrame*cf(idleoff,idleoff,idleoff)
 oswait(.1)
 ostj+=.1
-until ostj>=1
+until ostj>=5
 end
 end
 end)
@@ -5551,7 +5569,7 @@ end
 
 
 local scann={}
-for _,a in lp.Character:GetChildren() do 
+for _,a in ws[lp.Name]:GetChildren() do 
 if a:IsA("Accessory") then 
 local f=a:Clone()
 tinsert(scann,f)
@@ -5563,8 +5581,9 @@ function LolXD()
 local fuhyu=nil
 function god()
 if fuhyu then fuhyu:Disconnect() fuhyu=nil end
+--if not Hatdrop then oswait(.1) end
 local accessoriesthataretracked={}
-local char=lp.Character
+local char=ws[lp.Name]
 for _,t in char:GetChildren() do 
 if t:IsA("Accessory") and Running then 
 accessoriesthataretracked[t]=true
@@ -5611,12 +5630,12 @@ local sine15=sine*15
 local sin=math.sin 
 local v3=Vector3.new
 local idlerv=v3(sin(sine15),sin(sine15+1.0471975511965976),sin(sine15+2.0943951023931953))
+local idleoff=idlerv*0.0015 
 c.Handle.AssemblyAngularVelocity=idlerv
---c.Handle.AssemblyLinearVelocity=v3(0,25.01,0)
---c.Handle.CFrame=c.Handle.CFrame*cf(0,5,0)
-oswait(.5)
+c.Handle.CFrame=c.Handle.CFrame*cf(idleoff,idleoff,idleoff)
+oswait(.1)
 ostj+=.1
-until ostj>=.5
+until ostj>=5
 end)
 end)
 end
@@ -5633,8 +5652,6 @@ for i,a in next,scann do
 if not char:FindFirstChild(a.Name) then 
 local g=a:Clone()
 g.Handle.Transparency=.75
---g.Parent=char
---print(g.Name)
 end
 end
 accessoriesthataretracked[c]=nil
@@ -5642,7 +5659,7 @@ repeat Respawn() tust+=1 oswait(.1) until tust>=2
 end
 end)
 char.ChildAdded:Connect(function(c)
-if c:IsA("Accessory") then 
+if c:IsA("Accessory") and Running then 
 accessoriesthataretracked[c]=true 
 end
 end)
@@ -5659,14 +5676,11 @@ end
 
 god()
 ck=lp.CharacterAdded:Connect(function()
-if not Running then ck:Disconnect()end
---refreshjoints()
+if not Running then ck:Disconnect() return end
 repeat oswait(game.Players.LocalPlayer:GetNetworkPing()) 
 until not IsHatDropped
 if Hatdrop then oswait(plrs.RespawnTime+.1) end
 god()
-
---refreshjoints()
 end)
 tspawn(function()
 local lllll
@@ -5676,13 +5690,6 @@ lllll:Disconnect()
 end
 if Running then
 oswait(game.Players.RespawnTime+.1)
-for _,d in lp.Character:GetDescendants() do 
-if d:IsA("Weld") then 
-if not d then continue end
-local h=d
-h:Destroy()
-end
-end
 oswait(math.round(game.Players.LocalPlayer:GetNetworkPing())+1)
 if  SmoothCamera then 
 if ws.CurrentCamera.CameraType~="Custom" then
@@ -6815,8 +6822,8 @@ up:Disconnect()
 else 
 pcall(function()
 for _,s in next,swords do
-if lp.Character:FindFirstChild(s) then 
-local sw=lp.Character:FindFirstChild(s).Handle
+if ws[lp.Name]:FindFirstChild(s) then 
+local sw=ws[lp.Name]:FindFirstChild(s).Handle
 if not sw:FindFirstChildOfClass("Trail") then 
 local att0=i("Attachment")
 local att1=i("Attachment")
@@ -6831,8 +6838,8 @@ end
 end)
 pcall(function()
 for _,s in next,swords do
-if lp.Character:FindFirstChild(s) then 
-local sw=lp.Character:FindFirstChild(s).Handle
+if ws[lp.Name]:FindFirstChild(s) then 
+local sw=ws[lp.Name]:FindFirstChild(s).Handle
 if  sw:FindFirstChildOfClass("Trail")  then 
 
 insSet(sw:FindFirstChildOfClass("Trail"),"Color",cs({csk(0,pcolor.Value),csk(1,scolor.Value)}))
@@ -7235,7 +7242,7 @@ end
 modet.TextColor3=currentrgb1
 modet.TextStrokeColor3=currentrgb
 pcall(function()
-for _,c in lp.Character:GetDescendants() do
+for _,c in ws[lp.Name]:GetDescendants() do
 if c:IsA("Trail") then 
 c.Color=cs({
   csk(0,currentrgb1),
@@ -7341,7 +7348,7 @@ end
 modet.TextColor3=col1
 modet.TextStrokeColor3=currentrgb
 pcall(function()
-for _,c in lp.Character:GetDescendants() do
+for _,c in ws[lp.Name]:GetDescendants() do
 if c:IsA("Trail") then 
 c.Color=cs({
   csk(0,col1),
@@ -7421,7 +7428,7 @@ else
 modet.TextColor3=rgb(255,255,255)
 end
 pcall(function()
-for _,c in lp.Character:GetDescendants() do
+for _,c in ws[lp.Name]:GetDescendants() do
 if c:IsA("Trail") then 
 c.Color=cs({
   csk(0,col1),
@@ -15870,8 +15877,8 @@ end
 pcall(function()
 local char=game.Players.LocalPlayer.Character
 if IsHatDropped then
-lp.Character.PrimaryPart=nil
-for _,d in lp.Character:GetChildren() do 
+ws[lp.Name].PrimaryPart=nil
+for _,d in ws[lp.Name]:GetChildren() do 
 if d:IsA("BasePart") and Hatdrop and not IsHatDropped then 
 local h=d
 for _,x in h:GetChildren() do 
@@ -15883,12 +15890,6 @@ end
 end
 end
 else 
-for _,x in lp.Character:GetChildren() do 
-if x:IsA("Accessory") and not Hatdrop then 
-local h=x.Handle 
-h:FindFirstChildOfClass("Weld"):Destroy()
-end
-end
 return
 end
 
@@ -15914,7 +15915,7 @@ local Fall=Falling
  
  
  
- hitfloor,posfloor=rayCast(rootpart.Position,(CFrame.new(rootpart.Position,rootpart.Position - Vector3.new(0,3.5,0))).lookVector,4,lp.Character)
+ hitfloor,posfloor=rayCast(rootpart.Position,(CFrame.new(rootpart.Position,rootpart.Position - Vector3.new(0,3.5,0))).lookVector,4,ws[lp.Name])
 --print(hitfloor)
 
 
@@ -18749,7 +18750,12 @@ end
 end
 
 end
-
+pcall(function()
+for _,a in next,TotalOfBaseParts do 
+a.AssemblyLinearVelocity=v3_net
+a.AssemblyAngularVelocity=v3_0
+end
+end)
 
 
 
@@ -19950,7 +19956,7 @@ if Running then
 Running=false
 tspawn(function()
 Respawn()
-repeat Respawn() twait() until lp.Character.Humanoid.Health>15
+repeat Respawn() twait() until ws[lp.Name].Humanoid.Health>15
 end)
 end
 wait(.1)
@@ -19993,7 +19999,7 @@ ConRes=game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(1)
 ws.CurrentCamera.CameraType="Custom"
 wait(2)
-ws.CurrentCamera.CameraSubject=lp.Character:WaitForChild("Humanoid")
+ws.CurrentCamera.CameraSubject=ws[lp.Name]:WaitForChild("Humanoid")
 repeat ws.CurrentCamera.CameraType="Custom" wait() until game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
 ConRes:Disconnect()
 end)
