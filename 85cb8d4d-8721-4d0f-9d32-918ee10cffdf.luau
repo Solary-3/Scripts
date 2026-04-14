@@ -145,15 +145,6 @@ end
 end]]
 local new = Instance.new("Model", workspace)
 --HatReanimator.DontFireCharAddOnThisChar = new
-local Part=Instance.new("Part",old)
-Part.Transparency=.5
-Part.Anchored=true
-Part.CanCollide=false
-Part.Size=Vector3.new(2,.5,1)
-Part.Name="Respawn :3"
-pcall(function()
-Part.Position=Workspace["MainScript"]["FakeChar"]["Floor"].Position+Vector3.new(0,0,0)
-end)
 workspace[YourName].Parent = new
 task.wait()
 --HatReanimator.DontFireCharAddOnThisChar = old
@@ -161,12 +152,6 @@ workspace[YourName].Parent = old
 task.wait()
 new:Destroy()
 IsRespawning=false
-if replicatesignal then
---replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
-else 
-IsRespawning=false
-warn("no replicatesignal, cant respawn!")
-end
 else
 if replicatesignal then
 --replicatesignal(game.Players.LocalPlayer.ConnectDiedSignalBackend)
@@ -18807,12 +18792,6 @@ end
 end
 
 end
-pcall(function()
-for _,a in next,TotalOfBaseParts do 
-a.AssemblyLinearVelocity=v3_net
-a.AssemblyAngularVelocity=v3_0
-end
-end)
 
 
 
