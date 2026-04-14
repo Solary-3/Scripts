@@ -128,11 +128,12 @@ RejectCharacterDeletionsDisabled = true
 end
 end)
 local IsRespawning=false
+local YourName=game.Players.LocalPlayer.Name
 local function Respawn()
 if IsRespawning then return end
 if RejectCharacterDeletionsDisabled then
 if not IsRespawning then IsRespawning=true end
-local old = game.Players.LocalPlayer.Character
+local old = workspace[YourName]
 for _,v in old:GetChildren() do
 if v:IsA("Accoutrement") then continue end
 v:Destroy()
@@ -153,10 +154,10 @@ Part.Name="Respawn :3"
 pcall(function()
 Part.Position=Workspace["MainScript"]["FakeChar"]["Floor"].Position+Vector3.new(0,0,0)
 end)
-game.Players.LocalPlayer.Character = new
+workspace[YourName].Parent = new
 task.wait()
 --HatReanimator.DontFireCharAddOnThisChar = old
-game.Players.LocalPlayer.Character = old
+workspace[YourName].Parent = old
 task.wait()
 new:Destroy()
 IsRespawning=false
@@ -2017,8 +2018,8 @@ optimize the optimized
 ]]
 
 local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
-local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
-local retVelTime = .71 --time that claimed parts have velocity to reclaim in case u lose them
+local speedlimit = 5500 --makes your parts move slower if the magnitude of their velocity is higher than this
+local retVelTime = .91 --time that claimed parts have velocity to reclaim in case u lose them
 local walkSpeed = 16 --your walkspeed (can be changed at runtime)
 local jumpPower = 50 --your jump power (can be changed at runtime)
 local gravity = 196.2 --how fast the characters velocity decreases while falling (can be changed at runtime)
@@ -2315,7 +2316,7 @@ t.p=nil
 end
 if refit and c then
 --[[  tspawn(function()
-local char=ws[lp.Name]
+local char=ws[YourName]
 for _,t in char:GetChildren() do 
 if t:IsA("Accessory") then 
 --accessoriesthataretracked[t]=true
@@ -2521,7 +2522,7 @@ end
 end
 if not Hatddrop then
 if respawntp==1 then
-local startpos=pos+v3(random(-10,10),-200+hhOff1,random(-10,10))
+local startpos=pos+v3(random(-10,10),hhOff1,random(-10,10))
 local dir=nil
 local poscheck=true
 while poscheck do
@@ -2541,8 +2542,9 @@ dir=dir or (vnormalize(diff)*3)
 startpos=startpos+dir
 end
 end
-local t=osclock()+0.17
+local t=osclock()+.1
 startpos=cfAdd(cfGet(cfr,"Rotation"),startpos)
+insSet(hrp,"CFrame",startpos)
 while Wait(heartbeat) do
 insSet(hrp,"CFrame",startpos)
 insSet(hrp,"AssemblyLinearVelocity",v3_0)
@@ -2553,7 +2555,7 @@ break
 end
 end
 elseif respawntp==2 then
-local t=osclock()+0.17
+local t=osclock()+0.1
 while Wait(heartbeat) do
 insSet(hrp,"CFrame",cfAdd(cfr-v3(0,hhOff,0),cfGet(cfr,"RightVector")*3.5-cfGet(cfr,"LookVector")*3.5))
 insSet(hrp,"AssemblyLinearVelocity",v3_0)
@@ -2563,7 +2565,7 @@ break
 end
 end
 elseif respawntp==3 then
-local t=osclock()+0.17
+local t=osclock()+0.1
 if pdloadedtime and pdloadedtime>t then
 t=pdloadedtime
 end
@@ -3017,7 +3019,7 @@ pdloadedtime=osclock()+rst
 end
 end
 Connect(GetPropertyChangedSignal(lp,"Character"),function()
-local c=ws[lp.Name]
+local c=ws[YourName]
 if c and c~=lastc then
 lastc=c
 --replicatesignal(cdsb)
@@ -3026,7 +3028,7 @@ while lastc==c do
 local h=FindFirstChildOfClass(c,"Humanoid")
 if h then
 Connect(insGet(h,"Died"),hdied)
-for _,x in ws[lp.Name]:GetChildren() do 
+for _,x in ws[YourName]:GetChildren() do 
 if x:IsA("Accessory") then 
 local h=x.Handle 
 if h:FindFirstChild("AccessoryWeld") then 
@@ -3034,7 +3036,7 @@ h.AccessoryWeld:Destroy()
 end
 end
 end
-for _,x in ws[lp.Name]:GetChildren() do 
+for _,x in ws[YourName]:GetChildren() do 
 if x:IsA("BasePart") then 
 local h=x 
 if h:FindFirstChild("HeadWeld") then 
@@ -3798,7 +3800,7 @@ local BBGVisibilty=false
 local OverrideAnimation=false
 local AnimStyles=0
 
---ws[lp.Name]["Torso"].Position=v3(0,-50,0)
+--ws[YourName]["Torso"].Position=v3(0,-50,0)
 if Running then print("Already Running.") return end 
 Running=true
 
@@ -4243,7 +4245,7 @@ local rightarmcf=cframes[R6parts.rightArm]
 local leftarmcf=cframes[R6parts.leftArm]
 local rightlegcf=cframes[R6parts.rightLeg]
 local leftlegcf=cframes[R6parts.leftLeg]
-local char=ws[lp.Name]
+
 --[[task.spawn(function()
 if not char:FindFirstChild("AuroraSword") or not char:FindFirstChild("DemonGodSword") or not char:FindFirstChild("RainbowGodSword") or not char:FindFirstChild("VoidLordSword") then 
 pcall(function()
@@ -4498,7 +4500,7 @@ insSet(leftleg,"CFrame",leftlegcf)
 
 if UsePlayerBody then
 pcall(function()
-local char=ws[lp.Name]
+local char=ws[YourName]
 local LeftLeg=char["Left Leg"]
 local LeftArm=char["Left Arm"]
 local Head=char["Head"]
@@ -4511,38 +4513,39 @@ local sine15=sine*15
 local sin=math.sin 
 local v3=Vector3.new
 local idlerv=v3(sin(sine15),sin(sine15+1.0471975511965976),sin(sine15+2.0943951023931953))
+local idleoff=idlerv*0.0156402587890625 
 if Root then
-insSet(Root,"CFrame",rootpart.CFrame)
+insSet(Root,"CFrame",rootpart.CFrame*idleoff)
 insSet(Root,"AssemblyAngularVelocity",idlerv)
 insSet(Root,"AssemblyLinearVelocity",v3(0,25.01,0))
 end
 if Torso then
-insSet(Torso,"CFrame",torso.CFrame)
+insSet(Torso,"CFrame",torso.CFrame*idleoff)
 insSet(Torso,"AssemblyAngularVelocity",idlerv)
 insSet(Torso,"AssemblyLinearVelocity",v3(0,25.01,0))
 end
 if Head then 
-insSet(Head,"CFrame",head.CFrame)
+insSet(Head,"CFrame",head.CFrame*idleoff)
 insSet(Head,"AssemblyAngularVelocity",idlerv)
 insSet(Head,"AssemblyLinearVelocity",v3(0,25.01,0))
 end
 if RightArm then
-insSet(RightArm,"CFrame",rightarm.CFrame)
+insSet(RightArm,"CFrame",rightarm.CFrame*idleoff)
 insSet(RightArm,"AssemblyAngularVelocity",idlerv)
 insSet(RightArm,"AssemblyLinearVelocity",v3(0,25.01,0))
 end
 if LeftArm then 
-insSet(LeftArm,"CFrame",leftarm.CFrame)
+insSet(LeftArm,"CFrame",leftarm.CFrame*idleoff)
 insSet(LeftArm,"AssemblyAngularVelocity",idlerv)
 insSet(LeftArm,"AssemblyLinearVelocity",v3(0,25.01,0))
 end 
 if RightLeg then
-insSet(RightLeg,"CFrame",rightleg.CFrame)
+insSet(RightLeg,"CFrame",rightleg.CFrame*idleoff)
 insSet(RightLeg,"AssemblyAngularVelocity",idlerv)
 insSet(RightLeg,"AssemblyLinearVelocity",v3(0,25.01,0))
 end
 if LeftLeg then
-insSet(LeftLeg,"CFrame",leftleg.CFrame)
+insSet(LeftLeg,"CFrame",leftleg.CFrame*idleoff)
 insSet(LeftLeg,"AssemblyAngularVelocity",idlerv)
 insSet(LeftLeg,"AssemblyLinearVelocity",v3(0,25.01,0))
 end
@@ -5499,10 +5502,11 @@ jj:Disconnect()
 jj=nil
 return
 end
+pcall(function()
 ForRaycast()
 rotate=rotate == true
 local char=nil
-local char1=ws[lp.Name]
+--local char1=ws[YourName]
 for _,c in next,exclude do 
 pcall(function()
 if not game.Players:FindFirstChild(c) then 
@@ -5535,6 +5539,7 @@ humroot.CanCollide=false
 humroot.Transparency=1
 end)
 end)
+end)
 end
 
 
@@ -5542,11 +5547,11 @@ PosRoot(0)
 
 
 
---local righead=ws:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild(HTarget).Handle
+--local righead=ws:FindFirstChild(YourName):FindFirstChild(HTarget).Handle
 function WhatIsThis()
 tspawn(function()
 pcall(function()
-for _,c in ws[lp.Name]:GetChildren() do 
+for _,c in ws[YourName]:GetChildren() do 
 if c:IsA("Accessory") then
 local ostj=.1
 repeat
@@ -5569,7 +5574,7 @@ end
 
 
 local scann={}
-for _,a in ws[lp.Name]:GetChildren() do 
+for _,a in ws[YourName]:GetChildren() do 
 if a:IsA("Accessory") then 
 local f=a:Clone()
 tinsert(scann,f)
@@ -5583,7 +5588,7 @@ function god()
 if fuhyu then fuhyu:Disconnect() fuhyu=nil end
 --if not Hatdrop then oswait(.1) end
 local accessoriesthataretracked={}
-local char=ws[lp.Name]
+local char=ws[YourName]
 for _,t in char:GetChildren() do 
 if t:IsA("Accessory") and Running then 
 accessoriesthataretracked[t]=true
@@ -5626,16 +5631,18 @@ xd.Completed:Connect(function()lkj.Enabled=false  end)
 local ostj=.1
 repeat
 --c.Handle.Position=rootpart1.Position+Vector3.new(0,0,-5)
-local sine15=sine*15
+local sine15=osclock()*15
 local sin=math.sin 
 local v3=Vector3.new
 local idlerv=v3(sin(sine15),sin(sine15+1.0471975511965976),sin(sine15+2.0943951023931953))
 local idleoff=idlerv*0.0015 
 c.Handle.AssemblyAngularVelocity=idlerv
 c.Handle.CFrame=c.Handle.CFrame*cf(idleoff,idleoff,idleoff)
+c.Handle.Anchored=true
 oswait(.1)
+c.Handle.Anchored=false
 ostj+=.1
-until ostj>=5
+until ostj>=1
 end)
 end)
 end
@@ -5677,8 +5684,6 @@ end
 god()
 ck=lp.CharacterAdded:Connect(function()
 if not Running then ck:Disconnect() return end
-repeat oswait(game.Players.LocalPlayer:GetNetworkPing()) 
-until not IsHatDropped
 if Hatdrop then oswait(plrs.RespawnTime+.1) end
 god()
 end)
@@ -6822,8 +6827,8 @@ up:Disconnect()
 else 
 pcall(function()
 for _,s in next,swords do
-if ws[lp.Name]:FindFirstChild(s) then 
-local sw=ws[lp.Name]:FindFirstChild(s).Handle
+if ws[YourName]:FindFirstChild(s) then 
+local sw=ws[YourName]:FindFirstChild(s).Handle
 if not sw:FindFirstChildOfClass("Trail") then 
 local att0=i("Attachment")
 local att1=i("Attachment")
@@ -6838,8 +6843,8 @@ end
 end)
 pcall(function()
 for _,s in next,swords do
-if ws[lp.Name]:FindFirstChild(s) then 
-local sw=ws[lp.Name]:FindFirstChild(s).Handle
+if ws[YourName]:FindFirstChild(s) then 
+local sw=ws[YourName]:FindFirstChild(s).Handle
 if  sw:FindFirstChildOfClass("Trail")  then 
 
 insSet(sw:FindFirstChildOfClass("Trail"),"Color",cs({csk(0,pcolor.Value),csk(1,scolor.Value)}))
@@ -7242,7 +7247,7 @@ end
 modet.TextColor3=currentrgb1
 modet.TextStrokeColor3=currentrgb
 pcall(function()
-for _,c in ws[lp.Name]:GetDescendants() do
+for _,c in ws[YourName]:GetDescendants() do
 if c:IsA("Trail") then 
 c.Color=cs({
   csk(0,currentrgb1),
@@ -7348,7 +7353,7 @@ end
 modet.TextColor3=col1
 modet.TextStrokeColor3=currentrgb
 pcall(function()
-for _,c in ws[lp.Name]:GetDescendants() do
+for _,c in ws[YourName]:GetDescendants() do
 if c:IsA("Trail") then 
 c.Color=cs({
   csk(0,col1),
@@ -7428,7 +7433,7 @@ else
 modet.TextColor3=rgb(255,255,255)
 end
 pcall(function()
-for _,c in ws[lp.Name]:GetDescendants() do
+for _,c in ws[YourName]:GetDescendants() do
 if c:IsA("Trail") then 
 c.Color=cs({
   csk(0,col1),
@@ -14094,7 +14099,7 @@ Light.Range=2+sound.PlaybackLoudness/25
 
 
 
-local char=game.Players.LocalPlayer.Character
+local char=ws[YourName]
 if char:FindFirstChild("VoidLordSword") then 
 --TweenFunction(Orb,0,"pos",v3(char["VoidLordSword"].Handle.Position.X,char["VoidLordSword"].Handle.Position.Y,char["VoidLordSword"].Handle.Position.Z)):Play()
 Orb.CFrame=char["VoidLordSword"].Handle.CFrame
@@ -15877,8 +15882,8 @@ end
 pcall(function()
 local char=game.Players.LocalPlayer.Character
 if IsHatDropped then
-ws[lp.Name].PrimaryPart=nil
-for _,d in ws[lp.Name]:GetChildren() do 
+ws[YourName].PrimaryPart=nil
+for _,d in ws[YourName]:GetChildren() do 
 if d:IsA("BasePart") and Hatdrop and not IsHatDropped then 
 local h=d
 for _,x in h:GetChildren() do 
@@ -15915,7 +15920,7 @@ local Fall=Falling
  
  
  
- hitfloor,posfloor=rayCast(rootpart.Position,(CFrame.new(rootpart.Position,rootpart.Position - Vector3.new(0,3.5,0))).lookVector,4,ws[lp.Name])
+ hitfloor,posfloor=rayCast(torso.Position,(CFrame.new(torso.Position,torso.Position - Vector3.new(0,3.5,0))).lookVector,4,ws[YourName])
 --print(hitfloor)
 
 
@@ -18326,22 +18331,41 @@ local s=scolor
 local t=current
 local ld=sound.PlaybackLoudness
 local clp=CLerp
-
-
 if t>=0 and t<=7 then 
 local h1=clamp(ld,0,random(30,100))
 local sin2=clamp(-25*tan(sine*20.5),0,random(random(30,150),255))
+local g2=clamp(sound.PlaybackLoudness/900.5,0,1)/random(5,10)
+local g1=clamp(sound.PlaybackLoudness/2.5,0,255)
+for _,v in next,statics do
+insSet(v,"Visible",true)
+insSet(v,"ImageColor3",scolor.Value)
+insSet(v,"Position",u2(0,random(-5,5),0,random(-5,5)))
+--insSet(v,"BackgroundTransparency",.25)
+insSet(v,"ImageTransparency",1-g2)
+insSet(v,"ImageColor3",pcolor.Value)
+end
 if random(.1,1)>.5 then 
 is(s,"Value",clp(ig(s,"Value"),rgb(sin2,sin2,sin2),1))
-is(p,"Value",clp(ig(p,"Value"),rgb(0,h1,h1),.75))
+is(p,"Value",clp(ig(p,"Value"),rgb(0,h1,h1),.1))
 else
-is(s,"Value",clp(ig(s,"Value"),rgb(0,h1,h1),.75))
+is(s,"Value",clp(ig(s,"Value"),rgb(0,h1,h1),.1))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),1)) 
 end
 ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>=7 and t<=20.3 then 
 local h1=clamp(ld,0,random(30,100))
 local h2=clamp(ld,0,random(30,100))
+local g=clamp(sound.PlaybackLoudness/5.5,0,25)
+local g2=clamp(sound.PlaybackLoudness/900.5,0,1)/10
+local g1=clamp(sound.PlaybackLoudness/2.5,0,255)
+for _,v in next,statics do
+insSet(v,"Visible",true)
+insSet(v,"ImageColor3",scolor.Value)
+insSet(v,"Position",u2(0,random(-5,5),0,random(-5,5)))
+--insSet(v,"BackgroundTransparency",.25)
+insSet(v,"ImageTransparency",1-g2)
+insSet(v,"ImageColor3",pcolor.Value)
+end
 local sin2=clamp(-25*tan(sine*20.5),0,random(random(30,150),255))
 if random(.1,2)>1 then 
 is(s,"Value",clp(ig(s,"Value"),rgb(sin2,sin2,sin2),1))
@@ -18366,6 +18390,17 @@ ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Michroma
 elseif t>=22 and t<=35 then 
 local h1=clamp(ld,0,random(30,100))
 local h2=clamp(ld,0,random(30,100))
+local g=clamp(sound.PlaybackLoudness/5.5,0,25)
+local g2=clamp(sound.PlaybackLoudness/900.5,0,1)/7.5
+local g1=clamp(sound.PlaybackLoudness/2.5,0,255)
+for _,v in next,statics do
+insSet(v,"Visible",true)
+insSet(v,"ImageColor3",scolor.Value)
+insSet(v,"Position",u2(0,random(-5,5),0,random(-5,5)))
+--insSet(v,"BackgroundTransparency",.25)
+insSet(v,"ImageTransparency",1-g2)
+insSet(v,"ImageColor3",pcolor.Value)
+end
 local sin2=clamp(-25*tan(sine*35.5),0,random(random(30,150),255))
 if random(.1,2)>1 then 
 is(s,"Value",clp(ig(s,"Value"),rgb(sin2,sin2,sin2),1))
@@ -18390,6 +18425,17 @@ ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Michroma
 elseif t>=36.1 and t<= 79.7 then 
 local h1=clamp(ld,0,random(30,100))
 local h2=clamp(ld,0,random(30,100))
+local g=clamp(sound.PlaybackLoudness/5.5,0,25)
+local g2=clamp(sound.PlaybackLoudness/900.5,0,1)/5.5
+local g1=clamp(sound.PlaybackLoudness/2.5,0,255)
+for _,v in next,statics do
+insSet(v,"Visible",true)
+insSet(v,"ImageColor3",scolor.Value)
+insSet(v,"Position",u2(0,random(-5,5),0,random(-5,5)))
+--insSet(v,"BackgroundTransparency",.25)
+insSet(v,"ImageTransparency",1-g2)
+insSet(v,"ImageColor3",pcolor.Value)
+end
 local sin2=clamp(-25*tan(sine*35.5),0,random(random(0,150),255))
 if random(.1,3)>1.5 then 
 is(s,"Value",clp(ig(s,"Value"),rgb(sin2,sin2,sin2),1))
@@ -18400,13 +18446,24 @@ is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),1))
 end
 ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
 elseif t>= 79.7 then 
+local g=clamp(sound.PlaybackLoudness/5.5,0,25)
+local g2=clamp(sound.PlaybackLoudness/900.5,0,1)/random(5,10)
+local g1=clamp(sound.PlaybackLoudness/2.5,0,255)
+for _,v in next,statics do
+insSet(v,"Visible",true)
+insSet(v,"ImageColor3",scolor.Value)
+insSet(v,"Position",u2(0,random(-5,5),0,random(-5,5)))
+--insSet(v,"BackgroundTransparency",.25)
+insSet(v,"ImageTransparency",1-g2)
+insSet(v,"ImageColor3",pcolor.Value)
+end
 local h1=clamp(ld,0,random(30,100))
 local sin2=clamp(-25*tan(sine*20.5),0,random(random(30,150),255))
 if random(.1,1)>.5 then 
 is(s,"Value",clp(ig(s,"Value"),rgb(sin2,sin2,sin2),1))
-is(p,"Value",clp(ig(p,"Value"),rgb(0,h1,h1),.75))
+is(p,"Value",clp(ig(p,"Value"),rgb(0,h1,h1),.1))
 else
-is(s,"Value",clp(ig(s,"Value"),rgb(0,h1,h1),.75))
+is(s,"Value",clp(ig(s,"Value"),rgb(0,h1,h1),.1))
 is(p,"Value",clp(ig(p,"Value"),rgb(sin2,sin2,sin2),1)) 
 end
 ChangeAndRecolor("Zionihilic",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),p.Value,s.Value,false,false)
@@ -18835,12 +18892,12 @@ Ring.C0=cf(0,.6,.5)*angles(rad(0),rad(0),rad(0))
 Ring1.C0=cf(0,.6,.5)*angles(rad(0),rad(0),rad(0))
 Extra_Part2.C0=Lerp(Extra_Part2.C0,cfMul(cf(0,-0.5+0,-2+0),angles(0,0,0)),deltaTime) 
 Extra_Part2.Part1=getPart("Torso")
-AttachSword(SWAtt2,wingPart2,function() s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-0.5+0,3+1*sin(sine*2+0)+0,-3.6+1*sin(sine*2+0)+0),angles(0,1.5707963267948966+0,2.2689280275926285+Spinny/15+Boost/12.5)),deltaTime)  end)
+AttachSword(SWAtt2,wingPart2,function() s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-0.5+0,3+1*sin(sine*2+0)+0,-3.6+1*sin(sine*2+0)+0),angles(0,1.5707963267948966+0,2.2689280275926285+Spinny/15+Boost/40.5)),deltaTime)  end)
 Extra_Part1.C0=Lerp(Extra_Part1.C0,cfMul(cf(0,0.5+0,-1+0),angles(0,0,0)),deltaTime)  
 AttachSword(SWAtt3,wingPart1,function() s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-1+0,3+0,-3.6+0),angles(0,1.5707963267948966+0,-2.443460952792061+rad(ClockTicky))),deltaTime)  end)
 AttachSword(SWAtt1,wingPart1,function() s1_1.C0=Lerp(s1_1.C0,cfMul(cf(-1+0,3+0,-3.6+0),angles(0,1.5707963267948966+0,0.6981317007977318+rad(ClockTicky))),deltaTime)  end)
 --Extra_Part2.C0=Lerp(Extra_Part2.C0,cfMul(cf(1*sin(sine*2+0)+0,-3+-2*cos(sine*1+0)+0,-3+0.5*sin(sine*2+0.75)+0),angles(-2.2689280275926285+0,0,0)),deltaTime)  
-AttachSword(SWAtt4,wingPart2,function() s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-0.5+0,3+1*sin(sine*2+0)+0,-3.6+1*sin(sine*2+0)+0),angles(0,1.5707963267948966+0,-0.8726646259971648+Spinny/15+Boost/12.5)),deltaTime)  end)
+AttachSword(SWAtt4,wingPart2,function() s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-0.5+0,3+1*sin(sine*2+0)+0,-3.6+1*sin(sine*2+0)+0),angles(0,1.5707963267948966+0,-0.8726646259971648+Spinny/15+Boost/50.5)),deltaTime)  end)
 LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0.5 * sin((sine+4)*-8)),angles(0,-1.5707963267948966+0.08726646259971647*sin((sine+8)*-8),0.5235987755982988*sin(sine*-8))),deltaTime) RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1+0.25*sin((sine+8)*8),-0.25+0.5*sin(sine*-8)),angles(0,1.5707963267948966+0.08726646259971647*sin(sine*-8),0.17453292519943295+0.5235987755982988*sin(sine*8))),deltaTime) LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1+0.25*sin((sine+8)*-8),-0.25+0.5*sin(sine*8)),angles(0,-1.5707963267948966+0.08726646259971647*sin(sine*-8),-0.17453292519943295+0.5235987755982988*sin(sine*8))),deltaTime) RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0,0.1 * sin(sine*16),0),angles(-1.9198621771937625,0,3.141592653589793+0.08726646259971647*sin(sine*8))),deltaTime) Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1+0.05*sin(sine*16),0),angles(-1.3962634015954636,0.04363323129985824*sin(sine*8),3.141592653589793+0.08726646259971647*sin(sine*-8))),deltaTime) RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0.5 * sin((sine+4)*8)),angles(0,1.5707963267948966+0.08726646259971647*sin((sine+8)*-8),0.5235987755982988*sin(sine*-8))),deltaTime) 
 elseif Mode=="Pandemonium" then
 
@@ -19956,7 +20013,7 @@ if Running then
 Running=false
 tspawn(function()
 Respawn()
-repeat Respawn() twait() until ws[lp.Name].Humanoid.Health>15
+repeat Respawn() twait() until ws[YourName].Humanoid.Health>15
 end)
 end
 wait(.1)
@@ -19999,7 +20056,7 @@ ConRes=game.Players.LocalPlayer.CharacterAdded:Connect(function()
 wait(1)
 ws.CurrentCamera.CameraType="Custom"
 wait(2)
-ws.CurrentCamera.CameraSubject=ws[lp.Name]:WaitForChild("Humanoid")
+--ws.CurrentCamera.CameraSubject=ws[YourName]:WaitForChild("Humanoid")
 repeat ws.CurrentCamera.CameraType="Custom" wait() until game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
 ConRes:Disconnect()
 end)
