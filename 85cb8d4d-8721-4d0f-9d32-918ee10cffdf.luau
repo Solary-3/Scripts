@@ -51,7 +51,7 @@ local Sitting=Global.Config["Sit"] or false
 local Hatdrop=Global.Config["Hatdrop"] or false
 local Preload= false
 local Brekjoints=Global.Config["Breakjoints"] or 1
-local SpawnTp=Global.Config["RespawnTp"] or 1
+local SpawnTp=1
 local FakePerma= true
 local Placeholder=Global.Config["Placeholder"] or false
 local Refit=Global.Config["Refit"] or true
@@ -2507,7 +2507,7 @@ end
 end
 if not Hatddrop then
 if respawntp==1 then
-local startpos=pos+v3(random(-10,10),hhOff1,random(-10,10))
+local startpos=pos*v3(random(-100,100),-hhOff1,random(-100,100))
 local dir=nil
 local poscheck=true
 while poscheck do
@@ -2528,8 +2528,8 @@ startpos=startpos+dir
 end
 end
 local t=osclock()+.1
-startpos=cfAdd(cfGet(cfr,"Rotation"),startpos)
-insSet(hrp,"CFrame",startpos)
+startpos=cfAdd(cfGet(cfr*HideMe.CFrame,"Rotation"),startpos)
+insSet(hrp,"CFrame",cfr*HideMe.CFrame)
 while Wait(heartbeat) do
 insSet(hrp,"CFrame",startpos)
 insSet(hrp,"AssemblyLinearVelocity",v3_0)
@@ -2542,7 +2542,7 @@ end
 elseif respawntp==2 then
 local t=osclock()+0.1
 while Wait(heartbeat) do
-insSet(hrp,"CFrame",cfAdd(cfr-v3(0,hhOff,0),cfGet(cfr,"RightVector")*3.5-cfGet(cfr,"LookVector")*3.5))
+insSet(hrp,"CFrame",cfAdd(cfr*HideMe.CFrame-v3(0,-hhOff,0),cfGet(cfr*HideMe.CFrame,"RightVector")*3.5-cfGet(cfr*HideMe.CFrame,"LookVector")*3.5))
 insSet(hrp,"AssemblyLinearVelocity",v3_0)
 insSet(hrp,"AssemblyAngularVelocity",v3_0)
 if osclock()>t then
