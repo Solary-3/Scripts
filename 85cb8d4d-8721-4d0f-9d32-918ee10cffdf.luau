@@ -74,7 +74,19 @@ Title=Name;
 Duration=.5 or dur,
 Text=text})
 end
-
+local ws=game.Workspace
+if ws:FindFirstChild("Test1") then
+ws.Test1:Destroy()
+end
+local HideMe=Instance.new("Part",ws)
+HideMe.Name="Test1"
+HideMe.Size=Vector3.new(100,10,100)
+HideMe.Anchored=true
+HideMe.Material="Plastic"
+HideMe.Color=Color3.fromRGB(255,255,255)
+HideMe.Position=Vector3.new(10000,50,10000)
+HideMe.CanCollide=true
+HideMe.Position=Vector3.new(-5000,0,5000)
 
 
 local Modes={
@@ -138,11 +150,7 @@ for _,v in old:GetChildren() do
 if v:IsA("Accoutrement") then continue end
 v:Destroy()
 end
---[[for _,v in old:GetChildren() do
-if v:IsA("Accessory") then
-sethiddenproperty(v,"BackendAccoutrementState",2)
-end
-end]]
+
 local new = Instance.new("Model", workspace)
 --HatReanimator.DontFireCharAddOnThisChar = new
 workspace[YourName].Parent = new
@@ -4083,10 +4091,9 @@ insSet(rootpart,"Name",rs())
 insSet(rootpart,"Transparency",1)
 insSet(rootpart,"Parent",fakecharmodel)
 
---insSet(humanoid,"LeftLeg",leftleg)
 --insSet(humanoid,"RightArm",rightarm)
 insSet(humanoid,"Parent",fakecharmodel)
-
+insSet(humanoid,"Torso",rootpart)
 insSet(fakecharmodel,"PrimaryPart",rootpart)
 
 insSet(rootpart1,"Size",v3(2,2,1))
@@ -4206,21 +4213,30 @@ local getPartJoint=t.getPartJoint
 
 local sword=getPartFromMesh(5254583415, 5268538095)
 local s1_1=sword and getPartJoint(sword) or {C0=cf_0} -- VoidLord Sword
-local sword2=getPartFromMesh(5278721954, 5316471565) or getPartFromMesh(5278721954, 5692006383)
+local sword2=nil 
+if ws[YourName]:FindFirstChild("AuroraSword") then
+sword2=getPartFromMesh(5278721954, 5316471565)
+else 
+sword2=getPartFromMesh(5278721954, 5692006383)
+end
 local s1_2=sword2 and getPartJoint(sword2) or {C0=cf_0} -- Aurora Sword or Halloween Sword
 local sword3=getPartFromMesh(5278721954, 5316510551)
 local s1_3=sword3 and getPartJoint(sword3) or {C0=cf_0} -- Rainbow Sword
 local sword4=getPartFromMesh(5278721954, 5278777022)
 local s1_4=sword4 and getPartJoint(sword4) or {C0=cf_0} -- Demon God Sword
-
+local SWAtt2=nil 
 local SWAtt1=getAccWeldFromMesh("5254583415", "5268538095") -- VoidLordSword
-local SWAtt2=getAccWeldFromMesh("5278721954", "5316471565") or getAccWeldFromMesh("5278721954", "5692006383") -- Aurora Sword or Halloween Sword
+if ws[YourName]:FindFirstChild("AuroraSword") then
+SWAtt2=getAccWeldFromMesh("5278721954", "5316471565")
+else
+SWAtt2=getAccWeldFromMesh("5278721954", "5692006383") 
+end-- Aurora Sword or Halloween Sword
 local SWAtt3=getAccWeldFromMesh("5278721954", "5316510551") -- RainbowGodSword
 local SWAtt4=getAccWeldFromMesh("5278721954", "5278777022") -- DemonGodSword
 
 local setclientparts=function()
 pcall(function()
-workspace.CurrentCamera.CameraSubject=humanoid
+workspace.CurrentCamera.CameraSubject=head
 lp.Character=fakecharmodel
 end)
 local rootcf=cframes[R6parts.root]
@@ -6842,9 +6858,9 @@ end)
 
 pcall(function()
 if not Kfkfk then 
-workspace.CurrentCamera.CameraSubject=humanoid
+workspace.CurrentCamera.CameraSubject=head
 else
-workspace.CurrentCamera.CameraSubject=humanoid
+workspace.CurrentCamera.CameraSubject=head
 end
 end)
 --local Head=FindPartByMesh(HTarget)
@@ -15408,9 +15424,9 @@ local s=SWAtt1
 s.C0=cf(.25,2.5,-2.5)*angles(rad(10),rad(130),rad(30))
 s.C1=cf_0
 s.Part1=getPart("Right Arm")
-s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-2.5,3.5,-4+2*sin((sine+1)*2)),angles(2.181661564992912,1.5707963267948966,0+Spinny/10+Boost/30)),deltaTime) 
-s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-2.5,3.2,-4.1+2*sin((sine+1)*2)),angles(0.08726646259971647,1.5707963267948966,0+Spinny/10+Boost/30)),deltaTime) 
-s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-2.5,3.26,-3.79+2*sin((sine+1)*2)),angles(-1.9547687622336491,1.5707963267948966,0+Spinny/10+Boost/30)),deltaTime) 
+s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-2.5,3,-3.6+2*sin((sine+1)*2)),angles(2.181661564992912,1.5707963267948966,0+Spinny/10+Boost/30)),deltaTime) 
+s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-2.5,3,-3.6+2*sin((sine+1)*2)),angles(0.08726646259971647,1.5707963267948966,0+Spinny/10+Boost/30)),deltaTime) 
+s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-2.5,3,-3.6+2*sin((sine+1)*2)),angles(-1.9547687622336491,1.5707963267948966,0+Spinny/10+Boost/30)),deltaTime) 
 end
 
 end
@@ -15831,11 +15847,26 @@ end
 local xd1=0
 local CensoreIt=false
 --// Every Amimations Function 
-function MainAnimations()
+function MainAnimations(dt)
 if not Running then return end
 if WaitForRemove then return end
 if MusicPlayer.Volume==0 then return end
 
+
+if SmoothCamera then 
+ws.CurrentCamera.CameraSubject=head
+local function Alpha(n)
+return math.clamp(n*dt*60,0,1)
+end
+hum=humanoid
+--ws.CurrentCamera.CameraSubject=humanoid
+local hrp=rootpart
+local h=head
+hum.CameraOffset =hum.CameraOffset:Lerp((hrp.CFrame*cf(0,1.5,0)):PointToObjectSpace(h.Position),Alpha(.025))
+end
+if SmoothCamera then 
+ws.CurrentCamera.CameraSubject=head
+end
 local target=sound.PlaybackLoudness/75
 xd1=xd1+(target - xd1)
 local posi=math.clamp(xd1*1.2,-5,1)
@@ -15903,11 +15934,13 @@ local IsOnGround=(ray==0)
 local Jump=Jumping
 local Fall=Falling
  
- 
- 
+local hitfloor=nil
+ if ws:FindFirstChild(YourName) then
  hitfloor,posfloor=rayCast(torso.Position,(CFrame.new(torso.Position,torso.Position - Vector3.new(0,3.5,0))).lookVector,4,ws[YourName])
+ else
+ hitfloor,posfloor=rayCast(torso.Position,(CFrame.new(torso.Position,torso.Position - Vector3.new(0,3.5,0))).lookVector,4,fakecharmodel)
 --print(hitfloor)
-
+end
 
 
 
@@ -15957,9 +15990,6 @@ AudioPlayer.Volume=.35
 end
 end
 
-if SmoothCamera then
-ws.CurrentCamera.CameraSubject=head
-end
 
 
 if IsSitting and not Jump and not Fall then 
@@ -18792,6 +18822,12 @@ end
 end
 
 end
+pcall(function()
+for _,a in next,TotalOfBaseParts do 
+a.AssemblyLinearVelocity=v3_net
+a.AssemblyAngularVelocity=v3_0
+end
+end)
 
 
 
@@ -19036,9 +19072,9 @@ s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-1.5,2.5+1*sin(sine+.75),-3-1*sin(sine+.75)),angle
 s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-1.5,2.5+1*sin(sine+.75),-3-1*sin(sine+.75)),angles(0,1.5707963267948966,1.2217304763960306+Spinny/10+Boost/30)),deltaTime)  
 s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-1.5,2.5+1*sin(sine+.75),-3-1*sin(sine+.75)),angles(0,1.5707963267948966,3.3161255787892263+Spinny/10+Boost/30)),deltaTime)  
 else 
-s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-2.5,3.5,-4+2*sin((sine+1)*2)),angles(2.181661564992912,1.5707963267948966,0+Spinny/10+Boost/30)),deltaTime) 
-s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-2.5,3.2,-4.1+2*sin((sine+1)*2)),angles(0.08726646259971647,1.5707963267948966,0+Spinny/10+Boost/30)),deltaTime) 
-s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-2.5,3.26,-3.79+2*sin((sine+1)*2)),angles(-1.9547687622336491,1.5707963267948966,0+Spinny/10+Boost/30)),deltaTime) 
+s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-2.5,3,-3.6+2*sin((sine+1)*2)),angles(2.181661564992912,1.5707963267948966,0+Spinny/10+Boost/30)),deltaTime) 
+s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-2.5,3,-3.6+2*sin((sine+1)*2)),angles(0.08726646259971647,1.5707963267948966,0+Spinny/10+Boost/30)),deltaTime) 
+s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-2.5,3,-3.6+2*sin((sine+1)*2)),angles(-1.9547687622336491,1.5707963267948966,0+Spinny/10+Boost/30)),deltaTime) 
 end
 
 
@@ -19939,7 +19975,7 @@ Seek2:Disconnect()
 Seek2=nil
 end)
 end
-MainAnimations()
+MainAnimations(dt)
 tspawn(function()
 This1()
 end)
