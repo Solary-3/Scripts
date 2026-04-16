@@ -777,7 +777,7 @@ e19.Transparency=ns({
   nsk(.5,.35),
   nsk(1,1),
 })
-e19:Emit(sound.PlaybackLoudness/750)
+e19:Emit(sound.PlaybackLoudness/900)
 local g=mrandom(1,5)
 if g==3 then 
 sgui.AlwaysOnTop=true

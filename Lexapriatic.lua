@@ -198,6 +198,7 @@ local lol2=random(10,20)
 local ypos=random(10,30)
 local rpos=random(-50,50)
 local rpos1=random(-50,50)
+
 if t>29.707 and t<=384.316 then
 block1("Out",1.5,v3(10,10,10),v3(30,75,30),Floor.CFrame*cf(random(-50,50),1,random(-50,50))*angles(random(-50,50),rad(random(-50,50)),rad(random(-50,50))),scolor.Value,0,Floor.CFrame*cf(random(-50,50),lol1,random(-50,50))*angles(random(-50,50),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,15,"ForceField")
 block1("Out",1.5,v3(10,10,10),v3(30,75,30),Floor.CFrame*cf(random(-50,50),1,random(-50,50))*angles(random(-50,50),rad(random(-50,50)),rad(random(-50,50))),pcolor.Value,0,Floor.CFrame*cf(random(-50,50),lol1,random(-50,50))*angles(random(-50,50),rad(random(-50,50)),rad(random(-50,50))),true,scolor.Value,true,15,"ForceField")
@@ -220,7 +221,13 @@ block1("Out",1.5,v3(10,10,10),v3(30,75,30),Floor.CFrame*cf(random(-50,50),1,rand
 block1("In",1,v3(1,1,1),v3(1,1,1),Floor.CFrame*cf(random(-50,50),1,random(-50,50))*angles(0,rad(0),rad(0)),scolor.Value,0,Floor.CFrame*cf(random(-50,50),ypos,random(-50,50))*angles(0,rad(0),rad(0)),true,pcolor.Value,true,1,"Neon")
 sphere1("Out",1,v3(.1,.1,.1),v3(20,.1,.1),Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),scolor.Value,.5,Floor.CFrame*cf(rpos1,ypos,rpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,true,0,"Neon")
 end
+if t>354.25 and t<380.508 then
+local spcf=rootpart1.CFrame*cf(10*cos(sine*1),10+5*sin(sine*3.5),-10*cos(sine*5))
+local spcf1=rootpart1.CFrame*cf(-10*cos(sine*1),10-5*sin(sine*3.5),10*cos(sine*5))
+sphere1("Out",5,v3(.1,.1,.1),v3(hhh/2,hhh/2,hhh/2),spcf,scolor.Value,0,spcf,true,pcolor.Value,true,50)
+sphere1("Out",5,v3(.1,.1,.1),v3(hhh/2,hhh/2,hhh/2),spcf1,pcolor.Value,0,spcf1,true,scolor.Value,true,50)
 
+end
 --random(-50,50)
 local f=PartFXFloor
 local g=hhh/4
