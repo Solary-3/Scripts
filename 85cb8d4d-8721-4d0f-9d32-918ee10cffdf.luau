@@ -5284,12 +5284,12 @@ local Bar1=container1.Bar1
 local MusicPlayer=SoundService:WaitForChild("GlitcherAudioPlayer")
 Bar.Parent=nil
 Bar1.Parent=nil
-local marker=20
+local marker=20+basgui.AbsoluteSize.X/400
 local startfreq=0
 local endfreq=7.5
 
-frame.Position=UDim2.new(0,-50,0,0)
-lolframe.Position=u2(1,50,0,0)
+frame.Position=UDim2.new(0,-50+basgui.AbsoluteSize.X/250,0,0)
+lolframe.Position=u2(1,50-basgui.AbsoluteSize.X/250,0,0)
 
 
 local h76=UDim2.new(0,45,.35,0)
