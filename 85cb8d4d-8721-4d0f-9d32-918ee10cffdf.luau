@@ -115,7 +115,7 @@ local Modes={
   {Name="Dimension",WingAnim="Dimension",MusicTitle="Dimension",Music="Dimension",HHeight=10,Author="Creo",ActualName="Enterdiverse"},
   {Name="Tachyon",WingAnim="Tachyon",MusicTitle="Lux",Music="Lux",HHeight=5,Author="Nhato",ActualName="Trachyn"},
   {Name="Serenity",WingAnim="Serenity",MusicTitle="Scarlet Night",Music="Scarlet Night",HHeight=0,Author="Fractal Dreamers",ActualName="Serenity"},
-  {Name="Torment",WingAnim="Torment",MusicTitle="explicit massacre over the body of a dead god",Music="massacre",HHeight=0,Author="End Of The World",ActualName="Afrodebiator"},
+  {Name="Torment",WingAnim="Torment",MusicTitle="explicit massacre over the body of a dead god",Music="massacre",HHeight=0,Author="End Of The World",ActualName="Ardact"},
   {Name="Pandemonium",WingAnim="Pandemonium",MusicTitle="Pandemonium",Music="Pandemonium",HHeight=0,Author="t+pazolite & Laur",ActualName="Avarthus"},
   {Name="Lexapriatic",WingAnim="Lexapriatic",MusicTitle="Lexapro Doesn't Work",Music="Lexapro Doesn't Work",HHeight=12,Author="Cythoni",ActualName="Arius"},
   {Name="Restless",WingAnim="Restless",MusicTitle="Restless",Music="Restless",HHeight=0,Author="Creo",ActualName="Restless"},
@@ -5284,7 +5284,8 @@ local Bar1=container1.Bar1
 local MusicPlayer=SoundService:WaitForChild("GlitcherAudioPlayer")
 Bar.Parent=nil
 Bar1.Parent=nil
-local marker=20+basgui.AbsoluteSize.X/400
+local marker=20+math.round(basgui.AbsoluteSize.X/450)
+print(math.round(basgui.AbsoluteSize.X/450))
 local startfreq=0
 local endfreq=7.5
 
