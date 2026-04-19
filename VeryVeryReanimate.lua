@@ -30,7 +30,7 @@ local Clear = table.clear
 local Type = type
 
 local Global = (getgenv and getgenv()) or shared
-
+local DisScripts=true
 if not Global.GelatekHubConfig then Global.GelatekHubConfig = {} end
 local PermanentDeath = Global.GelatekHubConfig["Permanent Death"]  or true
 local CollideFling = Global.GelatekHubConfig["Torso Fling"]  or true
@@ -172,6 +172,13 @@ local Figure = INew("Model"); do
 	local Health = INew("Script")
 	Health.Name = "Health"
 	Health.Parent = Figure
+	if DisScripts then
+	  Animate.Enabled=false
+	  Animate.Disbaled=true
+	  else 
+	  Animate.Enabled=true
+	  Animate.Disbaled=false
+	  end
 	Attachments[1].Name = "FaceCenterAttachment"; Attachments[1].Position = V3new(0, 0, 0)
 	Attachments[2].Name = "FaceFrontAttachment"; Attachments[2].Position = V3new(0, 0, -0.6)
 	Attachments[3].Name = "HairAttachment"; Attachments[3].Position = V3new(0, 0.6, 0)
