@@ -174,10 +174,10 @@ local Figure = INew("Model"); do
 	Health.Parent = Figure
 	if DisScripts then
 	  Animate.Enabled=false
-	  Animate.Disbaled=true
+	  Animate.Disabled=true
 	  else 
 	  Animate.Enabled=true
-	  Animate.Disbaled=false
+	  Animate.Disabled=false
 	  end
 	Attachments[1].Name = "FaceCenterAttachment"; Attachments[1].Position = V3new(0, 0, 0)
 	Attachments[2].Name = "FaceFrontAttachment"; Attachments[2].Position = V3new(0, 0, -0.6)
