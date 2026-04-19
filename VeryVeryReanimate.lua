@@ -157,7 +157,9 @@ local Figure = INew("Model"); do
 	local Humanoid = INew("Humanoid")
 	Humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
 	Humanoid.Parent = Figure
+	if not DisScripts then
 	local Animator = INew("Animator", Humanoid)
+	end
 	local HumanoidDescription = INew("HumanoidDescription", Humanoid)
 	local HeadMesh = INew("SpecialMesh")
 	HeadMesh.Scale = V3new(1.25, 1.25, 1.25)
