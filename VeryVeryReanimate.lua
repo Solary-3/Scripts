@@ -3,6 +3,8 @@
 	Gelatek - Everything
 	Emper - Optimization Tips
 	Syndi/Mizt - Hat Renamer (to be changed with own one later)
+
+
 ]]
 local Game = game
 local RunService = Game:GetService("RunService")
