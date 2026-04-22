@@ -2011,7 +2011,7 @@ optimize the optimized
 ]]
 
 local novoid = true --prevents parts from going under workspace.FallenPartsDestroyHeight if you control them
-local speedlimit = 5500 --makes your parts move slower if the magnitude of their velocity is higher than this
+local speedlimit = 3000 --makes your parts move slower if the magnitude of their velocity is higher than this
 local retVelTime = .91 --time that claimed parts have velocity to reclaim in case u lose them
 local walkSpeed = 16 --your walkspeed (can be changed at runtime)
 local jumpPower = 50 --your jump power (can be changed at runtime)
@@ -2433,6 +2433,7 @@ local islp=v==lp
 local lastc=nil
 local oncharacter=function()
 lastsine=sine
+--oswait(game.Players.LocalPlayer:GetNetworkPing()) 
 local newc=insGet(v,"Character")
 if c and newc and (newc~=lastc) then
 lastc=newc
@@ -2535,7 +2536,7 @@ dir=dir or (vnormalize(diff)*3)
 startpos=startpos+dir
 end
 end
-local t=osclock()+.1
+local t=osclock()+.175
 startpos=cfAdd(cfGet(cfr*HideMe.CFrame,"Rotation"),startpos)
 insSet(hrp,"CFrame",cfr*HideMe.CFrame)
 while Wait(heartbeat) do
@@ -3512,7 +3513,7 @@ end
 velY=velY-velYdelta
 Ydiff=Ydiff+(velY*0.025)
 end
-insSet(part,"AssemblyLinearVelocity",(claimpos-cfGet(v,"Position"))*v3_101/fallingTime+v3_net)
+insSet(part,"AssemblyLinearVelocity",(claimpos-cfGet(v,"Position"))*v3_101/fallingTime+v3(0,30,0))
 else
 local vel1=vel*noYvelTime+xzvel
 if vmagnitude(vel1)>25.01 then
@@ -3560,7 +3561,7 @@ end
 
 sine=osclock()
 lastsine=sine
-tinsert(cons,Connect(PostSimulation,mainFunction))
+tinsert(cons,Connect(heartbeat,mainFunction))
 mainFunction()
 
 local refreshjoints=function() --use this on the main part if u have parts that
