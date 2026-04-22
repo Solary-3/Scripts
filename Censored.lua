@@ -748,6 +748,90 @@ local th={
   "!!derosneC",
   "!!!DEROSNEC",
 }
+
+
+local torsoattach=i("Attachment",torso)
+torsoattach.Name="Lighnings"
+local Lightning_11800=i("ParticleEmitter", torsoattach)
+Lightning_11800.Name="Lightning"
+Lightning_11800.Enabled = true
+Lightning_11800.Rate = 19
+Lightning_11800.Lifetime = nr(0.30000001192092896,0.30000001192092896)
+Lightning_11800.Speed = nr(0.002250000135973096,0.002250000135973096)
+Lightning_11800.Rotation = nr(0,360)
+Lightning_11800.RotSpeed = nr(0,0)
+Lightning_11800.Size = ns({nsk(0.000000,15.000000,0.000000),nsk(1.000000,15.000000,0.000000)})
+Lightning_11800.Transparency = ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+Lightning_11800.Color = cs({csk(0.000000,c3(1.000000,0.184314,0.184314)),csk(1.000000,c3(1.000000,0.184314,0.184314))})
+Lightning_11800.LightEmission = -3
+Lightning_11800.LightInfluence = 0
+Lightning_11800.Acceleration = v3(0.000000,0.000000,0.000000)
+Lightning_11800.Drag = 0
+Lightning_11800.EmissionDirection = Enum.NormalId.Top
+Lightning_11800.SpreadAngle = v2(360.000000,-360.000000)
+Lightning_11800.ZOffset = 0.10000000149011612
+Lightning_11800.Texture = "http://www.roblox.com/asset/?id=12800312727"
+Lightning_11800.LockedToPart = true
+Lightning_11800.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
+Lightning_11800.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
+Lightning_11800.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
+Lightning_11800.FlipbookFramerate = nr(1,1)
+Lightning_11800.FlipbookStartRandom = false
+Lightning_11800.Squash = ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+local lightning2_11775=i("ParticleEmitter", torsoattach)
+lightning2_11775.Name="lightning2"
+lightning2_11775.Enabled = true
+lightning2_11775.Rate = 11
+lightning2_11775.Lifetime = nr(0.20000000298023224,0.20000000298023224)
+lightning2_11775.Speed = nr(0.001125000067986548,0.001125000067986548)
+lightning2_11775.Rotation = nr(-360,360)
+lightning2_11775.RotSpeed = nr(0,0)
+lightning2_11775.Size = ns({nsk(0.000000,0.262922,0.000000),nsk(1.000000,28.170000,0.000000)})
+lightning2_11775.Transparency = ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+lightning2_11775.Color = cs({csk(0.000000,c3(1.000000,0.239216,0.239216)),csk(1.000000,c3(1.000000,0.239216,0.239216))})
+lightning2_11775.LightEmission = -2
+lightning2_11775.LightInfluence = 0
+lightning2_11775.Acceleration = v3(0.000000,0.000000,0.000000)
+lightning2_11775.Drag = 0
+lightning2_11775.EmissionDirection = Enum.NormalId.Top
+lightning2_11775.SpreadAngle = v2(10.000000,10.000000)
+lightning2_11775.ZOffset = 1
+lightning2_11775.Texture = "rbxassetid://13973467824"
+lightning2_11775.LockedToPart = true
+lightning2_11775.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
+lightning2_11775.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
+lightning2_11775.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
+lightning2_11775.FlipbookFramerate = nr(1,1)
+lightning2_11775.FlipbookStartRandom = false
+lightning2_11775.Squash = ns({nsk(0.000000,0.250000,0.000000),nsk(1.000000,0.250000,0.000000)})
+
+local lightning1_11776=i("ParticleEmitter", torsoattach)
+lightning1_11776.Name="lightning1"
+lightning1_11776.Enabled = true
+lightning1_11776.Rate = 11
+lightning1_11776.Lifetime = nr(0.20000000298023224,0.20000000298023224)
+lightning1_11776.Speed = nr(0.001125000067986548,0.001125000067986548)
+lightning1_11776.Rotation = nr(-360,360)
+lightning1_11776.RotSpeed = nr(0,0)
+lightning1_11776.Size = ns({nsk(0.000000,0.262922,0.000000),nsk(1.000000,28.170000,0.000000)})
+lightning1_11776.Transparency = ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+lightning1_11776.Color = cs({csk(0.000000,c3(1.000000,0.239216,0.239216)),csk(1.000000,c3(1.000000,0.239216,0.239216))})
+lightning1_11776.LightEmission = -2
+lightning1_11776.LightInfluence = 0
+lightning1_11776.Acceleration = v3(0.000000,0.000000,0.000000)
+lightning1_11776.Drag = 0
+lightning1_11776.EmissionDirection = Enum.NormalId.Top
+lightning1_11776.SpreadAngle = v2(0.000000,0.000000)
+lightning1_11776.ZOffset = 1
+lightning1_11776.Texture = "rbxassetid://13780092154"
+lightning1_11776.LockedToPart = true
+lightning1_11776.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
+lightning1_11776.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
+lightning1_11776.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
+lightning1_11776.FlipbookFramerate = nr(1,1)
+lightning1_11776.FlipbookStartRandom = false
+lightning1_11776.Squash = ns({nsk(0.000000,0.125000,0.000000),nsk(1.000000,0.125000,0.000000)})
+
 local Light=Instance.new("PointLight", Floor1)
 Light.Name="PointLight"
 local cv
@@ -756,6 +840,9 @@ local cb=1
 cv=rus.PostSimulation:Connect(function()
 if not scriptfolder:FindFirstChild("CensoredAssets") then 
 cv:Disconnect()
+if torso:FindFirstChild("Lighnings") then 
+torso["Lighnings"]:Destroy()
+end
 end
 cb+=1
 
@@ -777,7 +864,7 @@ e19.Transparency=ns({
   nsk(.5,.35),
   nsk(1,1),
 })
-e19:Emit(sound.PlaybackLoudness/900)
+e19:Emit(sound.PlaybackLoudness/500)
 local g=mrandom(1,5)
 if g==3 then 
 sgui.AlwaysOnTop=true
@@ -822,6 +909,23 @@ g.Color=cs({
 g.Brightness=5+sound.PlaybackLoudness/50 
 end 
 end
+for _,g in torso:GetDescendants() do 
+if g:IsA("ParticleEmitter") and g.Name~=FogBlack.Name and g.Name~=FogBlack2.Name and g.Name~=Debri4.Name and g.Name~="fog1" then 
+g.Color=cs({
+  csk(0,rgb(lol,lol,lol)),
+  csk(1,rgb(lol,0,0)),
+})
+g.Brightness=5+sound.PlaybackLoudness/50 
+g.Enabled=false
+g:Clear()
+elseif g:IsA("ParticleEmitter") and g.Name=="fog1" then
+g.Color=cs({
+  csk(0,rgb(lol,lol,lol)),
+  csk(1,rgb(lol,0,0)),
+})
+g.Brightness=5+sound.PlaybackLoudness/50 
+end 
+end
 for _,g in Folder:GetDescendants() do 
 if g:IsA("PointLight") then 
 local h=random(1,2)
@@ -844,7 +948,17 @@ else
 tlabel.Text=th[mrandom(1,#th)]
 if sound.PlaybackLoudness>mrandom(200,300) then
 for _,g in Folder:GetDescendants() do 
-if g:IsA("ParticleEmitter") and g.Name~=FogBlack.Name and g.Name~=FogBlack2.Name and g.Name~=Debri4.Name then 
+if g:IsA("ParticleEmitter") and g.Name~=FogBlack.Name and g.Name~=FogBlack2.Name and g.Name~=Debri4.Name and g.Name~=e19.Name then 
+g.Color=cs({
+  csk(0,rgb(0,mrandom(100,200),0)),
+  csk(1,rgb(0,mrandom(100,200),0)),
+})
+g.Enabled=true
+g.Brightness=5+sound.PlaybackLoudness/50 
+end 
+end
+for _,g in torso:GetDescendants() do 
+if g:IsA("ParticleEmitter") and g.Name~=FogBlack.Name and g.Name~=FogBlack2.Name and g.Name~=Debri4.Name and g.Name~=e19.Name then 
 g.Color=cs({
   csk(0,rgb(0,mrandom(100,200),0)),
   csk(1,rgb(0,mrandom(100,200),0)),
@@ -868,20 +982,30 @@ sgui.SizingMode="FixedSize"
 sgui.PixelsPerStud=500
 tlabel.TextColor3=rgb(0,10,0)
 for _,g in Folder:GetDescendants() do 
-if g:IsA("ParticleEmitter") then 
+if g:IsA("ParticleEmitter") then
 g.Color=cs({
   csk(0,rgb(0,0,0)),
   csk(1,rgb(0,0,0)),
 })
 --g.Enabled=true
 g.Brightness=1+sound.PlaybackLoudness/100 
+end
+end
+for _,g in torso:GetDescendants() do 
+if g:IsA("ParticleEmitter") then
+g.Color=cs({
+  csk(0,rgb(0,0,0)),
+  csk(1,rgb(0,0,0)),
+})
+--g.Enabled=true
+g.Brightness=1+sound.PlaybackLoudness/100 
+end
+end
 for _,g in Folder:GetDescendants() do 
 if g:IsA("PointLight") then 
 g.Color=rgb(0,mrandom(20,100),0)
 g.Range=2+sound.PlaybackLoudness/250 
 g.Brightness=3.5+sound.PlaybackLoudness/100
-end 
-end
 end 
 end
 end
