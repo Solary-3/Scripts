@@ -14878,8 +14878,9 @@ end
 
 
 
-changeMode("Noxesium")
-ChangeAndRecolor("Noxesium",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(94,24,0),rgb(204,166,154),false,false)
+changeMode("Mayhem")
+ChangeAndRecolor("Mayhem",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(224,0,0),false,false)
+VFXApi("Mayhem")
 
 
 local IsKeys=nil
