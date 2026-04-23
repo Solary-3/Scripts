@@ -49,6 +49,7 @@ local TORSO=Global.Config["Torso"] or nil
 local UsePlayerBody=Global.Config["UsePlayerBody"] or false
 local Sitting=Global.Config["Sit"] or false
 local Hatdrop=Global.Config["Hatdrop"] or false
+
 local Preload= false
 local Brekjoints=Global.Config["Breakjoints"] or 1
 local SpawnTp=1
@@ -62,7 +63,7 @@ local Updates="Animation Reworking and UI updates".."\n".."Version: "..Version
 local Place=game.placeId
 if Place ~= 17574618959 and Place ~= 88308889239232 and Place~=123974602339071 then
 UsePlayerBody=false
-Hatdrop=false
+--Hatdrop=false
 end
 if UsePlayerBody then 
 Hatdrop=false
@@ -405,7 +406,7 @@ end
 Char:FindFirstChild("HumanoidRootPart"):Destroy()
 end)
 pcall(function()
-for _, c in ipairs(BP) do
+for _, c in ipairs(TotalOfBaseParts) do
 if not c then continue end
 c.Anchored=false
 c.AssemblyAngularVelocity=Vector3.new()
@@ -448,7 +449,7 @@ end)
 
 
 pcall(function()
-for _, v in ipairs(BP) do
+for _, v in ipairs(TotalOfBaseParts) do
 if not v then continue end
 v.Anchored=false
 v.Transparency=.5
@@ -478,7 +479,7 @@ end
 Char:FindFirstChild("HumanoidRootPart"):Destroy()
 end)
 pcall(function()
-for _, v in ipairs(BP) do
+for _, v in ipairs(TotalOfBaseParts) do
 if not v then continue end
 v.Transparency=.5
 --v.CanCollide=false
@@ -656,7 +657,7 @@ if elapsed>=1 then
 fps=math.round(framecount/elapsed)
 framecount=0 
 elapsed=0
-for _, v in next,Hats do
+for _, v in next,TotalOfHats do
 if not v or v.Handle then continue end
 for _,a in v:GetDescendants() do 
 if a:IsA("Weld") then 
@@ -676,14 +677,13 @@ end
 
 end
 end)
-
---[[if not FakePerma then
---oswait(Players.RespawnTime+.1)
+if not FakePerma then
+oswait(Players.RespawnTime+.1)
 for _,v in Char:GetChildren() do
 if v:IsA("Accoutrement") or v:IsA("Model") or v:IsA("Humanoid") or v:IsA("Shirt") or v:IsA("Pants") and not UsePlayerBody and IsHatDropped then continue end
 --v:Destry()
 end
-end]]
+end
 IsHatDropped=false
 for _, v in ipairs(Hats) do
 v.Handle.Anchored=false
@@ -709,7 +709,7 @@ local trs=Char["UpperTorso"]
 --trs:Destroy()
 end)
 oswait(.1)
-for _,v in next,BP do 
+for _,v in next,TotalOfBaseParts do 
 if not v then continue end
 for _,a in v:GetDescendants() do 
 if a:IsA("Weld") or a:IsA("Motor6D") then 
@@ -3829,6 +3829,19 @@ local SoundService=game.SoundService
 local setHipHeight=t.setHipHeight
 local getAccWeldFromMesh=t.getAccWeldFromMesh
 local Torso=getPart("Torso")
+local RightArm=getPart("Right Shoulder")
+local LeftArm=getPart("Left Shoulder")
+local RightLeg=getPart("Right Hip")
+local LeftLeg=getPart("Left Hip")
+local Head=getPart("Neck")
+local RootJoint=getJoint("RootJoint")
+local RightShoulder=getJoint("Right Shoulder")
+local LeftShoulder=getJoint("Left Shoulder")
+local RightHip=getJoint("Right Hip")
+local LeftHip=getJoint("Left Hip")
+local Neck=getJoint("Neck")
+
+
 local New = function(instance,parent,properties)
 local LastTimePosition=0
 local inst = Instance.new(instance)
@@ -4212,12 +4225,7 @@ end
 local getPartFromMesh=t.getPartFromMesh
 local getPartJoint=t.getPartJoint
 
-local sword=nil 
-if ws[YourName]:FindFirstChild("VoidLordSword") then 
-sword=getPartFromMesh(5254583415, 5268538095)
-else
-sword=getPartFromMesh(5278721954, 5692006383)
-end
+local sword=getPartFromMesh(5254583415, 5268538095)
 local s1_1=sword and getPartJoint(sword) or {C0=cf_0} -- VoidLord Sword
 local sword2=nil 
 if ws[YourName]:FindFirstChild("AuroraSword") then
@@ -4749,7 +4757,7 @@ AnarchyMainUI["SC_Blur_f"]["Position"] = UDim2.new(0.00154, 0, -1.16667, 0);
 
 
 AnarchyMainUI["PC_Blur_10"] = Instance.new("ImageLabel", AnarchyMainUI["SC_MusicDurScale_2"]);
-AnarchyMainUI["PC_Blur_10"]["ZIndex"] = -1;
+AnarchyMainUI["PC_Blur_10"]["ZIndex"] = 1;
 AnarchyMainUI["PC_Blur_10"]["BorderSizePixel"] = 0;
 AnarchyMainUI["PC_Blur_10"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 -- AnarchyMainUI["PC_Blur_10"]["ImageContent"] = ;
@@ -4762,7 +4770,7 @@ AnarchyMainUI["PC_Blur_10"]["Position"] = UDim2.new(-0.62564, 0, -3.33333, 0);
 
 
 AnarchyMainUI["PC_Blur_11"] = Instance.new("ImageLabel", AnarchyMainUI["SC_MusicDurScale_2"]);
-AnarchyMainUI["PC_Blur_11"]["ZIndex"] = -1;
+AnarchyMainUI["PC_Blur_11"]["ZIndex"] = 1;
 AnarchyMainUI["PC_Blur_11"]["BorderSizePixel"] = 0;
 AnarchyMainUI["PC_Blur_11"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 -- AnarchyMainUI["PC_Blur_11"]["ImageContent"] = ;
@@ -4925,7 +4933,7 @@ AnarchyMainUI["IdkVro"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 -- AnarchyMainUI["IdkVro"]["ImageContent"] = ;
 AnarchyMainUI["IdkVro"]["Image"] = [[http://www.roblox.com/asset/?id=7069855869]];
 AnarchyMainUI["IdkVro"]["Size"] = UDim2.new(0, 170, 0, 44);
-AnarchyMainUI["IdkVro"]["Position"] = UDim2.new(0, 0, 0, 78);
+AnarchyMainUI["IdkVro"]["Position"] = UDim2.new(.050, 0, .5, 0);
 AnarchyMainUI["IdkVro"]["BackgroundTransparency"] = 1;
 AnarchyMainUI["IdkVro"]["ZIndex"] = 2;
 AnarchyMainUI["IdkVro"]["Rotation"] = 0;
@@ -4935,7 +4943,7 @@ AnarchyMainUI["UIAspectRatioConstraint_20"] = Instance.new("UIAspectRatioConstra
 AnarchyMainUI["UIAspectRatioConstraint_20"]["AspectRatio"] = 3;
 
 AnarchyMainUI["Frame_2"] = Instance.new("Frame", AnarchyMainUI["SC_MusicDurScale_2"]);
-AnarchyMainUI["Frame_2"]["ZIndex"] = 0;
+AnarchyMainUI["Frame_2"]["ZIndex"] = -1;
 AnarchyMainUI["Frame_2"]["BorderSizePixel"] = 0;
 AnarchyMainUI["Frame_2"]["BackgroundColor3"] = Color3.fromRGB(20, 20, 20);
 AnarchyMainUI["Frame_2"]["Size"] = UDim2.new(0, 212, 0, 32);
@@ -5420,20 +5428,6 @@ end
 
 
 
---// Body Parts
-local RootJoint=getJoint("RootJoint")
-local RightShoulder=getJoint("Right Shoulder")
-local LeftShoulder=getJoint("Left Shoulder")
-local RightHip=getJoint("Right Hip")
-local LeftHip=getJoint("Left Hip")
-local Neck=getJoint("Neck")
-
-
-local RArm=getPart("Right Shoulder")
-local LArm=getPart("Left Shoulder")
-local RLeg=getPart("Right Hip")
-local LLeg=getPart("Left Hip")
-local Head=getPart("Neck")
 
 
 
@@ -5643,12 +5637,16 @@ local sine15=osclock()*15
 local sin=math.sin 
 local v3=Vector3.new
 local idlerv=v3(sin(sine15),sin(sine15+1.0471975511965976),sin(sine15+2.0943951023931953))
-local idleoff=idlerv*0.0015 
+local idleoff=idlerv*0.000015 
 c.Handle.AssemblyAngularVelocity=idlerv
 c.Handle.CFrame=c.Handle.CFrame*cf(idleoff,idleoff,idleoff)
+if Hatdrop then
 c.Handle.Anchored=true
 oswait(.1)
 c.Handle.Anchored=false
+else 
+oswait(.1)
+end
 ostj+=.1
 until ostj>=1
 end)
@@ -5732,12 +5730,13 @@ local Spinny=1
 local AnimType=" "
 
 
-function TypeWrite(fulltext,typespeed,usefontface,font,color,timehappen,timedur,prevent,trans,sizebeggin,sizeout)
+function TypeWrite(fulltext,typespeed,usefontface,font,color,timehappen,timedur,prevent,trans,sizebeggin,sizeout,waitbeforetrans)
 
 if prevent==nil then prevent=true end
 if sizebeggin==nil then sizebeggin=20 end
 if sizeout==nil then sizeout=30 end
 if trans==nil then sizeout=.1 end
+if waitbeforetrans==nil then waitbeforetrans=0 end
 
 if prevent then
 if AnarchyMainUI["SC_MusicDurScale_2"]:FindFirstChild("TypeWriteUI") then return end
@@ -5780,7 +5779,7 @@ X.Visible=true
 X.Text=ssub(fulltext, 1 ,i)
 oswait(timehappen-timedur)
 end
-task.wait(delaybeforedelete)
+oswait(waitbeforetrans)
 BetterTween(X,.5,{TextSize=sizeout}):Play()
 --BetterTween(X,.5,{Size=size}):Play()
 BetterTween(TypeWriteUIFrame["Frame_2"],.5,{Size=size1}):Play()
@@ -5822,7 +5821,7 @@ X.Visible=true
 X.Text=ssub(fulltext, 1 ,i)
 oswait(typespeed)
 end
-task.wait(delaybeforedelete)
+oswait(waitbeforetrans)
 BetterTween(X,.5,{TextSize=sizeout}):Play()
 --BetterTween(X,.5,{Size=size}):Play()
 BetterTween(TypeWriteUIFrame["Frame_2"],.5,{Size=size1}):Play()
@@ -6842,8 +6841,8 @@ local att0=i("Attachment")
 local att1=i("Attachment")
 local trail=i("Trail")
 
-insSet(att0,"Position",v3(0,-2.4,3));insSet(att0,"Parent",sw)
-insSet(att1,"Position",v3(0,.5,-.5));insSet(att1,"Parent",sw)
+insSet(att0,"Position",v3(0,-3,3.6));insSet(att0,"Parent",sw)
+insSet(att1,"Position",v3(0,3,-3.6));insSet(att1,"Parent",sw)
 insSet(trail,"Texture","rbxassetid://2108945559");insSet(trail,"Attachment0",att0);insSet(trail,"Attachment1",att1);insSet(trail,"LightEmission",0.5);insSet(trail,"Transparency",ns(0));insSet(trail,"Lifetime",0.6);insSet(trail,"WidthScale",ns(1,0));insSet(trail,"Parent",sw);insSet(trail,"Brightness",10);insSet(trail,"Color",cs({csk(0,pcolor.Value),csk(1,scolor.Value)}))
 end
 end
@@ -7044,7 +7043,7 @@ game:HttpGet(
 )
 end)
 end
- tspawn(function()
+tspawn(function()
 pcall(function()
 writefile(path,
 game:HttpGet(
@@ -15298,11 +15297,11 @@ Ring1.C0=cf(0,.6,.5)*angles(rad(0),rad(0),rad(0))
 
 
 AttachSword(SWAtt2,wingPart1,function() s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-1+0,3+-1*sin(sine*2.5+0)+0,-3.6+-1*cos(sine*2.5+0.75)+0),angles(0,1.5707963267948966+rad(20)*cos(sine*2.5+0)+0,1.5707963267948966+rad(-20)*cos(sine*2.5+0.5)+0)),deltaTime)  end)
-Extra_Part1.C0=Lerp(Extra_Part1.C0,cfMul(cf(2+-0.5*cos(sine*2.5+0)+0,0.5+0,-2+0),angles(0,0,0)),deltaTime)  
 AttachSword(SWAtt3,wingPart2,function() s1_3.C0=Lerp(s1_3.C0,cfMul(cf(1+0,3+-1*sin(sine*2.5+0)+0,-3.6+-1*cos(sine*2.5+0.75)+0),angles(0,-1.5707963267948966+rad(-20)*cos(sine*2.5+0)+0,-1.5707963267948966+rad(20)*cos(sine*2.5+0.5)+0)),deltaTime)  end)
 AttachSword(SWAtt1,wingPart2,function() s1_1.C0=Lerp(s1_1.C0,cfMul(cf(1+0,3+-1*sin(sine*2.5+0)+0,-3.6+-1*cos(sine*2.5+0.75)+0),angles(0,-1.5707963267948966+rad(-20)*cos(sine*2.5+0)+0,-0.5235987755982988+rad(-20)*cos(sine*2.5+0.5)+0)),deltaTime)  end)
-Extra_Part2.C0=Lerp(Extra_Part2.C0,cfMul(cf(-2+0.5*cos(sine*2.5+0)+0,0.5+0,-2+0),angles(0,0,0)),deltaTime)  
 AttachSword(SWAtt4,wingPart1,function() s1_4.C0=Lerp(s1_4.C0,cfMul(cf(-1+0,3+-1*sin(sine*2.5+0)+0,-3.6+-1*cos(sine*2.5+0.75)+0),angles(0,1.5707963267948966+rad(20)*cos(sine*2.5+0)+0,0.5235987755982988+rad(20)*cos(sine*2.5+0.5)+0)),deltaTime)  end)
+Extra_Part2.C0=Lerp(Extra_Part2.C0,cfMul(cf(-2+0.5*cos(sine*2.5+0)+0,0.5+0,-2+0),angles(0,0,0)),deltaTime)  
+Extra_Part1.C0=Lerp(Extra_Part1.C0,cfMul(cf(2+-0.5*cos(sine*2.5+0)+0,0.5+0,-2+0),angles(0,0,0)),deltaTime)  
 
 
 end
@@ -15387,19 +15386,19 @@ end
 WingAnimations.Censored=function()
 local addrot1=clamp(sound.PlaybackLoudness/10,0,random(.1,.5))/1000
 --print(addrot1)
-AttachSword(SWAtt2,wingPart1,function() s1_2.C0=Lerp(s1_2.C0,cfMul(cfMul(cf(-5+1.5*cos(sine*1+3)+0,2*sin(sine*2+3)+0,-1.6+3*sin(sine*1+3)+0),angles(-2.443460952792061+0,0.8726646259971648+0,-0.8726646259971648+rad(2500)*cos((sine*.1)+3)+0)),angles(0,0,0)),deltaTime)  end)
+AttachSword(SWAtt2,wingPart1,function() s1_2.C0=Lerp(s1_2.C0,cfMul(cfMul(cf(-5+1.5*cos(sine*1+3)+0,2*sin(sine*2+3)+0,-1.6+3*sin(sine*1+3)+0),angles(-2.443460952792061+0,0.8726646259971648+0,-0.8726646259971648+rad(2500)*cos((sine*.25)+3)+0)),angles(0,0,0)),deltaTime)  end)
 Extra_Part1.C0=cfMul(cfMul(cf(0,0.5+0,-1+0),angles(0,0,0)),angles(0,0,0))
 Extra_Part1.C1=cf_0
 Extra_Part1.Part1=Torso
 
 
-AttachSword(SWAtt3,wingPart1,function() s1_3.C0=Lerp(s1_3.C0,cfMul(cfMul(cf(-5+1.5*cos(sine*1+1)+0,2*sin(sine*2+1)+0,1.6+3*sin(sine*1+1)+0),angles(-2.443460952792061+0,0.8726646259971648+0,-2.6179938779914944+rad(2500)*cos((sine*0.1)+1)+0)),angles(0,0,0)),deltaTime)  end)
-AttachSword(SWAtt1,wingPart1,function() s1_1.C0=Lerp(s1_1.C0,cfMul(cfMul(cf(-3+1.5*cos(sine*1+0)+0,2*sin(sine*2+0)+0,-2+3*sin(sine*1+0)+0),angles(-2.443460952792061+0,0.8726646259971648+0,0.17453292519943295+rad(2500)*cos((sine*.1)+0)+0)),angles(0,0,0)),deltaTime)  end)
+AttachSword(SWAtt3,wingPart1,function() s1_3.C0=Lerp(s1_3.C0,cfMul(cfMul(cf(-5+1.5*cos(sine*1+1)+0,2*sin(sine*2+1)+0,1.6+3*sin(sine*1+1)+0),angles(-2.443460952792061+0,0.8726646259971648+0,-2.6179938779914944+rad(2500)*cos((sine*0.25)+1)+0)),angles(0,0,0)),deltaTime)  end)
+AttachSword(SWAtt1,wingPart1,function() s1_1.C0=Lerp(s1_1.C0,cfMul(cfMul(cf(-3+1.5*cos(sine*1+0)+0,2*sin(sine*2+0)+0,-2+3*sin(sine*1+0)+0),angles(-2.443460952792061+0,0.8726646259971648+0,0.17453292519943295+rad(2500)*cos((sine*.25)+0)+0)),angles(0,0,0)),deltaTime)  end)
 Extra_Part2.C0=cfMul(cfMul(cf(0,0.5+0,-1+0),angles(0,0,0)),angles(0,0,0))
 Extra_Part2.Part1=Torso
 Extra_Part2.C1=cf_0
 
-AttachSword(SWAtt4,wingPart1,function() s1_4.C0=Lerp(s1_4.C0,cfMul(cfMul(cf(-4+1.5*cos(sine*1+2)+0,3+2*sin(sine*2+2)+0,-4.6+3*sin(sine*1+2)+0),angles(-2.443460952792061+0,0.8726646259971648+0,1.5707963267948966+rad(2500)*cos((sine*.1)+2)+0)),angles(0,0,0)),deltaTime)  end)
+AttachSword(SWAtt4,wingPart1,function() s1_4.C0=Lerp(s1_4.C0,cfMul(cfMul(cf(-4+1.5*cos(sine*1+2)+0,3+2*sin(sine*2+2)+0,-4.6+3*sin(sine*1+2)+0),angles(-2.443460952792061+0,0.8726646259971648+0,1.5707963267948966+rad(2500)*cos((sine*.25)+2)+0)),angles(0,0,0)),deltaTime)  end)
 
 end
 
@@ -16396,10 +16395,9 @@ local rdmwhite1=mrandom(1+sound.PlaybackLoudness/3,255)
 local model=scriptfolder:FindFirstChild("NULLVOIDAssets")
 local color=rgb(rdmwhite,rdmwhite,rdmwhite)
 local color1=rgb(rdmwhite1,rdmwhite1,rdmwhite1)
-
 --if current>155.35 and current<155.4 then 
 --fulltext,typespeed,usefontface,font,color,timehappen,timedur,prevent,trans,sizebeggin,sizeout
-TypeWrite("And in that light i find deliverance...",.045,true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),c3(1,1,1),155.35,157.9,true,.1,15,20)
+TypeWrite("And in that light i find deliverance...",.045,true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),c3(1,1,1),155.35,157.9,true,.1,15,20,20)
 --end
 local funnyflick2=clamp(100*tan(sine*500),random(10,50),random(170,255))
 local funnyflick3=clamp(-100*tan(sine*500),random(10,50),random(170,255))
@@ -17111,7 +17109,8 @@ if sound.PlaybackLoudness>mrandom(200,300) then
 ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9,sound.PlaybackLoudness/3.9),color,false,false)
 else
 ChangeAndRecolor(text2[mrandom(1,#text2)],true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color,rgb(200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70,200+sound.PlaybackLoudness/70),false,false)
-end
+end 
+if current>=219 and current<=221.75 then return end
 camoff.Value=cf_0
 
 elseif current>=221.75 and current<=229.25 then
@@ -17170,10 +17169,11 @@ end)
 tspawn(function()
 pcall(function()
 if Mode=="Nholiviction" then
-
-
+local is=insSet
+local s=scolor
+local p=pcolor
 if current>=132.6 and current<134.55 then 
-local g2=clamp(sound.PlaybackLoudness/900.5,0,1)/random(5,7.5)
+local g2=clamp(sound.PlaybackLoudness/900.5,0,1)/random(1,7.5)
 MakeUIAnimated(u2(0,random(-10,10),0,random(-10,10)),u2(0,random(-10,10),0,random(-10,10)),random(-5,5),random(-5,5))
 for _,v in next,statics do
 insSet(v,"Visible",true)
@@ -17215,11 +17215,20 @@ end
 ReturnOldUIPos()
 end
 
+
+
 if current<23.4 or (current>=110.9 and current<121.6) then
 local model=scriptfolder["NholivictionAssets"]
 local Letters=head["Letters"]
 local f=math.clamp(255*cos(sine*5)*1,0,255)
-
+local f1=math.clamp(-255*cos(sine*5)*1,0,255)
+if f<150 then 
+is(s,"Value",rgb(f,0,0))
+is(p,"Value",rgb(0,0,0))
+else 
+is(s,"Value",rgb(0,0,0))
+is(p,"Value",rgb(f1,0,0))
+end
 for _,v in Letters:GetDescendants() do 
 if v:IsA("ParticleEmitter") then 
 v.LightEmission=1
@@ -17248,7 +17257,7 @@ v.Brightness=12.5+5*cos(sine*1000)
 v.Color=rgb(f,0,0)
 end
 end
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
+
 
 
 
@@ -17256,8 +17265,15 @@ elseif (current>=23.4 and current<45) or (current>=67 and current<110.9) or (cur
 local model=scriptfolder["NholivictionAssets"]
 local Letters=head["Letters"]
 local h=math.random(1,255)
-local f=math.clamp(255*tan(sine*50),0,255)
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
+local f=math.clamp(255+sound.PlaybackLoudness*tan(sine*50+sound.PlaybackLoudness),0,255)
+local f1=math.clamp(-255-sound.PlaybackLoudness*tan(sine*50+sound.PlaybackLoudness),0,255)
+if f<200 then 
+is(s,"Value",rgb(f,0,0))
+is(p,"Value",rgb(0,0,0))
+elseif f1>100+sound.PlaybackLoudness then
+is(s,"Value",rgb(0,0,0))
+is(p,"Value",rgb(f1,0,0))
+end
 for _,v in Letters:GetDescendants() do 
 if v:IsA("ParticleEmitter") then 
 v.LightEmission=1*cos(sine*1000)  
@@ -17291,12 +17307,20 @@ elseif (current>=45 and current<67) or (current>=121.6 and current<130.9) then
 local model=scriptfolder["NholivictionAssets"]
 local Letters=head["Letters"]
 local h=math.random(1,255)
-local f=math.clamp(255*tan(sine*50),0,255)
-local r=math.random(1,3)
-if r==2 then
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,f,f),false,false)
+local f=math.clamp(255+sound.PlaybackLoudness*tan(sine*50+sound.PlaybackLoudness),0,255)
+local f1=math.clamp(-255-sound.PlaybackLoudness*tan(sine*50+sound.PlaybackLoudness),0,255)
+local r=random(1,3)
+if r>1 then
+if f<200 then 
+is(s,"Value",rgb(f,f,f))
+is(p,"Value",rgb(f,0,0))
+elseif f1>=200 then
+is(s,"Value",rgb(f1 ,0,0))
+is(p,"Value",rgb(f1 ,f1 ,f1 ))
+end
 else
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
+is(s,"Value",rgb(f1 ,0,0))
+is(p,"Value",rgb(f1 ,f1 ,f1 ))
 end
 for _,v in Letters:GetDescendants() do 
 if v:IsA("ParticleEmitter") then 
@@ -17351,12 +17375,21 @@ elseif current>=132.6 and current<154.3 then
 local model=scriptfolder["NholivictionAssets"]
 local Letters=head["Letters"]
 local h=math.random(1,255)
-local f=math.clamp(255*tan(sine*50),0,255)
+local f=math.clamp(255+sound.PlaybackLoudness*tan(sine*50+sound.PlaybackLoudness),0,255)
+local f1=math.clamp(-255-sound.PlaybackLoudness*tan(sine*50+sound.PlaybackLoudness),0,255)
 local r=math.random(1,3)
-if r==2 then
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,f,f),false,false)
+local r=random(1,3)
+if r>1 then
+if f<200 then 
+is(s,"Value",rgb(f,f,f))
+is(p,"Value",rgb(f,0,0))
+else 
+is(s,"Value",rgb(f1 ,0,0))
+is(p,"Value",rgb(f1 ,f1 ,f1 ))
+end
 else
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
+is(s,"Value",rgb(f1 ,0,0))
+is(p,"Value",rgb(f1 ,f1 ,f1 ))
 end
 for _,v in Letters:GetDescendants() do 
 if v:IsA("ParticleEmitter") then 
@@ -17410,8 +17443,22 @@ end
 elseif current>=154.3 and current<198  then
 local model=scriptfolder["NholivictionAssets"]
 local Letters=head["Letters"]
-local f=math.clamp(255*cos(sine*5)*1,0,255)
-
+local f=math.clamp(255+sound.PlaybackLoudness*tan(sine*50+sound.PlaybackLoudness),0,255)
+local f1=math.clamp(-255-sound.PlaybackLoudness*tan(sine*50+sound.PlaybackLoudness),0,255)
+local r=math.random(1,3)
+local r=random(1,3)
+if r>1 then
+if f<200 then 
+is(s,"Value",rgb(f,f,f))
+is(p,"Value",rgb(f,0,0))
+elseif f1>=200 then
+is(s,"Value",rgb(f1 ,0,0))
+is(p,"Value",rgb(f1 ,f1 ,f1 ))
+end
+else
+is(s,"Value",rgb(f1 ,0,0))
+is(p,"Value",rgb(f1 ,f1 ,f1 ))
+end
 for _,v in Letters:GetDescendants() do 
 if v:IsA("ParticleEmitter") then 
 v.LightEmission=1
@@ -17440,13 +17487,20 @@ v.Brightness=12.5+5*cos(sine*1000)
 v.Color=rgb(f,0,0)
 end
 end
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
+
 
 elseif current>=329 and current<369.85 then 
 local model=scriptfolder["NholivictionAssets"]
 local Letters=head["Letters"]
 local f=math.clamp(255*cos(sine*5)*1,0,255)
-
+local f1=math.clamp(-255*tan(sine*50)*1,0,255)
+if f<200 then 
+is(s,"Value",rgb(f,0,0))
+is(p,"Value",rgb(0,0,0))
+elseif f1>100+sound.PlaybackLoudness then
+is(s,"Value",rgb(0,0,0))
+is(p,"Value",rgb(f1,f1,f1))
+end
 for _,v in Letters:GetDescendants() do 
 if v:IsA("ParticleEmitter") then 
 v.LightEmission=1
@@ -17475,12 +17529,20 @@ v.Brightness=12.5+5*cos(sine*1000)
 v.Color=rgb(f,f,f)
 end
 end
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,f,f),false,false)
+
 
 else 
 local model=scriptfolder["NholivictionAssets"]
 local Letters=head["Letters"]
 local f=math.clamp(255*cos(sine*5)*1,0,255)
+local f1=math.clamp(-255*cos(sine*5)*1,0,255)
+if f<200 then 
+is(s,"Value",rgb(f,0,0))
+is(p,"Value",rgb(0,0,0))
+elseif f1>100+sound.PlaybackLoudness then
+is(s,"Value",rgb(0,0,0))
+is(p,"Value",rgb(f1,0,0))
+end
 
 for _,v in Letters:GetDescendants() do 
 if v:IsA("ParticleEmitter") then 
@@ -17514,7 +17576,7 @@ v.Color=rgb(f,0,0)
 end
 end
 end
-ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),rgb(0,0,0),rgb(f,0,0),false,false)
+
 
 
 
@@ -17522,7 +17584,7 @@ ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michro
 
 end
 
-
+ChangeAndRecolor("Nholiviction",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),insGet(s,"Value"),insGet(p,"Value"),false,false)
 if walking then return end
 if (current>=110.9 and current<121.6) then 
 setHipHeight(10)
@@ -17549,6 +17611,12 @@ RootJoint.C0=Lerp(RootJoint.C0,cfMul(cfMul(cf((random(-0.025,0.025))+0,10+(rando
 end
 OverrideAnimation=true
 elseif current>=132.6 and current<134.55 then 
+local randomsize=random(5,10)
+local randomxpos=random(-20,20)
+local randomzpos=random(-20,20)
+block1("Out",5,v3(.1,.1,.1),v3(35,35,35),rootpart.CFrame,scolor.Value,.5,rootpart.CFrame*cf()*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,false,15,"ForceField")
+block1("Out",5,v3(.1,.1,.1),v3(randomsize,randomsize,randomsize),rootpart.CFrame*cf(randomxpos,0,randomzpos),scolor.Value,random(.1,.25),rootpart.CFrame*cf(randomxpos,random(10,15),randomzpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,false,15,"ForceField")
+block1("Out",5,v3(.1,.1,.1),v3(randomsize,randomsize,randomsize),rootpart.CFrame*cf(randomxpos,0,randomzpos),scolor.Value,random(.1,.25),rootpart.CFrame*cf(randomxpos,random(10,15),randomzpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,false,15,"ForceField")
 s1_1.C0=cfMul(cf(random(-45,45),random(-10,45),random(-45,45)),angles(random(-6.632251157578453,6.632251157578453),random(-6.632251157578453,6.632251157578453),random(-6.632251157578453,6.632251157578453)))
 s1_2.C0=cfMul(cf(random(-45,45),random(-10,45),random(-45,45)),angles(random(-6.632251157578453,6.632251157578453),random(-6.632251157578453,6.632251157578453),random(-6.632251157578453,6.632251157578453)))
 s1_3.C0=cfMul(cf(random(-45,45),random(-10,45),random(-45,45)),angles(random(-6.632251157578453,6.632251157578453),random(-6.632251157578453,6.632251157578453),random(-6.632251157578453,6.632251157578453)))
@@ -17561,6 +17629,12 @@ else
 Neck.C0=cfMul(cfMul(cf(0,1,0),angles((random(-0.04363323129985824,0.04363323129985824))+0.7853981633974483+0.17453292519943295*cos((sine*3)),(random(-0.08726646259971647,0.08726646259971647))+0,(random(-0.04363323129985824,0.04363323129985824))+0)),angles(-1.5707963705062866,0,-3.141592502593994))RootJoint.C0=cfMul(cfMul(cf((random(-0.25,0.25))+0,10+(random(-0.25,0.25))+5+0.25*sin((sine*3)),(random(-0.25,0.25))+0),angles((random(-0.1,0.1))+0.4363323129985824,(random(-0.1,0.1))+0,(random(-0.1,0.1))+0)),angles(-1.5707963705062866,0,-3.141592502593994))LeftShoulder.C0=cfMul(cfMul(cf(-0.8,0.25,0.25),angles(1.1344640137963142,0.7853981633974483,-0.8726646259971648)),angles(-0,-1.5707963705062866,0))RightHip.C0=cfMul(cfMul(cf(0.9,0,-1.1),angles(-0.7853981633974483+0.08726646259971647*cos((sine*3)),-0.4363323129985824,0.08726646259971647)),angles(0,1.5707963705062866,0))LeftHip.C0=cfMul(cfMul(cf(-1,-0.9,-0.45),angles(-0.5235987755982988+0.08726646259971647*cos((sine*3)),0,-0.08726646259971647)),angles(-0,-1.5707963705062866,0))RightShoulder.C0=cfMul(cfMul(cf(0.8,0.25,0.25),angles(1.1344640137963142,-0.7853981633974483,0.8726646259971648)),angles(0,1.5707963705062866,0))
 end
 elseif current>=134.55 and current<154.3 then 
+local randomsize=random(5,10)
+local randomxpos=random(-20,20)
+local randomzpos=random(-20,20)
+block1("Out",5,v3(.1,.1,.1),v3(35,35,35),rootpart.CFrame,scolor.Value,.9,rootpart.CFrame*cf()*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,false,15,"ForceField")
+block1("Out",5,v3(.1,.1,.1),v3(randomsize,randomsize,randomsize),rootpart.CFrame*cf(randomxpos,0,randomzpos),scolor.Value,random(.1,.25),rootpart.CFrame*cf(randomxpos,random(10,15),randomzpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,false,15,"ForceField")
+block1("Out",5,v3(.1,.1,.1),v3(randomsize,randomsize,randomsize),rootpart.CFrame*cf(randomxpos,0,randomzpos),scolor.Value,random(.1,.25),rootpart.CFrame*cf(randomxpos,random(10,15),randomzpos)*angles(rad(random(-50,50)),rad(random(-50,50)),rad(random(-50,50))),true,pcolor.Value,false,15,"ForceField")
 s1_1.C0=Lerp(s1_1.C0,cfMul(cf(-3+0+0,3+2*sin(sine*0.5+0)+0,-3+2*sin(sine*0.5+0)+0),angles(0+0+0,1.5707963705062866+0+0,0.6981317007977318+0+0+Spinny/10+Boost/30.5)),deltaTime)  
 s1_2.C0=Lerp(s1_2.C0,cfMul(cf(-3+0+0,3+2*sin(sine*0.5+0)+0,-3+2*sin(sine*0.5+0)+0),angles(0+0+0,1.5707963705062866+0+0,3.839724354387525+0+0+Spinny/10+Boost/30.5)),deltaTime)  
 s1_3.C0=Lerp(s1_3.C0,cfMul(cf(-3+0+0,3+2*sin(sine*0.5+0)+0,-3+2*sin(sine*0.5+0)+0),angles(0+0+0,1.5707963705062866+0+0,-0.8726646259971648+0+0+Spinny/10+Boost/30.5)),deltaTime)  
@@ -18020,12 +18094,14 @@ is(pc,"Value",rgb(0,0,sin1))
 elseif t>266 and t<291.55 then 
 local h=clamp(o/50,0,50)
 local h1=clamp(o/25,0,150)
-local rainb=Color3.fromHSV((tick()*.075)%1,1,1)
 local sin1=clamp(200*sin(sine),0,200)
 local sin2=clamp(-25*tan(sine*7.5),0,10+h1)
+local sin3=clamp(-25*tan(sine*7.5),0,100)/100
 local cols=clamp(100*sin(sine*5),0,100)
+local rainb=Color3.fromHSV((tick()*.075)%1,1,1)
+local rainb1=Color3.fromHSV((tick()*.1)%1,1,sin3)
 is(sc,"Value",rainb)
-is(pc,"Value",rgb(0,sin2*5.5,sin2*5.5))
+is(pc,"Value",rainb1)
 elseif t>295.55 and t<320.804 then 
 local h=clamp(o/50,0,50)
 local h1=clamp(o/25,0,200)
@@ -18575,6 +18651,32 @@ local clp=CLerp
 
 local color1,color2=rgb(197+50*cos(sine*1.5),135+100*sin(sine*2),243+12*sin(sine*2.5)),rgb(237+10*cos(sine*1.5),212+35*sin(sine*2),255)
 ChangeAndRecolor("Axius",true,Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),color1,color2,false,false)
+
+--[[
+7 
+20.3
+22 
+34.9 
+36.1 
+79.7
+
+]]
+end
+end)
+
+tspawn(function()
+if Mode=="Arithios" then 
+local is=insSet
+local ig=insGet
+local p=pcolor
+local s=scolor
+local t=current
+local ld=sound.PlaybackLoudness
+local clp=CLerp
+
+local clamp1=clamp(ld/5,0,218)
+local clamp2=clamp(ld/5,0,74)
+ChangeAndRecolor("Arithios",true,Font.fromId(12187376739, e.FontWeight.Bold, Enum.FontStyle.Normal),rgb(218,0,74),rgb(clamp1,0,clamp2),false,false)
 
 --[[
 7 
@@ -20085,6 +20187,7 @@ end
 IsSitting=false
 Retroify=false
 ActiveVFX=nil
+lp.Character=ws[YourName]
 --OverrideAnimation=false
 --GuiVisible=true
 SpecialAnimRThingy=0
