@@ -13,21 +13,21 @@
 No skidding, haha
 ]]
 setclipboard("https://discord.gg/gR6Pk5pMK")
-	game.StarterGui:SetCore("SendNotification",{
-		Title = "From Theo";
-		Text = "Discord Invite Copied!";
-		Duration = 10;
-	})
-	game.StarterGui:SetCore("SendNotification",{
-		Title = "From Theo";
-		Text = "Join the discord to report bugs or uh for more support!";
-		Duration = 10;
-	})
-	game.StarterGui:SetCore("SendNotification",{
-		Title = "From Theo";
-		Text = "Giveaway at 100 members!";
-		Duration = 10;
-	})
+    	game.StarterGui:SetCore("SendNotification",{
+    		Title = "From Theo";
+    		Text = "Discord Invite Copied!";
+    		Duration = 10;
+    	})
+    	game.StarterGui:SetCore("SendNotification",{
+    		Title = "From Theo";
+    		Text = "Join the discord to report bugs or uh for more support!";
+    		Duration = 10;
+    	})
+--[[	game.StarterGui:SetCore("SendNotification",{
+    		Title = "From Theo";
+    		Text = "Giveaway at 100 members!";
+    		Duration = 10;
+    	})]]
 
 
 
