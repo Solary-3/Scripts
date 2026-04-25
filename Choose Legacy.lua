@@ -100,5 +100,5 @@ if Cgui:FindFirstChild("CHOOSE") then
     Cgui.CHOOSE:Destroy()
 end
 notify("Chosen New Version")
-loadstring(game:HttpGet("https://rawscripts.net/raw/UP-Just-a-baseplate.-Theos-Dancezzzzz-141898"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/ToolDance.lua"))()
 end)
