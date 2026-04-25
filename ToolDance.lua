@@ -846,7 +846,7 @@ UI["TextLabel_16"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolat
 UI["TextLabel_16"]["TextColor3"] = Color3.fromRGB(255, 0, 0);
 UI["TextLabel_16"]["BackgroundTransparency"] = 1;
 UI["TextLabel_16"]["Size"] = UDim2.new(1, 0, 1, 0);
-UI["TextLabel_16"]["Text"] = "New UI👍\n yes new UI, you can scroll up or doen on the UI now, you can choose 3 of the reanimate below this long trxtlabel btw ";
+UI["TextLabel_16"]["Text"] = "New UI👍\n yes new UI, you can scroll up or doen on the UI now, you can choose 3 of the reanimate below this long\ntextlabel btw ";
 UI["TextLabel_16"]["Position"] = UDim2.new(0.06098, 0, 0.00645, 0);
 
 
