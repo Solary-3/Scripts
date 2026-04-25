@@ -1,13 +1,4 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
 
-]]--
 
 
 
@@ -152,7 +143,7 @@ end)
 88  ooo 88    88    88          .88'        88      88    88 88~~~88 
 88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
-Open Source For Now
+
 designed using localmaze gui creator
 ]=]
 
@@ -599,7 +590,9 @@ local Builitins={
 }
 pcall(function()
 for _,a in next,Builitins do 
+  if isfile and not isfile(a) then 
     writefile(builtins.."/"..a,game:HttpGet(MainGit..a))
+    end
   end
 end)
 local oldfolders={
@@ -1745,8 +1738,9 @@ Credits.MouseButton1Click:Connect(function()
   BetterTween(MF4,1,{Position=Tab4.Hidden}):Play()
   CurrentTab=Tab3
 end)
-
-local TypeOfReanim="Emper"
+local eee=Instance.new("StringValue")
+eee.Value="Emper"
+local TypeOfReanim=eee.Value
 local Emp=UI["1Emp_37"] 
 local Gelatek=UI["2Gelatek_3d"]
 local CurrentAngle=UI["3CurrentAngle_43"]
@@ -4071,7 +4065,7 @@ end
 local Ypos=0 
 local Place = game.placeId 
 if Place == 17574618959 or Place == 88308889239232 or Place==123974602339071 then
-Ypos=-10
+Ypos=-30
 else 
 Ypos=-250
 end
@@ -4091,7 +4085,7 @@ DisableCharacterCollisions = true,
 DisableHealthBar = true,
 DisableRigCollisions = true,
 HatDrop = false,
-HideCharacter = Vector3.new(math.random(-10,10), Ypos, math.random(-10,10)),
+HideCharacter = Vector3.new(0, Ypos, 0),
 ParentCharacter = false,
 PermanentDeath = false,
 Refit = true,
@@ -5318,13 +5312,10 @@ ReloadAssets.MouseButton1Click:Connect(function()
   Detect.Value=true
   Hmmm.Value=true
   wait(.2)
-  -- Destroy config page FIRST before clearing anything,
-  -- so its HurryBack closure cannot fire and re-lock the lists
   if ActiveDanceConfiguratuonPage then
     ActiveDanceConfiguratuonPage:Destroy()
     ActiveDanceConfiguratuonPage = nil
   end
-  -- Restore interactability immediately so the rebuilt lists are clickable
   BuiltInDancesList.Interactable = true
   UserDancesList.Interactable = true
   table.clear(UserDanceContainer)
@@ -8177,8 +8168,7 @@ end)
 
 end
 
-
-
+local cac
 if TypeOfReanim~="Emper" then 
   LoadTools()
   cac=Detect:GetPropertyChangedSignal("Value"):Connect(function()
@@ -9095,6 +9085,7 @@ if TypeOfReanim=="CurrentAngle" then
      StringVal.Value="None!"
   end)
   f66=game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
+    if TypeOfReanim~="CurrentAngle" then return end
     if ws:FindFirstChild(YourName.."_Fake") then return end
     repeat wait() until game.Players.LocalPlayer.Character.Humanoid.Health>1 
     Backup()
@@ -9237,14 +9228,18 @@ con1=game:GetService("RunService").PostSimulation:Connect(function(deltaTime: nu
     respawn()
     end
     oswait(.1)
+    --TypeOfReanim=LastReanimChanged
     Hmmm.Value=true
+    BoolDance.Value=false
     String1.Value="Using Tools or Keybind dance"
     oswait(.1)
     --String1.Value="None"
     Hmmm.Value=false
+    String1.Value="None"
     BoolDance.Value=false
     IsRunning1.Value=false
     pcall(function()
+       cac:Disconnect()
        Hi:Disconnect()
        Hi1:Disconnect()
        G2L["1"]:Destroy()
