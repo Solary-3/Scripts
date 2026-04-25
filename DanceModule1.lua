@@ -322,7 +322,7 @@ table.insert(modules, function()
 	m.ModuleType = "DANCE"
 	m.Name = "Terraria Swing dance"
 	m.Description = "enjoy enjoy enjoy enjoy enjoy enjoy\n-- Credits To Steve"
-	m.Assets = {"BusetA.anim@DoorStuck.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/BusetA.anim", "BusetB.anim@DoorStuck.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/BusetA.anim", "Buset.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Buset.mp3?raw=true"}
+	m.Assets = {"BusetA.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/BusetA.anim", "BusetB.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/BusetA.anim", "Buset.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Buset.mp3?raw=true"}
 
 		m.MoveForward = false
 	  m.Config = function(parent: GuiBase2d)
