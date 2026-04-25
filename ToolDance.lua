@@ -5404,10 +5404,15 @@ local function RedownloadUserAsset()
 end
 
 --// Init Modules
+task.spawn(function()
+--// Init Modules)
+notify("Loading Builtin Modules...")
 LoadUserModules()
+notify("Loading User Modules...")
 LoadBuiltInDances()
 AddLoadeModuleDances()
-
+notify("Ini Complete")
+end)
 local ClonedDanceTable=table.clone(TableOfDances)
 local backup=ExtraBackup
 local Detect=Instance.new("BoolValue")
@@ -5432,7 +5437,9 @@ ReloadAssets.MouseButton1Click:Connect(function()
   QueueEmotesThatIsntLooped= {}  
   TableOfDances = table.clone(backup)
   task.wait()
+  notify("Loading Builtin Modules...")
   LoadUserModules()
+  notify("Loading User Modules...")
   LoadBuiltInDances()
   AddLoadeModuleDances()
   notify("Reloaded Module/s")
