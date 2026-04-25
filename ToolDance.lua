@@ -4133,6 +4133,7 @@ rad(180))},--84451219120140
 { MeshId = "100128920324073", Name = "Right Arm", Offset = CFrame.Angles(rad(-105),rad(18),rad(15)), TextureId = "97155254696037" },--95290698984301
 { MeshId = "100128920324073", Name = "Right Leg", Offset = CFrame.Angles(rad(-105),rad(18),rad(15)), TextureId = "133680105074740" },--95290698984301
 { MeshId = "130309145260656", Name = "Left Arm", Offset = CFrame.Angles(rad(-105),rad(-18),rad(-15)), TextureId = "82390202293774" },--95290698984301
+{ MeshId = "17170940529", Name = "Torso", Offset = CFrame.identity, TextureId = "17163376557" },--95290698984301
 
 }
 local Mapping=loadstring(readfile(builtins.."/HatMaps.lua"))()
