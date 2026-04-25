@@ -597,7 +597,7 @@ local oldfolders={
   "Theo-Dancezzz-Dancezzz",
   "Theo-Dancezzz-Musics",
 }
-pcall(function()
+--[[pcall(function()
 for _,v in next,oldfolders do 
 local file=listfiles(v)
 for _,a in next,file do 
@@ -605,7 +605,7 @@ delfile(a)
 notify("Deleted Old Filder: "..a)
 end
 end
-end)
+end)]]
 
 --// Init UI
 UI["Interface_1"] = Instance.new("ScreenGui", hui);
@@ -846,7 +846,7 @@ UI["TextLabel_16"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolat
 UI["TextLabel_16"]["TextColor3"] = Color3.fromRGB(255, 0, 0);
 UI["TextLabel_16"]["BackgroundTransparency"] = 1;
 UI["TextLabel_16"]["Size"] = UDim2.new(1, 0, 1, 0);
-UI["TextLabel_16"]["Text"] = "New UI👍\n yes new UI, you can scroll up or doen on the UI now, you can choose 3 of the reanimate below this long\ntextlabel btw ";
+UI["TextLabel_16"]["Text"] = "New UI👍\n yes new UI, you can scroll up or down on the UI now, you can choose 3 of the reanimate below this long\ntextlabel btw\nif you chose empyrean\nget a keyboard script\nbasically my modded kdv3\nreferrence";
 UI["TextLabel_16"]["Position"] = UDim2.new(0.06098, 0, 0.00645, 0);
 
 
