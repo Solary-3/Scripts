@@ -589,7 +589,9 @@ local Builitins={
 }
 pcall(function()
 for _,a in next,Builitins do 
+  if isfile and not isfile(a) then 
     writefile(builtins.."/"..a,game:HttpGet(MainGit..a))
+    end
   end
 end)
 local oldfolders={
@@ -1773,7 +1775,17 @@ SaveUIAndModuleConfigs()
 HookThing.Value="Emper"
 end)
 
-
+task.spawn(function()
+repeat oswait()
+sine=os.clock()
+for _,a in UI["Interface_1"]:GetDescendants() do 
+  if a:IsA("UIGradient") then 
+    a.Rotation+=1
+    a.Offset=Vector2.new(2.5*math.sin(sine*1),1*math.cos((sine+.5)*.1))
+    end
+end
+until not UI["Interface_1"] 
+end)
 
 local lbl=mklbl(MF2, [[--// Disable Invetory Styling \\--]],nil, u2(0, 65, 0, 320))
 local lbl1=mklbl(MF2, [[Disabled : false]],nil, u2(0, 200, 0, 260),"Left")
@@ -4696,6 +4708,7 @@ function AssetGetPathFromFilename(filename)
 	local ext = (filename:match("%.(%a+)$") or ""):lower()
 	local audioExts = {mp3=true, ogg=true, wav=true, flac=true, aac=true}
 	local folder = audioExts[ext] and MusicFolder or DanceFolder or Models
+	repeat wait() until folder.."/"..filename or os.clock()+5
 	return folder .. "/" .. filename
 end
 
@@ -4725,12 +4738,13 @@ local function DownloadModuleAssets(assets)
 						print("[UserModule] Downloaded: " .. filename)
 					end
 				end)
+				repeat wait() until os.clock()+5
 			  end
 			elseif filename:match(".rbxm") then 
 			  local folder = Models
 			  local path = folder .. "/" .. filename
 			  RegisterAssets[path] = url
-			  print("[UserModule] Registered model asset: " .. filename)
+			  print("[UserModule] Registered Model asset: " .. filename)
 			  if isfile and not isfile(path) then
 				task.spawn(function()
 					local ok, err = pcall(function()
@@ -4742,6 +4756,8 @@ local function DownloadModuleAssets(assets)
 						print("[UserModule] Downloaded: " .. filename)
 					end
 				end)
+				else 
+				  repeat wait() until os.clock()+5
 			  end
 			else
 			  local path = DanceFolder .. "/" .. filename
@@ -4758,6 +4774,8 @@ local function DownloadModuleAssets(assets)
 						print("[UserModule] Downloaded: " .. filename)
 					end
 				end)
+				else 
+				  repeat wait() until os.clock()+5
 			  end
 			end
 		end
@@ -6922,7 +6940,7 @@ function UserModuleAnimationLibrary.Animator.new()
 	self.alpha      = 1
 	self.speed      = 1
 	self.weight     = 1
-	self.map        = nil  -- optional time remapping {{inStart,inEnd},{outStart,outEnd}}
+	self.map        = nil  
 	self._optimiser = 1
 	self._jointmap  = nil
 	self._skipsec   = nil
@@ -6971,7 +6989,6 @@ local function LoadAnimBinary(data)
 	local animName = rStr()
 	local kfCount  = rU32()
 
-	-- Build Steve-style pure-Lua track table: {Name, Time, Keyframes[]}
 	local anim = { Name = animName, Time = 0, Keyframes = {} }
 
 	for _ = 1, kfCount do
@@ -7028,11 +7045,10 @@ end
 function UserModuleAnimationLibrary.Track.fromfile(path)
 	if not (isfile and isfile(path)) then
 		warn("[UserModuleAnimationLibrary] File not found: " .. tostring(path))
-		return nil
+		repeat wait() until path or os.clock()+5
 	end
 	local ext = (path:match("%.(%a+)$") or ""):lower()
 	if ext == "anim" then
-		-- .anim binary → Steve's pure-Lua track table directly
 		local ok, result = pcall(function()
 			return LoadAnimBinary(readfile(path))
 		end)
@@ -7042,13 +7058,11 @@ function UserModuleAnimationLibrary.Track.fromfile(path)
 		warn("[UserModuleAnimationLibrary] Failed to parse .anim: " .. tostring(path) .. " | " .. tostring(result))
 		return nil
 	end
-	-- .lua path: expects the file to return a KeyframeSequence; convert it to Steve's track table
 	local ok, result = pcall(function()
 		return loadstring(readfile(path))()
 	end)
 	if ok and result then
 		if typeof(result) == "Instance" and result:IsA("KeyframeSequence") then
-			-- Convert KFS → pure-Lua track table so Steve's Animator:Step can drive it
 			local ok2, track = pcall(KeyframeSequenceToTrack, result)
 			if ok2 and track then
 				return track
@@ -7056,7 +7070,6 @@ function UserModuleAnimationLibrary.Track.fromfile(path)
 			warn("[UserModuleAnimationLibrary] Failed to convert KeyframeSequence: " .. tostring(path))
 			return nil
 		end
-		-- Already a plain Lua table (Steve's format) — return as-is
 		return result
 	end
 	warn("[UserModuleAnimationLibrary] Failed to load animation: " .. tostring(path))
@@ -7076,24 +7089,20 @@ function UserModuleAnimationLibrary.Animator:Step(t)
 	local looped = self.looped
 	local map    = self.map
 
-	-- Apply alpha/weight to the Numval like the old implementation did
 	local alphaVal = self.alpha ~= nil and self.alpha or self.Alpha or .1
 	if alphaVal ~= nil then
 		Numval.Value = tonumber(alphaVal)
 	end
 
-	-- Time remapping (optional)
 	t = t * speed
 	if map then
 		t = map[2][1] + (t - map[1][1]) * (map[2][2] - map[2][1]) / (map[1][2] - map[1][1])
 	end
 
-	-- Rebuild jointmap if the rig changed
 	if self._rig ~= rig then
 		self._jointmap = nil
 		self._rig = rig
 	end
-	-- Invalidate skipsec cache if the track changed
 	if self._track ~= track then
 		self._skipsec = nil
 		self._track = track
@@ -7113,7 +7122,6 @@ function UserModuleAnimationLibrary.Animator:Step(t)
 	local keyframes = track.Keyframes
 	if not keyframes or #keyframes == 0 then return end
 
-	-- Build the skipsec optimiser table once per track
 	local skipsec = self._skipsec
 	if not skipsec then
 		skipsec = {}
@@ -7160,13 +7168,11 @@ function UserModuleAnimationLibrary.Animator:Step(t)
 		self._skipsec = skipsec
 	end
 
-	-- Loop or clamp time
 	local trackTime = track.Time
 	if looped and trackTime and trackTime > 0 then
 		t = t % trackTime
 	end
 
-	-- Determine search window via skipsec
 	local skip1, skip2 = 1, #keyframes
 	if #skipsec >= 2 then
 		local i = t // self._optimiser
@@ -7179,13 +7185,11 @@ function UserModuleAnimationLibrary.Animator:Step(t)
 		end
 	end
 
-	-- Collect initial pose table
 	local poses = {}
 	for name, _ in jointmap do
 		poses[name] = CFrame.identity
 	end
 
-	-- Interpolate each joint
 	local TweenService = game:GetService("TweenService")
 	for name, _ in poses do
 		local k1, k2, t1, t2 = nil, nil, -math.huge, math.huge
@@ -7237,7 +7241,6 @@ function UserModuleAnimationLibrary.Animator:Step(t)
 		poses[name] = cf
 	end
 
-	-- Apply poses to Motor6D transforms, scaled to rig scale
 	local scale = pcall(function() return rig:GetScale() end) and rig:GetScale() or 1
 	for name, joint in jointmap do
 		local cf = poses[name] or CFrame.identity
@@ -7292,7 +7295,7 @@ local function PlayModuleEmote(m)
 					end
 				end
 			end
-			if not allReady then task.wait(0.2) end
+			if not allReady then repeat wait() until os.clock()+5 end
 		end
 	end
 
@@ -9344,13 +9347,6 @@ end)
 
 
 repeat oswait() 
-sine=os.clock()
-for _,a in UI["Interface_1"]:GetDescendants() do 
-  if a:IsA("UIGradient") then 
-    a.Rotation+=1
-    a.Offset=Vector2.new(2.5*math.sin(sine*1),1*math.cos((sine+.5)*.1))
-    end
-end
 until not UI["Interface_1"] 
 table.clear(TableOfDances)
 table.clear(validAudioFiles)
