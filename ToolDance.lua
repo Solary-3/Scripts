@@ -135,7 +135,6 @@ end)
 
 
 
-
 --[=[
  d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
 88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
@@ -2654,7 +2653,7 @@ writefile(MusicFolder.."/Akage.mp3",game:HttpGet("https://github.com/Solary-3/Sc
 end
 elseif v.Name=="Japanese Meme" then
 if isfile and not isfile(MusicFolder.."/Japan.mp3") then
-writefile(MusicFolder.."/Japan.mp3",game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Japan 1.mp3?raw=true"))
+writefile(MusicFolder.."/Japan.mp3",game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Japan.mp3?raw=true"))
 end
 --.SoundId = getcustomasset(MusicFolder.."/ItBurns.mp3")
 
@@ -2812,7 +2811,7 @@ end
 musicSound.SoundId = getcustomasset(MusicFolder.."/Akage.mp3")
 elseif v.Name=="Japanese Meme" then
 if isfile and not isfile(MusicFolder.."/Japan.mp3") then
-writefile(MusicFolder.."/Japan.mp3",game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Japan 1.mp3?raw=true"))
+writefile(MusicFolder.."/Japan.mp3",game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Japan.mp3?raw=true"))
 end
 musicSound.SoundId = getcustomasset(MusicFolder.."/Japan.mp3")
 
