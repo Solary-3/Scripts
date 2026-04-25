@@ -589,9 +589,7 @@ local Builitins={
 }
 pcall(function()
 for _,a in next,Builitins do 
-  if isfile and not isfile(a) then 
     writefile(builtins.."/"..a,game:HttpGet(MainGit..a))
-    end
   end
 end)
 local oldfolders={
