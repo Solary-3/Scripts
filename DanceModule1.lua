@@ -556,7 +556,7 @@ AddModule(function()
 	m.ModuleType = "DANCE"
 	m.Name = "Popipo"
 	m.Description = "i know you want my vegetable juice\nfirst dance to use rbxm\ni dont recommend doing what i did for this dance though, this is just a good example of how to put stuff in stuff\n -- Credits to Steve"
-	m.Assets = {"PopipoDance.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/PopipoDance.anim", "PopipoShake.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/PopipoShake.anim", "Popipo.rbxm@Popipo.rbxn@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Popipo.rbxm", "Popipo(1).mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Popipo(1).mp3?raw=true", "PopipoAlt.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/PopipoAlt.mp3?raw=true"}
+	m.Assets = {"PopipoDance.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/PopipoDance.anim", "PopipoShake.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/PopipoShake.anim", "Popipo.rbxm@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Popipo.rbxm", "Popipo(1).mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Popipo(1).mp3?raw=true", "PopipoAlt.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/PopipoAlt.mp3?raw=true"}
 
 	m.Effects = true
 	m.Config = function(parent: GuiBase2d)
