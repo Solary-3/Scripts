@@ -4730,7 +4730,7 @@ local function DownloadModuleAssets(assets)
 			  local folder = Models
 			  local path = folder .. "/" .. filename
 			  RegisterAssets[path] = url
-			  print("[UserModule] Registered audio asset: " .. filename)
+			  print("[UserModule] Registered model asset: " .. filename)
 			  if isfile and not isfile(path) then
 				task.spawn(function()
 					local ok, err = pcall(function()
