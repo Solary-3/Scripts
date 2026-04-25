@@ -4073,7 +4073,7 @@ end
 local Ypos=0 
 local Place = game.placeId 
 if Place == 17574618959 or Place == 88308889239232 or Place==123974602339071 then
-Ypos=-30
+Ypos=-10
 else 
 Ypos=-250
 end
