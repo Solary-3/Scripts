@@ -63,7 +63,7 @@ table.insert(modules, function()
 
 	m.Assets = {
 		"IgakuSutibu.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/IgakuSutibu.anim",
-		"Igaku2.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Igaku2.mp3?raw=true",
+		"Igaku.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Igaku.mp3?raw=true",
 	}
 
 	m.Config     = function(parent) Util_CreateText(parent, " ", 14, Enum.TextXAlignment.Center) end
@@ -74,7 +74,7 @@ table.insert(modules, function()
 	local start    = 0
 
 	m.Init = function(figure)
-		SetOverrideDanceMusic(AssetGetContentId("Igaku2.mp3"))
+		SetOverrideDanceMusic(AssetGetContentId("Igaku.mp3"))
 
 		start           = os.clock()
 		animator        = AnimLib.Animator.new()
@@ -1119,4 +1119,85 @@ table.insert(modules, function()
 
     return m
 end)
+
+AddModule(function()
+    local m = {}
+
+    m.ModuleType  = "DANCE"
+    m.Name        = "Heart Of Glass"
+    m.Description = " "
+    m.Assets = {"Heart Of Glass.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Heart Of Glass.lua", "Heart Of Glass.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Heart Of Glass.mp3?raw=true"}
+
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+
+    local animator = nil
+    local start    = 0
+
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Heart Of Glass.mp3"))
+
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Heart Of Glass.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+
+    m.Update = function(dt, figure)
+        animator:Step(os.clock() - start)
+    end
+
+    m.Destroy = function(figure)
+        animator = nil
+    end
+
+    return m
+end)
+
+AddModule(function()
+    local m = {}
+
+    m.ModuleType  = "DANCE"
+    m.Name        = "Phibz Thing"
+    m.Description = " "
+    m.Assets = {"Phibz Thing.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Phibz Thing.lua", "Phibz Thing.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Phibz Thing.mp3?raw=true"}
+
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+
+    local animator = nil
+    local start    = 0
+
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Phibz Thing.mp3"))
+
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Phibz Thing.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+
+    m.Update = function(dt, figure)
+        animator:Step(os.clock() - start)
+    end
+
+    m.Destroy = function(figure)
+        animator = nil
+    end
+
+    return m
+end)
+
 return modules
