@@ -389,6 +389,59 @@ end)
 table.insert(modules, function()
 	local m = {}
 	m.ModuleType = "DANCE"
+	m.Name = "When Your Phone Dies"
+	m.Description = "People in japan when their phone dies\nJapan also making electricity with footsteps"
+	m.Assets = {
+	  "When Your Phone Dies.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/When Your Phone Dies.lua", 
+	  "When Your Phone Dies.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/When Your Phone Dies.mp3?raw=true"
+	  
+	}
+
+		m.MoveForward = false
+	  m.Config = function(parent: GuiBase2d)
+		Util_CreateSwitch(parent, "Move Forward", m.MoveForward).Changed:Connect(function(val)
+			m.MoveForward = val
+		end)
+	end
+	m.LoadConfig = function(save: any)
+		m.MoveForward = not not save.MoveForward
+	end
+	m.SaveConfig = function()
+		return {
+			MoveForward = m.MoveForward
+		}
+	end
+
+
+	local animator1, animator2 = nil, nil
+	m.Init = function(figure)
+		SetOverrideDanceMusic(AssetGetContentId("When Your Phone Dies.mp3"))
+		animator1 = AnimLib.Animator.new()
+		animator1.rig = figure
+		animator1.looped = true
+		animator1.alpha = 50
+		animator1.track = AnimLib.Track.fromfile(AssetGetPathFromFilename("When Your Phone Dies.lua"))
+		
+	end
+	m.Update = function(dt, figure)
+		local t = GetOverrideDanceMusicTime()
+		if m.MoveForward then 
+		  local root = figure:FindFirstChild("HumanoidRootPart")
+				root.CFrame *= CFrame.new(0, 0, -dt * 1.5 * figure:GetScale())
+		end
+	  animator1:Step(t)
+	end
+	m.Destroy = function(figure)
+		animator1 = nil
+		animator2 = nil
+		--table.clear(allbusets)
+	end
+	return m
+end)
+
+table.insert(modules, function()
+	local m = {}
+	m.ModuleType = "DANCE"
 	m.Name = "Kai Cenat And Speed Jumping"
 	m.Description = "adventures of luigi and mario\nW SPEED\n--Credits To Steve The Commone One\nthis uses no keyframes"
 	m.InternalName = "SpeedAndKaiCenat"
