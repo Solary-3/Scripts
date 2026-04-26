@@ -81,7 +81,7 @@ table.insert(modules, function()
 		animator.rig    = figure
 		animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("IgakuSutibu.anim"))
 		animator.looped = true
-		animator.speed  = .85
+		animator.speed  = .9
 	end
 
 	m.Update = function(dt, figure)
