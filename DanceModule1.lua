@@ -1,3 +1,158 @@
+local osclock=os.clock
+local tspawn=task.spawn
+local twait=task.wait
+local schar=string.char
+local ssub=string.sub
+local sfind=string.find
+local supper=string.upper
+local mrandom=math.random
+local sin=math.sin
+local cos=math.cos
+local rad=math.rad
+local abs=math.abs
+local tan=math.tan
+local min=math.min
+local clamp=math.clamp
+local tinsert=table.insert
+local tclear=table.clear
+local tclone=table.clone
+local tfind=table.find
+local random=function(a,b) 
+return mrandom(a*1000,b*1000)/1000
+end
+local vmagnitude=vector.magnitude --faster than indexing with Magnitude
+local vnormalize=vector.normalize --faster than indexing with Unit
+
+--the script doesnt have to read global varaibles every time to get them
+--why not have them saved in local varaibles for faster access times
+local next=next
+local pcall=pcall
+local xpcall=xpcall
+local type=type
+local typeof=typeof
+local game=game
+local replicatesignal=replicatesignal
+
+local i=Instance.new 
+local v2=Vector2.new 
+local v3=Vector3.new
+local c3=Color3.new 
+local cf=CFrame.new
+local cfl=CFrame.lookAt
+local angles=CFrame.fromEulerAngles --faster than .Angles
+local u2=UDim2.new 
+local e=Enum 
+local rp=RaycastParams.new 
+local cs=ColorSequence.new 
+local csk=ColorSequenceKeypoint.new 
+
+local sine=osclock()
+local deltaTime=0
+local v3_0=v3()
+local v3_101=v3(1,0,1)
+local v3_010=v3(0,1,0)
+local cf_0=cf()
+local v3_xz=v3_101*10
+local v3_xzL=v3_101*250.1
+local v3_net=v3_010*25.01
+local pdloadedtime=nil
+
+local enumMD=e.MouseBehavior.Default
+
+--not "local function rs" to not assign debug names
+local rs=function()
+local s=""
+for i=1,mrandom(8,15) do
+if mrandom(2)==2 then
+s=s..schar(mrandom(65,90))
+else
+s=s..schar(mrandom(97,122))
+end
+end
+return s
+end
+
+--it runs even faster if u call __index and __newindex metamethods directly
+local getMetamethodFromErrorStack=function(userdata,f,test)
+local ret=nil
+xpcall(f,function()
+ret=debug.info(2,"f")
+end,userdata,nil,0)
+if (type(ret)~="function") or not test(ret) then
+return f
+end
+return ret
+end
+local insSet=getMetamethodFromErrorStack(game,function(a,b,c) a[b]=c end,function(f) local a=i("Folder") local b=rs() f(a,"Name",b) return a.Name==b end)
+local insGet=getMetamethodFromErrorStack(game,function(a,b) return a[b] end,function(f) local a=i("Folder") local b=rs() a.Name=b return f(a,"Name")==b end)
+local cfGet=getMetamethodFromErrorStack(cf_0,function(a,b) return a[b] end,function(f) return f(cf(1,2,3),"Position")==v3(1,2,3) end)
+local cfMul=getMetamethodFromErrorStack(cf_0,function(a,b) return a*b end,function(f) return angles(1,2,3)*angles(1,2,3)==f(angles(1,2,3),angles(1,2,3)) end)
+local cfAdd=getMetamethodFromErrorStack(cf_0,function(a,b) return a+b end,function(f) return cf(1,2,3)+v3(1,2,3)==f(cf(1,2,3),v3(1,2,3)) end)
+local v3Get=getMetamethodFromErrorStack(v3_0,function(a,b) return a[b] end,function(f) return v3(1,2,3).Unit==f(v3(1,2,3),"Unit") end)
+local v2Get=getMetamethodFromErrorStack(v2(),function(a,b) return a[b] end,function(f) return f(v2(1,2),"Y")==2 end)
+--multiplying and adding vector3 is faster if you use the * and + operators
+--its faster to multiply X and Y of vector2 than to multiply vector2 and then get X and Y from it
+
+--no need to index instances every time to call their functions
+local Clone=insGet(game,"Clone")
+local ClearAllChildren=insGet(game,"ClearAllChildren")
+local Destroy=insGet(game,"Destroy")
+local IsA=insGet(game,"IsA")
+local FindFirstChildOfClass=insGet(game,"FindFirstChildOfClass")
+local FindFirstChild=insGet(game,"FindFirstChild")
+local FindFirstChildWhichIsA=insGet(game,"FindFirstChildWhichIsA")
+local GetChildren=insGet(game,"GetChildren")
+local IsDescendantOf=insGet(game,"IsDescendantOf")
+local QueryDescendants=insGet(game,"QueryDescendants")
+local GetPropertyChangedSignal=insGet(game,"GetPropertyChangedSignal")
+
+--findfirstchildofclass faster than getservice
+local plrs=FindFirstChildOfClass(game,"Players")
+local rus=FindFirstChildOfClass(game,"RunService")
+local ws=FindFirstChildOfClass(game,"Workspace")
+local uis=FindFirstChildOfClass(game,"UserInputService")
+local gs=FindFirstChildOfClass(game,"GuiService")
+local sg=FindFirstChildOfClass(game,"StarterGui")
+local lp=insGet(plrs,"LocalPlayer")
+local pg=FindFirstChildOfClass(lp,"PlayerGui")
+local mouse=insGet(lp,"GetMouse")(lp)
+--local cdsb=insGet(lp,"ConnectDiedSignalBackend")
+local rst=insGet(plrs,"RespawnTime")+0.07 --1/15
+local preanimation=insGet(rus,"PreAnimation")
+local heartbeat=insGet(rus,"Heartbeat")
+local renderstepped=insGet(rus,"RenderStepped")
+local PostSimulation=insGet(rus,"PostSimulation")
+local PreSimulation=insGet(rus,"PreSimulation")
+local GetPlayers=insGet(plrs,"GetPlayers")
+local SetCoreGuiEnabled=insGet(sg,"SetCoreGuiEnabled")
+local GetCoreGuiEnabled=insGet(sg,"GetCoreGuiEnabled")
+local Raycast=insGet(ws,"Raycast")
+local Connect=heartbeat.Connect
+local Disconnect=Connect(GetPropertyChangedSignal(game,"CreatorId"),type).Disconnect
+local Wait=heartbeat.Wait
+local GetMouseLocation=insGet(uis,"GetMouseLocation")
+local GetFocusedTextBox=insGet(uis,"GetFocusedTextBox")
+local GetMouseDelta=insGet(uis,"GetMouseDelta")
+local IsMouseButtonPressed=insGet(uis,"IsMouseButtonPressed")
+local IsKeyDown=insGet(uis,"IsKeyDown")
+local GetDescendants=insGet(game,"GetDescendants")
+
+local Inverse=cfGet(cf_0,"Inverse")
+local Lerp=cfGet(cf_0,"Lerp")
+local ns=NumberSequence.new
+local nsk=NumberSequenceKeypoint.new 
+local nr=NumberRange.new 
+local u2scale=UDim2.fromScale
+local u2offset=UDim2.fromOffset
+local RigsTable={}
+local VLerp=v3_0.Lerp
+local ULerp=u2().Lerp
+local CLerp=c3().Lerp
+
+
+
+
+
 local modules = {}
 
 
@@ -81,7 +236,7 @@ table.insert(modules, function()
 		animator.rig    = figure
 		animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("IgakuSutibu.anim"))
 		animator.looped = true
-		animator.speed  = .9
+		animator.speed  = .85
 	end
 
 	m.Update = function(dt, figure)
@@ -1195,6 +1350,63 @@ AddModule(function()
 
     m.Destroy = function(figure)
         animator = nil
+    end
+
+    return m
+end)
+
+AddModule(function()
+    local m = {}
+
+    m.ModuleType  = "DANCE"
+    m.Name        = "Krump"
+    m.Description = "from that one Lightning Cannon mode\nthis uses no keyframes\nanim made by theo"
+    m.Assets = {
+      "MonsterMash.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/MonsterMash.mp3?raw=true",
+      
+    }
+
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+
+    local animator = nil
+    local start    = 0
+
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("MonsterMash.mp3"))
+    end
+
+    m.Update = function(dt, figure)
+    local deltaTime=.75 
+    sine=os.clock()
+    local hum = figure:FindFirstChild("Humanoid")
+		if not hum then return end
+		local root = figure:FindFirstChild("HumanoidRootPart")
+		if not root then return end
+		local torso = figure:FindFirstChild("Torso")
+		if not torso then return end
+
+		local scale = figure:GetScale()
+
+		local RootJoint = root:FindFirstChild("RootJoint")
+		local Neck = torso:FindFirstChild("Neck")
+		local RightShoulder = torso:FindFirstChild("Right Shoulder")
+		local LeftShoulder = torso:FindFirstChild("Left Shoulder")
+		local RightHip = torso:FindFirstChild("Right Hip")
+		local LeftHip = torso:FindFirstChild("Left Hip") 
+		RootJoint.Transform=Lerp(RootJoint.Transform,cfMul(cf(-0.5*scale*cos((sine*15)+0)+0,0.5*scale*sin((sine*15)+0),-.5),angles(0,-0.17453292519943295+0,0)),deltaTime)
+		LeftHip.Transform=cfMul(cf(0,.25+0,.25),angles(0.17453292519943295,0,0))
+		RightHip.Transform=cfMul(cf(0+0,.5+0,.25),angles(-0.8726646259971648,0,0))
+		RightShoulder.Transform=cfMul(cf(0,.5,1.5),angles(1.5707963267948966+0,0,0))
+		LeftShoulder.Transform=cfMul(cf(0,-.5,.5),angles(-1.5707963267948966+0,0,0))
+		Neck.Transform=CFrame.identity
+    end
+
+    m.Destroy = function(figure)
     end
 
     return m
