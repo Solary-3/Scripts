@@ -1384,7 +1384,7 @@ AddModule(function()
     m.Name        = "Invincible Wobble Edit"
     m.Description = "Great for edits fr fr"
     m.Assets = {
-      "Phibz Thing.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Phibz Thing.lua",
+      "Invincible Wobble.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Invincible Wobble.lua",
       "Invincible.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Invincible.mp3?raw=true"
     }
 
