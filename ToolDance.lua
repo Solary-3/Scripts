@@ -1700,6 +1700,48 @@ end)
 end
 dragify(UI["Main_2"])
 
+local Tabs = {
+    {mf = MF1, tab = Tab1},
+    {mf = MF2, tab = Tab2},
+    {mf = MF3, tab = Tab3},
+    {mf = MF4, tab = Tab4},
+}
+local function SwitchTab(activeTab)
+    local isHome = activeTab == nil
+
+    BetterTween(
+        UI["ScrollingFrame_9"], tonumber(TweenAlph.Value),{Position = isHome and scrollHidden or scrollShown}):Play()
+
+    for _, entry in ipairs(Tabs) do
+        local pos = (entry.tab == activeTab) and entry.tab.Shown or entry.tab.Hidden
+        BetterTween(entry.mf, tonumber(TweenAlph.Value), {Position = pos}):Play()
+    end
+
+    CurrentTab = isHome and UI["ScrollingFrame_9"] or activeTab
+end
+
+
+
+local index=5 -- 5th index
+function mktb1(name,txt,txtpos)
+local tabby=mktb(name,txtpos)
+local mf=tabby.MF
+local er={
+  mf=mf, 
+  tab=tabby,
+}
+table.insert(Tabs,er)
+mkbtn(UI["ScrollingFrame_57"],index..name,txt,nil,nil,nil,nil,true,24,function()
+  SwitchTab(tabby) 
+end)
+index+=1
+return mf
+end
+--mktb1("Test","Test")
+
+
+
+
 Home.MouseButton1Click:Connect(function()
 SwitchTab(nil)  
 end)
