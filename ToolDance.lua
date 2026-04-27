@@ -1699,7 +1699,9 @@ end
 end)
 end
 dragify(UI["Main_2"])
-
+local alpha = tonumber(TweenAlph.Value)
+local scrollHidden = UDim2.new(0, 0, .08553, 0)
+local scrollShown  = UDim2.new(0, 600, .08553, 0)
 local Tabs = {
     {mf = MF1, tab = Tab1},
     {mf = MF2, tab = Tab2},
