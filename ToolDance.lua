@@ -1660,13 +1660,6 @@ local Primary=c1.Value
 local Secondary=c2.Value
 Primary=Color3.new(1,0,0)
 Secondary=Color3.new(1,1,1)
-local Dances=mkbtn(UI["ScrollingFrame_57"],"4ModuleDances","Module Dances",nil,nil,nil,nil,true,24,function()
-  BetterTween(MF1,tonumber(tonumber(TweenAlph.Value)),{Position=Tab1.Hidden}):Play()
-  BetterTween(MF2,tonumber(tonumber(TweenAlph.Value)),{Position=Tab2.Hidden}):Play()
-  BetterTween(MF3,tonumber(tonumber(TweenAlph.Value)),{Position=Tab3.Hidden}):Play()
-  BetterTween(MF4,tonumber(tonumber(TweenAlph.Value)),{Position=Tab4.Shown}):Play()
-  BetterTween(UI["ScrollingFrame_9"],tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(0,600,.08553,0)}):Play()
-end)
 local function dragify(Frame)
 dragToggle = nil
 dragSpeed = .1
@@ -1708,36 +1701,19 @@ end
 dragify(UI["Main_2"])
 
 Home.MouseButton1Click:Connect(function()
-  BetterTween(MF1,tonumber(tonumber(TweenAlph.Value)),{Position=Tab1.Hidden}):Play()
-  BetterTween(MF2,tonumber(tonumber(TweenAlph.Value)),{Position=Tab2.Hidden}):Play()
-  BetterTween(MF3,tonumber(tonumber(TweenAlph.Value)),{Position=Tab3.Hidden}):Play()
-  BetterTween(UI["ScrollingFrame_9"],tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(0,0,.08553,0)}):Play()
-  BetterTween(MF4,tonumber(tonumber(TweenAlph.Value)),{Position=Tab4.Hidden}):Play()
-  CurrentTab=UI["ScrollingFrame_9"]
+SwitchTab(nil)  
 end)
 ModuleShop.MouseButton1Click:Connect(function()
-  BetterTween(MF1,tonumber(tonumber(TweenAlph.Value)),{Position=Tab1.Shown}):Play()
-  BetterTween(MF2,tonumber(tonumber(TweenAlph.Value)),{Position=Tab2.Hidden}):Play()
-  BetterTween(MF3,tonumber(tonumber(TweenAlph.Value)),{Position=Tab3.Hidden}):Play()
-  BetterTween(UI["ScrollingFrame_9"],tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(0,600,.08553,0)}):Play()
-  BetterTween(MF4,tonumber(tonumber(TweenAlph.Value)),{Position=Tab4.Hidden}):Play()
-  CurrentTab=Tab1
+SwitchTab(Tab1) 
 end)
 Settings.MouseButton1Click:Connect(function()
-  BetterTween(MF1,tonumber(tonumber(TweenAlph.Value)),{Position=Tab1.Hidden}):Play()
-  BetterTween(MF2,tonumber(tonumber(TweenAlph.Value)),{Position=Tab2.Shown}):Play()
-  BetterTween(MF3,tonumber(tonumber(TweenAlph.Value)),{Position=Tab3.Hidden}):Play()
-  BetterTween(UI["ScrollingFrame_9"],tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(0,600,.08553,0)}):Play()
-  BetterTween(MF4,tonumber(tonumber(TweenAlph.Value)),{Position=Tab4.Hidden}):Play()
-  CurrentTab=Tab2
+SwitchTab(Tab2) 
 end)
 Credits.MouseButton1Click:Connect(function()
-  BetterTween(MF1,tonumber(tonumber(TweenAlph.Value)),{Position=Tab1.Hidden}):Play()
-  BetterTween(MF2,tonumber(tonumber(TweenAlph.Value)),{Position=Tab2.Hidden}):Play()
-  BetterTween(MF3,tonumber(tonumber(TweenAlph.Value)),{Position=Tab3.Shown}):Play()
-  BetterTween(UI["ScrollingFrame_9"],tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(0,600,.08553,0)}):Play()
-  BetterTween(MF4,tonumber(tonumber(TweenAlph.Value)),{Position=Tab4.Hidden}):Play()
-  CurrentTab=Tab3
+SwitchTab(Tab3) 
+end)
+mkbtn(UI["ScrollingFrame_57"],"4ModuleDances","Module Dances",nil,nil,nil,nil,true,24,function()
+  SwitchTab(Tab4) 
 end)
 local eee=Instance.new("StringValue")
 eee.Value="Emper"
