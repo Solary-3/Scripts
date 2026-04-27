@@ -170,7 +170,7 @@ AddModule(function()
 
 	m.ModuleType  = "DANCE"
 	m.Name        = "Nightmail"
-	m.Description = " "
+	m.Description = "This is a Nightmail crossing the border, bringing the cheques on the postal border, letters for the rich, letters for the poor, i stop at the corner the girl next door"
 	m.Looped = true
 
 	m.Assets = {
@@ -250,6 +250,49 @@ AddModule(function()
 	end
 
 	return m
+end)
+
+AddModule(function()
+    local m = {}
+
+    m.ModuleType  = "DANCE"
+    m.Name        = "Nightmail 1"
+    m.Description = "This is a Nightmail crossing the border, bringing the cheques on the postal border, letters for the rich, letters for the poor, i stop at the corner the girl next door"
+    m.Assets = {
+      "Nightmail1.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Wobbly Edit.lua",
+      "Nightmail.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Nightmail.mp3?raw=true"
+    }
+
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+
+    local animator = nil
+    local start    = 0
+
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Nightmail.mp3"))
+
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Nightmail1.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+
+    m.Update = function(dt, figure)
+        animator:Step(os.clock() - start)
+    end
+
+    m.Destroy = function(figure)
+        animator = nil
+    end
+
+    return m
 end)
 
 AddModule(function()
@@ -1381,49 +1424,6 @@ AddModule(function()
     local m = {}
 
     m.ModuleType  = "DANCE"
-    m.Name        = "Invincible Wobble Edit"
-    m.Description = "Great for edits fr fr"
-    m.Assets = {
-      "Invincible Wobble.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Invincible Wobble.lua",
-      "Invincible.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Invincible.mp3?raw=true"
-    }
-
-    m.Config = function(parent)
-        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
-    end
-
-    m.SaveConfig = function() return {} end
-    m.LoadConfig  = function(save) end
-
-    local animator = nil
-    local start    = 0
-
-    m.Init = function(figure)
-        SetOverrideDanceMusic(AssetGetContentId("Invincible.mp3"))
-
-        start           = os.clock()
-        animator        = AnimLib.Animator.new()
-        animator.rig    = figure
-        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Invincible Wobble.lua"))
-        animator.looped = true
-        animator.speed  = 1
-    end
-
-    m.Update = function(dt, figure)
-        animator:Step(os.clock() - start)
-    end
-
-    m.Destroy = function(figure)
-        animator = nil
-    end
-
-    return m
-end)
-
-AddModule(function()
-    local m = {}
-
-    m.ModuleType  = "DANCE"
     m.Name        = "Krump"
     m.Description = "from that one Lightning Cannon mode\nthis uses no keyframes\nanim made by theo"
     m.Assets = {
@@ -1472,6 +1472,92 @@ AddModule(function()
     end
 
     m.Destroy = function(figure)
+    end
+
+    return m
+end)
+
+AddModule(function()
+    local m = {}
+
+    m.ModuleType  = "DANCE"
+    m.Name        = "Invincible Wobble Edit"
+    m.Description = "Great for edits fr fr"
+    m.Assets = {
+      "Invincible Wobble.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Invincible Wobble.lua",
+      "Invincible.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Invincible.mp3?raw=true"
+    }
+
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+
+    local animator = nil
+    local start    = 0
+
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Invincible.mp3"))
+
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Invincible Wobble.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+
+    m.Update = function(dt, figure)
+        animator:Step(os.clock() - start)
+    end
+
+    m.Destroy = function(figure)
+        animator = nil
+    end
+
+    return m
+end)
+
+AddModule(function()
+    local m = {}
+
+    m.ModuleType  = "DANCE"
+    m.Name        = "Invincible Wobble Edit 2"
+    m.Description = "Great for edits fr fr"
+    m.Assets = {
+      "Wobbly Edit.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Wobbly Edit.lua",
+      "Invincible.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Invincible.mp3?raw=true"
+    }
+
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+
+    local animator = nil
+    local start    = 0
+
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Invincible.mp3"))
+
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Wobbly Edit.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+
+    m.Update = function(dt, figure)
+        animator:Step(os.clock() - start)
+    end
+
+    m.Destroy = function(figure)
+        animator = nil
     end
 
     return m
