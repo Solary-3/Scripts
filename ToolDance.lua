@@ -4786,9 +4786,7 @@ function GetOverrideDanceMusicTime()
 end
 
 function SetOverrideDanceMusicTime(t)
-	if musicSound.IsLoaded and musicSound.IsPlaying then
 		musicSound.TimePosition = t
-	end
 	if OverridenMusicStartClock then
 		OverridenMusicStartClock = os.clock() - t
 	end
