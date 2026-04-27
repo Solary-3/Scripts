@@ -210,49 +210,6 @@ AddModule(function()
 end)
 
 AddModule(function()
-	local m = {}
-
-	m.ModuleType  = "DANCE"
-	m.Name        = "Igaku (Steves Version)"
-	m.Description = "Steve wants you know that this version of Igaku was made by him"
-
-	m.Assets = {
-		"IgakuSutibu.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/IgakuSutibu.anim",
-		"Igaku.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Igaku.mp3?raw=true",
-	}
-
-	m.Config     = function(parent) Util_CreateText(parent, " ", 14, Enum.TextXAlignment.Center) end
-	m.SaveConfig = function() return {} end
-	m.LoadConfig = function(save) end
-
-	local animator = nil
-	local start    = 0
-
-	m.Init = function(figure)
-		SetOverrideDanceMusic(AssetGetContentId("Igaku.mp3"))
-
-		start           = os.clock()
-		animator        = AnimLib.Animator.new()
-		animator.rig    = figure
-		animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("IgakuSutibu.anim"))
-		animator.looped = true
-		animator.speed  = .85
-	end
-
-	m.Update = function(dt, figure)
-		if animator then
-			animator:Step(GetOverrideDanceMusicTime())
-		end
-	end
-
-	m.Destroy = function(figure)
-		animator = nil
-	end
-
-	return m
-end)
-
-AddModule(function()
     local m = {}
 
     m.ModuleType  = "DANCE"
@@ -293,6 +250,49 @@ AddModule(function()
     end
 
     return m
+end)
+
+AddModule(function()
+	local m = {}
+
+	m.ModuleType  = "DANCE"
+	m.Name        = "Igaku (Steves Version)"
+	m.Description = "Steve wants you know that this version of Igaku was made by him"
+
+	m.Assets = {
+		"IgakuSutibu.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/IgakuSutibu.anim",
+		"Igaku.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Igaku.mp3?raw=true",
+	}
+
+	m.Config     = function(parent) Util_CreateText(parent, " ", 14, Enum.TextXAlignment.Center) end
+	m.SaveConfig = function() return {} end
+	m.LoadConfig = function(save) end
+
+	local animator = nil
+	local start    = 0
+
+	m.Init = function(figure)
+		SetOverrideDanceMusic(AssetGetContentId("Igaku.mp3"))
+
+		start           = os.clock()
+		animator        = AnimLib.Animator.new()
+		animator.rig    = figure
+		animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("IgakuSutibu.anim"))
+		animator.looped = true
+		animator.speed  = .85
+	end
+
+	m.Update = function(dt, figure)
+		if animator then
+			animator:Step(GetOverrideDanceMusicTime())
+		end
+	end
+
+	m.Destroy = function(figure)
+		animator = nil
+	end
+
+	return m
 end)
 
 AddModule(function()
