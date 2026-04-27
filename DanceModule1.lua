@@ -300,7 +300,7 @@ AddModule(function()
 
 	m.ModuleType  = "DANCE"
 	m.Name        = "Hito Mania"
-	m.Description = " "
+	m.Description = "Bssically Teto Core"
 	m.Looped = true
 
 	m.Assets = {
