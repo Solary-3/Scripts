@@ -165,7 +165,7 @@ function AddModule(m)
 table.insert(modules,m)
 end
 
-table.insert(modules, function()
+AddModule(function()
 	local m = {}
 
 	m.ModuleType  = "DANCE"
@@ -209,7 +209,7 @@ table.insert(modules, function()
 	return m
 end)
 
-table.insert(modules, function()
+AddModule(function()
 	local m = {}
 
 	m.ModuleType  = "DANCE"
@@ -252,7 +252,7 @@ table.insert(modules, function()
 	return m
 end)
 
-table.insert(modules, function()
+AddModule(function()
 	local m = {}
 
 	m.ModuleType  = "DANCE"
@@ -296,7 +296,7 @@ table.insert(modules, function()
 	return m
 end)
 
-table.insert(modules, function()
+AddModule(function()
 	local m = {}
 
 	m.ModuleType  = "DANCE"
@@ -339,7 +339,7 @@ table.insert(modules, function()
 	return m
 end)
 
-table.insert(modules, function()
+AddModule(function()
 	local m = {}
 
 	m.ModuleType  = "DANCE"
@@ -384,7 +384,7 @@ table.insert(modules, function()
 	return m
 end)
 
-table.insert(modules, function()
+AddModule(function()
 	local m = {}
 
 	m.ModuleType  = "DANCE"
@@ -428,7 +428,7 @@ table.insert(modules, function()
 	return m
 end)
 
-table.insert(modules, function()
+AddModule(function()
 	local m = {}
 
 	m.ModuleType  = "DANCE"
@@ -472,12 +472,15 @@ table.insert(modules, function()
 	return m
 end)
 
-table.insert(modules, function()
+AddModule(function()
 	local m = {}
 	m.ModuleType = "DANCE"
 	m.Name = "Terraria Swing dance"
 	m.Description = "enjoy enjoy enjoy enjoy enjoy enjoy\n-- Credits To Steve"
-	m.Assets = {"BusetA.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/BusetA.anim", "BusetB.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/BusetB.anim", "Buset.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Buset.mp3?raw=true"}
+	m.Assets = {"BusetA.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/BusetA.anim",
+	  "BusetB.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/BusetB.anim",
+	  "Buset.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Buset.mp3?raw=true"
+	}
 
 		m.MoveForward = false
 	  m.Config = function(parent: GuiBase2d)
@@ -541,7 +544,7 @@ table.insert(modules, function()
 	return m
 end)
 
-table.insert(modules, function()
+AddModule(function()
 	local m = {}
 	m.ModuleType = "DANCE"
 	m.Name = "When Your Phone Dies"
@@ -549,7 +552,6 @@ table.insert(modules, function()
 	m.Assets = {
 	  "When Your Phone Dies.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/When Your Phone Dies.lua", 
 	  "When Your Phone Dies.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/When Your Phone Dies.mp3?raw=true"
-	  
 	}
 
 		m.MoveForward = false
@@ -594,13 +596,15 @@ table.insert(modules, function()
 	return m
 end)
 
-table.insert(modules, function()
+AddModule(function()
 	local m = {}
 	m.ModuleType = "DANCE"
 	m.Name = "Kai Cenat And Speed Jumping"
 	m.Description = "adventures of luigi and mario\nW SPEED\n--Credits To Steve The Commone One\nthis uses no keyframes"
 	m.InternalName = "SpeedAndKaiCenat"
-	m.Assets = {"SpeedJumping.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/SpeedJumping.mp3?raw=true"}
+	m.Assets = {
+	  "SpeedJumping.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/SpeedJumping.mp3?raw=true"
+	}
 
 	m.Intro = true
 	m.DifferentTiming = false
@@ -764,7 +768,13 @@ AddModule(function()
 	m.ModuleType = "DANCE"
 	m.Name = "Popipo"
 	m.Description = "i know you want my vegetable juice\nfirst dance to use rbxm\ni dont recommend doing what i did for this dance though, this is just a good example of how to put stuff in stuff\n -- Credits to Steve"
-	m.Assets = {"PopipoDance.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/PopipoDance.anim", "PopipoShake.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/PopipoShake.anim", "Popipo.rbxm@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Popipo.rbxm", "Popipo(1).mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Popipo(1).mp3?raw=true", "PopipoAlt.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/PopipoAlt.mp3?raw=true"}
+	m.Assets = {
+	  "PopipoDance.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/PopipoDance.anim",
+	  "PopipoShake.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/PopipoShake.anim",
+	  "Popipo.rbxm@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Popipo.rbxm",
+	  "Popipo(1).mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Popipo(1).mp3?raw=true",
+	  "PopipoAlt.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/PopipoAlt.mp3?raw=true"
+	}
 
 	m.Effects = true
 	m.Config = function(parent: GuiBase2d)
@@ -928,7 +938,10 @@ AddModule(function()
 	m.ModuleType = "DANCE"
 	m.Name = "Eyes Closed"
 	m.Description = "performative male's favorite artist but fyeeee"
-	m.Assets = {"Eyesclosed.anim@https://github.com/valttasar/Valttas-Port-Content/raw/refs/heads/main/Eyes%20Closed/Eyesclosed.anim", "Eyesclosed.mp3@https://github.com/valttasar/Valttas-Port-Content/raw/refs/heads/main/Eyes%20Closed/Eyesclosed.mp3"}
+	m.Assets = {
+	  "Eyesclosed.anim@https://github.com/valttasar/Valttas-Port-Content/raw/refs/heads/main/Eyes%20Closed/Eyesclosed.anim",
+	  "Eyesclosed.mp3@https://github.com/valttasar/Valttas-Port-Content/raw/refs/heads/main/Eyes%20Closed/Eyesclosed.mp3"
+	}
 
 	m.Effects = true
 	m.Config = function(parent: GuiBase2d)
@@ -1235,13 +1248,16 @@ AddModule(function()
 	return m
 end)
 
-table.insert(modules, function()
+AddModule(function()
     local m = {}
 
     m.ModuleType  = "DANCE"
     m.Name        = "HypnoDance"
     m.Description = "Get Hypnotized"
-    m.Assets = {"HypnoDance.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/HypnoDance.anim", "HypnoDance.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/HypnoDance.mp3?raw=true"}
+    m.Assets = {
+      "HypnoDance.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/HypnoDance.anim", 
+      "HypnoDance.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/HypnoDance.mp3?raw=true"
+    }
 
     m.Config = function(parent)
         Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
@@ -1281,7 +1297,10 @@ AddModule(function()
     m.ModuleType  = "DANCE"
     m.Name        = "Heart Of Glass"
     m.Description = " "
-    m.Assets = {"Heart Of Glass.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Heart Of Glass.lua", "Heart Of Glass.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Heart Of Glass.mp3?raw=true"}
+    m.Assets = {
+      "Heart Of Glass.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Heart Of Glass.lua",
+      "Heart Of Glass.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Heart Of Glass.mp3?raw=true"
+    }
 
     m.Config = function(parent)
         Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
@@ -1321,7 +1340,10 @@ AddModule(function()
     m.ModuleType  = "DANCE"
     m.Name        = "Phibz Thing"
     m.Description = " "
-    m.Assets = {"Phibz Thing.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Phibz Thing.lua", "Phibz Thing.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Phibz Thing.mp3?raw=true"}
+    m.Assets = {
+      "Phibz Thing.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Phibz Thing.lua", 
+      "Phibz Thing.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Phibz Thing.mp3?raw=true"
+    }
 
     m.Config = function(parent)
         Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
@@ -1340,6 +1362,49 @@ AddModule(function()
         animator        = AnimLib.Animator.new()
         animator.rig    = figure
         animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Phibz Thing.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+
+    m.Update = function(dt, figure)
+        animator:Step(os.clock() - start)
+    end
+
+    m.Destroy = function(figure)
+        animator = nil
+    end
+
+    return m
+end)
+
+AddModule(function()
+    local m = {}
+
+    m.ModuleType  = "DANCE"
+    m.Name        = "Invincible Wobble Edit"
+    m.Description = "Great for edits fr fr"
+    m.Assets = {
+      "Phibz Thing.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Phibz Thing.lua",
+      "Invincible.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Invincible.mp3?raw=true"
+    }
+
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+
+    local animator = nil
+    local start    = 0
+
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Invincible.mp3"))
+
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Invincible Wobble.lua"))
         animator.looped = true
         animator.speed  = 1
     end
