@@ -134,7 +134,6 @@ end)
 
 
 
-
 --[=[
  d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
 88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
@@ -1584,9 +1583,9 @@ end
 
 local TweenAlph=Instance.new("NumberValue")
 TweenAlph.Value=1
-local TweenAlpha
+--local tonumber(tonumber(TweenAlph.Value))
 con1=TweenAlph:GetPropertyChangedSignal("Value"):Connect(function()
-  TweenAlpha=tonumber(TweenAlph.Value)
+--  tonumber(tonumber(TweenAlph.Value))=tonumber(TweenAlph.Value) or 1
   end)
 local MusicOverriden   = nil
 local OverridenMusicName = nil
@@ -1662,11 +1661,11 @@ local Secondary=c2.Value
 Primary=Color3.new(1,0,0)
 Secondary=Color3.new(1,1,1)
 local Dances=mkbtn(UI["ScrollingFrame_57"],"4ModuleDances","Module Dances",nil,nil,nil,nil,true,24,function()
-  BetterTween(MF1,TweenAlpha,{Position=Tab1.Hidden}):Play()
-  BetterTween(MF2,TweenAlpha,{Position=Tab2.Hidden}):Play()
-  BetterTween(MF3,TweenAlpha,{Position=Tab3.Hidden}):Play()
-  BetterTween(MF4,TweenAlpha,{Position=Tab4.Shown}):Play()
-  BetterTween(UI["ScrollingFrame_9"],TweenAlpha,{Position=UDim2.new(0,600,.08553,0)}):Play()
+  BetterTween(MF1,tonumber(tonumber(TweenAlph.Value)),{Position=Tab1.Hidden}):Play()
+  BetterTween(MF2,tonumber(tonumber(TweenAlph.Value)),{Position=Tab2.Hidden}):Play()
+  BetterTween(MF3,tonumber(tonumber(TweenAlph.Value)),{Position=Tab3.Hidden}):Play()
+  BetterTween(MF4,tonumber(tonumber(TweenAlph.Value)),{Position=Tab4.Shown}):Play()
+  BetterTween(UI["ScrollingFrame_9"],tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(0,600,.08553,0)}):Play()
 end)
 local function dragify(Frame)
 dragToggle = nil
@@ -1709,35 +1708,35 @@ end
 dragify(UI["Main_2"])
 
 Home.MouseButton1Click:Connect(function()
-  BetterTween(MF1,TweenAlpha,{Position=Tab1.Hidden}):Play()
-  BetterTween(MF2,TweenAlpha,{Position=Tab2.Hidden}):Play()
-  BetterTween(MF3,TweenAlpha,{Position=Tab3.Hidden}):Play()
-  BetterTween(UI["ScrollingFrame_9"],TweenAlpha,{Position=UDim2.new(0,0,.08553,0)}):Play()
-  BetterTween(MF4,TweenAlpha,{Position=Tab4.Hidden}):Play()
+  BetterTween(MF1,tonumber(tonumber(TweenAlph.Value)),{Position=Tab1.Hidden}):Play()
+  BetterTween(MF2,tonumber(tonumber(TweenAlph.Value)),{Position=Tab2.Hidden}):Play()
+  BetterTween(MF3,tonumber(tonumber(TweenAlph.Value)),{Position=Tab3.Hidden}):Play()
+  BetterTween(UI["ScrollingFrame_9"],tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(0,0,.08553,0)}):Play()
+  BetterTween(MF4,tonumber(tonumber(TweenAlph.Value)),{Position=Tab4.Hidden}):Play()
   CurrentTab=UI["ScrollingFrame_9"]
 end)
 ModuleShop.MouseButton1Click:Connect(function()
-  BetterTween(MF1,TweenAlpha,{Position=Tab1.Shown}):Play()
-  BetterTween(MF2,TweenAlpha,{Position=Tab2.Hidden}):Play()
-  BetterTween(MF3,TweenAlpha,{Position=Tab3.Hidden}):Play()
-  BetterTween(UI["ScrollingFrame_9"],TweenAlpha,{Position=UDim2.new(0,600,.08553,0)}):Play()
-  BetterTween(MF4,TweenAlpha,{Position=Tab4.Hidden}):Play()
+  BetterTween(MF1,tonumber(tonumber(TweenAlph.Value)),{Position=Tab1.Shown}):Play()
+  BetterTween(MF2,tonumber(tonumber(TweenAlph.Value)),{Position=Tab2.Hidden}):Play()
+  BetterTween(MF3,tonumber(tonumber(TweenAlph.Value)),{Position=Tab3.Hidden}):Play()
+  BetterTween(UI["ScrollingFrame_9"],tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(0,600,.08553,0)}):Play()
+  BetterTween(MF4,tonumber(tonumber(TweenAlph.Value)),{Position=Tab4.Hidden}):Play()
   CurrentTab=Tab1
 end)
 Settings.MouseButton1Click:Connect(function()
-  BetterTween(MF1,TweenAlpha,{Position=Tab1.Hidden}):Play()
-  BetterTween(MF2,TweenAlpha,{Position=Tab2.Shown}):Play()
-  BetterTween(MF3,TweenAlpha,{Position=Tab3.Hidden}):Play()
-  BetterTween(UI["ScrollingFrame_9"],TweenAlpha,{Position=UDim2.new(0,600,.08553,0)}):Play()
-  BetterTween(MF4,TweenAlpha,{Position=Tab4.Hidden}):Play()
+  BetterTween(MF1,tonumber(tonumber(TweenAlph.Value)),{Position=Tab1.Hidden}):Play()
+  BetterTween(MF2,tonumber(tonumber(TweenAlph.Value)),{Position=Tab2.Shown}):Play()
+  BetterTween(MF3,tonumber(tonumber(TweenAlph.Value)),{Position=Tab3.Hidden}):Play()
+  BetterTween(UI["ScrollingFrame_9"],tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(0,600,.08553,0)}):Play()
+  BetterTween(MF4,tonumber(tonumber(TweenAlph.Value)),{Position=Tab4.Hidden}):Play()
   CurrentTab=Tab2
 end)
 Credits.MouseButton1Click:Connect(function()
-  BetterTween(MF1,TweenAlpha,{Position=Tab1.Hidden}):Play()
-  BetterTween(MF2,TweenAlpha,{Position=Tab2.Hidden}):Play()
-  BetterTween(MF3,TweenAlpha,{Position=Tab3.Shown}):Play()
-  BetterTween(UI["ScrollingFrame_9"],TweenAlpha,{Position=UDim2.new(0,600,.08553,0)}):Play()
-  BetterTween(MF4,TweenAlpha,{Position=Tab4.Hidden}):Play()
+  BetterTween(MF1,tonumber(tonumber(TweenAlph.Value)),{Position=Tab1.Hidden}):Play()
+  BetterTween(MF2,tonumber(tonumber(TweenAlph.Value)),{Position=Tab2.Hidden}):Play()
+  BetterTween(MF3,tonumber(tonumber(TweenAlph.Value)),{Position=Tab3.Shown}):Play()
+  BetterTween(UI["ScrollingFrame_9"],tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(0,600,.08553,0)}):Play()
+  BetterTween(MF4,tonumber(tonumber(TweenAlph.Value)),{Position=Tab4.Hidden}):Play()
   CurrentTab=Tab3
 end)
 local eee=Instance.new("StringValue")
@@ -1835,14 +1834,14 @@ ExpandReanimateType.MouseButton1Click:Connect(function()
 if Tweening then return end
 Expanding=not Expanding 
 if Expanding then
-  local a=BetterTween(ThatFrame,TweenAlpha,{Size=UDim2.new(0, 136, 0, 100)})
-  BetterTween(ExpandReanimateType,TweenAlpha,{Rotation=180}):Play()
+  local a=BetterTween(ThatFrame,tonumber(tonumber(TweenAlph.Value)),{Size=UDim2.new(0, 136, 0, 100)})
+  BetterTween(ExpandReanimateType,tonumber(tonumber(TweenAlph.Value)),{Rotation=180}):Play()
   a:Play()
   a.Completed:Wait()
   Tweening=false
   else
-  local a=BetterTween(ThatFrame,TweenAlpha,{Size=OldSize})
-  BetterTween(ExpandReanimateType,TweenAlpha,{Rotation=0}):Play()
+  local a=BetterTween(ThatFrame,tonumber(tonumber(TweenAlph.Value)),{Size=OldSize})
+  BetterTween(ExpandReanimateType,tonumber(tonumber(TweenAlph.Value)),{Rotation=0}):Play()
   a:Play()
   a.Completed:Wait()
   Tweening=false
@@ -1867,16 +1866,16 @@ TabButton.MouseButton1Click:Connect(function()
   Tween0=true
   Tween1=not Tween1 
   if Tween1 then 
-    local a=BetterTween(TabThing,TweenAlpha,{Position=UDim2.new(-0.30403,0,0,0)})
+    local a=BetterTween(TabThing,tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(-0.30403,0,0,0)})
     a:Play()
     a.Completed:Wait()
-    local b=BetterTween(TabThing,TweenAlpha,{Size=ShownTabSize})
+    local b=BetterTween(TabThing,tonumber(tonumber(TweenAlph.Value)),{Size=ShownTabSize})
     b:Play()
     b.Completed:Wait()
     Tween0=false 
     else 
-      local a=BetterTween(TabThing,TweenAlpha,{Position=UDim2.new(0,0,0,0)})
-      local b=BetterTween(TabThing,TweenAlpha,{Size=UDim2.new(0,0,0,0)})
+      local a=BetterTween(TabThing,tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(0,0,0,0)})
+      local b=BetterTween(TabThing,tonumber(tonumber(TweenAlph.Value)),{Size=UDim2.new(0,0,0,0)})
       a:Play()
       b:Play()
       b.Completed:Wait()
@@ -1927,22 +1926,22 @@ ThatOneButton.MouseButton1Click:Connect(function()
   t=true 
   t1=not t1
   if t1 then 
-    local a=BetterTween(mf,TweenAlpha,{Size=MinimizedSize})
-    BetterTween(ThatOneButton,TweenAlpha,{Rotation=180}):Play()
-    BetterTween(CloseButton,TweenAlpha,{Position=UDim2.new(0.95, -5, 0.01645, 5);}):Play()
-    BetterTween(ThatOneButton,TweenAlpha,{Position=UDim2.new(0.9, -5, 0.01645, 5);}):Play()
-    BetterTween(Canvas,TweenAlpha,{Position=Hidden}):Play()
+    local a=BetterTween(mf,tonumber(tonumber(TweenAlph.Value)),{Size=MinimizedSize})
+    BetterTween(ThatOneButton,tonumber(tonumber(TweenAlph.Value)),{Rotation=180}):Play()
+    BetterTween(CloseButton,tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(0.95, -5, 0.01645, 5);}):Play()
+    BetterTween(ThatOneButton,tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(0.9, -5, 0.01645, 5);}):Play()
+    BetterTween(Canvas,tonumber(tonumber(TweenAlph.Value)),{Position=Hidden}):Play()
     a:Play()
     a.Completed:Wait()
     t=false
     mf.ClipsDescendants=true
     else 
     mf.ClipsDescendants=false
-    local a=BetterTween(mf,TweenAlpha,{Size=ExpandedSize})
-    BetterTween(ThatOneButton,TweenAlpha,{Rotation=0}):Play()
-    BetterTween(CloseButton,TweenAlpha,{Position=UDim2.new(0.95, -0, 0.01645, 0);}):Play()
-    BetterTween(ThatOneButton,TweenAlpha,{Position=UDim2.new(0.9, -0, 0.01645, 0);}):Play()
-    BetterTween(Canvas,TweenAlpha,{Position=OldPos}):Play()
+    local a=BetterTween(mf,tonumber(tonumber(TweenAlph.Value)),{Size=ExpandedSize})
+    BetterTween(ThatOneButton,tonumber(tonumber(TweenAlph.Value)),{Rotation=0}):Play()
+    BetterTween(CloseButton,tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(0.95, -0, 0.01645, 0);}):Play()
+    BetterTween(ThatOneButton,tonumber(tonumber(TweenAlph.Value)),{Position=UDim2.new(0.9, -0, 0.01645, 0);}):Play()
+    BetterTween(Canvas,tonumber(tonumber(TweenAlph.Value)),{Position=OldPos}):Play()
     a:Play()
     a.Completed:Wait()
     t=false
@@ -5586,6 +5585,7 @@ end
 	end
 	if type(TDZConfigs._UISpeed)=="number" and TDZConfigs._UISpeed~=nil or TDZConfigs._UISpeed~="" then 
 	  TweenAlph.Value=tonumber(TDZConfigs._UISpeed)
+	  print(TDZConfigs._UISpeed)
 	  end
 
 
