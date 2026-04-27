@@ -1848,7 +1848,7 @@ end)
 local ShownTabSize=UDim2.new(0.28938, 0, 1, 0)
 local ShownTabPosiion=UDim2.new(-0.30403, 0, 0, 0) 
 local Tween0=false
-local Tween1=false
+local Tween1=true
 local TabThing=UI["TabGroup_51"]
 local TabButton=UI["Tab_68"]
 if Tween1 then
