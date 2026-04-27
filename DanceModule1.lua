@@ -216,7 +216,7 @@ AddModule(function()
     m.Name        = "Nightmail 1"
     m.Description = "This is a Nightmail crossing the border, bringing the cheques on the postal border, letters for the rich, letters for the poor, i stop at the corner the girl next door"
     m.Assets = {
-      "Nightmail1.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Wobbly Edit.lua",
+      "Nightmail1.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Nightmail1.lua",
       "Nightmail.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Nightmail.mp3?raw=true"
     }
 
