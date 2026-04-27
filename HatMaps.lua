@@ -61,6 +61,7 @@ local angles=CFrame.Angles
 { MeshId = "126825022897778", Name = "Torso", Offset = CFrame.identity, TextureId = "125975972015302" },--95290698984301
 
 { MeshId = "84515304632473", Name = "Torso", Offset = CFrame.identity, TextureId = "84039546952302" },--95290698984301
+{ MeshId = "17170940529", Name = "Torso", Offset = CFrame.identity, TextureId = "17163376557" },--95290698984301
 { MeshId = "18919712035", Name = "Torso", Offset = CFrame.identity, TextureId = "18430134193" },--95290698984301
 { MeshId = "89457171427274", Name = "Head", Offset = CFrame.new(0,1.5,0), TextureId = "130665230882117" },--95290698984301
 { MeshId = "115108367035793", Name = "Head", Offset = CFrame.new(0,.5,0), TextureId = "79538948685663" },--95290698984301
