@@ -4219,7 +4219,12 @@ end
 local getPartFromMesh=t.getPartFromMesh
 local getPartJoint=t.getPartJoint
 
-local sword=getPartFromMesh(5254583415, 5268538095)
+local sword=nil
+if ws[YourName]:FindFirstChild("VoidLordSword") then
+sword=getPartFromMesh(5254583415, 5268538095)
+else 
+sword=getPartFromMesh(5278721954, 5692006383)
+end
 local s1_1=sword and getPartJoint(sword) or {C0=cf_0} -- VoidLord Sword
 local sword2=nil 
 if ws[YourName]:FindFirstChild("AuroraSword") then
