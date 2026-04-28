@@ -3146,8 +3146,8 @@ rad(180))},--84451219120140
 
 local HatsDatabase=loadstring(readfile(builtins.."/HatMaps.lua"))()
 for _,a in next,HatsDatabase do
-    print(a.MeshId,a.TextureId,a.Names,a.Offset)
-    print(a.MeshId,a.TextureId,a.Name,a.Offset)
+    --print(a.MeshId,a.TextureId,a.Names,a.Offset)
+    --print(a.MeshId,a.TextureId,a.Name,a.Offset)
   if a.Names~=nil then 
   table.insert(TableOfAccessries,a)
   else
