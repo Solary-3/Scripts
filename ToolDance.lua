@@ -9388,7 +9388,7 @@ con1=game:GetService("RunService").PostSimulation:Connect(function(deltaTime: nu
     sine=os.clock()
     pcall(function()
       local root=char.HumanoidRootPart
-    hitfloor=rayCast(root.Position,(CFrame.new(root.Position,root.Position - Vector3.new(0,3*char:GetScale()-1,0))).lookVector,4,char)
+    hitfloor=rayCast(root.Position,(CFrame.new(root.Position,root.Position - Vector3.new(0,3*char:GetScale(),0))).lookVector,4*char:GetScale(),char)
     end)
     local target=musicSound.PlaybackLoudness or Playsound.PlaybackLoudness
     LoudnessSmoothing=LoudnessSmoothing + (target - LoudnessSmoothing) * BobbingIntensity
@@ -9446,17 +9446,17 @@ con1=game:GetService("RunService").PostSimulation:Connect(function(deltaTime: nu
     end
     local VelY = char.HumanoidRootPart.Velocity.Y
 local newState
-if dancing then return end
+     if dancing then return end
 --if hitfloor~=nil then return end
-if VelY > 1 then
- newState = "Jump"
-	elseif VelY < -.1 and hitfloor == nil then
-	newState = "Fall"
-	Numval.Value = 1
-	elseif VelY>=0 or VelY<=0 and hitfloor~=nil then
-  newState = "Idle"
-	Numval.Value = .1
-	end
+      if VelY > 1 then
+       newState = "Jump"
+	   elseif VelY < -.1 and hitfloor == nil then
+	    newState = "Fall"
+	    Numval.Value = 1
+	   elseif VelY>=0 or VelY<=0 and hitfloor~=nil then
+      newState = "Idle"
+	    Numval.Value = .1
+	   end
 
       if strv.Value ~= newState then
         strv.Value = newState
