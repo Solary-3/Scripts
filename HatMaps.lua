@@ -1,6 +1,38 @@
 local rad=math.rad 
 local angles=CFrame.Angles
-local HatMaps={
+
+function Normalize(id)
+if not id then return "" end
+id=tostring(id)
+
+local num=id:match("(%d+)")
+--print(num)
+return num or ""
+end
+
+function GetIds(acc)
+if not acc or not acc:IsA("Accessory") then return nil end
+
+local handle=acc:FindFirstChild("Handle")
+if not handle then return nil end
+
+if handle:IsA("MeshPart") then
+local meshId=Normalize(handle.MeshId)
+local texId =Normalize(handle.TextureID)
+return meshId, texId
+end
+
+local sm=handle:FindFirstChildOfClass("SpecialMesh")
+if sm then
+local meshId=Normalize(sm.MeshId)
+local texId =Normalize(sm.TextureId)
+return meshId, texId
+end
+
+return nil
+end
+
+local HatsDatabase={
 --{ MeshId = "", Name = "", Offset = CFrame.identity, TextureId = "" },
 
 { MeshId = "137702817952968", Names = { "Left Arm", "Right Arm", "Left Leg", "Right Leg" }, Offset = CFrame.Angles(0, 0, 1.57), TextureId = "135650240593878" },--84451219120140
@@ -119,4 +151,44 @@ local HatMaps={
 { MeshId="96130316788066",Names={"Right Arm"},Offset=CFrame.Angles(0,0,0),TextureId="18807356481" },
 { MeshId = "94522224942661", Name = "Accessory (NepV)", Offset = CFrame.new(0,0,0)*CFrame.Angles(0,0,0), TextureId = "77410806060838" },--95290698984301
 }
-return HatMaps
+
+local AccessoryNames={
+  {AccName="Accessory (autorig_LeftArm)",For="Left Arm",Offset=CFrame.Angles(0,0,0)},
+  {AccName="Accessory (autorig_RightArm)",For="Right Arm",Offset=CFrame.Angles(0,0,0)},
+  {AccName="Accessory (autorig_RightLeg)",For="Right Leg",Offset=CFrame.Angles(0,0,0)},
+  {AccName="Accessory (autorig_LeftLeg)",For="Left Leg",Offset=CFrame.Angles(0,0,0)},
+  {AccName="Accessory (autorig_Torso)",For="Torso",Offset=CFrame.Angles(0,0,0)},
+  {AccName="Accessory (autorig_Head)",For="Head",Offset=CFrame.Angles(0,0,0)},
+}
+
+
+function BuildRig(accName, limbName, Offset)
+local char=workspace:FindFirstChild(game.Players.LocalPlayer.Name)
+if not char then return nil end
+
+local acc=char:FindFirstChild(accName)
+if not acc then return nil end
+
+local meshId, texId=GetIds(acc)
+if not meshId or not texId then
+warn("Failed to extract mesh/texture from:", accName)
+return nil
+end
+--print(meshId,limbName,Offset,texId)
+local tbl={
+  MeshId=tostring(meshId),
+  Name=limbName,
+  Offset=Offset,
+  TextureId=tostring(texId),
+}
+table.insert(HatsDatabase,tbl)
+end
+
+for _,a in next,AccessoryNames do
+  BuildRig(a.AccName, a.For, a.Offset)
+end
+--table.insert(AccsNameDatabase,HatsDatabase)
+
+
+
+return HatsDatabase
