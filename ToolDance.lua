@@ -5428,7 +5428,7 @@ LoadUserModules()
 notify("Loading User Modules...")
 LoadBuiltInDances()
 AddLoadeModuleDances()
-notify("Ini Complete")
+notify("Init Complete")
 end)
 local ClonedDanceTable=table.clone(TableOfDances)
 local backup=ExtraBackup
