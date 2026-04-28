@@ -5733,7 +5733,7 @@ task.spawn(function()
     if not RUNNING then aaaa:Disconnect() end
     pcall(function()
       char:ScaleTo(tonumber(UI["CharScale_b"].Text) or 1)
-      char.HumanoidRootPart.CFrame=char.HumanoidRootPart.CFrame*CFrame.new(0,tonumber(UI["CharScale_b"].Text or 1)+10,0)
+      char.HumanoidRootPart.CFrame=char.HumanoidRootPart.CFrame*CFrame.new(0,tonumber(UI["CharScale_b"].Text or 1)*2,0)
       char.HumanoidRootPart.Anchored=true -- Anchore it
       task.wait(.2) -- Leave a small delay to prevent character from phasing through the ground
       char.HumanoidRootPart.Anchored=false
