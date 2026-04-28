@@ -1,6 +1,6 @@
 local rad=math.rad 
 local angles=CFrame.Angles
- local HatMaps={
+local HatMaps={
 --{ MeshId = "", Name = "", Offset = CFrame.identity, TextureId = "" },
 
 { MeshId = "137702817952968", Names = { "Left Arm", "Right Arm", "Left Leg", "Right Leg" }, Offset = CFrame.Angles(0, 0, 1.57), TextureId = "135650240593878" },--84451219120140
