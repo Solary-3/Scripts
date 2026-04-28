@@ -1571,7 +1571,7 @@ AddModule(function()
     m.Description = " "
     m.Assets = {
       "Billy Bounce@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Billy Bounce",
-      "billy.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/billy.mp3?raw=true"
+      "BillyBounce.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/BillyBounce.mp3?raw=true"
     }
 
     m.Config = function(parent)
@@ -1585,7 +1585,7 @@ AddModule(function()
     local start    = 0
 
     m.Init = function(figure)
-        SetOverrideDanceMusic(AssetGetContentId("billy.mp3"))
+        SetOverrideDanceMusic(AssetGetContentId("BillyBounce.mp3"))
 
         start           = os.clock()
         animator        = AnimLib.Animator.new()
