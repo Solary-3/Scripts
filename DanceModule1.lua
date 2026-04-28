@@ -1466,8 +1466,8 @@ AddModule(function()
 		RootJoint.Transform=Lerp(RootJoint.Transform,cfMul(cf(-0.5*scale*cos((sine*15)+0)+0,0.5*scale*sin((sine*15)+0),-.5),angles(0,-0.17453292519943295+0,0)),deltaTime)
 		LeftHip.Transform=cfMul(cf(0,.25+0,.25),angles(0.17453292519943295,0,0))
 		RightHip.Transform=cfMul(cf(0+0,.5+0,.25),angles(-0.8726646259971648,0,0))
-		RightShoulder.Transform=cfMul(cf(0,.5,1.5),angles(1.5707963267948966+0,0,0))
-		LeftShoulder.Transform=cfMul(cf(0,-.5,.5),angles(-1.5707963267948966+0,0,0))
+		RightShoulder.Transform=angles(-1.5707963267948966+0,0,0)
+		LeftShoulder.Transform=angles(-1.5707963267948966+0,0,0)
 		Neck.Transform=CFrame.identity
     end
 
