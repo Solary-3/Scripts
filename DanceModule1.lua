@@ -1563,4 +1563,364 @@ AddModule(function()
     return m
 end)
 
+AddModule(function()
+	local m = {}
+	m.ModuleType = "DANCE"
+	m.Name = "INTERNET YAMERO"
+	m.Description = "me when i lag in tsb\nSTOP LAGGING ME INTERNET\n--Module By Steve"
+	m.Assets = {
+	  "InternetYamero.anim@https://raw.githubusercontent.com/STEVE-916-create/Uhhhhhh/main/content/InternetYamero.anim",
+	  "InternetYameroSickTock.anim@https://raw.githubusercontent.com/STEVE-916-create/Uhhhhhh/main/content/InternetYameroSickTock.anim",
+	  "InternetYamero.mp3@https://raw.githubusercontent.com/STEVE-916-create/Uhhhhhh/main/content/InternetYamero.mp3"
+	  
+	}
+
+	m.FullVersion = false
+	m.Config = function(parent: GuiBase2d)
+		Util_CreateSwitch(parent, "Complete", m.FullVersion).Changed:Connect(function(val)
+			m.FullVersion = val
+		end)
+	end
+	m.LoadConfig = function(save: any)
+		m.FullVersion = not not save.FullVersion
+	end
+	m.SaveConfig = function()
+		return {
+			FullVersion = m.FullVersion
+		}
+	end
+
+	local animator1 = nil
+	local animator2 = nil
+	m.Init = function(figure: Model)
+		if m.FullVersion then
+			SetOverrideDanceMusic(AssetGetContentId("InternetYamero.mp3"), "NEEDY GIRL OVERDOSE - INTERNET YAMERO", 1)
+		else
+			SetOverrideDanceMusic(AssetGetContentId("InternetYamero.mp3"), "NEEDY GIRL OVERDOSE - INTERNET YAMERO", 1, NumberRange.new(21.394, 62.94))
+			SetOverrideDanceMusicTime(21.394)
+		end
+		animator1 = AnimLib.Animator.new()
+		animator1.rig = figure
+		animator1.track = AnimLib.Track.fromfile(AssetGetPathFromFilename("InternetYameroSickTock.anim"))
+		animator1.looped = false
+		animator2 = AnimLib.Animator.new()
+		animator2.rig = figure
+		animator2.track = AnimLib.Track.fromfile(AssetGetPathFromFilename("InternetYamero.anim"))
+		animator2.looped = true
+		animator2.map = {{11, 62.944}, {0, 53.33333}}
+	end
+	m.Update = function(dt: number, figure: Model)
+		local t = GetOverrideDanceMusicTime()
+		if t < 11 then
+			animator1:Step(t)
+		elseif t < 18.667 then
+			animator2:Step(t)
+		elseif t < 19.333 then
+			animator2:Step(math.min((t - 18.667) / 0.1, 1.2))
+		elseif t < 20 then
+			animator2:Step(math.min((t - 19.333) / 0.1, 1.34))
+		elseif t < 21.333 then
+			animator2:Step(t * 100)
+		else
+			animator2:Step(t + 0.667)
+		end
+	end
+	m.Destroy = function(figure: Model?)
+		animator1 = nil
+		animator2 = nil
+	end
+	return m
+end)
+
+AddModule(function()
+	local m = {}
+	m.ModuleType = "DANCE"
+	m.Name = "INTERNET ANGEL"
+	m.Description = "Needy Girl Overdose\n\nthe 67th angel of evangelion\nonly way to beat it is use a fire wall\n--Module By Steve"
+	m.Assets = {
+	  "InternetAngel.anim@https://raw.githubusercontent.com/STEVE-916-create/Uhhhhhh/main/content/InternetAngel.anim",
+	  "InternetAngelEva.anim@https://raw.githubusercontent.com/STEVE-916-create/Uhhhhhh/main/content/InternetAngelEva.anim",
+	  "InternetAngelNeedy.anim@https://raw.githubusercontent.com/STEVE-916-create/Uhhhhhh/main/content/InternetAngelNeedy.anim",
+	  "InternetAngel1.mp3@https://raw.githubusercontent.com/STEVE-916-create/Uhhhhhh/main/content/InternetAngel.mp3"
+	  
+	}
+
+	m.FullVersion = false
+	m.Effects = true
+	m.Config = function(parent: GuiBase2d)
+		Util_CreateSwitch(parent, "Effects", m.Effects).Changed:Connect(function(val)
+			m.Effects = val
+		end)
+		Util_CreateSwitch(parent, "Complete", m.FullVersion).Changed:Connect(function(val)
+			m.FullVersion = val
+		end)
+	end
+	m.LoadConfig = function(save: any)
+		m.FullVersion = not not save.FullVersion
+		m.Effects = not save.NoEffects
+	end
+	m.SaveConfig = function()
+		return {
+			FullVersion = m.FullVersion,
+			NoEffects = not m.Effects
+		}
+	end
+
+	local animator1 = nil
+	local animator2 = nil
+	local animator3 = nil
+	local textsandstuff = nil
+	m.Init = function(figure: Model)
+		start = os.clock()
+		if m.FullVersion then
+			SetOverrideDanceMusic(AssetGetContentId("InternetAngel1.mp3"), "NEEDY GIRL OVERDOSE - INTERNET ANGEL", 1)
+			SetOverrideDanceMusicTime(0)
+		else
+			SetOverrideDanceMusic(AssetGetContentId("InternetAngel1.mp3"), "NEEDY GIRL OVERDOSE - INTERNET ANGEL", 1, NumberRange.new(36, 60))
+			SetOverrideDanceMusicTime(36)
+		end
+		animator1 = AnimLib.Animator.new()
+		animator1.rig = figure
+		animator1.looped = true
+		animator1.track = AnimLib.Track.fromfile(AssetGetPathFromFilename("InternetAngel.anim"))
+		animator1.map = {{36, 60}, {0, 23.72}}
+		animator2 = AnimLib.Animator.new()
+		animator2.rig = figure
+		animator2.looped = true
+		animator2.track = AnimLib.Track.fromfile(AssetGetPathFromFilename("InternetAngelNeedy.anim"))
+		animator2.map = {{0, 0.75}, {0, 0.8}}
+		animator3 = AnimLib.Animator.new()
+		animator3.rig = figure
+		animator3.looped = false
+		animator3.track = AnimLib.Track.fromfile(AssetGetPathFromFilename("InternetAngelEva.anim"))
+		animator3.map = {{0, 13.5}, {0, 14.37}}
+		if textsandstuff then textsandstuff:Destroy() end
+		if m.Effects then
+			textsandstuff = Instance.new("Part")
+			textsandstuff.Transparency = 1
+			textsandstuff.Anchored = true
+			textsandstuff.CanCollide = false
+			textsandstuff.CanTouch = false
+			textsandstuff.CanQuery = false
+			textsandstuff.Name = "INTERNETANGEL"
+			textsandstuff.Size = Vector3.new(12, 6, 0) * figure:GetScale()
+			local sgui = Instance.new("SurfaceGui")
+			sgui.LightInfluence = 0
+			sgui.Brightness = 1
+			sgui.AlwaysOnTop = false
+			sgui.MaxDistance = 1000
+			sgui.SizingMode = Enum.SurfaceGuiSizingMode.FixedSize
+			sgui.CanvasSize = Vector2.new(360, 180)
+			sgui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+			sgui.Name = "UI"
+			sgui.Parent = textsandstuff
+			local id = 0
+			local function addtext(t, x, y, sx, sy, align)
+				local text = Instance.new("TextLabel")
+				text.Position = UDim2.new(0, x, 0, y)
+				text.Size = UDim2.new(0, sx, 0, sy)
+				text.BackgroundTransparency = 1
+				text.ClipsDescendants = true
+				text.FontFace = Font.fromId(12187371840)
+				text.TextColor3 = Color3.new(1, 1, 1)
+				text.TextXAlignment = align
+				text.TextYAlignment = Enum.TextYAlignment.Center
+				text.TextScaled = true
+				text.Text = t
+				text.Name = tostring(id)
+				text.Parent = sgui
+				id += 1
+			end
+			addtext("NEEDY", 20, 65, 320, 50, 0) -- 0
+			addtext("GIRL", 20, 65, 320, 50, 1) -- 1
+			addtext("NEEDY", 180, 45, 180, 30, 2) -- 2
+			addtext("GIRL", 0, 105, 180, 30, 2) -- 3
+			addtext("A N G E L", 0, 0, 360, 60, 2) -- 4
+			addtext("\n\nn e e d y\n\ng i r l\n\no v e r d o s e", 0, 45, 360, 45, 2) -- 5
+			addtext("\n\nn e e d y\n\ng i r l\n\no v e r d o s e", 0, 90, 360, 45, 2) -- 6
+			addtext("\n\nn e e d y\n\ng i r l\n\no v e r d o s e", 0, 135, 360, 45, 2) -- 7
+			addtext("INTERNET", 20, 40, 320, 40, 0) -- 8
+			addtext("INTERNET", 20, 40, 320, 40, 2) -- 9
+			addtext("INTERNET", 20, 40, 320, 40, 1) -- 10
+			addtext("INTERNET", 20, 70, 320, 40, 0) -- 11
+			addtext("INTERNET", 20, 70, 320, 40, 2) -- 12
+			addtext("INTERNET", 20, 70, 320, 40, 1) -- 13
+			addtext("INTERNET", 20, 100, 320, 40, 0) -- 14
+			addtext("INTERNET", 20, 100, 320, 40, 2) -- 15
+			addtext("INTERNET", 20, 100, 320, 40, 1) -- 16
+			addtext("ANGEL", 0, 0, 360, 180, 2) -- 17
+			addtext("INTERNET", 20, 80, 320, 20, 2) -- 18
+			addtext("INTERNET", 20, 85, 320, 10, 2) -- 19
+			addtext("P A T T E R N   B L U E", 60, 80, 240, 10, 1) -- 20
+			addtext("A N G E L", 60, 100, 240, 10, 2) -- 21
+			addtext("NEEDY GIRL", 20, 65, 320, 50, 0) -- 22
+			addtext("NEEDY GIRL", 20, 65, 320, 50, 1) -- 23
+			addtext("\"I-N-TE-RU-NE-TO\"", 0, 160, 360, 10, 2) -- 24
+			addtext("\"ANGEL\"", 0, 160, 360, 10, 2) -- 25
+			addtext("\"NEEDY GIRL\"", 0, 160, 360, 10, 2) -- 26
+			textsandstuff.Parent = figure
+		end
+	end
+	m.Update = function(dt: number, figure: Model)
+		local t = GetOverrideDanceMusicTime()
+		local textvis = {}
+		if t < 10.5 then
+			animator2:Step(t)
+			local needy = t % 6
+			if needy < 1.5 then
+				textvis[0] = true
+			elseif needy < 3 then
+				textvis[1] = true
+			else
+				textvis[2] = true
+				textvis[3] = true
+			end
+		elseif t < 24 then
+			animator3:Step(t - 10.5)
+			if t < 12 then
+				if t % 0.75 < 0.375 then
+					textvis[4] = true
+				end
+				if (t + 0.000) % 1 < 0.7 then textvis[5] = true end
+				if (t + 0.333) % 1 < 0.7 then textvis[6] = true end
+				if (t + 0.667) % 1 < 0.7 then textvis[7] = true end
+			else
+				local eva = (t - 12) / 0.75
+				if eva % 4 < 3 then
+					textvis[24] = true
+				else
+					textvis[25] = true
+				end
+				if eva < 1 then
+					textvis[8] = true
+				elseif eva < 2 then
+					textvis[16] = true
+				elseif eva < 3 then
+					textvis[12] = true
+				elseif eva < 4 then
+					textvis[17] = true
+				elseif eva < 5 then
+					textvis[12] = true
+				elseif eva < 6 then
+					textvis[18] = true
+				elseif eva < 7 then
+					textvis[19] = true
+				elseif eva < 7.5 then
+					textvis[17] = true
+				elseif eva < 7.625 then
+					textvis[8] = true
+				elseif eva < 7.75 then
+					textvis[10] = true
+				elseif eva < 7.875 then
+					textvis[14] = true
+				elseif eva < 8 then
+					textvis[16] = true
+				elseif eva < 9 then
+					textvis[14] = true
+				elseif eva < 10 then
+					textvis[10] = true
+					textvis[20] = true
+				elseif eva < 11 then
+					textvis[18] = true
+					textvis[21] = true
+				elseif eva < 12 then
+					textvis[21] = true
+				elseif eva < 13 then
+					textvis[13] = true
+				elseif eva < 14 then
+					textvis[11] = true
+				elseif eva < 15 then
+					textvis[16] = true
+				else
+					textvis[20] = true
+					textvis[7] = true
+				end
+			end
+		elseif t < 34.5 then
+			local needy = t % 6
+			if needy < 4.5 then
+				animator2:Step(t)
+			else
+				animator3:Step(needy - 3)
+			end
+			if needy < 0.75 then
+			elseif needy < 1.5 then
+				textvis[22] = true
+				textvis[26] = true
+			elseif needy < 2.25 then
+			elseif needy < 3 then
+				textvis[23] = true
+				textvis[26] = true
+			elseif needy < 3.75 then
+				textvis[2] = true
+				textvis[3] = true
+			elseif needy < 4.5 then
+				textvis[2] = true
+				textvis[3] = true
+				textvis[26] = true
+			elseif needy < 5.25 then
+				textvis[18] = true
+				textvis[21] = true
+				textvis[7] = true
+				textvis[24] = true
+			else
+				textvis[18] = true
+				textvis[21] = true
+				textvis[7] = true
+				textvis[25] = true
+			end
+		elseif t < 36 then
+			animator3:Step(t - 34.5)
+			for i=1, 23 do textvis[i] = math.random(3) == 1 end
+		else
+			local eva = (t - 36) / 0.75
+			if t < 48 then
+				if eva % 4 < 3 then
+					textvis[24] = true
+				else
+					textvis[25] = true
+				end
+			else
+				local needy = t % 6
+				if needy < 0.75 then
+				elseif needy < 1.5 then
+					textvis[26] = true
+				elseif needy < 2.25 then
+				elseif needy < 3 then
+					textvis[26] = true
+				elseif needy < 3.75 then
+				elseif needy < 4.5 then
+					textvis[26] = true
+				elseif needy < 5.25 then
+					textvis[24] = true
+				else
+					textvis[25] = true
+				end
+			end
+			animator1:Step(t - 36)
+		end
+		local root = figure:FindFirstChild("HumanoidRootPart")
+		if not root then return end
+		local scale = figure:GetScale()
+		if textsandstuff then
+			textsandstuff.CFrame = root.CFrame * CFrame.new(0, 0, -2 * scale)
+			local ui = textsandstuff:FindFirstChild("UI")
+			if ui then
+				for _,v in ui:GetChildren() do
+					if v:IsA("TextLabel") and tonumber(v.Name) then
+						v.Visible = not not textvis[tonumber(v.Name)]
+					end
+				end
+			end
+		end
+	end
+	m.Destroy = function(figure: Model?)
+		animator1 = nil
+		animator2 = nil
+		animator3 = nil
+		if textsandstuff then textsandstuff:Destroy() textsandstuff = nil end
+	end
+	return m
+end)
+
 return modules
