@@ -512,7 +512,7 @@ local validAudioFiles = {
 "cortisol.mp3",
 "Cry For Me.mp3",
 "Looping.mp3",
---"Akage.mp3",
+"Akage.mp3",
 "Funny.mp3",
 "Withfriends.mp3",
 "CivillianYell.mp3",
@@ -2838,7 +2838,7 @@ end
 musicSound.SoundId = getcustomasset(MusicFolder.."/Doom Mc Bringer.mp3")
 elseif v.Name=="Akage" then
 if isfile and not isfile(MusicFolder.."/Akage.mp3") then
-writefile(MusicFolder.."/Akage.mp3",game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Akage 1.mp3?raw=true"))
+writefile(MusicFolder.."/Akage.mp3",game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/Akage.mp3?raw=true"))
 end
 musicSound.SoundId = getcustomasset(MusicFolder.."/Akage.mp3")
 elseif v.Name=="Japanese Meme" then
