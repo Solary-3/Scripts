@@ -16,6 +16,11 @@ setclipboard("https://discord.gg/gR6Pk5pMK")
 		Text = "Join the discord to report bugs or uh for more support!";
 		Duration = 10;
 	})
+	game.StarterGui:SetCore("SendNotification",{
+		Title = "From Theo";
+		Text = "Giveaway at 200 members!";
+		Duration = 10;
+	})
 
 
 
