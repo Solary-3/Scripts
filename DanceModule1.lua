@@ -1613,7 +1613,7 @@ AddModule(function()
     m.Name        = "Eggmanned"
     m.Description = "Get Eggmanned"
     m.Assets = {
-      "Eggmanned.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Eggmanned",
+      "Eggmanned.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Eggmanned.lua",
       "Eggmanned.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Eggmanned.mp3?raw=true"
     }
 
