@@ -3,7 +3,15 @@
 
 
 --[[
-No skidding, haha
+Open Source For Now 
+
+
+  _____ ____ ____________________ 
+ |_   _|  _ \__  /__  /__  /__  / 
+   | | | | | |/ /  / /  / /  / /  
+   | | | |_| / /_ / /_ / /_ / /_  
+   |_| |____/____/____/____/____| 
+                                  
 ]]
 setclipboard("https://discord.gg/gR6Pk5pMK")
 	game.StarterGui:SetCore("SendNotification",{
