@@ -4189,7 +4189,7 @@ local Place = game.placeId
 if Place == 17574618959 or Place == 88308889239232 or Place==123974602339071 then
 Ypos=-30
 else 
-Ypos=-250
+Ypos=-30
 end
 Empyrean = Start({
 Accessories = TableOfAccessries,
@@ -4200,7 +4200,7 @@ DisableCharacterCollisions = true,
 DisableHealthBar = true,
 DisableRigCollisions = true,
 HatDrop = false,
-HideCharacter = Vector3.new(0, Ypos, 0),
+HideCharacter = Vector3.new(0, Ypos, -100),
 ParentCharacter = false,
 PermanentDeath = false,
 Refit = true,
