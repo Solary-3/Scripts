@@ -183,7 +183,7 @@ AddModule(function()
 	m.LoadConfig = function(save) end
 
 	local animator = nil
-	local start    = 0
+	local start = os.clock()
 
 	m.Init = function(figure)
 		SetOverrideDanceMusic(AssetGetContentId("Nightmail.mp3"))
@@ -228,7 +228,7 @@ AddModule(function()
     m.LoadConfig  = function(save) end
 
     local animator = nil
-    local start    = 0
+    local start = os.clock()
 
     m.Init = function(figure)
         SetOverrideDanceMusic(AssetGetContentId("Nightmail.mp3"))
@@ -269,7 +269,7 @@ AddModule(function()
 	m.LoadConfig = function(save) end
 
 	local animator = nil
-	local start    = 0
+	local start = os.clock()
 
 	m.Init = function(figure)
 		SetOverrideDanceMusic(AssetGetContentId("Igaku.mp3"))
@@ -313,7 +313,7 @@ AddModule(function()
 	m.LoadConfig = function(save) end
 
 	local animator = nil
-	local start    = 0
+	local start = os.clock()
 
 	m.Init = function(figure)
 		SetOverrideDanceMusic(AssetGetContentId("Hito Mania.mp3"))
@@ -356,7 +356,7 @@ AddModule(function()
 	m.LoadConfig = function(save) end
 
 	local animator = nil
-	local start    = 0
+	local start = os.clock()
 
 	m.Init = function(figure)
 		SetOverrideDanceMusic(AssetGetContentId("Skeleton2.mp3"))
@@ -401,7 +401,7 @@ AddModule(function()
 	m.LoadConfig = function(save) end
 
 	local animator = nil
-	local start    = 0
+	local start = os.clock()
 
 	m.Init = function(figure)
 		SetOverrideDanceMusic(AssetGetContentId("OtsukareSummer.mp3"))
@@ -445,7 +445,7 @@ AddModule(function()
 	m.LoadConfig = function(save) end
 
 	local animator = nil
-	local start    = 0
+	local start = os.clock()
 
 	m.Init = function(figure)
 		SetOverrideDanceMusic(AssetGetContentId("Mesmerizer.mp3"))
@@ -489,7 +489,7 @@ AddModule(function()
 	m.LoadConfig = function(save) end
 
 	local animator = nil
-	local start    = 0
+	local start = os.clock()
 
 	m.Init = function(figure)
 		SetOverrideDanceMusic(AssetGetContentId("door.mp3"))
@@ -1310,7 +1310,7 @@ AddModule(function()
     m.LoadConfig  = function(save) end
 
     local animator = nil
-    local start    = 0
+    local start = os.clock()
 
     m.Init = function(figure)
         SetOverrideDanceMusic(AssetGetContentId("HypnoDance.mp3"), "HypnoDance", 0.8, NumberRange.new(0, 45.5))
@@ -1353,7 +1353,7 @@ AddModule(function()
     m.LoadConfig  = function(save) end
 
     local animator = nil
-    local start    = 0
+    local start = os.clock()
 
     m.Init = function(figure)
         SetOverrideDanceMusic(AssetGetContentId("Heart Of Glass.mp3"))
@@ -1396,7 +1396,7 @@ AddModule(function()
     m.LoadConfig  = function(save) end
 
     local animator = nil
-    local start    = 0
+    local start = os.clock()
 
     m.Init = function(figure)
         SetOverrideDanceMusic(AssetGetContentId("Phibz Thing.mp3"))
@@ -1439,7 +1439,7 @@ AddModule(function()
     m.LoadConfig  = function(save) end
 
     local animator = nil
-    local start    = 0
+    local start = os.clock()
 
     m.Init = function(figure)
         SetOverrideDanceMusic(AssetGetContentId("MonsterMash.mp3"))
@@ -1496,7 +1496,7 @@ AddModule(function()
     m.LoadConfig  = function(save) end
 
     local animator = nil
-    local start    = 0
+    local start = os.clock()
 
     m.Init = function(figure)
         SetOverrideDanceMusic(AssetGetContentId("Invincible.mp3"))
@@ -1539,7 +1539,7 @@ AddModule(function()
     m.LoadConfig  = function(save) end
 
     local animator = nil
-    local start    = 0
+    local start = os.clock()
 
     m.Init = function(figure)
         SetOverrideDanceMusic(AssetGetContentId("Invincible.mp3"))
@@ -1582,7 +1582,7 @@ AddModule(function()
     m.LoadConfig  = function(save) end
 
     local animator = nil
-    local start    = 0
+    local start = os.clock()
 
     m.Init = function(figure)
         SetOverrideDanceMusic(AssetGetContentId("BillyBounce.mp3"))
@@ -1625,7 +1625,7 @@ AddModule(function()
     m.LoadConfig  = function(save) end
 
     local animator = nil
-    local start    = 0
+    local start = os.clock()
 
     m.Init = function(figure)
         SetOverrideDanceMusic(AssetGetContentId("Eggmanned.mp3"))
@@ -2028,7 +2028,7 @@ AddModule(function()
 	m.LoadConfig  = function(save) end
 
 	local animator = nil
-	local start    = 0
+	local start = os.clock()
 
 	m.Init = function(figure)
 		SetOverrideDanceMusic(AssetGetContentId("Irisout.mp3"), "Iris Out", 0.8, NumberRange.new(0, 16.16))
@@ -2079,7 +2079,7 @@ AddModule(function()
 	end
 
 	local animator = nil
-	local start    = 0
+	local start = os.clock()
 	local instances = {}
 	local HideCF = CFrame.new(0, -9e9, 0)
 
@@ -2331,6 +2331,351 @@ AddModule(function()
 	end
 
 	return m
+end)
+
+AddModule(function()
+    local m = {}
+
+    m.ModuleType  = "DANCE"
+    m.Name        = "Akage Remake"
+    m.Description = " "
+    m.Assets = {
+      "Akage Remake.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Akage Remake.lua",
+      "Akage.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Akage.mp3?raw=true"
+    }
+
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+
+    local animator = nil
+    local start = os.clock()
+
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Akage.mp3"),"Akage",1,NumberRange.new(2.2,11.544))
+        SetOverrideDanceMusicTime(2.2)
+
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Akage Remake.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+
+    m.Update = function(dt, figure)
+        animator:Step(GetOverrideDanceMusicTime())
+    end
+
+    m.Destroy = function(figure)
+        animator = nil
+    end
+
+    return m
+end)
+
+AddModule(function()
+    local m = {}
+
+    m.ModuleType  = "DANCE"
+    m.Name        = "Cubibibism"
+    m.Description = " "
+    m.Assets = {
+      "Cubibibism.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Cubibibism.lua",
+      "Cubibibism.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Cubibibism.mp3?raw=true"
+    }
+
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+
+    local animator = nil
+    local start = os.clock()
+
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Cubibibism.mp3"))
+
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Cubibibism.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+
+    m.Update = function(dt, figure)
+        animator:Step(os.clock() - start)
+    end
+
+    m.Destroy = function(figure)
+        animator = nil
+    end
+
+    return m
+end)
+
+AddModule(function()
+    local m = {}
+
+    m.ModuleType  = "DANCE"
+    m.Name        = "Meme Funk"
+    m.Description = " "
+    m.Assets = {
+      "Meme Funk.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Meme Funk.lua",
+      "Meme Funk.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Meme Funk.mp3?raw=true"
+    }
+
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+
+    local animator = nil
+    local start = os.clock()
+
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Meme Funk.mp3"))
+
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Meme Funk.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+
+    m.Update = function(dt, figure)
+        animator:Step(GetOverrideDanceMusicTime())
+    end
+
+    m.Destroy = function(figure)
+        animator = nil
+    end
+
+    return m
+end)
+
+AddModule(function()
+    local m = {}
+
+    m.ModuleType  = "DANCE"
+    m.Name        = "Outdoor 1"
+    m.Description = " "
+    m.Assets = {
+      "Outdoor 1.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Outdoor 1.lua",
+      "Outdoor.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Outdoor.mp3?raw=true"
+    }
+
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+
+    local animator = nil
+    local start = os.clock()
+
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Outdoor.mp3"))
+
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Outdoor 1.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+
+    m.Update = function(dt, figure)
+        animator:Step(os.clock() - start)
+    end
+
+    m.Destroy = function(figure)
+        animator = nil
+    end
+
+    return m
+end)
+
+AddModule(function()
+    local m = {}
+
+    m.ModuleType  = "DANCE"
+    m.Name        = "Miss Me"
+    m.Description = " "
+    m.Assets = {
+      "Miss Me.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Miss Me.lua",
+      "Miss Me.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Miss Me.mp3?raw=true"
+    }
+
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+
+    local animator = nil
+    local start = os.clock()
+
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Miss Me.mp3"))
+
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Miss Me.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+
+    m.Update = function(dt, figure)
+        animator:Step(os.clock() - start)
+    end
+
+    m.Destroy = function(figure)
+        animator = nil
+    end
+
+    return m
+end)
+
+AddModule(function()
+    local m = {}
+
+    m.ModuleType  = "DANCE"
+    m.Name        = "Mischievous Function 2"
+    m.Description = " "
+    m.Assets = {
+      "Mischievous Function 2.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Mischievous Function 2.lua",
+      "Mischievous Function.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Mischievous Function.mp3?raw=true"
+    }
+
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+
+    local animator = nil
+    local start = os.clock()
+
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Mischievous Function.mp3"))
+
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Mischievous Function 2.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+
+    m.Update = function(dt, figure)
+        animator:Step(os.clock() - start)
+    end
+
+    m.Destroy = function(figure)
+        animator = nil
+    end
+
+    return m
+end)
+
+AddModule(function()
+    local m = {}
+
+    m.ModuleType  = "DANCE"
+    m.Name        = "Mischievous Function"
+    m.Description = " "
+    m.Assets = {
+      "Mischievous Function 1.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Mischievous Function 1.lua",
+      "Mischievous Function.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Mischievous Function.mp3?raw=true"
+    }
+
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+
+    local animator = nil
+    local start = os.clock()
+
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Mischievous Function.mp3"))
+
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Mischievous Function 1.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+
+    m.Update = function(dt, figure)
+        animator:Step(os.clock() - start)
+    end
+
+    m.Destroy = function(figure)
+        animator = nil
+    end
+
+    return m
+end)
+
+AddModule(function()
+    local m = {}
+
+    m.ModuleType  = "DANCE"
+    m.Name        = "Magic Maid"
+    m.Description = " "
+    m.Assets = {
+      "Magic Maid.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Magic Maid.lua",
+      "Magic Maid.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Magic Maid.mp3?raw=true"
+    }
+
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+
+    local animator = nil
+    local start = os.clock()
+
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Magic Maid.mp3"))
+
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Magic Maid.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+
+    m.Update = function(dt, figure)
+        animator:Step(os.clock() - start)
+    end
+
+    m.Destroy = function(figure)
+        animator = nil
+    end
+
+    return m
 end)
 
 return modules
