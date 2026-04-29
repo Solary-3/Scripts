@@ -3151,7 +3151,7 @@ for _,a in next,HatsDatabase do
   if a.Names~=nil then 
   table.insert(TableOfAccessries,a)
   else
-    print(a.MeshId,a.TextureId,a.Name,a.Offset)
+    --print(a.MeshId,a.TextureId,a.Name,a.Offset)
   table.insert(TableOfAccessries,a)
   end
 end
