@@ -6927,7 +6927,7 @@ local trail=i("Trail")
 
 insSet(att0,"Position",v3(0,-4,4.6));insSet(att0,"Parent",sw)
 insSet(att1,"Position",v3(0,3,-3.6));insSet(att1,"Parent",sw)
-insSet(trail,"Texture","rbxassetid://2108945559");insSet(trail,"Attachment0",att0);insSet(trail,"Attachment1",att1);insSet(trail,"LightEmission",0.5);insSet(trail,"Transparency",ns(0));insSet(trail,"Lifetime",0.6);insSet(trail,"WidthScale",ns(1,0));insSet(trail,"Parent",sw);insSet(trail,"Brightness",10);insSet(trail,"Color",cs({csk(0,pcolor.Value),csk(1,scolor.Value)}))
+insSet(trail,"Texture","rbxassetid://2108945559");insSet(trail,"Attachment0",att0);insSet(trail,"Attachment1",att1);insSet(trail,"LightEmission",0.5);insSet(trail,"Transparency",ns(.5));insSet(trail,"Lifetime",0.6);insSet(trail,"WidthScale",ns(1,0));insSet(trail,"Parent",sw);insSet(trail,"Brightness",10);insSet(trail,"Color",cs({csk(0,pcolor.Value),csk(1,scolor.Value)}))
 end
 end
 end
