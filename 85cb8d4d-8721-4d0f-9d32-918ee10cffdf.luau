@@ -4237,13 +4237,19 @@ local sword3=getPartFromMesh(5278721954, 5316510551)
 local s1_3=sword3 and getPartJoint(sword3) or {C0=cf_0} -- Rainbow Sword
 local sword4=getPartFromMesh(5278721954, 5278777022)
 local s1_4=sword4 and getPartJoint(sword4) or {C0=cf_0} -- Demon God Sword
-local SWAtt2=nil 
-local SWAtt1=getAccWeldFromMesh("5254583415", "5268538095") -- VoidLordSword
+local SWAtt2=nil
+local SWAtt1=nil
+if ws[YourName]:FindFirstChild("VoidLordSword") then
+ SWAtt1=getAccWeldFromMesh("5254583415", "5268538095") -- VoidLordSword
+ else 
+ SWAtt1=getAccWeldFromMesh("5278721954", "5692006383") 
+
+end
 if ws[YourName]:FindFirstChild("AuroraSword") then
 SWAtt2=getAccWeldFromMesh("5278721954", "5316471565")
 else
 SWAtt2=getAccWeldFromMesh("5278721954", "5692006383") 
-end-- Aurora Sword or Halloween Sword
+end-- Aurora Sword or Halloween Sword Halloween Sword
 local SWAtt3=getAccWeldFromMesh("5278721954", "5316510551") -- RainbowGodSword
 local SWAtt4=getAccWeldFromMesh("5278721954", "5278777022") -- DemonGodSword
 
