@@ -2421,6 +2421,13 @@ local oncharacter=function()
 lastsine=sine
 --oswait(game.Players.LocalPlayer:GetNetworkPing()) 
 local newc=ws:FindFirstChild(YourName)
+local count=1
+for _,v in ipairs(newc:GetChildren()) do
+if v.Name=="RainbowGodSword" then
+v.Name="RainbowGodSword"..count
+count+=1
+end
+end
 if c and newc and (newc~=lastc) then
 lastc=newc
 characters[v]=newc
