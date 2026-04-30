@@ -7218,7 +7218,7 @@ game:HttpGet(
 )
 end)
 end
---[[ tspawn(function()
+tspawn(function()
 pcall(function()
 writefile(path,
 game:HttpGet(
@@ -7226,7 +7226,7 @@ game:HttpGet(
 )
 )
 end)
-end)]]
+end)
 
 
 
