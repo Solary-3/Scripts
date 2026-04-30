@@ -2502,6 +2502,7 @@ end
 end
 if not Hatdrop then
 if respawntp==1 then
+if ws:FindFirstChild(lp.Name) and ws[lp.Name].Humanoid.RigType==Enum.HumanoidRigType.R15 then oswait(.1) end
 local startpos=pos*v3(random(-100,100),hhOff1,random(-100,100))
 local dir=nil
 local poscheck=true
