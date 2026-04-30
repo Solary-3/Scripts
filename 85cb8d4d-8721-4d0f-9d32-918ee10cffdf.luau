@@ -2420,7 +2420,7 @@ local lastc=nil
 local oncharacter=function()
 lastsine=sine
 --oswait(game.Players.LocalPlayer:GetNetworkPing()) 
-local newc=insGet(v,"Character")
+local newc=ws:FindFirstChild(YourName)
 if c and newc and (newc~=lastc) then
 lastc=newc
 characters[v]=newc
