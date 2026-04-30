@@ -20796,6 +20796,7 @@ local ss=game:GetService("SoundService")
 local MusicPlayer=ss:FindFirstChild("GlitcherAudioPlayer")
 local analyzer=MusicPlayer["Analyzer"]
 if MusicPlayer.TimePosition==0 then return end
+if MusicPlayer then
 update1=os.clock()*50
 task.spawn(function()
 local spectrum=analyzer:GetSpectrum()
@@ -20820,6 +20821,7 @@ end
 
 end)
 
+end
 end
 local hhh
 hhh=PostSimulation:Connect(function()
