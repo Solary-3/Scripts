@@ -2582,6 +2582,7 @@ end
 if Hatdrop then
 HatDrop(newc)
 else
+local newc=ws:FindFirstChild(YourName)
 if breakjointsmethod==1 then
 insGet(newc,"BreakJoints")(newc)
 local h=FindFirstChildOfClass(newc,"Humanoid")
