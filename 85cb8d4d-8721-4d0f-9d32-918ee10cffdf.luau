@@ -5944,7 +5944,9 @@ local swords={
   "VoidLordSword",
   "AuroraSword",
   "RainbowGodSword",
-  GetAcc(5278721954, 5692006383)
+  "RainbowGodSword1",
+  "RainbowGodSword2",
+  "RainbowGodSword3",
 }
 
 --// VFX Essenstials
