@@ -5422,6 +5422,7 @@ local function RedownloadUserAsset()
 	end
 end
 
+local ClonedDanceTable=nil
 task.spawn(function()
 --// Init Modules)
 notify("Loading Builtin Modules...")
@@ -5430,6 +5431,7 @@ notify("Loading User Modules...")
 LoadBuiltInDances()
 AddLoadeModuleDances()
 notify("Init Complete")
+ClonedDanceTable=table.clone(TableOfDances)
 end)
 local ClonedDanceTable=table.clone(TableOfDances)
 local backup=ExtraBackup
