@@ -4200,7 +4200,7 @@ DisableCharacterCollisions = true,
 DisableHealthBar = true,
 DisableRigCollisions = true,
 HatDrop = false,
-HideCharacter = Vector3.new(0, Ypos, -250),
+HideCharacter = Vector3.new(0, Ypos, -100),
 ParentCharacter = false,
 PermanentDeath = false,
 Refit = true,
@@ -5467,7 +5467,20 @@ ReloadAssets.MouseButton1Click:Connect(function()
   Hmmm.Value=false
 end)
 
+local usure=1
 RedownloadButton.MouseButton1Click:Connect(function()
+if usure==1 then 
+RedownloadButton.Text="U Sure?"
+usure=2 
+elseif usure==2 then 
+RedownloadButton.Text="U wanna reddownload all assets?"
+usure=3 
+RedownloadButton.TextWrapped=true
+RedownloadButton.Scaled=true
+elseif usure==3 then
+RedownloadButton.Text="Redownloading..."
+RedownloadButton.TextWrapped=false
+RedownloadButton.Scaled=false
 notify("Redownloading Assets!")
 for _,a in next,listfiles(DanceFolder) do
   delfile(a)
@@ -5478,7 +5491,8 @@ end
 RedownloadUserAsset()
 RedownloadAssert()
 notify("Assets Redownloaded!")
-end)
+usure=1
+end
 
 
 local YourName=game.Players.LocalPlayer.Name
