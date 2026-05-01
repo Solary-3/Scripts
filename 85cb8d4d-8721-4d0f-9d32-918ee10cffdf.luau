@@ -1699,6 +1699,20 @@ meshid="105141400603933",textureid="71060417496309",C0=angles(0,0,80.09),Name="R
 
 
 {
+meshid="99233790861447",textureid="130434552211502",C0=angles(0,0,0),Name="Left Arm"
+},
+{
+meshid="110319766095259",textureid="90669075927073",C0=angles(0,0,0),Name="Right Arm"
+},
+{
+meshid="106782625784837",textureid="86686618437378",C0=angles(0,0,0),Name="Left Leg"
+},
+{
+meshid="137860647749716",textureid="98975910371745",C0=angles(0,0,0),Name="Right Leg"
+},
+
+
+{
 meshid="126825022897778",textureid="130689541138804",C0=angles(0,0,0),Name="Torso"
 },
 {
