@@ -1837,7 +1837,7 @@ local btn=mkbtn(MF2,"Disable Custom Inventory","Disable Custom Inventory",u2(0,1
     lbl1.Text="Disabled : true"
     end
 end)
-local e1=mkbtn(MF2,"Smooth Cam","Smooth Cam",u2(0,170,0,44),u2(0,10,0,450),nil,nil,true,24)
+local e1=mkbtn(MF2,"Smooth Camera","Smooth Camera",u2(0,170,0,44),u2(0,10,0,450),nil,nil,true,24)
 e1.MouseButton1Click:Connect(function()
   if ae.Value==true then return end
   ae.Value=true
