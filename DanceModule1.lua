@@ -2885,7 +2885,7 @@ AddModule(function()
     return m
 end)
 
-AddModule(function()
+table.insert(modules,function()
     local m = {}
     m.ModuleType  = "DANCE"
     m.Name        = "Pardon Dance"
