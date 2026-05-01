@@ -1823,7 +1823,7 @@ local e=false
  ac=Instance.new("BoolValue")
  ac.Value=false
  ad=Instance.new("BoolValue")
- ad.Value=true
+ --ad.Value=true
  ae=Instance.new("BoolValue")
  ae.Value=false
 local btn=mkbtn(MF2,"Disable Custom Inventory","Disable Custom Inventory",u2(0,170,0,44),u2(0,10,0,250),nil,nil,true,24,function()
@@ -1842,7 +1842,7 @@ e1.MouseButton1Click:Connect(function()
   if ae.Value==true then return end
   ae.Value=true
   ad.Value=not ad.Value
-  TDZConfigs.SmoothCam = ad.Value
+  TDZConfigs._SmoothCam = ad.Value
   SaveUIAndModuleConfigs()
   if ad.Value==true then 
     e1.Text="Enabled!"
@@ -4960,11 +4960,11 @@ local LastReanimChanged=Instance.new("StringValue")
 	if type(TDZConfigs._CharScale) == "string" and TDZConfigs._CharScale ~= "" then
 		UI["CharScale_b"].Text = TDZConfigs._CharScale
 	end
-	if type(TDZConfigs.InvStyling) == "booleam" and TDZConfigs.InvStyling ~= nil then
+	if type(TDZConfigs.InvStyling) == "boolean" and TDZConfigs.InvStyling ~= nil then
 		DisableCustomInventory=TDZConfigs.InvStyling
 	end
-	if type(TDZConfigs.SmoothCam) == "booleam" and TDZConfigs.SmoothCam ~= nil then
-		ad.Value=TDZConfigs.SmoothCam
+	if type(TDZConfigs._SmoothCam) == "boolean" and TDZConfigs._SmoothCam ~= nil then
+		ad.Value=TDZConfigs._SmoothCam
 	end
 
 
@@ -5738,8 +5738,8 @@ if jabthing then
     repeat wait() until ws:FindFirstChild(YourName.."_Fake")
   elseif TypeOfReanim=="Gelatek" then 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/VeryVeryReanimate.lua"))()
-    game.ReplicatedStorage["01_server"]:FireServer("cmd", "-net ")
     task.wait(.1)
+    game.ReplicatedStorage["01_server"]:FireServer("cmd", "-net ")
   elseif TypeOfReanim=="Emper" then 
     workspace[YourName].HumanoidRootPart.AssemblyLinearVelocity=Vector3.new(0,0,0)
     Backup1()
