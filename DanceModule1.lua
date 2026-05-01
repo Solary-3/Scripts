@@ -2885,4 +2885,39 @@ AddModule(function()
     return m
 end)
 
+AddModule(function()
+    local m = {}
+    m.ModuleType  = "DANCE"
+    m.Name        = "Pardon Dance"
+    m.Description = "Pardon Me?"
+    m.Assets = {
+      "Pardon Dance.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Pardon Dance.lua",
+      "Pardon Dance.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Pardon Dance.mp3?raw=true"
+      
+    }
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+    local animator = nil
+    local start    = 0
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Pardon Dance.mp3"), "Pardon Dance", 0.8, NumberRange.new(0, 45.5))
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Pardon Dance.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+    m.Update = function(dt, figure)
+        animator:Step(os.clock() - start)
+    end
+    m.Destroy = function(figure)
+        animator = nil
+    end
+    return m
+end)
+
 return modules
