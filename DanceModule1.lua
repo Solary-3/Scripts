@@ -2891,7 +2891,7 @@ table.insert(modules,function()
     m.Name        = "Pardon Dance"
     m.Description = "Pardon Me?"
     m.Assets = {
-      "Pardon Dance.anim@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Pardon Dance.lua",
+      "Pardon Dance.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Pardon Dance.lua",
       "Pardon Dance.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Pardon Dance.mp3?raw=true"
       
     }
