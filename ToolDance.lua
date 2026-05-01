@@ -589,9 +589,8 @@ local Builitins={
   "DanceModule1.lua"
 }
 pcall(function()
-for _,a in next,Builitins do 
-    writefile(builtins.."/"..a,game:HttpGet(MainGit..a))
-  end
+  writefile(builtins.."/HatMaps.lua",game:HttpGet(MainGit.."HatMaps.lua?rw=true"))
+  writefile(builtins.."/DanceModule1.lua",game:HttpGet(MainGit.."DanceModule1.lua?rw=true"))
 end)
 local oldfolders={
   "Theo-Dancezzz-Dancezzz",
