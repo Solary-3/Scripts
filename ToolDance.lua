@@ -1823,7 +1823,9 @@ local e=false
  ac=Instance.new("BoolValue")
  ac.Value=false
  ad=Instance.new("BoolValue")
- --ad.Value=true
+ ad.Value=true
+ TDZConfigs._SmoothCam = ad.Value
+  SaveUIAndModuleConfigs()
  ae=Instance.new("BoolValue")
  ae.Value=false
 local btn=mkbtn(MF2,"Disable Custom Inventory","Disable Custom Inventory",u2(0,170,0,44),u2(0,10,0,250),nil,nil,true,24,function()
