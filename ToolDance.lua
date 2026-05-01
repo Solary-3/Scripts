@@ -1317,7 +1317,7 @@ UI["3Credits_65"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 UI["3Credits_65"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
 UI["3Credits_65"]["FontFace"] = Font.new([[rbxasset://fonts/families/Zekton.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 UI["3Credits_65"]["Size"] = UDim2.new(0, 136, 0, 44);
-UI["3Credits_65"]["Text"] = [[Credits]];
+UI["3Credits_65"]["Text"] = [[Credits and about]];
 UI["3Credits_65"]["Name"] = [[3Credits]];
 UI["3Credits_65"]["Position"] = UDim2.new(0.7326, 0, 0.22242, 0);
 
@@ -1458,9 +1458,10 @@ return UI["C"]
 end
 
 local index=1
-function mktb(name,pos,activescf)
+function mktb(name,pos,activescf,anchor)
 if pos==nil then pos=UDim2.new(0, 0, 0.01316, 0) end
 if activescf==nil then activescf=true end
+if anchor==nil then anchor=Vector2.new(0,0) end
 UI["Tab"] = Instance.new("ScrollingFrame", UI["CanvasGroup_8"]);
 UI["Tab"]["Active"] = activescf
 UI["Tab"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
@@ -1499,6 +1500,7 @@ UI["C"]["FontFace"] = Font.new([[rbxasset://fonts/families/Zekton.json]], Enum.F
 UI["C"]["TextColor3"] = Color3.fromRGB(255, 0, 0);
 UI["C"]["BackgroundTransparency"] = 1;
 UI["C"]["Size"] = UDim2.new(0, 178, 0, 20);
+UI["C"]["AnchorPoint"] = anchor;
 UI["C"]["Text"] = [[--// ]]..name..[[ \\--]]
 UI["C"]["Name"] = "Title"..index;
 UI["C"]["Position"] = pos
@@ -1730,8 +1732,8 @@ end
 
 
 local index=5 -- 5th index
-function mktb1(name,txt,txtpos)
-local tabby=mktb(name,txtpos)
+function mktb1(name,txt,pos,anchor)
+local tabby=mktb(name,pos,nil,anchor)
 local mf=tabby.MF
 local er={
   mf=mf, 
@@ -1744,8 +1746,9 @@ end)
 index+=1
 return mf
 end
---mktb1("Test","Test")
-
+local v2=Vector2.new
+local tutorial=mktb1("How to use","Tutorial",u2(0,35,0,0),v2(.2,0))
+mklbl(tutorial,"How to use this script?\n1: Go to the home tab, scrolldown, click ' + ' and choose the reanimate type u wanna use, after that, scroll up and click reanimate, thats al\n\n-- If your executor doesnt support Gelatek reanimate, then the script will force you to use CurrentAngle, even if you still chose Gelatek, if your outside Just a baseplate or Green Bassplate, you can only choose Empyrean or CurrentAngle, if you still chose Gelatek outside those 2 games, you are still forced to use CurrentAngle\n\n-- Why do people dont see my anim when i use CurrentAngle?\n-- Steve already explained this, in most newer games, the game creates an 'Animator' inside your character which breaks CurrentAngle, even VC breaks it\n\n2: How to scale your avatar?, same as number 1, if u see ' Char Scale' input any number that fits for your rigs size\n\n3: How to add your own dances, if you know how to add modules from Steves Uhhhh Reanimate, then this will be the same process as how u add your own user modules\nWhere can i find the folder of Theos Dancezzz?\nstorage/emulated/0/YourExecutorsFolder/Workspace/Theos Dancezzzzz, this will be devided into 5 folders,\n1:Models -- Emote props 'rbxm'\n2:Emotes -- Emotes/Animation Storage\n3:Emote Music-- UI And Emote Music\n4:UserDances -- User Module Storage\n5:Built-In -- Dont touch\n\njust put your module/s into UserDances\n\n What if i dont know how to add/make modules?\n-- Dont worry, some of the players who knows how to create their own modules for Uhhhh reanimate would help you create your own modules for Theos Dancezzz\nIf your not already on Uhhhhh Reanimate server, join it! people will help you create your own dance module\n\n-- If your module assets isnt downloaded or if you added another modules, go to the Home tab, scroll down and click 'Refresh Assets' this eill reload all modules (even the built in module)\n\n4: Configuring Emotes\n click the small + on the top right of the UI, click 'Module Dances' and you will see the list of enotes that were loaded from a modules file, each emotes are clickable too! click one of the emotes and it will open a tab for it, if it has can be configured, then go!(emote configuration is also saved) and also, you can play and stop the emote directly on the UI",u2(1,0,7,0),u2(0,0,0,25),"Left","Top",true)
 
 
 
@@ -2406,7 +2409,7 @@ local UpdateListLayout = false
 local function AddLoadeModuleDances()
 	BuiltInDancesList.Interactable = true
 	UserDancesList.Interactable = true
-	for _, c in BuiltInDancesList:GetChildren() do
+	for _,c in BuiltInDancesList:GetChildren() do
 		if not c:IsA("UIListLayout") and not c:IsA("UIPadding") then c:Destroy() end
 	end
 	for _, c in UserDancesList:GetChildren() do
