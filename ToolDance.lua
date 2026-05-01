@@ -221,7 +221,7 @@ local TableOfDances={
 {Name="Birdbrain",Music="Birdbrain2.mp3",DanceName="Birdbrain",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Birdbrain.lua",Id="None",Offset=0,WalkSpeed=14,Looped=true,UseSoundPos=true,Alpha=.1},
 {Name="Fein",Music="Fein.mp3",DanceName="Fein",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Fein.lua",Id="None",Offset=0,WalkSpeed=14,Looped=true,UseSoundPos=false,Alpha=.1},
 {Name="Popipo",Music="Popipo.mp3",DanceName="Popipo",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Popipo.lua",Id="None",Offset=0,WalkSpeed=14,Looped=true,UseSoundPos=true,Alpha=.1},
-{Name="Pickup",Music="Pickup.mp3",DanceName="Pickup",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pickup.lua",Id="None",Offset=0,WalkSpeed=14,Looped=true,UseSoundPos=false,Alpha=.1},
+{Name="Pickup",Music="Pickup.mp3",DanceName="Pickup",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Pickup.lua",Id="None",Offset=0,WalkSpeed=14,Looped=true,UseSoundPos=true,Alpha=.1},
 {Name="Silly Billy 1",Music="Billy.mp3",DanceName="Billy",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Billy.lua",Id="None",Offset=0,WalkSpeed=14,Looped=true,UseSoundPos=false,Alpha=.1},
 {Name="Sinful",Music="rotten.mp3",DanceName="None",Url="None",Id=89457637802764,Offset=0,WalkSpeed=14,Looped=true,UseSoundPos=false,Alpha=.1},
 {Name="Spooky",Music="Spooky.mp3",DanceName="Spooky",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Spooky.lua",Id="None",Offset=0,WalkSpeed=14,Looped=true,UseSoundPos=false,Alpha=.1},
