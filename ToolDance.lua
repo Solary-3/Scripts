@@ -368,9 +368,12 @@ local TableOfDances={
 {Name="Rat 4",Music="Rat.mp3",DanceName="Rat4",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Rat4.lua",Id="None",Offset=0,WalkSpeed=14,Looped=true,UseSoundPos=true,Alpha=.1},
 {Name="Encore 1",Music="Encore.mp3",DanceName="Encore 1",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Encore 1.lua",Id="None",Offset=0,WalkSpeed=14,Looped=true,UseSoundPos=true,Alpha=.1},
 
+{Name="Shucks Mid Scene",Music="Angry Shucks.mp3",DanceName="Shucks Mid Scene",Url="https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Shucks Mid Scene.lua",Id="None",Offset=0,WalkSpeed=14,Looped=true,UseSoundPos=true,Alpha=10},
+
 }
 local validAudioFiles = {
 "Sphere.mp3",
+"Angry Shucks.mp3",
 "Toothless.mp3",
 "Pp music.mp3",
 "Name This.mp3",
@@ -4568,7 +4571,12 @@ local CFB = CF:Lerp(Info2.CFrame+Info2.CFrame.Position*(char:GetScale()-1), 1)
 --CFB+CFB.Position*char:GetScale()
 
 local Pose
-local Alpha=tonumber(Numval.Value)
+local Alpha
+if tonumber(Numval.Value)>=10 then 
+  Alpha=(TimeSince - Time) / (NextTime - Time)
+  else 
+    Alpha=tonumber(Numval.Value)
+  end
 if Info2.EasingStyle == "Constant" then
 Pose = CFA
 else
