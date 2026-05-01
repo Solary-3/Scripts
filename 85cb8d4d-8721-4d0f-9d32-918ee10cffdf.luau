@@ -1710,6 +1710,9 @@ meshid="106782625784837",textureid="86686618437378",C0=angles(0,0,0),Name="Left 
 {
 meshid="137860647749716",textureid="98975910371745",C0=angles(0,0,0),Name="Right Leg"
 },
+{
+meshid="124739273310546",textureid="140074455117345",C0=angles(0,0,0),Name="Torao"
+},
 
 
 {
