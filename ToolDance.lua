@@ -845,7 +845,7 @@ UI["TextLabel_16"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolat
 UI["TextLabel_16"]["TextColor3"] = Color3.fromRGB(255, 0, 0);
 UI["TextLabel_16"]["BackgroundTransparency"] = 1;
 UI["TextLabel_16"]["Size"] = UDim2.new(1, 0, 1, 0);
-UI["TextLabel_16"]["Text"] = "New UI👍\n yes new UI, you can scroll up or down on the UI now, you can choose 3 of the reanimate below this long\ntextlabel btw\nif you chose empyrean\nget a keyboard script\nbasically since enabling tools\nwill not work on empyrean";
+UI["TextLabel_16"]["Text"] = "New UI👍\n yes new UI, you can scroll up or down on the UI now, you can choose 3 of the reanimate below this long\ntextlabel btw\nif you chose empyrean\nget a keyboard script\nbasically since enabling tools\nwill not work on empyrean\n\nUpdate:\nAdded Smooth Camera Toggle on\nsettings";
 UI["TextLabel_16"]["Position"] = UDim2.new(0.06098, 0, 0.00645, 0);
 
 
@@ -1814,13 +1814,18 @@ end
 until not UI["Interface_1"] 
 end)
 
-local lbl=mklbl(MF2, [[--// Disable Invetory Styling \\--]],nil, u2(0, 65, 0, 320))
+mklbl(MF2, [[--// Disable Invetory Styling \\--]],nil, u2(0, 65, 0, 320))
+mklbl(MF2, [[--// Smooth Camera \\--]],nil, u2(0, 20, 0, 520))
 local lbl1=mklbl(MF2, [[Disabled : false]],nil, u2(0, 200, 0, 260),"Left")
 local e=false
  bc=Instance.new("BoolValue")
  bc.Value=false
  ac=Instance.new("BoolValue")
  ac.Value=false
+ ad=Instance.new("BoolValue")
+ ad.Value=true
+ ae=Instance.new("BoolValue")
+ ae.Value=false
 local btn=mkbtn(MF2,"Disable Custom Inventory","Disable Custom Inventory",u2(0,170,0,44),u2(0,10,0,250),nil,nil,true,24,function()
   ac.Value=not ac.Value
   bc.Value=ac.Value
@@ -1831,7 +1836,26 @@ local btn=mkbtn(MF2,"Disable Custom Inventory","Disable Custom Inventory",u2(0,1
     else 
     lbl1.Text="Disabled : true"
     end
-  end)
+end)
+local e1=mkbtn(MF2,"Smooth Cam","Smooth Cam",u2(0,170,0,44),u2(0,10,0,450),nil,nil,true,24)
+e1.MouseButton1Click:Connect(function()
+  if ae.Value==true then return end
+  ae.Value=true
+  ad.Value=not ad.Value
+  TDZConfigs.SmoothCam = ad.Value
+  SaveUIAndModuleConfigs()
+  if ad.Value==true then 
+    e1.Text="Enabled!"
+    oswait(1)
+    e1.Text="Smooth Camera"
+    ae.Value=false
+    else 
+    e1.Text="Disabled!"
+    oswait(1)
+    e1.Text="Smooth Camera"
+    ae.Value=false
+    end
+end)
 fg=HookThing:GetPropertyChangedSignal("Value"):Connect(function()
   if HookThing.Value=="Emper" then 
     btn.Active=false
@@ -4937,7 +4961,10 @@ local LastReanimChanged=Instance.new("StringValue")
 		UI["CharScale_b"].Text = TDZConfigs._CharScale
 	end
 	if type(TDZConfigs.InvStyling) == "booleam" and TDZConfigs.InvStyling ~= nil then
-		DisableCustomInventory=TDZConfigs._CharScale
+		DisableCustomInventory=TDZConfigs.InvStyling
+	end
+	if type(TDZConfigs.SmoothCam) == "booleam" and TDZConfigs.SmoothCam ~= nil then
+		ad.Value=TDZConfigs.SmoothCam
 	end
 
 
@@ -6968,10 +6995,10 @@ local animmodule = AnimModule()
 local animplayer = AnimModule()
 local currentanim = nil
 local iscurrentadance = nil
+local gy
 local function PlayAnim(name, loop, looptomuisc)
 local ced=char or workspace[StringVal.Value]
 local char=ced
-local gy
 gy=StringVal:GetPropertyChangedSignal("Value"):Connect(function()
 if TypeOfReanim=="Emper" and TypeOfReanim=="Gelatek" then return end
 if StringVal.Value=="None!" then return end
@@ -9401,8 +9428,8 @@ con1=game:GetService("RunService").PostSimulation:Connect(function(deltaTime: nu
        cac:Disconnect()
        Hi:Disconnect()
        Hi1:Disconnect()
-       gy:Disconnect()
        G2L["1"]:Destroy()
+       gy:Disconnect()
     end)
     con1:Disconnect()
     return
@@ -9434,7 +9461,11 @@ con1=game:GetService("RunService").PostSimulation:Connect(function(deltaTime: nu
       hum.JumpPower=50*char:GetScale()
       local hrp=char.HumanoidRootPart
       local h=char.Head
+      if ad.Value==true then
       hum.CameraOffset =hum.CameraOffset:Lerp((hrp.CFrame*cf(0,1.5,0)):PointToObjectSpace(h.Position),Alpha(.025))
+      else
+      hum.CameraOffset =hum.CameraOffset:Lerp((hrp.CFrame*cf(0,0,0)):PointToObjectSpace(hrp.Position),Alpha(.025))
+      end
     end)
   elseif TypeOfReanim=="Gelatek" then 
     pcall(function()
@@ -9446,7 +9477,11 @@ con1=game:GetService("RunService").PostSimulation:Connect(function(deltaTime: nu
       hum.JumpPower=50*char:GetScale()
       local hrp=char.HumanoidRootPart
       local h=char.Head
+      if ad.Value==true then
       hum.CameraOffset =hum.CameraOffset:Lerp((hrp.CFrame*cf(0,1.5,0)):PointToObjectSpace(h.Position),Alpha(.025))
+      else
+      hum.CameraOffset =hum.CameraOffset:Lerp((hrp.CFrame*cf(0,0,0)):PointToObjectSpace(hrp.Position),Alpha(.025))
+      end
     end)
   elseif TypeOfReanim=="Emper" then 
     pcall(function()
@@ -9455,7 +9490,11 @@ con1=game:GetService("RunService").PostSimulation:Connect(function(deltaTime: nu
       hum.JumpPower=50*char:GetScale()
       local hrp=char.HumanoidRootPart
       local h=char.Head
+      if ad.Value==true then
       hum.CameraOffset =hum.CameraOffset:Lerp((hrp.CFrame*cf(0,1.5,0)):PointToObjectSpace(h.Position),Alpha(.025))
+      else
+      hum.CameraOffset =hum.CameraOffset:Lerp((hrp.CFrame*cf(0,0,0)):PointToObjectSpace(hrp.Position),Alpha(.025))
+      end
     end)
   end
   pcall(function()
