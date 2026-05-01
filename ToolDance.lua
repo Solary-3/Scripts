@@ -5493,6 +5493,7 @@ RedownloadAssert()
 notify("Assets Redownloaded!")
 usure=1
 end
+end)
 
 
 local YourName=game.Players.LocalPlayer.Name
