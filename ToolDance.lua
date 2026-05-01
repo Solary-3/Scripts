@@ -1661,6 +1661,8 @@ local Primary=c1.Value
 local Secondary=c2.Value
 Primary=Color3.new(1,0,0)
 Secondary=Color3.new(1,1,1)
+
+
 local function dragify(Frame)
 dragToggle = nil
 dragSpeed = .1
@@ -1700,9 +1702,11 @@ end
 end)
 end
 dragify(UI["Main_2"])
+
 local alpha = tonumber(TweenAlph.Value)
 local scrollHidden = UDim2.new(0, 0, .08553, 0)
 local scrollShown  = UDim2.new(0, 600, .08553, 0)
+
 local Tabs = {
     {mf = MF1, tab = Tab1},
     {mf = MF2, tab = Tab2},
@@ -1872,7 +1876,7 @@ end)
 local ShownTabSize=UDim2.new(0.28938, 0, 1, 0)
 local ShownTabPosiion=UDim2.new(-0.30403, 0, 0, 0) 
 local Tween0=false
-local Tween1=true
+local Tween1=false
 local TabThing=UI["TabGroup_51"]
 local TabButton=UI["Tab_68"]
 if Tween1 then
@@ -2902,36 +2906,35 @@ end
 -- SETTINGS --
 local settings = _G
 
-settings["Use Default animations"] = true
+settings["Use Default animations"] = false
 settings["Local character transparency level"] = 1
 settings["Disable character scripts"] = true
 settings["Fake character should collide"] = false
 settings["Parent real character to fake character"] = false
 settings["Respawn character"] = true
 settings["Instant respawn"] = false
-settings["Hide HumanoidRootPart"] = false
+settings["Hide HumanoidRootPart"] = true
 settings["PermaDeath fake character"] = false
 settings["R15 Reanimate"] = false
 settings["Click Fling"] = false
 settings["Anti-Fling"] = true
-settings["Hide RootPart Distance"] = CFrame.new(255, 255, 0)
+settings["Hide RootPart Distance"] = CFrame.new(0, 255, 0)
 settings["Allow tool equipping"] = true --// Placeholder
-settings["Client sided display mode"] = 1 --// If you will see the fake character, or the real character, 1 = real character (Default), 2 = fake character
+settings["Client sided display mode"] = 2 --// If you will see the fake character, or the real character, 1 = real character (Default), 2 = fake character
 settings["Fallback prompt"] = false --// Enable or disable the annoying fallback prompt if your game is not whitelisted
 settings["Respawn mode"] = "ServerBreakJoints"
 
 settings["Names to exclude from transparency"] = {
-    --[[ example:
+    --[=[ example:
     ["HumanoidRootPart"] = true,
     ["Left Arm"] = true
-    ]]
+    ]=]
 }
 --// Settings end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV4/refs/heads/main/v4.lua"))()
 REANIMATION=false 
 end
-
 
 local rad=math.rad
 local TableOfAccessries={
@@ -4185,21 +4188,22 @@ end
 
 local Ypos=0 
 local Place = game.placeId 
-if Place == 17574618959 or Place == 88308889239232 or Place==123974602339071 then
-Ypos=-30
+local jabthing=game.ReplicatedStorage:FindFirstChild("01_server")
+if jabthing then
+Ypos=-0
 else 
 Ypos=-30
 end
 Empyrean = Start({
 Accessories = TableOfAccessries,
 ApplyDescription = true,
-BreakJointsDelay = .1,
+BreakJointsDelay = 0,
 ClickFling = false,
 DisableCharacterCollisions = true,
 DisableHealthBar = true,
 DisableRigCollisions = true,
 HatDrop = false,
-HideCharacter = Vector3.new(0, Ypos, -100),
+HideCharacter = Vector3.new(0, Ypos, 50),
 ParentCharacter = false,
 PermanentDeath = false,
 Refit = true,
@@ -4210,9 +4214,9 @@ SetCameraSubject = true,
 SetCameraType = true,
 SetCharacter = true,
 SetCollisionGroup = true,
-SimulationRadius = 10e10,
-TeleportRadius = 12,
-UseServerBreakJoints = false,
+SimulationRadius = 10000,
+TeleportRadius = 5,
+UseServerBreakJoints = true,
 })
 DefaultFlingOptions = {
 HatFling = true,--{ MeshId="", TextureId = ""},
@@ -5422,80 +5426,6 @@ local function RedownloadUserAsset()
 	end
 end
 
-local ClonedDanceTable=nil
-task.spawn(function()
---// Init Modules)
-notify("Loading Builtin Modules...")
-LoadUserModules()
-notify("Loading User Modules...")
-LoadBuiltInDances()
-AddLoadeModuleDances()
-notify("Init Complete")
-ClonedDanceTable=table.clone(TableOfDances)
-end)
-local ClonedDanceTable=table.clone(TableOfDances)
-local backup=ExtraBackup
-local Detect=Instance.new("BoolValue")
-local IsReloading=false 
-ReloadAssets.MouseButton1Click:Connect(function()
-  if IsReloading== true then return end
-  IsReloading=true
-  Detect.Value=true
-  Hmmm.Value=true
-  wait(.2)
-  if ActiveDanceConfiguratuonPage then
-    ActiveDanceConfiguratuonPage:Destroy()
-    ActiveDanceConfiguratuonPage = nil
-  end
-  BuiltInDancesList.Interactable = true
-  UserDancesList.Interactable = true
-  table.clear(UserDanceContainer)
-  table.clear(QueueEmotesThatIsntLooped)
-  table.clear(RegisterAssets)
-  UserDanceContainer = {}
-  RegisterAssets= {}  
-  QueueEmotesThatIsntLooped= {}  
-  TableOfDances = table.clone(backup)
-  task.wait()
-  notify("Loading Builtin Modules...")
-  LoadUserModules()
-  notify("Loading User Modules...")
-  LoadBuiltInDances()
-  AddLoadeModuleDances()
-  notify("Reloaded Module/s")
-  Detect.Value=false 
-  IsReloading=false 
-  Hmmm.Value=false
-end)
-
-local usure=1
-RedownloadButton.MouseButton1Click:Connect(function()
-if usure==1 then 
-RedownloadButton.Text="U Sure?"
-usure=2 
-elseif usure==2 then 
-RedownloadButton.Text="U wanna reddownload all assets?"
-usure=3 
-RedownloadButton.TextWrapped=true
-RedownloadButton.Scaled=true
-elseif usure==3 then
-RedownloadButton.Text="Redownloading..."
-RedownloadButton.TextWrapped=false
-RedownloadButton.Scaled=false
-notify("Redownloading Assets!")
-for _,a in next,listfiles(DanceFolder) do
-  delfile(a)
-end
-for _,a in next,listfiles(MusicFolder) do
-  delfile(a)
-end
-RedownloadUserAsset()
-RedownloadAssert()
-notify("Assets Redownloaded!")
-usure=1
-end
-end)
-
 
 local YourName=game.Players.LocalPlayer.Name
 local INPUTLOOP=nil 
@@ -5688,6 +5618,81 @@ task.spawn(function()
 end)
 
 
+local ClonedDanceTable=nil
+task.spawn(function()
+--// Init Modules)
+notify("Loading Builtin Modules...")
+LoadUserModules()
+notify("Loading User Modules...")
+LoadBuiltInDances()
+AddLoadeModuleDances()
+notify("Init Complete")
+ClonedDanceTable=table.clone(TableOfDances)
+end)
+repeat wait() until ClonedDanceTable~=nil
+local backup=ExtraBackup
+local Detect=Instance.new("BoolValue")
+local IsReloading=false 
+ReloadAssets.MouseButton1Click:Connect(function()
+  if IsReloading== true then return end
+  IsReloading=true
+  Detect.Value=true
+  Hmmm.Value=true
+  wait(.2)
+  if ActiveDanceConfiguratuonPage then
+    ActiveDanceConfiguratuonPage:Destroy()
+    ActiveDanceConfiguratuonPage = nil
+  end
+  BuiltInDancesList.Interactable = true
+  UserDancesList.Interactable = true
+  table.clear(UserDanceContainer)
+  table.clear(QueueEmotesThatIsntLooped)
+  table.clear(RegisterAssets)
+  UserDanceContainer = {}
+  RegisterAssets= {}  
+  QueueEmotesThatIsntLooped= {}  
+  TableOfDances = table.clone(backup)
+  task.wait()
+  notify("Loading Builtin Modules...")
+  LoadUserModules()
+  notify("Loading User Modules...")
+  LoadBuiltInDances()
+  AddLoadeModuleDances()
+  notify("Reloaded Module/s")
+  Detect.Value=false 
+  IsReloading=false 
+  Hmmm.Value=false
+end)
+local usure=1
+RedownloadButton.MouseButton1Click:Connect(function()
+if usure==1 then 
+RedownloadButton.Text="U Sure?"
+usure=2 
+elseif usure==2 then 
+RedownloadButton.Text="U wanna reddownload all assets?"
+usure=3 
+RedownloadButton.TextWrapped=true
+RedownloadButton.Scaled=true
+elseif usure==3 then
+RedownloadButton.Text="Redownloading..."
+RedownloadButton.TextWrapped=false
+RedownloadButton.Scaled=false
+notify("Redownloading Assets!")
+for _,a in next,listfiles(DanceFolder) do
+  delfile(a)
+end
+for _,a in next,listfiles(MusicFolder) do
+  delfile(a)
+end
+RedownloadUserAsset()
+RedownloadAssert()
+notify("Assets Redownloaded!")
+usure=1
+end
+end)
+
+
+
  function MainScript()
 if RUNNING then notify("Already Running") return end
 function Reanimate()
@@ -5695,7 +5700,8 @@ if RUNNING then return end
 RUNNING=true
 IsRunning1.Value=true
 local Place = game.placeId 
-if Place == 17574618959 or Place == 88308889239232 or Place==123974602339071 then
+local jabthing=game.ReplicatedStorage:FindFirstChild("01_server")
+if jabthing then
   if not replicatesignal then 
     TypeOfReanim="CurrentAngle"
     notify("Gelatek Reanimate Not Supported")
@@ -5708,21 +5714,19 @@ if Place == 17574618959 or Place == 88308889239232 or Place==123974602339071 the
     game.ReplicatedStorage["01_server"]:FireServer("cmd", "-net ")
     task.wait(.1)
   elseif TypeOfReanim=="Emper" then 
+    workspace[YourName].HumanoidRootPart.AssemblyLinearVelocity=Vector3.new(0,0,0)
     Backup1()
     task.wait(.1)
   end
   else 
     if TypeOfReanim=="Gelatek" then
-      if math.random(1,2) then
-      TypeOfReanim="CurrentAngle" 
-      else
-      TypeOfReanim="Emper" 
-      end
+      TypeOfReanim="CurrentAngle"
       end 
     if TypeOfReanim=="CurrentAngle" then 
       Backup()
       repeat wait() until ws:FindFirstChild(YourName.."_Fake")
     elseif TypeOfReanim=="Emper" then 
+      workspace[YourName].HumanoidRootPart.AssemblyLinearVelocity=Vector3.new(0,0,0)
       Backup1()
       task.wait()
     end
@@ -5753,8 +5757,10 @@ task.spawn(function()
       char:ScaleTo(tonumber(UI["CharScale_b"].Text) or 1)
       char.HumanoidRootPart.CFrame=char.HumanoidRootPart.CFrame*CFrame.new(0,tonumber(UI["CharScale_b"].Text or 1)*2,0)
       char.HumanoidRootPart.Anchored=true -- Anchore it
+      char.HumanoidRootPart.CanCollide=true
       task.wait(.2) -- Leave a small delay to prevent character from phasing through the ground
       char.HumanoidRootPart.Anchored=false
+      char.HumanoidRootPart.CanCollide=false
       end)
     TDZConfigs._CharScale = UI["CharScale_b"].Text
     SaveUIAndModuleConfigs()
@@ -6965,7 +6971,8 @@ local iscurrentadance = nil
 local function PlayAnim(name, loop, looptomuisc)
 local ced=char or workspace[StringVal.Value]
 local char=ced
-StringVal:GetPropertyChangedSignal("Value"):Connect(function()
+local gy
+gy=StringVal:GetPropertyChangedSignal("Value"):Connect(function()
 if TypeOfReanim=="Emper" and TypeOfReanim=="Gelatek" then return end
 if StringVal.Value=="None!" then return end
 char=workspace[StringVal.Value]
@@ -9284,7 +9291,7 @@ eccentri = strv:GetPropertyChangedSignal("Value"):Connect(function()
 		Numval.Value = 1
 		local dance = LoadDance("Jump", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Jump.lua")
 		if dance then
-			playanim(dance, true)
+			playanim(dance, false)
 		end
 
 	elseif VelY == "Fall" then
@@ -9394,6 +9401,7 @@ con1=game:GetService("RunService").PostSimulation:Connect(function(deltaTime: nu
        cac:Disconnect()
        Hi:Disconnect()
        Hi1:Disconnect()
+       gy:Disconnect()
        G2L["1"]:Destroy()
     end)
     con1:Disconnect()
@@ -9406,7 +9414,11 @@ con1=game:GetService("RunService").PostSimulation:Connect(function(deltaTime: nu
     sine=os.clock()
     pcall(function()
       local root=char.HumanoidRootPart
+      if char:GetScale()==1 then
+    hitfloor=rayCast(root.Position,(CFrame.new(root.Position,root.Position - Vector3.new(0,3*char:GetScale(),0))).lookVector,4,char)
+    else 
     hitfloor=rayCast(root.Position,(CFrame.new(root.Position,root.Position - Vector3.new(0,3*char:GetScale(),0))).lookVector,4*char:GetScale(),char)
+    end
     end)
     local target=musicSound.PlaybackLoudness or Playsound.PlaybackLoudness
     LoudnessSmoothing=LoudnessSmoothing + (target - LoudnessSmoothing) * BobbingIntensity
@@ -9464,11 +9476,11 @@ con1=game:GetService("RunService").PostSimulation:Connect(function(deltaTime: nu
     end
     local VelY = char.HumanoidRootPart.Velocity.Y
 local newState
-     if dancing then return end
+      if dancing then return end
 --if hitfloor~=nil then return end
-      if VelY > 1 then
-       newState = "Jump"
-	   elseif VelY < -.1 and hitfloor == nil then
+      if VelY > 1 and hitfloor == nil then
+      newState = "Jump"
+	   elseif VelY < -1 and hitfloor == nil then
 	    newState = "Fall"
 	    Numval.Value = 1
 	   elseif VelY>=0 or VelY<=0 and hitfloor~=nil then
