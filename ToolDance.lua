@@ -1767,7 +1767,7 @@ end)
 Credits.MouseButton1Click:Connect(function()
 SwitchTab(Tab3) 
 end)
-mkbtn(UI["ScrollingFrame_57"],"4ModuleDances","Modules",nil,nil,nil,nil,true,24,function()
+mkbtn(UI["ScrollingFrame_57"],"4ModuleDances","Module",nil,nil,nil,nil,true,24,function()
   SwitchTab(Tab4) 
 end)
 local eee=Instance.new("StringValue")
@@ -4233,7 +4233,7 @@ DisableCharacterCollisions = true,
 DisableHealthBar = true,
 DisableRigCollisions = true,
 HatDrop = false,
-HideCharacter = Vector3.new(0, Ypos, 50),
+HideCharacter = Vector3.new(0, Ypos, 10),
 ParentCharacter = false,
 PermanentDeath = false,
 Refit = true,
