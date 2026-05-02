@@ -1652,7 +1652,7 @@ local Tab2=mktb("Settings")
 local MF2=Tab2.MF
 local Tab3=mktb("Credits")
 local MF3=Tab3.MF
-local Tab4=mktb("Module Dances",UDim2.new(0,25,.01316,0),false)
+local Tab4=mktb("Modules",UDim2.new(0,25,.01316,0),false)
 local MF4=Tab4.MF
 local Scf=mkscf(MF4,"Module Dance Container",u2(0,0,0,25),u2(1,0,1,0),u2(1,0,0,100))
 mklbl(MF3,"Made By Theo, Inspired from Steves Uhhhhh Reanimate\n Credits goes to Steve the Common One on some assets that are used alongside in this scripts development\n\nHuge Thanks to:\nSteve (TheTerminalClone)\nSamstone\nDummy Guy\nYinxing\nAnd N1ght\nFor Making this script to come true.\n\nSpecial Thanks to You! for using this script!\n\nNote: Script is still in Beta and Expect some bug to show around\nAlso Note that this will be solely focused on Emotes if im sure since this is a branch of Steves Reanim but emotes only\n\nAll Rights Reserved",u2(1,0,3,0),u2(0,0,0,25),"Left","Top",true)
