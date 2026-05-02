@@ -4227,7 +4227,7 @@ end
 Empyrean = Start({
 Accessories = TableOfAccessries,
 ApplyDescription = true,
-BreakJointsDelay = 0,
+BreakJointsDelay = .2,
 ClickFling = false,
 DisableCharacterCollisions = true,
 DisableHealthBar = true,
