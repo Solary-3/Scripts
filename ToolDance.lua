@@ -11,7 +11,7 @@ Open Source For Now
     \/_/   \/____/   \/_____/   \/_____/   \/_____/   \/_____/    
                                                                   
 ]]
-setclipboard("https://discord.gg/gR6Pk5pMK")
+setclipboard("https://discord.gg/x8mxfkGvm")
 	game.StarterGui:SetCore("SendNotification",{
 		Title = "From Theo";
 		Text = "Discord Invite Copied!";
