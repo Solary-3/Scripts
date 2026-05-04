@@ -4799,7 +4799,7 @@ end
   
 
 
-function SetOverrideDanceMusic(soundId, name, volume, range)
+function SetOverrideDanceMusic(soundId, name, volume, range, pitch)
 	MusicOverriden   = soundId
 	OverridenMusicName = name or ""
 	musicSound.SoundId  = soundId
@@ -4810,7 +4810,12 @@ function SetOverrideDanceMusic(soundId, name, volume, range)
 	  musicSound.LoopRegion=range
 	  else 
 	  musicSound.PlaybackRegionsEnabled=false
-	  end
+	end
+  if pitch~=nil then 
+    musicSound.Pitch=pitch 
+    else 
+    musicSound.Pitch=1 
+    end
 	musicSound:Play()
 	OverridenMusicStartClock = os.clock()
 end
