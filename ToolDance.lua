@@ -7565,6 +7565,7 @@ end
 local function stopanim()
 StopAllAnimations()
 musicSound.PlaybackRegionsEnabled=false
+musicSound.Pitch=1
  loopsplaying = math.max(0, loopsplaying - 1)
  local SavedTime = Playsound.TimePosition
  playanother = true 
