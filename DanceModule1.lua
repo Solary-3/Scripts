@@ -1356,7 +1356,7 @@ AddModule(function()
     local start = os.clock()
 
     m.Init = function(figure)
-        SetOverrideDanceMusic(AssetGetContentId("Heart Of Glass.mp3"),"Heart Of Glass",1,nil,1.35)
+        SetOverrideDanceMusic(AssetGetContentId("Heart Of Glass.mp3"),"Heart Of Glass",1,nil,1.12)
 
         start           = os.clock()
         animator        = AnimLib.Animator.new()
