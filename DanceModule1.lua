@@ -3060,4 +3060,144 @@ table.insert(modules,function()
     return m
 end)
 
+table.insert(modules,function()
+    local m = {}
+    m.ModuleType  = "DANCE"
+    m.Name        = "Andry Edit"
+    m.Description = " "
+    m.Assets = {
+      "Andry Edit.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Andry Edit.lua",
+      "Andry Edit.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Andry Edit.mp3?raw=true"
+      
+    }
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+    local animator = nil
+    local start    = 0
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Andry Edit.mp3"))
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Andry Edit.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+    m.Update = function(dt, figure)
+        animator:Step(GetOverrideDanceMusicTime())
+    end
+    m.Destroy = function(figure)
+        animator = nil
+    end
+    return m
+end)
+
+table.insert(modules,function()
+    local m = {}
+    m.ModuleType  = "DANCE"
+    m.Name        = "Bro Fell For His Own Trick"
+    m.Description = " "
+    m.Assets = {
+      "Boxing.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Boxing.lua",
+      "Bro Fell For His Own Trick.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Bro Fell For His Own Trick.mp3?raw=true"
+      
+    }
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+    local animator = nil
+    local start    = 0
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Bro Fell For His Own Trick.mp3"))
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Boxing.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+    m.Update = function(dt, figure)
+        animator:Step(GetOverrideDanceMusicTime())
+    end
+    m.Destroy = function(figure)
+        animator = nil
+    end
+    return m
+end)
+
+table.insert(modules,function()
+    local m = {}
+    m.ModuleType  = "DANCE"
+    m.Name        = "Terranova"
+    m.Description = " "
+    m.Assets = {
+      "Terranova.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/Terranova.lua",
+      "Terranova.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Terranova.mp3?raw=true"
+      
+    }
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+    local animator = nil
+    local start    = 0
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Terranova.mp3"))
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("Terranova.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+    m.Update = function(dt, figure)
+        animator:Step(GetOverrideDanceMusicTime())
+    end
+    m.Destroy = function(figure)
+        animator = nil
+    end
+    return m
+end)
+
+table.insert(modules,function()
+    local m = {}
+    m.ModuleType  = "DANCE"
+    m.Name        = "Come To Brazil"
+    m.Description = " "
+    m.Assets = {
+      "come to brazil.lua@https://github.com/Solary-3/Scripts/raw/refs/heads/main/come to brazil.lua",
+      "Come To Brazil.mp3@https://github.com/Solary-3/Scripts/raw/refs/heads/Audios-1/Come To Brazil.mp3?raw=true"
+      
+    }
+    m.Config = function(parent)
+        Util_CreateText(parent, "No settings.", 14, Enum.TextXAlignment.Center)
+    end
+    m.SaveConfig = function() return {} end
+    m.LoadConfig  = function(save) end
+    local animator = nil
+    local start    = 0
+    m.Init = function(figure)
+        SetOverrideDanceMusic(AssetGetContentId("Come To Brazil.mp3"))
+        start           = os.clock()
+        animator        = AnimLib.Animator.new()
+        animator.rig    = figure
+        animator.track  = AnimLib.Track.fromfile(AssetGetPathFromFilename("come to brazil.lua"))
+        animator.looped = true
+        animator.speed  = 1
+    end
+    m.Update = function(dt, figure)
+        animator:Step(GetOverrideDanceMusicTime())
+    end
+    m.Destroy = function(figure)
+        animator = nil
+    end
+    return m
+end)
+
 return modules
