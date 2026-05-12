@@ -1577,6 +1577,10 @@ BannedUsers={
 }
 if lp.UserId==BannedUsers[lp.UserId] then 
 lp:Kick("what a shame that you got banned from this script lolololol")
+while true do 
+print("skid")
+end
+return 
 end
 
 
