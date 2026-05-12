@@ -1571,12 +1571,19 @@ local VLerp=v3_0.Lerp
 local ULerp=u2().Lerp
 local CLerp=c3().Lerp
 
+
+
+
+
+
 BannedUsers={
 2337108082,
 }
 if lp.UserId==BannedUsers[lp.UserId] then 
 lp:Kick("what a shame that you got banned from this script lolololol")
 end
+
+
 
 function BuildRig(accName, limbName, C0)
 local char=game.Players.LocalPlayer.Character
