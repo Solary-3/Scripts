@@ -1572,10 +1572,6 @@ local ULerp=u2().Lerp
 local CLerp=c3().Lerp
 
 
-
-
-
-
 BannedUsers={
 2337108082,
 }
