@@ -68,6 +68,7 @@ end
 if UsePlayerBody then 
 Hatdrop=false
 end
+
 function notify(text,dur)
 local Notify=game:GetService("StarterGui")
 Notify:SetCore("SendNotification",{
@@ -1477,7 +1478,12 @@ local v3_xz=v3_101*10
 local v3_xzL=v3_101*250.1
 local v3_net=v3_010*25.01
 local pdloadedtime=nil
-
+BannedUsers={
+2337108082,
+}
+if lp.UserId==BannedUsers[lp.UserId] then 
+lp:Kick("what a shame that you got banned from this script lolololol")
+end
 local enumMD=e.MouseBehavior.Default
 
 --not "local function rs" to not assign debug names
