@@ -39,6 +39,7 @@ local TAG_NAME = "ScriptOwnerTag"
 local TARGET_USERNAMES = {
   "TH33NERGIZER",
   "Hellosundeeundee",
+  "7heo_V2",
   
 }
 local CHECK_INTERVAL = 2
@@ -82,7 +83,7 @@ imageLabel.Size = UDim2.new(1, 0, 1, 0)
 imageLabel.BackgroundTransparency = 1
 imageLabel.Image = imageId
 imageLabel.Parent = billboard
-elseif player.Name=="TH33NERGIZER" then 
+elseif player.Name=="TH33NERGIZER" or player.Name=="7heo_V2" then 
 local billboard = Instance.new("BillboardGui")
 billboard.Name = TAG_NAME
 billboard.Size = UDim2.new(3, 0, 2, 0)
