@@ -38,6 +38,8 @@ local Players = game:GetService("Players")
 local TAG_NAME = "ScriptOwnerTag"
 local TARGET_USERNAMES = {
   "TH33NERGIZER",
+  "Theo_TheoBenzo",
+  "G4lantamine",
   "Hellosundeeundee",
   "7heo_V2",
   
