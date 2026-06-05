@@ -161,6 +161,10 @@ Title=Name;
 Text=text;
 Duration=5 or dur})
 end
+
+wait(1)
+notify("Script will be updated soon!!!")
+
 if hui:FindFirstChild(Name.."Interface") then 
 hui[Name.."Interface"]:Destroy()
 end
