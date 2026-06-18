@@ -24,7 +24,7 @@ setclipboard("https://discord.gg/aS6djQqK")
 	})
 	game.StarterGui:SetCore("SendNotification",{
 		Title = "From Theo";
-		Text = "Giveaway at 300 members!";
+		Text = "Giveaway at 400 members!";
 		Duration = 10;
 	})
 
