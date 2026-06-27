@@ -1,0 +1,647 @@
+local AssetEssen=(getgenv and getgenv()) or shared
+
+function BetterTween(obj, speed, prop)
+local Tinfo=TweenInfo.new
+local TweenService=game.TweenService
+local hii=Tinfo(speed, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
+return TweenService:Create(obj, hii,prop)
+end
+
+local t=AssetEssen.Tbls or {}
+
+local block=t.block or nil
+local sphere=t.sphere or nil
+local square=t.square or nil
+local wave1=t.wave1 or nil
+local wave2=t.wave2 or nil
+local wave3=t.wave3 or nil
+local wave4=t.wave4 or nil
+local cylinder=t.cylinder or nil
+local slash=t.slash or nil
+local CreatePart=t.CreatePart or nil
+local CreateWeld=t.CreateWeld or nil
+local CreateR6D=t.CreateR6D or nil
+local CreateMesh=t.CreateMesh or nil
+local GetScriptStatus=t.GetScriptStatus
+local AssetName=t.Asset or nil
+
+local Torso=t.Torso or nil
+local LArm=t.LArm or nil
+local RArm=t.RArm or nil
+local LLeg=t.LLeg or nil
+local RLeg=t.RLeg or nil
+local Head=t.Head or nil
+local HumanoidRootPart=t.HRP or nil
+local FloorPos=t.FloorPos or nil
+local char=t.char or nil
+
+local AssetName=t.Asset or nil
+local tpos=t.t or nil
+local sn=t.sn or nil
+local ig=t.ig or nil
+local is=t.is or nil
+local cl=t.cl or nil
+
+
+
+
+local oswait=t.oswait or nil
+local AssetsFolder=t.AssetsFolder or nil
+local AnimState=t.AnimState or nil
+
+local i=Instance.new 
+local nr=NumberRange.new
+local ns=NumberSequence.new
+local nsk=NumberSequenceKeypoint.new
+local cs=ColorSequence.new 
+local csk=ColorSequenceKeypoint.new 
+local v3=Vector3.new
+local rgb=Color3.fromRGB
+local c3=Color3.new
+local v2=Vector2.new
+local nr=NumberRange.new
+local cf=CFrame.new
+local angles=CFrame.Angles
+local u2=UDim2.new
+local rus=game:service'RunService'
+local PostSimulation=rus.PostSimulation
+local sin=math.sin
+local cos=math.cos
+local rad=math.rad
+local abs=math.abs
+local min=math.min
+local mrandom=math.random
+local tspawn=task.spawn
+local random=function(a,b) return mrandom(a*1000,b*1000)/1000 end
+local clamp=math.clamp
+
+local tinsert=table.insert
+local u2scale=UDim2.fromScale
+local Name=AssetName
+
+
+local Asset=function()
+if char:FindFirstChild(Name.."Assets") then return end
+local foldah=i("Folder",char)
+foldah.Name=Name.."Assets"
+foldah:SetAttribute("VFX",true)
+
+
+local Floor=Instance.new("Part", foldah)
+Floor.Name="Floor"
+Floor.Anchored=false
+Floor.CanCollide=false
+Floor.CanQuery=false
+Floor.CanTouch=false
+Floor.Transparency=1
+Floor.Reflectance=0
+Floor.Color=Color3.new(0,0,0)
+Floor.Material=Enum.Material.Plastic
+Floor.Size=Vector3.new(60,1,60)
+Floor.CastShadow=true
+Floor.Massless=true
+local li=i("PointLight",Floor)
+
+
+local PartFXFloor=Instance.new("Part", foldah)
+PartFXFloor.Name="PartFXFloor"
+PartFXFloor.Anchored=false
+PartFXFloor.CanCollide=false
+PartFXFloor.CanQuery=false
+PartFXFloor.CanTouch=false
+PartFXFloor.Transparency=1
+PartFXFloor.Reflectance=0
+PartFXFloor.Color=Color3.new(0,0,0)
+PartFXFloor.Material=Enum.Material.Plastic
+PartFXFloor.Size=Vector3.new(10,1,10)
+PartFXFloor.CastShadow=true
+PartFXFloor.Massless=true
+local block1=CreatePart(foldah,"Vis1",v3(.1,.1,.1),v3(0,0,0),c3(),"Neon",0,1)
+block1.Anchored=false
+local block2=CreatePart(foldah,"Vis2",v3(.1,.1,.1),v3(0,0,0),c3(),"Neon",0,1)
+block2.Anchored=false
+local w=CreateWeld(block1,block1,PartFXFloor,cf(0,0,-35),cf())
+local w1=CreateWeld(block2,block2,PartFXFloor,cf(0,0,35),cf())
+
+local b1=CreatePart(foldah,"V1",v3(.1,.1,.1),v3(0,0,0),c3(),"Neon",0,1)
+b1.Anchored=false
+local b2=CreatePart(foldah,"V2",v3(.1,.1,.1),v3(0,0,0),c3(),"Neon",0,1)
+b2.Anchored=false
+local w3=CreateWeld(b1,b1,PartFXFloor,cf(0,0,-30),cf())
+local w4=CreateWeld(b2,b2,PartFXFloor,cf(0,0,30),cf())
+CreateWeld(PartFXFloor,PartFXFloor,FloorPos,cf(0,-1,0),cf(0,-1,0))
+CreateWeld(Floor,Floor,char.HumanoidRootPart,cf(0,-1,0),cf())
+
+while char:FindFirstChild(Name.."Assets") do 
+if GetScriptStatus==false or not char:FindFirstChild(Name.."Assets") then break end 
+sine=os.clock()
+local p=t.p.Value or nil
+local s=t.s.Value or nil
+
+local hmm
+local ld=sn.PlaybackLoudness
+local t=sn.TimePosition
+local lol2=random(10,20)
+local ypos=random(10,30)
+local rpos=random(-50,50)
+local rpos1=random(-50,50)
+if t>29.707 and t<=384.316 then
+
+if ld>random(400,450) then
+
+hmm=clamp(ld/25,1,math.random(15,25))
+else
+hmm=clamp(ld/50,.1,math.random(1,15))
+end
+else
+hmm=clamp(ld/50,1,math.random(10,30))
+end
+if t>354.25 and t<380.508 then
+
+end
+hmm=hmm*1.25
+w.C1=angles(0,sine*.85,0)
+w1.C1=angles(0,sine*.85,0)
+w3.C1=angles(0,sine*1.5,0)
+w4.C1=angles(0,sine*1.5,0)
+ li.Color=s
+li.Range=hmm
+li.Brightness=hmm/5
+tspawn(function()
+local lol=random(-25,25)
+local lol1=random(-25,25)
+block("Linear",2,{
+	StartSize=v3(.5,0,.5),
+	[1]={s=v3(1,10,1), ts=1, es="Linear"},
+	[2]={s=v3(.1,hmm,.1), ts=1, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,50,lol1)*angles(0,0,0), ts=random(1,2), es="Quint"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},0,true,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-50,50)
+local lol1=random(-50,50)
+block("Linear",2,{
+	StartSize=v3(.5,0,.5),
+	[1]={s=v3(1,10,1), ts=1, es="Linear"},
+	[2]={s=v3(.1,hmm,.1), ts=1, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,50,lol1)*angles(0,0,0), ts=random(1,2), es="Quint"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},0,true,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-50,50)
+local lol1=random(-50,50)
+block("Linear",2,{
+	StartSize=v3(.5,0,.5),
+	[1]={s=v3(1,10,1), ts=1, es="Linear"},
+	[2]={s=v3(.1,hmm,.1), ts=1, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,50,lol1)*angles(0,0,0), ts=random(1,2), es="Quint"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},0,true,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-25,25)
+local lol1=random(-25,25)
+block("Linear",2,{
+	StartSize=v3(.5,0,.5),
+	[1]={s=v3(1,10,1), ts=1, es="Linear"},
+	[2]={s=v3(.1,hmm,.1), ts=1, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,50,lol1)*angles(0,0,0), ts=random(1,2), es="Quint"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},0,true,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-20,20)
+local lol1=random(-20,20)
+block("Linear",5,{
+	StartSize=v3(29,70,20),
+	[1]={s=v3(20,50,20), ts=1, es="Linear"},
+	[2]={s=v3(20,50,20), ts=1, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,50,lol1)*angles(0,0,0), ts=random(1,5), es="Linear"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},.99,false,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-20,20)
+local lol1=random(-20,20)
+block("Linear",5,{
+	StartSize=v3(20,70,20),
+	[1]={s=v3(20,50,20), ts=1, es="Linear"},
+	[2]={s=v3(20,50,20), ts=1, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,50,lol1)*angles(0,0,0), ts=random(1,5), es="Linear"},
+},{
+	StartColor=s,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=s, ts=1, es="Quart"},
+},.99,false,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-20,20)
+local lol1=random(-20,20)
+block("Linear",5,{
+	StartSize=v3(20,70,20),
+	[1]={s=v3(20,50,20), ts=1, es="Linear"},
+	[2]={s=v3(20,50,20), ts=1, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,50,lol1)*angles(0,0,0), ts=random(1,5), es="Linear"},
+},{
+	StartColor=p,
+	[1]={cl=p, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},.975,false,c3(0,0,0),Enum.Material.Neon)
+end)
+PartFXFloor.Rotation=v3(0,sine*20,0)
+square("Quint",5,v3(hmm,.01,hmm),PartFXFloor.CFrame*cf(0,-1.25,0)*angles(0,rad(sine*20),0),p,0,true,s,Enum.Material.Neon)
+square("Quint",10,v3(10-10*sin(sine),.01,10-10*sin(sine)),PartFXFloor.CFrame*cf(0,-1.25,0)*angles(0,sine-3*sin(sine),0),p,0,true,s,Enum.Material.Neon)
+square("Quint",10,v3(5,.01,5),PartFXFloor.CFrame*cf(0,-1.25,0)*angles(0,sine*1,0),p,0,false,s,Enum.Material.Neon)
+square("Quint",10,v3(10,.01,10),PartFXFloor.CFrame*cf(0,-1.25,0)*angles(0,sine*1.5,0),p,0,false,s,Enum.Material.Neon)
+square("Quint",10,v3(15,.01,15),PartFXFloor.CFrame*cf(0,-1.25,0)*angles(0,sine*2,0),p,0,false,s,Enum.Material.Neon)
+square("Quint",10,v3(20,.01,20),PartFXFloor.CFrame*cf(0,-1.25,0)*angles(0,sine*2.5,0),p,0,false,s,Enum.Material.Neon)
+square("Quint",10,v3(25,.01,25),PartFXFloor.CFrame*cf(0,-1.25,0)*angles(0,sine*3,0),p,0,false,s,Enum.Material.Neon)
+block("Quint",1,{
+	StartSize=v3(5,hmm,2),
+	[1]={s=v3(5,0,2), ts=1, es="Linear"},
+},b1.CFrame*cf(0,hmm/4,0)*angles(rad(20),0,0),{
+	StartColor=p,
+	[1]={cl=s, ts=2, es="Linear"},
+	[2]={cl=p, ts=2, es="Quint"},
+},{
+	StartTransparency=0,
+	[1]={t=1, ts=3, es="Linear"},
+	[2]={t=1, ts=3, es="Exponential"},
+},true,s,Enum.Material.ForceField)
+
+
+block("Quint",1,{
+	StartSize=v3(5,hmm,2),
+	[1]={s=v3(5,0,2), ts=1, es="Linear"},
+},b2.CFrame*cf(0,hmm/4,0)*angles(rad(-20),0,0),{
+	StartColor=p,
+	[1]={cl=s, ts=2, es="Linear"},
+	[2]={cl=p, ts=2, es="Quint"},
+},{
+	StartTransparency=0,
+	[1]={t=1, ts=3, es="Linear"},
+	[2]={t=1, ts=3, es="Exponential"},
+},true,s,Enum.Material.ForceField)
+slash(random(30,50),random(70,300),true,"Round","Add","In",PartFXFloor.CFrame*CFrame.new(0,-1,0)*CFrame.Angles(math.rad(math.random(-5,5)),math.rad(math.random(-360,360)),math.rad(math.random(-5,5))),Vector3.new(0.01,0.01,0.01),math.random(5,100)/250,s)
+slash(random(30,50),random(70,300),true,"Round","Add","In",PartFXFloor.CFrame*CFrame.new(0,-1,0)*CFrame.Angles(math.rad(math.random(-5,5)),math.rad(math.random(-360,360)),math.rad(math.random(-5,5))),Vector3.new(0.01,0.01,0.01),math.random(5,100)/250,p)
+
+
+
+
+if ld>=450 then 
+square("Quint",clamp(ld/250,1,5),v3(30,.5,30),
+ {
+StartCFrame=PartFXFloor.CFrame*cf(0,-1.25,0)*angles(0,sine*3,0),
+ [1]={
+ c=PartFXFloor.CFrame*cf(0,40,0)*angles(0,sine*3,0), ts=clamp(ld/100,1,2), es="Quint",
+ },
+},p,.9,false,s,Enum.Material.Neon)
+tspawn(function()
+local lol=random(-25,25)
+local lol1=random(-25,25)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(.5,0,.5),
+	[1]={s=v3(1,10,1), ts=1, es="Linear"},
+	[2]={s=v3(.1,hmm,.1), ts=1, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,hmm,lol1)*angles(0,0,0), ts=random(1,2), es="Quint"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},0,true,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-50,50)
+local lol1=random(-50,50)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(.5,0,.5),
+	[1]={s=v3(1,10,1), ts=1, es="Linear"},
+	[2]={s=v3(.1,hmm,.1), ts=1, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,50,lol1)*angles(0,0,0), ts=random(1,2), es="Quint"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},0,true,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-50,50)
+local lol1=random(-50,75)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(.5,0,.5),
+	[1]={s=v3(1,10,1), ts=10, es="Linear"},
+	[2]={s=v3(.1,hmm,.1), ts=10, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,50,lol1)*angles(0,0,0), ts=random(1,2), es="Quint"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},0,true,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-50,50)
+local lol1=random(-50,50)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(.5,0,.5),
+	[1]={s=v3(1,10,1), ts=1, es="Linear"},
+	[2]={s=v3(.1,hmm,.1), ts=1, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,50,lol1)*angles(0,0,0), ts=random(1,2), es="Quint"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},0,true,c3(0,0,0),Enum.Material.ForceField)
+end)
+tspawn(function()
+local lol=random(-50,50)
+local lol1=random(-50,75)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(.5,0,.5),
+	[1]={s=v3(1,10,1), ts=10, es="Linear"},
+	[2]={s=v3(.1,hmm,.1), ts=10, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,50,lol1)*angles(0,0,0), ts=random(1,2), es="Quint"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},0,true,c3(0,0,0),Enum.Material.ForceField)
+end)
+
+
+
+
+
+tspawn(function()
+local lol=random(-20,20)
+local lol1=random(-20,20)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(15,50,10),
+	[1]={s=v3(15,50,10), ts=10, es="Linear"},
+	[2]={s=v3(15,50,10), ts=10, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol*2,random(30,50),lol1*2)*angles(0,rad(random(-360,360)),rad(random(-45,45))), ts=random(1,5), es="Linear"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},.9,false,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-20,20)
+local lol1=random(-20,20)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(15,50,10),
+	[1]={s=v3(15,50,10), ts=10, es="Linear"},
+	[2]={s=v3(15,50,10), ts=10, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol*2,random(30,50),lol1*2)*angles(0,rad(random(-360,360)),rad(random(-45,45))), ts=random(1,5), es="Linear"},
+},{
+	StartColor=s,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=s, ts=1, es="Quart"},
+},.9,false,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-20,20)
+local lol1=random(-20,20)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(15,50,10),
+	[1]={s=v3(15,50,10), ts=10, es="Linear"},
+	[2]={s=v3(15,50,10), ts=10, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol*2,random(30,50),lol1*2)*angles(0,rad(random(-360,360)),rad(random(-45,45))), ts=random(1,5), es="Linear"},
+},{
+	StartColor=p,
+	[1]={cl=p, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},.9,false,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-50,50)
+local lol1=random(-50,50)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(.5,0,.5),
+	[1]={s=v3(1,10,1), ts=10, es="Linear"},
+	[2]={s=v3(.1,hmm,.1), ts=10, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,hmm,lol1)*angles(0,0,0), ts=random(1,2), es="Quint"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},0,true,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-20,20)
+local lol1=random(-20,20)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(15,50,10),
+	[1]={s=v3(15,50,10), ts=10, es="Linear"},
+	[2]={s=v3(15,50,10), ts=10, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol*2,random(30,50),lol1*2)*angles(0,rad(random(-360,360)),rad(random(-45,45))), ts=random(1,5), es="Linear"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},.9,false,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-20,20)
+local lol1=random(-20,20)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(15,50,10),
+	[1]={s=v3(15,50,10), ts=10, es="Linear"},
+	[2]={s=v3(15,50,10), ts=10, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol*2,random(30,50),lol1*2)*angles(0,rad(random(-360,360)),rad(random(-45,45))), ts=random(1,5), es="Linear"},
+},{
+	StartColor=s,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=s, ts=1, es="Quart"},
+},.9,false,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-20,20)
+local lol1=random(-20,20)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(15,50,10),
+	[1]={s=v3(15,50,10), ts=10, es="Linear"},
+	[2]={s=v3(15,50,10), ts=10, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol*2,random(30,50),lol1*2)*angles(0,rad(random(-360,360)),rad(random(-45,45))), ts=random(1,5), es="Linear"},
+},{
+	StartColor=p,
+	[1]={cl=p, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},.9,false,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-20,20)
+local lol1=random(-20,20)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(10,15,50),
+	[1]={s=v3(15,50,10), ts=10, es="Linear"},
+	[2]={s=v3(10,15,50), ts=10, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol*2,random(10,12),lol1*2)*angles(0,rad(random(-360,360)),rad(90)), ts=random(1,5), es="Linear"},
+},{
+	StartColor=s,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=s, ts=1, es="Quart"},
+},.9,false,c3(0,0,0),Enum.Material.Neon)
+end)
+
+
+
+tspawn(function()
+local lol=random(-20,20)
+local lol1=random(-20,30)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(10,15,50),
+	[1]={s=v3(10,15,50), ts=10, es="Linear"},
+	[2]={s=v3(10,15,50), ts=10, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol*2,random(10,12),lol1*2)*angles(0,rad(random(-360,360)),rad(90)), ts=random(1,5), es="Linear"},
+},{
+	StartColor=p,
+	[1]={cl=p, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},.9,false,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-20,20)
+local lol1=random(-20,20)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(15,50,10),
+	[1]={s=v3(15,50,10), ts=10, es="Linear"},
+	[2]={s=v3(15,50,10), ts=10, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol*2,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,random(30,50),lol1*2)*angles(0,rad(random(-360,360)),rad(random(-45,45))), ts=random(1,5), es="Linear"},
+},{
+	StartColor=p,
+	[1]={cl=p, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},.9,false,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-20,20)
+local lol1=random(-20,20)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(10,15,50),
+	[1]={s=v3(15,50,10), ts=10, es="Linear"},
+	[2]={s=v3(10,15,50), ts=10, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol*2,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,random(10,12),lol1*2)*angles(0,rad(random(-360,360)),rad(90)), ts=random(1,5), es="Linear"},
+},{
+	StartColor=s,
+	[1]={cl=s, ts=1, es="Quart"},
+	[2]={cl=s, ts=1, es="Quart"},
+},.9,false,c3(0,0,0),Enum.Material.Neon)
+end)
+tspawn(function()
+local lol=random(-20,20)
+local lol1=random(-20,20)
+block("Linear",clamp(ld/250,1,5),{
+	StartSize=v3(10,15,50),
+	[1]={s=v3(10,15,50), ts=10, es="Linear"},
+	[2]={s=v3(10,15,50), ts=10, es="Linear"},
+	[3]={s=v3(0,.01,0), ts=10, es="Linear"},
+},{
+	StartCFrame=PartFXFloor.CFrame*cf(lol*2,random(0,1),lol1),
+	[1]={c=PartFXFloor.CFrame*cf(lol,random(10,12),lol1*2)*angles(0,rad(random(-360,360)),rad(90)), ts=random(1,5), es="Linear"},
+},{
+	StartColor=p,
+	[1]={cl=p, ts=1, es="Quart"},
+	[2]={cl=p, ts=1, es="Quart"},
+},.9,false,c3(0,0,0),Enum.Material.Neon)
+end)
+
+
+end
+
+
+oswait()
+end
+
+
+
+
+end
+
+repeat Asset() task.wait() until not char:FindFirstChild(Name.."Assets")

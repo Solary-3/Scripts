@@ -1,0 +1,255 @@
+local AssetEssen=(getgenv and getgenv()) or shared
+
+function BetterTween(obj, speed, prop)
+local Tinfo=TweenInfo.new
+local TweenService=game.TweenService
+local hii=Tinfo(speed, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
+return TweenService:Create(obj, hii,prop)
+end
+
+local t=AssetEssen.Tbls or {}
+
+local block=t.block or nil
+local sphere=t.sphere or nil
+local square=t.square or nil
+local wave1=t.wave1 or nil
+local wave2=t.wave2 or nil
+local wave3=t.wave3 or nil
+local wave4=t.wave4 or nil
+local cylinder=t.cylinder or nil
+local slash=t.slash or nil
+local CreatePart=t.CreatePart or nil
+local CreateWeld=t.CreateWeld or nil
+local CreateR6D=t.CreateR6D or nil
+local CreateMesh=t.CreateMesh or nil
+local GetScriptStatus=t.GetScriptStatus
+local AssetName=t.Asset or nil
+
+local Torso=t.Torso or nil
+local LArm=t.LArm or nil
+local RArm=t.RArm or nil
+local LLeg=t.LLeg or nil
+local RLeg=t.RLeg or nil
+local Head=t.Head or nil
+local HumanoidRootPart=t.HRP or nil
+local FloorPos=t.FloorPos or nil
+local char=t.char or nil
+
+local AssetName=t.Asset or nil
+local tpos=t.t or nil
+local sn=t.sn or nil
+local ig=t.ig or nil
+local is=t.is or nil
+local cl=t.cl or nil
+
+
+
+
+local oswait=t.oswait or nil
+local AssetsFolder=t.AssetsFolder or nil
+local AnimState=t.AnimState or nil
+
+local i=Instance.new 
+local nr=NumberRange.new
+local ns=NumberSequence.new
+local nsk=NumberSequenceKeypoint.new
+local cs=ColorSequence.new 
+local csk=ColorSequenceKeypoint.new 
+local v3=Vector3.new
+local rgb=Color3.fromRGB
+local c3=Color3.new
+local v2=Vector2.new
+local nr=NumberRange.new
+local cf=CFrame.new
+local angles=CFrame.Angles
+local u2=UDim2.new
+local rus=game:service'RunService'
+local PostSimulation=rus.PostSimulation
+local sin=math.sin
+local cos=math.cos
+local rad=math.rad
+local abs=math.abs
+local min=math.min
+local mrandom=math.random
+local tspawn=task.spawn
+local random=function(a,b) return mrandom(a*1000,b*1000)/1000 end
+local clamp=math.clamp
+
+local tinsert=table.insert
+local u2scale=UDim2.fromScale
+local Name=AssetName
+
+
+local Asset=function()
+if char:FindFirstChild(Name.."Assets") then return end
+local foldah=i("Folder",char)
+foldah.Name=Name.."Assets"
+foldah:SetAttribute("VFX",true)
+
+
+local Floor=Instance.new("Part", foldah)
+Floor.Name="Floor"
+Floor.Anchored=false
+Floor.CanCollide=false
+Floor.CanQuery=false
+Floor.CanTouch=false
+Floor.Transparency=1
+Floor.Reflectance=0
+Floor.Color=Color3.new(0,0,0)
+Floor.Material=Enum.Material.Plastic
+Floor.Size=Vector3.new(60,1,60)
+Floor.CastShadow=true
+Floor.Massless=true
+local li=i("PointLight",Floor)
+
+
+local PartFXFloor=Instance.new("Part", foldah)
+PartFXFloor.Name="PartFXFloor"
+PartFXFloor.Anchored=false
+PartFXFloor.CanCollide=false
+PartFXFloor.CanQuery=false
+PartFXFloor.CanTouch=false
+PartFXFloor.Transparency=1
+PartFXFloor.Reflectance=0
+PartFXFloor.Color=Color3.new(0,0,0)
+PartFXFloor.Material=Enum.Material.Plastic
+PartFXFloor.Size=Vector3.new(10,1,10)
+PartFXFloor.CastShadow=true
+PartFXFloor.Massless=true
+
+
+local b1=CreatePart(foldah,"V1",v3(.1,.1,.1),v3(0,0,0),c3(),"Neon",0,1)
+local b2=CreatePart(foldah,"V2",v3(1,1,1),v3(0,0,0),c3(),"Neon",0,1)
+local b3=CreatePart(foldah,"V3",v3(.1,.1,.1),v3(0,0,0),c3(),"Neon",0,1)
+local b4=CreatePart(foldah,"V3",v3(1,.1,1),v3(0,0,0),c3(),"Neon",0,1)
+local b5=CreatePart(foldah,"V3",v3(.1,.1,.1),v3(0,0,0),c3(),"Neon",0,1)
+local b6=CreatePart(foldah,"V3",v3(1,.1,1),v3(0,0,0),c3(),"Neon",0,1)
+b1.Anchored=false
+b2.Anchored=false
+b3.Anchored=false
+b4.Anchored=false
+b5.Anchored=false
+b6.Anchored=false
+local w1=CreateWeld(b1,b1,PartFXFloor,cf(0,0,10),cf()*angles(0,rad(0),0))
+local w2=CreateWeld(b2,b2,b1,cf(0,-10,0),cf()*angles(rad(20),0,0))
+local w3=CreateWeld(b3,b3,PartFXFloor,cf(0,0,10),cf()*angles(0,rad(120),0))
+local w4=CreateWeld(b4,b4,b3,cf(0,-10,0),cf()*angles(rad(20),0,0))
+local w5=CreateWeld(b5,b5,PartFXFloor,cf(0,0,10),cf()*angles(0,rad(240),0))
+local w6=CreateWeld(b6,b6,b5,cf(0,-10,0),cf()*angles(rad(20),0,0))
+
+
+
+
+CreateWeld(PartFXFloor,PartFXFloor,FloorPos,cf(0,-1,0),cf(0,-3,0))
+CreateWeld(Floor,Floor,char.HumanoidRootPart,cf(0,-1,0),cf())
+while char:FindFirstChild(Name.."Assets") do 
+if GetScriptStatus==false or not char:FindFirstChild(Name.."Assets") then break end 
+sine=os.clock()
+local p=t.p.Value or nil
+local s=t.s.Value or nil
+
+w1.C0=angles(0,sine,0)*cf(0,0,10)*angles(0,-sine*.5,0)
+w3.C0=angles(0,sine,0)*cf(0,0,10)*angles(0,-sine*.5,0)
+w5.C0=angles(0,sine,0)*cf(0,0,10)*angles(0,-sine*.5,0)
+
+
+local hmm
+local ld=sn.PlaybackLoudness
+local t=sn.TimePosition
+hmm=clamp(ld/50,.1,math.random(10,15))
+
+cylinder("Quint",5,{
+	StartSize=v3(1,1,1),
+	[1]={s=v3(1,10,10), ts=5, es="Linear"},
+},{
+	StartCFrame=b1.CFrame*cf(0,1,0)*angles(rad(20),0,rad(90)),
+	[1]={c=b2.CFrame*cf(0,0,0)*angles(rad(0),rad(20),rad(90)), ts=5, es="Linear"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=5, es="Linear"},
+	[2]={cl=p, ts=5, es="Linear"},
+},{
+	StartTransparency=.5,
+	[1]={t=1, ts=5, es="Quint"},
+},false,c3(1,1,1),Enum.Material.Neon)
+
+cylinder("Quint",5,{
+	StartSize=v3(1,1,1),
+	[1]={s=v3(1,10,10), ts=5, es="Linear"},
+},{
+	StartCFrame=b3.CFrame*cf(0,1,0)*angles(rad(20),0,rad(90)),
+	[1]={c=b4.CFrame*cf(0,0,0)*angles(rad(0),rad(20),rad(90)), ts=5, es="Linear"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=5, es="Linear"},
+	[2]={cl=p, ts=5, es="Linear"},
+},{
+	StartTransparency=.5,
+	[1]={t=1, ts=5, es="Quint"},
+},false,c3(1,1,1),Enum.Material.Neon)
+
+cylinder("Quint",5,{
+	StartSize=v3(1,1,1),
+	[1]={s=v3(1,10,10), ts=5, es="Linear"},
+},{
+	StartCFrame=b5.CFrame*cf(0,1,0)*angles(rad(20),0,rad(90)),
+	[1]={c=b6.CFrame*cf(0,0,0)*angles(rad(0),rad(20),rad(90)), ts=5, es="Linear"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=5, es="Linear"},
+	[2]={cl=p, ts=5, es="Linear"},
+},{
+	StartTransparency=.5,
+	[1]={t=1, ts=5, es="Quint"},
+},false,c3(1,1,1),Enum.Material.Neon)
+
+square("Quint",10,{
+	StartSize=v3(0,0,0),
+	[1]={s=v3(hmm*2,.1,hmm*2), ts=10, es="Quint"},
+	[2]={s=v3(0,.1,0), ts=5, es="Linear"},
+},PartFXFloor.CFrame*cf(0,0,0)*angles(0,sine*2,0),p,.5,true,s,Enum.Material.Neon)
+cylinder("Quint",5,{
+	StartSize=v3(1,1,1),
+	[1]={s=v3(1,10,10), ts=5, es="Linear"},
+},{
+	StartCFrame=b3.CFrame*cf(0,1,0)*angles(rad(20),0,rad(90)),
+	[1]={c=b4.CFrame*cf(0,0,0)*angles(rad(0),rad(20),rad(90)), ts=5, es="Linear"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=5, es="Linear"},
+	[2]={cl=p, ts=5, es="Linear"},
+},{
+	StartTransparency=.5,
+	[1]={t=1, ts=5, es="Quint"},
+},false,c3(1,1,1),Enum.Material.Neon)
+
+cylinder("Quint",5,{
+	StartSize=v3(1,1,1),
+	[1]={s=v3(1,10,10), ts=5, es="Linear"},
+},{
+	StartCFrame=b5.CFrame*cf(0,1,0)*angles(rad(20),0,rad(90)),
+	[1]={c=b6.CFrame*cf(0,0,0)*angles(rad(0),rad(20),rad(90)), ts=5, es="Linear"},
+},{
+	StartColor=p,
+	[1]={cl=s, ts=5, es="Linear"},
+	[2]={cl=p, ts=5, es="Linear"},
+},{
+	StartTransparency=.5,
+	[1]={t=1, ts=5, es="Quint"},
+},false,c3(1,1,1),Enum.Material.Neon)
+
+square("Quint",10,{
+	StartSize=v3(0,0,0),
+	[1]={s=v3(hmm,.1,hmm), ts=10, es="Quint"},
+	[2]={s=v3(0,.1,0), ts=5, es="Linear"},
+},PartFXFloor.CFrame*cf(0,0,0)*angles(0,sine*2,0),p,.5,true,s,Enum.Material.Neon)
+
+oswait()
+end
+
+
+
+
+end
+
+repeat Asset() task.wait() until not char:FindFirstChild(Name.."Assets")

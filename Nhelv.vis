@@ -1,0 +1,2950 @@
+local AssetEssen=(getgenv and getgenv()) or shared
+
+function BetterTween(obj, speed, prop)
+local Tinfo=TweenInfo.new
+local TweenService=game.TweenService
+local hii=Tinfo(speed, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
+return TweenService:Create(obj, hii,prop)
+end
+
+local t=AssetEssen.Tbls or {}
+
+local block=t.block or nil
+local sphere=t.sphere or nil
+local square=t.square or nil
+local wave1=t.wave1 or nil
+local wave2=t.wave2 or nil
+local wave3=t.wave3 or nil
+local wave4=t.wave4 or nil
+local CreatePart=t.CreatePart or nil
+local CreateWeld=t.CreateWeld or nil
+local CreateR6D=t.CreateR6D or nil
+local CreateMesh=t.CreateMesh or nil
+
+local AssetName=t.Asset or nil
+
+local Torso=t.Torso or nil
+local LArm=t.LArm or nil
+local RArm=t.RArm or nil
+local LLeg=t.LLeg or nil
+local RLeg=t.RLeg or nil
+local Head=t.Head or nil
+local HumanoidRootPart=t.HRP or nil
+local FloorPos=t.FloorPos or nil
+local char=t.char or nil
+
+local AssetName=t.Asset or nil
+local tpos=t.t or nil
+local p=t.p or nil
+local s=t.s or nil
+local ld=t.ld or nil
+local ig=t.ig or nil
+local is=t.is or nil
+local cl=t.cl or nil
+
+local oswait=t.oswait or nil
+local AssetsFolder=t.AssetsFolder or nil
+
+local i=Instance.new 
+local nr=NumberRange.new
+local ns=NumberSequence.new
+local nsk=NumberSequenceKeypoint.new
+local cs=ColorSequence.new 
+local csk=ColorSequenceKeypoint.new 
+local v3=Vector3.new
+local rgb=Color3.fromRGB
+local c3=Color3.new
+local v2=Vector2.new
+local nr=NumberRange.new
+local cf=CFrame.new
+local angles=CFrame.Angles
+local u2=UDim2.new
+local rus=game:service'RunService'
+local PostSimulation=rus.PostSimulation
+local sin=math.sin
+local cos=math.cos
+local rad=math.rad
+local abs=math.abs
+local min=math.min
+local mrandom=math.random
+local random=function(a,b) return mrandom(a*1000,b*1000)/1000 end
+local clamp=math.clamp
+
+local tinsert=table.insert
+local u2scale=UDim2.fromScale
+local Name=AssetName
+
+local Asset=function()
+if char:FindFirstChild(Name.."Assets") then return end
+local foldah=i("Folder",char)
+foldah.Name=Name.."Assets"
+foldah:SetAttribute("VFX",true)
+
+
+local Floor=Instance.new("Part", foldah)
+Floor.Name="Floor"
+Floor.Anchored=true
+Floor.CanCollide=false
+Floor.CanQuery=false
+Floor.CanTouch=false
+Floor.Transparency=1
+Floor.Reflectance=0
+Floor.Color=Color3.new(0,0,0)
+Floor.Material=Enum.Material.Plastic
+Floor.Size=Vector3.new(60,1,60)
+Floor.CastShadow=true
+Floor.Massless=true
+local li=i("PointLight",Floor)
+
+
+local PartFXFloor=Instance.new("Part", foldah)
+PartFXFloor.Name="PartFXFloor"
+PartFXFloor.Anchored=true
+PartFXFloor.CanCollide=false
+PartFXFloor.CanQuery=false
+PartFXFloor.CanTouch=false
+PartFXFloor.Transparency=1
+PartFXFloor.Reflectance=0
+PartFXFloor.Color=Color3.new(0,0,0)
+PartFXFloor.Material=Enum.Material.Plastic
+PartFXFloor.Size=Vector3.new(10,1,10)
+PartFXFloor.CastShadow=true
+PartFXFloor.Massless=true
+local att=i("Attachment",FloorPos)
+
+
+ BACK_1=i("ParticleEmitter", att)
+BACK_1.Name="BACK"
+BACK_1:SetAttribute("AuraInstance", true)
+BACK_1:SetAttribute("OrigEnabled", true)
+BACK_1:SetAttribute("WasEnabledAR", true)
+BACK_1.Enabled=true
+BACK_1.Rate=5
+BACK_1.Lifetime=nr(2,2)
+BACK_1.Speed=nr(0.002298574196174741,0.002298574196174741)
+BACK_1.Rotation=nr(0,0)
+BACK_1.RotSpeed=nr(0,0)
+BACK_1.Size=ns({nsk(0.000000,17.231525,0.000000),nsk(0.100000,17.350103,0.000000),nsk(0.200000,17.799400,0.000000),nsk(0.300000,18.542282,0.000000),nsk(0.400000,19.524166,0.000000),nsk(0.500000,20.703854,0.000000),nsk(0.600000,22.050850,0.000000),nsk(0.700000,23.542097,0.000000),nsk(0.800000,25.159647,0.000000),nsk(0.900000,26.889217,0.000000),nsk(1.000000,28.719215,0.000000),nsk(1.000000,28.719215,0.000000)})
+BACK_1.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.500000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+BACK_1.Color=cs({csk(0.000000,c3(0.665296,0.726741,0.947944)),csk(0.131261,c3(0.475246,0.534849,0.918386)),csk(0.212435,c3(0.587240,0.668066,0.935804)),csk(0.302245,c3(0.610528,0.708514,0.939426)),csk(0.397237,c3(0.721825,0.665296,0.947944)),csk(0.480138,c3(0.580452,0.674088,0.934749)),csk(0.559586,c3(0.797652,0.901078,0.968529)),csk(0.644214,c3(0.532940,0.684048,0.927359)),csk(0.699482,c3(0.492215,0.569710,0.921025)),csk(0.816926,c3(0.629766,0.553302,0.930526)),csk(0.915371,c3(0.444702,0.515042,0.913636)),csk(1.000000,c3(0.665296,0.726741,0.947944))})
+BACK_1.LightEmission=-2
+BACK_1.LightInfluence=0
+BACK_1.Acceleration=v3(0.000000,0.000000,0.000000)
+BACK_1.Drag=0
+BACK_1.EmissionDirection=Enum.NormalId.Top
+BACK_1.SpreadAngle=v2(0.000000,0.000000)
+BACK_1.ZOffset=0
+BACK_1.Texture="rbxassetid://126739516618568"
+BACK_1.LockedToPart=true
+BACK_1.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+BACK_1.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+BACK_1.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+BACK_1.FlipbookFramerate=nr(1,1)
+BACK_1.FlipbookStartRandom=false
+BACK_1.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+BACK_1.Brightness=0.10000000149011612
+
+
+
+
+
+
+ Gust_2=i("Attachment", att)
+Gust_2.Name="Gust"
+Gust_2:SetAttribute("AuraInstance", true)
+Gust_2.Visible=false
+Gust_2.CFrame=cf(0,-4.705479621887207,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ Attachment_3=i("Attachment", Gust_2)
+Attachment_3.Name="Attachment"
+Attachment_3:SetAttribute("AuraInstance", true)
+Attachment_3.Visible=false
+Attachment_3.CFrame=cf(0,3.366750478744507,0,0.7071342468261719,0,0.707079291343689,0,1,-0,-0.707079291343689,0,0.7071342468261719)
+
+
+
+
+
+
+ ImagesUntitled_Artwork_71_4=i("Beam", Attachment_3)
+ImagesUntitled_Artwork_71_4.Name="Images/Untitled_Artwork_71"
+ImagesUntitled_Artwork_71_4:SetAttribute("AuraInstance", true)
+ImagesUntitled_Artwork_71_4:SetAttribute("OrigEnabled", true)
+ImagesUntitled_Artwork_71_4:SetAttribute("WasEnabledAR", true)
+ImagesUntitled_Artwork_71_4.Enabled=true
+ImagesUntitled_Artwork_71_4.Width0=1.2000000476837158
+ImagesUntitled_Artwork_71_4.Width1=43.20000076293945
+ImagesUntitled_Artwork_71_4.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+ImagesUntitled_Artwork_71_4.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+ImagesUntitled_Artwork_71_4.CurveSize0=3.6000001430511475
+ImagesUntitled_Artwork_71_4.CurveSize1=0
+ImagesUntitled_Artwork_71_4.FaceCamera=true
+ImagesUntitled_Artwork_71_4.LightEmission=1
+ImagesUntitled_Artwork_71_4.LightInfluence=0
+ImagesUntitled_Artwork_71_4.Segments=5
+ImagesUntitled_Artwork_71_4.Texture="rbxassetid://128120435243451"
+ImagesUntitled_Artwork_71_4.TextureLength=0.23000000417232513
+ImagesUntitled_Artwork_71_4.TextureSpeed=0.10080000013113022
+ImagesUntitled_Artwork_71_4.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Texture_5=i("Beam", Attachment_3)
+Texture_5.Name="Texture"
+Texture_5:SetAttribute("AuraInstance", true)
+Texture_5:SetAttribute("OrigEnabled", true)
+Texture_5:SetAttribute("WasEnabledAR", true)
+Texture_5.Enabled=true
+Texture_5.Width0=1.2000000476837158
+Texture_5.Width1=43.20000076293945
+Texture_5.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+Texture_5.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+Texture_5.CurveSize0=0
+Texture_5.CurveSize1=0
+Texture_5.FaceCamera=true
+Texture_5.LightEmission=1
+Texture_5.LightInfluence=0
+Texture_5.Segments=5
+Texture_5.Texture="rbxassetid://110744378277834"
+Texture_5.TextureLength=0.30000001192092896
+Texture_5.TextureSpeed=0.335999995470047
+Texture_5.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Attachment_6=i("Attachment", Attachment_3)
+Attachment_6.Name="Attachment"
+Attachment_6:SetAttribute("AuraInstance", true)
+Attachment_6.Visible=false
+Attachment_6.CFrame=cf(41.96799850463867,5.611000061035156,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ Attachment_7=i("Attachment", Gust_2)
+Attachment_7.Name="Attachment"
+Attachment_7:SetAttribute("AuraInstance", true)
+Attachment_7.Visible=false
+Attachment_7.CFrame=cf(0,3.366750478744507,0,-0.7071342468261719,0,0.707079291343689,0,1,0,-0.707079291343689,0,-0.7071342468261719)
+
+
+
+
+
+
+ ImagesUntitled_Artwork_71_8=i("Beam", Attachment_7)
+ImagesUntitled_Artwork_71_8.Name="Images/Untitled_Artwork_71"
+ImagesUntitled_Artwork_71_8:SetAttribute("AuraInstance", true)
+ImagesUntitled_Artwork_71_8:SetAttribute("OrigEnabled", true)
+ImagesUntitled_Artwork_71_8:SetAttribute("WasEnabledAR", true)
+ImagesUntitled_Artwork_71_8.Enabled=true
+ImagesUntitled_Artwork_71_8.Width0=1.2000000476837158
+ImagesUntitled_Artwork_71_8.Width1=43.20000076293945
+ImagesUntitled_Artwork_71_8.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+ImagesUntitled_Artwork_71_8.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+ImagesUntitled_Artwork_71_8.CurveSize0=3.6000001430511475
+ImagesUntitled_Artwork_71_8.CurveSize1=0
+ImagesUntitled_Artwork_71_8.FaceCamera=true
+ImagesUntitled_Artwork_71_8.LightEmission=1
+ImagesUntitled_Artwork_71_8.LightInfluence=0
+ImagesUntitled_Artwork_71_8.Segments=5
+ImagesUntitled_Artwork_71_8.Texture="rbxassetid://128120435243451"
+ImagesUntitled_Artwork_71_8.TextureLength=0.23000000417232513
+ImagesUntitled_Artwork_71_8.TextureSpeed=0.10080000013113022
+ImagesUntitled_Artwork_71_8.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Texture_9=i("Beam", Attachment_7)
+Texture_9.Name="Texture"
+Texture_9:SetAttribute("AuraInstance", true)
+Texture_9:SetAttribute("OrigEnabled", true)
+Texture_9:SetAttribute("WasEnabledAR", true)
+Texture_9.Enabled=true
+Texture_9.Width0=1.2000000476837158
+Texture_9.Width1=43.20000076293945
+Texture_9.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+Texture_9.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+Texture_9.CurveSize0=0
+Texture_9.CurveSize1=0
+Texture_9.FaceCamera=true
+Texture_9.LightEmission=1
+Texture_9.LightInfluence=0
+Texture_9.Segments=5
+Texture_9.Texture="rbxassetid://110744378277834"
+Texture_9.TextureLength=0.30000001192092896
+Texture_9.TextureSpeed=0.335999995470047
+Texture_9.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Attachment_10=i("Attachment", Attachment_7)
+Attachment_10.Name="Attachment"
+Attachment_10:SetAttribute("AuraInstance", true)
+Attachment_10.Visible=false
+Attachment_10.CFrame=cf(41.96799850463867,5.611000061035156,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ Attachment_11=i("Attachment", Gust_2)
+Attachment_11.Name="Attachment"
+Attachment_11:SetAttribute("AuraInstance", true)
+Attachment_11.Visible=false
+Attachment_11.CFrame=cf(0,3.366750478744507,0,-0.7071342468261719,0,-0.707079291343689,0,1,0,0.707079291343689,0,-0.7071342468261719)
+
+
+
+
+
+
+ ImagesUntitled_Artwork_71_12=i("Beam", Attachment_11)
+ImagesUntitled_Artwork_71_12.Name="Images/Untitled_Artwork_71"
+ImagesUntitled_Artwork_71_12:SetAttribute("AuraInstance", true)
+ImagesUntitled_Artwork_71_12:SetAttribute("OrigEnabled", true)
+ImagesUntitled_Artwork_71_12:SetAttribute("WasEnabledAR", true)
+ImagesUntitled_Artwork_71_12.Enabled=true
+ImagesUntitled_Artwork_71_12.Width0=1.2000000476837158
+ImagesUntitled_Artwork_71_12.Width1=43.20000076293945
+ImagesUntitled_Artwork_71_12.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+ImagesUntitled_Artwork_71_12.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+ImagesUntitled_Artwork_71_12.CurveSize0=3.6000001430511475
+ImagesUntitled_Artwork_71_12.CurveSize1=0
+ImagesUntitled_Artwork_71_12.FaceCamera=true
+ImagesUntitled_Artwork_71_12.LightEmission=1
+ImagesUntitled_Artwork_71_12.LightInfluence=0
+ImagesUntitled_Artwork_71_12.Segments=5
+ImagesUntitled_Artwork_71_12.Texture="rbxassetid://128120435243451"
+ImagesUntitled_Artwork_71_12.TextureLength=0.23000000417232513
+ImagesUntitled_Artwork_71_12.TextureSpeed=0.10080000013113022
+ImagesUntitled_Artwork_71_12.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Texture_13=i("Beam", Attachment_11)
+Texture_13.Name="Texture"
+Texture_13:SetAttribute("AuraInstance", true)
+Texture_13:SetAttribute("OrigEnabled", true)
+Texture_13:SetAttribute("WasEnabledAR", true)
+Texture_13.Enabled=true
+Texture_13.Width0=1.2000000476837158
+Texture_13.Width1=43.20000076293945
+Texture_13.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+Texture_13.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+Texture_13.CurveSize0=0
+Texture_13.CurveSize1=0
+Texture_13.FaceCamera=true
+Texture_13.LightEmission=1
+Texture_13.LightInfluence=0
+Texture_13.Segments=5
+Texture_13.Texture="rbxassetid://110744378277834"
+Texture_13.TextureLength=0.30000001192092896
+Texture_13.TextureSpeed=0.335999995470047
+Texture_13.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Attachment_14=i("Attachment", Attachment_11)
+Attachment_14.Name="Attachment"
+Attachment_14:SetAttribute("AuraInstance", true)
+Attachment_14.Visible=false
+Attachment_14.CFrame=cf(41.96799850463867,5.611000061035156,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ Attachment_15=i("Attachment", Gust_2)
+Attachment_15.Name="Attachment"
+Attachment_15:SetAttribute("AuraInstance", true)
+Attachment_15.Visible=false
+Attachment_15.CFrame=cf(0,3.366750478744507,0,0.7071342468261719,0,-0.707079291343689,0,1,0,0.707079291343689,0,0.7071342468261719)
+
+
+
+
+
+
+ ImagesUntitled_Artwork_71_16=i("Beam", Attachment_15)
+ImagesUntitled_Artwork_71_16.Name="Images/Untitled_Artwork_71"
+ImagesUntitled_Artwork_71_16:SetAttribute("AuraInstance", true)
+ImagesUntitled_Artwork_71_16:SetAttribute("OrigEnabled", true)
+ImagesUntitled_Artwork_71_16:SetAttribute("WasEnabledAR", true)
+ImagesUntitled_Artwork_71_16.Enabled=true
+ImagesUntitled_Artwork_71_16.Width0=1.2000000476837158
+ImagesUntitled_Artwork_71_16.Width1=43.20000076293945
+ImagesUntitled_Artwork_71_16.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+ImagesUntitled_Artwork_71_16.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+ImagesUntitled_Artwork_71_16.CurveSize0=3.6000001430511475
+ImagesUntitled_Artwork_71_16.CurveSize1=0
+ImagesUntitled_Artwork_71_16.FaceCamera=true
+ImagesUntitled_Artwork_71_16.LightEmission=1
+ImagesUntitled_Artwork_71_16.LightInfluence=0
+ImagesUntitled_Artwork_71_16.Segments=5
+ImagesUntitled_Artwork_71_16.Texture="rbxassetid://128120435243451"
+ImagesUntitled_Artwork_71_16.TextureLength=0.23000000417232513
+ImagesUntitled_Artwork_71_16.TextureSpeed=0.10080000013113022
+ImagesUntitled_Artwork_71_16.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Texture_17=i("Beam", Attachment_15)
+Texture_17.Name="Texture"
+Texture_17:SetAttribute("AuraInstance", true)
+Texture_17:SetAttribute("OrigEnabled", true)
+Texture_17:SetAttribute("WasEnabledAR", true)
+Texture_17.Enabled=true
+Texture_17.Width0=1.2000000476837158
+Texture_17.Width1=43.20000076293945
+Texture_17.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+Texture_17.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+Texture_17.CurveSize0=0
+Texture_17.CurveSize1=0
+Texture_17.FaceCamera=true
+Texture_17.LightEmission=1
+Texture_17.LightInfluence=0
+Texture_17.Segments=5
+Texture_17.Texture="rbxassetid://110744378277834"
+Texture_17.TextureLength=0.30000001192092896
+Texture_17.TextureSpeed=0.335999995470047
+Texture_17.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Attachment_18=i("Attachment", Attachment_15)
+Attachment_18.Name="Attachment"
+Attachment_18:SetAttribute("AuraInstance", true)
+Attachment_18.Visible=false
+Attachment_18.CFrame=cf(41.9681396484375,5.611249923706055,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ Attachment_19=i("Attachment", Gust_2)
+Attachment_19.Name="Attachment"
+Attachment_19:SetAttribute("AuraInstance", true)
+Attachment_19.Visible=false
+Attachment_19.CFrame=cf(0,3.366750478744507,0,0,0,1,0,1,-0,-1,0,0)
+
+
+
+
+
+
+ ImagesUntitled_Artwork_71_20=i("Beam", Attachment_19)
+ImagesUntitled_Artwork_71_20.Name="Images/Untitled_Artwork_71"
+ImagesUntitled_Artwork_71_20:SetAttribute("AuraInstance", true)
+ImagesUntitled_Artwork_71_20:SetAttribute("OrigEnabled", true)
+ImagesUntitled_Artwork_71_20:SetAttribute("WasEnabledAR", true)
+ImagesUntitled_Artwork_71_20.Enabled=true
+ImagesUntitled_Artwork_71_20.Width0=1.2000000476837158
+ImagesUntitled_Artwork_71_20.Width1=43.20000076293945
+ImagesUntitled_Artwork_71_20.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+ImagesUntitled_Artwork_71_20.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+ImagesUntitled_Artwork_71_20.CurveSize0=3.6000001430511475
+ImagesUntitled_Artwork_71_20.CurveSize1=0
+ImagesUntitled_Artwork_71_20.FaceCamera=true
+ImagesUntitled_Artwork_71_20.LightEmission=1
+ImagesUntitled_Artwork_71_20.LightInfluence=0
+ImagesUntitled_Artwork_71_20.Segments=5
+ImagesUntitled_Artwork_71_20.Texture="rbxassetid://128120435243451"
+ImagesUntitled_Artwork_71_20.TextureLength=0.23000000417232513
+ImagesUntitled_Artwork_71_20.TextureSpeed=0.10080000013113022
+ImagesUntitled_Artwork_71_20.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Texture_21=i("Beam", Attachment_19)
+Texture_21.Name="Texture"
+Texture_21:SetAttribute("AuraInstance", true)
+Texture_21:SetAttribute("OrigEnabled", true)
+Texture_21:SetAttribute("WasEnabledAR", true)
+Texture_21.Enabled=true
+Texture_21.Width0=1.2000000476837158
+Texture_21.Width1=43.20000076293945
+Texture_21.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+Texture_21.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+Texture_21.CurveSize0=0
+Texture_21.CurveSize1=0
+Texture_21.FaceCamera=true
+Texture_21.LightEmission=1
+Texture_21.LightInfluence=0
+Texture_21.Segments=5
+Texture_21.Texture="rbxassetid://110744378277834"
+Texture_21.TextureLength=0.30000001192092896
+Texture_21.TextureSpeed=0.335999995470047
+Texture_21.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Attachment_22=i("Attachment", Attachment_19)
+Attachment_22.Name="Attachment"
+Attachment_22:SetAttribute("AuraInstance", true)
+Attachment_22.Visible=false
+Attachment_22.CFrame=cf(41.96799850463867,5.611000061035156,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ Attachment_23=i("Attachment", Gust_2)
+Attachment_23.Name="Attachment"
+Attachment_23:SetAttribute("AuraInstance", true)
+Attachment_23.Visible=false
+Attachment_23.CFrame=cf(0,3.366750478744507,0,-1,0,0,0,1,0,0,0,-1)
+
+
+
+
+
+
+ ImagesUntitled_Artwork_71_24=i("Beam", Attachment_23)
+ImagesUntitled_Artwork_71_24.Name="Images/Untitled_Artwork_71"
+ImagesUntitled_Artwork_71_24:SetAttribute("AuraInstance", true)
+ImagesUntitled_Artwork_71_24:SetAttribute("OrigEnabled", true)
+ImagesUntitled_Artwork_71_24:SetAttribute("WasEnabledAR", true)
+ImagesUntitled_Artwork_71_24.Enabled=true
+ImagesUntitled_Artwork_71_24.Width0=1.2000000476837158
+ImagesUntitled_Artwork_71_24.Width1=43.20000076293945
+ImagesUntitled_Artwork_71_24.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+ImagesUntitled_Artwork_71_24.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+ImagesUntitled_Artwork_71_24.CurveSize0=3.6000001430511475
+ImagesUntitled_Artwork_71_24.CurveSize1=0
+ImagesUntitled_Artwork_71_24.FaceCamera=true
+ImagesUntitled_Artwork_71_24.LightEmission=1
+ImagesUntitled_Artwork_71_24.LightInfluence=0
+ImagesUntitled_Artwork_71_24.Segments=5
+ImagesUntitled_Artwork_71_24.Texture="rbxassetid://128120435243451"
+ImagesUntitled_Artwork_71_24.TextureLength=0.23000000417232513
+ImagesUntitled_Artwork_71_24.TextureSpeed=0.10080000013113022
+ImagesUntitled_Artwork_71_24.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Texture_25=i("Beam", Attachment_23)
+Texture_25.Name="Texture"
+Texture_25:SetAttribute("AuraInstance", true)
+Texture_25:SetAttribute("OrigEnabled", true)
+Texture_25:SetAttribute("WasEnabledAR", true)
+Texture_25.Enabled=true
+Texture_25.Width0=1.2000000476837158
+Texture_25.Width1=43.20000076293945
+Texture_25.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+Texture_25.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+Texture_25.CurveSize0=0
+Texture_25.CurveSize1=0
+Texture_25.FaceCamera=true
+Texture_25.LightEmission=1
+Texture_25.LightInfluence=0
+Texture_25.Segments=5
+Texture_25.Texture="rbxassetid://110744378277834"
+Texture_25.TextureLength=0.30000001192092896
+Texture_25.TextureSpeed=0.335999995470047
+Texture_25.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Attachment_26=i("Attachment", Attachment_23)
+Attachment_26.Name="Attachment"
+Attachment_26:SetAttribute("AuraInstance", true)
+Attachment_26.Visible=false
+Attachment_26.CFrame=cf(41.96799850463867,5.611000061035156,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ Attachment_27=i("Attachment", Gust_2)
+Attachment_27.Name="Attachment"
+Attachment_27:SetAttribute("AuraInstance", true)
+Attachment_27.Visible=false
+Attachment_27.CFrame=cf(0,3.366750478744507,0,0,0,-1,0,1,0,1,0,0)
+
+
+
+
+
+
+ ImagesUntitled_Artwork_71_28=i("Beam", Attachment_27)
+ImagesUntitled_Artwork_71_28.Name="Images/Untitled_Artwork_71"
+ImagesUntitled_Artwork_71_28:SetAttribute("AuraInstance", true)
+ImagesUntitled_Artwork_71_28:SetAttribute("OrigEnabled", true)
+ImagesUntitled_Artwork_71_28:SetAttribute("WasEnabledAR", true)
+ImagesUntitled_Artwork_71_28.Enabled=true
+ImagesUntitled_Artwork_71_28.Width0=1.2000000476837158
+ImagesUntitled_Artwork_71_28.Width1=43.20000076293945
+ImagesUntitled_Artwork_71_28.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+ImagesUntitled_Artwork_71_28.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+ImagesUntitled_Artwork_71_28.CurveSize0=3.6000001430511475
+ImagesUntitled_Artwork_71_28.CurveSize1=0
+ImagesUntitled_Artwork_71_28.FaceCamera=true
+ImagesUntitled_Artwork_71_28.LightEmission=1
+ImagesUntitled_Artwork_71_28.LightInfluence=0
+ImagesUntitled_Artwork_71_28.Segments=5
+ImagesUntitled_Artwork_71_28.Texture="rbxassetid://128120435243451"
+ImagesUntitled_Artwork_71_28.TextureLength=0.23000000417232513
+ImagesUntitled_Artwork_71_28.TextureSpeed=0.10080000013113022
+ImagesUntitled_Artwork_71_28.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Texture_29=i("Beam", Attachment_27)
+Texture_29.Name="Texture"
+Texture_29:SetAttribute("AuraInstance", true)
+Texture_29:SetAttribute("OrigEnabled", true)
+Texture_29:SetAttribute("WasEnabledAR", true)
+Texture_29.Enabled=true
+Texture_29.Width0=1.2000000476837158
+Texture_29.Width1=43.20000076293945
+Texture_29.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+Texture_29.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+Texture_29.CurveSize0=0
+Texture_29.CurveSize1=0
+Texture_29.FaceCamera=true
+Texture_29.LightEmission=1
+Texture_29.LightInfluence=0
+Texture_29.Segments=5
+Texture_29.Texture="rbxassetid://110744378277834"
+Texture_29.TextureLength=0.30000001192092896
+Texture_29.TextureSpeed=0.335999995470047
+Texture_29.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Attachment_30=i("Attachment", Attachment_27)
+Attachment_30.Name="Attachment"
+Attachment_30:SetAttribute("AuraInstance", true)
+Attachment_30.Visible=false
+Attachment_30.CFrame=cf(41.96799850463867,5.611000061035156,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ Attachment_31=i("Attachment", Gust_2)
+Attachment_31.Name="Attachment"
+Attachment_31:SetAttribute("AuraInstance", true)
+Attachment_31.Visible=false
+Attachment_31.CFrame=cf(0,3.366750478744507,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ ImagesUntitled_Artwork_71_32=i("Beam", Attachment_31)
+ImagesUntitled_Artwork_71_32.Name="Images/Untitled_Artwork_71"
+ImagesUntitled_Artwork_71_32:SetAttribute("AuraInstance", true)
+ImagesUntitled_Artwork_71_32:SetAttribute("OrigEnabled", true)
+ImagesUntitled_Artwork_71_32:SetAttribute("WasEnabledAR", true)
+ImagesUntitled_Artwork_71_32.Enabled=true
+ImagesUntitled_Artwork_71_32.Width0=1.2000000476837158
+ImagesUntitled_Artwork_71_32.Width1=43.20000076293945
+ImagesUntitled_Artwork_71_32.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+ImagesUntitled_Artwork_71_32.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+ImagesUntitled_Artwork_71_32.CurveSize0=3.6000001430511475
+ImagesUntitled_Artwork_71_32.CurveSize1=0
+ImagesUntitled_Artwork_71_32.FaceCamera=true
+ImagesUntitled_Artwork_71_32.LightEmission=1
+ImagesUntitled_Artwork_71_32.LightInfluence=0
+ImagesUntitled_Artwork_71_32.Segments=5
+ImagesUntitled_Artwork_71_32.Texture="rbxassetid://128120435243451"
+ImagesUntitled_Artwork_71_32.TextureLength=0.23000000417232513
+ImagesUntitled_Artwork_71_32.TextureSpeed=0.10080000013113022
+ImagesUntitled_Artwork_71_32.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Texture_33=i("Beam", Attachment_31)
+Texture_33.Name="Texture"
+Texture_33:SetAttribute("AuraInstance", true)
+Texture_33:SetAttribute("OrigEnabled", true)
+Texture_33:SetAttribute("WasEnabledAR", true)
+Texture_33.Enabled=true
+Texture_33.Width0=1.2000000476837158
+Texture_33.Width1=43.20000076293945
+Texture_33.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.097257,0.943750,0.000000),nsk(0.190773,0.818750,0.000000),nsk(0.352868,0.000000,0.000000),nsk(0.746883,0.818750,0.000000),nsk(0.900249,0.968750,0.000000),nsk(1.000000,1.000000,0.000000)})
+Texture_33.Color=cs({csk(0.000000,c3(0.616507,0.731144,0.940356)),csk(1.000000,c3(0.616507,0.731144,0.940356))})
+Texture_33.CurveSize0=0
+Texture_33.CurveSize1=0
+Texture_33.FaceCamera=true
+Texture_33.LightEmission=1
+Texture_33.LightInfluence=0
+Texture_33.Segments=5
+Texture_33.Texture="rbxassetid://110744378277834"
+Texture_33.TextureLength=0.30000001192092896
+Texture_33.TextureSpeed=0.335999995470047
+Texture_33.Brightness=0.7464960217475891
+
+
+
+
+
+
+ Attachment_34=i("Attachment", Attachment_31)
+Attachment_34.Name="Attachment"
+Attachment_34:SetAttribute("AuraInstance", true)
+Attachment_34.Visible=false
+Attachment_34.CFrame=cf(41.96799850463867,5.611000061035156,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ Images28f8b4a0fe0f42c93f2224f67a698f97_g_35=i("ParticleEmitter", att)
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.Name="Images/28f8b4a0fe0f42c93f2224f67a698f97_g"
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35:SetAttribute("AuraInstance", true)
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35:SetAttribute("OrigEnabled", true)
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35:SetAttribute("WasEnabledAR", true)
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.Enabled=true
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.Rate=2
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.Lifetime=nr(3,3)
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.Speed=nr(0.10000000149011612,0.10000000149011612)
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.Rotation=nr(0,360)
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.RotSpeed=nr(0,0)
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.Size=ns({nsk(0.000000,3.636941,0.000000),nsk(0.100000,4.162506,0.000000),nsk(0.200000,6.153944,0.000000),nsk(0.300000,9.446630,0.000000),nsk(0.400000,13.798661,0.000000),nsk(0.500000,19.027411,0.000000),nsk(0.600000,24.997765,0.000000),nsk(0.700000,31.607458,0.000000),nsk(0.800000,38.776974,0.000000),nsk(0.900000,46.442993,0.000000),nsk(1.000000,54.554131,0.000000),nsk(1.000000,54.554131,0.000000)})
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.500000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.Color=cs({csk(0.000000,c3(0.650444,0.727824,0.945634)),csk(1.000000,c3(0.650444,0.727824,0.945634))})
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.LightEmission=1
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.LightInfluence=0
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.Acceleration=v3(0.000000,0.000000,0.000000)
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.Drag=0
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.EmissionDirection=Enum.NormalId.Top
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.SpreadAngle=v2(0.250000,0.250000)
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.ZOffset=2
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.Texture="rbxassetid://115013106311959"
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.LockedToPart=true
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.FlipbookFramerate=nr(1,1)
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.FlipbookStartRandom=false
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.Squash=ns({nsk(0.000000,0.100000,0.000000),nsk(1.000000,0.100000,0.000000)})
+Images28f8b4a0fe0f42c93f2224f67a698f97_g_35.Brightness=1
+
+
+
+
+
+
+ Imagesglitchy1_36=i("ParticleEmitter", att)
+Imagesglitchy1_36.Name="Images/glitchy1"
+Imagesglitchy1_36:SetAttribute("AuraInstance", true)
+Imagesglitchy1_36:SetAttribute("OrigEnabled", true)
+Imagesglitchy1_36:SetAttribute("WasEnabledAR", true)
+Imagesglitchy1_36.Enabled=true
+Imagesglitchy1_36.Rate=2
+Imagesglitchy1_36.Lifetime=nr(2.7973318099975586,2.7973318099975586)
+Imagesglitchy1_36.Speed=nr(0.03498571366071701,0.03498571366071701)
+Imagesglitchy1_36.Rotation=nr(0,360)
+Imagesglitchy1_36.RotSpeed=nr(0,0)
+Imagesglitchy1_36.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(0.100000,5.072098,0.000000),nsk(0.200000,9.806998,0.000000),nsk(0.300000,14.171927,0.000000),nsk(0.400000,18.127844,0.000000),nsk(0.500000,21.627661,0.000000),nsk(0.600000,24.613932,0.000000),nsk(0.700000,27.016159,0.000000),nsk(0.800000,28.749454,0.000000),nsk(0.900000,29.724981,0.000000),nsk(1.000000,29.955660,0.000000),nsk(1.000000,29.955660,0.000000)})
+Imagesglitchy1_36.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.497506,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+Imagesglitchy1_36.Color=cs({csk(0.000000,c3(0.665296,0.726741,0.947944)),csk(0.131261,c3(0.475246,0.534849,0.918386)),csk(0.212435,c3(0.587240,0.668066,0.935804)),csk(0.302245,c3(0.610528,0.708514,0.939426)),csk(0.397237,c3(0.721825,0.665296,0.947944)),csk(0.480138,c3(0.580452,0.674088,0.934749)),csk(0.559586,c3(0.797652,0.901078,0.968529)),csk(0.644214,c3(0.532940,0.684048,0.927359)),csk(0.699482,c3(0.492215,0.569710,0.921025)),csk(0.816926,c3(0.629766,0.553302,0.930526)),csk(0.915371,c3(0.444702,0.515042,0.913636)),csk(1.000000,c3(0.665296,0.726741,0.947944))})
+Imagesglitchy1_36.LightEmission=1
+Imagesglitchy1_36.LightInfluence=0
+Imagesglitchy1_36.Acceleration=v3(0.000000,0.000000,0.000000)
+Imagesglitchy1_36.Drag=0
+Imagesglitchy1_36.EmissionDirection=Enum.NormalId.Top
+Imagesglitchy1_36.SpreadAngle=v2(0.000000,0.000000)
+Imagesglitchy1_36.ZOffset=0.009999999776482582
+Imagesglitchy1_36.Texture="rbxassetid://18254173589"
+Imagesglitchy1_36.LockedToPart=true
+Imagesglitchy1_36.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+Imagesglitchy1_36.FlipbookLayout=Enum.ParticleFlipbookLayout.Grid4x4
+Imagesglitchy1_36.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+Imagesglitchy1_36.FlipbookFramerate=nr(11.439472198486328,11.439472198486328)
+Imagesglitchy1_36.FlipbookStartRandom=false
+Imagesglitchy1_36.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+Imagesglitchy1_36.Brightness=0.0208333320915699
+
+
+
+
+
+
+ Light_37=i("ParticleEmitter", att)
+Light_37.Name="Light"
+Light_37:SetAttribute("AuraInstance", true)
+Light_37:SetAttribute("OrigEnabled", true)
+Light_37:SetAttribute("WasEnabledAR", true)
+Light_37.Enabled=true
+Light_37.Rate=2.5
+Light_37.Lifetime=nr(1.600000023841858,1.600000023841858)
+Light_37.Speed=nr(0.3251892924308777,0.6503785848617554)
+Light_37.Rotation=nr(-360,360)
+Light_37.RotSpeed=nr(-7.5,7.5)
+Light_37.Size=ns({nsk(0.000000,3.622298,0.000000),nsk(0.100000,4.145746,0.000000),nsk(0.200000,6.129166,0.000000),nsk(0.300000,9.408594,0.000000),nsk(0.400000,13.743103,0.000000),nsk(0.500000,18.950800,0.000000),nsk(0.600000,24.897116,0.000000),nsk(0.700000,31.480196,0.000000),nsk(0.800000,38.620842,0.000000),nsk(0.900000,46.256004,0.000000),nsk(1.000000,54.334473,0.000000),nsk(1.000000,54.334473,0.000000)})
+Light_37.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.302615,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+Light_37.Color=cs({csk(0.000000,c3(0.549007,0.558054,0.590621)),csk(0.131261,c3(0.410578,0.432547,0.573915)),csk(0.212435,c3(0.493867,0.514314,0.582045)),csk(0.302245,c3(0.510318,0.532449,0.584603)),csk(0.397237,c3(0.557330,0.549007,0.590621)),csk(0.480138,c3(0.489072,0.513446,0.581299)),csk(0.559586,c3(0.623835,0.623835,0.623835)),csk(0.644214,c3(0.455508,0.501701,0.576079)),csk(0.699482,c3(0.426293,0.452635,0.572050)),csk(0.816926,c3(0.491870,0.469893,0.578316)),csk(0.915371,c3(0.382289,0.411536,0.577271)),csk(1.000000,c3(0.549007,0.558054,0.590621))})
+Light_37.LightEmission=-2
+Light_37.LightInfluence=0
+Light_37.Acceleration=v3(0.000000,0.000000,0.000000)
+Light_37.Drag=0
+Light_37.EmissionDirection=Enum.NormalId.Top
+Light_37.SpreadAngle=v2(0.250000,0.250000)
+Light_37.ZOffset=-0.10100000351667404
+Light_37.Texture="rbxassetid://76075415810232"
+Light_37.LockedToPart=true
+Light_37.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+Light_37.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+Light_37.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+Light_37.FlipbookFramerate=nr(0.5,0.5)
+Light_37.FlipbookStartRandom=false
+Light_37.Squash=ns({nsk(0.000000,0.100000,0.000000),nsk(1.000000,0.100000,0.000000)})
+Light_37.Brightness=0.1041666641831398
+
+
+
+
+
+
+ Light_38=i("ParticleEmitter", att)
+Light_38.Name="Light"
+Light_38:SetAttribute("AuraInstance", true)
+Light_38:SetAttribute("OrigEnabled", true)
+Light_38:SetAttribute("WasEnabledAR", true)
+Light_38.Enabled=true
+Light_38.Rate=4
+Light_38.Lifetime=nr(2,2)
+Light_38.Speed=nr(0.002305330242961645,0.002305330242961645)
+Light_38.Rotation=nr(0,0)
+Light_38.RotSpeed=nr(0,0)
+Light_38.Size=ns({nsk(0.000000,17.282173,0.000000),nsk(0.100000,17.401096,0.000000),nsk(0.200000,17.851717,0.000000),nsk(0.300000,18.596779,0.000000),nsk(0.400000,19.581551,0.000000),nsk(0.500000,20.764702,0.000000),nsk(0.600000,22.115662,0.000000),nsk(0.700000,23.611294,0.000000),nsk(0.800000,25.233597,0.000000),nsk(0.900000,26.968252,0.000000),nsk(1.000000,28.803625,0.000000),nsk(1.000000,28.803625,0.000000)})
+Light_38.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.500000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+Light_38.Color=cs({csk(0.000000,c3(0.430484,0.542975,0.947944)),csk(0.131261,c3(0.247756,0.337957,0.918386)),csk(0.212435,c3(0.355435,0.490013,0.935804)),csk(0.302245,c3(0.377826,0.545139,0.939426)),csk(0.397237,c3(0.533976,0.430484,0.947944)),csk(0.480138,c3(0.348909,0.503738,0.934749)),csk(0.559586,c3(0.557741,0.806376,0.968529)),csk(0.644214,c3(0.303227,0.542342,0.927359)),csk(0.699482,c3(0.264071,0.382797,0.921025)),csk(0.816926,c3(0.445991,0.322805,0.930526)),csk(0.915371,c3(0.218389,0.322675,0.913636)),csk(1.000000,c3(0.430484,0.542975,0.947944))})
+Light_38.LightEmission=-2
+Light_38.LightInfluence=0
+Light_38.Acceleration=v3(0.000000,0.000000,0.000000)
+Light_38.Drag=0
+Light_38.EmissionDirection=Enum.NormalId.Top
+Light_38.SpreadAngle=v2(0.000000,0.000000)
+Light_38.ZOffset=-0.10000000149011612
+Light_38.Texture="rbxassetid://126739516618568"
+Light_38.LockedToPart=true
+Light_38.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+Light_38.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+Light_38.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+Light_38.FlipbookFramerate=nr(1,1)
+Light_38.FlipbookStartRandom=false
+Light_38.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+Light_38.Brightness=0.10000000149011612
+
+
+
+
+
+
+ Light_39=i("ParticleEmitter", att)
+Light_39.Name="Light"
+Light_39:SetAttribute("AuraInstance", true)
+Light_39:SetAttribute("OrigEnabled", true)
+Light_39:SetAttribute("WasEnabledAR", true)
+Light_39.Enabled=true
+Light_39.Rate=2
+Light_39.Lifetime=nr(2,2)
+Light_39.Speed=nr(0.003683870192617178,0.003683870192617178)
+Light_39.Rotation=nr(0,0)
+Light_39.RotSpeed=nr(0,0)
+Light_39.Size=ns({nsk(0.000000,27.616556,0.000000),nsk(0.100000,27.806595,0.000000),nsk(0.200000,28.526676,0.000000),nsk(0.300000,29.717270,0.000000),nsk(0.400000,31.290915,0.000000),nsk(0.500000,33.181568,0.000000),nsk(0.600000,35.340374,0.000000),nsk(0.700000,37.730362,0.000000),nsk(0.800000,40.322773,0.000000),nsk(0.900000,43.094711,0.000000),nsk(1.000000,46.027599,0.000000),nsk(1.000000,46.027599,0.000000)})
+Light_39.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.199744,0.259036,0.000000),nsk(0.500000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+Light_39.Color=cs({csk(0.000000,c3(0.665296,0.726741,0.947944)),csk(0.131261,c3(0.475246,0.534849,0.918386)),csk(0.212435,c3(0.587240,0.668066,0.935804)),csk(0.302245,c3(0.610528,0.708514,0.939426)),csk(0.397237,c3(0.721825,0.665296,0.947944)),csk(0.480138,c3(0.580452,0.674088,0.934749)),csk(0.559586,c3(0.797652,0.901078,0.968529)),csk(0.644214,c3(0.532940,0.684048,0.927359)),csk(0.699482,c3(0.492215,0.569710,0.921025)),csk(0.816926,c3(0.629766,0.553302,0.930526)),csk(0.915371,c3(0.444702,0.515042,0.913636)),csk(1.000000,c3(0.665296,0.726741,0.947944))})
+Light_39.LightEmission=-0.75
+Light_39.LightInfluence=0
+Light_39.Acceleration=v3(0.000000,0.000000,0.000000)
+Light_39.Drag=0
+Light_39.EmissionDirection=Enum.NormalId.Top
+Light_39.SpreadAngle=v2(0.000000,0.000000)
+Light_39.ZOffset=-14
+Light_39.Texture="rbxassetid://126739516618568"
+Light_39.LockedToPart=true
+Light_39.Orientation=Enum.ParticleOrientation.FacingCamera
+Light_39.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+Light_39.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+Light_39.FlipbookFramerate=nr(1,1)
+Light_39.FlipbookStartRandom=false
+Light_39.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+Light_39.Brightness=0.014000000432133675
+
+
+
+
+
+
+ Light_40=i("ParticleEmitter", att)
+Light_40.Name="Light"
+Light_40:SetAttribute("AuraInstance", true)
+Light_40:SetAttribute("OrigEnabled", true)
+Light_40:SetAttribute("WasEnabledAR", true)
+Light_40.Enabled=true
+Light_40.Rate=5
+Light_40.Lifetime=nr(1.600000023841858,1.600000023841858)
+Light_40.Speed=nr(0.22452250123023987,0.44904500246047974)
+Light_40.Rotation=nr(-360,360)
+Light_40.RotSpeed=nr(-7.5,7.5)
+Light_40.Size=ns({nsk(0.000000,2.500967,0.000000),nsk(0.100000,2.862374,0.000000),nsk(0.200000,4.231799,0.000000),nsk(0.300000,6.496036,0.000000),nsk(0.400000,9.488738,0.000000),nsk(0.500000,13.084321,0.000000),nsk(0.600000,17.189875,0.000000),nsk(0.700000,21.735071,0.000000),nsk(0.800000,26.665234,0.000000),nsk(0.900000,31.936829,0.000000),nsk(1.000000,37.514496,0.000000),nsk(1.000000,37.514496,0.000000)})
+Light_40.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.302615,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+Light_40.Color=cs({csk(0.000000,c3(0.549007,0.558054,0.590621)),csk(0.131261,c3(0.410578,0.432547,0.573915)),csk(0.212435,c3(0.493867,0.514314,0.582045)),csk(0.302245,c3(0.510318,0.532449,0.584603)),csk(0.397237,c3(0.557330,0.549007,0.590621)),csk(0.480138,c3(0.489072,0.513446,0.581299)),csk(0.559586,c3(0.623835,0.623835,0.623835)),csk(0.644214,c3(0.455508,0.501701,0.576079)),csk(0.699482,c3(0.426293,0.452635,0.572050)),csk(0.816926,c3(0.491870,0.469893,0.578316)),csk(0.915371,c3(0.382289,0.411536,0.577271)),csk(1.000000,c3(0.549007,0.558054,0.590621))})
+Light_40.LightEmission=-2
+Light_40.LightInfluence=0
+Light_40.Acceleration=v3(0.000000,0.000000,0.000000)
+Light_40.Drag=0
+Light_40.EmissionDirection=Enum.NormalId.Top
+Light_40.SpreadAngle=v2(0.250000,0.250000)
+Light_40.ZOffset=-0.10100000351667404
+Light_40.Texture="rbxassetid://72634443372780"
+Light_40.LockedToPart=true
+Light_40.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+Light_40.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+Light_40.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+Light_40.FlipbookFramerate=nr(0.5,0.5)
+Light_40.FlipbookStartRandom=false
+Light_40.Squash=ns({nsk(0.000000,0.100000,0.000000),nsk(1.000000,0.100000,0.000000)})
+Light_40.Brightness=0.1041666641831398
+
+
+
+
+
+
+ PointLight_41=i("PointLight", att)
+PointLight_41.Name="PointLight"
+PointLight_41:SetAttribute("AuraInstance", true)
+PointLight_41:SetAttribute("OrigEnabled", true)
+PointLight_41:SetAttribute("WasEnabledAR", true)
+
+
+
+
+
+
+ Spotlights_49=i("Attachment", att)
+Spotlights_49.Name="Spotlights"
+Spotlights_49:SetAttribute("AuraInstance", true)
+Spotlights_49.Visible=false
+Spotlights_49.CFrame=cf(0,0,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ Spot_50=i("Attachment", Spotlights_49)
+Spot_50.Name="Spot"
+Spot_50:SetAttribute("AuraInstance", true)
+Spot_50.Visible=false
+Spot_50.CFrame=cf(1.5,0,0.5,0,0,-1,0,1,0,1,0,0)
+
+
+
+
+
+
+ SpotLight_51=i("SpotLight", Spot_50)
+SpotLight_51.Name="SpotLight"
+SpotLight_51:SetAttribute("AuraInstance", true)
+SpotLight_51:SetAttribute("OrigEnabled", true)
+SpotLight_51:SetAttribute("WasEnabledAR", true)
+
+
+
+
+
+
+ Spot_52=i("Attachment", Spotlights_49)
+Spot_52.Name="Spot"
+Spot_52:SetAttribute("AuraInstance", true)
+Spot_52.Visible=false
+Spot_52.CFrame=cf(-1.5,0,0.5,0,0,-1,0,1,0,1,0,0)
+
+
+
+
+
+
+ SpotLight_53=i("SpotLight", Spot_52)
+SpotLight_53.Name="SpotLight"
+SpotLight_53:SetAttribute("AuraInstance", true)
+SpotLight_53:SetAttribute("OrigEnabled", true)
+SpotLight_53:SetAttribute("WasEnabledAR", true)
+
+
+
+
+
+
+ Spot_54=i("Attachment", Spotlights_49)
+Spot_54.Name="Spot"
+Spot_54:SetAttribute("AuraInstance", true)
+Spot_54.Visible=false
+Spot_54.CFrame=cf(0,0,2,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ SpotLight_55=i("SpotLight", Spot_54)
+SpotLight_55.Name="SpotLight"
+SpotLight_55:SetAttribute("AuraInstance", true)
+SpotLight_55:SetAttribute("OrigEnabled", true)
+SpotLight_55:SetAttribute("WasEnabledAR", true)
+
+
+
+
+
+
+ Spot_56=i("Attachment", Spotlights_49)
+Spot_56.Name="Spot"
+Spot_56:SetAttribute("AuraInstance", true)
+Spot_56.Visible=false
+Spot_56.CFrame=cf(0,0,-1,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ SpotLight_57=i("SpotLight", Spot_56)
+SpotLight_57.Name="SpotLight"
+SpotLight_57:SetAttribute("AuraInstance", true)
+SpotLight_57:SetAttribute("OrigEnabled", true)
+SpotLight_57:SetAttribute("WasEnabledAR", true)
+
+
+
+
+
+
+ blight_58=i("ParticleEmitter", att)
+blight_58.Name="blight"
+blight_58:SetAttribute("AuraInstance", true)
+blight_58:SetAttribute("OrigEnabled", true)
+blight_58:SetAttribute("WasEnabledAR", true)
+blight_58.Enabled=true
+blight_58.Rate=6
+blight_58.Lifetime=nr(0.7708542346954346,0.7708542346954346)
+blight_58.Speed=nr(0.6024105548858643,1.2048211097717285)
+blight_58.Rotation=nr(-360,360)
+blight_58.RotSpeed=nr(-7.5,7.5)
+blight_58.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(0.100000,0.262691,0.000000),nsk(0.200000,1.258065,0.000000),nsk(0.300000,2.903835,0.000000),nsk(0.400000,5.079096,0.000000),nsk(0.500000,7.692562,0.000000),nsk(0.600000,10.676704,0.000000),nsk(0.700000,13.980399,0.000000),nsk(0.800000,17.563913,0.000000),nsk(0.900000,21.395599,0.000000),nsk(1.000000,25.449749,0.000000),nsk(1.000000,25.449749,0.000000)})
+blight_58.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.224159,0.000000,0.000000),nsk(0.601494,0.781250,0.000000),nsk(1.000000,1.000000,0.000000)})
+blight_58.Color=cs({csk(0.000000,c3(0.665296,0.726741,0.947944)),csk(0.131261,c3(0.475246,0.534849,0.918386)),csk(0.212435,c3(0.587240,0.668066,0.935804)),csk(0.302245,c3(0.610528,0.708514,0.939426)),csk(0.397237,c3(0.721825,0.665296,0.947944)),csk(0.480138,c3(0.580452,0.674088,0.934749)),csk(0.559586,c3(0.797652,0.901078,0.968529)),csk(0.644214,c3(0.532940,0.684048,0.927359)),csk(0.699482,c3(0.492215,0.569710,0.921025)),csk(0.816926,c3(0.629766,0.553302,0.930526)),csk(0.915371,c3(0.444702,0.515042,0.913636)),csk(1.000000,c3(0.665296,0.726741,0.947944))})
+blight_58.LightEmission=-4
+blight_58.LightInfluence=0
+blight_58.Acceleration=v3(0.000000,0.000000,0.000000)
+blight_58.Drag=0
+blight_58.EmissionDirection=Enum.NormalId.Top
+blight_58.SpreadAngle=v2(0.250000,0.250000)
+blight_58.ZOffset=-0.10499999672174454
+blight_58.Texture="rbxassetid://106010543019501"
+blight_58.LockedToPart=true
+blight_58.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+blight_58.FlipbookLayout=Enum.ParticleFlipbookLayout.Grid8x8
+blight_58.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+blight_58.FlipbookFramerate=nr(1.297262191772461,1.297262191772461)
+blight_58.FlipbookStartRandom=false
+blight_58.Squash=ns({nsk(0.000000,0.100000,0.000000),nsk(1.000000,0.100000,0.000000)})
+blight_58.Brightness=1
+
+
+
+
+
+
+ blight_59=i("ParticleEmitter", att)
+blight_59.Name="blight"
+blight_59:SetAttribute("AuraInstance", true)
+blight_59:SetAttribute("OrigEnabled", true)
+blight_59:SetAttribute("WasEnabledAR", true)
+blight_59.Enabled=true
+blight_59.Rate=7
+blight_59.Lifetime=nr(0.7708542346954346,0.7708542346954346)
+blight_59.Speed=nr(1.1133049726486206,2.226609945297241)
+blight_59.Rotation=nr(-360,360)
+blight_59.RotSpeed=nr(6.486310958862305,12.97262191772461)
+blight_59.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(0.100000,0.485475,0.000000),nsk(0.200000,2.325008,0.000000),nsk(0.300000,5.366529,0.000000),nsk(0.400000,9.386593,0.000000),nsk(0.500000,14.216496,0.000000),nsk(0.600000,19.731440,0.000000),nsk(0.700000,25.836950,0.000000),nsk(0.800000,32.459576,0.000000),nsk(0.900000,39.540852,0.000000),nsk(1.000000,47.033264,0.000000),nsk(1.000000,47.033264,0.000000)})
+blight_59.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.224159,0.000000,0.000000),nsk(0.601494,0.781250,0.000000),nsk(1.000000,1.000000,0.000000)})
+blight_59.Color=cs({csk(0.000000,c3(0.665296,0.726741,0.947944)),csk(0.131261,c3(0.475246,0.534849,0.918386)),csk(0.212435,c3(0.587240,0.668066,0.935804)),csk(0.302245,c3(0.610528,0.708514,0.939426)),csk(0.397237,c3(0.721825,0.665296,0.947944)),csk(0.480138,c3(0.580452,0.674088,0.934749)),csk(0.559586,c3(0.797652,0.901078,0.968529)),csk(0.644214,c3(0.532940,0.684048,0.927359)),csk(0.699482,c3(0.492215,0.569710,0.921025)),csk(0.816926,c3(0.629766,0.553302,0.930526)),csk(0.915371,c3(0.444702,0.515042,0.913636)),csk(1.000000,c3(0.665296,0.726741,0.947944))})
+blight_59.LightEmission=1
+blight_59.LightInfluence=0
+blight_59.Acceleration=v3(0.000000,0.000000,0.000000)
+blight_59.Drag=0
+blight_59.EmissionDirection=Enum.NormalId.Top
+blight_59.SpreadAngle=v2(0.000000,0.000000)
+blight_59.ZOffset=-0.10400000214576721
+blight_59.Texture="rbxassetid://106010543019501"
+blight_59.LockedToPart=true
+blight_59.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+blight_59.FlipbookLayout=Enum.ParticleFlipbookLayout.Grid8x8
+blight_59.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+blight_59.FlipbookFramerate=nr(1.297262191772461,1.297262191772461)
+blight_59.FlipbookStartRandom=false
+blight_59.Squash=ns({nsk(0.000000,0.100000,0.000000),nsk(1.000000,0.100000,0.000000)})
+blight_59.Brightness=0.3472222089767456
+
+
+
+
+
+
+ facecam_60=i("Attachment", att)
+facecam_60.Name="facecam"
+facecam_60:SetAttribute("AuraInstance", true)
+facecam_60.Visible=false
+facecam_60.CFrame=cf(0,0,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ blight_61=i("ParticleEmitter", facecam_60)
+blight_61.Name="blight"
+blight_61:SetAttribute("AuraInstance", true)
+blight_61:SetAttribute("OrigEnabled", true)
+blight_61:SetAttribute("WasEnabledAR", true)
+blight_61.Enabled=true
+blight_61.Rate=7
+blight_61.Lifetime=nr(0.7708542346954346,0.7708542346954346)
+blight_61.Speed=nr(0.7689688205718994,1.5379376411437988)
+blight_61.Rotation=nr(-360,360)
+blight_61.RotSpeed=nr(6.486310958862305,12.97262191772461)
+blight_61.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(0.100000,0.335321,0.000000),nsk(0.200000,1.605902,0.000000),nsk(0.300000,3.706705,0.000000),nsk(0.400000,6.483396,0.000000),nsk(0.500000,9.819448,0.000000),nsk(0.600000,13.628666,0.000000),nsk(0.700000,17.845791,0.000000),nsk(0.800000,22.420094,0.000000),nsk(0.900000,27.311186,0.000000),nsk(1.000000,32.486259,0.000000),nsk(1.000000,32.486259,0.000000)})
+blight_61.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.224159,0.000000,0.000000),nsk(0.601494,0.781250,0.000000),nsk(1.000000,1.000000,0.000000)})
+blight_61.Color=cs({csk(0.000000,c3(0.665296,0.726741,0.947944)),csk(0.131261,c3(0.475246,0.534849,0.918386)),csk(0.212435,c3(0.587240,0.668066,0.935804)),csk(0.302245,c3(0.610528,0.708514,0.939426)),csk(0.397237,c3(0.721825,0.665296,0.947944)),csk(0.480138,c3(0.580452,0.674088,0.934749)),csk(0.559586,c3(0.797652,0.901078,0.968529)),csk(0.644214,c3(0.532940,0.684048,0.927359)),csk(0.699482,c3(0.492215,0.569710,0.921025)),csk(0.816926,c3(0.629766,0.553302,0.930526)),csk(0.915371,c3(0.444702,0.515042,0.913636)),csk(1.000000,c3(0.665296,0.726741,0.947944))})
+blight_61.LightEmission=1
+blight_61.LightInfluence=0
+blight_61.Acceleration=v3(0.000000,0.000000,0.000000)
+blight_61.Drag=0
+blight_61.EmissionDirection=Enum.NormalId.Top
+blight_61.SpreadAngle=v2(360.000000,360.000000)
+blight_61.ZOffset=-0.004000000189989805
+blight_61.Texture="rbxassetid://106010543019501"
+blight_61.LockedToPart=true
+blight_61.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+blight_61.FlipbookLayout=Enum.ParticleFlipbookLayout.Grid8x8
+blight_61.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+blight_61.FlipbookFramerate=nr(1.297262191772461,1.297262191772461)
+blight_61.FlipbookStartRandom=false
+blight_61.Squash=ns({nsk(0.000000,0.100000,0.000000),nsk(1.000000,0.100000,0.000000)})
+blight_61.Brightness=0.3472222089767456
+
+
+
+
+
+
+ foggy_62=i("Attachment", att)
+foggy_62.Name="foggy"
+foggy_62:SetAttribute("AuraInstance", true)
+foggy_62.Visible=false
+foggy_62.CFrame=cf(0,1.5130001306533813,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ ParticleEmitter_63=i("ParticleEmitter", foggy_62)
+ParticleEmitter_63.Name="ParticleEmitter"
+ParticleEmitter_63:SetAttribute("AuraInstance", true)
+ParticleEmitter_63:SetAttribute("OrigEnabled", true)
+ParticleEmitter_63:SetAttribute("WasEnabledAR", true)
+ParticleEmitter_63.Enabled=true
+ParticleEmitter_63.Rate=30
+ParticleEmitter_63.Lifetime=nr(0.627364993095398,1.254729986190796)
+ParticleEmitter_63.Speed=nr(7.784610271453857,38.92305374145508)
+ParticleEmitter_63.Rotation=nr(90,90)
+ParticleEmitter_63.RotSpeed=nr(0,0)
+ParticleEmitter_63.Size=ns({nsk(0.000000,0.617102,0.308551),nsk(0.100000,0.617102,0.308551),nsk(0.200000,0.617102,0.308551),nsk(0.300000,0.617102,0.308551),nsk(0.400000,0.617102,0.308551),nsk(0.500000,0.617102,0.308551),nsk(0.600000,0.617102,0.308551),nsk(0.700000,0.617102,0.308551),nsk(0.800000,0.617102,0.308551),nsk(0.900000,0.617102,0.308551),nsk(1.000000,0.617102,0.308551),nsk(1.000000,0.617102,0.308551)})
+ParticleEmitter_63.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.198254,1.000000,0.000000),nsk(0.676533,0.000000,0.000000),nsk(0.819767,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+ParticleEmitter_63.Color=cs({csk(0.000000,c3(0.665296,0.726741,0.947944)),csk(0.131261,c3(0.475246,0.534849,0.918386)),csk(0.212435,c3(0.587240,0.668066,0.935804)),csk(0.302245,c3(0.610528,0.708514,0.939426)),csk(0.397237,c3(0.721825,0.665296,0.947944)),csk(0.480138,c3(0.580452,0.674088,0.934749)),csk(0.559586,c3(0.797652,0.901078,0.968529)),csk(0.644214,c3(0.532940,0.684048,0.927359)),csk(0.699482,c3(0.492215,0.569710,0.921025)),csk(0.816926,c3(0.629766,0.553302,0.930526)),csk(0.915371,c3(0.444702,0.515042,0.913636)),csk(1.000000,c3(0.665296,0.726741,0.947944))})
+ParticleEmitter_63.LightEmission=1
+ParticleEmitter_63.LightInfluence=0
+ParticleEmitter_63.Acceleration=v3(0.000000,10.133000,0.000000)
+ParticleEmitter_63.Drag=0.6000000238418579
+ParticleEmitter_63.EmissionDirection=Enum.NormalId.Back
+ParticleEmitter_63.SpreadAngle=v2(0.000000,180.000000)
+ParticleEmitter_63.ZOffset=7
+ParticleEmitter_63.Texture="rbxassetid://15989904878"
+ParticleEmitter_63.LockedToPart=true
+ParticleEmitter_63.Orientation=Enum.ParticleOrientation.VelocityParallel
+ParticleEmitter_63.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+ParticleEmitter_63.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+ParticleEmitter_63.FlipbookFramerate=nr(0.8830356597900391,0.8830356597900391)
+ParticleEmitter_63.FlipbookStartRandom=false
+ParticleEmitter_63.Squash=ns({nsk(0.000000,0.500000,0.000000),nsk(0.100000,0.417697,0.000000),nsk(0.200000,0.340213,0.000000),nsk(0.300000,0.268130,0.000000),nsk(0.400000,0.202156,0.000000),nsk(0.500000,0.143175,0.000000),nsk(0.600000,0.092298,0.000000),nsk(0.700000,0.050934,0.000000),nsk(0.800000,0.020840,0.000000),nsk(0.900000,0.003910,0.000000),nsk(1.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+ParticleEmitter_63.Brightness=50
+
+
+
+
+
+
+ ray_64=i("ParticleEmitter", att)
+ray_64.Name="ray"
+ray_64:SetAttribute("AuraInstance", true)
+ray_64:SetAttribute("OrigEnabled", true)
+ray_64:SetAttribute("WasEnabledAR", true)
+ray_64.Enabled=true
+ray_64.Rate=1.5
+ray_64.Lifetime=nr(3,3)
+ray_64.Speed=nr(0.0011241070460528135,0.0011241070460528135)
+ray_64.Rotation=nr(-360,360)
+ray_64.RotSpeed=nr(0,0)
+ray_64.Size=ns({nsk(0.000000,16.861605,0.000000),nsk(1.000000,16.861605,0.000000)})
+ray_64.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.500000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+ray_64.Color=cs({csk(0.000000,c3(0.665296,0.726741,0.947944)),csk(0.131261,c3(0.475246,0.534849,0.918386)),csk(0.212435,c3(0.587240,0.668066,0.935804)),csk(0.302245,c3(0.610528,0.708514,0.939426)),csk(0.397237,c3(0.721825,0.665296,0.947944)),csk(0.480138,c3(0.580452,0.674088,0.934749)),csk(0.559586,c3(0.797652,0.901078,0.968529)),csk(0.644214,c3(0.532940,0.684048,0.927359)),csk(0.699482,c3(0.492215,0.569710,0.921025)),csk(0.816926,c3(0.629766,0.553302,0.930526)),csk(0.915371,c3(0.444702,0.515042,0.913636)),csk(1.000000,c3(0.665296,0.726741,0.947944))})
+ray_64.LightEmission=1
+ray_64.LightInfluence=0
+ray_64.Acceleration=v3(0.000000,0.000000,0.000000)
+ray_64.Drag=0
+ray_64.EmissionDirection=Enum.NormalId.Top
+ray_64.SpreadAngle=v2(360.000000,360.000000)
+ray_64.ZOffset=0.8999999761581421
+ray_64.Texture="rbxassetid://112707667084275"
+ray_64.LockedToPart=true
+ray_64.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+ray_64.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+ray_64.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+ray_64.FlipbookFramerate=nr(1,1)
+ray_64.FlipbookStartRandom=false
+ray_64.Squash=ns({nsk(0.000000,2.000000,0.000000),nsk(1.000000,2.000000,0.000000)})
+ray_64.Brightness=0.6944444179534912
+
+
+
+
+
+
+ shockwave1_65=i("ParticleEmitter", att)
+shockwave1_65.Name="shockwave1"
+shockwave1_65:SetAttribute("AuraInstance", true)
+shockwave1_65:SetAttribute("OrigEnabled", true)
+shockwave1_65:SetAttribute("WasEnabledAR", true)
+shockwave1_65.Enabled=true
+shockwave1_65.Rate=5
+shockwave1_65.Lifetime=nr(1,1)
+shockwave1_65.Speed=nr(0.007477292325347662,0.007477292325347662)
+shockwave1_65.Rotation=nr(-360,360)
+shockwave1_65.RotSpeed=nr(90,90)
+shockwave1_65.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(0.100000,5.263675,0.000000),nsk(0.200000,9.171232,0.000000),nsk(0.300000,12.340247,0.000000),nsk(0.400000,15.022451,0.000000),nsk(0.500000,17.349575,0.000000),nsk(0.600000,19.400282,0.000000),nsk(0.700000,21.225355,0.000000),nsk(0.800000,22.859035,0.000000),nsk(0.900000,24.324530,0.000000),nsk(1.000000,25.636433,0.000000),nsk(1.000000,25.636433,0.000000)})
+shockwave1_65.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.500529,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+shockwave1_65.Color=cs({csk(0.000000,c3(0.665296,0.726741,0.947944)),csk(0.131261,c3(0.475246,0.534849,0.918386)),csk(0.212435,c3(0.587240,0.668066,0.935804)),csk(0.302245,c3(0.610528,0.708514,0.939426)),csk(0.397237,c3(0.721825,0.665296,0.947944)),csk(0.480138,c3(0.580452,0.674088,0.934749)),csk(0.559586,c3(0.797652,0.901078,0.968529)),csk(0.644214,c3(0.532940,0.684048,0.927359)),csk(0.699482,c3(0.492215,0.569710,0.921025)),csk(0.816926,c3(0.629766,0.553302,0.930526)),csk(0.915371,c3(0.444702,0.515042,0.913636)),csk(1.000000,c3(0.665296,0.726741,0.947944))})
+shockwave1_65.LightEmission=1
+shockwave1_65.LightInfluence=0
+shockwave1_65.Acceleration=v3(0.000000,0.037386,0.000006)
+shockwave1_65.Drag=0
+shockwave1_65.EmissionDirection=Enum.NormalId.Top
+shockwave1_65.SpreadAngle=v2(0.000000,0.000000)
+shockwave1_65.ZOffset=-0.20000000298023224
+shockwave1_65.Texture="rbxassetid://18453513096"
+shockwave1_65.LockedToPart=true
+shockwave1_65.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+shockwave1_65.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+shockwave1_65.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+shockwave1_65.FlipbookFramerate=nr(1,1)
+shockwave1_65.FlipbookStartRandom=false
+shockwave1_65.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+shockwave1_65.Brightness=1.3888888359069824
+
+
+
+
+
+
+ swirls_66=i("Attachment", att)
+swirls_66.Name="swirls"
+swirls_66:SetAttribute("AuraInstance", true)
+swirls_66.Visible=false
+swirls_66.CFrame=cf(0,3.426999807357788,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ ParticleEmitter_67=i("ParticleEmitter", swirls_66)
+ParticleEmitter_67.Name="ParticleEmitter"
+ParticleEmitter_67:SetAttribute("AuraInstance", true)
+ParticleEmitter_67:SetAttribute("OrigEnabled", true)
+ParticleEmitter_67:SetAttribute("WasEnabledAR", true)
+ParticleEmitter_67.Enabled=true
+ParticleEmitter_67.Rate=4.5
+ParticleEmitter_67.Lifetime=nr(0.71083664894104,0.71083664894104)
+ParticleEmitter_67.Speed=nr(0.0007243661675602198,0.0007243661675602198)
+ParticleEmitter_67.Rotation=nr(-360,360)
+ParticleEmitter_67.RotSpeed=nr(-236.34120178222656,-236.34120178222656)
+ParticleEmitter_67.Size=ns({nsk(0.000000,0.000000,1.103370),nsk(0.100000,4.669949,1.103370),nsk(0.200000,8.076002,1.103370),nsk(0.300000,10.816902,1.103370),nsk(0.400000,13.125064,1.103370),nsk(0.500000,15.119044,1.103370),nsk(0.600000,16.868164,1.103370),nsk(0.700000,18.415995,1.103370),nsk(0.800000,19.790319,1.103370),nsk(0.900000,21.006966,1.103370),nsk(1.000000,22.067402,1.103370),nsk(1.000000,125.067402,1.103370)})
+ParticleEmitter_67.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.501868,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+ParticleEmitter_67.Color=cs({csk(0.000000,c3(0.665296,0.726741,0.947944)),csk(0.131261,c3(0.475246,0.534849,0.918386)),csk(0.212435,c3(0.587240,0.668066,0.935804)),csk(0.302245,c3(0.610528,0.708514,0.939426)),csk(0.397237,c3(0.721825,0.665296,0.947944)),csk(0.480138,c3(0.580452,0.674088,0.934749)),csk(0.559586,c3(0.797652,0.901078,0.968529)),csk(0.644214,c3(0.532940,0.684048,0.927359)),csk(0.699482,c3(0.492215,0.569710,0.921025)),csk(0.816926,c3(0.629766,0.553302,0.930526)),csk(0.915371,c3(0.444702,0.515042,0.913636)),csk(1.000000,c3(0.665296,0.726741,0.947944))})
+ParticleEmitter_67.LightEmission=1
+ParticleEmitter_67.LightInfluence=0
+ParticleEmitter_67.Acceleration=v3(0.000000,0.000000,0.000000)
+ParticleEmitter_67.Drag=0
+ParticleEmitter_67.EmissionDirection=Enum.NormalId.Bottom
+ParticleEmitter_67.SpreadAngle=v2(8.000000,8.000000)
+ParticleEmitter_67.ZOffset=0.7000000476837158
+ParticleEmitter_67.Texture="rbxassetid://15501910854"
+ParticleEmitter_67.LockedToPart=false
+ParticleEmitter_67.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+ParticleEmitter_67.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+ParticleEmitter_67.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+ParticleEmitter_67.FlipbookFramerate=nr(1.9695100784301758,1.9695100784301758)
+ParticleEmitter_67.FlipbookStartRandom=false
+ParticleEmitter_67.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+ParticleEmitter_67.Brightness=0.15000000596046448
+
+
+
+
+
+
+ swirlsp3_68=i("ParticleEmitter", swirls_66)
+swirlsp3_68.Name="swirlsp3"
+swirlsp3_68:SetAttribute("AuraInstance", true)
+swirlsp3_68:SetAttribute("OrigEnabled", true)
+swirlsp3_68:SetAttribute("WasEnabledAR", true)
+swirlsp3_68.Enabled=true
+swirlsp3_68.Rate=14.939299583435059
+swirlsp3_68.Lifetime=nr(0.71083664894104,1.0154811143875122)
+swirlsp3_68.Speed=nr(0.0008157286792993546,0.0008157286792993546)
+swirlsp3_68.Rotation=nr(-360,360)
+swirlsp3_68.RotSpeed=nr(-236.34120178222656,-236.34120178222656)
+swirlsp3_68.Size=ns({nsk(0.000000,0.000000,8.283570),nsk(0.100000,6.576172,8.283570),nsk(0.200000,10.603930,8.283570),nsk(0.300000,13.611934,8.283570),nsk(0.400000,16.023891,8.283570),nsk(0.500000,18.031149,8.283570),nsk(0.600000,19.740213,8.283570),nsk(0.700000,21.218960,8.283570),nsk(0.800000,22.517124,8.283570),nsk(0.900000,23.683435,8.283570),nsk(1.000000,24.850714,8.283570),nsk(1.000000,150.850714,8.283570)})
+swirlsp3_68.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.502374,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+swirlsp3_68.Color=cs({csk(0.000000,c3(0.665296,0.726741,0.947944)),csk(0.131261,c3(0.475246,0.534849,0.918386)),csk(0.212435,c3(0.587240,0.668066,0.935804)),csk(0.302245,c3(0.610528,0.708514,0.939426)),csk(0.397237,c3(0.721825,0.665296,0.947944)),csk(0.480138,c3(0.580452,0.674088,0.934749)),csk(0.559586,c3(0.797652,0.901078,0.968529)),csk(0.644214,c3(0.532940,0.684048,0.927359)),csk(0.699482,c3(0.492215,0.569710,0.921025)),csk(0.816926,c3(0.629766,0.553302,0.930526)),csk(0.915371,c3(0.444702,0.515042,0.913636)),csk(1.000000,c3(0.665296,0.726741,0.947944))})
+swirlsp3_68.LightEmission=1
+swirlsp3_68.LightInfluence=0
+swirlsp3_68.Acceleration=v3(0.000000,0.000000,0.000000)
+swirlsp3_68.Drag=0
+swirlsp3_68.EmissionDirection=Enum.NormalId.Bottom
+swirlsp3_68.SpreadAngle=v2(8.000000,8.000000)
+swirlsp3_68.ZOffset=0.7020000219345093
+swirlsp3_68.Texture="rbxassetid://98521844681222"
+swirlsp3_68.LockedToPart=true
+swirlsp3_68.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+swirlsp3_68.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+swirlsp3_68.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+swirlsp3_68.FlipbookFramerate=nr(0.9847550392150879,0.9847550392150879)
+swirlsp3_68.FlipbookStartRandom=false
+swirlsp3_68.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+swirlsp3_68.Brightness=2
+
+
+
+
+
+
+ swirlsp1_69=i("ParticleEmitter", swirls_66)
+swirlsp1_69.Name="swirlsp1"
+swirlsp1_69:SetAttribute("AuraInstance", true)
+swirlsp1_69:SetAttribute("OrigEnabled", true)
+swirlsp1_69:SetAttribute("WasEnabledAR", true)
+swirlsp1_69.Enabled=true
+swirlsp1_69.Rate=6.037848949432373
+swirlsp1_69.Lifetime=nr(0.5217089653015137,0.745298445224762)
+swirlsp1_69.Speed=nr(0.0009019747376441956,0.0009019747376441956)
+swirlsp1_69.Rotation=nr(-360,360)
+swirlsp1_69.RotSpeed=nr(-322.0185852050781,-322.0185852050781)
+swirlsp1_69.Size=ns({nsk(0.000000,0.000000,6.722405),nsk(0.100000,5.336792,6.722405),nsk(0.200000,8.605457,6.722405),nsk(0.300000,11.046559,6.722405),nsk(0.400000,13.003944,6.722405),nsk(0.500000,14.632902,6.722405),nsk(0.600000,16.019869,6.722405),nsk(0.700000,17.219923,6.722405),nsk(0.800000,18.273428,6.722405),nsk(0.900000,19.219933,6.722405),nsk(1.000000,20.167215,6.722405),nsk(1.000000,110.167215,6.722405)})
+swirlsp1_69.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400996,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+swirlsp1_69.Color=cs({csk(0.000000,c3(0.665296,0.726741,0.947944)),csk(0.131261,c3(0.475246,0.534849,0.918386)),csk(0.212435,c3(0.587240,0.668066,0.935804)),csk(0.302245,c3(0.610528,0.708514,0.939426)),csk(0.397237,c3(0.721825,0.665296,0.947944)),csk(0.480138,c3(0.580452,0.674088,0.934749)),csk(0.559586,c3(0.797652,0.901078,0.968529)),csk(0.644214,c3(0.532940,0.684048,0.927359)),csk(0.699482,c3(0.492215,0.569710,0.921025)),csk(0.816926,c3(0.629766,0.553302,0.930526)),csk(0.915371,c3(0.444702,0.515042,0.913636)),csk(1.000000,c3(0.665296,0.726741,0.947944))})
+swirlsp1_69.LightEmission=1
+swirlsp1_69.LightInfluence=0
+swirlsp1_69.Acceleration=v3(0.000000,0.000000,0.000000)
+swirlsp1_69.Drag=0
+swirlsp1_69.EmissionDirection=Enum.NormalId.Bottom
+swirlsp1_69.SpreadAngle=v2(8.000000,8.000000)
+swirlsp1_69.ZOffset=0.7020000219345093
+swirlsp1_69.Texture="rbxassetid://13712006632"
+swirlsp1_69.LockedToPart=true
+swirlsp1_69.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+swirlsp1_69.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+swirlsp1_69.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+swirlsp1_69.FlipbookFramerate=nr(1.341744065284729,1.341744065284729)
+swirlsp1_69.FlipbookStartRandom=false
+swirlsp1_69.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+swirlsp1_69.Brightness=1
+
+
+
+
+
+
+ swirlsp2_70=i("ParticleEmitter", swirls_66)
+swirlsp2_70.Name="swirlsp2"
+swirlsp2_70:SetAttribute("AuraInstance", true)
+swirlsp2_70:SetAttribute("OrigEnabled", true)
+swirlsp2_70:SetAttribute("WasEnabledAR", true)
+swirlsp2_70.Enabled=true
+swirlsp2_70.Rate=4.431397438049316
+swirlsp2_70.Lifetime=nr(0.71083664894104,1.0154811143875122)
+swirlsp2_70.Speed=nr(0.0006619921769015491,0.0006619921769015491)
+swirlsp2_70.Rotation=nr(-360,360)
+swirlsp2_70.RotSpeed=nr(-236.34120178222656,-236.34120178222656)
+swirlsp2_70.Size=ns({nsk(0.000000,0.000000,6.722405),nsk(0.100000,5.336792,6.722405),nsk(0.200000,8.605457,6.722405),nsk(0.300000,11.046559,6.722405),nsk(0.400000,13.003944,6.722405),nsk(0.500000,14.632902,6.722405),nsk(0.600000,16.019869,6.722405),nsk(0.700000,17.219923,6.722405),nsk(0.800000,18.273428,6.722405),nsk(0.900000,19.219933,6.722405),nsk(1.000000,20.167215,6.722405),nsk(1.000000,120.167215,6.722405)})
+swirlsp2_70.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.430380,0.718750,0.000000),nsk(1.000000,1.000000,0.000000)})
+swirlsp2_70.Color=cs({csk(0.000000,c3(0.665296,0.726741,0.947944)),csk(0.131261,c3(0.475246,0.534849,0.918386)),csk(0.212435,c3(0.587240,0.668066,0.935804)),csk(0.302245,c3(0.610528,0.708514,0.939426)),csk(0.397237,c3(0.721825,0.665296,0.947944)),csk(0.480138,c3(0.580452,0.674088,0.934749)),csk(0.559586,c3(0.797652,0.901078,0.968529)),csk(0.644214,c3(0.532940,0.684048,0.927359)),csk(0.699482,c3(0.492215,0.569710,0.921025)),csk(0.816926,c3(0.629766,0.553302,0.930526)),csk(0.915371,c3(0.444702,0.515042,0.913636)),csk(1.000000,c3(0.665296,0.726741,0.947944))})
+swirlsp2_70.LightEmission=1
+swirlsp2_70.LightInfluence=0
+swirlsp2_70.Acceleration=v3(0.000000,0.000000,0.000000)
+swirlsp2_70.Drag=0
+swirlsp2_70.EmissionDirection=Enum.NormalId.Bottom
+swirlsp2_70.SpreadAngle=v2(8.000000,8.000000)
+swirlsp2_70.ZOffset=0.7020000219345093
+swirlsp2_70.Texture="rbxassetid://18403832786"
+swirlsp2_70.LockedToPart=true
+swirlsp2_70.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+swirlsp2_70.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+swirlsp2_70.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+swirlsp2_70.FlipbookFramerate=nr(0.9847550392150879,0.9847550392150879)
+swirlsp2_70.FlipbookStartRandom=false
+swirlsp2_70.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+swirlsp2_70.Brightness=15
+
+
+
+
+
+
+ swirlsp1_71=i("ParticleEmitter", swirls_66)
+swirlsp1_71.Name="swirlsp1"
+swirlsp1_71:SetAttribute("AuraInstance", true)
+swirlsp1_71:SetAttribute("OrigEnabled", true)
+swirlsp1_71:SetAttribute("WasEnabledAR", true)
+swirlsp1_71.Enabled=true
+swirlsp1_71.Rate=19.35101890563965
+swirlsp1_71.Lifetime=nr(0.71083664894104,1.0154811143875122)
+swirlsp1_71.Speed=nr(0.0006619921769015491,0.0006619921769015491)
+swirlsp1_71.Rotation=nr(-360,360)
+swirlsp1_71.RotSpeed=nr(-236.34120178222656,-236.34120178222656)
+swirlsp1_71.Size=ns({nsk(0.000000,0.000000,6.722405),nsk(0.100000,5.336792,6.722405),nsk(0.200000,8.605457,6.722405),nsk(0.300000,11.046559,6.722405),nsk(0.400000,13.003944,6.722405),nsk(0.500000,14.632902,6.722405),nsk(0.600000,16.019869,6.722405),nsk(0.700000,17.219923,6.722405),nsk(0.800000,18.273428,6.722405),nsk(0.900000,19.219933,6.722405),nsk(1.000000,20.167215,6.722405),nsk(1.000000,100.167215,6.722405)})
+swirlsp1_71.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400996,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+swirlsp1_71.Color=cs({csk(0.000000,c3(0.665296,0.726741,0.947944)),csk(0.131261,c3(0.475246,0.534849,0.918386)),csk(0.212435,c3(0.587240,0.668066,0.935804)),csk(0.302245,c3(0.610528,0.708514,0.939426)),csk(0.397237,c3(0.721825,0.665296,0.947944)),csk(0.480138,c3(0.580452,0.674088,0.934749)),csk(0.559586,c3(0.797652,0.901078,0.968529)),csk(0.644214,c3(0.532940,0.684048,0.927359)),csk(0.699482,c3(0.492215,0.569710,0.921025)),csk(0.816926,c3(0.629766,0.553302,0.930526)),csk(0.915371,c3(0.444702,0.515042,0.913636)),csk(1.000000,c3(0.665296,0.726741,0.947944))})
+swirlsp1_71.LightEmission=1
+swirlsp1_71.LightInfluence=0
+swirlsp1_71.Acceleration=v3(0.000000,0.000000,0.000000)
+swirlsp1_71.Drag=0
+swirlsp1_71.EmissionDirection=Enum.NormalId.Bottom
+swirlsp1_71.SpreadAngle=v2(8.000000,8.000000)
+swirlsp1_71.ZOffset=0.7020000219345093
+swirlsp1_71.Texture="rbxassetid://132234588483056"
+swirlsp1_71.LockedToPart=true
+swirlsp1_71.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+swirlsp1_71.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+swirlsp1_71.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+swirlsp1_71.FlipbookFramerate=nr(0.9847550392150879,0.9847550392150879)
+swirlsp1_71.FlipbookStartRandom=false
+swirlsp1_71.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+swirlsp1_71.Brightness=5
+
+
+
+
+
+
+ ParticleEmitter_72=i("ParticleEmitter", swirls_66)
+ParticleEmitter_72.Name="ParticleEmitter"
+ParticleEmitter_72:SetAttribute("AuraInstance", true)
+ParticleEmitter_72:SetAttribute("OrigEnabled", true)
+ParticleEmitter_72:SetAttribute("WasEnabledAR", true)
+ParticleEmitter_72.Enabled=true
+ParticleEmitter_72.Rate=13.29419231414795
+ParticleEmitter_72.Lifetime=nr(0.71083664894104,0.71083664894104)
+ParticleEmitter_72.Speed=nr(0.0007243661675602198,0.0007243661675602198)
+ParticleEmitter_72.Rotation=nr(-360,360)
+ParticleEmitter_72.RotSpeed=nr(-236.34120178222656,-236.34120178222656)
+ParticleEmitter_72.Size=ns({nsk(0.000000,0.000000,1.103370),nsk(0.100000,4.669949,1.103370),nsk(0.200000,8.076002,1.103370),nsk(0.300000,10.816902,1.103370),nsk(0.400000,13.125064,1.103370),nsk(0.500000,15.119044,1.103370),nsk(0.600000,16.868164,1.103370),nsk(0.700000,18.415995,1.103370),nsk(0.800000,19.790319,1.103370),nsk(0.900000,21.006966,1.103370),nsk(1.000000,22.067402,1.103370),nsk(1.000000,105.067402,1.103370)})
+ParticleEmitter_72.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.501868,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+ParticleEmitter_72.Color=cs({csk(0.000000,c3(0.665296,0.726741,0.947944)),csk(0.131261,c3(0.475246,0.534849,0.918386)),csk(0.212435,c3(0.587240,0.668066,0.935804)),csk(0.302245,c3(0.610528,0.708514,0.939426)),csk(0.397237,c3(0.721825,0.665296,0.947944)),csk(0.480138,c3(0.580452,0.674088,0.934749)),csk(0.559586,c3(0.797652,0.901078,0.968529)),csk(0.644214,c3(0.532940,0.684048,0.927359)),csk(0.699482,c3(0.492215,0.569710,0.921025)),csk(0.816926,c3(0.629766,0.553302,0.930526)),csk(0.915371,c3(0.444702,0.515042,0.913636)),csk(1.000000,c3(0.665296,0.726741,0.947944))})
+ParticleEmitter_72.LightEmission=1
+ParticleEmitter_72.LightInfluence=0
+ParticleEmitter_72.Acceleration=v3(0.000000,0.000000,0.000000)
+ParticleEmitter_72.Drag=0
+ParticleEmitter_72.EmissionDirection=Enum.NormalId.Bottom
+ParticleEmitter_72.SpreadAngle=v2(8.000000,8.000000)
+ParticleEmitter_72.ZOffset=0.7000000476837158
+ParticleEmitter_72.Texture="rbxassetid://92480710176023"
+ParticleEmitter_72.LockedToPart=false
+ParticleEmitter_72.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+ParticleEmitter_72.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+ParticleEmitter_72.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+ParticleEmitter_72.FlipbookFramerate=nr(1.9695100784301758,1.9695100784301758)
+ParticleEmitter_72.FlipbookStartRandom=false
+ParticleEmitter_72.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+ParticleEmitter_72.Brightness=15
+
+
+
+
+ImagesUntitled_Artwork_71_32.Attachment0= Attachment_31
+ImagesUntitled_Artwork_71_32.Attachment1= Attachment_34
+Texture_33.Attachment0= Attachment_31
+Texture_33.Attachment1= Attachment_34
+
+
+
+
+ImagesUntitled_Artwork_71_8.Attachment0= Attachment_7
+ImagesUntitled_Artwork_71_8.Attachment1= Attachment_10
+Texture_9.Attachment0= Attachment_7
+Texture_9.Attachment1= Attachment_10
+
+
+
+
+ImagesUntitled_Artwork_71_12.Attachment0= Attachment_11
+ImagesUntitled_Artwork_71_12.Attachment1= Attachment_14
+Texture_13.Attachment0= Attachment_11
+Texture_13.Attachment1= Attachment_14
+
+
+
+
+ImagesUntitled_Artwork_71_16.Attachment0= Attachment_15
+ImagesUntitled_Artwork_71_16.Attachment1= Attachment_18
+Texture_17.Attachment0= Attachment_15
+Texture_17.Attachment1= Attachment_18
+
+
+
+
+ImagesUntitled_Artwork_71_20.Attachment0= Attachment_19
+ImagesUntitled_Artwork_71_20.Attachment1= Attachment_22
+Texture_21.Attachment0= Attachment_19
+Texture_21.Attachment1= Attachment_22
+
+
+
+
+ImagesUntitled_Artwork_71_4.Attachment0= Attachment_3
+ImagesUntitled_Artwork_71_4.Attachment1= Attachment_6
+Texture_5.Attachment0= Attachment_3
+Texture_5.Attachment1= Attachment_6
+
+
+
+
+ImagesUntitled_Artwork_71_28.Attachment0= Attachment_27
+ImagesUntitled_Artwork_71_28.Attachment1= Attachment_30
+Texture_29.Attachment0= Attachment_27
+Texture_29.Attachment1= Attachment_30
+
+
+
+
+ImagesUntitled_Artwork_71_24.Attachment0= Attachment_23
+ImagesUntitled_Artwork_71_24.Attachment1= Attachment_26
+Texture_25.Attachment0= Attachment_23
+Texture_25.Attachment1= Attachment_26
+
+
+
+ fog_1=i("ParticleEmitter", att)
+fog_1.Name="fog"
+fog_1:SetAttribute("AuraInstance", true)
+fog_1.Enabled=true
+fog_1.Rate=6
+fog_1.Lifetime=nr(1.5,1.5)
+fog_1.Speed=nr(0.71970134973526,1.43940269947052)
+fog_1.Rotation=nr(-360,360)
+fog_1.RotSpeed=nr(0,0)
+fog_1.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,62.053185,0.000000)})
+fog_1.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.500000,0.000000),nsk(0.600000,0.500000,0.000000),nsk(1.000000,1.000000,0.000000)})
+fog_1.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+fog_1.LightEmission=0
+fog_1.LightInfluence=0
+fog_1.Acceleration=v3(0.000000,0.000000,0.000000)
+fog_1.Drag=0
+fog_1.EmissionDirection=Enum.NormalId.Top
+fog_1.SpreadAngle=v2(3.000000,3.000000)
+fog_1.ZOffset=0
+fog_1.Texture="rbxassetid://1525327413"
+fog_1.LockedToPart=true
+fog_1.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+fog_1.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+fog_1.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+fog_1.FlipbookFramerate=nr(1,1)
+fog_1.FlipbookStartRandom=false
+fog_1.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+fog_1.Brightness=1
+
+
+
+
+
+
+ flipimp1_2=i("ParticleEmitter", att)
+flipimp1_2.Name="flipimp1"
+flipimp1_2:SetAttribute("AuraInstance", true)
+flipimp1_2.Enabled=true
+flipimp1_2.Rate=6
+flipimp1_2.Lifetime=nr(1.5,1.5)
+flipimp1_2.Speed=nr(1.4450350999832153,2.1675527095794678)
+flipimp1_2.Rotation=nr(-360,360)
+flipimp1_2.RotSpeed=nr(0,0)
+flipimp1_2.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,69.090172,0.000000)})
+flipimp1_2.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.500000,0.000000),nsk(0.600000,0.500000,0.000000),nsk(1.000000,1.000000,0.000000)})
+flipimp1_2.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+flipimp1_2.LightEmission=0
+flipimp1_2.LightInfluence=0
+flipimp1_2.Acceleration=v3(0.000000,0.000000,0.000000)
+flipimp1_2.Drag=0
+flipimp1_2.EmissionDirection=Enum.NormalId.Top
+flipimp1_2.SpreadAngle=v2(3.000000,3.000000)
+flipimp1_2.ZOffset=0
+flipimp1_2.Texture="rbxassetid://15333819074"
+flipimp1_2.LockedToPart=true
+flipimp1_2.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+flipimp1_2.FlipbookLayout=Enum.ParticleFlipbookLayout.Grid4x4
+flipimp1_2.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+flipimp1_2.FlipbookFramerate=nr(1,1)
+flipimp1_2.FlipbookStartRandom=false
+flipimp1_2.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.500000,0.000000)})
+flipimp1_2.Brightness=1
+
+
+
+
+
+
+ detailspin_3=i("ParticleEmitter", att)
+detailspin_3.Name="detailspin"
+detailspin_3:SetAttribute("AuraInstance", true)
+detailspin_3.Enabled=true
+detailspin_3.Rate=2.5
+detailspin_3.Lifetime=nr(1.5,1.5)
+detailspin_3.Speed=nr(1.0514519214630127,1.3749756813049316)
+detailspin_3.Rotation=nr(-360,360)
+detailspin_3.RotSpeed=nr(60,60)
+detailspin_3.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,100.704720,0.000000)})
+detailspin_3.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.400000,0.000000),nsk(0.600000,0.400000,0.000000),nsk(1.000000,1.000000,0.000000)})
+detailspin_3.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+detailspin_3.LightEmission=0
+detailspin_3.LightInfluence=0
+detailspin_3.Acceleration=v3(0.000000,0.000000,0.000000)
+detailspin_3.Drag=0
+detailspin_3.EmissionDirection=Enum.NormalId.Top
+detailspin_3.SpreadAngle=v2(3.000000,3.000000)
+detailspin_3.ZOffset=0
+detailspin_3.Texture="rbxassetid://89913778292661"
+detailspin_3.LockedToPart=true
+detailspin_3.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+detailspin_3.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+detailspin_3.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+detailspin_3.FlipbookFramerate=nr(1,1)
+detailspin_3.FlipbookStartRandom=false
+detailspin_3.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+detailspin_3.Brightness=1
+
+
+
+
+
+
+ spin2_4=i("ParticleEmitter", att)
+spin2_4.Name="spin2"
+spin2_4:SetAttribute("AuraInstance", true)
+spin2_4.Enabled=true
+spin2_4.Rate=4
+spin2_4.Lifetime=nr(1.5,1.5)
+spin2_4.Speed=nr(0.7146127223968506,1.4292254447937012)
+spin2_4.Rotation=nr(-360,360)
+spin2_4.RotSpeed=nr(60,60)
+spin2_4.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,100.020622,0.000000)})
+spin2_4.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.300000,0.000000),nsk(0.600000,0.300000,0.000000),nsk(1.000000,1.000000,0.000000)})
+spin2_4.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+spin2_4.LightEmission=0
+spin2_4.LightInfluence=0
+spin2_4.Acceleration=v3(0.000000,0.000000,0.000000)
+spin2_4.Drag=0
+spin2_4.EmissionDirection=Enum.NormalId.Top
+spin2_4.SpreadAngle=v2(4.000000,4.000000)
+spin2_4.ZOffset=0
+spin2_4.Texture="rbxassetid://122341286877383"
+spin2_4.LockedToPart=true
+spin2_4.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+spin2_4.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+spin2_4.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+spin2_4.FlipbookFramerate=nr(1,1)
+spin2_4.FlipbookStartRandom=false
+spin2_4.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+spin2_4.Brightness=1
+
+
+
+
+
+
+ flipfog1_5=i("ParticleEmitter", att)
+flipfog1_5.Name="flipfog1"
+flipfog1_5:SetAttribute("AuraInstance", true)
+flipfog1_5.Enabled=true
+flipfog1_5.Rate=7
+flipfog1_5.Lifetime=nr(1.5,1.5)
+flipfog1_5.Speed=nr(0.558704674243927,1.117409348487854)
+flipfog1_5.Rotation=nr(-360,360)
+flipfog1_5.RotSpeed=nr(0,0)
+flipfog1_5.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,53.322983,0.000000)})
+flipfog1_5.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.000000,0.000000),nsk(0.600000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+flipfog1_5.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+flipfog1_5.LightEmission=-2
+flipfog1_5.LightInfluence=0
+flipfog1_5.Acceleration=v3(0.000000,0.000000,0.000000)
+flipfog1_5.Drag=0
+flipfog1_5.EmissionDirection=Enum.NormalId.Top
+flipfog1_5.SpreadAngle=v2(3.000000,3.000000)
+flipfog1_5.ZOffset=0
+flipfog1_5.Texture="rbxassetid://13026594575"
+flipfog1_5.LockedToPart=true
+flipfog1_5.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+flipfog1_5.FlipbookLayout=Enum.ParticleFlipbookLayout.Grid8x8
+flipfog1_5.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+flipfog1_5.FlipbookFramerate=nr(21,21)
+flipfog1_5.FlipbookStartRandom=true
+flipfog1_5.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.500000,0.000000)})
+flipfog1_5.Brightness=1
+
+
+
+
+
+
+ debri_6=i("ParticleEmitter", att)
+debri_6.Name="debri"
+debri_6:SetAttribute("AuraInstance", true)
+debri_6.Enabled=true
+debri_6.Rate=6
+debri_6.Lifetime=nr(1.5,1.5)
+debri_6.Speed=nr(0.5216802954673767,1.0433605909347534)
+debri_6.Rotation=nr(-360,360)
+debri_6.RotSpeed=nr(15,15)
+debri_6.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,90.685463,0.000000)})
+debri_6.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.300000,0.000000),nsk(0.600000,0.300000,0.000000),nsk(1.000000,1.000000,0.000000)})
+debri_6.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+debri_6.LightEmission=0
+debri_6.LightInfluence=0
+debri_6.Acceleration=v3(0.000000,0.000000,0.000000)
+debri_6.Drag=0
+debri_6.EmissionDirection=Enum.NormalId.Top
+debri_6.SpreadAngle=v2(2.000000,2.000000)
+debri_6.ZOffset=0
+debri_6.Texture="rbxassetid://133979830017636"
+debri_6.LockedToPart=true
+debri_6.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+debri_6.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+debri_6.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+debri_6.FlipbookFramerate=nr(1,1)
+debri_6.FlipbookStartRandom=false
+debri_6.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+debri_6.Brightness=1
+
+
+
+
+
+
+ spingoesin_7=i("ParticleEmitter", att)
+spingoesin_7.Name="spingoesin"
+spingoesin_7:SetAttribute("AuraInstance", true)
+spingoesin_7.Enabled=true
+spingoesin_7.Rate=5
+spingoesin_7.Lifetime=nr(1.5,1.5)
+spingoesin_7.Speed=nr(0.8322952389717102,1.6645904779434204)
+spingoesin_7.Rotation=nr(-360,360)
+spingoesin_7.RotSpeed=nr(75,75)
+spingoesin_7.Size=ns({nsk(0.000000,60.436623,0.000000),nsk(1.000000,75.338628,0.000000)})
+spingoesin_7.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.800000,0.000000),nsk(0.600000,0.800000,0.000000),nsk(1.000000,1.000000,0.000000)})
+spingoesin_7.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+spingoesin_7.LightEmission=0
+spingoesin_7.LightInfluence=0
+spingoesin_7.Acceleration=v3(0.000000,0.000000,0.000000)
+spingoesin_7.Drag=0
+spingoesin_7.EmissionDirection=Enum.NormalId.Top
+spingoesin_7.SpreadAngle=v2(4.000000,4.000000)
+spingoesin_7.ZOffset=0
+spingoesin_7.Texture="http://www.roblox.com/asset/?id=15249897265"
+spingoesin_7.LockedToPart=true
+spingoesin_7.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+spingoesin_7.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+spingoesin_7.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+spingoesin_7.FlipbookFramerate=nr(1,1)
+spingoesin_7.FlipbookStartRandom=false
+spingoesin_7.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+spingoesin_7.Brightness=1
+
+
+
+
+
+
+ spindebris_8=i("ParticleEmitter", att)
+spindebris_8.Name="spindebris"
+spindebris_8:SetAttribute("AuraInstance", true)
+spindebris_8.Enabled=true
+spindebris_8.Rate=5
+spindebris_8.Lifetime=nr(1.5,1.5)
+spindebris_8.Speed=nr(0.483391672372818,0.966783344745636)
+spindebris_8.Rotation=nr(-360,360)
+spindebris_8.RotSpeed=nr(25,25)
+spindebris_8.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,110.378262,0.000000)})
+spindebris_8.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.000000,0.000000),nsk(0.600000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+spindebris_8.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+spindebris_8.LightEmission=0
+spindebris_8.LightInfluence=0
+spindebris_8.Acceleration=v3(0.000000,0.000000,0.000000)
+spindebris_8.Drag=0
+spindebris_8.EmissionDirection=Enum.NormalId.Top
+spindebris_8.SpreadAngle=v2(2.000000,2.000000)
+spindebris_8.ZOffset=0
+spindebris_8.Texture="rbxassetid://18452666305"
+spindebris_8.LockedToPart=true
+spindebris_8.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+spindebris_8.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+spindebris_8.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+spindebris_8.FlipbookFramerate=nr(1,1)
+spindebris_8.FlipbookStartRandom=false
+spindebris_8.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+spindebris_8.Brightness=1
+
+
+
+
+
+
+ spingoesin2_9=i("ParticleEmitter", att)
+spingoesin2_9.Name="spingoesin2"
+spingoesin2_9:SetAttribute("AuraInstance", true)
+spingoesin2_9.Enabled=true
+spingoesin2_9.Rate=5
+spingoesin2_9.Lifetime=nr(1.5,1.5)
+spingoesin2_9.Speed=nr(0.7137506008148193,1.4275012016296387)
+spingoesin2_9.Rotation=nr(-360,360)
+spingoesin2_9.RotSpeed=nr(60,60)
+spingoesin2_9.Size=ns({nsk(0.000000,51.828568,0.000000),nsk(1.000000,10.581224,0.000000)})
+spingoesin2_9.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.800000,0.000000),nsk(0.600000,0.800000,0.000000),nsk(1.000000,1.000000,0.000000)})
+spingoesin2_9.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+spingoesin2_9.LightEmission=-0.5
+spingoesin2_9.LightInfluence=0
+spingoesin2_9.Acceleration=v3(0.000000,0.000000,0.000000)
+spingoesin2_9.Drag=0
+spingoesin2_9.EmissionDirection=Enum.NormalId.Top
+spingoesin2_9.SpreadAngle=v2(4.000000,4.000000)
+spingoesin2_9.ZOffset=0
+spingoesin2_9.Texture="rbxassetid://73497111942924"
+spingoesin2_9.LockedToPart=true
+spingoesin2_9.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+spingoesin2_9.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+spingoesin2_9.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+spingoesin2_9.FlipbookFramerate=nr(1,1)
+spingoesin2_9.FlipbookStartRandom=false
+spingoesin2_9.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+spingoesin2_9.Brightness=1
+
+
+
+
+
+
+ c_10=i("ParticleEmitter", att)
+c_10.Name="c"
+c_10:SetAttribute("AuraInstance", true)
+c_10.Enabled=true
+c_10.Rate=6
+c_10.Lifetime=nr(1.5,1.5)
+c_10.Speed=nr(0.71970134973526,1.43940269947052)
+c_10.Rotation=nr(-360,360)
+c_10.RotSpeed=nr(0,0)
+c_10.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,100.053185,0.000000)})
+c_10.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.500000,0.000000),nsk(0.600000,0.500000,0.000000),nsk(1.000000,1.000000,0.000000)})
+c_10.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+c_10.LightEmission=0
+c_10.LightInfluence=0
+c_10.Acceleration=v3(0.000000,0.000000,0.000000)
+c_10.Drag=0
+c_10.EmissionDirection=Enum.NormalId.Top
+c_10.SpreadAngle=v2(3.000000,3.000000)
+c_10.ZOffset=0
+c_10.Texture="rbxassetid://1525327413"
+c_10.LockedToPart=true
+c_10.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+c_10.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+c_10.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+c_10.FlipbookFramerate=nr(1,1)
+c_10.FlipbookStartRandom=false
+c_10.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+c_10.Brightness=1
+
+
+
+
+
+
+ slashes_11=i("Attachment", att)
+slashes_11.Name="slashes"
+slashes_11:SetAttribute("AuraInstance", true)
+slashes_11.Visible=false
+slashes_11.CFrame=cf(0,1,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ slashe1_12=i("ParticleEmitter", slashes_11)
+slashe1_12.Name="slashe1"
+slashe1_12:SetAttribute("AuraInstance", true)
+slashe1_12.Enabled=true
+slashe1_12.Rate=5
+slashe1_12.Lifetime=nr(1.5,1.5)
+slashe1_12.Speed=nr(1.6272462606430054,2.4408693313598633)
+slashe1_12.Rotation=nr(-360,360)
+slashe1_12.RotSpeed=nr(90,90)
+slashe1_12.Size=ns({nsk(0.000000,4.650946,0.000000),nsk(1.000000,60.267204,3.710591)})
+slashe1_12.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.500000,0.000000),nsk(0.600000,0.500000,0.000000),nsk(1.000000,1.000000,0.000000)})
+slashe1_12.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+slashe1_12.LightEmission=0
+slashe1_12.LightInfluence=0
+slashe1_12.Acceleration=v3(0.000000,0.406812,0.000000)
+slashe1_12.Drag=0
+slashe1_12.EmissionDirection=Enum.NormalId.Top
+slashe1_12.SpreadAngle=v2(6.000000,6.000000)
+slashe1_12.ZOffset=0.10000000149011612
+slashe1_12.Texture="rbxassetid://13580376896"
+slashe1_12.LockedToPart=true
+slashe1_12.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+slashe1_12.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+slashe1_12.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+slashe1_12.FlipbookFramerate=nr(1,1)
+slashe1_12.FlipbookStartRandom=false
+slashe1_12.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+slashe1_12.Brightness=1
+
+
+
+
+
+
+ slashe2_13=i("ParticleEmitter", slashes_11)
+slashe2_13.Name="slashe2"
+slashe2_13:SetAttribute("AuraInstance", true)
+slashe2_13.Enabled=true
+slashe2_13.Rate=6
+slashe2_13.Lifetime=nr(1.5,1.5)
+slashe2_13.Speed=nr(1.8575553894042969,2.786332845687866)
+slashe2_13.Rotation=nr(-360,360)
+slashe2_13.RotSpeed=nr(90,90)
+slashe2_13.Size=ns({nsk(0.000000,5.309208,0.000000),nsk(1.000000,75.400208,4.235762)})
+slashe2_13.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.700000,0.000000),nsk(0.600000,0.700000,0.000000),nsk(1.000000,1.000000,0.000000)})
+slashe2_13.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+slashe2_13.LightEmission=0
+slashe2_13.LightInfluence=0
+slashe2_13.Acceleration=v3(0.000000,0.464389,0.000000)
+slashe2_13.Drag=0
+slashe2_13.EmissionDirection=Enum.NormalId.Top
+slashe2_13.SpreadAngle=v2(6.000000,6.000000)
+slashe2_13.ZOffset=0.10000000149011612
+slashe2_13.Texture="rbxassetid://87520821677529"
+slashe2_13.LockedToPart=true
+slashe2_13.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+slashe2_13.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+slashe2_13.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+slashe2_13.FlipbookFramerate=nr(1,1)
+slashe2_13.FlipbookStartRandom=false
+slashe2_13.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+slashe2_13.Brightness=1
+
+
+
+
+
+
+ cartoonyruinsimpact_14=i("ParticleEmitter", att)
+cartoonyruinsimpact_14.Name="cartoonyruinsimpact"
+cartoonyruinsimpact_14:SetAttribute("AuraInstance", true)
+cartoonyruinsimpact_14.Enabled=true
+cartoonyruinsimpact_14.Rate=5
+cartoonyruinsimpact_14.Lifetime=nr(1.5,1.5)
+cartoonyruinsimpact_14.Speed=nr(1.0400446653366089,1.3600586652755737)
+cartoonyruinsimpact_14.Rotation=nr(-360,360)
+cartoonyruinsimpact_14.RotSpeed=nr(0,0)
+cartoonyruinsimpact_14.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,100.607307,0.000000)})
+cartoonyruinsimpact_14.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.800000,0.000000),nsk(0.600000,0.800000,0.000000),nsk(1.000000,1.000000,0.000000)})
+cartoonyruinsimpact_14.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+cartoonyruinsimpact_14.LightEmission=0
+cartoonyruinsimpact_14.LightInfluence=0
+cartoonyruinsimpact_14.Acceleration=v3(0.000000,0.000000,0.000000)
+cartoonyruinsimpact_14.Drag=0
+cartoonyruinsimpact_14.EmissionDirection=Enum.NormalId.Top
+cartoonyruinsimpact_14.SpreadAngle=v2(3.000000,3.000000)
+cartoonyruinsimpact_14.ZOffset=0
+cartoonyruinsimpact_14.Texture="rbxassetid://11518019293"
+cartoonyruinsimpact_14.LockedToPart=true
+cartoonyruinsimpact_14.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+cartoonyruinsimpact_14.FlipbookLayout=Enum.ParticleFlipbookLayout.Grid4x4
+cartoonyruinsimpact_14.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+cartoonyruinsimpact_14.FlipbookFramerate=nr(1,1)
+cartoonyruinsimpact_14.FlipbookStartRandom=false
+cartoonyruinsimpact_14.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.300000,0.000000)})
+cartoonyruinsimpact_14.Brightness=1
+
+
+
+
+
+
+ white_15=i("Attachment", att)
+white_15.Name="white"
+white_15:SetAttribute("AuraInstance", true)
+white_15.Visible=false
+white_15.CFrame=cf(0,0,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ cartoonyruinsimpact_16=i("ParticleEmitter", white_15)
+cartoonyruinsimpact_16.Name="cartoonyruinsimpact"
+cartoonyruinsimpact_16:SetAttribute("AuraInstance", true)
+cartoonyruinsimpact_16.Enabled=true
+cartoonyruinsimpact_16.Rate=5
+cartoonyruinsimpact_16.Lifetime=nr(1.5,1.5)
+cartoonyruinsimpact_16.Speed=nr(1.0223729610443115,1.3369495868682861)
+cartoonyruinsimpact_16.Rotation=nr(-360,360)
+cartoonyruinsimpact_16.RotSpeed=nr(0,0)
+cartoonyruinsimpact_16.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,62.526535,0.000000)})
+cartoonyruinsimpact_16.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.800000,0.000000),nsk(0.600000,0.800000,0.000000),nsk(1.000000,1.000000,0.000000)})
+cartoonyruinsimpact_16.Color=cs({csk(0.000000,c3(0.372549,0.372549,0.372549)),csk(1.000000,c3(0.372549,0.372549,0.372549))})
+cartoonyruinsimpact_16.LightEmission=1
+cartoonyruinsimpact_16.LightInfluence=0
+cartoonyruinsimpact_16.Acceleration=v3(0.000000,0.000000,0.000000)
+cartoonyruinsimpact_16.Drag=0
+cartoonyruinsimpact_16.EmissionDirection=Enum.NormalId.Top
+cartoonyruinsimpact_16.SpreadAngle=v2(3.000000,3.000000)
+cartoonyruinsimpact_16.ZOffset=0.004000000189989805
+cartoonyruinsimpact_16.Texture="rbxassetid://11518019293"
+cartoonyruinsimpact_16.LockedToPart=true
+cartoonyruinsimpact_16.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+cartoonyruinsimpact_16.FlipbookLayout=Enum.ParticleFlipbookLayout.Grid4x4
+cartoonyruinsimpact_16.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+cartoonyruinsimpact_16.FlipbookFramerate=nr(1,1)
+cartoonyruinsimpact_16.FlipbookStartRandom=false
+cartoonyruinsimpact_16.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.300000,0.000000)})
+cartoonyruinsimpact_16.Brightness=0.8999999761581421
+
+
+
+
+
+
+ debri_17=i("ParticleEmitter", white_15)
+debri_17.Name="debri"
+debri_17:SetAttribute("AuraInstance", true)
+debri_17.Enabled=true
+debri_17.Rate=3
+debri_17.Lifetime=nr(1.5,1.5)
+debri_17.Speed=nr(0.35717281699180603,0.7143456339836121)
+debri_17.Rotation=nr(-360,360)
+debri_17.RotSpeed=nr(40,40)
+debri_17.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,80.179497,0.000000)})
+debri_17.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.300000,0.000000),nsk(0.600000,0.300000,0.000000),nsk(1.000000,1.000000,0.000000)})
+debri_17.Color=cs({csk(0.000000,c3(0.372549,0.372549,0.372549)),csk(1.000000,c3(0.372549,0.372549,0.372549))})
+debri_17.LightEmission=1
+debri_17.LightInfluence=0
+debri_17.Acceleration=v3(0.000000,0.000000,0.000000)
+debri_17.Drag=0
+debri_17.EmissionDirection=Enum.NormalId.Top
+debri_17.SpreadAngle=v2(2.000000,2.000000)
+debri_17.ZOffset=0.004000000189989805
+debri_17.Texture="rbxassetid://132886084825048"
+debri_17.LockedToPart=true
+debri_17.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+debri_17.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+debri_17.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+debri_17.FlipbookFramerate=nr(1,1)
+debri_17.FlipbookStartRandom=false
+debri_17.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+debri_17.Brightness=25
+
+
+
+
+
+
+ flipimp1_18=i("ParticleEmitter", white_15)
+flipimp1_18.Name="flipimp1"
+flipimp1_18:SetAttribute("AuraInstance", true)
+flipimp1_18.Enabled=true
+flipimp1_18.Rate=6
+flipimp1_18.Lifetime=nr(1.5,1.5)
+flipimp1_18.Speed=nr(0.8580064177513123,1.2870097160339355)
+flipimp1_18.Rotation=nr(-360,360)
+flipimp1_18.RotSpeed=nr(0,0)
+flipimp1_18.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,41.023098,0.000000)})
+flipimp1_18.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.500000,0.000000),nsk(0.600000,0.500000,0.000000),nsk(1.000000,1.000000,0.000000)})
+flipimp1_18.Color=cs({csk(0.000000,c3(0.372549,0.372549,0.372549)),csk(1.000000,c3(0.372549,0.372549,0.372549))})
+flipimp1_18.LightEmission=1
+flipimp1_18.LightInfluence=0
+flipimp1_18.Acceleration=v3(0.000000,0.000000,0.000000)
+flipimp1_18.Drag=0
+flipimp1_18.EmissionDirection=Enum.NormalId.Top
+flipimp1_18.SpreadAngle=v2(3.000000,3.000000)
+flipimp1_18.ZOffset=0.004000000189989805
+flipimp1_18.Texture="rbxassetid://15333819074"
+flipimp1_18.LockedToPart=true
+flipimp1_18.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+flipimp1_18.FlipbookLayout=Enum.ParticleFlipbookLayout.Grid4x4
+flipimp1_18.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+flipimp1_18.FlipbookFramerate=nr(1,1)
+flipimp1_18.FlipbookStartRandom=false
+flipimp1_18.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.500000,0.000000)})
+flipimp1_18.Brightness=8.5
+
+
+
+
+
+
+ fog_19=i("ParticleEmitter", white_15)
+fog_19.Name="fog"
+fog_19:SetAttribute("AuraInstance", true)
+fog_19.Enabled=true
+fog_19.Rate=6
+fog_19.Lifetime=nr(1.5,1.5)
+fog_19.Speed=nr(0.839551568031311,1.679103136062622)
+fog_19.Rotation=nr(-360,360)
+fog_19.RotSpeed=nr(0,0)
+fog_19.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,72.386757,0.000000)})
+fog_19.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.500000,0.000000),nsk(0.600000,0.500000,0.000000),nsk(1.000000,1.000000,0.000000)})
+fog_19.Color=cs({csk(0.000000,c3(0.478431,0.478431,0.478431)),csk(1.000000,c3(0.478431,0.478431,0.478431))})
+fog_19.LightEmission=1
+fog_19.LightInfluence=0
+fog_19.Acceleration=v3(0.000000,0.000000,0.000000)
+fog_19.Drag=0
+fog_19.EmissionDirection=Enum.NormalId.Top
+fog_19.SpreadAngle=v2(3.000000,3.000000)
+fog_19.ZOffset=0.004000000189989805
+fog_19.Texture="rbxassetid://1525327413"
+fog_19.LockedToPart=true
+fog_19.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+fog_19.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+fog_19.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+fog_19.FlipbookFramerate=nr(1,1)
+fog_19.FlipbookStartRandom=false
+fog_19.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+fog_19.Brightness=0.10000000149011612
+
+
+
+
+
+
+ spin2_20=i("ParticleEmitter", white_15)
+spin2_20.Name="spin2"
+spin2_20:SetAttribute("AuraInstance", true)
+spin2_20.Enabled=true
+spin2_20.Rate=2
+spin2_20.Lifetime=nr(1.5,1.5)
+spin2_20.Speed=nr(0.6306464076042175,1.261292815208435)
+spin2_20.Rotation=nr(-360,360)
+spin2_20.RotSpeed=nr(60,60)
+spin2_20.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,37.083237,0.000000)})
+spin2_20.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.300000,0.000000),nsk(0.600000,0.300000,0.000000),nsk(1.000000,1.000000,0.000000)})
+spin2_20.Color=cs({csk(0.000000,c3(0.372549,0.372549,0.372549)),csk(1.000000,c3(0.372549,0.372549,0.372549))})
+spin2_20.LightEmission=1
+spin2_20.LightInfluence=0
+spin2_20.Acceleration=v3(0.000000,0.000000,0.000000)
+spin2_20.Drag=0
+spin2_20.EmissionDirection=Enum.NormalId.Top
+spin2_20.SpreadAngle=v2(4.000000,4.000000)
+spin2_20.ZOffset=0.004000000189989805
+spin2_20.Texture="rbxassetid://122341286877383"
+spin2_20.LockedToPart=true
+spin2_20.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+spin2_20.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+spin2_20.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+spin2_20.FlipbookFramerate=nr(1,1)
+spin2_20.FlipbookStartRandom=false
+spin2_20.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+spin2_20.Brightness=1.75
+
+
+
+
+
+
+ spingoesin_21=i("ParticleEmitter", white_15)
+spingoesin_21.Name="spingoesin"
+spingoesin_21:SetAttribute("AuraInstance", true)
+spingoesin_21.Enabled=true
+spingoesin_21.Rate=3
+spingoesin_21.Lifetime=nr(1.5,1.5)
+spingoesin_21.Speed=nr(0.6427468657493591,1.2854937314987183)
+spingoesin_21.Rotation=nr(-360,360)
+spingoesin_21.RotSpeed=nr(75,75)
+spingoesin_21.Size=ns({nsk(0.000000,46.672684,0.000000),nsk(1.000000,9.528609,0.000000)})
+spingoesin_21.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.800000,0.000000),nsk(0.600000,0.800000,0.000000),nsk(1.000000,1.000000,0.000000)})
+spingoesin_21.Color=cs({csk(0.000000,c3(0.372549,0.372549,0.372549)),csk(1.000000,c3(0.372549,0.372549,0.372549))})
+spingoesin_21.LightEmission=1
+spingoesin_21.LightInfluence=0
+spingoesin_21.Acceleration=v3(0.000000,0.000000,0.000000)
+spingoesin_21.Drag=0
+spingoesin_21.EmissionDirection=Enum.NormalId.Top
+spingoesin_21.SpreadAngle=v2(4.000000,4.000000)
+spingoesin_21.ZOffset=0.004000000189989805
+spingoesin_21.Texture="http://www.roblox.com/asset/?id=15249897265"
+spingoesin_21.LockedToPart=true
+spingoesin_21.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+spingoesin_21.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+spingoesin_21.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+spingoesin_21.FlipbookFramerate=nr(1,1)
+spingoesin_21.FlipbookStartRandom=false
+spingoesin_21.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+spingoesin_21.Brightness=1.5
+
+
+
+
+
+
+ detailspin_22=i("ParticleEmitter", white_15)
+detailspin_22.Name="detailspin"
+detailspin_22:SetAttribute("AuraInstance", true)
+detailspin_22.Enabled=true
+detailspin_22.Rate=2.5
+detailspin_22.Lifetime=nr(1.5,1.5)
+detailspin_22.Speed=nr(0.48219889402389526,0.6305678486824036)
+detailspin_22.Rotation=nr(-360,360)
+detailspin_22.RotSpeed=nr(60,60)
+detailspin_22.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,37.928619,0.000000)})
+detailspin_22.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.400000,0.000000),nsk(0.600000,0.400000,0.000000),nsk(1.000000,1.000000,0.000000)})
+detailspin_22.Color=cs({csk(0.000000,c3(0.372549,0.372549,0.372549)),csk(1.000000,c3(0.372549,0.372549,0.372549))})
+detailspin_22.LightEmission=1
+detailspin_22.LightInfluence=0
+detailspin_22.Acceleration=v3(0.000000,0.000000,0.000000)
+detailspin_22.Drag=0
+detailspin_22.EmissionDirection=Enum.NormalId.Top
+detailspin_22.SpreadAngle=v2(3.000000,3.000000)
+detailspin_22.ZOffset=0.004000000189989805
+detailspin_22.Texture="rbxassetid://89913778292661"
+detailspin_22.LockedToPart=true
+detailspin_22.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+detailspin_22.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+detailspin_22.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+detailspin_22.FlipbookFramerate=nr(1,1)
+detailspin_22.FlipbookStartRandom=false
+detailspin_22.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+detailspin_22.Brightness=4
+
+
+
+
+
+
+ slashes_23=i("Attachment", white_15)
+slashes_23.Name="slashes"
+slashes_23:SetAttribute("AuraInstance", true)
+slashes_23.Visible=false
+slashes_23.CFrame=cf(0,1,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ slashe2_24=i("ParticleEmitter", slashes_23)
+slashe2_24.Name="slashe2"
+slashe2_24:SetAttribute("AuraInstance", true)
+slashe2_24.Enabled=true
+slashe2_24.Rate=6
+slashe2_24.Lifetime=nr(1.5,1.5)
+slashe2_24.Speed=nr(1.188455581665039,1.7826831340789795)
+slashe2_24.Rotation=nr(-360,360)
+slashe2_24.RotSpeed=nr(120,120)
+slashe2_24.Size=ns({nsk(0.000000,9.058152,0.000000),nsk(1.000000,26.487667,2.710021)})
+slashe2_24.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.700000,0.000000),nsk(0.600000,0.700000,0.000000),nsk(1.000000,1.000000,0.000000)})
+slashe2_24.Color=cs({csk(0.000000,c3(0.372549,0.372549,0.372549)),csk(1.000000,c3(0.372549,0.372549,0.372549))})
+slashe2_24.LightEmission=1
+slashe2_24.LightInfluence=0
+slashe2_24.Acceleration=v3(0.000000,0.297114,0.000000)
+slashe2_24.Drag=0
+slashe2_24.EmissionDirection=Enum.NormalId.Top
+slashe2_24.SpreadAngle=v2(6.000000,6.000000)
+slashe2_24.ZOffset=0.10499999672174454
+slashe2_24.Texture="rbxassetid://18838818398"
+slashe2_24.LockedToPart=true
+slashe2_24.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+slashe2_24.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+slashe2_24.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+slashe2_24.FlipbookFramerate=nr(1,1)
+slashe2_24.FlipbookStartRandom=false
+slashe2_24.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+slashe2_24.Brightness=1
+
+
+
+
+
+
+ slashe1_25=i("ParticleEmitter", slashes_23)
+slashe1_25.Name="slashe1"
+slashe1_25:SetAttribute("AuraInstance", true)
+slashe1_25.Enabled=true
+slashe1_25.Rate=7
+slashe1_25.Lifetime=nr(1.5,1.5)
+slashe1_25.Speed=nr(1.041104793548584,1.561657190322876)
+slashe1_25.Rotation=nr(-360,360)
+slashe1_25.RotSpeed=nr(80,80)
+slashe1_25.Size=ns({nsk(0.000000,5.008204,0.000000),nsk(1.000000,25.651524,2.374020)})
+slashe1_25.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.500000,0.000000),nsk(0.600000,0.500000,0.000000),nsk(1.000000,1.000000,0.000000)})
+slashe1_25.Color=cs({csk(0.000000,c3(0.372549,0.372549,0.372549)),csk(1.000000,c3(0.372549,0.372549,0.372549))})
+slashe1_25.LightEmission=1
+slashe1_25.LightInfluence=0
+slashe1_25.Acceleration=v3(0.000000,0.260276,0.000000)
+slashe1_25.Drag=0
+slashe1_25.EmissionDirection=Enum.NormalId.Top
+slashe1_25.SpreadAngle=v2(6.000000,6.000000)
+slashe1_25.ZOffset=0.10499999672174454
+slashe1_25.Texture="rbxassetid://112545044518471"
+slashe1_25.LockedToPart=true
+slashe1_25.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+slashe1_25.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+slashe1_25.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+slashe1_25.FlipbookFramerate=nr(1,1)
+slashe1_25.FlipbookStartRandom=false
+slashe1_25.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+slashe1_25.Brightness=10
+
+
+
+
+
+
+ glow_26=i("ParticleEmitter", white_15)
+glow_26.Name="glow"
+glow_26:SetAttribute("AuraInstance", true)
+glow_26.Enabled=true
+glow_26.Rate=6
+glow_26.Lifetime=nr(1.5,1.5)
+glow_26.Speed=nr(0.23990803956985474,0.4798160791397095)
+glow_26.Rotation=nr(-360,360)
+glow_26.RotSpeed=nr(0,0)
+glow_26.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,15.091861,0.000000)})
+glow_26.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.500000,0.000000),nsk(0.600000,0.500000,0.000000),nsk(1.000000,1.000000,0.000000)})
+glow_26.Color=cs({csk(0.000000,c3(0.372549,0.372549,0.372549)),csk(1.000000,c3(0.372549,0.372549,0.372549))})
+glow_26.LightEmission=1
+glow_26.LightInfluence=0
+glow_26.Acceleration=v3(0.000000,0.000000,0.000000)
+glow_26.Drag=0
+glow_26.EmissionDirection=Enum.NormalId.Top
+glow_26.SpreadAngle=v2(3.000000,3.000000)
+glow_26.ZOffset=0.004000000189989805
+glow_26.Texture="rbxassetid://1075864321"
+glow_26.LockedToPart=true
+glow_26.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+glow_26.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+glow_26.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+glow_26.FlipbookFramerate=nr(1,1)
+glow_26.FlipbookStartRandom=false
+glow_26.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+glow_26.Brightness=0.15000000596046448
+
+
+
+
+
+
+ flipfog1_27=i("ParticleEmitter", white_15)
+flipfog1_27.Name="flipfog1"
+flipfog1_27:SetAttribute("AuraInstance", true)
+flipfog1_27.Enabled=true
+flipfog1_27.Rate=7
+flipfog1_27.Lifetime=nr(1.5,1.5)
+flipfog1_27.Speed=nr(0.522276759147644,1.044553518295288)
+flipfog1_27.Rotation=nr(-360,360)
+flipfog1_27.RotSpeed=nr(0,0)
+flipfog1_27.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,49.846291,0.000000)})
+flipfog1_27.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.000000,0.000000),nsk(0.600000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+flipfog1_27.Color=cs({csk(0.000000,c3(0.372549,0.372549,0.372549)),csk(1.000000,c3(0.372549,0.372549,0.372549))})
+flipfog1_27.LightEmission=1
+flipfog1_27.LightInfluence=0
+flipfog1_27.Acceleration=v3(0.000000,0.000000,0.000000)
+flipfog1_27.Drag=0
+flipfog1_27.EmissionDirection=Enum.NormalId.Top
+flipfog1_27.SpreadAngle=v2(3.000000,3.000000)
+flipfog1_27.ZOffset=-0.0020000000949949026
+flipfog1_27.Texture="rbxassetid://13026594575"
+flipfog1_27.LockedToPart=true
+flipfog1_27.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+flipfog1_27.FlipbookLayout=Enum.ParticleFlipbookLayout.Grid8x8
+flipfog1_27.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+flipfog1_27.FlipbookFramerate=nr(21,21)
+flipfog1_27.FlipbookStartRandom=true
+flipfog1_27.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.500000,0.000000)})
+flipfog1_27.Brightness=2
+
+
+
+
+
+
+ debrispin2_28=i("ParticleEmitter", white_15)
+debrispin2_28.Name="debrispin2"
+debrispin2_28:SetAttribute("AuraInstance", true)
+debrispin2_28.Enabled=true
+debrispin2_28.Rate=3
+debrispin2_28.Lifetime=nr(1.5,1.5)
+debrispin2_28.Speed=nr(0.35717281699180603,0.7143456339836121)
+debrispin2_28.Rotation=nr(-360,360)
+debrispin2_28.RotSpeed=nr(55,55)
+debrispin2_28.Size=ns({nsk(0.000000,4.395672,0.000000),nsk(1.000000,28.989643,0.000000)})
+debrispin2_28.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.300000,0.000000),nsk(0.600000,0.300000,0.000000),nsk(1.000000,1.000000,0.000000)})
+debrispin2_28.Color=cs({csk(0.000000,c3(0.372549,0.372549,0.372549)),csk(1.000000,c3(0.372549,0.372549,0.372549))})
+debrispin2_28.LightEmission=1
+debrispin2_28.LightInfluence=0
+debrispin2_28.Acceleration=v3(0.000000,0.000000,0.000000)
+debrispin2_28.Drag=0
+debrispin2_28.EmissionDirection=Enum.NormalId.Top
+debrispin2_28.SpreadAngle=v2(2.000000,2.000000)
+debrispin2_28.ZOffset=0.004000000189989805
+debrispin2_28.Texture="rbxassetid://92058892289421"
+debrispin2_28.LockedToPart=true
+debrispin2_28.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+debrispin2_28.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+debrispin2_28.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+debrispin2_28.FlipbookFramerate=nr(1,1)
+debrispin2_28.FlipbookStartRandom=false
+debrispin2_28.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+debrispin2_28.Brightness=20
+
+
+
+
+
+
+ glare2_29=i("ParticleEmitter", white_15)
+glare2_29.Name="glare2"
+glare2_29:SetAttribute("AuraInstance", true)
+glare2_29.Enabled=true
+glare2_29.Rate=7
+glare2_29.Lifetime=nr(1.5,1.5)
+glare2_29.Speed=nr(0.0006061629392206669,0.0006061629392206669)
+glare2_29.Rotation=nr(-360,360)
+glare2_29.RotSpeed=nr(10,10)
+glare2_29.Size=ns({nsk(0.000000,2.156353,0.000000),nsk(1.000000,14.217716,3.514492)})
+glare2_29.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.500000,0.000000),nsk(0.600000,0.500000,0.000000),nsk(1.000000,1.000000,0.000000)})
+glare2_29.Color=cs({csk(0.000000,c3(0.372549,0.372549,0.372549)),csk(1.000000,c3(0.372549,0.372549,0.372549))})
+glare2_29.LightEmission=1
+glare2_29.LightInfluence=0
+glare2_29.Acceleration=v3(0.000000,0.000000,0.000000)
+glare2_29.Drag=0
+glare2_29.EmissionDirection=Enum.NormalId.Top
+glare2_29.SpreadAngle=v2(0.004000,0.004000)
+glare2_29.ZOffset=0.004000000189989805
+glare2_29.Texture="rbxassetid://114245461682593"
+glare2_29.LockedToPart=true
+glare2_29.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+glare2_29.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+glare2_29.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+glare2_29.FlipbookFramerate=nr(1,1)
+glare2_29.FlipbookStartRandom=false
+glare2_29.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+glare2_29.Brightness=0.30000001192092896
+
+
+
+
+
+
+ blacktop_30=i("ParticleEmitter", white_15)
+blacktop_30.Name="blacktop"
+blacktop_30:SetAttribute("AuraInstance", true)
+blacktop_30.Enabled=true
+blacktop_30.Rate=6
+blacktop_30.Lifetime=nr(1.5,1.5)
+blacktop_30.Speed=nr(0.2519212067127228,0.5038424134254456)
+blacktop_30.Rotation=nr(-360,360)
+blacktop_30.RotSpeed=nr(0,0)
+blacktop_30.Size=ns({nsk(0.000000,3.122261,0.000000),nsk(1.000000,17.406221,0.000000)})
+blacktop_30.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.500000,0.000000),nsk(0.600000,0.500000,0.000000),nsk(1.000000,1.000000,0.000000)})
+blacktop_30.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+blacktop_30.LightEmission=-0.5
+blacktop_30.LightInfluence=0
+blacktop_30.Acceleration=v3(0.000000,0.000000,0.000000)
+blacktop_30.Drag=0
+blacktop_30.EmissionDirection=Enum.NormalId.Top
+blacktop_30.SpreadAngle=v2(3.000000,3.000000)
+blacktop_30.ZOffset=0.5
+blacktop_30.Texture="rbxassetid://1075864321"
+blacktop_30.LockedToPart=true
+blacktop_30.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+blacktop_30.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+blacktop_30.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+blacktop_30.FlipbookFramerate=nr(1,1)
+blacktop_30.FlipbookStartRandom=false
+blacktop_30.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+blacktop_30.Brightness=0
+
+
+
+
+
+
+ glow_31=i("ParticleEmitter", att)
+glow_31.Name="glow"
+glow_31:SetAttribute("AuraInstance", true)
+glow_31.Enabled=true
+glow_31.Rate=3
+glow_31.Lifetime=nr(1.5,1.5)
+glow_31.Speed=nr(0.0010000000474974513,0.0010000000474974513)
+glow_31.Rotation=nr(0,0)
+glow_31.RotSpeed=nr(0,0)
+glow_31.Size=ns({nsk(0.000000,14.517726,0.000000),nsk(1.000000,39.179203,0.000000)})
+glow_31.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.500000,0.000000),nsk(0.600000,0.500000,0.000000),nsk(1.000000,1.000000,0.000000)})
+glow_31.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+glow_31.LightEmission=-3
+glow_31.LightInfluence=0
+glow_31.Acceleration=v3(0.000000,0.000000,0.000000)
+glow_31.Drag=0
+glow_31.EmissionDirection=Enum.NormalId.Top
+glow_31.SpreadAngle=v2(0.500000,0.500000)
+glow_31.ZOffset=0
+glow_31.Texture="rbxassetid://1075864321"
+glow_31.LockedToPart=true
+glow_31.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+glow_31.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+glow_31.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+glow_31.FlipbookFramerate=nr(1,1)
+glow_31.FlipbookStartRandom=false
+glow_31.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+glow_31.Brightness=1
+
+
+
+
+
+
+--[[ beams_32=i("Attachment", att)
+beams_32.Name="beams"
+beams_32:SetAttribute("AuraInstance", true)
+beams_32.Visible=false
+beams_32.CFrame=cf(0,0,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ Attachment_33=i("Attachment", beams_32)
+Attachment_33.Name="Attachment"
+Attachment_33:SetAttribute("AuraInstance", true)
+Attachment_33.Visible=false
+Attachment_33.CFrame=cf(0,11,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ warp1_34=i("Beam", beams_32)
+warp1_34.Name="warp1"
+warp1_34:SetAttribute("AuraInstance", true)
+warp1_34.Enabled=true
+warp1_34.Width0=7.776195526123047
+warp1_34.Width1=31.104782104492188
+warp1_34.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.250000,0.000000),nsk(0.600000,0.250000,0.000000),nsk(1.000000,1.000000,0.000000)})
+warp1_34.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+warp1_34.CurveSize0=0
+warp1_34.CurveSize1=0
+warp1_34.FaceCamera=true
+warp1_34.LightEmission=0
+warp1_34.LightInfluence=0
+warp1_34.Segments=4
+warp1_34.Texture="rbxassetid://18454698699"
+warp1_34.TextureLength=0.20000000298023224
+warp1_34.TextureSpeed=0.30000001192092896
+warp1_34.Brightness=0
+
+
+
+
+
+
+ glow_35=i("Beam", beams_32)
+glow_35.Name="glow"
+glow_35:SetAttribute("AuraInstance", true)
+glow_35.Enabled=true
+glow_35.Width0=4.87096643447876
+glow_35.Width1=16.236555099487305
+glow_35.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.000000,0.000000),nsk(0.600000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+glow_35.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+glow_35.CurveSize0=0
+glow_35.CurveSize1=0
+glow_35.FaceCamera=true
+glow_35.LightEmission=0.30000001192092896
+glow_35.LightInfluence=0
+glow_35.Segments=3
+glow_35.Texture="rbxassetid://13576015697"
+glow_35.TextureLength=0.20000000298023224
+glow_35.TextureSpeed=0.30000001192092896
+glow_35.Brightness=1
+
+
+
+
+
+
+ warp2_36=i("Beam", beams_32)
+warp2_36.Name="warp2"
+warp2_36:SetAttribute("AuraInstance", true)
+warp2_36.Enabled=true
+warp2_36.Width0=4.329102516174316
+warp2_36.Width1=17.316410064697266
+warp2_36.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.250000,0.000000),nsk(0.600000,0.250000,0.000000),nsk(1.000000,1.000000,0.000000)})
+warp2_36.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+warp2_36.CurveSize0=0
+warp2_36.CurveSize1=0
+warp2_36.FaceCamera=true
+warp2_36.LightEmission=0
+warp2_36.LightInfluence=0
+warp2_36.Segments=4
+warp2_36.Texture="rbxassetid://12191903502"
+warp2_36.TextureLength=0.10000000149011612
+warp2_36.TextureSpeed=0.20000000298023224
+warp2_36.Brightness=0
+
+
+
+
+
+
+ hm_37=i("Beam", beams_32)
+hm_37.Name="hm"
+hm_37:SetAttribute("AuraInstance", true)
+hm_37.Enabled=true
+hm_37.Width0=3.512230157852173
+hm_37.Width1=11.707435607910156
+hm_37.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.000000,0.000000),nsk(0.600000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+hm_37.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+hm_37.CurveSize0=0
+hm_37.CurveSize1=0
+hm_37.FaceCamera=true
+hm_37.LightEmission=0.30000001192092896
+hm_37.LightInfluence=0
+hm_37.Segments=3
+hm_37.Texture="rbxassetid://6091329339"
+hm_37.TextureLength=1
+hm_37.TextureSpeed=0.5
+hm_37.Brightness=1
+]]
+
+
+
+
+
+--[[ ATMOS_38=i("Attachment", att)
+ATMOS_38.Name="ATMOS"
+ATMOS_38:SetAttribute("AuraInstance", true)
+ATMOS_38.Visible=false
+ATMOS_38.CFrame=cf(0,0,0,1,0,0,0,1,0,0,0,1)
+
+
+
+
+
+
+ conathan_39=i("ParticleEmitter", ATMOS_38)
+conathan_39.Name="conathan"
+conathan_39:SetAttribute("AuraInstance", true)
+conathan_39.Enabled=true
+conathan_39.Rate=13
+conathan_39.Lifetime=nr(1.399999976158142,1.899999976158142)
+conathan_39.Speed=nr(0.0028021731413900852,0.0028021731413900852)
+conathan_39.Rotation=nr(-360,360)
+conathan_39.RotSpeed=nr(-15,15)
+conathan_39.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,57.445862,5.037010)})
+conathan_39.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.000000,0.000000),nsk(0.600000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+conathan_39.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+conathan_39.LightEmission=-1
+conathan_39.LightInfluence=0
+conathan_39.Acceleration=v3(0.000000,0.000000,0.000000)
+conathan_39.Drag=0
+conathan_39.EmissionDirection=Enum.NormalId.Top
+conathan_39.SpreadAngle=v2(360.000000,360.000000)
+conathan_39.ZOffset=-1
+conathan_39.Texture="rbxassetid://13026594575"
+conathan_39.LockedToPart=true
+conathan_39.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+conathan_39.FlipbookLayout=Enum.ParticleFlipbookLayout.Grid8x8
+conathan_39.FlipbookMode=Enum.ParticleFlipbookMode.Loop
+conathan_39.FlipbookFramerate=nr(21,21)
+conathan_39.FlipbookStartRandom=true
+conathan_39.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.487500,0.000000)})
+conathan_39.Brightness=1
+
+
+
+
+
+
+ _2_40=i("ParticleEmitter", ATMOS_38)
+_2_40.Name="2"
+_2_40:SetAttribute("AuraInstance", true)
+_2_40.Enabled=true
+_2_40.Rate=13
+_2_40.Lifetime=nr(1.399999976158142,1.899999976158142)
+_2_40.Speed=nr(0.004081942606717348,0.004081942606717348)
+_2_40.Rotation=nr(-360,360)
+_2_40.RotSpeed=nr(-15,15)
+_2_40.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,83.681732,7.337442)})
+_2_40.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.000000,0.000000),nsk(0.600000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+_2_40.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+_2_40.LightEmission=-1.399999976158142
+_2_40.LightInfluence=0
+_2_40.Acceleration=v3(0.000000,0.000000,0.000000)
+_2_40.Drag=0
+_2_40.EmissionDirection=Enum.NormalId.Top
+_2_40.SpreadAngle=v2(360.000000,360.000000)
+_2_40.ZOffset=-1
+_2_40.Texture="rbxassetid://11447021694"
+_2_40.LockedToPart=true
+_2_40.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+_2_40.FlipbookLayout=Enum.ParticleFlipbookLayout.Grid8x8
+_2_40.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+_2_40.FlipbookFramerate=nr(21,21)
+_2_40.FlipbookStartRandom=false
+_2_40.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.487500,0.000000)})
+_2_40.Brightness=1
+
+
+
+
+
+
+ ruins_41=i("ParticleEmitter", ATMOS_38)
+ruins_41.Name="ruins"
+ruins_41:SetAttribute("AuraInstance", true)
+ruins_41.Enabled=true
+ruins_41.Rate=11
+ruins_41.Lifetime=nr(1.399999976158142,1.899999976158142)
+ruins_41.Speed=nr(0.0033801556564867496,0.0033801556564867496)
+ruins_41.Rotation=nr(-360,360)
+ruins_41.RotSpeed=nr(-15,15)
+ruins_41.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,69.294769,6.075954)})
+ruins_41.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.000000,0.000000),nsk(0.600000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+ruins_41.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+ruins_41.LightEmission=0.8999999761581421
+ruins_41.LightInfluence=0
+ruins_41.Acceleration=v3(0.000000,0.000000,0.000000)
+ruins_41.Drag=0
+ruins_41.EmissionDirection=Enum.NormalId.Top
+ruins_41.SpreadAngle=v2(360.000000,360.000000)
+ruins_41.ZOffset=-1
+ruins_41.Texture="rbxassetid://11518019293"
+ruins_41.LockedToPart=true
+ruins_41.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+ruins_41.FlipbookLayout=Enum.ParticleFlipbookLayout.Grid4x4
+ruins_41.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+ruins_41.FlipbookFramerate=nr(21,21)
+ruins_41.FlipbookStartRandom=false
+ruins_41.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.487500,0.000000)})
+ruins_41.Brightness=1
+
+
+
+
+
+
+ RealisticFog_42=i("ParticleEmitter", ATMOS_38)
+RealisticFog_42.Name="Realistic Fog"
+RealisticFog_42:SetAttribute("AuraInstance", true)
+RealisticFog_42.Enabled=true
+RealisticFog_42.Rate=13
+RealisticFog_42.Lifetime=nr(1.399999976158142,1.899999976158142)
+RealisticFog_42.Speed=nr(0.004954545293003321,0.004954545293003321)
+RealisticFog_42.Rotation=nr(-360,360)
+RealisticFog_42.RotSpeed=nr(-15,15)
+RealisticFog_42.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,101.570488,8.905977)})
+RealisticFog_42.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.000000,0.000000),nsk(0.600000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+RealisticFog_42.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+RealisticFog_42.LightEmission=0
+RealisticFog_42.LightInfluence=0
+RealisticFog_42.Acceleration=v3(0.000000,0.000000,0.000000)
+RealisticFog_42.Drag=0
+RealisticFog_42.EmissionDirection=Enum.NormalId.Top
+RealisticFog_42.SpreadAngle=v2(360.000000,360.000000)
+RealisticFog_42.ZOffset=-1
+RealisticFog_42.Texture="rbxassetid://12878027420"
+RealisticFog_42.LockedToPart=true
+RealisticFog_42.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+RealisticFog_42.FlipbookLayout=Enum.ParticleFlipbookLayout.Grid8x8
+RealisticFog_42.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+RealisticFog_42.FlipbookFramerate=nr(21,21)
+RealisticFog_42.FlipbookStartRandom=false
+RealisticFog_42.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.487500,0.000000)})
+RealisticFog_42.Brightness=1
+
+
+
+
+
+
+ debris_43=i("ParticleEmitter", ATMOS_38)
+debris_43.Name="debris"
+debris_43:SetAttribute("AuraInstance", true)
+debris_43.Enabled=true
+debris_43.Rate=8
+debris_43.Lifetime=nr(1.399999976158142,1.899999976158142)
+debris_43.Speed=nr(0.0033880898263305426,0.0033880898263305426)
+debris_43.Rotation=nr(-360,360)
+debris_43.RotSpeed=nr(0,0)
+debris_43.Size=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,69.457420,6.090216)})
+debris_43.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.000000,0.000000),nsk(0.600000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+debris_43.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+debris_43.LightEmission=0.5
+debris_43.LightInfluence=0
+debris_43.Acceleration=v3(0.000000,0.000000,0.000000)
+debris_43.Drag=0
+debris_43.EmissionDirection=Enum.NormalId.Top
+debris_43.SpreadAngle=v2(360.000000,360.000000)
+debris_43.ZOffset=-1
+debris_43.Texture="rbxassetid://108671638834303"
+debris_43.LockedToPart=true
+debris_43.Orientation=Enum.ParticleOrientation.FacingCamera
+debris_43.FlipbookLayout=Enum.ParticleFlipbookLayout.None
+debris_43.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+debris_43.FlipbookFramerate=nr(21,21)
+debris_43.FlipbookStartRandom=false
+debris_43.Squash=ns({nsk(0.000000,0.000000,0.000000),nsk(1.000000,0.000000,0.000000)})
+debris_43.Brightness=1
+]]
+
+
+
+
+
+ _1_44=i("ParticleEmitter", att)
+_1_44.Name="1"
+_1_44:SetAttribute("EmitDelay", 0)
+_1_44:SetAttribute("AuraInstance", true)
+_1_44:SetAttribute("EmitDuration", 0)
+_1_44:SetAttribute("EmitCount", 1)
+_1_44.Enabled=true
+_1_44.Rate=12
+_1_44.Lifetime=nr(0.800000011920929,1.100000023841858)
+_1_44.Speed=nr(0.0010000000474974513,0.0010000000474974513)
+_1_44.Rotation=nr(-360,360)
+_1_44.RotSpeed=nr(0,0)
+_1_44.Size=ns({nsk(0.000000,35.000000,0.000000),nsk(1.000000,100.000000,0.000000)})
+_1_44.Transparency=ns({nsk(0.000000,1.000000,0.000000),nsk(0.400000,0.000000,0.000000),nsk(0.600000,0.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+_1_44.Color=cs({csk(0.000000,c3(0.000000,0.000000,0.000000)),csk(1.000000,c3(0.000000,0.000000,0.000000))})
+_1_44.LightEmission=0.6499999761581421
+_1_44.LightInfluence=0
+_1_44.Acceleration=v3(0.000000,0.000000,0.000000)
+_1_44.Drag=0
+_1_44.EmissionDirection=Enum.NormalId.Top
+_1_44.SpreadAngle=v2(360.000000,-360.000000)
+_1_44.ZOffset=1.2039999961853027
+_1_44.Texture="rbxassetid://91042354619231"
+_1_44.LockedToPart=true
+_1_44.Orientation=Enum.ParticleOrientation.VelocityPerpendicular
+_1_44.FlipbookLayout=Enum.ParticleFlipbookLayout.Grid4x4
+_1_44.FlipbookMode=Enum.ParticleFlipbookMode.OneShot
+_1_44.FlipbookFramerate=nr(20,20)
+_1_44.FlipbookStartRandom=false
+_1_44.Squash=ns({nsk(0.000000,1.000000,0.000000),nsk(1.000000,1.000000,0.000000)})
+_1_44.Brightness=1
+
+
+
+
+
+
+
+
+while foldah do 
+if not foldah then att:Destroy() break end
+pcall(function()
+for _,e in att:GetDescendants() do 
+  if e:IsA("Beam") or e:IsA("ParticleEmitter") then 
+    e.Color=cs{
+      csk(0,ig(s,"Value")),
+      csk(1,ig(p,"Value")),
+    }
+    end
+end
+end)
+oswait()
+end
+
+
+
+
+end
+
+repeat Asset() task.wait() until not char:FindFirstChild(Name.."Assets")
